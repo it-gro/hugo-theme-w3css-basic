@@ -1,0 +1,70 @@
+{{ if isset .Site.Params "testimonials"  }}
+{{ if .Site.Params.testimonials.enable   }}
+{{ if gt (len .Site.Data.testimonials) 0 }}
+<section id="testimonials01" class="w3-theme">
+  <div id="testimonials02" class="w3-container w3-theme-l3">
+    
+    <div class="testimonials10 w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-d1">
+      <h2 id="testimonials11">{{ .Site.Params.testimonials.title }}</h2>
+      <div id="testimonials12" class="w3-small">
+        {{ .Site.Params.testimonials.subtitle | markdownify }}
+      </div> <!-- testimonials12 -->
+    </div>   <!-- testimonials10 -->
+    
+    <div class="testimonials-owl owl-carousel owl-theme">
+      {{ range $index, $element := sort .Site.Data.testimonials "weight" }}
+      <div class="testimonials20 w3-card w3-theme-l5">
+        <div class="testimonials21 w3-container w3-opacity">
+          <p>{{ $element.text | markdownify }}</p>
+        </div>
+        <div class="testimonials22 w3-container">
+          <div class="testimonials23 w3-cell"><i class="fa fa-quote-left w3-jumbo w3-text-theme"></i></div>
+          <div class="testimonials24 w3-cell">
+            <img class="w3-circle w3-right" alt="" src="{{ .avatar | absURL }}"  style="width:40%">
+            <div class="testimonials25 w3-right">
+              <div class="w3-large"> {{ $element.name }}</div>
+              <div class="w3-small"> {{ $element.position }}</div>
+            </div> <!-- testimonials25 -->
+          </div>   <!-- testimonials24 -->
+        </div>     <!-- testimonials22 -->
+      </div>       <!-- testimonials20 -->
+      {{ end }} {{/* range */}}
+    </div> <!-- testimonials-owl -->
+    
+    <noscript>
+      <div id="testimonials30 w3-cell-row">
+        {{ range $index, $element := first 3 (sort .Site.Data.testimonials "weight") }}
+        <div class="testimonials31 w3-cell w3-mobile w3-margin-bottom">
+          
+          <div class="testimonials20 w3-card w3-theme-l5">
+            <div class="testimonials21 w3-container w3-opacity">
+              <p>{{ $element.text | markdownify }}</p>
+            </div>
+            <div class="testimonials22 w3-container">
+              <div class="testimonials23 w3-cell"><i class="fa fa-quote-left w3-jumbo"></i></div>
+              <div class="testimonials24 w3-cell">
+                <img class="w3-circle w3-right" alt="" src="{{ .avatar | absURL }}"  style="width:40%">
+                <div class="testimonials25 w3-right">
+                  <div class="w3-large"> {{ $element.name }}</div>
+                  <div class="w3-small"> {{ $element.position }}</div>
+                </div> <!-- testimonials25 -->
+              </div>   <!-- testimonials24 -->
+            </div>     <!-- testimonials22 -->
+          </div>       <!-- testimonials20 -->
+	</div> <!-- testimonials31 -->
+        {{ end }} {{/* range */}}
+	  
+      </div> <!-- testimonials30 -->
+    </noscript>
+    
+
+  </div>   <!-- testimonials02 -->
+</section> <!-- testimonials01 -->
+{{ end }} {{/* if gt       */}} 
+{{ end }} {{/* if *.enable */}} 
+{{ end }} {{/* if isset    */}} 
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->

@@ -1,0 +1,160 @@
+<div class="w3-bar w3-theme-dark w3-hide-small">
+  {{ range .Site.Menus.main }}
+    {{ if .HasChildren }} 
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">{{ .Name }}</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2" > <!-- owl carousel -->
+      {{ range .Children }}
+      <a href="{{ .URL }}" class="w3-bar-item w3-button">{{ .Name }}</a>
+      {{ end }}  {{/* range .Children        */}}
+    </div> <!-- w3-dropdown-content -->
+  </div>   <!-- w3-dropdown-hover   -->
+    {{ else }}
+  <a href="{{ .URL }}" class="w3-bar-item w3-button">{{ .Name }}</a> 
+    {{ end  }}   {{/* if .HasChildren        */}}
+  {{ end  }}     {{/* range .Site.Menus.main */}}
+
+  {{ if .Site.Params.topbar.enable }}
+    {{ range .Site.Menus.topbar.ByWeight }}
+    <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
+    {{ end }}
+  {{ end }}
+
+</div> <!-- w3-bar -->
+
+<div class="w3-bar w3-theme-dark w3-small w3-hide-large w3-hide-medium ">
+  {{ range .Site.Menus.main }}
+    {{ if .HasChildren }} 
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">{{ .Name }}</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2" > <!-- owl carousel -->
+      {{ range .Children }}
+      <a href="{{ .URL }}" class="w3-bar-item w3-button ">{{ .Name }}</a> 
+      {{ end }}  {{/* range .Children        */}}
+    </div>
+  </div>
+    {{ else }}
+  <a href="{{ .URL }}" class="w3-bar-item w3-button">{{ .Name }}</a> 
+    {{ end  }}   {{/* if .HasChildren        */}}
+  {{ end  }}     {{/* range .Site.Menus.main */}}
+
+  {{ if .Site.Params.topbar.enable }}
+    {{ range .Site.Menus.topbar.ByWeight }}
+    <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
+    {{ end }}
+  {{ end }}
+</div> <!-- w3-bar -->
+
+<!-- <div class="w3-bar w3-theme-dark w3-hide-small"> -->
+<!--   <a href="#" class="w3-bar-item w3-button">Home</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button">Link 1</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button">Link 2</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button">Link 3</a> -->
+<!-- </div> <\!-- w3-bar -\-> -->
+
+<!-- <div class="w3-bar w3-theme-dark w3-hide-large w3-hide-medium"> -->
+<!--   <a href="#" class="w3-bar-item w3-button w3-small ">Home</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button w3-small ">Link 1</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button w3-small ">Link 2</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button w3-small ">Link 3</a> -->
+<!-- </div> <\!-- w3-bar -\-> -->
+
+<!-- <div class="w3-bar w3-theme-dark"> -->
+<!--   <a href="#" class="w3-bar-item w3-button w3-hide-small">Home</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button w3-hide-small">Link 1</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button w3-hide-small">Link 2</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button w3-hide-small">Link 3</a> -->
+<!--   <a href="javascript:void(0)" -->
+<!--               class="w3-bar-item w3-button w3-hide-large w3-hide-medium w3-right " onclick="myFunction()">&#9776;</a>   -->
+<!-- </div> <\!-- w3-bar -\-> -->
+
+<!-- <div id="demo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium"> -->
+<!--   <a href="#" class="w3-bar-item w3-button">Link 1</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button">Link 2</a> -->
+<!--   <a href="#" class="w3-bar-item w3-button">Link 3</a> -->
+<!-- </div> -->
+
+<!-- <script> -->
+<!-- function myFunction() { -->
+<!--     var x = document.getElementById("demo"); -->
+<!--     if (x.className.indexOf("w3-show") == -1) { -->
+<!--         x.className += " w3-show"; -->
+<!--     } else {  -->
+<!--         x.className = x.className.replace(" w3-show", ""); -->
+<!--     } -->
+<!-- } -->
+<!-- </script> -->
+
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->
+
+<!-- <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200"> -->
+
+<!--     <div class="navbar navbar-default yamm" role="navigation" id="navbar"> -->
+
+<!--         <div class="container"> -->
+<!--             <div class="navbar-header"> -->
+<!--                 <a class="navbar-brand home" href="{{ .Site.BaseURL }}"> -->
+<!--                     <img src="{{ .Site.BaseURL }}img/logo.png" alt="{{ .Title }} logo" class="hidden-xs hidden-sm"> -->
+<!--                     <img src="{{ .Site.BaseURL }}img/logo-small.png" alt="{{ .Title }} logo" class="visible-xs visible-sm"> -->
+<!--                     <span class="sr-only">{{ .Title }} - {{ i18n "navHome" }}</span> -->
+<!--                 </a> -->
+<!--                 <div class="navbar-buttons"> -->
+<!--                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation"> -->
+<!--                       <span class="sr-only">{{ i18n "navToggle" }}</span> -->
+<!--                         <i class="fa fa-align-justify"></i> -->
+<!--                     </button> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--             <\!--/.navbar-header -\-> -->
+
+<!--             <div class="navbar-collapse collapse" id="navigation"> -->
+<!--                 <ul class="nav navbar-nav navbar-right"> -->
+<!--                   {{ range .Site.Menus.main }} -->
+<!--                   <li class="dropdown"> -->
+<!--                     {{ if .HasChildren }} -->
+<!--                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }} <span class="caret"></span></a> -->
+<!--                     <ul class="dropdown-menu"> -->
+<!--                       {{ range .Children }} -->
+<!--                         <li><a href="{{ .URL }}">{{ .Name }}</a></li> -->
+<!--                       {{ end }} -->
+<!--                     </ul> -->
+<!--                     {{ else }} -->
+<!--                     <a href="{{ .URL }}">{{ .Name }}</a> -->
+<!--                     {{ end  }} -->
+<!--                   </li> -->
+<!--                   {{ end }} -->
+<!--                 </ul> -->
+<!--             </div> -->
+<!--             <\!--/.nav-collapse -\-> -->
+
+<!--             <div class="collapse clearfix" id="search"> -->
+
+<!--                 <form class="navbar-form" role="search"> -->
+<!--                     <div class="input-group"> -->
+<!--                         <input type="text" class="form-control" placeholder="Search"> -->
+<!--                         <span class="input-group-btn"> -->
+
+<!--                     <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button> -->
+
+<!--                 </span> -->
+<!--                     </div> -->
+<!--                 </form> -->
+
+<!--             </div> -->
+<!--             <\!--/.nav-collapse -\-> -->
+
+<!--         </div> -->
+<!--     </div> -->
+<!--     <\!-- /#navbar -\-> -->
+
+<!-- </div> -->
+
+<!-- <\!-- *** NAVBAR END ***-\-> -->
+
+
+ 

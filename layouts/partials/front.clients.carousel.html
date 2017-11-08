@@ -1,0 +1,48 @@
+{{ if isset .Site.Params "clients" }}
+{{ if .Site.Params.clients.enable }}
+{{ if gt (len .Site.Data.clients) 0 }}
+<section id="clients01" class="w3-theme" >
+  <div id="clients02" class="w3-container w3-theme-l3">
+    
+    <div id="clients10" class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-d1">
+			<h2 id="clients11">{{ .Site.Params.clients.title }}</h2>
+      <div id="clients12" class="w3-small">
+	      {{ if .Site.Params.clients.subtitle }}
+			  {{ .Site.Params.clients.subtitle | markdownify }}
+        {{ end }} {{/* if .subtitle */}}
+      </div> <!-- clients12 -->
+		</div> <!-- clients10 -->
+
+		<div class="clients-owl owl-carousel owl-theme">
+			{{ range .Site.Data.clients }}
+			<div class="clients20 ">
+        {{ if .name }} <div class="w3-text-theme w3-xlarge"> {{ .name }} </div> {{ end }}
+				{{ if and (    .url) (.image) }}  <a href="{{ .url }}" target="_blank"><img src="{{ .image }}" alt="{{ .name }}" class="w3-image w3-left" style="max-width:160px"/></a> {{ end }}
+				{{ if and (not .url) (.image) }}	                                     <img	src="{{ .image }}" alt="{{ .name }}" class="w3-image w3-left" style="max-width:160px"/>     {{ end }}
+			</div> <!-- clients20 -->
+			{{ end }}
+		</div> <!-- clients -->
+
+		<noscript>
+		  <div class="clients30 w3-cell-row w3-text-theme">
+		    {{ range $index, $element := first 3 (sort .Site.Data.clients "weight") }}
+		    <div class="clients31 w3-cell w3-mobile">
+          {{ if .name }} <div class="w3-xlarge"> {{ .name }} </div> {{ end }}
+				  {{ if and (    .url) (.image) }}  <a href="{{ .url }}" target="_blank"><img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:160px"/></a> {{ end }}
+					{{ if and (not .url) (.image) }}																			 <img	src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:160px"/>			{{ end }}
+		    </div> <!-- clients31 -->
+		    {{ end }} {{/* range */}} 
+		  </div> <!-- clients30 -->
+		</noscript>
+    
+  </div>   <!-- clients02 -->
+</section> <!-- clients01 -->
+{{ end }} {{/* if gt       */}} 
+{{ end }} {{/* if *.enable */}} 
+{{ end }} {{/* if isset    */}} 
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->

@@ -1,0 +1,37 @@
+{{ if isset .Site.Params "photocards"  }}
+{{ if .Site.Params.photocards.enable   }}
+{{ if gt (len .Site.Data.photocards) 0 }}
+<section id="photocards01" class="w3-theme">
+  <div id="photocards02" class="w3-container w3-theme-l3">
+    {{ range $index, $element := sort .Site.Data.photocards "weight" }}
+    {{ if eq (mod $index 3) 0 }}
+    <div class="photocards03 w3-cell-row w3-margin-top w3-margin-bottom">
+    {{ end }}
+    
+      <div class="photocards04 w3-cell w3-cell-bottom w3-margin-bottom w3-mobile w3-theme-l3 ">
+        <div class="photocards05 w3-card-4 w3-margin-right w3-round-xxlarge w3-theme-l1 {{ if $element.animated }} {{ printf "%s %s %s%d %s" "animated" "photocards-animated" "photocards-animated" $index $element.animated }} {{ end }}">
+          {{ if $element.image }}
+          <img src="{{ $element.image }}" class="w3-round" style="width:100%">
+          {{ end }} {{/* if image */}}
+          <div class="photocards06 w3-container w3-theme-l1">
+            <h4>{{ $element.title }}</h4>
+            {{ $element.description | markdownify }}
+          </div> <!-- photocards06 -->
+        </div>   <!-- photocards05 -->
+      </div> <!-- photocards04 -->
+      {{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
+    </div>   <!-- photocards03 -->
+      {{ end }}{{/* if mod */}}
+    {{ end }} {{/* range */}}
+     
+  </div>   <!-- photocards02 -->
+</section> <!-- photocards01 -->
+{{ end }} {{/* if gt       */}} 
+{{ end }} {{/* if *.enable */}} 
+{{ end }} {{/* if isset    */}} 
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->
