@@ -1,4 +1,6 @@
-/* global $this: true */
+
+/* -------------------------------------------------- */
+/* owlCarousels */
 
 $('.jumbotron-owl').owlCarousel( {
 	nav:false,

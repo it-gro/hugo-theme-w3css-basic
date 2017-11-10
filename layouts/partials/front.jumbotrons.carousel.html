@@ -1,5 +1,5 @@
-{{ if isset .Site.Params "jumbotron"  }}
-{{ if .Site.Params.jumbotron.enable   }}
+{{ if isset .Site.Params "jumbotrons"  }}
+{{ if .Site.Params.jumbotrons.enable   }}
 {{ if gt (len .Site.Data.jumbotron) 0 }}
 <section id="section-jumbotron" class="w3-theme">
   <div id="container-jumbotron" class="w3-theme-l4">

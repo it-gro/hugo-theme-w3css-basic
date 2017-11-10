@@ -2,10 +2,10 @@
   <div id="footer02" class="w3-container w3-theme-d5">
     <div id="footer03" class="w3-container w3-margin-bottom w3-row ">
       
-      {{ if isset .Site.Params "about_us" }}
+      {{ if .Site.Params.aboutUs }}
       <div id="footer10" class="w3-col w3-mobile s4">
         <h4>{{ i18n "aboutUs" }}</h4>
-        {{ .Site.Params.about_us | markdownify }}
+        {{ .Site.Params.aboutUs | markdownify }}
       </div> <!-- footer10 -->
       {{ end }}
       
@@ -49,17 +49,18 @@
 </footer> <!-- footer01 -->
 
 
-<div id="copyright" class="w3-theme">
+<div id="bottom" class="w3-theme">
   <div id="footer40" class="w3-container w3-cell-row w3-theme-l3 w3-small">
     <div class="footer41 w3-cell w3-cell-middle w3-mobile">
-      {{ if isset .Site.Params "copyright" }}
-      <div class="footer42">{{ .Site.Params.copyright | markdownify }}</div>
+      {{ if .Site.Params.bottomLeft }}
+      <div class="footer42">{{ .Site.Params.bottomLeft | markdownify }}</div>
       {{ end }}
     </div> <!-- footer42 -->
     <div class="footer43 w3-cell w3-cell-middle w3-mobile">
       <div class="footer44 w3-right">
-        {{ i18n "templateBy" }} <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
-        {{ i18n "portedBy"   }} <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
+        {{ if .Site.Params.bottomRight }}
+        <div class="footer42">{{ .Site.Params.bottomRight | markdownify }}</div>
+        {{ end }}
       </div> <!-- footer44 -->
     </div>  <!-- footer41 -->
   </div>    <!-- footer40 -->

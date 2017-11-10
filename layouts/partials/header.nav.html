@@ -14,10 +14,14 @@
     {{ end  }}   {{/* if .HasChildren        */}}
   {{ end  }}     {{/* range .Site.Menus.main */}}
 
-  {{ if .Site.Params.topbar.enable }}
+  {{ if .Site.Params.menutopbar.socialEnable }}
     {{ range .Site.Menus.topbar.ByWeight }}
     <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
     {{ end }}
+  {{ end }}
+
+  {{ if .Site.Params.menutopbar.googleTranslateEnable }}
+  <span class="w3-bar-item w3-button w3-right">{{ partial "header.nav.google.translate.html" . }}</span>
   {{ end }}
 
 </div> <!-- w3-bar -->
@@ -38,11 +42,12 @@
     {{ end  }}   {{/* if .HasChildren        */}}
   {{ end  }}     {{/* range .Site.Menus.main */}}
 
-  {{ if .Site.Params.topbar.enable }}
+  {{ if .Site.Params.menutopbar.socialEnable }}
     {{ range .Site.Menus.topbar.ByWeight }}
     <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
     {{ end }}
   {{ end }}
+
 </div> <!-- w3-bar -->
 
 <!-- <div class="w3-bar w3-theme-dark w3-hide-small"> -->

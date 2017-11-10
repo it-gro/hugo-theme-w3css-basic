@@ -4,32 +4,14 @@
   <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/OwlCarousel2/owl.carousel.css" >
   <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/OwlCarousel2/owl.theme.default.min.css"    >
 
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-amber.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-black.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-blue.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-blue-grey.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-brown.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-cyan.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-dark-grey.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-deep-orange.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-deep-purple.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-green.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-grey.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-indigo.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-khaki.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-light-blue.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-light-green.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-lime.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-orange.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-pink.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-purple.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-red.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-teal.css"> -->
-  <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-yellow.css"> -->
+  {{/* if and (isset .Site.Params "w3css_color_theme") .Site.Params.w3css_color_theme */}}
+  {{ if .Site.Params.w3cssColorTheme }}
+    <link href="{{ .Site.BaseURL }}{{ .Site.Params.w3cssColorTheme }}" rel="stylesheet" id="theme-stylesheet">
+  {{ else }}
+    <link href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-red.css" rel="stylesheet" id="theme-stylesheet">
+  {{ end }}
 
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/w3-theme-custom.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-orange.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
 
   <!-- <\!-- Theme stylesheet, if possible do not edit this stylesheet -\-> -->
