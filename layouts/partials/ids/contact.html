@@ -1,0 +1,28 @@
+<section id="contact01" class="w3-theme">
+	<div class="contact02 w3-container w3-theme-l4">
+    
+    {{ .Content }}
+    
+    {{ if isset .Site.Params "email" }}
+
+    <form class="w3-panel w3-card-4 w3-theme-l2" method="post" action="https://123.formspree.io/{{ .Site.Params.email }}">
+      <h3>{{ i18n "contactForm" }}</h3>
+      <p><label>{{ i18n "contactName" }}   </label> <input    class="w3-input w3-border" name="name"    type="text" required placeholder="Name"		 ></p>
+			<p><label>{{ i18n "contactMail" }}	 </label> <input		class="w3-input w3-border" name="email"		type="text" required placeholder="Mail"		 ></p>
+			<p><label>{{ i18n "contactMessage" }}</label> <textarea class="w3-input w3-border" name="message"							required placeholder="Subject" ></textarea></p>
+      <p><button class="w3-button w3-ripple"><i class="fa fa-envelope-o"></i> {{ i18n "contactSend" }}</button></p>
+    </form>
+    
+    {{ end }}  <!-- if isset -->
+
+    {{ partial "contact.map.html" . }}
+
+  </div>  <!-- contact02  -->
+
+</section> <!-- contact01 -->
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->

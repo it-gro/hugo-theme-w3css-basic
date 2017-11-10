@@ -1,0 +1,38 @@
+- id: aboutUs
+  translation: "Über uns"
+
+- id: contactForm
+  translation: "Kontakt Formular"
+
+- id: contactGoTo
+  translation: "Zur Kontakt Seite"
+
+- id: contactMail
+  translation: "Ihre Email Adresse"
+
+- id: contactMessage
+  translation: "Ihre Nachricht an uns"
+
+- id: contactName
+  translation: "Ihr Name"
+
+- id: contactSend
+  translation: "Nachricht Senden"
+
+- id: contactTitle
+  translation: "Kontakt"
+
+- id: continueReading
+  translation: "Weiterlesen"
+
+- id: JsNeeded
+  translation: "JavaScript wird benötigt"
+
+- id: pages
+  translation: "Seiten"
+
+- id: recentPosts
+  translation: "Neue Beiträge"
+
+
+

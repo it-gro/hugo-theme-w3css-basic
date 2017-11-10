@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+  <body>
+    <div id="all" class="theme-layouts-pages-list w3-theme">
+      <header>
+        {{ partial "header.nav.html" . }}
+      </header>
+      <div class="list01 w3-container w3-theme-l4">
+        <h1 class="w3-theme-l2">{{ i18n  "pages" }}</h1>
+      </div> <!-- list01 -->
+
+      <div id="content">
+        <div class="list02 w3-container w3-theme-l4">
+          {{ range $index, $element := sort .Data.Pages }}
+          {{ if eq (mod $index 3) 0 }}
+          <div class="list03 w3-cell-row w3-margin-top w3-margin-bottom">
+          {{ end }}
+
+            <div class="list04 w3-cell w3-cell-bottom w3-margin-bottom w3-mobile w3-theme-l3 ">
+              <div class="list05 w3-card w3-hover-shadow w3-margin w3-theme-l1">
+		<header class="w3-container">
+		  <h3>{{ $element.Title }}</h3>
+		</header>
+                <div class="w3-container w3-theme-l3">{{ $element.Summary }}</div>
+		<button class="w3-button w3-block"><a href="{{ $element.Permalink }}">{{ i18n "continueReading" }}</a></button>
+              </div> <!-- list05 -->
+            </div> <!-- list04 -->
+            {{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Data.Pages) 1 )) }}
+	  </div>  <!-- list03 -->
+	    {{ end }}{{/* if mod */}}
+
+          {{ end }} {{/* range */}}
+        </div> <!-- list02 -->
+      </div>   <!-- content -->
+
+      {{ partial "footer.html" . }}
+    </div> <!-- all -->
+    {{ partial "scripts.html"  . }}
+  </body>
+</html>
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->

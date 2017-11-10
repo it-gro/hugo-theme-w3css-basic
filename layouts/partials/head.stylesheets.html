@@ -1,0 +1,26 @@
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/fontawesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/daneden.github.io/animate.css/animate.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/OwlCarousel2/owl.carousel.css" >
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/OwlCarousel2/owl.theme.default.min.css"    >
+
+  {{/* if and (isset .Site.Params "w3css_color_theme") .Site.Params.w3css_color_theme */}}
+  {{ if .Site.Params.w3cssColorTheme }}
+    <link href="{{ .Site.BaseURL }}{{ .Site.Params.w3cssColorTheme }}" rel="stylesheet" id="theme-stylesheet">
+  {{ else }}
+    <link href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-red.css" rel="stylesheet" id="theme-stylesheet">
+  {{ end }}
+
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
+
+  <!-- <\!-- Theme stylesheet, if possible do not edit this stylesheet -\-> -->
+  <!-- {{ if and (isset .Site.Params "style") .Site.Params.style }} -->
+  <!--   <link href="{{ .Site.BaseURL }}css/style.{{ .Site.Params.style }}.css" rel="stylesheet" id="theme-stylesheet"> -->
+  <!-- {{ else }} -->
+  <!--   <link href="{{ .Site.BaseURL }}css/style.default.css" rel="stylesheet" id="theme-stylesheet"> -->
+  <!-- {{ end }} -->
+
+  <!-- <\!-- Custom stylesheet - for your changes -\-> -->
+  <!-- <link href="{{ .Site.BaseURL }}css/custom.css" rel="stylesheet"> -->
+

@@ -1,0 +1,30 @@
+<!-- https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=de -->
+{{ if isset .Site.Params "latitude" }}
+{{ if isset .Site.Params "longitude" }}
+{{ if .Site.Params.googleMapsApiKey }}
+<script>
+  function initMap() {
+      var myloc = { lat: {{.Site.Params.latitude}}, lng: {{.Site.Params.longitude}} };
+      var map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: myloc});
+      var marker = new google.maps.Marker({position: myloc, map: map});
+  }
+</script>
+<script
+  async defer
+  src="https://maps.googleapis.com/maps/api/js?key={{.Site.Params.googleMapsApiKey}}&callback=initMap"
+  ></script>
+
+<div id="map" class="w3-panel w3-card-4 w3-theme-l2"/>
+<noscript>
+  <p>{{ i18n "JsNeeded" }} (google maps)</p>
+  <a href="https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z=10" target="_blank">https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z=10</a>
+</noscript>
+
+{{ end }} {{/* if isset    */}} 
+{{ end }} {{/* if isset    */}} 
+{{ end }} {{/* if isset    */}} 
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->

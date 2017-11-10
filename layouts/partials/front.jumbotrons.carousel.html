@@ -1,0 +1,58 @@
+{{ if isset .Site.Params "jumbotrons"  }}
+{{ if .Site.Params.jumbotrons.enable   }}
+{{ if gt (len .Site.Data.jumbotron) 0 }}
+<section id="section-jumbotron" class="w3-theme">
+  <div id="container-jumbotron" class="w3-theme-l4">
+
+    <div id="jumbotron10" class="jumbotron-owl owl-carousel owl-theme ">
+      {{ range $index, $element := sort .Site.Data.jumbotron "weight" }}
+
+        {{ if $element.image }}
+      <div class="jumbotron11 w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l1">
+        <img class="w3-image" alt="" src="{{ .image | absURL }}"  style="max-width:120px;display:block;margin:0 auto;">
+      </div> <!-- jumbotron11 -->
+        {{ end }} {{/* if .image */}}
+         
+        {{ if $element.title }}
+      <div class="jumbotron12 w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l1">
+        <div class="jumbotron13">
+          <h1>{{ $element.title }}</h1>
+          <div class="jumbotron14">
+            {{ $element.description | markdownify }}
+          </div> <!-- jumbotron14 -->
+        </div> <!-- jumbotron13 -->
+        {{ end }} {{/* if .title */}}
+      </div>   <!-- jumbotron12 -->
+
+      {{ end }} {{/* range */}} 
+    </div> <!-- jumbotron10 -->
+
+    <noscript>
+      <div id="jumbotron20" class="w3-container">
+        {{ range $index, $element := first 1 (sort .Site.Data.jumbotron "weight") }}
+          {{ if $element.title }}
+        <div class="jumbotron21 w3-container w3-margin w3-round-xxlarge w3-theme-l1">
+          <div class="jumbotron22">
+            <h1>{{ $element.title }}</h1>
+            <div class="jumbotron23 w3-container">
+              {{ $element.description | markdownify }}
+            </div> <!-- jumbotron23 -->
+          </div>   <!-- jumbotron24 -->
+        </div>     <!-- jumbotron21 -->
+        
+          {{ end }} {{/* if .title */}}
+        {{ end }} {{/* range */}} 
+      </div> <!-- jumbotron20 -->
+    </noscript>
+    
+  </div>   <!-- container-jumbotron -->
+</section> <!-- section-jumbotron -->
+{{ end }} {{/* if gt       */}} 
+{{ end }} {{/* if *.enable */}} 
+{{ end }} {{/* if isset    */}} 
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->

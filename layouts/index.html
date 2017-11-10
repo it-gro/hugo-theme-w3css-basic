@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+  <body>
+    <div id="all" class="theme-layouts-index w3-theme">
+      <header>
+        {{ partial "header.marquee.html" . }}
+        {{ partial "header.nav.html" . }}
+      </header>
+      {{ partial "front.jumbotrons.carousel.html"    . }}
+      {{ partial "front.photocards.html"             . }}
+      {{ partial "front.features.html"               . }}
+      {{ partial "front.testimonials.carousel.html"  . }}
+      {{ partial "front.see_more.html"               . }}
+      {{ partial "front.recent_posts.html"           . }}
+      {{ partial "front.clients.carousel.html"       . }}
+
+      {{ partial "footer.html" . }}
+    </div> <!-- all -->
+    {{ partial "scripts.html"  . }}
+  </body>
+</html>
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->

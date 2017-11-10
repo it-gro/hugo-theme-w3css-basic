@@ -1,0 +1,73 @@
+<footer id="footer01" class="w3-theme">
+  <div id="footer02" class="w3-container w3-theme-d5">
+    <div id="footer03" class="w3-container w3-margin-bottom w3-row ">
+      
+      {{ if .Site.Params.aboutUs }}
+      <div id="footer10" class="w3-col w3-mobile s4">
+        <h4>{{ i18n "aboutUs" }}</h4>
+        {{ .Site.Params.aboutUs | markdownify }}
+      </div> <!-- footer10 -->
+      {{ end }}
+      
+      {{ if isset .Site.Params "recent_posts" }} 
+      {{ if .Site.Params.recent_posts.enable }}
+      <div id="footer20" class="w3-col w3-mobile s4">
+        <h4>{{ i18n "recentPosts" }}</h4>
+        <div id="footer21" class="blog-entries!!!">
+          {{ range first 3 (where .Site.Pages "Type" "blog") }}
+          <div class="footer22 item!!!">
+            <div class="footer23 image!!!">
+              <a href="{{ .Permalink }}">
+                {{ if isset .Params "banner" }}
+                <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="w3-image" alt="">
+                {{ else }}
+                <img src="{{ .Site.BaseURL}}img/footer/placeholder.png" class="w3-image" alt="">
+                {{ end }}
+              </a>
+            </div> <!-- footer23 -->
+            <div class="footer24 name!!!">
+              <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+            </div> <!-- footer24 -->
+          </div>   <!-- footer22 -->
+          {{ end }} {{/* range */}}
+        </div> <!-- footer21 -->
+        
+      </div> <!-- footer20 -->
+      {{ end }} {{/* if isset */}} 
+      {{ end }} {{/* if recent_posts.enable */}} 
+      
+      
+      {{ if isset .Site.Params "address" }}
+      <div id="footer30" class="w3-col w3-mobile s4">
+        <h4>{{ i18n "contactTitle" }}</h4>
+        {{ .Site.Params.address | markdownify }}
+        <a href="/contact" class="w3-button w3-ripple w3-theme-l4">{{ i18n "contactGoTo" }}</a>
+      </div> <!-- footer30 -->
+      {{ end }}
+    </div>  <!-- footer03 -->
+  </div>  <!-- footer02 -->
+</footer> <!-- footer01 -->
+
+
+<div id="bottom" class="w3-theme">
+  <div id="footer40" class="w3-container w3-cell-row w3-theme-l3 w3-small">
+    <div class="footer41 w3-cell w3-cell-middle w3-mobile">
+      {{ if .Site.Params.bottomLeft }}
+      <div class="footer42">{{ .Site.Params.bottomLeft | markdownify }}</div>
+      {{ end }}
+    </div> <!-- footer42 -->
+    <div class="footer43 w3-cell w3-cell-middle w3-mobile">
+      <div class="footer44 w3-right">
+        {{ if .Site.Params.bottomRight }}
+        <div class="footer42">{{ .Site.Params.bottomRight | markdownify }}</div>
+        {{ end }}
+      </div> <!-- footer44 -->
+    </div>  <!-- footer41 -->
+  </div>    <!-- footer40 -->
+</div>      <!-- copyright -->
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->
