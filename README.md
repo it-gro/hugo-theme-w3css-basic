@@ -102,7 +102,7 @@ Available translations are in the `/i18n` directory. You can configure
 the language modifying the following key.
 
 
-```config.toml
+```toml
 defaultContentLanguage = "en"
 ```
 
@@ -118,12 +118,13 @@ https://www.w3schools.com/w3css/w3css_color_generator.asp and put the css file u
 
 You then pick up the actual color style:
 
-```config.toml
+```toml
  w3cssColorTheme = "/css/w3-theme-custom.css"
 #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
 ```
 
-Available options are:
+Available options (available theme files) are:
+```toml
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
@@ -146,6 +147,7 @@ w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-teal.css"
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-yellow.css"
+```
 
 
 
