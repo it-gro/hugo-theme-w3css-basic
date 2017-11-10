@@ -2,21 +2,21 @@
   <meta name="robots"    content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport"  content="width=device-width, initial-scale=1">
-  <meta name="author"    content="{{ .Site.Author.name }}" />
+  <meta name="author"    content="{{ .Site.Params.authorName }}" />
 
   {{ if .Keywords }}
   <meta name="keywords" content="{{ delimit .Keywords ", " }}">
   {{ else if .Site.Params.DefaultKeywords }}
-  <meta name="keywords" content="{{ delimit .Site.Params.DefaultKeywords ", " }}">	
+  <meta name="keywords" content="{{ delimit .Site.Params.defaultKeywords ", " }}">	
   {{ end }}
     
   {{ if .Description }}
   <meta name="description" content="{{ .Description }}">
   {{ else if .Site.Params.DefaultDescription }}
-  <meta name="description" content="{{ .Site.Params.DefaultDescription }}">	
+  <meta name="description" content="{{ .Site.Params.defaultDescription }}">	
   {{ end }}
-
- <!-- emacs -->
+  
+<!-- emacs -->
 <!-- Local variables:      -->
 <!-- tab-width:        2   -->
 <!-- indent-tabs-mode: nil -->
