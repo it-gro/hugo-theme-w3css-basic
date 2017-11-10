@@ -1,0 +1,38 @@
+- id: aboutUs
+  translation: "About us"
+
+- id: contactForm
+  translation: "Contact form"
+
+- id: contactGoTo
+  translation: "Go to contact page"
+
+- id: contactMail
+  translation: "Your Email"
+
+- id: contactMessage
+  translation: "Your Message"
+
+- id: contactName
+  translation: "Your Name"
+
+- id: contactSend
+  translation: "Send Message"
+
+- id: contactTitle
+  translation: "Contact"
+
+- id: continueReading
+  translation: "Continue reading"
+
+- id: JsNeeded
+  translation: "JavaScript needed for this"
+
+- id: pages
+  translation: "pages"
+
+- id: recentPosts
+  translation: "Recent posts"
+
+
+

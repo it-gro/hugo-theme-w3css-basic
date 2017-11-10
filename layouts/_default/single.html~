@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
+  <body>
+    <div id="all" class="theme-layouts-_default-single w3-theme">
+      <header>
+        {{ partial "header.nav.html" . }}
+      </header>
+
+      <section class="_default-single01" class="w3-theme">
+        
+        <div class="w3-container w3-theme-l3">
+	        <h1 class="w3-theme-l2">{{ .Title }}</h1>
+        </div>
+         
+        <div id="content">
+          {{ if isset .Params "id" }}
+ 	        {{/* partial .Params.id . */}}
+          {{ partial (printf "%s/%s" "ids" .Params.id) . }}
+ 	        {{/* .Params.id */}}
+	        {{ else }}
+	        <div class="w3-container w3-theme-l4">
+	          <div class="row!!">
+	            <div class="col!!">
+	              <div>
+	               {{ .Content }}
+	              </div>
+	            </div>
+	          </div>
+	        </div> <!-- w3-container -->
+	        {{ end }}
+        </div> <!-- content -->
+
+    </div> <!-- _default-single01 -->
+
+
+      {{ partial "footer.html" . }}
+    </div> <!-- all -->
+    {{ partial "scripts.html"  . }}
+  </body>
+</html>
+
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->

@@ -1,0 +1,14 @@
+{{ if .Site.Params.marquee.enable }}
+<div id="marquee" class="w3-theme">
+  <div class="header-marquee-01 w3-container w3-theme-l1 w3-small">
+    <div class="top-marquee">
+			<div><span>{{ .Site.Params.marquee.marquee | markdownify }}</span></div>
+		</div>  <!-- top-marquee -->
+  </div>    <!-- header-marquee-01 -->	
+</div>			<!--marquee -->	
+{{ end }} {{/* if *.enable */}} 
+<!-- ------------------------------------------------------------------------------ -->
+<!-- -- Local variables:      -->
+<!-- -- tab-width:        2   -->
+<!-- -- indent-tabs-mode: nil -->
+<!-- -- End:                  -->
