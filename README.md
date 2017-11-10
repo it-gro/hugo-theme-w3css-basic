@@ -109,8 +109,9 @@ defaultContentLanguage = "en"
 ### Color Theme
 
 All W3.CSS predefined color themes
-(https://www.w3schools.com/w3css/w3cssColorThemes.asp) are placed in
+(https://www.w3schools.com/w3css/w3css_color_themes.asp) are placed in
 the `/static/vendor/w3css/4/` directory.
+
 
 You may create your own color style using
 https://www.w3schools.com/w3css/w3css_color_generator.asp and put the css file under `/static/css/w3-theme-custom.css`.
@@ -239,15 +240,17 @@ This theme is released under the MIT License.
 
 ## Thanks
 
-Thanks to
+Thanks to:
 
 * [Steve Francia](https://discourse.gohugo.io/u/spf13) for
 creating Hugo and the awesome community around the project.
 
 * I'v read a lot of helping posts from
-[bep](https://discourse.gohugo.io/u/bep)
+[Bjørn Erik Pedersen](https://discourse.gohugo.io/u/bep)
 
 * [devcows](https://github.com/devcows/hugo-universal-theme) for
-creating this awesome theme.
+creating this awesome theme. He ported
+[Bootstrapious](https://bootstrapious.com/p/universal-business-e-commerce-template).
 
 * www.w3schools.com for creating W3.CSS
+
