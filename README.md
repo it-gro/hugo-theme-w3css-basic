@@ -7,8 +7,9 @@ W3.CSS Basic is a website template built with W3.CSS.
 
 This Hugo theme was inspired by [Universal](https://themes.gohugo.io/hugo-universal-theme/).
 
-![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/complete.png)
-![screenshot theme orange](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/screenshot.png)
+* ![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/complete.png)
+* ![screenshot theme orange](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/screenshot.png)
+
 
 ## Table of Contents
 

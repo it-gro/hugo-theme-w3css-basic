@@ -356,25 +356,27 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # enable or disable jumbotrons on frontpage
   # see some examples in 'exampleSite/data/jumbotron'
   enable   = true
- #enable   = false
+  #enable   = false
 
 [params.photocards]
-  # enable or disable photocards on frontpage
+  # enable or disable photocards on frontpage§
   # see some examples in 'exampleSite/data/photocards'
   enable   = true
- #enable   = false
+  limitTo  = 3
+  #enable  = false
 
 [params.features]
   # enable or disable features on frontpage
   # see some examples in 'exampleSite/data/features'
   enable   = true
- #enable   = false
+  limitTo  = 3
+  #enable  = false
 
 [params.testimonials]
   # enable or disable testimonials on frontpage
   # see some examples in 'exampleSite/data/testimonials'
   enable   = true
- #enable   = false
+  #enable  = false
   title    = "TESTIMONIALS"
   subtitle = '''
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
