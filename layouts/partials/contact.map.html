@@ -5,7 +5,7 @@
 <script>
   function initMap() {
       var myloc = { lat: {{.Site.Params.latitude}}, lng: {{.Site.Params.longitude}} };
-      var map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: myloc});
+      var map = new google.maps.Map(document.getElementById('map'), {zoom: {{.Site.Params.googleMapsZoom}}, center: myloc});
       var marker = new google.maps.Marker({position: myloc, map: map});
   }
 </script>
@@ -14,13 +14,19 @@
   src="https://maps.googleapis.com/maps/api/js?key={{.Site.Params.googleMapsApiKey}}&callback=initMap"
   ></script>
 
-<div id="map" class="w3-panel w3-card-4 w3-theme-l2"/>
+<div id="map" class="w3-panel w3-card-4 w3-theme-l2">
 <noscript>
   <p>{{ i18n "JsNeeded" }} (google maps)</p>
-  <a href="https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z=10" target="_blank">https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z=10</a>
+  <a href="https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z=10" target="_blank">https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z={{.Site.Params.googleMapsZoom}}</a>
 </noscript>
+</div>
 
-{{ end }} {{/* if isset    */}} 
+{{ else }} {{/* if isset googleMapsApiKey   */}} 
+<div class="w3-card-4 w3-margin w3-round-xxlarge w3-center w3-theme-l2">
+  Google Maps: <a href="https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z={{.Site.Params.googleMapsZoom}}" target="_blank"><i class="fa fa-map-marker fa-5x w3-text-theme"></i></a>
+</div>
+{{ end }}  {{/* if isset googleMapsApiKey   */}} 
+
 {{ end }} {{/* if isset    */}} 
 {{ end }} {{/* if isset    */}} 
 <!-- emacs -->

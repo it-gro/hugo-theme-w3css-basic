@@ -246,10 +246,10 @@ Thanks to:
 creating Hugo and the awesome community around the project.
 
 * I'v read a lot of helping posts from
-[Bjørn Erik Pedersen](https://discourse.gohugo.io/u/bep)
+[Bjørn Erik Pedersen](https://discourse.gohugo.io/u/bep) and [Rdwatters](https://discourse.gohugo.io/u/rdwatters)
 
 * [devcows](https://github.com/devcows/hugo-universal-theme) for
-creating this awesome theme. He ported
+creating this awesome theme. They ported
 [Bootstrapious](https://bootstrapious.com/p/universal-business-e-commerce-template).
 
 * www.w3schools.com for creating W3.CSS
