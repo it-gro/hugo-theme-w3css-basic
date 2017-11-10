@@ -20,9 +20,8 @@ min_version    = "0.30.2"
   homepage     = "https://themes.gohugo.io/theme/hugo-universal-theme"
   repo         = "https://github.com/devcows/hugo-universal-theme"
 
-
-# ------------------------------------------------------------------------------
-# -- Local variables:      
-# -- tab-width:        2   
-# -- indent-tabs-mode: nil 
-# -- End:
+# emacs
+# Local variables:      
+# tab-width:        2   
+# indent-tabs-mode: nil 
+# End:                  
