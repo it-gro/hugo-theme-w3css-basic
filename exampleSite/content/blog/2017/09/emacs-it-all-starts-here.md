@@ -1,25 +1,34 @@
 ---
 title:       "Emacs it all starts here"
-date:        2017-09-10T19:48:09+01:00
-tags:        ['editor']
-categories:  ['programming', '']
-banner:      'images/banners/emacs-1.svg'
+date:        2017-09-10T19:00:00+01:00
+tags:
+ - editor
+categories:
+  - programming
+banner:      images/banners/emacs-it-all-starts-here.svg
 ---
 
-## Where does the name “Emacs” come from?
 
-Emacs originally was an acronym for Editor MACroS.  RMS says he
+Emacs originally was an acronym for Editor MACroS. RMS says he
 “picked the name Emacs because <E> was not in use as an abbreviation
-on ITS at the time.” The first Emacs was a set of macros written in
-1976 at MIT by RMS for the editor TECO (Text Editor and COrrector,
-originally Tape Editor and COrrector) under ITS (the Incompatible
-Timesharing System) on a PDP-10.  RMS had already extended TECO with a
-“real-time” full-screen mode with reprogrammable keys.  Emacs was
-started by Guy Steele as a project to unify the many divergent TECO
-command sets and key bindings at MIT, and completed by RMS.
+on ITS at the time.” 
 
+The first Emacs was a set of macros written in 1976 at MIT by RMS for
+the editor TECO (Text Editor and COrrector, originally Tape Editor and
+COrrector) under ITS (the Incompatible Timesharing System) on a
+PDP-10. 
+
+<!--more-->
+
+RMS had already extended TECO with a “real-time” full-screen mode with
+reprogrammable keys. Emacs was started by Guy Steele as a project to
+unify the many divergent TECO command sets and key bindings at MIT,
+and completed by RMS.
+
+
+## Where does the name “Emacs” come from?
 Many people have said that TECO code looks a lot like line noise; you
-can read more at <news:alt.lang.teco>.  Someone has written a TECO
+can read more at <news:alt.lang.teco>. Someone has written a TECO
 implementation in Emacs Lisp (to find it, see *note Packages that do
 not come with Emacs::); it would be an interesting project to run the
 original TECO Emacs inside of Emacs.
@@ -27,8 +36,6 @@ original TECO Emacs inside of Emacs.
 For some not-so-serious alternative reasons for Emacs to have that
 name, check out the file ‘etc/JOKES’ (*note File-name conventions::).
 
-
-File: efaq.info,  Node: New in Emacs 25,  Next: New in Emacs 24,  Prev: Latest version of Emacs,  Up: Status of Emacs
 
 ## What is different about Emacs 25?
 
@@ -91,5 +98,4 @@ File: efaq.info,  Node: New in Emacs 25,  Next: New in Emacs 24,  Prev: Latest v
   provide toolkit scroll bars, namely Gtk+, Lucid, Motif and Windows.
 
 Consult the Emacs ‘NEWS’ file (‘C-h n’) for the full list of changes in Emacs 25.
-
 

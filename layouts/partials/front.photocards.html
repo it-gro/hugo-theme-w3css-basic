@@ -11,9 +11,16 @@
        
         <div class="photocards04 w3-cell w3-cell-bottom w3-margin-bottom w3-mobile w3-theme-l3 ">
           <div class="photocards05 w3-card-4 w3-margin-right w3-round-xxlarge w3-theme-l1 {{ if $element.animated }} {{ printf "%s %s %s%d %s" "animated" "photocards-animated" "photocards-animated" $index $element.animated }} {{ end }}">
-            {{ if $element.image }}
-            <img src="{{ $element.image }}" class="w3-round" style="width:100%">
-            {{ end }} {{/* if image */}}
+            {{ if (and $element.image (not $element.url) )  }}
+            <img src="{{ $element.image }}" class="w3-round"                    style="width:100%">
+            {{ end }} {{/* if and image not url */}}
+
+            {{ if (and $element.image $element.url)  }}
+            <a href="{{ .Site.BaseURL}}{{ $element.url }}">
+              <img src="{{ $element.image }}" class="w3-round w3-hover-opacity" style="width:100%">
+              </a>
+            {{ end }} {{/* if and image url */}}
+
             <div class="photocards06 w3-container w3-theme-l1">
               <h4>{{ $element.title }}</h4>
               {{ $element.description | markdownify }}

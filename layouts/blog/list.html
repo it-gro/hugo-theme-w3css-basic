@@ -11,9 +11,11 @@
         <div id="bloglist02" class="w3-container w3-theme-l3">
           
           <div class="bloglist10 w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-d1">
-            <h2 class="bloglist11">Blog</h2>
-            <div class="bloglist12 w3-small">
-              wenig Text hier
+            <h2 class="bloglist11 ">Blog</h2>
+            <div class="bloglist12 ">
+	            {{ if .Site.Params.blog.subtitle }}
+			        {{ .Site.Params.blog.subtitle | markdownify }}
+              {{ end }} {{/* if .subtitle */}}
             </div> <!-- bloglist12 -->
           </div>   <!-- bloglist10 -->
 
@@ -34,7 +36,7 @@
                   </div> <!-- bloglist31 -->
                   
                   <div class="bloglist40 w3-cell ">
-                    <div class="bloglist41 w3-container  w3-small w3-theme-l2">
+                    <div class="bloglist41 w3-container w3-theme-l2">
                       <a href="{{ $element.Permalink }}">
                         <img alt="" class="w3-image w3-left w3-round w3-hover-opacity" style="max-width:200px; max-height:95px; width: auto; height: auto; margin: 0px 8px 8px 0px;"
                              {{ if $element.Params.banner }}

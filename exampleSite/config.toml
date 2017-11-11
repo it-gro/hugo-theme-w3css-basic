@@ -428,6 +428,10 @@ ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
 egestas semper. Aenean ultricies mi vitae est. Mauris placerat
 eleifend leo.
              '''
+[params.blog]
+  subtitle = '''
+ultricies eget, tempor sit amet, ante
+             '''
 
 # Enable and disable widgets for the right sidebar
 [params.widgets]
