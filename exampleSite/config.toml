@@ -14,6 +14,8 @@ defaultContentLanguage = "en"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 
+# Pagination
+paginate =  4
 
 # ##################################################
 # Theme-defined configuration
