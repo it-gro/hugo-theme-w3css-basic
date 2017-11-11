@@ -13,23 +13,24 @@
       {{ if .Site.Params.recent_posts.enable }}
       <div id="footer20" class="w3-col w3-mobile s4">
         <h4>{{ i18n "recentPosts" }}</h4>
-        <div id="footer21" class="blog-entries!!!">
-          {{ range first 3 (where .Site.Pages "Type" "blog") }}
-          <div class="footer22 item!!!">
-            <div class="footer23 image!!!">
+        <div id="footer21" class="">
+          
+            {{ range first 5 (where .Data.Pages "Type" "blog") }}
+
+            <div class="w3-container ">
               <a href="{{ .Permalink }}">
                 {{ if isset .Params "banner" }}
-                <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="w3-image" alt="">
+                <img alt="" src="{{ .Site.BaseURL}}{{ .Params.banner }}"       class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
                 {{ else }}
-                <img src="{{ .Site.BaseURL}}img/footer/placeholder.png" class="w3-image" alt="">
+                <img alt="" src="{{ .Site.BaseURL}}img/footer/placeholder.png" class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
                 {{ end }}
               </a>
-            </div> <!-- footer23 -->
-            <div class="footer24 name!!!">
-              <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
-            </div> <!-- footer24 -->
-          </div>   <!-- footer22 -->
-          {{ end }} {{/* range */}}
+              
+              <div class=" " ><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+            </div>
+            {{ end }} {{/* range */}}
+            
+          
         </div> <!-- footer21 -->
         
       </div> <!-- footer20 -->

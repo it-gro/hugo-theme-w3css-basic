@@ -34,5 +34,10 @@
 - id: recentPosts
   translation: "Neue Beiträge"
 
+- id: newer
+  translation: "Neuer"
+
+- id: older
+  translation: "Älter"
 
 
