@@ -8,20 +8,14 @@ categories:
 banner:      images/banners/emacs-jokes.jpg
 ---
 
-
-
-# Emacs Jokes
-
-extract from ‘etc/JOKES’
-
-
-## Some gnu jokes
-
-
 Richard M. Stallman (RMS, widely known for creating EMACS) is writing
 a UNIX clone called GNU (which means Gnu's Not Unix--a recursive
-acronym).  This seems to open the way to a whole gnu class of jokes.
-For example:
+acronym). 
+
+This seems to open the way to a whole gnu class of jokes.  For
+example:
+
+<!--more-->
 
 Q:  What do you call a person who hacks while wearing no clothes?
 A:  A gnudist.
@@ -436,10 +430,10 @@ And ed doesn't waste space on my Timex Sinclair.  Just look:
 ```
 
 Of course, on the system *I* administrate, vi is symlinked to ed.
-Emacs has been replaced by a shell script which 
+Emacs has been replaced by a shell script which
 
-     1) Generates a syslog message at level LOG_EMERG; 
-     2) reduces the user's disk quota by 100K; and 
+     1) Generates a syslog message at level LOG_EMERG;
+     2) reduces the user's disk quota by 100K; and
      3) RUNS ED!!!!!!
 
 
@@ -491,4 +485,3 @@ When I use an editor, I don't want eight extra KILOBYTES of worthless
 help screens and cursor positioning code!  I just want an EDitor!!
 Not a "viitor".  Not a "emacsitor".  Those aren't even WORDS!!!! ED!
 ED! ED IS THE STANDARD!!!
-
