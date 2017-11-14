@@ -12,7 +12,7 @@
 
       <div id="canvas" class="w3-container w3-theme-l3">
         {{ block "headline" . }}
-          <h1 class="w3-panel w3-theme-l2">{{ .Title }}</h1>
+          <h1 class="w3-panel w3-theme-l2">{{ if $.Params.icon }}<i class="{{ $.Params.icon }} fa-1x"></i>{{ end }} {{ .Title }}</h1>
         {{ end }}
    
         {{ block "main" . }}

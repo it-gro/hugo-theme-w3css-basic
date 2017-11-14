@@ -2,5 +2,6 @@ weight:      9
 title:       "feugiat nulla facilisis"
 animated:    "rollIn"
 image:       "images/photocards/09-photocard.jpg"
+url:         pages/photocards/09
 description: |
   iusto odio dignissim
