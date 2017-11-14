@@ -3,40 +3,40 @@
 {{ if gt (len .Site.Data.clients) 0 }}
 <section id="clients" class="w3-theme" >
   <div class="w3-container w3-theme-l3">
-    
+
     <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-d1">
-			<h2>{{ .Site.Params.clients.title }}</h2>
+      <h2>{{ .Site.Params.clients.title }}</h2>
       <div class="w3-small">
-	      {{ if .Site.Params.clients.subtitle }}
-			  {{ .Site.Params.clients.subtitle | markdownify }}
+        {{ if .Site.Params.clients.subtitle }}
+        {{ .Site.Params.clients.subtitle | markdownify }}
         {{ end }} {{/* if .subtitle */}}
       </div>
-		</div>
+    </div>
 
-		<div class="clients-owl owl-carousel owl-theme">
+    <div class="clients-owl owl-carousel owl-theme">
       {{ range $index, $element := sort .Site.Data.clients "weight" }}
-			  <div>{{ template "front-clients-entry" $element }}</div>
-			{{ end }}
-		</div> <!-- clients-owl -->
+        <div>{{ template "front-clients-entry" $element }}</div>
+      {{ end }}
+    </div> <!-- clients-owl -->
 
-		<noscript>
-		  <div class="w3-cell-row w3-text-theme">
-		    {{ range $index, $element := first 3 (sort .Site.Data.clients "weight") }}
-		      <div class="w3-cell w3-mobile">{{ template "front-clients-entry" $element }}</div> 
-		    {{ end }} {{/* range */}} 
-		  </div> <!-- w3-cell -->
-		</noscript>
-    
+    <noscript>
+      <div class="w3-cell-row w3-text-theme">
+        {{ range $index, $element := first 3 (sort .Site.Data.clients "weight") }}
+          <div class="w3-cell w3-mobile">{{ template "front-clients-entry" $element }}</div>
+        {{ end }} {{/* range */}}
+      </div> <!-- w3-cell -->
+    </noscript>
+
   </div>   <!-- w3-container -->
-</section> 
-{{ end }} {{/* if gt       */}} 
-{{ end }} {{/* if *.enable */}} 
-{{ end }} {{/* if isset    */}} 
+</section>
+{{ end }} {{/* if gt       */}}
+{{ end }} {{/* if *.enable */}}
+{{ end }} {{/* if isset    */}}
 
 {{ define "front-clients-entry" }}
-	{{ if .name }} <div class="w3-xlarge"> {{ .name }} </div> {{ end }}
-	{{ if and (		 .url) (.image) }}	<a href="{{ .url }}" target="_blank"><img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:160px"/></a> {{ end }}
-	{{ if and (not .url) (.image) }}																			 <img	src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:160px"/>			{{ end }}
+  {{ if .name }} <div class="w3-xlarge"> {{ .name }} </div> {{ end }}
+  {{ if and (    .url) (.image) }}  <a href="{{ .url }}" target="_blank"><img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:160px"/></a> {{ end }}
+  {{ if and (not .url) (.image) }}                                       <img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:160px"/>     {{ end }}
 {{ end }}
 
 {{/* emacs                 */}}

@@ -13,7 +13,7 @@
     {{ printf "<tr><td>%#v</td><td>%#v</td></tr>" $key $value | safeHTML }}
   {{ end }}
 </table>
-  
+
 <!-- .Data.Pages on the homepage is equivalent to .Site.Pages. -->
 {{ range .Data.Pages }}
 {{/* The context, ".", is now each one of the pages as it goes through the loop */}}
