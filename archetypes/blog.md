@@ -10,7 +10,7 @@ categories:
   - 
   - 
 draft:       true
-banner:      images/banner/placeholder.png
+banner:      images/banners/placeholder.png
 ---
 
 

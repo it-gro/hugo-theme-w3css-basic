@@ -1,25 +1,17 @@
 <head>
   {{ partial "head.meta.html" . }}
-  <title>{{ .Site.Title }}</title>
-
-  {{ .Hugo.Generator }}
-
-  {{ partial "head.fonts.html" . }}
-
-  {{ partial "head.stylesheets.html" . }}
+  <title>
+    {{ block "title" . }}
+    {{ .Site.Title }}
+    {{ end }}
+  </title>
   
-  <!-- Responsivity for older IE -->
-  {{ `
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  ` | safeHTML }}
-
+  {{ .Hugo.Generator }}
+  {{ partial "head.fonts.html" . }}
+  {{ partial "head.stylesheets.html" . }}
+  {{ partial "head.ie.html" . }}
   {{ partial "head.favicon.html" . }}
-
   <!-- <link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}"> -->
-
 </head>
 
 <!-- emacs -->

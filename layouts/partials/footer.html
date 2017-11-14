@@ -1,71 +1,50 @@
-<footer id="footer01" class="w3-theme">
-  <div id="footer02" class="w3-container w3-theme-d5">
-    <div id="footer03" class="w3-container w3-margin-bottom w3-row ">
+<div id="footer" class="w3-container w3-theme-d5">
+  <div class="w3-margin-bottom w3-row w3-mobile">
+    
+    {{ if .Site.Params.aboutUs }}
+    <div class="w3-col w3-third">
+      <h4>{{ i18n "aboutUs" }}</h4>
+      {{ .Site.Params.aboutUs | markdownify }}
+    </div> <!-- w3-col -->
+    {{ end }} {{/* if aboutUs */}} 
+    
+    {{ if isset .Site.Params "recent_posts" }} 
+    {{ if .Site.Params.recent_posts.enable }}
+    {{ if .Site.Params.recent_posts.footerNumOfPosts }}
+    <div class="w3-col w3-third">
+      <h4>{{ i18n "recentPosts" }}</h4>
+      {{ range first .Site.Params.recent_posts.footerNumOfPosts (where .Site.RegularPages "Section" "blog") }}
       
-      {{ if .Site.Params.aboutUs }}
-      <div id="footer10" class="w3-col w3-mobile s4">
-        <h4>{{ i18n "aboutUs" }}</h4>
-        {{ .Site.Params.aboutUs | markdownify }}
-      </div> <!-- footer10 -->
-      {{ end }}
-      
-      {{ if isset .Site.Params "recent_posts" }} 
-      {{ if .Site.Params.recent_posts.enable }}
-      <div id="footer20" class="w3-col w3-mobile s4">
-        <h4>{{ i18n "recentPosts" }}</h4>
-        <div id="footer21" class="">
+        <div class="w3-container ">
+          <a href="{{ .Permalink }}">
+            <img alt="" 
+            {{ if isset .Params "teaserpic" }}
+              src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
+            {{ else }}
+              src="{{ .Site.BaseURL}}images/teaserpics/placeholder.png"
+            {{ end }}
+            class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
+          </a>
           
-            {{ range first 5 (where .Data.Pages "Type" "blog") }}
-
-            <div class="w3-container ">
-              <a href="{{ .Permalink }}">
-                {{ if isset .Params "banner" }}
-                <img alt="" src="{{ .Site.BaseURL}}{{ .Params.banner }}"       class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
-                {{ else }}
-                <img alt="" src="{{ .Site.BaseURL}}img/footer/placeholder.png" class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
-                {{ end }}
-              </a>
-              
-              <div class=" " ><a href="{{ .Permalink }}">{{ .Title }}</a></div>
-            </div>
-            {{ end }} {{/* range */}}
-            
-          
-        </div> <!-- footer21 -->
-        
-      </div> <!-- footer20 -->
-      {{ end }} {{/* if isset */}} 
-      {{ end }} {{/* if recent_posts.enable */}} 
-      
-      
-      {{ if isset .Site.Params "address" }}
-      <div id="footer30" class="w3-col w3-mobile s4">
-        <h4>{{ i18n "contactTitle" }}</h4>
-        {{ .Site.Params.address | markdownify }}
-        <a href="/contact" class="w3-button w3-ripple w3-theme-l4">{{ i18n "contactGoTo" }}</a>
-      </div> <!-- footer30 -->
-      {{ end }}
-    </div>  <!-- footer03 -->
-  </div>  <!-- footer02 -->
-</footer> <!-- footer01 -->
-
-
-<div id="bottom" class="w3-theme">
-  <div id="footer40" class="w3-container w3-cell-row w3-theme-l3 w3-small">
-    <div class="footer41 w3-cell w3-cell-middle w3-mobile">
-      {{ if .Site.Params.bottomLeft }}
-      <div class="footer42">{{ .Site.Params.bottomLeft | markdownify }}</div>
-      {{ end }}
-    </div> <!-- footer42 -->
-    <div class="footer43 w3-cell w3-cell-middle w3-mobile">
-      <div class="footer44 w3-right">
-        {{ if .Site.Params.bottomRight }}
-        <div class="footer42">{{ .Site.Params.bottomRight | markdownify }}</div>
-        {{ end }}
-      </div> <!-- footer44 -->
-    </div>  <!-- footer41 -->
-  </div>    <!-- footer40 -->
-</div>      <!-- copyright -->
+          <div class=" " ><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+        </div>
+      {{ end }} {{/* range */}}
+    </div> <!-- w3-col -->
+    {{ end }} {{/* if isset */}} 
+    {{ end }} {{/* if isset */}} 
+    {{ end }} {{/* if recent_posts.enable */}} 
+    
+    
+    {{ if isset .Site.Params "address" }}
+    <div class="w3-col w3-third">
+      <h4>{{ i18n "contactTitle" }}</h4>
+      {{ .Site.Params.address | markdownify }}
+      <a href="/contact" class="w3-button w3-theme-l4">{{ i18n "contactGoTo" }}</a>
+    </div> <!-- w3-col -->
+    {{ end }}
+    
+  </div>  <!-- w3-row -->
+</div>  <!-- w3-container -->
 
 <!-- emacs -->
 <!-- Local variables:      -->

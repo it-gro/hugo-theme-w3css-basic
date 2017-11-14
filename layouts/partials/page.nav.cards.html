@@ -1,0 +1,45 @@
+{{ $startSection := (.Site.GetPage "section" "pages") }}
+{{ if $startSection }}
+<div class="w3-container w3-theme-l1">
+
+  {{ if not ($.InSection $startSection) }}
+	  {{ template "page-nav-entry"  ($startSection ) }}
+    {{ if not ($.Parent.InSection $startSection) }} 
+	    {{ template "page-nav-entry"  ($.Parent ) }}
+    {{ end }}
+	{{ end }}
+
+  {{ range $index, $element := $.Sections }}
+    {{ if not ($element.InSection $) }}
+		  {{ template "page-nav-entry"  ($element ) }}
+    {{ end }}
+  {{ end }}
+
+</div>
+{{ end }}
+
+{{ define "page-nav-entry" }}
+  <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l2">
+      {{ if isset .Site.Params "debug"  }}
+        {{ if .Site.Params.debug }}
+          <div class="w3-theme-l3">{{$.RelPermalink}}</div>
+        {{ end }}
+      {{ end }}
+   	<a href = "{{ $.RelPermalink }}">
+   		<img alt="" class="w3-image w3-round " style="max-width:40px; max-height:40px; width: auto; height: auto; margin: 8px 8px 0px 8px;"
+   	 {{ if $.Params.teaserpic }}
+   	 src="{{ .Site.BaseURL}}{{ $.Params.teaserpic }}" 
+   	 {{ else }}
+   	 src="{{ .Site.BaseURL}}images/teaserpics/placeholder.png"
+   	 {{ end }}
+   	>
+   		<span class="w3-large">{{ $.Title }}</span>
+   	</a>
+  </div>
+{{ end }}
+
+{{/* emacs                 */}}
+{{/* Local variables:      */}}
+{{/* tab-width:        2   */}}
+{{/* indent-tabs-mode: nil */}}
+{{/* End:                  */}}

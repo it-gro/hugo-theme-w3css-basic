@@ -6,7 +6,7 @@ tags:
   - theme
 categories:
   - web
-banner:      images/banners/hugo-ipsum.png
+teaserpic:      images/teaserpics/hugo-ipsum.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

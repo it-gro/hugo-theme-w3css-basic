@@ -1,19 +1,17 @@
 {{ if isset .Site.Params "seemore" }}
-{{ if .Site.Params.seeMore.enable }}
-<section id="see_more01" class="w3-theme">
-  <div id="see_more02" class="w3-container w3-theme-l4">
+{{ if .Site.Params.seeMore.enable  }}
+<section id="see_more" class="w3-theme">
+  <div class="w3-container w3-theme-l4">
     <div id="see_more_background" class="w3-container w3-margin-top w3-margin-bottom" >
-      <div id="see_more03" class="w3-container w3-center w3-margin-top w3-margin-bottom w3-text-white">
-	      <div id="see_more04"><i class="w3-jumbo {{ .Site.Params.seeMore.icon }}"></i></div>
-	      <div id="see_More05" class="w3-xxlarge">{{ .Site.Params.seeMore.title }}</div>
-	      <div id="see_more06" class="w3-small-disabled">{{ .Site.Params.seeMore.subtitle }}</div>
-	      <div id="see_more07">
-          <a href="{{ .Site.Params.seeMore.linkUrl }}" class="w3-margin-top w3-button w3-ripple w3-theme-l4">{{ .Site.Params.seeMore.linkText }}</a>
-	      </div> <!-- see_more07 -->
-      </div>   <!-- see_more03 -->
+      <div  class="w3-container w3-center w3-margin-top w3-margin-bottom w3-text-white">
+	      <div><i class="w3-jumbo {{ .Site.Params.seeMore.icon }}"></i></div>
+				<div class="w3-xxlarge">{{ .Site.Params.seeMore.title }}</div>
+				<div class="w3-small-disabled">{{ .Site.Params.seeMore.subtitle }}</div>
+	      <div><a href="{{ .Site.Params.seeMore.linkUrl }}" class="w3-margin-top w3-button w3-theme-l4">{{ .Site.Params.seeMore.linkText }}</a></div>
+      </div>   <!-- w3-container -->
     </div>     <!-- see_more_background -->
-  </div>       <!-- see_more02 -->
-</section>     <!-- see_more01 -->
+  </div>       <!-- see_w3-container -->
+</section>     <!-- see_more -->
 {{ end }} {{/* if gt       */}} 
 {{ end }} {{/* if *.enable */}} 
 

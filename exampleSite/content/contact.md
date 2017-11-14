@@ -1,7 +1,8 @@
-+++
-title = "Contact"
-id    = "contact"
-+++
+---
+title:          "Contact"
+type:           "contact"
+teaserpic:      images/teaserpics/contact-2860030_640.jpg
+---
 
 # We are here to help you
 

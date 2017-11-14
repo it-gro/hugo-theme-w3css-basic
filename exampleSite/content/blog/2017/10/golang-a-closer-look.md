@@ -5,7 +5,7 @@ tags:
   - go
 categories:  
   - programming
-banner:      images/banners/golang-a-closer-look.png
+teaserpic:      images/teaserpics/golang-a-closer-look.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec

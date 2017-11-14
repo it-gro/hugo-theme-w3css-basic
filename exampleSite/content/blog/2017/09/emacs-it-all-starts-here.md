@@ -5,7 +5,7 @@ tags:
  - editor
 categories:
   - programming
-banner:      images/banners/emacs-it-all-starts-here.svg
+teaserpic:      images/teaserpics/emacs-it-all-starts-here.svg
 ---
 
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <!-- layouts/_default/baseof.html -->
+  {{ partial "head.html" . }}
+
+  <body>
+    <div id="all" class="w3-theme">
+      <header>
+        {{ partial "header.marquee.html" . }}
+        {{ partial "header.nav.html" . }}
+      </header>
+
+      <div id="canvas" class="w3-container w3-theme-l3">
+        {{ block "headline" . }}
+          <h1 class="w3-panel w3-theme-l2">{{ .Title }}</h1>
+        {{ end }}
+   
+        {{ block "main" . }}
+          {{ partial "main.teaserpic.single.html" . }}
+          {{ .Content }}
+        {{ end }}
+   
+        {{ block "contactform" . }}
+        {{ end }}
+            
+      </div> <!-- canvas -->
+   
+      <footer>
+      {{ block "footer" . }}
+      {{ partial "footer.html"        . }}
+      {{ partial "footer.bottom.html" . }}
+      {{ end }}
+      </footer>
+      
+    </div> <!-- all -->
+    {{ partial "scripts.html"  . }}
+  </body>
+  {{ partial "debug.html" . }}
+</html>
+
+<!-- emacs                  -->
+<!-- Local variables:       -->
+<!-- tab-width:        2    -->
+<!-- indent-tabs-mode: nil  -->
+<!-- End:                   -->

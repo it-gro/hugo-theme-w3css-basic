@@ -1,3 +1,49 @@
+{{ if isset .Site.Params "recent_posts" }} 
+{{ if .Site.Params.recent_posts.enable }}
+{{ if .Site.Params.recent_posts.footerNumOfPosts }}
+<section id="recent_posts" class="w3-theme">
+  <div class="w3-container w3-theme-l4">
+    
+    <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l3">
+      <h2 id="testimonials11">{{ .Site.Params.recent_posts.title }}</h2>
+      <div class="w3-small">
+        {{ .Site.Params.testimonials.subtitle | markdownify }}
+      </div> 
+    </div>   <!-- w3-card -->
+
+    <div class="w3-row">
+      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+			<div class="w3-third">
+			
+        <div class="w3-card-4 w3-margin w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l3">
+					<a href="{{ .Permalink }}">
+						<img alt="" 
+						     {{ if isset .Params "teaserpic" }}
+							   src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
+						     {{ else }}
+							   src="{{ .Site.BaseURL}}images/teaserpics/placeholder.png" 
+						     {{ end }}
+						     class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:100px; max-height:100px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
+					
+					<h3>{{ .Title }}</h3>
+					<div class="w3-small">{{ .Summary }}</div>
+					</a>
+          
+				  <div class="w3-container w3-center">
+				   	<a href="{{ .Permalink }}" class="w3-button">{{ i18n "continueReading" }}</a>
+				  </div> 
+          
+				</div> <!-- w3-container -->
+			</div> <!-- w3-third -->
+      {{ end }} {{/* range */}}
+    </div> <!-- w3-row -->
+  </div>   <!-- w3-container -->
+</section>
+
+{{ end }} {{/* if isset */}} 
+{{ end }} {{/* if isset */}} 
+{{ end }} {{/* if recent_posts.enable */}} 
+
 <!-- emacs -->
 <!-- Local variables:      -->
 <!-- tab-width:        2   -->

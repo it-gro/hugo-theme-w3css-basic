@@ -1,105 +1,71 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-  {{ partial "head.html" . }}
-  <body>
-    <div id="all" class="theme-layouts-blog-list w3-theme">
-      <header>
-        {{ partial "header.nav.html" . }}
-      </header>
+{{ define "title" }}
+  {{ .Site.Title }} - Blog
+{{ end }}
 
-      <section id="bloglist01" class="w3-theme">
-        <div id="bloglist02" class="w3-container w3-theme-l3">
-          
-          <div class="bloglist10 w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-d1">
-            <h2 class="bloglist11 ">Blog</h2>
-            <div class="bloglist12 ">
-	            {{ if .Site.Params.blog.subtitle }}
-			        {{ .Site.Params.blog.subtitle | markdownify }}
-              {{ end }} {{/* if .subtitle */}}
-            </div> <!-- bloglist12 -->
-          </div>   <!-- bloglist10 -->
+{{ define "headline" }}
+  <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-d1">
+    <h2>Blog</h2>
+      {{ if .Site.Params.blog.subtitle }}
+    	{{ .Site.Params.blog.subtitle | markdownify }}
+      {{ end }} {{/* if .subtitle */}}
+  </div>   <!-- w3-card -->
+{{ end }}
 
-          {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
-          {{ range $index, $element := $paginator.Pages }}
-            {{ if eq (mod $index 2) 0 }}
-          <div id="bloglist20 w3-cell-row w3-margin-top w3-margin-bottom">
-            {{ end }}
+{{ define "main" }}
+	{{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
 
-            <div class="bloglist21 w3-cell w3-mobile w3-cell-top w3-theme-l3">
-              
-              <div class="bloglist22 w3-card w3-margin-right w3-margin-bottom w3-round-xxlarge w3-theme-l1">
-                
-                <div class="bloglist30 w3-cell">
-                  <div class="bloglist31 w3-container w3-center ">
-                    <!-- <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2> -->
-                    <h2>{{ $element.Title }}</h2>
-                  </div> <!-- bloglist31 -->
-                  
-                  <div class="bloglist40 w3-cell ">
-                    <div class="bloglist41 w3-container w3-theme-l2">
-                      <a href="{{ $element.Permalink }}">
-                        <img alt="" class="w3-image w3-left w3-round w3-hover-opacity" style="max-width:200px; max-height:95px; width: auto; height: auto; margin: 0px 8px 8px 0px;"
-                             {{ if $element.Params.banner }}
-                             src="{{ .Site.BaseURL}}{{ $element.Params.banner }}" 
-                             {{ else }}
-                             src="{{ .Site.BaseURL}}images/banners/placeholder.png"
-                             {{ end }}
-                             ></a>
-                      <span class="bloglist52 ">
-                        {{ $element.Summary }}
-                      </span> <!-- bloglist52 -->
-                      
-                    </div> <!-- bloglist41 -->
-                  </div> <!-- bloglist40 -->
-                  
-                  <!-- <div class="bloglist50 w3-cell"> -->
-                    <div class="bloglist51 w3-container w3-center">
-                        <a href="{{ $element.Permalink }}" class="w3-button">{{ i18n "continueReading" }}</a>
-                    </div> <!-- bloglist51  -->
-                  <!-- </div> <\!-- bloglist50  -\-> -->
-                  
-                </div> <!-- bloglist30  -->
-                
-              </div> <!-- bloglist22 -->
-            </div> <!-- bloglist21 -->
-            
-            
-            {{ if or (eq (mod $index 2) 1) (eq $index (sub (len $paginator.Pages) 1 )) }}
-          </div> <!-- bloglist20 -->
-            {{ end }}
-          {{ end }} {{/* range */}}
-          
-          <div class="bloglist60 w3-center w3-theme-l1 ">
-            <div class="bloglist61 w3-bar ">
-            
-              {{ if .Paginator.HasPrev }}
-              <a href="{{ .Site.BaseURL }}{{ .Paginator.Prev.URL }}" class="w3-bar-item w3-button">&larr; {{ i18n "newer" }}</a>
-              {{ else }}
-              <a href="#"                                            class="w3-bar-item w3-button">&larr; {{ i18n "newer" }}</a>
-              {{ end }}
-              
-              {{ if .Paginator.HasNext }}
-              <a href="{{ .Site.BaseURL }}{{ .Paginator.Next.URL }}" class="w3-bar-item w3-button">{{ i18n "older" }} &rarr;</a>
-              {{ else }}
-              <a href="#"                                            class="w3-bar-item w3-button">{{ i18n "older" }} &rarr;</a>
-              {{ end }} {{/* paginator */}}
-            </div> <!-- bloglist61 -->
-          </div> <!-- bloglist60 -->
-            
-        </div> <!-- bloglist02 -->
-          
-      </section> <!-- blog-list -->
-	        
-      {{/* partial "sidebar.html" . */}}
- 
-      {{ partial "footer.html" . }}
-    </div> <!-- all -->
-    {{ partial "scripts.html"  . }}
-  </body>
-</html>
+  {{ partial "main.paginator.bar.html" . }}
+	
+	{{ range $index, $element := $paginator.Pages }}
 
-<!-- emacs -->
-<!-- Local variables:      -->
-<!-- tab-width:        2   -->
-<!-- indent-tabs-mode: nil -->
-<!-- End:                  -->
+  
+	{{ if eq (mod $index 2) 0 }}
+	<div id="w3-cell-row w3-margin-top w3-margin-bottom">
+	{{ end }}
+
+	<div class="w3-cell w3-mobile w3-cell-top w3-theme-l3">
+			
+			<div class="w3-card w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-margin-bottom w3-round-xxlarge w3-theme-l1">
+				
+				<div class="w3-cell">
+					<a href="{{ $element.Permalink }}">
+					  <div class="w3-container w3-center ">
+					    <h2>{{ $element.Title }}</h2>
+					  </div> 
+					   
+					  <div class="w3-cell ">
+					    <div class="w3-container w3-theme-l2">
+                {{ partial "main.teaserpic.list.html" . }}
+					    	{{ $element.Summary | markdownify }}
+					    </div> <!-- w3-container -->
+					  </div> <!-- w3-cell -->
+          </a>
+					
+					<div class="w3-container w3-center">
+						<a href="{{ $element.Permalink }}" class="w3-button">{{ i18n "continueReading" }}</a>
+					</div> 
+					
+				</div> <!-- w3-cell	-->
+				
+			</div> <!-- w3-card -->
+		</div> <!-- w3-cell -->
+		
+		
+		{{ if or (eq (mod $index 2) 1) (eq $index (sub (len $paginator.Pages) 1 )) }}
+	</div> <!-- w3-cell-row -->
+		{{ end }}
+	{{ end }} {{/* range */}}
+
+  
+  {{ partial "main.paginator.bar.html" . }}
+
+{{ end }}
+
+{{ define "footer" }}
+{{ end }}
+
+{{/* emacs                 */}}
+{{/* Local variables:      */}}
+{{/* tab-width:        2   */}}
+{{/* indent-tabs-mode: nil */}}
+{{/* End:                  */}}

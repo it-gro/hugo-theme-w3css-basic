@@ -6,7 +6,7 @@ tags:
   - theme
 categories:
   - web
-banner:      images/banners/hugo-lorem.png
+teaserpic:      images/teaserpics/hugo-lorem.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
