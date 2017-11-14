@@ -14,24 +14,24 @@
         {{ block "headline" . }}
           <h1 class="w3-panel w3-theme-l2">{{ if $.Params.icon }}<i class="{{ $.Params.icon }} fa-1x"></i>{{ end }} {{ .Title }}</h1>
         {{ end }}
-   
+
         {{ block "main" . }}
           {{ partial "main.teaserpic.single.html" . }}
           {{ .Content }}
         {{ end }}
-   
+
         {{ block "contactform" . }}
         {{ end }}
-            
+
       </div> <!-- canvas -->
-   
+
       <footer>
       {{ block "footer" . }}
       {{ partial "footer.html"        . }}
       {{ partial "footer.bottom.html" . }}
       {{ end }}
       </footer>
-      
+
     </div> <!-- all -->
     {{ partial "scripts.html"  . }}
   </body>

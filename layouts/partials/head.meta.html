@@ -7,15 +7,15 @@
   {{ if .Keywords }}
   <meta name="keywords" content="{{ delimit .Keywords ", " }}">
   {{ else if .Site.Params.DefaultKeywords }}
-  <meta name="keywords" content="{{ delimit .Site.Params.defaultKeywords ", " }}">	
+  <meta name="keywords" content="{{ delimit .Site.Params.defaultKeywords ", " }}">
   {{ end }}
-    
+
   {{ if .Description }}
   <meta name="description" content="{{ .Description }}">
   {{ else if .Site.Params.DefaultDescription }}
-  <meta name="description" content="{{ .Site.Params.defaultDescription }}">	
+  <meta name="description" content="{{ .Site.Params.defaultDescription }}">
   {{ end }}
-  
+
 <!-- emacs -->
 <!-- Local variables:      -->
 <!-- tab-width:        2   -->

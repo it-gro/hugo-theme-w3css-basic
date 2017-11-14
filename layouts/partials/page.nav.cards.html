@@ -4,7 +4,7 @@
 
   {{ if not ($.InSection $startSection) }}
     {{ template "page-nav-entry"  ($startSection ) }}
-    {{ if not ($.Parent.InSection $startSection) }} 
+    {{ if not ($.Parent.InSection $startSection) }}
       {{ template "page-nav-entry"  ($.Parent ) }}
     {{ end }}
   {{ end }}
@@ -32,7 +32,7 @@
       {{ end }}  {{/* icon */}}
       {{ if $.Params.teaserpic }}
       <img alt="" class="w3-image w3-round " style="max-width:40px; max-height:40px; width: auto; height: auto; margin: 8px 8px 0px 8px;"
-           src="{{ .Site.BaseURL}}{{ $.Params.teaserpic }}" 
+           src="{{ .Site.BaseURL}}{{ $.Params.teaserpic }}"
            >
       {{ end }} {{/* teaserpic */}}
       <span class="w3-large">{{ $.Title }}</span>
