@@ -2,6 +2,7 @@ weight:      2
 title:       "Consetetur Sadipscing"
 animated:    "rollIn"
 image:       "images/photocards/02-photocard.jpg"
+url:         pages/photocards/02
 description: |
   * labore et dolore
   * magna aliquyam erat

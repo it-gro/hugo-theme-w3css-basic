@@ -1,3 +1,16 @@
+- id: Home
+  translation: "Home"
+
+- id: Contact
+  translation: "Kontakt"
+
+- id: Pages
+  translation: "Klimbim"
+
+- id: Blog
+  translation: "Blog"
+
+
 - id: aboutUs
   translation: "Über uns"
 
@@ -29,7 +42,7 @@
   translation: "JavaScript wird benötigt"
 
 - id: pages
-  translation: "Seiten"
+  translation: "Klimbim"
 
 - id: recentPosts
   translation: "Neue Beiträge"

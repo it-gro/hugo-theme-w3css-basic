@@ -1,3 +1,15 @@
+- id: Home
+  translation: "Home"
+
+- id: Contact
+  translation: "Contact"
+
+- id: Pages
+  translation: "Stuff"
+
+- id: Blog
+  translation: "Blog"
+
 - id: aboutUs
   translation: "About us"
 
@@ -27,9 +39,6 @@
 
 - id: JsNeeded
   translation: "JavaScript needed for this"
-
-- id: pages
-  translation: "Pages"
 
 - id: recentPosts
   translation: "Recent posts"

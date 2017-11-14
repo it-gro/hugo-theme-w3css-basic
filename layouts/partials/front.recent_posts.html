@@ -13,28 +13,28 @@
 
     <div class="w3-row">
       {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-			<div class="w3-third">
-			
+      <div class="w3-third">
+      
         <div class="w3-card-4 w3-margin w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l3">
-					<a href="{{ .Permalink }}">
-						<img alt="" 
-						     {{ if isset .Params "teaserpic" }}
-							   src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
-						     {{ else }}
-							   src="{{ .Site.BaseURL}}images/teaserpics/placeholder.png" 
-						     {{ end }}
-						     class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:100px; max-height:100px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
-					
-					<h3>{{ .Title }}</h3>
-					<div class="w3-small">{{ .Summary }}</div>
-					</a>
+          <a href="{{ .Permalink }}">
+            <img alt="" 
+                 {{ if isset .Params "teaserpic" }}
+                 src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
+                 {{ else }}
+                 src="{{ .Site.BaseURL}}images/teaserpics/placeholder.png" 
+                 {{ end }}
+                 class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
           
-				  <div class="w3-container w3-center">
-				   	<a href="{{ .Permalink }}" class="w3-button">{{ i18n "continueReading" }}</a>
-				  </div> 
+          <h3>{{ .Title }}</h3>
+          <div class="">{{ .Summary }}</div>
+          </a>
           
-				</div> <!-- w3-container -->
-			</div> <!-- w3-third -->
+          <div class="w3-container w3-center">
+            <a href="{{ .Permalink }}" class="w3-button">{{ i18n "continueReading" }}</a>
+          </div> 
+          
+        </div> <!-- w3-container -->
+      </div> <!-- w3-third -->
       {{ end }} {{/* range */}}
     </div> <!-- w3-row -->
   </div>   <!-- w3-container -->
