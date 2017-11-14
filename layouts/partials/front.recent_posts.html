@@ -2,9 +2,9 @@
 {{ if .Site.Params.recent_posts.enable }}
 {{ if .Site.Params.recent_posts.footerNumOfPosts }}
 <section id="recent_posts" class="w3-theme">
-  <div class="w3-container w3-theme-l4">
+  <div class="w3-container w3-theme-l3">
 
-    <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l3">
+    <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l2">
       <h2 id="testimonials11">{{ .Site.Params.recent_posts.title }}</h2>
       <div class="w3-small">
         {{ .Site.Params.testimonials.subtitle | markdownify }}
@@ -15,7 +15,7 @@
       {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
       <div class="w3-third">
 
-        <div class="w3-card-4 w3-margin w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l3">
+        <div class="w3-card-4 w3-margin w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l4">
           <a href="{{ .Permalink }}">
             <img alt=""
                  {{ if isset .Params "teaserpic" }}

@@ -50,22 +50,27 @@ disqusShortname = ""
   name   = "Pages"
   url    = "/pages/"
 
+#[[menu.main]]
+#  weight = 4
+#  name   = "Posts"
+#  identifier = "posts"
+# 
+#[[menu.main]]
+#  weight = 1
+#  name   = "News"
+#  url    = "/news/"
+#  parent = "posts"
+# 
+#[[menu.main]]
+#  weight = 2
+#  name   = "Blog"
+#  url    = "/blog/"
+#  parent = "posts"
+
 [[menu.main]]
   weight = 4
-  name   = "Posts"
-  identifier = "posts"
-
-[[menu.main]]
-  weight = 1
-  name   = "News"
-  url    = "/news/"
-  parent = "posts"
-
-[[menu.main]]
-  weight = 2
   name   = "Blog"
   url    = "/blog/"
-  parent = "posts"
 
 [[menu.main]]
   weight = 5
@@ -259,12 +264,12 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
+  #3w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-dark-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-orange.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-purple.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
@@ -272,7 +277,7 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
@@ -284,7 +289,8 @@ disqusShortname = ""
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
   # used in layouts/partials/contact.map.html
   # if empty => fallback to URL (instead of map) 
-  googleMapsApiKey = ""
+  #googleMapsApiKey = ""
+  googleMapsApiKey = "AIzaSyBOYzLWzxeb0XnHIk1lDlJCZabakEMB0qM"
   googleMapsZoom   = 14
   latitude         = 46.946692
   longitude        =  7.444186
@@ -354,6 +360,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuTopBar]
   # enable or disable menu.topbar with social icons (right)
   socialEnable          = true
+  numOfEntryOnSmall     = 1
   googleTranslateEnable = true
 
 [params.jumbotrons]
@@ -395,7 +402,7 @@ gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
  #enable    = false
   icon      = "fa fa-file-code-o"
   title     = "DO YOU WANT TO SEE MORE?"
-  linkUrl   = "#"
+  linkUrl   = "/pages/"
   linkText  = "consectetuer adipiscing"
   subtitle  = '''
 Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
