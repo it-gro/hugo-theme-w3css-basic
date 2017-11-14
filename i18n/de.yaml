@@ -10,6 +10,8 @@
 - id: Blog
   translation: "Blog"
 
+- id: FAQ
+  translation: "FAQ"
 
 - id: aboutUs
   translation: "Über uns"
