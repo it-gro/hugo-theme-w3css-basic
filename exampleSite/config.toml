@@ -269,7 +269,7 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-dark-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-orange.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-purple.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
@@ -277,7 +277,7 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
@@ -290,7 +290,6 @@ disqusShortname = ""
   # used in layouts/partials/contact.map.html
   # if empty => fallback to URL (instead of map) 
   #googleMapsApiKey = ""
-  googleMapsApiKey = "AIzaSyBOYzLWzxeb0XnHIk1lDlJCZabakEMB0qM"
   googleMapsZoom   = 14
   latitude         = 46.946692
   longitude        =  7.444186
@@ -322,7 +321,7 @@ consectetuer adipiscing
   bottomRight = 'created with [Hugo](https://gohugo.io) '
 
 
-  # used in partials/ids/contact.html
+  # used in partials/contact.form.html
   #
   # Since this template is static, the contact form uses www.formspree.io as a
   # proxy. The form makes a POST request to their servers to send the actual
@@ -337,6 +336,7 @@ consectetuer adipiscing
   # - you're done. Happy mailing!
   #
   # Enable the contact form by entering your Formspree.io email
+  formspree = "formspree.io"
   email     = "info@example.com"
               
   # Format dates with Go's time formatting
@@ -427,8 +427,8 @@ facilisi.
              '''
 
 [params.recent_posts]
-  enable = true
   footerNumOfPosts = 5
+  enable   = true
   #enable = false
   title    = "FROM OUR BLOG"
   subtitle = '''
