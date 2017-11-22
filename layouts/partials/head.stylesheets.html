@@ -1,18 +1,19 @@
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/w3css/4/w3.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/fontawesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/daneden.github.io/animate.css/animate.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/OwlCarousel2/owl.carousel.css" >
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}vendor/OwlCarousel2/owl.theme.default.min.css"    >
+  <link rel="stylesheet" href="{{ relURL "/vendor/w3css/4/w3.css"                            }}"> 
+  <link rel="stylesheet" href="{{ relURL "/vendor/fontawesome/css/font-awesome.min.css"      }}"> 
+  <link rel="stylesheet" href="{{ relURL "/vendor/daneden.github.io/animate.css/animate.css" }}"> 
+  <link rel="stylesheet" href="{{ relURL "/vendor/OwlCarousel2/owl.carousel.css"             }}"> 
+  <link rel="stylesheet" href="{{ relURL "/vendor/OwlCarousel2/owl.theme.default.min.css"    }}"> 
 
   {{/* if and (isset .Site.Params "w3css_color_theme") .Site.Params.w3css_color_theme */}}
   {{ if .Site.Params.w3cssColorTheme }}
-    <link href="{{ .Site.BaseURL }}{{ .Site.Params.w3cssColorTheme }}" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{ .Site.Params.w3cssColorTheme | relURL }}" rel="stylesheet" id="theme-stylesheet">
   {{ else }}
-    <link href="{{ .Site.BaseURL }}vendor/w3css/4/w3-theme-red.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{ relURL "/vendor/w3css/4/w3-theme-red.css" }}" rel="stylesheet" id="theme-stylesheet">
   {{ end }}
 
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
+  <link rel="stylesheet" href="{{ relURL "/css/syntax.css" }}"> 
+  <link rel="stylesheet" href="{{ relURL "/css/style.css"  }}">
+  <link rel="stylesheet" href="{{ relURL "/css/custom.css" }}">
 
 <!-- emacs -->
 <!-- Local variables:      -->

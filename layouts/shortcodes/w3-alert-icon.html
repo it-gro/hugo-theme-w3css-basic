@@ -1,0 +1,10 @@
+{{ $myIcon := .Get "icon" | default "fa-question" }}
+{{ $myHead := .Get "head" | default ""}}
+
+<div class="w3-panel w3-topbar w3-bottombar w3-leftbar w3-rightbar w3-round-xxlarge shortcode-{{ strings.TrimPrefix "fa-" $myIcon }}">
+{{ if not $myHead }}
+      <span class="w3-margin-top w3-margin-bottom w3-margin-right w3-badge w3-large"><i class="fa {{$myIcon}} fa-1x"></i></span>
+{{ else }}
+  <h3><span class="w3-margin-right w3-badge w3-large"><i class="fa {{$myIcon}} fa-1x"></i></span>{{ $myHead }}</h3>
+{{ end }}
+{{ .Inner }}</div>
