@@ -1,0 +1,6 @@
+{{ if .IsNamedParams }}
+  {{  $.Scratch.Set "myIcon" (.Get "name" | default "fa-question")}}
+{{else}}
+  {{  $.Scratch.Set "myIcon" (.Get 0      | default "fa-question")}}
+{{end}}
+<span class="fa {{ $.Scratch.Get "myIcon"}}" aria-hidden="true"></span>
