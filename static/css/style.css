@@ -13,6 +13,22 @@ a.class-a {
     text-decoration: none !important;
 }
 
+#testimonials-title {
+  font-variant: small-caps;
+}
+
+#see_more_title {
+  font-variant: small-caps;
+}
+
+#recent_posts_title {
+  font-variant: small-caps;
+}
+
+#clients-title {
+  font-variant: small-caps;
+}
+
 
 /* -------------------------------------------------- */
 /* TableOfContents */
