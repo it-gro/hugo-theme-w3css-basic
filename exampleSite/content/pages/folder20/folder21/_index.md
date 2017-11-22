@@ -1,6 +1,6 @@
 ---
 weight:         21
-title:          "Stuff on Subject 21 and Cum sociis natoque"
+title:          "Cum sociis natoque (this is level /folder20/folder21)"
 date:           "2017-06-08T01:06:13+02:00"
 teaserpic:      images/teaserpics/hugo-dolor.png
 ---
