@@ -418,7 +418,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/testimonials'
   enable   = true
   #enable  = false
-  title    = "TESTIMONIALS"
+  title    = "Testimonials"
   subtitle = '''
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
 labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
@@ -431,7 +431,7 @@ gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
   enable    = true
  #enable    = false
   icon      = "fa fa-file-code-o"
-  title     = "DO YOU WANT TO SEE MORE?"
+  title     = "Do You want to see More?"
   linkUrl   = "/pages/"
   linkText  = "consectetuer adipiscing"
   subtitle  = '''
@@ -447,7 +447,7 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
   # All clients are defined in their own files. You can find example items
   # at 'exampleSite/data/clients'.
   # For more informtion take a look at the README.
-  title = "OUR CLIENTS"
+  title = "Our Clients"
   subtitle = '''
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore eu feugiat nulla facilisis at
@@ -460,7 +460,7 @@ facilisi.
   footerNumOfPosts = 5
   enable   = true
   #enable = false
-  title    = "FROM OUR BLOG"
+  title    = "From our Blog"
   subtitle = '''
 Pellentesque habitant morbi tristique senectus et netus et malesuada
 fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
