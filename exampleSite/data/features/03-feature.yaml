@@ -2,6 +2,7 @@ weight:      3
 name:        "Consequat"
 icon:        "fa fa-globe"
 animated:    "slideInRight"
+url:         pages/features/03
 description: |
   Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
   labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos

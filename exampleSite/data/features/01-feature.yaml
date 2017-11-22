@@ -2,7 +2,7 @@ weight:      1
 name:        "Eleifend"
 icon:        "fa fa-desktop"
 animated:    "slideInLeft"
-url:         pages/feature/01
+url:         pages/features/01
 description: |
   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
   nonumy eirmod tempor invidunt ut labore
