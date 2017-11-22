@@ -17,34 +17,33 @@ example:
 
 <!--more-->
 
-Q:  What do you call a person who hacks while wearing no clothes?
-A:  A gnudist.
+> Q:  What do you call a person who hacks while wearing no clothes?  
+> A:  A gnudist.
 
-Q:  What do you call an eligible young hacker?
-A:  Gnubile.
+> Q:  What do you call an eligible young hacker?  
+> A:  Gnubile.
 
-Q:  What is a hacker's favorite candy?
-A:  Gnugat.   (Though it contains little gnutrition.)
+> Q:  What is a hacker's favorite candy?  
+> A:  Gnugat.   (Though it contains little gnutrition.)
 
-Q:  What do you call a computer filled with air?
-A:  Gnumatic.
+> Q:  What do you call a computer filled with air?  
+> A:  Gnumatic.
 
-Q:  What do you call a novice hacker who keeps pestering you
-    with foolish questions?
-A:  A gnuisance.
+> Q:  What do you call a novice hacker who keeps pestering you
+>     with foolish questions?  
+> A:  A gnuisance.
 
-Q:  What do you call a subtle, clever hack in the favorite language?
-A:  A gnuanCe.
+> Q:  What do you call a subtle, clever hack in the favorite language?  
+> A:  A gnuanCe.
 
-Q:  What do you use a supercomputer for?
-A:  Gnumerical analysis.
+> Q:  What do you use a supercomputer for?  
+> A:  Gnumerical analysis.
 
-Q:  What do you call a hacker who collects coins?
-A:  A gnumismatist.
+> Q:  What do you call a hacker who collects coins?  
+> A:  A gnumismatist.
 
-     Well, there are more, just too gnumerous to tell all at once.  I think
-I'd better go before someone starts firing gnuclear weapons at me.
-		Don
+Well, there are more, just too gnumerous to tell all at once.  I think
+
 
 # elvis@gnu.ai.mit.edu
 ```
@@ -65,7 +64,7 @@ Software
 
 Just so you boys know the score.
 
-Thank you very Much,
+Thank you very much,  
 The King
 
 
@@ -399,8 +398,6 @@ When I log into my Xenix system with my 110 baud teletype, both vi
 'C-h for help' and '"foo" File is read only'.  So I use the editor
 that doesn't waste my VALUABLE time.
 
----
-Ed, man!  !man ed
 
 ```
 ED(1)               UNIX Programmer's Manual                ED(1)
@@ -412,7 +409,6 @@ SYNOPSIS
      ed [ - ] [ -x ] [ name ]
 DESCRIPTION
      Ed is the standard text editor.
----
 ```
 
 Computer Scientists love ed, not just because it comes first

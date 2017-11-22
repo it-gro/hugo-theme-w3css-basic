@@ -43,15 +43,15 @@
 
   {{ if and .title .image }}
   <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
-    <div class="w3-cell-row  w3-mobile">
-        <div class="w3-cell-top">
+    <div class="w3-row-padding">
+        <div class="w3-col s4">
         <h1>{{ .title }}</h1>
       </div>
-      <div class="w3-cell">
+      <div class="w3-col s4">
         <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
       </div>
       {{ if .description }}
-      <div class="w3-cell w3-cell-middle">
+      <div class="w3-col s4">
         {{ .description | markdownify }}
       </div>
       {{ end }}
