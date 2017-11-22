@@ -1,2 +1,20 @@
 /* custom goes here */
 
+/* for shortcodes w3-notice-icon and w3-alert-icon */
+.shortcode-info {
+  border-color:#4CAF50!important
+}
+.shortcode-check {
+  border-color:#ffeb3b!important
+}
+.shortcode-question {
+  border-color:#2196F3!important
+}
+.shortcode-warning {
+  border-color:#f44336!important
+}
+
+/* for shortcode w3-quote */
+.shortcode-quote {
+  border-color:#4CAF50!important
+}

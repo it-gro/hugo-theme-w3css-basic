@@ -1,5 +1,5 @@
 ## Source
-it-gro
+pixabay.com
 
 ## Licence
-prohibited usage
+Creative Commons CC0 

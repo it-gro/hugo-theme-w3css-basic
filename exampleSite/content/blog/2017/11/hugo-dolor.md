@@ -6,7 +6,7 @@ tags:
   - theme
 categories:
   - web
-banner:      images/banners/hugo-dolor.png
+teaserpic:      images/teaserpics/hugo-dolor.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

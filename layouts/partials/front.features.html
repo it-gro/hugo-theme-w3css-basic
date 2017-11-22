@@ -1,18 +1,18 @@
 {{ if isset .Site.Params "features"  }}
 {{ if .Site.Params.features.enable   }}
 {{ if gt (len .Site.Data.features) 0 }}
-<section id="features01" class="w3-theme">
-  <div id="features02" class="w3-container w3-theme-l4">
+<section id="features" class="w3-theme">
+  <div class="w3-container w3-theme-l4">
     {{ range $index, $element := sort .Site.Data.features "weight" }}
       {{ if or (not $.Site.Params.photocards.limitTo) (lt $index $.Site.Params.photocards.limitTo) }}
         {{ if eq (mod $index 3) 0 }}
-      <div class="features03 w3-cell-row w3-margin-top">
+      <div class="w3-cell-row w3-margin-top">
         <div class="features04 w3-col m12">
         {{ end }}
-          <div class="features05 w3-cell w3-cell-bottom w3-mobile">
+          <div class="w3-cell w3-cell-bottom w3-mobile">
 
             <!-- https://daneden.github.io/animate.css/ -->
-            <div class="features06 w3-card-4 w3-margin w3-round-xxlarge w3-center w3-theme-l3 {{ if $element.animated }} {{ printf "%s %s %s%d %s" "animated" "features-animated" "features-animated" $index $element.animated }} {{ end }}">
+            <div class="w3-card-4 w3-margin w3-round-xxlarge w3-center w3-theme-l3 {{ if $element.animated }} {{ printf "%s %s %s%d %s" "animated" "features-animated" "features-animated" $index $element.animated }} {{ end }}">
               {{ if $element.url }}
               <a href="{{ .Site.BaseURL}}{{ $element.url }}">
                 {{ end }} {{/* if url */}}
@@ -20,27 +20,27 @@
                   <i class="fa fa-circle-thin    fa-stack-2x    "></i>
                   <i class="{{ $element.icon }}  fa-stack-1x    "></i>
                 </span>
-                
+
               {{ if $element.url }}
               </a>
               {{ end }} {{/* if url */}}
-              
+
               <h3>{{ $element.name }}</h3>
               <p>{{ $element.description | markdownify }}</p>
-              
-            </div> <!-- features06 -->
-          </div>   <!-- features05 -->
+
+            </div> <!-- w3-card -->
+          </div>   <!-- w3-cell -->
         {{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
-        </div> <!-- features04 -->
-      </div>   <!-- features03 -->
+        </div> <!-- w3-col -->
+      </div>   <!-- w3-cell-row -->
         {{ end }} {{/* mod   */}}
       {{ end }}   {{/* limitTo   */}}
     {{ end }}     {{/* range */}}
-  </div>   <!-- features02 -->
-</section> <!-- features01 -->
-{{ end }} {{/* if gt       */}} 
-{{ end }} {{/* if *.enable */}} 
-{{ end }} {{/* if isset    */}} 
+  </div>   <!-- w3-container -->
+</section>
+{{ end }} {{/* if gt       */}}
+{{ end }} {{/* if *.enable */}}
+{{ end }} {{/* if isset    */}}
 
 <!-- emacs -->
 <!-- Local variables:      -->

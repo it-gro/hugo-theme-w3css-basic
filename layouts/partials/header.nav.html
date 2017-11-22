@@ -1,18 +1,5 @@
 <div class="w3-bar w3-theme-dark w3-hide-small">
-  {{ range .Site.Menus.main }}
-    {{ if .HasChildren }} 
-  <div class="w3-dropdown-hover">
-    <button class="w3-button">{{ .Name }}</button>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2" > <!-- owl carousel -->
-      {{ range .Children }}
-      <a href="{{ .URL }}" class="w3-bar-item w3-button">{{ .Name }}</a>
-      {{ end }}  {{/* range .Children        */}}
-    </div> <!-- w3-dropdown-content -->
-  </div>   <!-- w3-dropdown-hover   -->
-    {{ else }}
-  <a href="{{ .URL }}" class="w3-bar-item w3-button">{{ .Name }}</a> 
-    {{ end  }}   {{/* if .HasChildren        */}}
-  {{ end  }}     {{/* range .Site.Menus.main */}}
+  {{ template "header-nav-entry" . }}
 
   {{ if .Site.Params.menutopbar.socialEnable }}
     {{ range .Site.Menus.topbar.ByWeight }}
@@ -23,35 +10,42 @@
   {{ if .Site.Params.menutopbar.googleTranslateEnable }}
   <span class="w3-bar-item w3-button w3-right">{{ partial "header.nav.google.translate.html" . }}</span>
   {{ end }}
-
 </div> <!-- w3-bar -->
 
 <div class="w3-bar w3-theme-dark w3-small w3-hide-large w3-hide-medium ">
-  {{ range .Site.Menus.main }}
-    {{ if .HasChildren }} 
-  <div class="w3-dropdown-hover">
-    <button class="w3-button">{{ .Name }}</button>
-    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2" > <!-- owl carousel -->
-      {{ range .Children }}
-      <a href="{{ .URL }}" class="w3-bar-item w3-button ">{{ .Name }}</a> 
-      {{ end }}  {{/* range .Children        */}}
-    </div>
-  </div>
-    {{ else }}
-  <a href="{{ .URL }}" class="w3-bar-item w3-button">{{ .Name }}</a> 
-    {{ end  }}   {{/* if .HasChildren        */}}
-  {{ end  }}     {{/* range .Site.Menus.main */}}
+  {{ template "header-nav-entry" . }}
 
   {{ if .Site.Params.menutopbar.socialEnable }}
-    {{ range .Site.Menus.topbar.ByWeight }}
+    {{ range first .Site.Params.menutopbar.numOfEntryOnSmall .Site.Menus.topbar.ByWeight }}
     <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
     {{ end }}
   {{ end }}
-
 </div> <!-- w3-bar -->
 
-<!-- emacs -->
-<!-- Local variables:      -->
-<!-- tab-width:        2   -->
-<!-- indent-tabs-mode: nil -->
-<!-- End:                  -->
+
+{{ define "header-nav-entry" }}
+  {{ range .Site.Menus.main }}
+    {{ if .HasChildren }}
+
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">{{ i18n .Name }}</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2" > <!-- above owl carousel -->
+      {{ range .Children }}
+      <a href="{{ .URL }}" class="w3-bar-item w3-button">{{ i18n .Name }}</a>
+      {{ end }}  {{/* range .Children        */}}
+    </div> <!-- w3-dropdown-content -->
+  </div>   <!-- w3-dropdown-hover   -->
+
+    {{ else }}
+  <a href="{{ .URL }}" class="w3-bar-item w3-button">{{ i18n .Name }}</a>
+    {{ end  }}   {{/* if .HasChildren        */}}
+
+  {{ end  }}     {{/* range .Site.Menus.main */}}
+
+{{ end }}
+
+{{/* emacs                 */}}
+{{/* Local variables:      */}}
+{{/* tab-width:        2   */}}
+{{/* indent-tabs-mode: nil */}}
+{{/* End:                  */}}

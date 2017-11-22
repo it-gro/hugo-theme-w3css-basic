@@ -1,8 +1,15 @@
-+++
-title       = "FAQ"
-description = "Frequently asked questions"
-keywords    = ["FAQ","How do I","questions","what if"]
-+++
+---
+title:          "FAQ"
+date:           2017-11-13T15:33:35+01:00
+description:    >
+  Frequently asked questions
+keywords:
+  - "FAQ"
+  - "How do I"
+  - "questions"
+  - "what if"
+teaserpic:      images/teaserpics/faq.png
+---
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada
 fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,

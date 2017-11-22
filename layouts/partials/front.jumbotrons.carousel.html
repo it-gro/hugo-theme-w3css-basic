@@ -1,58 +1,68 @@
 {{ if isset .Site.Params "jumbotrons"  }}
 {{ if .Site.Params.jumbotrons.enable   }}
-{{ if gt (len .Site.Data.jumbotron) 0 }}
+{{ if gt (len .Site.Data.jumbotron) 0  }}
 <section id="section-jumbotron" class="w3-theme">
   <div id="container-jumbotron" class="w3-theme-l4">
 
-    <div id="jumbotron10" class="jumbotron-owl owl-carousel owl-theme ">
+    <div class="jumbotron-owl owl-carousel owl-theme ">
       {{ range $index, $element := sort .Site.Data.jumbotron "weight" }}
-
-        {{ if $element.image }}
-      <div class="jumbotron11 w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l1">
-        <img class="w3-image" alt="" src="{{ .image | absURL }}"  style="max-width:120px;display:block;margin:0 auto;">
-      </div> <!-- jumbotron11 -->
-        {{ end }} {{/* if .image */}}
-         
-        {{ if $element.title }}
-      <div class="jumbotron12 w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l1">
-        <div class="jumbotron13">
-          <h1>{{ $element.title }}</h1>
-          <div class="jumbotron14">
-            {{ $element.description | markdownify }}
-          </div> <!-- jumbotron14 -->
-        </div> <!-- jumbotron13 -->
-        {{ end }} {{/* if .title */}}
-      </div>   <!-- jumbotron12 -->
-
-      {{ end }} {{/* range */}} 
-    </div> <!-- jumbotron10 -->
+        {{ template "front-jumbotron-entry" $element }}
+      {{ end }} {{/* range */}}
+    </div>
 
     <noscript>
-      <div id="jumbotron20" class="w3-container">
+      <div class="w3-container">
         {{ range $index, $element := first 1 (sort .Site.Data.jumbotron "weight") }}
-          {{ if $element.title }}
-        <div class="jumbotron21 w3-container w3-margin w3-round-xxlarge w3-theme-l1">
-          <div class="jumbotron22">
-            <h1>{{ $element.title }}</h1>
-            <div class="jumbotron23 w3-container">
-              {{ $element.description | markdownify }}
-            </div> <!-- jumbotron23 -->
-          </div>   <!-- jumbotron24 -->
-        </div>     <!-- jumbotron21 -->
-        
-          {{ end }} {{/* if .title */}}
-        {{ end }} {{/* range */}} 
-      </div> <!-- jumbotron20 -->
+          {{ template "front-jumbotron-entry" $element }}
+        </div>
+        {{ end }} {{/* range */}}
+      </div> <!-- "w3-container -->
     </noscript>
-    
+
   </div>   <!-- container-jumbotron -->
 </section> <!-- section-jumbotron -->
-{{ end }} {{/* if gt       */}} 
-{{ end }} {{/* if *.enable */}} 
-{{ end }} {{/* if isset    */}} 
+{{ end }} {{/* if gt       */}}
+{{ end }} {{/* if *.enable */}}
+{{ end }} {{/* if isset    */}}
 
-<!-- emacs -->
-<!-- Local variables:      -->
-<!-- tab-width:        2   -->
-<!-- indent-tabs-mode: nil -->
-<!-- End:                  -->
+{{ define "front-jumbotron-entry" }}
+  {{ if and .image (not .title) }}
+    <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
+      <div class="w3-container w3-margin">
+        <img class="w3-image w3-center w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: auto">
+      </div>
+    </div>
+  {{ end }} {{/* if .image */}}
+
+  {{ if and .title (not .image) }}
+  <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
+    <h1>{{ .title }}</h1>
+    {{ if .description }}<div>{{ .description | markdownify }}</div>{{ end }}
+  </div>
+  {{ end }} {{/* if .title */}}
+
+  {{ if and .title .image }}
+  <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
+    <div class="w3-cell-row  w3-mobile">
+        <div class="w3-cell-top">
+        <h1>{{ .title }}</h1>
+      </div>
+      <div class="w3-cell">
+        <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
+      </div>
+      {{ if .description }}
+      <div class="w3-cell w3-cell-middle">
+        {{ .description | markdownify }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }} {{/* if .title */}}
+
+{{ end }}
+
+{{/* emacs                 */}}
+{{/* Local variables:      */}}
+{{/* tab-width:        2   */}}
+{{/* indent-tabs-mode: nil */}}
+{{/* End:                  */}}

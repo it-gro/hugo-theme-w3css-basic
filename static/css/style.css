@@ -9,6 +9,19 @@ CSS Selectors:
 /* -------------------------------------------------- */
 /* all */
 
+a.class-a {
+    text-decoration: none !important;
+}
+
+
+/* -------------------------------------------------- */
+/* TableOfContents */
+
+/* #TableOfContents>ul{padding:0} */
+#TableOfContents>ul>li{list-style-type:none}
+#TableOfContents>ul>li>ul>li{list-style-type:disc}
+
+
 /* -------------------------------------------------- */
 /* front.marquee */
 /* https://www.quackit.com/css/codes/marquees/ */

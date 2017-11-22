@@ -17,6 +17,34 @@ googleAnalytics = ""
 # Pagination
 paginate =  4
 
+pygmentsUseClasses = true
+# hugo gen chromastyles -h
+# hugo gen chromastyles > syntax.css
+# hugo gen chromastyles --style=monokai > syntax.css
+# https://help.farbox.com/pygments.html
+# https://github.com/alecthomas/chroma
+# ABNF, ANTLR, APL, ActionScript, ActionScript 3, Ada, Angular2,
+# ApacheConf, AppleScript, Awk, BNF, Base Makefile, Bash, Batchfile,
+# BlitzBasic, Brainfuck, C, C#, C++, CFEngine3, CMake, COBOL, CSS, Cap'n
+# Proto, Ceylon, ChaiScript, Cheetah, Clojure, CoffeeScript, Common
+# Lisp, Coq, Crystal, Cython, DTD, Dart, Diff, Django/Jinja, Docker,
+# EBNF, Elixir, Elm, EmacsLisp, Erlang, FSharp, Factor, Fish, Forth,
+# Fortran, GAS, GDScript, GLSL, Genshi, Genshi HTML, Genshi Text,
+# Gnuplot, Go, Groovy, HTML, Handlebars, Haskell, Haxe, Hexdump, Hy,
+# INI, Idris, Io, JSON, Java, JavaScript, Julia, Kotlin, LLVM, Lighttpd
+# configuration file, Lua, Mako, Mason, Mathematica, MiniZinc, Modula-2,
+# MySQL, Myghty, NASM, Newspeak, Nginx configuration file, Nim, OCaml,
+# Octave, PHP, PL/pgSQL, POVRay, PacmanConf, Perl, Pig, PkgConfig,
+# PostScript, PostgreSQL SQL dialect, PowerShell, Prolog, Protocol
+# Buffer, Puppet, Python, Python 3, QBasic, R, Racket, Ragel, Rexx,
+# Ruby, Rust, SPARQL, SQL, Sass, Scala, Scheme, Scilab, Smalltalk,
+# Smarty, Snobol, SquidConf, SVG, Swift, TASM, Tcl, Tcsh, Termcap,
+# Terminfo, Terraform, Thrift, Transact-SQL, Turtle, Twig, TypeScript,
+# TypoScript, TypoScriptCssData, TypoScriptHtmlData, VHDL, VimL, XML,
+# Xorg, YAML, cfstatement, markdown, reStructuredText, reg,
+# systemverilog, verilog
+
+
 # ##################################################
 # Theme-defined configuration
 
@@ -50,22 +78,27 @@ disqusShortname = ""
   name   = "Pages"
   url    = "/pages/"
 
+#[[menu.main]]
+#  weight = 4
+#  name   = "Posts"
+#  identifier = "posts"
+#
+#[[menu.main]]
+#  weight = 1
+#  name   = "News"
+#  url    = "/news/"
+#  parent = "posts"
+#
+#[[menu.main]]
+#  weight = 2
+#  name   = "Blog"
+#  url    = "/blog/"
+#  parent = "posts"
+
 [[menu.main]]
   weight = 4
-  name   = "Posts"
-  identifier = "posts"
-
-[[menu.main]]
-  weight = 1
-  name   = "News"
-  url    = "/news/"
-  parent = "posts"
-
-[[menu.main]]
-  weight = 2
   name   = "Blog"
   url    = "/blog/"
-  parent = "posts"
 
 [[menu.main]]
   weight = 5
@@ -73,29 +106,29 @@ disqusShortname = ""
   url    = "/faq/"
 
 [[menu.topbar]]
-  weight = 1
-  name   = "GitHub"
-  url    = "https://github.com/it-gro/hugo-theme-w3css-basic"
-  pre   = "fa fa-github"
+  weight   = 1
+  name     = "GitHub"
+  url      = "https://github.com/it-gro/hugo-theme-w3css-basic"
+  pre      = "fa fa-github"
+
+#[[menu.topbar]]
+#  weight   = 2
+#  name     = "Facebook"
+#  url      = "http://facebook.com"
+#  pre      = "fa fa-facebook"
+
+#[[menu.topbar]]
+#  weight   = 3
+#  name     = "Twitter"
+#  url      = "http://twitter.com"
+#  pre      = "fa fa-twitter"
 
 [[menu.topbar]]
-  weight = 2
-  name   = "Facebook"
-  url    = "http://facebook.com"
-  pre   = "fa fa-facebook"
-
-[[menu.topbar]]
-  weight = 3
-  name   = "Twitter"
-  url    = "http://twitter.com"
-  pre   = "fa fa-twitter"
-
-[[menu.topbar]]
-  weight = 4
-  name   = "Email"
-  url    = "#footer01"
-# url    = "mailto:info@example.com"
-  pre   = "fa fa-envelope"
+  weight   = 4
+  name     = "Email"
+  url      = "#footer"
+# url      = "mailto:info@example.com"
+  pre      = "fa fa-envelope"
 
 
 # if google translate is not an option, provide multilingual menu
@@ -104,80 +137,80 @@ disqusShortname = ""
 # [languages.en]
 # weight = 0
 # languageName = "English"
-#  
+#
 # [[languages.en.menu.main]]
 #   weight = 1
 #   name   = "Home"
 #   url    = "/"
-#  
+#
 # [[languages.en.menu.main]]
 #   weight = 2
 #   name   = "Contact"
 #   url    = "/contact/"
-#  
+#
 # [[languages.en.menu.main]]
 #   weight = 3
 #   name   = "Pages"
 #   url    = "/pages/"
-#  
+#
 # [[languages.en.menu.main]]
 #   weight = 4
 #   name   = "Posts"
 #   identifier = "posts"
-#  
+#
 # [[languages.en.menu.main]]
 #   weight = 1
 #   name   = "News"
 #   url    = "/news/"
 #   parent = "posts"
-#  
+#
 # [[languages.en.menu.main]]
 #   weight = 2
 #   name   = "Blog"
 #   url    = "/blog/"
 #   parent = "posts"
-#  
+#
 # [[languages.en.menu.main]]
 #   weight = 5
 #   name   = "FAQ"
 #   url    = "/faq/"
-#  
+#
 # [languages.de]
 # weight = 010
 # languageName = "Deutsch"
-#  
+#
 # [[languages.de.menu.main]]
 #   weight = 1
 #   name   = "Home"
 #   url    = "/"
-#  
+#
 # [[languages.de.menu.main]]
 #   weight = 2
 #   name   = "Kontakt"
 #   url    = "/contact/"
-#  
+#
 # [[languages.de.menu.main]]
 #   weight = 3
 #   name   = "Seiten"
 #   url    = "/pages/"
-#  
+#
 # [[languages.de.menu.main]]
 #   weight = 4
 #   name   = "Posts"
 #   identifier = "posts"
-#  
+#
 # [[languages.de.menu.main]]
 #   weight = 1
 #   name   = "News"
 #   url    = "/news/"
 #   parent = "posts"
-#  
+#
 # [[languages.de.menu.main]]
 #   weight = 2
 #   name   = "Blog"
 #   url    = "/blog/"
 #   parent = "posts"
-#  
+#
 # [[languages.de.menu.main]]
 #   weight = 5
 #   name   = "FAQ"
@@ -195,48 +228,48 @@ disqusShortname = ""
 #   name   = "GitHub"
 #   url    = "https://github.com/it-gro/hugo-theme-w3css-basic"
 #   pre   = "fa fa-github"
-#  
+#
 # [[languages.en.menu.topbar]]
 #   weight = 2
 #   name   = "Facebook"
 #   url    = "http://facebook.com"
 #   pre   = "fa fa-facebook"
-#  
+#
 # [[languages.en.menu.topbar]]
 #   weight = 3
 #   name   = "Twitter"
 #   url    = "http://twitter.com"
 #   pre   = "fa fa-twitter"
-#  
+#
 # [[languages.en.menu.topbar]]
 #   weight = 4
 #   name   = "Email"
-#   url    = "#footer01"
+#   url    = "#footer"
 # # url    = "mailto:info@example.com"
 #   pre   = "fa fa-envelope"
-#  
+#
 # [[languages.de.menu.topbar]]
 #   weight = 1
 #   name   = "GitHub"
 #   url    = "https://github.com/it-gro/hugo-theme-w3css-basic"
 #   pre   = "fa fa-github"
-#  
+#
 # [[languages.de.menu.topbar]]
 #   weight = 2
 #   name   = "Facebook"
 #   url    = "http://facebook.com"
 #   pre   = "fa fa-facebook"
-#  
+#
 # [[languages.de.menu.topbar]]
 #   weight = 3
 #   name   = "Twitter"
 #   url    = "http://twitter.com"
 #   pre   = "fa fa-twitter"
-#  
+#
 # [[languages.de.menu.topbar]]
 #   weight = 4
 #   name   = "Email"
-#   url    = "#footer01"
+#   url    = "#footer"
 # # url    = "mailto:info@example.com"
 #   pre   = "fa fa-envelope"
 
@@ -245,6 +278,8 @@ disqusShortname = ""
 # ##################################################
 # theme-defined params
 [params]
+
+  debug              = false
 
   # used in layouts/partials/head.meta.html
   authorName         = "it-gro"
@@ -257,9 +292,9 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
+  #3w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-dark-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-purple.css"
@@ -270,7 +305,7 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
@@ -281,8 +316,8 @@ disqusShortname = ""
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
   # used in layouts/partials/contact.map.html
-  # if empty => fallback to URL (instead of map) 
-  googleMapsApiKey = ""
+  # if empty => fallback to URL (instead of map)
+  #googleMapsApiKey = ""
   googleMapsZoom   = 14
   latitude         = 46.946692
   longitude        =  7.444186
@@ -294,18 +329,18 @@ disqusShortname = ""
   # used in layouts/partials/footer.html
   # uses markdownify
   aboutUs   = '''
-Vel illum **dolore** eu 
+Vel illum **dolore** eu
 
-  * feugiat nulla 
+  * feugiat nulla
   * facilisis at vero.
               '''
-               
+
   address   = '''
-**nobis eleifend**  
-**Soluta nobis eleifend**  
-illum dolore eu feugiat  
-3612 Steffisburg  
-consectetuer adipiscing  
+**nobis eleifend**
+**Soluta nobis eleifend**
+illum dolore eu feugiat
+3612 Steffisburg
+consectetuer adipiscing
 
 **Switzerland**
               '''
@@ -314,7 +349,7 @@ consectetuer adipiscing
   bottomRight = 'created with [Hugo](https://gohugo.io) '
 
 
-  # used in partials/ids/contact.html
+  # used in partials/contact.form.html
   #
   # Since this template is static, the contact form uses www.formspree.io as a
   # proxy. The form makes a POST request to their servers to send the actual
@@ -329,13 +364,16 @@ consectetuer adipiscing
   # - you're done. Happy mailing!
   #
   # Enable the contact form by entering your Formspree.io email
+  formspree = "formspree.io"
   email     = "info@example.com"
-              
+
   # Format dates with Go's time formatting
   # used in layouts/partials/recent_posts.html
   # still to do ...
   date_format = "January 2, 2006"
-  
+  #date_format = "January 2 15:04:05 2006 MST"
+  #date_format = "Jan 2 15:04:05 2006 MST"
+  #date_format = "Jan 2 15:04:05 2006 -7"
 
 # ##################################################
 # params.
@@ -352,6 +390,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuTopBar]
   # enable or disable menu.topbar with social icons (right)
   socialEnable          = true
+  numOfEntryOnSmall     = 1
   googleTranslateEnable = true
 
 [params.jumbotrons]
@@ -393,7 +432,7 @@ gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
  #enable    = false
   icon      = "fa fa-file-code-o"
   title     = "DO YOU WANT TO SEE MORE?"
-  linkUrl   = "#"
+  linkUrl   = "/pages/"
   linkText  = "consectetuer adipiscing"
   subtitle  = '''
 Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
@@ -414,11 +453,12 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore eu feugiat nulla facilisis at
 vero eros et accumsan et iusto odio dignissim qui blandit praesent
 luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. 
+facilisi.
              '''
 
 [params.recent_posts]
-  enable = true
+  footerNumOfPosts = 5
+  enable   = true
   #enable = false
   title    = "FROM OUR BLOG"
   subtitle = '''
@@ -445,9 +485,9 @@ ultricies eget, tempor sit amet, ante
   # https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
   # http://commonmark.org/
   # http://spec.commonmark.org/0.28/
-  
+
 # emacs
-# Local variables:      
-# tab-width:        2   
-# indent-tabs-mode: nil 
-# End:                  
+# Local variables:
+# tab-width:        2
+# indent-tabs-mode: nil
+# End:
