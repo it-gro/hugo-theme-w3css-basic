@@ -19,7 +19,7 @@
 {{ end }}
 
 {{ define "page-nav-entry" }}
-  <a href = "{{ $.RelPermalink }}">
+  <a class="class-a" href = "{{ $.RelPermalink }}">
     <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l1">
       {{ if isset .Site.Params "debug"  }}
         {{ if .Site.Params.debug }}

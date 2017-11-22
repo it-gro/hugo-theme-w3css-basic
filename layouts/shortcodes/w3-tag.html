@@ -1,0 +1,2 @@
+{{ $myClasses := .Get 0 | default ""}}
+<span class="w3-tag {{$myClasses}}">{{ .Inner }}</span>

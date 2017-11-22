@@ -1,0 +1,45 @@
+{{ $myQuoteSource    := .Get "source"       | default ""}}
+{{ $myLayoutType     := .Get "layout"       | default "default"}}
+{{ $myClassesOuter   := .Get "classesOuter" | default "w3-panel w3-leftbar w3-theme-l3 "}}
+{{ $myClassesInner   := .Get "classesInner" | default "w3-large w3-serif"}}
+{{ $myIcon           := .Get "icon"         | default "fa-quote-right"}}
+
+{{$myClassesOuter :=  printf "%s %s " "shortcode-quote" $myClassesOuter }}
+
+{{if eq $myLayoutType "default" }}
+ <div class="{{$myClassesOuter}}">
+  <p class="{{$myClassesInner}}">
+  {{ .Inner | markdownify }}</p>
+  {{if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}</p>{{end}}
+</div> 
+{{else if eq $myLayoutType "blockquote"}}
+ <blockquote class="{{$myClassesOuter}}">
+  <p class="{{$myClassesInner}}">
+  <i>{{ .Inner | markdownify }}</i></p>
+  {{if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}</p>{{end}}
+</blockquote> 
+{{else if eq $myLayoutType "icon"}}
+ <div class="{{$myClassesOuter}}">
+  <p><i class="fa {{$myIcon}} w3-xxlarge w3-margin-right"></i>
+  <span class="{{$myClassesInner}}">{{ .Inner | markdownify }}</span></p>
+  {{if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}</p>{{end}}
+</div> 
+{{else if eq $myLayoutType "icon-br"}}
+ <div class="{{$myClassesOuter}}">
+  <p><i class="fa {{$myIcon}} w3-xxlarge"></i><br>
+  <span class="{{$myClassesInner}}">{{ .Inner | markdownify }}</span></p>
+  {{if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}</p>{{end}}
+</div> 
+{{else if eq $myLayoutType "icon-blockquote"}}
+ <blockquote class="{{$myClassesOuter}}">
+  <p><i class="fa {{$myIcon}} w3-xxlarge w3-margin-right"></i>
+  <span class="{{$myClassesInner}}">{{ .Inner | markdownify }}</span></p>
+  {{if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}</p>{{end}}
+</blockquote> 
+{{else if eq $myLayoutType "icon-br-blockquote"}}
+ <blockquote class="{{$myClassesOuter}}">
+  <p><i class="fa {{$myIcon}} w3-xxlarge"></i><br>
+  <span class="{{$myClassesInner}}">{{ .Inner | markdownify }}</span></p>
+  {{if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}</p>{{end}}
+</blockquote> 
+{{end}}

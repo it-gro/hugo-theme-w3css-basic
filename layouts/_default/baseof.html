@@ -17,6 +17,7 @@
 
         {{ block "main" . }}
           {{ partial "main.teaserpic.single.html" . }}
+          {{ partial "main.toc.single.html" . }}
           {{ .Content }}
         {{ end }}
 

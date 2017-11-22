@@ -29,7 +29,7 @@
   {{ if and .image (not .title) }}
     <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
       <div class="w3-container w3-margin">
-        <img class="w3-image w3-center w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:180px; max-height:180px; width: auto; height: auto; margin: auto">
+        <img class="w3-image w3-center w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: auto">
       </div>
     </div>
   {{ end }} {{/* if .image */}}
@@ -48,7 +48,7 @@
         <h1>{{ .title }}</h1>
       </div>
       <div class="w3-cell">
-        <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:180px; max-height:180px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
+        <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
       </div>
       {{ if .description }}
       <div class="w3-cell w3-cell-middle">

@@ -16,7 +16,7 @@
       {{ range first .Site.Params.recent_posts.footerNumOfPosts (where .Site.RegularPages "Section" "blog") }}
 
         <div class="w3-container ">
-          <a href="{{ .Permalink }}">
+          <a class="class-a" href="{{ .Permalink }}">
             <img alt=""
             {{ if isset .Params "teaserpic" }}
               src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
@@ -26,7 +26,7 @@
             class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
           </a>
 
-          <div class=" " ><a href="{{ .Permalink }}">{{ .Title }}</a></div>
+          <a class="class-a" href="{{ .Permalink }}">{{ .Title }}</a>
         </div>
       {{ end }} {{/* range */}}
     </div> <!-- w3-col -->
