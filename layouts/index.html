@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   {{ partial "head.html" . }}
+
   <body>
     <div id="all" class="theme-layouts-index w3-theme">
       <header>
         {{ partial "header.marquee.html" . }}
-        {{ partial "header.nav.html" . }}
+        {{ partial "header.nav.html"     . }}
       </header>
       {{ partial "front.jumbotrons.carousel.html"    . }}
       {{ partial "front.photocards.html"             . }}

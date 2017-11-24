@@ -1,47 +1,47 @@
-{{ if isset .Site.Params "jumbotrons"  }}
-{{ if .Site.Params.jumbotrons.enable   }}
-{{ if gt (len .Site.Data.jumbotron) 0  }}
+{{- if isset .Site.Params "jumbotrons"  }}
+{{- if .Site.Params.jumbotrons.enable   }}
+{{- if gt (len .Site.Data.jumbotron) 0  }}
 <section id="section-jumbotron" class="w3-theme">
   <div id="container-jumbotron" class="w3-theme-l4">
 
     <div class="jumbotron-owl owl-carousel owl-theme ">
-      {{ range $index, $element := sort .Site.Data.jumbotron "weight" }}
-        {{ template "front-jumbotron-entry" $element }}
-      {{ end }} {{/* range */}}
+      {{- range $index, $element := sort .Site.Data.jumbotron "weight" }}
+        {{- template "front-jumbotron-entry" $element }}
+      {{- end }} {{/* range */}}
     </div>
 
     <noscript>
       <div class="w3-container">
-        {{ range $index, $element := first 1 (sort .Site.Data.jumbotron "weight") }}
-          {{ template "front-jumbotron-entry" $element }}
+        {{- range $index, $element := first 1 (sort .Site.Data.jumbotron "weight") }}
+          {{- template "front-jumbotron-entry" $element }}
         </div>
-        {{ end }} {{/* range */}}
+        {{- end }} {{/* range */}}
       </div> <!-- "w3-container -->
     </noscript>
 
   </div>   <!-- container-jumbotron -->
 </section> <!-- section-jumbotron -->
-{{ end }} {{/* if gt       */}}
-{{ end }} {{/* if *.enable */}}
-{{ end }} {{/* if isset    */}}
+{{- end }} {{/* if gt       */}}
+{{- end }} {{/* if *.enable */}}
+{{- end }} {{/* if isset    */}}
 
-{{ define "front-jumbotron-entry" }}
-  {{ if and .image (not .title) }}
+{{- define "front-jumbotron-entry" }}
+  {{- if and .image (not .title) }}
     <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
       <div class="w3-container w3-margin">
         <img class="w3-image w3-center w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: auto">
       </div>
     </div>
-  {{ end }} {{/* if .image */}}
+  {{- end }} {{/* if .image */}}
 
-  {{ if and .title (not .image) }}
+  {{- if and .title (not .image) }}
   <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
     <h1>{{ .title }}</h1>
     {{ if .description }}<div>{{ .description | markdownify }}</div>{{ end }}
   </div>
-  {{ end }} {{/* if .title */}}
+  {{- end }} {{/* if .title */}}
 
-  {{ if and .title .image }}
+  {{- if and .title .image }}
   <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
     <div class="w3-row-padding">
         <div class="w3-col s4">
@@ -50,19 +50,20 @@
       <div class="w3-col s4">
         <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
       </div>
-      {{ if .description }}
+      {{- if .description }}
       <div class="w3-col s4">
-        {{ .description | markdownify }}
+        {{- .description | markdownify }}
       </div>
-      {{ end }}
+      {{- end }}
     </div>
   </div>
-  {{ end }} {{/* if .title */}}
+  {{- end }} {{/* if .title */}}
 
-{{ end }}
+{{- end }}
 
-{{/* emacs                 */}}
-{{/* Local variables:      */}}
-{{/* tab-width:        2   */}}
-{{/* indent-tabs-mode: nil */}}
-{{/* End:                  */}}
+
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}

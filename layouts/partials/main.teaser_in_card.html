@@ -8,7 +8,10 @@
   {{- end }}
   {{ .Title }}
   </h3>
-  {{ or .Description .Summary | markdownify | truncate 160  | replaceRE "<.?p>" "" | safeHTML }}
+  {{- if eq .Type "blog" }}
+  <div class="w3-right"><i class="w3-padding-small fa fa-calendar-o" aria-hidden="true"></i>{{ .Date.Format .Site.Params.date_format }}</div>
+  {{- end }}
+  {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
 </a>
 
 <div class="w3-container w3-center">

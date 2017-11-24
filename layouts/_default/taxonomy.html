@@ -21,43 +21,10 @@ _default/taxonomy.html
     {{ if eq (mod $index 3) 0 }}
     <div class="w3-cell-row w3-margin-top w3-margin-bottom">
     {{ end }}
-      <div class="w3-cell w3-cell-bottom w3-margin-bottom w3-mobile w3-theme-l3 ">
-        <div class="w3-card w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-theme-l1">
-          <a class="class-a" href="{{ $element.Permalink }}">
-            <header class="w3-container w3-center">
-              {{ if $element.Params.icon }}
-              <i class="{{ $element.Params.icon }} fa-4x"></i>
-              {{ end }}  {{/* icon */}}
-              <h3>{{ $element.Title }}</h3>
-            </header>
-            <div class="w3-container w3-theme-l2">
-              {{ if $element.Params.teaserpic }}
-              {{ partial "main.teaserpic.list.html" . }}
-              {{ end }}
-              <div class="w3-right"><i class="w3-padding-small fa fa-calendar-o" aria-hidden="true"></i>{{ .Date.Format .Site.Params.date_format }}</div>
-              {{ or $element.Description $element.Summary | markdownify | truncate 160  | replaceRE "<.?p>" "" | safeHTML }}
-            </div>
-            </a>
-          <div class="w3-container w3-center">
-            {{ if isset .Params "categories" }}
-            {{ if gt (len .Params.categories) 0 }}
-            <i class="fa fa-folder-open-o" aria-hidden="true"></i>
-            {{ range .Params.categories }}
-            <a class="taxonomy-button w3-button " href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> 
-            {{ end }}<br>
-            {{ end }}
-            {{ end }}
-          </div>
-          <div class="w3-container w3-center">
-            {{ if isset .Params "tags" }}
-            {{ if gt (len .Params.tags) 0 }}
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            {{ range .Params.tags }}
-              <a class="taxonomy-button w3-button " href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> 
-            {{ end }}
-            {{ end }}
-            {{ end }}
-          </div>
+      <div class="w3-cell w3-cell-bottom w3-margin-bottom w3-mobile w3-theme-l4 ">
+
+        <div class="w3-card w3-margin-bottom w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-theme-l3">
+          {{ partial "main.teaser_in_card.html" . }}
         </div> <!-- w3-card -->
       </div> <!-- w3-cell  -->
     {{ if or (eq (mod $index 3) 2) (eq (add $index 1 ) $paginator.NumberOfElements ) }}

@@ -330,6 +330,8 @@ disqusShortname = ""
   latitude         = 46.946692
   longitude        =  7.444186
 
+  # https://gohugo.io/functions/truncate/
+  teaserTruncateSummary  = 200
 
   # multiple lines in toml
   # https://github.com/toml-lang/toml#user-content-string

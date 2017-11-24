@@ -1,32 +1,34 @@
-{{ if isset .Site.Params "recent_posts" }}
-{{ if .Site.Params.recent_posts.enable }}
-{{ if .Site.Params.recent_posts.footerNumOfPosts }}
+{{- if isset .Site.Params "recent_posts" }}
+{{- if .Site.Params.recent_posts.enable }}
+{{- if .Site.Params.recent_posts.footerNumOfPosts }}
 <section id="recent_posts" class="w3-theme">
   <div class="w3-container w3-theme-l3">
 
     <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l2">
       <h2 id="recent_posts_title">{{ .Site.Params.recent_posts.title }}</h2>
       <div class="w3-small">
-        {{ .Site.Params.testimonials.subtitle | markdownify }}
+        {{- .Site.Params.testimonials.subtitle | markdownify }}
       </div>
     </div>   <!-- w3-card -->
 
     <div class="w3-row">
-      {{ range first 3 (where .Site.RegularPages "Section" "blog") }}
+      {{- range $index, $element := first 3 (where .Site.RegularPages "Section" "blog") }}
       <div class="w3-third">
 
         <div class="w3-card-4 w3-margin w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l4">
-          <a class="class-a" href="{{ .Permalink }}">
+          <a class="class-a" href="{{ $element.Permalink }}">
             <img alt=""
-                 {{ if isset .Params "teaserpic" }}
-                 src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
-                 {{ else }}
+                 {{- if isset $element.Params "teaserpic" }}
+                 src="{{ .Site.BaseURL}}{{ $element.Params.teaserpic }}"
+                 {{- else }}
                  src="{{ .Site.BaseURL}}images/teaserpics/placeholder.png"
-                 {{ end }}
+                 {{- end }}
                  class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
 
-          <h3>{{ .Title }}</h3>
-          <div class="">{{ .Summary }}</div>
+          <h3>{{- $element.Title }}</h3>
+          <div class="">
+            {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
+          </div>
           </a>
 
           <div class="w3-container w3-center">
@@ -35,17 +37,17 @@
 
         </div> <!-- w3-container -->
       </div> <!-- w3-third -->
-      {{ end }} {{/* range */}}
+      {{- end }} {{/* range */}}
     </div> <!-- w3-row -->
   </div>   <!-- w3-container -->
 </section>
 
-{{ end }} {{/* if isset */}}
-{{ end }} {{/* if isset */}}
-{{ end }} {{/* if recent_posts.enable */}}
+{{- end }} {{/* if isset */}}
+{{- end }} {{/* if isset */}}
+{{- end }} {{/* if recent_posts.enable */}}
 
-<!-- emacs -->
-<!-- Local variables:      -->
-<!-- tab-width:        2   -->
-<!-- indent-tabs-mode: nil -->
-<!-- End:                  -->
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}

@@ -1,17 +1,17 @@
-{{ if isset .Site.Params "debug"  }}
-{{ if .Site.Params.debug }}
+{{- if isset .Site.Params "debug"  }}
+{{- if .Site.Params.debug }}
 <hr>
-{{ printf "%#v" .Permalink }}
+{{- printf "%#v" .Permalink }}
 <hr>
-{{ printf "%#v" $.Site }}
+{{- printf "%#v" $.Site }}
 <hr>
-{{ printf "%#v" . }}
+{{- printf "%#v" . }}
 <hr>
 
 <table>
-  {{ range $key, $value := .Params }}
+  {{- range $key, $value := .Params }}
     {{ printf "<tr><td>%#v</td><td>%#v</td></tr>" $key $value | safeHTML }}
-  {{ end }}
+  {{- end }}
 </table>
 
 <!-- .Data.Pages on the homepage is equivalent to .Site.Pages. -->
@@ -19,12 +19,13 @@
 {{/* The context, ".", is now each one of the pages as it goes through the loop */}}
 {{ printf "%#v" . }}
 <hr>
-{{ end }}
+{{- end }}
 
-{{ end }}
-{{ end }}
-<!-- emacs -->
-<!-- Local variables:      -->
-<!-- tab-width:        2   -->
-<!-- indent-tabs-mode: nil -->
-<!-- End:                  -->
+{{- end }}
+{{- end }}
+
+{{- /* emacs                     */}}
+{{- /* Local variables:          */}}
+{{- /* tab-width:        2       */}}
+{{- /* indent-tabs-mode: nil     */}}
+{{- /* End:                      */}}

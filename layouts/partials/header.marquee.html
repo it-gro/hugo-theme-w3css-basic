@@ -1,4 +1,5 @@
-{{ if .Site.Params.marquee.enable }}
+
+{{- if .Site.Params.marquee.enable }}
 <div id="marquee" class="w3-theme">
   <div class="w3-container w3-theme-l1 w3-small">
     <div class="top-marquee">
@@ -6,10 +7,10 @@
     </div>
   </div>
 </div>      <!--marquee -->
-{{ end }} {{/* if *.enable */}}
+{{- end }} {{- /* if *.enable */}}
 
-<!-- emacs -->
-<!-- Local variables:      -->
-<!-- tab-width:        2   -->
-<!-- indent-tabs-mode: nil -->
-<!-- End:                  -->
+{{- /* emacs                     */}}
+{{- /* Local variables:          */}}
+{{- /* tab-width:        2       */}}
+{{- /* indent-tabs-mode: nil     */}}
+{{- /* End:                      */}}

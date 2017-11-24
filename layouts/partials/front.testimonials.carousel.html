@@ -1,45 +1,45 @@
-{{ if isset .Site.Params "testimonials"  }}
-{{ if .Site.Params.testimonials.enable   }}
-{{ if gt (len .Site.Data.testimonials) 0 }}
+{{- if isset .Site.Params "testimonials"  }}
+{{- if .Site.Params.testimonials.enable   }}
+{{- if gt (len .Site.Data.testimonials) 0 }}
 <section id="testimonials" class="w3-theme">
   <div class="w3-container w3-theme-l3">
 
     <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l2">
       <h2 id="testimonials-title">{{ .Site.Params.testimonials.title }}</h2>
       <div class="w3-small">
-        {{ .Site.Params.testimonials.subtitle | markdownify }}
+        {{- .Site.Params.testimonials.subtitle | markdownify }}
       </div>
     </div>   <!-- w3-card -->
 
     <div class="testimonials-owl owl-carousel owl-theme">
-      {{ range $index, $element := sort .Site.Data.testimonials "weight" }}
+      {{- range $index, $element := sort .Site.Data.testimonials "weight" }}
       <div class="w3-card w3-theme-l5">
-        {{ template "front-testimonials-entry" $element }}
+        {{- template "front-testimonials-entry" $element }}
       </div>       <!-- w3-card -->
-      {{ end }} {{/* range */}}
+      {{- end }} {{/* range */}}
     </div> <!-- testimonials-owl -->
 
     <noscript>
       <div class="w3-cell-row">
-        {{ range $index, $element := first 3 (sort .Site.Data.testimonials "weight") }}
+        {{- range $index, $element := first 3 (sort .Site.Data.testimonials "weight") }}
           <div class="w3-cell w3-cell-bottom w3-mobile">
             <div class="w3-card w3-margin w3-theme-l5">
-                {{ template "front-testimonials-entry" $element }}
+                {{- template "front-testimonials-entry" $element }}
             </div>
           </div>
-        {{ end }} {{/* range */}}
+        {{- end }} {{/* range */}}
       </div> <!-- w3-cell-row -->
     </noscript>
 
   </div>   <!-- w3-container -->
 </section>
-{{ end }} {{/* if gt       */}}
-{{ end }} {{/* if *.enable */}}
-{{ end }} {{/* if isset    */}}
+{{- end }} {{/* if gt       */}}
+{{- end }} {{/* if *.enable */}}
+{{- end }} {{/* if isset    */}}
 
 {{ define "front-testimonials-entry" }}
   <div class="w3-container w3-opacity">
-    <p>{{ .text | markdownify }}</p>
+    <p>{{- .text | markdownify }}</p>
   </div>
 
   <div class="w3-container">
@@ -55,10 +55,11 @@
     </div>   <!-- w3-cell -->
 
   </div>     <!-- w3-container -->
-{{ end }}
+{{- end }}
 
-{{/* emacs                 */}}
-{{/* Local variables:      */}}
-{{/* tab-width:        2   */}}
-{{/* indent-tabs-mode: nil */}}
-{{/* End:                  */}}
+
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}

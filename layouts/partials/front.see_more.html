@@ -1,5 +1,5 @@
-{{ if isset .Site.Params "seemore" }}
-{{ if .Site.Params.seeMore.enable  }}
+{{- if isset .Site.Params "seemore" }}
+{{- if .Site.Params.seeMore.enable  }}
 <section id="see_more" class="w3-theme">
   <div class="w3-container w3-theme-l4">
     <div id="see_more_background" class="w3-container w3-margin-top w3-margin-bottom" >
@@ -12,11 +12,11 @@
     </div>     <!-- see_more_background -->
   </div>       <!-- see_w3-container -->
 </section>     <!-- see_more -->
-{{ end }} {{/* if gt       */}}
-{{ end }} {{/* if *.enable */}}
+{{- end }} {{/* if gt       */}}
+{{- end }} {{/* if *.enable */}}
 
-<!-- emacs -->
-<!-- Local variables:      -->
-<!-- tab-width:        2   -->
-<!-- indent-tabs-mode: nil -->
-<!-- End:                  -->
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}
