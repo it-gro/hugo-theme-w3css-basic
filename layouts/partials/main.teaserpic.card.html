@@ -1,0 +1,15 @@
+{{- if isset .Params "teaserpic" }}
+  <img alt="" class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;"
+       {{- if .Params.teaserpic }}
+       src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
+       {{- else }}
+       src="{{ .Site.BaseURL}}images/teaserpics/placeholder.png"
+       {{- end }}
+  />
+{{- end }}
+
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}

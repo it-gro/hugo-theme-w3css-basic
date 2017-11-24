@@ -1,0 +1,40 @@
+<a class="class-a" href="{{ .Permalink }}">
+
+  {{- partial "main.teaserpic.card.html" . }}
+  
+  <h3>
+  {{- if .Params.icon }}
+    <i class="{{ .Params.icon }}"></i>
+  {{- end }}
+  {{ .Title }}
+  </h3>
+  {{ or .Description .Summary | markdownify | truncate 160  | replaceRE "<.?p>" "" | safeHTML }}
+</a>
+
+<div class="w3-container w3-center">
+    {{- if isset .Params "categories" }}
+    {{- if gt (len .Params.categories) 0 }}
+    <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+    {{ range .Params.categories }}
+    {{- if . }}<a class="taxonomy-button w3-button " href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{end}}
+    {{- end }}<br>
+    {{- end }}
+    {{- end }}
+  </div>
+
+  <div class="w3-container w3-center ">
+    {{- if isset .Params "tags" }}
+    {{- if gt (len .Params.tags) 0 }}
+    <i class="fa fa-tags" aria-hidden="true"></i>
+    {{ range .Params.tags }}
+      {{- if . }}<a class="taxonomy-button w3-button " href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{end}}
+    {{- end }}<br>
+    {{- end }}
+    {{- end }}
+  </div>
+
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}
