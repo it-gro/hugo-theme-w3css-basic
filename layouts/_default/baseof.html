@@ -24,6 +24,10 @@
         {{ block "contactform" . }}
         {{ end }}
 
+        {{ if ne .Type "contact" }} 
+          {{ partial "main.taxonomy.bar.html"  . }}
+        {{ end }}
+
       </div> <!-- canvas -->
 
       <footer>

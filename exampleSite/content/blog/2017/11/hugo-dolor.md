@@ -1,12 +1,13 @@
 ---
 title:       "Hugo - dolor"
 date:        2017-11-10T00:00:00+01:00
+author:      "Bruno Grossniklaus"
 tags:
-  - hugo
-  - theme
-categories:
   - web
-teaserpic:      images/teaserpics/hugo-dolor.png
+  - hugo
+categories:
+  - tools
+teaserpic:   images/teaserpics/hugo-dolor.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

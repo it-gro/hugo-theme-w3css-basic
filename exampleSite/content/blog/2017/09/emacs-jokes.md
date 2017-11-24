@@ -1,10 +1,12 @@
 ---
 title:       "Emacs Jokes"
 date:        2017-09-10T20:00:00+01:00
+author:      "Bruno Grossniklaus"
 tags:
  - editor
+ - emacs
 categories:
-  - programming
+  - tools
 teaserpic:      images/teaserpics/emacs-jokes.jpg
 ---
 

@@ -29,6 +29,17 @@ a.class-a {
   font-variant: small-caps;
 }
 
+.taxonomy-button {
+  padding-top:    2px !important;
+  padding-right:  6px !important;
+  padding-bottom: 0px !important;
+  padding-left:   2px !important;
+}
+
+code {
+  background-color: rgba(255,255,255, 0.4) ; /* adjust to syntax.css Background */
+}
+
 
 /* -------------------------------------------------- */
 /* TableOfContents */
@@ -37,6 +48,17 @@ a.class-a {
 #TableOfContents>ul>li{list-style-type:none}
 #TableOfContents>ul>li>ul>li{list-style-type:disc}
 
+/* -------------------------------------------------- */
+/* Tables */
+
+table{border-collapse:collapse;border-spacing:0;display:table} /* width:100%; */
+tr{border-bottom:1px solid #ddd}
+tr:nth-child(even){}
+tr:nth-child(odd){}
+tr:nth-child(even){}
+tbody tr:hover{background-color:#ccc}
+td,th{padding:2px 8px;display:table-cell;text-align:left;vertical-align:top}
+th:first-child,td:first-child{padding-left:8px}
 
 /* -------------------------------------------------- */
 /* front.marquee */

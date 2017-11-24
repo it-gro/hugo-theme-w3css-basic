@@ -4,13 +4,11 @@ title:       "This Theme Shortcodes"
 date:        "2017-11-22T07:41:52+01:00"
 toc:         true
 description: >
-keywords:
-  - theme
-  - shortcodes
 tags:
-  -
+  - hugo
+  - shortcodes
 categories:
-  - info
+  - This Theme
 teaserpic:      images/teaserpics/hugo-lorem.png
 ---
 
@@ -27,7 +25,7 @@ and list templates and basic content files.
 
 
 
-# Shortcodes in this theme for W3.CSS classes
+# Shortcodes in this Theme for W3.CSS classes
 
 ## Style
 
@@ -275,3 +273,142 @@ using blockquote:
 {{% w3-quote source="Albert Einstein" layout="blockquote"         %}}*The true sign of intelligence is not knowledge but imagination*            {{% /w3-quote %}}
 {{% w3-quote source="Albert Einstein" layout="icon-br-blockquote" %}}*The only source of knowledge is experience*                                {{% /w3-quote %}}
 {{% w3-quote source="Albert Einstein" layout="icon-blockquote"    %}}*Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.*{{% /w3-quote %}}
+
+
+# Other Shortcodes in this Theme
+
+## icon
+
+{{< highlight nolan >}}
+{{</* icon fa-home>}}
+{{< icon "fa-home fa-2x" */>}}
+{{< /highlight >}}
+renders as
+{{< icon fa-home>}}
+{{< icon "fa-home fa-2x">}}
+
+{{< highlight nolan >}}
+{{</* icon name="fa-home" >}}
+{{< icon name="fa-home" size="fa-2x" */>}}
+{{< /highlight >}}
+renders as
+{{< icon name="fa-home" >}}
+{{< icon name="fa-home" size="fa-2x">}}
+
+## csc
+
+* use a **c**hroma**s**tyle **c**olor within text (span)
+
+{{< highlight nolan >}}
+{{</* csc >}}hugo -w -v server --themesDir ../../ --port 1414 --disableFastRender{{< /csc */>}}
+{{< /highlight >}}
+
+renders as
+
+
+Here' a cool command:  {{< csc >}}hugo -w -v server --themesDir ../../ --port 1414 --disableFastRender{{< /csc >}}. But you may use this:
+`hugo -w server`. Have fun.
+
+You may give a class name {{< csc k >}}cool code{{< /csc >}}. Here are the chromastyles classes:
+
+
+   Class | Type
+---------|------
+err      | Error
+lntd     | LineTableTD
+lntable  | LineTable
+hl       | LineHighlight
+lnt      | LineNumbersTable
+ln       | LineNumbers
+k        | Keyword
+kc       | KeywordConstant
+kd       | KeywordDeclaration
+kn       | KeywordNamespace
+kp       | KeywordPseudo
+kr       | KeywordReserved
+kt       | KeywordType
+na       | NameAttribute
+nb       | NameBuiltin
+nc       | NameClass
+no       | NameConstant
+nd       | NameDecorator
+ni       | NameEntity
+ne       | NameException
+nf       | NameFunction
+nl       | NameLabel
+nn       | NameNamespace
+nt       | NameTag
+nv       | NameVariable
+s        | LiteralString
+sa       | LiteralStringAffix
+sb       | LiteralStringBacktick
+sc       | LiteralStringChar
+dl       | LiteralStringDelimiter
+sd       | LiteralStringDoc
+s2       | LiteralStringDouble
+se       | LiteralStringEscape
+sh       | LiteralStringHeredoc
+si       | LiteralStringInterpol
+sx       | LiteralStringOther
+sr       | LiteralStringRegex
+s1       | LiteralStringSingle
+ss       | LiteralStringSymbol
+m        | LiteralNumber
+mb       | LiteralNumberBin
+mf       | LiteralNumberFloat
+mh       | LiteralNumberHex
+mi       | LiteralNumberInteger
+il       | LiteralNumberIntegerLong
+mo       | LiteralNumberOct
+o        | Operator
+ow       | OperatorWord
+c        | Comment
+ch       | CommentHashbang
+cm       | CommentMultiline
+c1       | CommentSingle
+cs       | CommentSpecial
+cp       | CommentPreproc
+cpf      | CommentPreprocFile
+gd       | GenericDeleted
+ge       | GenericEmph
+gr       | GenericError
+gh       | GenericHeading
+gi       | GenericInserted
+go       | GenericOutput
+gp       | GenericPrompt
+gs       | GenericStrong
+gu       | GenericSubheading
+gt       | GenericTraceback
+w        | TextWhitespace
+
+
+### Style
+
+    static/css/style.css
+
+{{< highlight css >}}
+code {
+  background-color: rgba(255,255,255, 0.4) ; /* adjust to syntax.css Background */
+}
+{{< /highlight >}}
+
+## cscb
+
+* use a **c**hroma**s**tyle **c**olor for a **b**lock
+
+{{< highlight nolan >}}
+{{</* cscb s >}}
+static/css/syntax/syntax.autumn.css
+static/css/syntax/syntax.borland.css
+static/css/syntax/syntax.bw.css
+{{< cscb */>}}
+{{< /highlight >}}
+
+renders as
+
+{{< cscb s >}}
+static/css/syntax/syntax.autumn.css
+static/css/syntax/syntax.borland.css
+static/css/syntax/syntax.bw.css
+{{</ cscb >}}
+

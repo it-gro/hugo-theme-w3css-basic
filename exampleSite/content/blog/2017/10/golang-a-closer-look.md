@@ -1,6 +1,7 @@
 ---
 title:       "Golang - a closer look "
 date:        2017-10-09T00:00:00+01:00
+author:      "Bruno Grossniklaus"
 tags:        
   - go
 categories:  

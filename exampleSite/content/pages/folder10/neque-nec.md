@@ -8,13 +8,11 @@ description: >
   Nullam tempus.
 keywords:
   -
-  -
 tags:
-  -
-  -
+  - folder10
+  - Malesuada
 categories:
-  -
-  -
+  - Know-How
 teaserpic:      images/teaserpics/coffee-beans-2258839_640.jpg
 ---
 
