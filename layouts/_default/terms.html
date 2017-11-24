@@ -2,23 +2,23 @@
   {{ .Site.Title }} - {{ i18n  "pages" }}
 {{ end }}
 
-{{ define "headline" }}
-{{ end }}
+{{- define "headline" }}
+{{- end }}
 
-{{ define "main" }}
+{{- define "main" }}
 
 _default/terms.html
 
-  {{ $data := .Data }} {{ range $key, $value := .Data.Terms.ByCount }}
+  {{- $data := .Data }} {{ range $key, $value := .Data.Terms.ByCount }}
       <a class="category-list-link" href="{{ $value.Name | urlize }}">{{ $value.Name }}</a>
       <span class="category-list-count">{{ $value.Count }}</span>
-  {{ end }}
+  {{- end }}
 
 
-{{ end }}
+{{- end }}
 
-{{ define "footer" }}
-{{ end }}
+{{- define "footer" }}
+{{- end }}
 
 {{/* emacs                 */}}
 {{/* Local variables:      */}}

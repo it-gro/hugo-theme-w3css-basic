@@ -1,50 +1,48 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   <!-- layouts/_default/baseof.html -->
-  {{ partial "head.html" . }}
+  {{  partial "head.html" . -}}
 
   <body>
     <div id="all" class="w3-theme">
       <header>
-        {{ partial "header.marquee.html" . }}
-        {{ partial "header.nav.html" . }}
+        {{ partial "header.marquee.html" . -}}
+        {{ partial "header.nav.html"     . -}}
       </header>
-
       <div id="canvas" class="w3-container w3-theme-l4">
-        {{ block "headline" . }}
+        {{ block "headline" . -}}
           <h1 class="w3-panel w3-theme-l2">{{ if $.Params.icon }}<i class="{{ $.Params.icon }} fa-1x"></i>{{ end }} {{ .Title }}</h1>
-        {{ end }}
+        {{- end -}}
 
-        {{ block "main" . }}
-          {{ partial "main.teaserpic.single.html" . }}
-          {{ partial "main.toc.single.html" . }}
-          {{ .Content }}
-        {{ end }}
+        {{- block "main" . }}
+          {{ partial "main.teaserpic.single.html" . -}}
+          {{ partial "main.toc.single.html"       . -}}
+          {{- .Content -}}
+        {{- end -}}
 
-        {{ block "contactform" . }}
-        {{ end }}
+        {{- block "contactform" . -}}
+        {{- end }}
 
-        {{ if ne .Type "contact" }} 
-          {{ partial "main.taxonomy.bar.html"  . }}
-        {{ end }}
-
+        {{- if ne .Type "contact" -}} 
+          {{- partial "main.taxonomy.bar.html"  . -}}
+        {{- end -}}
       </div> <!-- canvas -->
 
       <footer>
-      {{ block "footer" . }}
-      {{ partial "footer.html"        . }}
-      {{ partial "footer.bottom.html" . }}
-      {{ end }}
+      {{- block "footer" . -}}
+      {{- partial "footer.html"        . -}}
+      {{- partial "footer.bottom.html" . -}}
+      {{- end -}}
       </footer>
 
     </div> <!-- all -->
-    {{ partial "scripts.html"  . }}
+    {{- partial "scripts.html"  . -}}
   </body>
-  {{ partial "debug.html" . }}
+  {{- partial "debug.html" . -}}
 </html>
 
-<!-- emacs                  -->
-<!-- Local variables:       -->
-<!-- tab-width:        2    -->
-<!-- indent-tabs-mode: nil  -->
-<!-- End:                   -->
+{{- /* emacs                     */}}
+{{- /* Local variables:          */}}
+{{- /* tab-width:        2       */}}
+{{- /* indent-tabs-mode: nil     */}}
+{{- /* End:                      */}}

@@ -1,50 +1,51 @@
-{{ if isset .Site.Params "photocards"  }}
-{{ if .Site.Params.photocards.enable   }}
-{{ if gt (len .Site.Data.photocards) 0 }}
+{{- if isset .Site.Params "photocards"  }}
+{{- if .Site.Params.photocards.enable   }}
+{{- if gt (len .Site.Data.photocards) 0 }}
 <section id="photocards" class="w3-theme">
   <div class="w3-container w3-theme-l3">
-    {{ range $index, $element := sort .Site.Data.photocards "weight" }}
-    {{ if or (not $.Site.Params.photocards.limitTo) (lt $index $.Site.Params.photocards.limitTo) }}
+    {{- range $index, $element := sort .Site.Data.photocards "weight" }}
+    {{- if or (not $.Site.Params.photocards.limitTo) (lt $index $.Site.Params.photocards.limitTo) }}
 
-      {{ if eq (mod $index 3) 0 }}
+      {{- if eq (mod $index 3) 0 }}
       <div class="w3-cell-row w3-margin-top w3-margin-bottom">
-      {{ end }}
+      {{- end }}
 
         <div class="w3-cell w3-cell-bottom w3-margin-bottom w3-mobile w3-theme-l3 ">
           <div class="w3-card-4 w3-margin-right w3-round-xxlarge w3-theme-l1 {{ if $element.animated }} {{ printf "%s %s %s%d %s" "animated" "photocards-animated" "photocards-animated" $index $element.animated }} {{ end }}">
-            {{ if (and $element.image (not $element.url) )  }}
+            {{- if (and $element.image (not $element.url) )  }}
             <img src="{{ $element.image }}" class="w3-round"                    style="width:100%">
-            {{ end }} {{/* if and image not url */}}
+            {{- end }} {{/* if and image not url */}}
 
-            {{ if (and $element.image $element.url)  }}
+            {{- if (and $element.image $element.url)  }}
             <a class="class-a" href="{{ .Site.BaseURL}}{{ $element.url }}">
               <img src="{{ $element.image }}" class="w3-round w3-hover-opacity" style="width:100%">
               </a>
-            {{ end }} {{/* if and image url */}}
+            {{- end }} {{/* if and image url */}}
 
             <div class="w3-container w3-theme-l1">
-              <h4>{{ $element.title }}</h4>
+              <h4>{{- $element.title }}</h4>
               {{ $element.description | markdownify }}
             </div>
 
           </div> <!-- w3-card -->
         </div>   <!-- w3-cell -->
 
-        {{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
+        {{- if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
       </div>     <!-- w3-cell-row -->
-        {{ end }} {{/* if mod */}}
+        {{- end }} {{/* if mod */}}
 
-      {{ end }}   {{/* if limitTo */}}
-    {{ end }}     {{/* range */}}
+      {{- end }}   {{/* if limitTo */}}
+    {{- end }}     {{/* range */}}
 
   </div>   <!-- w3-container -->
 </section> <!-- photocards -->
-{{ end }} {{/* if gt       */}}
-{{ end }} {{/* if *.enable */}}
-{{ end }} {{/* if isset    */}}
+{{- end }} {{/* if gt       */}}
+{{- end }} {{/* if *.enable */}}
+{{- end }} {{/* if isset    */}}
 
-<!-- emacs -->
-<!-- Local variables:      -->
-<!-- tab-width:        2   -->
-<!-- indent-tabs-mode: nil -->
-<!-- End:                  -->
+
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}

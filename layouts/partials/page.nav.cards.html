@@ -1,47 +1,47 @@
-{{ $startSection := (.Site.GetPage "section" "pages") }}
-{{ if $startSection }}
+{{- $startSection := (.Site.GetPage "section" "pages") }}
+{{- if $startSection }}
 <div class="w3-container w3-theme-l3">
 
-  {{ if not ($.InSection $startSection) }}
+  {{- if not ($.InSection $startSection) }}
     {{ template "page-nav-entry"  ($startSection ) }}
     {{ if not ($.Parent.InSection $startSection) }}
       {{ template "page-nav-entry"  ($.Parent ) }}
-    {{ end }}
-  {{ end }}
+    {{- end }}
+  {{- end }}
 
-  {{ range $index, $element := $.Sections }}
-    {{ if not ($element.InSection $) }}
+  {{- range $index, $element := $.Sections }}
+    {{- if not ($element.InSection $) }}
       {{ template "page-nav-entry"  ($element ) }}
-    {{ end }}
-  {{ end }}
+    {{- end }}
+  {{- end }}
 
 </div>
-{{ end }}
+{{- end }}
 
-{{ define "page-nav-entry" }}
+{{- define "page-nav-entry" }}
   <a class="class-a" href = "{{ $.RelPermalink }}">
-    <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l1">
-      {{ if isset .Site.Params "debug"  }}
-        {{ if .Site.Params.debug }}
+    <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-xxlarge  w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l1">
+      {{- if isset .Site.Params "debug"  }}
+        {{- if .Site.Params.debug }}
           <div class="w3-theme-l3">{{$.RelPermalink}}</div>
-        {{ end }}
-      {{ end }} {{/* isset */}}
+        {{- end }}
+      {{- end }} {{/* isset */}}
      
-        {{ if $.Params.icon }}
+        {{- if $.Params.icon }}
         <i class="w3-padding-small {{ $.Params.icon }} fa-2x"></i>
-        {{ end }}  {{/* icon */}}
-        {{ if $.Params.teaserpic }}
+        {{- end }}  {{/* icon */}}
+        {{- if $.Params.teaserpic }}
         <img alt="" class="w3-image w3-round " style="max-width:40px; max-height:40px; width: auto; height: auto; margin: 8px 8px 0px 8px;"
              src="{{ .Site.BaseURL}}{{ $.Params.teaserpic }}"
-             >
-        {{ end }} {{/* teaserpic */}}
-        <span class="w3-large">{{ $.Title }}</span>
+        />
+        {{- end }} {{/* teaserpic */}}
+        <span class="w3-large">{{- $.Title }}</span>
       </div>
     </a>
-{{ end }}
+{{- end }}
 
-{{/* emacs                 */}}
-{{/* Local variables:      */}}
-{{/* tab-width:        2   */}}
-{{/* indent-tabs-mode: nil */}}
-{{/* End:                  */}}
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}

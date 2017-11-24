@@ -14,7 +14,7 @@
 {{ define "main" }}
 
 
-  {{ partial "main.taxonomy.bar.html" . }}
+  {{/* partial "main.taxonomy.bar.html" . */}}
 
   {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
 
@@ -27,54 +27,10 @@
   <div id="w3-cell-row w3-margin-top w3-margin-bottom">
   {{ end }}
 
-  <div class="w3-cell w3-mobile w3-cell-top w3-theme-l3">
+  <div class="w3-cell w3-mobile ">
 
-      <div class="w3-card w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-margin-bottom w3-round-xxlarge w3-theme-l1">
-
-        <div class="w3-cell">
-          <a class="class-a" href="{{ $element.Permalink }}">
-            <div class="w3-container w3-center ">
-              <h2>{{ $element.Title }}</h2>
-            </div>
-
-            <div class="w3-cell ">
-              <div class="w3-container w3-theme-l2">
-                {{ partial "main.teaserpic.list.html" . }}
-                <div class="w3-right"><i class="w3-padding-small fa fa-calendar-o" aria-hidden="true"></i>{{ .Date.Format .Site.Params.date_format }}</div>
-                {{ or $element.Description $element.Summary | markdownify | truncate 160  | replaceRE "<.?p>" "" | safeHTML }}
-                {{/* $element.Summary | markdownify */}}
-              </div> <!-- w3-container -->
-            </div> <!-- w3-cell -->
-          </a>
-
-
-          <div class="w3-container w3-center">
-            {{ if isset .Params "categories" }}
-            {{ if gt (len .Params.categories) 0 }}
-            <i class="fa fa-folder-open-o" aria-hidden="true"></i>
-            {{ range .Params.categories }}
-            <a class="taxonomy-button w3-button " href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> 
-            {{ end }}<br>
-            {{ end }}
-            {{ end }}
-          </div>
-          <div class="w3-container w3-center ">
-            {{ if isset .Params "tags" }}
-            {{ if gt (len .Params.tags) 0 }}
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            {{ range .Params.tags }}
-              <a class="taxonomy-button w3-button " href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> 
-            {{ end }}<br>
-            {{ end }}
-            {{ end }}
-          </div>
-
-          <!-- <div class="w3-container w3-center"> -->
-          <!--   <a href="{{ $element.Permalink }}" class="w3-button">{{ i18n "continueReading" }}</a> -->
-          <!-- </div> -->
-
-        </div> <!-- w3-cell -->
-
+      <div class="w3-card w3-margin-bottom w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-theme-l3">
+        {{ partial "main.teaser_in_card.html" . }}
       </div> <!-- w3-card -->
     </div> <!-- w3-cell -->
 
