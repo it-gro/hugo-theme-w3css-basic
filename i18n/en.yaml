@@ -52,3 +52,8 @@
 - id: older
   translation: "Older"
 
+- id: categoriesTitle
+  translation: "Categories"
+
+- id: tagsTitle
+  translation: "Tags"

@@ -14,35 +14,35 @@ defaultContentLanguage = "en"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 
-# Pagination
-paginate =  4
+# Pagination (3,6,9,12,15, ...)
+paginate =  6
 
+
+# https://help.farbox.com/pygments.html
+# https://github.com/alecthomas/chroma
 pygmentsUseClasses = true
 # hugo gen chromastyles -h
 # hugo gen chromastyles > syntax.css
 # hugo gen chromastyles --style=monokai > syntax.css
-# https://help.farbox.com/pygments.html
-# https://github.com/alecthomas/chroma
-# ABNF, ANTLR, APL, ActionScript, ActionScript 3, Ada, Angular2,
-# ApacheConf, AppleScript, Awk, BNF, Base Makefile, Bash, Batchfile,
-# BlitzBasic, Brainfuck, C, C#, C++, CFEngine3, CMake, COBOL, CSS, Cap'n
-# Proto, Ceylon, ChaiScript, Cheetah, Clojure, CoffeeScript, Common
-# Lisp, Coq, Crystal, Cython, DTD, Dart, Diff, Django/Jinja, Docker,
-# EBNF, Elixir, Elm, EmacsLisp, Erlang, FSharp, Factor, Fish, Forth,
-# Fortran, GAS, GDScript, GLSL, Genshi, Genshi HTML, Genshi Text,
-# Gnuplot, Go, Groovy, HTML, Handlebars, Haskell, Haxe, Hexdump, Hy,
-# INI, Idris, Io, JSON, Java, JavaScript, Julia, Kotlin, LLVM, Lighttpd
-# configuration file, Lua, Mako, Mason, Mathematica, MiniZinc, Modula-2,
-# MySQL, Myghty, NASM, Newspeak, Nginx configuration file, Nim, OCaml,
-# Octave, PHP, PL/pgSQL, POVRay, PacmanConf, Perl, Pig, PkgConfig,
-# PostScript, PostgreSQL SQL dialect, PowerShell, Prolog, Protocol
-# Buffer, Puppet, Python, Python 3, QBasic, R, Racket, Ragel, Rexx,
-# Ruby, Rust, SPARQL, SQL, Sass, Scala, Scheme, Scilab, Smalltalk,
-# Smarty, Snobol, SquidConf, SVG, Swift, TASM, Tcl, Tcsh, Termcap,
-# Terminfo, Terraform, Thrift, Transact-SQL, Turtle, Twig, TypeScript,
-# TypoScript, TypoScriptCssData, TypoScriptHtmlData, VHDL, VimL, XML,
-# Xorg, YAML, cfstatement, markdown, reStructuredText, reg,
-# systemverilog, verilog
+#pygmentsStyle = "autumn"
+#pygmentsStyle = "borland"
+#pygmentsStyle = "bw"
+#pygmentsStyle = "colorful"
+#pygmentsStyle = "default"
+#pygmentsStyle = "emacs"
+#pygmentsStyle = "friendly"
+#pygmentsStyle = "fruity"
+#pygmentsStyle = "manni"
+#pygmentsStyle = "monokai"
+#pygmentsStyle = "murphy"
+#pygmentsStyle = "native"
+#pygmentsStyle = "pastie"
+#pygmentsStyle = "perldoc"
+#pygmentsStyle = "rrt"
+#pygmentsStyle = "tango"
+#pygmentsStyle = "trac"
+#pygmentsStyle = "vim"
+#pygmentsStyle = "vs"
 
 
 # ##################################################
@@ -50,6 +50,14 @@ pygmentsUseClasses = true
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
+
+
+# ##################################################
+# ToDo
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  test     = "tests"
 
 
 # ##################################################
@@ -370,10 +378,12 @@ consectetuer adipiscing
   # Format dates with Go's time formatting
   # used in layouts/partials/recent_posts.html
   # still to do ...
-  date_format = "January 2, 2006"
+  #date_format = "January 2, 2006"
   #date_format = "January 2 15:04:05 2006 MST"
   #date_format = "Jan 2 15:04:05 2006 MST"
   #date_format = "Jan 2 15:04:05 2006 -7"
+  #date_format = "2006.01.02"
+  date_format = "01.02.2006"
 
 # ##################################################
 # params.

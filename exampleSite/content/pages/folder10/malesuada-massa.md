@@ -8,13 +8,11 @@ description: >
   consequat quis, varius et, dictum id, arcu.
 keywords:
   -
-  -
 tags:
-  -
-  -
+  - folder10
+  - Malesuada
 categories:
-  -
-  -
+  - Know-How
 teaserpic:      images/teaserpics/coffee-2714970_640.jpg
 ---
 

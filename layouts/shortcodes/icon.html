@@ -1,6 +1,12 @@
 {{ if .IsNamedParams }}
-  {{  $.Scratch.Set "myIcon" (.Get "name" | default "fa-question")}}
+  {{ $.Scratch.Set "myIcon" (.Get "name"  | default "fa-question")}}
+  {{ $.Scratch.Set "mySize" (.Get "size"  | default "fa-1x"      )}}
 {{else}}
-  {{  $.Scratch.Set "myIcon" (.Get 0      | default "fa-question")}}
+  {{  $.Scratch.Set "myIcon" (.Get 0       | default "fa-question")}}
+  {{/* throws error: "No shortcode param at .Get 1"                    */}}
+  {{/* {{ $.Scratch.Set "mySize" (.Get 1) }}                           */}}   
+  {{/* {{ if in ($.Scratch.Get "mySize") "error: index out of range"}} */}}   
+  {{/*   {{ $.Scratch.Set "mySize" "fa-1x" }}                          */}}   
+  {{/* {{ end }}                                                       */}}   
 {{end}}
-<span class="fa {{ $.Scratch.Get "myIcon"}}" aria-hidden="true"></span>
+<span class="fa {{ $.Scratch.Get "myIcon"}} {{$.Scratch.Get "mySize"}}" aria-hidden="true"></span>

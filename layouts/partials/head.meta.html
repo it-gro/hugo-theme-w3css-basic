@@ -4,8 +4,11 @@
   <meta name="viewport"  content="width=device-width, initial-scale=1">
   <meta name="author"    content="{{ .Site.Params.authorName }}" />
 
-  {{ if .Keywords }}
-  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+  {{ if or .Keywords .Params.tags .Params.categories }}
+  <meta name="keywords" content="{{ if .Keywords          }} {{ delimit .Keywords ", "          }},{{ end}}
+                                 {{ if .Params.tags       }} {{ delimit .Params.tags ", "       }},{{ end}}
+                                 {{ if .Params.categories }} {{ delimit .Params.categories ", " }}{{ end}}
+                                 ">
   {{ else if .Site.Params.DefaultKeywords }}
   <meta name="keywords" content="{{ delimit .Site.Params.defaultKeywords ", " }}">
   {{ end }}

@@ -7,13 +7,11 @@ description: >
   potenti.  Aenean in sem ac leo mollis blandit.  
 keywords:
   -
-  -
 tags:
-  -
-  -
+  - folder30
+  - Nullam
 categories:
-  -
-  -
+  - Know-How
 teaserpic:      images/teaserpics/seeberg-2825904_640.jpg
 ---
 

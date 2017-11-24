@@ -1,11 +1,12 @@
 ---
 title:       "Hugo - lorem"
 date:        2017-11-09T00:00:00+01:00
+author:      "Bruno Grossniklaus"
 tags:
-  - hugo
-  - theme
-categories:
   - web
+  - hugo
+categories:
+  - tools
 teaserpic:      images/teaserpics/hugo-lorem.png
 ---
 

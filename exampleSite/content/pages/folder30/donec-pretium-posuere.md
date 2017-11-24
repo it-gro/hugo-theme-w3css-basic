@@ -8,13 +8,11 @@ description: >
   mus.  Nulla posuere.  Donec vitae dolor.
 keywords:
   -
-  -
 tags:
-  -
-  -
+  - folder30
+  - Nullam
 categories:
-  -
-  -
+  - Know-How
 teaserpic:      images/teaserpics/still-life-2366084_640.jpg
 ---
 

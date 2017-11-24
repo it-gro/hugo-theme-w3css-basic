@@ -1,10 +1,12 @@
 ---
 title:       "Emacs - it all starts here"
 date:        2017-09-10T19:00:00+01:00
+author:      "Bruno Grossniklaus"
 tags:
  - editor
+ - emacs
 categories:
-  - programming
+  - tools
 teaserpic:      images/teaserpics/emacs-it-all-starts-here.svg
 ---
 
