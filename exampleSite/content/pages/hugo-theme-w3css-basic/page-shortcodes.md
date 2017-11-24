@@ -309,6 +309,12 @@ renders as
 Here' a cool command:  {{< csc >}}hugo -w -v server --themesDir ../../ --port 1414 --disableFastRender{{< /csc >}}. But you may use this:
 `hugo -w server`. Have fun.
 
+
+{{< highlight nolan >}}
+You may give a class name {{</* csc k >}}cool code{{< /csc */>}}.
+{{< /highlight >}}
+renders as
+
 You may give a class name {{< csc k >}}cool code{{< /csc >}}. Here are the chromastyles classes:
 
 
