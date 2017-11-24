@@ -27,7 +27,7 @@
               {{- if $element.Params.teaserpic }}
               {{- partial "main.teaserpic.list.html" . }}
               {{- end }}
-              {{- or .Description .Summary | markdownify | truncate 160  | replaceRE "<.?p>" "" | safeHTML }}
+              {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
               {{- /* or $element.Description $element.Summary | markdownify */}}
             </div>
             </a>
