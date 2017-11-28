@@ -1,4 +1,4 @@
-{{- if isset .Site.Params "testimonials"  }}
+{{- if isset .Site.Params (lower "testimonials" ) }}
 {{- if .Site.Params.testimonials.enable   }}
 {{- if gt (len .Site.Data.testimonials) 0 }}
 <section id="testimonials" class="w3-theme">

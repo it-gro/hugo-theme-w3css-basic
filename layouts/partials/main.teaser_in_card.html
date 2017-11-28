@@ -1,4 +1,4 @@
-<a class="class-a" href="{{ .Permalink }}">
+<a class="no-decoration" href="{{ .Permalink }}">
 
   {{- partial "main.teaserpic.card.html" . }}
   
@@ -15,7 +15,7 @@
 </a>
 
 <div class="w3-container w3-center">
-    {{- if isset .Params "categories" }}
+    {{- if isset .Params (lower "categories" ) }}
     {{- if gt (len .Params.categories) 0 }}
     <i class="fa fa-folder-open-o" aria-hidden="true"></i>
     {{ range .Params.categories }}
@@ -26,7 +26,7 @@
   </div>
 
   <div class="w3-container w3-center ">
-    {{- if isset .Params "tags" }}
+    {{- if isset .Params (lower "tags" ) }}
     {{- if gt (len .Params.tags) 0 }}
     <i class="fa fa-tags" aria-hidden="true"></i>
     {{ range .Params.tags }}

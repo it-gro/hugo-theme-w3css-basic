@@ -5,18 +5,14 @@
 baseURL       = "http://example.com/"
 title         = "My New Hugo Site"
 #languageCode  = "de-ch"
-languageCode = "en-us"
+languageCode  = "en-us"
 theme         = "hugo-theme-w3css-basic"
 
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "en"
 
-# Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
-
-# Pagination (3,6,9,12,15, ...)
+# Pagination (3,6,9,12, ...)
 paginate =  6
-
 
 # https://help.farbox.com/pygments.html
 # https://github.com/alecthomas/chroma
@@ -24,6 +20,10 @@ pygmentsUseClasses = true
 # hugo gen chromastyles -h
 # hugo gen chromastyles > syntax.css
 # hugo gen chromastyles --style=monokai > syntax.css
+# => static/css/syntax/syntax/syntax.*.css
+# copy one of them to
+# static/css/syntax/syntax.css
+# alternative (if shortcodes/csc*.html are not used):
 #pygmentsStyle = "autumn"
 #pygmentsStyle = "borland"
 #pygmentsStyle = "bw"
@@ -53,23 +53,19 @@ disqusShortname = ""
 
 
 # ##################################################
-# ToDo
+# hugo sections
+
 [taxonomies]
   tag = "tags"
   category = "categories"
   test     = "tests"
 
-
-# ##################################################
-# ToDo
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
 
 
-# ##################################################
-[menu]
-
 # Main menu
+[menu]
 
 [[menu.main]]
   weight = 1
@@ -86,6 +82,7 @@ disqusShortname = ""
   name   = "Pages"
   url    = "/pages/"
 
+# demo submenu
 #[[menu.main]]
 #  weight = 4
 #  name   = "Posts"
@@ -113,6 +110,8 @@ disqusShortname = ""
   name   = "FAQ"
   url    = "/faq/"
 
+
+# right aligned
 [[menu.topbar]]
   weight   = 1
   name     = "GitHub"
@@ -302,13 +301,13 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
   #3w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-dark-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-grey.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-khaki.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
@@ -325,13 +324,22 @@ disqusShortname = ""
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
   # used in layouts/partials/contact.map.html
   # if empty => fallback to URL (instead of map)
-  #googleMapsApiKey = ""
+  # define environment variable (=> key ist not stored in github)
+  envGoogleMapsApiKey = "GoogleMapsApiKey"
   googleMapsZoom   = 14
   latitude         = 46.946692
   longitude        =  7.444186
 
+  # if environment is not an option => define key here:
+  #googleMapsApiKey = ""
+
+
   # https://gohugo.io/functions/truncate/
+  # used in layouts/pages/list.html
+  #         layouts/partials/front.recent_posts.html
+  #         layouts/partials/main.teaser_in_card.html
   teaserTruncateSummary  = 200
+
 
   # multiple lines in toml
   # https://github.com/toml-lang/toml#user-content-string
@@ -339,22 +347,23 @@ disqusShortname = ""
   # used in layouts/partials/footer.html
   # uses markdownify
   aboutUs   = '''
-Vel illum **dolore** eu
-
-  * feugiat nulla
-  * facilisis at vero.
+Vel illum **dolore** eu      
+                             
+  * feugiat nulla            
+  * facilisis at vero.       
               '''
 
   address   = '''
-**nobis eleifend**
-**Soluta nobis eleifend**
-illum dolore eu feugiat
-3612 Steffisburg
-consectetuer adipiscing
+**nobis eleifend**             
+**Soluta nobis eleifend**      
+illum dolore eu feugiat        
+3612 Steffisburg               
+consectetuer adipiscing        
 
 **Switzerland**
               '''
 
+  # used in layouts/partials/footer.bottom.html
   bottomLeft  = "Copyright (c) 2017, *lobortis nisl* ut aliquip ex ea commodo consequat"
   bottomRight = 'created with [Hugo](https://gohugo.io) '
 
@@ -378,8 +387,9 @@ consectetuer adipiscing
   email     = "info@example.com"
 
   # Format dates with Go's time formatting
-  # used in layouts/partials/recent_posts.html
-  # still to do ...
+  # used in layouts/taxonomy/_category.html
+  #         layouts/taxonomy/_tag.html
+  #         layouts/partials/main.teaser_in_card.html
   #date_format = "January 2, 2006"
   #date_format = "January 2 15:04:05 2006 MST"
   #date_format = "Jan 2 15:04:05 2006 MST"
@@ -387,8 +397,10 @@ consectetuer adipiscing
   #date_format = "2006.01.02"
   date_format = "01.02.2006"
 
+
+
 # ##################################################
-# params.
+# more theme defined params
 
 [params.marquee]
   # enable or disable marquee on frontpage
@@ -400,25 +412,29 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
              '''
 
 [params.menuTopBar]
-  # enable or disable menu.topbar with social icons (right)
-  socialEnable          = true
-  numOfEntryOnSmall     = 1
-  googleTranslateEnable = true
+  # used in layouts/partials/header.nav.html
+  # enable or disable menu.topbar with social icons (right aligned)
+  socialEnable             = true
+  numOfItemsIfSmallDisplay = 1
+  googleTranslateEnable    = true
 
 [params.jumbotrons]
+  # used in layouts/partials/front.jumbotrons.carousel.html
   # enable or disable jumbotrons on frontpage
   # see some examples in 'exampleSite/data/jumbotron'
   enable   = true
   #enable   = false
 
 [params.photocards]
-  # enable or disable photocards on frontpage§
+  # used in layouts/partials/front.photocards.html
+  # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
   enable   = true
   limitTo  = 3
   #enable  = false
 
 [params.features]
+  # used in layouts/partials/front.features.html
   # enable or disable features on frontpage
   # see some examples in 'exampleSite/data/features'
   enable   = true
@@ -426,6 +442,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   #enable  = false
 
 [params.testimonials]
+  # used in layouts/partials/front.testimonials.carousel.html
   # enable or disable testimonials on frontpage
   # see some examples in 'exampleSite/data/testimonials'
   enable   = true
@@ -439,6 +456,7 @@ gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
              '''
 
 [params.seeMore]
+  # used in layouts/partials/front.see_more.html
   # enable or disable see_more on frontpage
   enable    = true
  #enable    = false
@@ -452,6 +470,7 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
               '''
 
 [params.clients]
+  # used in layouts/partials/front.clients.carousel.html
   # enable or disable clients on frontpage
   # see some examples in 'exampleSite/data/clients'
   enable = true
@@ -469,7 +488,9 @@ facilisi.
              '''
 
 [params.recent_posts]
+  # used in layouts/partials/footer.html
   footerNumOfPosts = 5
+  # used in layouts/partials/front.recent_posts.html
   enable   = true
   #enable = false
   title    = "From our Blog"
@@ -480,16 +501,12 @@ ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
 egestas semper. Aenean ultricies mi vitae est. Mauris placerat
 eleifend leo.
              '''
+
 [params.blog]
+  # used in layouts/blog/list.html
   subtitle = '''
 ultricies eget, tempor sit amet, ante
              '''
-
-# Enable and disable widgets for the right sidebar
-[params.widgets]
-  #categories = true
-  #tags = true
-  #search = true
 
 # ##################################################
 [blackfriday]

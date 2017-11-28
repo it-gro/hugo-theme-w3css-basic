@@ -4,13 +4,13 @@
 
 {{ define "headline" }}
 <h1 class="w3-panel w3-theme-l2">
-{{ if eq .Data.Singular "category" }}<i class="w3-margin-right fa fa-folder-open-o" aria-hidden="true"></i>{{end}}
-{{ if eq .Data.Singular "tag"      }}<i class="w3-margin-right fa fa-tag"           aria-hidden="true"></i>{{end}}
+{{ if eq .Data.Singular "category" }}<i class="w3-margin-right fa fa-folder-open-o" aria-hidden="true"></i>{{ i18n "categoryTitle" }}:{{ end }} 
+{{ if eq .Data.Singular "tag"      }}<i class="w3-margin-right fa fa-tag"           aria-hidden="true"></i>{{ i18n "tagTitle" }}:     {{ end }} 
 {{ .Title }}</h1>
 {{ end }}
 
 {{ define "main" }}
-_default/taxonomy.html
+  {{- if .Site.Params.debug }}_default/taxonomy.html{{ end }}
 
   {{/* $paginator := .Paginate (where .Data.Pages "Type" "blog") */}}
   {{ $paginator := .Paginate .Data.Pages }}

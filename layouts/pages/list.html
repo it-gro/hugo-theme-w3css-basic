@@ -6,6 +6,7 @@
 {{- end }}
 
 {{- define "main" }}
+  {{- if .Site.Params.debug }}pages/list.html{{ end }}
 {{- partial "page.nav.cards.html" . }}
 
   {{- range $index, $element := sort .Data.Pages }}
@@ -14,7 +15,7 @@
     {{- end }}
       <div class="w3-cell w3-cell-bottom w3-margin-bottom w3-mobile w3-theme-l4 ">
         <div class="w3-card w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-theme-l2">
-          <a class="class-a" href="{{ $element.Permalink }}">
+          <a class="no-decoration" href="{{ $element.Permalink }}">
             <header class="w3-container">
               <h3>
               {{- if $element.Params.icon }}

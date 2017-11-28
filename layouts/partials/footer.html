@@ -9,7 +9,7 @@
     </div> <!-- w3-col -->
     {{- end }} {{/* if aboutUs */}}
 
-    {{- if isset .Site.Params "recent_posts" }}
+    {{- if isset .Site.Params (lower "recent_posts" ) }}
     {{- if .Site.Params.recent_posts.enable }}
     {{- if .Site.Params.recent_posts.footerNumOfPosts }}
     <div class="w3-col w3-third">
@@ -17,7 +17,7 @@
       {{- range first .Site.Params.recent_posts.footerNumOfPosts (where .Site.RegularPages "Section" "blog") }}
 
         <div class="w3-container ">
-          <a class="class-a" href="{{ .Permalink }}">
+          <a class="no-decoration" href="{{ .Permalink }}">
             <img class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;" alt=""
             {{- if isset .Params "teaserpic" }}
               src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
@@ -27,7 +27,7 @@
             />
           </a>
 
-          <a class="class-a" href="{{ .Permalink }}">{{ .Title }}</a>
+          <a class="no-decoration" href="{{ .Permalink }}">{{ .Title }}</a>
         </div>
       {{- end }} {{/* range */}}
     </div> <!-- w3-col -->
@@ -35,7 +35,7 @@
     {{- end }} {{/* if isset */}}
     {{- end }} {{/* if recent_posts.enable */}}
 
-    {{- if isset .Site.Params "address" }}
+    {{- if isset .Site.Params (lower "address" ) }}
     <div class="w3-col w3-third">
       <h4>{{ i18n "contactTitle" }}</h4>
       {{- .Site.Params.address | markdownify -}}

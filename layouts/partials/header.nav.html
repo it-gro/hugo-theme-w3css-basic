@@ -19,7 +19,7 @@
   {{- template "header-nav-entry" . }}
 
   {{- if .Site.Params.menutopbar.socialEnable }}
-    {{- range first .Site.Params.menutopbar.numOfEntryOnSmall .Site.Menus.topbar.ByWeight }}
+    {{- range first .Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight }}
   <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
     {{- end }}
   {{- end }}

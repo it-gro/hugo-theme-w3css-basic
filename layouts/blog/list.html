@@ -14,7 +14,7 @@
 {{ define "main" }}
 
 
-  {{/* partial "main.taxonomy.bar.html" . */}}
+  {{/* partial "main.taxonomy.full.bar.html" . */}}
 
   {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
 

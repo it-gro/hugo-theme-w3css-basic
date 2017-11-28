@@ -4,9 +4,9 @@ date:        2017-11-24T08:44:12+01:00
 keywords:
   -
 tags:
-  -
+  - Hugo
 categories:
-  -
+  - Web
 draft:       false
 teaserpic:   images/teaserpics/pygments-main-logo.png
 ---
