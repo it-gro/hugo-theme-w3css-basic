@@ -1,0 +1,28 @@
+<div class="w3-right-align ">
+{{- if isset .Params (lower "categories" ) }}
+{{- if not (eq (len .Params.categories) 0) }}
+{{- if ne (index .Params.categories 0) "" }}
+    <a href="{{ $.Site.BaseURL }}categories/" class="taxonomy-current-fa"><i class="fa fa-folder-open-o"></i></a>
+  {{- range $name := .Params.categories }}
+    {{ if $name }}<a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize | lower }}" class="taxonomy-current-a ">{{ $name }}</a>{{ end }}
+  {{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- if isset .Params (lower "tags" ) }}
+{{- if not (eq (len .Params.tags) 0) }}
+{{- if ne (index .Params.tags 0) "" }}
+   <a href="{{ $.Site.BaseURL }}tags/" class="taxonomy-current-fa"><i class="fa fa-tags"></i></a>
+  {{- range $name := .Params.tags }}
+    {{ if $name }}<a href="{{ $.Site.BaseURL }}tags/{{ $name | urlize | lower }}" class="taxonomy-current-a ">{{ $name }}</a>{{ end }}
+  {{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+</div>
+
+{{- /* emacs                     */}}
+{{- /* Local variables:          */}}
+{{- /* tab-width:        2       */}}
+{{- /* indent-tabs-mode: nil     */}}
+{{- /* End:                      */}}
