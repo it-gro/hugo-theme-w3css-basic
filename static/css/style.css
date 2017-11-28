@@ -9,7 +9,7 @@ CSS Selectors:
 /* -------------------------------------------------- */
 /* all */
 
-a.class-a {
+a.no-decoration {
     text-decoration: none !important;
 }
 
@@ -34,6 +34,15 @@ a.class-a {
   padding-right:  6px !important;
   padding-bottom: 0px !important;
   padding-left:   2px !important;
+}
+
+.taxonomy-current-fa {
+  padding-left:   16px ;
+}
+
+.taxonomy-current-a {
+  padding-right:   8px ;
+  text-decoration: none ;
 }
 
 code {

@@ -1,4 +1,4 @@
-{{- if isset .Site.Params "features"  }}
+{{- if isset .Site.Params (lower "features" ) }}
 {{- if .Site.Params.features.enable   }}
 {{- if gt (len .Site.Data.features) 0 }}
 <section id="features" class="w3-theme">

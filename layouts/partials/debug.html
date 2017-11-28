@@ -1,4 +1,4 @@
-{{- if isset .Site.Params "debug"  }}
+{{- if isset .Site.Params (lower "debug2" ) }}
 {{- if .Site.Params.debug }}
 <hr>
 {{- printf "%#v" .Permalink }}

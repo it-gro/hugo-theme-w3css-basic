@@ -55,8 +55,17 @@
 - id: older
   translation: "Älter"
 
+- id: categoryTitle
+  translation: "Kategorie"
+
 - id: categoriesTitle
   translation: "Kategorien"
 
+- id: tagTitle
+  translation: "Tag"
+
 - id: tagsTitle
   translation: "Tags"
+
+- id: termNotAvailable
+  translation: "leer"

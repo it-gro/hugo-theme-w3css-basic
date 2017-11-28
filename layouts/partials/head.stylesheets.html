@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="{{ relURL "/vendor/OwlCarousel2/owl.theme.default.min.css"    }}" />
 
   <link rel="stylesheet" href="{{ relURL "/vendor/w3css/4/w3.css"                            }}" />
-  {{- /* if and (isset .Site.Params "w3css_color_theme") .Site.Params.w3css_color_theme */}}
+  {{- /* if and (isset .Site.Params (lower "w3css_color_theme" )) .Site.Params.w3css_color_theme */}}
   {{- if .Site.Params.w3cssColorTheme }}
   <link rel="stylesheet" href="{{ .Site.Params.w3cssColorTheme | relURL }}" />
   {{- else }}

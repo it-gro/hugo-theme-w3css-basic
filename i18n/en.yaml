@@ -44,7 +44,7 @@
   translation: "JavaScript needed for this"
 
 - id: recentPosts
-  translation: "Recent posts"
+  translation: "Recent Posts"
 
 - id: newer
   translation: "Newer"
@@ -52,8 +52,17 @@
 - id: older
   translation: "Older"
 
+- id: categoryTitle
+  translation: "Category"
+
 - id: categoriesTitle
   translation: "Categories"
 
+- id: tagTitle
+  translation: "Tag"
+
 - id: tagsTitle
   translation: "Tags"
+
+- id: termNotAvailable
+  translation: "empty"

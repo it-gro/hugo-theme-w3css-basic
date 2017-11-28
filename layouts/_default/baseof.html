@@ -15,16 +15,18 @@
         {{- end -}}
 
         {{- block "main" . }}
+          {{- partial "main.taxonomy.current.html"  . -}}
           {{ partial "main.teaserpic.single.html" . -}}
           {{ partial "main.toc.single.html"       . -}}
           {{- .Content -}}
         {{- end -}}
 
+
         {{- block "contactform" . -}}
         {{- end }}
 
         {{- if ne .Type "contact" -}} 
-          {{- partial "main.taxonomy.bar.html"  . -}}
+          {{- partial "main.taxonomy.full.bar.html"  . -}}
         {{- end -}}
       </div> <!-- canvas -->
 

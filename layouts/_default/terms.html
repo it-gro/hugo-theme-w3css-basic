@@ -7,13 +7,8 @@
 
 {{- define "main" }}
 
-_default/terms.html
-
-  {{- $data := .Data }} {{ range $key, $value := .Data.Terms.ByCount }}
-      <a class="category-list-link" href="{{ $value.Name | urlize }}">{{ $value.Name }}</a>
-      <span class="category-list-count">{{ $value.Count }}</span>
-  {{- end }}
-
+  {{- if .Site.Params.debug }}_default/terms.html{{ end }}
+  {{- partial "terms.list.html" . }}
 
 {{- end }}
 

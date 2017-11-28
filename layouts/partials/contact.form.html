@@ -1,5 +1,5 @@
-{{- if isset .Site.Params "email" }}
-{{- if isset .Site.Params "formspree" }}
+{{- if isset .Site.Params (lower "email"     ) }}
+{{- if isset .Site.Params (lower "formspree" ) }}
 <form class="w3-panel w3-card-4 w3-theme-d2" method="post" action="https://{{.Site.Params.formspree}}/{{ .Site.Params.email}}">
   <h3>{{ i18n "contactForm" }}</h3>
   <p><label>{{ i18n "contactName" }}    </label> <input    class="w3-input w3-border" name="name"   type="text" required placeholder="Name" ></p>

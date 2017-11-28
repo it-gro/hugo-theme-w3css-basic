@@ -9,6 +9,11 @@
 
 category.terms.html
 2
+  {{ $data := .Data }}
+  {{ range $key, $value := .Data.Terms.Alphabetical }}
+    {{ $value.Term }}
+  <li><a href="{{ $.Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}"> {{ $value.Name }} </a> {{ $value.Count }} </li>
+  {{ end }}
 
 
 {{ end }}
