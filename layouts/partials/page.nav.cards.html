@@ -1,16 +1,20 @@
+{{- .Scratch.Set "nav-icon" "" }}
 {{- $startSection := (.Site.GetPage "section" "pages") }}
 {{- if $startSection }}
 <div class="w3-container w3-theme-l3">
 
   {{- if not ($.InSection $startSection) }}
+      {{- $startSection.Scratch.Set "nav-icon" "fa fa-bullseye"}}
     {{ template "page-nav-entry"  ($startSection ) }}
     {{ if not ($.Parent.InSection $startSection) }}
+      {{- $.Parent.Scratch.Set "nav-icon" "fa fa-arrow-up"}}
       {{ template "page-nav-entry"  ($.Parent ) }}
     {{- end }}
   {{- end }}
 
   {{- range $index, $element := $.Sections }}
     {{- if not ($element.InSection $) }}
+      {{- $element.Scratch.Set "nav-icon" "fa fa-arrow-down"}}
       {{ template "page-nav-entry"  ($element ) }}
     {{- end }}
   {{- end }}
@@ -26,6 +30,10 @@
           <div class="w3-theme-l3">{{$.RelPermalink}}</div>
         {{- end }}
       {{- end }} {{/* isset */}}
+
+        {{- if ne ($.Scratch.Get "nav-icon") "" }}
+        <i class="w3-padding-small {{ .Scratch.Get "nav-icon" }} fa-2x"></i>
+        {{- end }} 
      
         {{- if $.Params.icon }}
         <i class="w3-padding-small {{ $.Params.icon }} fa-2x"></i>
