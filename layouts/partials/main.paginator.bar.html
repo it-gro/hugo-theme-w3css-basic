@@ -2,13 +2,13 @@
 <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l1">
   <div class="w3-bar ">
     {{- if .Paginator.HasPrev }}
-    <a href="{{ .Site.BaseURL }}{{ .Paginator.Prev.URL }}" class="w3-bar-item w3-button">&larr; {{ i18n "newer" }}</a>
+    <a href="{{ .Paginator.Prev.URL }}" class="w3-bar-item w3-button">&larr; {{ i18n "newer" }}</a>
     {{- else }}
     <a href="#"                                            class="w3-bar-item w3-button w3-disabled">&larr; {{ i18n "newer" }}</a>
     {{- end }}
 
     {{- if .Paginator.HasNext }}
-    <a href="{{ .Site.BaseURL }}{{ .Paginator.Next.URL }}" class="w3-bar-item w3-button">{{ i18n "older" }} &rarr;</a>
+    <a href="{{ .Paginator.Next.URL }}" class="w3-bar-item w3-button">{{ i18n "older" }} &rarr;</a>
     {{- else }}
     <a href="#"                                            class="w3-bar-item w3-button w3-disabled">{{ i18n "older" }} &rarr;</a>
     {{- end }}

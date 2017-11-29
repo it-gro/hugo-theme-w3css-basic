@@ -1,15 +1,15 @@
 {{- /*  <!-- Favicon and apple touch icons-->         */}} 
 {{- /*  <!-- use https://realfavicongenerator.net --> */}} 
-  <link rel="apple-touch-icon"      sizes="180x180" href="/images/favicons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32"   href="/images/favicons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="16x16"   href="/images/favicons/favicon-16x16.png" />
-  <link rel="manifest"      href="/images/favicons/manifest.json" />
-  <link rel="mask-icon"     href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5" />
-  <link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+  <link rel="apple-touch-icon"      sizes="180x180" href={{ "/images/favicons/apple-touch-icon.png"       | relURL }} />
+  <link rel="icon" type="image/png" sizes="32x32"   href={{ "/images/favicons/favicon-32x32.png"          | relURL }} />
+  <link rel="icon" type="image/png" sizes="192x192" href={{ "/images/favicons/android-chrome-192x192.png" | relURL }} />
+  <link rel="icon" type="image/png" sizes="16x16"   href={{ "/images/favicons/favicon-16x16.png"          | relURL }} />
+  <link rel="manifest"                              href={{ "/images/favicons/manifest.json"              | relURL }} />
+  <link rel="mask-icon"  color="#5bbad5"            href={{ "/images/favicons/safari-pinned-tab.svg"      | relURL }} />
+  <link rel="shortcut icon"                         href={{ "/images/favicons/favicon.ico"                | relURL }} />
+  <meta name="msapplication-TileImage"           content={{ "/images/favicons/mstile-144x144.png"         | relURL }} />
+  <meta name="msapplication-config"              content={{ "/images/favicons/browserconfig.xml"          | relURL }} />
   <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png" />
-  <meta name="msapplication-config"    content="/images/favicons/browserconfig.xml" />
   <meta name="theme-color"             content="#ffffff" />
 
 {{- /* emacs                     */}}

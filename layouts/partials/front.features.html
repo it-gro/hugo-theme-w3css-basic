@@ -4,7 +4,7 @@
 <section id="features" class="w3-theme">
   <div class="w3-container w3-theme-l4">
     {{- range $index, $element := sort .Site.Data.features "weight" }}
-      {{- if or (not $.Site.Params.photocards.limitTo) (lt $index $.Site.Params.photocards.limitTo) }}
+      {{- if or (not $.Site.Params.features.limitTo) (lt $index $.Site.Params.features.limitTo) }}
         {{- if eq (mod $index 3) 0 }}
       <div class="w3-cell-row w3-margin-top">
         <div class="features04 w3-col m12">
