@@ -34,21 +34,26 @@
     </div>
   {{- end }} {{/* if .image */}}
 
-  {{- if and .title (not .image) }}
+  {{- if and .title (not ( or .image .icon)) }}
   <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
-    <h1>{{ .title }}</h1>
+    <h1>{{- .title -}}</h1>
     {{ if .description }}<div>{{ .description | markdownify }}</div>{{ end }}
   </div>
   {{- end }} {{/* if .title */}}
 
-  {{- if and .title .image }}
+  {{- if and .title (or .image .icon) }}
   <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
     <div class="w3-row-padding">
         <div class="w3-col s4">
-        <h1>{{ .title }}</h1>
+    <h1>{{- .title -}}</h1>
       </div>
       <div class="w3-col s4">
+        {{- if .icon }}
+        <i class="w3-margin fa fa-5x {{ .icon }}"></i>
+        {{- end }}
+        {{- if .image }}
         <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
+        {{- end }}
       </div>
       {{- if .description }}
       <div class="w3-col s4">

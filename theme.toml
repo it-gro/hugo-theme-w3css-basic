@@ -8,17 +8,18 @@ description    = ""
 homepage       = "http://example.com/"
 tags           = []
 features       = []
-min_version    = "0.30.2"
+min_version    = "0.31.1"
 
 [author]
   name         = "Bruno Grossniklaus"
-  homepage     = ""
+  homepage     = "it-grossniklaus.ch"
+
 
 # If porting an existing theme
 [original]
-  name         = "Universal"
-  homepage     = "https://themes.gohugo.io/theme/hugo-universal-theme"
-  repo         = "https://github.com/devcows/hugo-universal-theme"
+  name         = ""
+  homepage     = ""
+  repo         = ""
 
 # emacs
 # Local variables:      
