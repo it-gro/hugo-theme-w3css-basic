@@ -49,6 +49,7 @@ pygmentsUseClasses = true
 # ##################################################
 # Theme-defined configuration
 
+# ToDo
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
 
@@ -297,9 +298,9 @@ disqusShortname = ""
   # used in layouts/partials/head.stylesheets.html
   # set W3.CSS color theme (choose one)
   #w3cssColorTheme = "/css/w3-theme-custom.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
@@ -327,7 +328,8 @@ disqusShortname = ""
   # if empty => fallback to URL (instead of map)
   # define environment variable (=> key ist not stored in github)
   envGoogleMapsApiKey = "GoogleMapsApiKey"
-  googleMapsZoom   = 14
+  #googleMapsZoom   = 14
+  googleMapsZoom   = 3
   latitude         = 46.946692
   longitude        =  7.444186
 
@@ -430,17 +432,19 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # used in layouts/partials/front.photocards.html
   # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
+  #enable  = false
   enable   = true
   limitTo  = 3
-  #enable  = false
+  #limitTo  = 6
 
 [params.features]
   # used in layouts/partials/front.features.html
   # enable or disable features on frontpage
   # see some examples in 'exampleSite/data/features'
+  #enable  = false
   enable   = true
   limitTo  = 3
-  #enable  = false
+  #limitTo  = 6
 
 [params.testimonials]
   # used in layouts/partials/front.testimonials.carousel.html

@@ -32,3 +32,9 @@ The design is licensed under the Creative Commons 3.0 Attributions license. Read
 https://github.com/gohugoio/hugoDocs/tree/master/static/images,    
 https://github.com/gohugoio/hugoDocs/blob/master/LICENSE.md.    
 The Hugo logos are copyright © Steve Francia 2013–2017. The Hugo Gopher is based on an original work by Renée French.    
+
+* images/teaserpics/pygments-main-logo.png:   
+[bitbucket.org/birkenfeld/pygments-main/src/pygments-main/doc/static/logo_only.png ](https://bytebucket.org/birkenfeld/pygments-main/raw/7941677dc77d4f2bf0bbd6140ade85a9454b8b80/doc/_static/logo_only.png)  
+[bitbucket.org/birkenfeld/pygments-main/src/pygments-main/LICENSE](https://bitbucket.org/birkenfeld/pygments-main/src/7941677dc77d4f2bf0bbd6140ade85a9454b8b80/LICENSE?at=default&fileviewer=file-view-default)  
+pygments logo created by Joel Unger. https://dribbble.com/joelunger   
+
