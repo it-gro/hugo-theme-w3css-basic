@@ -34,13 +34,13 @@
   <button class="w3-button">{{ i18n .Name }}</button>
   <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2" > <!-- above owl carousel -->
     {{- range .Children }}
-    <a href="{{ .URL }}" class="w3-bar-item w3-button">{{ i18n .Name }}</a>
+    <a href="{{ .URL }}{{ if and (eq (substr .URL 0 1) "/") $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="w3-bar-item w3-button">{{ i18n .Name }}</a>
     {{- end }}  {{- /* range .Children        */}}
   </div> <!-- w3-dropdown-content -->
 </div>   <!-- w3-dropdown-hover   -->
 
     {{- else }}
-<a href="{{ .URL }}" class="w3-bar-item w3-button">{{ i18n .Name }}</a>
+<a href="{{ .URL }}{{ if and (and  (not (in .URL ".html")) (eq (substr .URL 0 1) "/")) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="w3-bar-item w3-button">{{ i18n .Name }}</a>
     {{- end  }}   {{- /* if .HasChildren        */}}
 
   {{- end  }}     {{- /* range .Site.Menus.main */}}

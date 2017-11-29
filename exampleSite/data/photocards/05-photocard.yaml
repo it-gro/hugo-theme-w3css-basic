@@ -2,7 +2,7 @@ weight:      5
 title:       "Justo"
 animated:    "rollIn"
 image:       "images/photocards/05-photocard.png"
-url:         pages/photocards/05
+url:         pages/front/photocards/05
 description: |
    * magna aliquyam
    * accusam aliquyam

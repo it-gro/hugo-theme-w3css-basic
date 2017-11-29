@@ -24,6 +24,18 @@ ultricies commodo. Suspendisse potenti. Aenean in sem ac leo mollis
 blandit. Donec neque quam, dignissim in, mollis nec, sagittis eu,
 wisi. 
 
+```tsql
+USE [master];
+GO
+ALTER DATABASE [db_name_test] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
+ALTER DATABASE [db_name_test] Modify Name = 'db_name_dev';
+GO
+ALTER DATABASE [db_name_dev] SET MULTI_USER WITH ROLLBACK IMMEDIATE;
+GO
+```
+
+
 ## Phasellus lacus. 
 
 Etiam laoreet quam sed arcu. Phasellus at
@@ -34,6 +46,16 @@ Fusce commodo. Vestibulum convallis, lorem a tempus semper, dui dui
 euismod elit, vitae placerat urna tortor vitae lacus. Nullam libero
 mauris, consequat quis, varius et, dictum id, arcu. 
 
+```perl
+if (ref($style) eq 'HASH') {
+    if (defined($style->{'begin'}) and !$no_open) {
+         $text = $style->{'begin'} . $text;
+    }
+    if (defined($style->{'end'}) and !$no_close) {
+        $text = $text . $style->{'end'};
+    }
+}
+```
 Mauris mollis tincidunt felis. Aliquam feugiat tellus ut neque.
 Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia
 purus, et dictum nunc justo sit amet elit.

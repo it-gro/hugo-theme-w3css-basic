@@ -2,7 +2,17 @@
 
 # ##################################################
 # Hugo-defined variables
+# set params.uglyURLs false (see below)
 baseURL       = "http://example.com/"
+relativeURLs  = false
+uglyURLs      = true
+
+# config for local filesystem destination (no webserver):
+# set params.uglyURLs true (see below)
+#baseURL       = ""
+#relativeURLs  = true
+#uglyURLs      = true 
+
 
 title         = "My New Hugo Site"
 #languageCode  = "de-ch"
@@ -16,15 +26,19 @@ defaultContentLanguage = "en"
 paginate =  6
 
 # https://help.farbox.com/pygments.html
+pygmentsUseClassic            = false
+pygmentsCodeFences            = true
+pygmentsCodeFencesGuessSyntax = true
 # https://github.com/alecthomas/chroma
-pygmentsUseClasses = true
 # hugo gen chromastyles -h
 # hugo gen chromastyles > syntax.css
 # hugo gen chromastyles --style=monokai > syntax.css
+pygmentsUseClasses            = true
 # => static/css/syntax/syntax/syntax.*.css
 # copy one of them to
 # static/css/syntax/syntax.css
 # alternative (if shortcodes/csc*.html are not used):
+# set pygmentsUseClassic to false on choose one of the following:
 #pygmentsStyle = "autumn"
 #pygmentsStyle = "borland"
 #pygmentsStyle = "bw"
@@ -72,17 +86,17 @@ disqusShortname = ""
 [[menu.main]]
   weight = 1
   name   = "Home"
-  url    = "/"
+  url    = "/index.html"
 
 [[menu.main]]
   weight = 2
   name   = "Contact"
-  url    = "/contact/"
+  url    = "/contact"
 
 [[menu.main]]
   weight = 3
   name   = "Pages"
-  url    = "/pages/"
+  url    = "/pages"
 
 # demo submenu
 #[[menu.main]]
@@ -105,12 +119,12 @@ disqusShortname = ""
 [[menu.main]]
   weight = 4
   name   = "Blog"
-  url    = "/blog/"
+  url    = "/blog"
 
 [[menu.main]]
   weight = 5
   name   = "FAQ"
-  url    = "/faq/"
+  url    = "/faq"
 
 
 # right aligned
@@ -135,7 +149,7 @@ disqusShortname = ""
 [[menu.topbar]]
   weight   = 4
   name     = "Email"
-  url      = "#footer"
+  url      = "/index.html#footer"
 # url      = "mailto:info@example.com"
   pre      = "fa fa-envelope"
 
@@ -150,17 +164,17 @@ disqusShortname = ""
 # [[languages.en.menu.main]]
 #   weight = 1
 #   name   = "Home"
-#   url    = "/"
+#   url    = "/index.html"
 #
 # [[languages.en.menu.main]]
 #   weight = 2
 #   name   = "Contact"
-#   url    = "/contact/"
+#   url    = "/contact"
 #
 # [[languages.en.menu.main]]
 #   weight = 3
 #   name   = "Pages"
-#   url    = "/pages/"
+#   url    = "/pages"
 #
 # [[languages.en.menu.main]]
 #   weight = 4
@@ -170,19 +184,19 @@ disqusShortname = ""
 # [[languages.en.menu.main]]
 #   weight = 1
 #   name   = "News"
-#   url    = "/news/"
+#   url    = "/news"
 #   parent = "posts"
 #
 # [[languages.en.menu.main]]
 #   weight = 2
 #   name   = "Blog"
-#   url    = "/blog/"
+#   url    = "/blog"
 #   parent = "posts"
 #
 # [[languages.en.menu.main]]
 #   weight = 5
 #   name   = "FAQ"
-#   url    = "/faq/"
+#   url    = "/faq"
 #
 # [languages.de]
 # weight = 010
@@ -191,17 +205,17 @@ disqusShortname = ""
 # [[languages.de.menu.main]]
 #   weight = 1
 #   name   = "Home"
-#   url    = "/"
+#   url    = "/index.html"
 #
 # [[languages.de.menu.main]]
 #   weight = 2
 #   name   = "Kontakt"
-#   url    = "/contact/"
+#   url    = "/contact"
 #
 # [[languages.de.menu.main]]
 #   weight = 3
 #   name   = "Seiten"
-#   url    = "/pages/"
+#   url    = "/pages"
 #
 # [[languages.de.menu.main]]
 #   weight = 4
@@ -211,19 +225,19 @@ disqusShortname = ""
 # [[languages.de.menu.main]]
 #   weight = 1
 #   name   = "News"
-#   url    = "/news/"
+#   url    = "/news"
 #   parent = "posts"
 #
 # [[languages.de.menu.main]]
 #   weight = 2
 #   name   = "Blog"
-#   url    = "/blog/"
+#   url    = "/blog"
 #   parent = "posts"
 #
 # [[languages.de.menu.main]]
 #   weight = 5
 #   name   = "FAQ"
-#   url    = "/faq/"
+#   url    = "/faq"
 
 # Top bar social links menu
 
@@ -289,6 +303,8 @@ disqusShortname = ""
 [params]
 
   debug              = false
+  uglyURLs           = true
+  uglyUrl            = ".html"
 
   # used in layouts/partials/head.meta.html
   authorName         = "it-gro"
@@ -467,7 +483,7 @@ gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
  #enable    = false
   icon      = "fa fa-file-code-o"
   title     = "Do You want to see More?"
-  linkUrl   = "/pages/"
+  linkUrl   = "/pages"
   linkText  = "consectetuer adipiscing"
   subtitle  = '''
 Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper

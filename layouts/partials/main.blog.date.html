@@ -1,0 +1,9 @@
+{{- if eq .Type "blog" }}
+<div class="w3-left"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{ .Date.Format .Site.Params.date_format }}</div>
+{{- end }}
+
+{{- /* emacs                     */}}
+{{- /* Local variables:          */}}
+{{- /* tab-width:        2       */}}
+{{- /* indent-tabs-mode: nil     */}}
+{{- /* End:                      */}}

@@ -15,9 +15,10 @@
         {{- end -}}
 
         {{- block "main" . }}
+          {{- partial "main.blog.date.html"         . -}}
           {{- partial "main.taxonomy.current.html"  . -}}
-          {{ partial "main.teaserpic.single.html" . -}}
-          {{ partial "main.toc.single.html"       . -}}
+          {{- partial "main.teaserpic.single.html"  . -}}
+          {{- partial "main.toc.single.html"        . -}}
           {{- .Content -}}
         {{- end -}}
 

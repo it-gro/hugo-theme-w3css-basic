@@ -2,7 +2,7 @@ weight:      6
 name:        "Kasd Gubergren"
 icon:        "fa fa-user"
 animated:    "slideInRight"
-url:         pages/features/06
+url:         pages/front/features/06
 description: |
   Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
   suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem

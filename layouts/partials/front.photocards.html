@@ -17,7 +17,7 @@
             {{- end }} {{/* if and image not url */}}
 
             {{- if (and $element.image $element.url)  }}
-            <a class="no-decoration" href="{{ .Site.BaseURL}}{{ $element.url }}">
+            <a class="no-decoration" href="{{ .Site.BaseURL}}{{ $element.url }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}">
               <img src="{{ $element.image }}" class="w3-round w3-hover-opacity" style="width:100%">
               </a>
             {{- end }} {{/* if and image url */}}

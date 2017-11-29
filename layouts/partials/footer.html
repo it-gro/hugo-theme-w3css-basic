@@ -20,9 +20,9 @@
           <a class="no-decoration" href="{{ .Permalink }}">
             <img class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;" alt=""
             {{- if isset .Params "teaserpic" }}
-              src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
+              src="{{  .Params.teaserpic | relURL }}"
             {{- else }}
-              src="{{ .Site.BaseURL}}images/teaserpics/placeholder.png"
+              src="{{ "/images/teaserpics/placeholder.png" | relURL  }}"
             {{- end }}
             />
           </a>
