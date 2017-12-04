@@ -3,6 +3,7 @@
 {{ end }}
 
 {{ define "headline" }}
+{{- `<!-- blog/list.html  -->` | safeHTML }}
   <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-d1">
     <h2>Blog</h2>
       {{ if .Site.Params.blog.subtitle }}

@@ -1,3 +1,4 @@
+{{ `<!-- partials/front.photocards.html  -->` | safeHTML }}
 {{- if isset .Site.Params (lower "photocards" ) }}
 {{- if .Site.Params.photocards.enable   }}
 {{- if gt (len .Site.Data.photocards) 0 }}

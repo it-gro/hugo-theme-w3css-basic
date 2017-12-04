@@ -1,3 +1,4 @@
+{{ `<!-- partials/front.features.html  -->` | safeHTML }}
 {{- if isset .Site.Params (lower "features" ) }}
 {{- if .Site.Params.features.enable   }}
 {{- if gt (len .Site.Data.features) 0 }}

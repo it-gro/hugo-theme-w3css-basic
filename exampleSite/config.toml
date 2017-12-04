@@ -3,9 +3,11 @@
 # ##################################################
 # Hugo-defined variables
 # set params.uglyURLs false (see below)
-baseURL       = "http://example.com/"
-relativeURLs  = false
-uglyURLs      = true
+#baseURL       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
+baseURL       = "http://example.com"
+#default:
+#relativeURLs  = false
+#uglyURLs      = false
 
 # config for local filesystem destination (no webserver):
 # set params.uglyURLs true (see below)
@@ -14,7 +16,7 @@ uglyURLs      = true
 #uglyURLs      = true 
 
 
-title         = "My New Hugo Site"
+title         = "hugo-theme-w3css-basic exampleSite"
 #languageCode  = "de-ch"
 languageCode  = "en-us"
 theme         = "hugo-theme-w3css-basic"
@@ -303,7 +305,7 @@ disqusShortname = ""
 [params]
 
   debug              = false
-  uglyURLs           = true
+  uglyURLs           = false
   uglyUrl            = ".html"
 
   # used in layouts/partials/head.meta.html

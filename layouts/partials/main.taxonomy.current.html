@@ -1,3 +1,4 @@
+{{ `<!-- partials/main.taxonomy.current.html -->` | safeHTML }}
 <div class="w3-right-align ">
 {{- if isset .Params (lower "categories" ) }}
 {{- if not (eq (len .Params.categories) 0) }}

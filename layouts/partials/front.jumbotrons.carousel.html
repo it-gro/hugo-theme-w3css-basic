@@ -1,3 +1,4 @@
+{{ `<!-- partials/front.jumbotrons.carousel.html -->` | safeHTML }}
 {{- if isset .Site.Params (lower "jumbotrons" ) }}
 {{- if .Site.Params.jumbotrons.enable   }}
 {{- if gt (len .Site.Data.jumbotron) 0  }}
@@ -44,19 +45,29 @@
   {{- if and .title (or .image .icon) }}
   <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
     <div class="w3-row-padding">
-        <div class="w3-col s4">
+        <div class="w3-col m3">
     <h1>{{- .title -}}</h1>
       </div>
-      <div class="w3-col s4">
+      <div class="w3-col m3 w3-hide-small">
         {{- if .icon }}
         <i class="w3-margin fa fa-5x {{ .icon }}"></i>
         {{- end }}
         {{- if .image }}
-        <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
+        <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:180px; max-height:180px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
         {{- end }}
       </div>
+
+      <div class="w3-col m3 w3-hide-large w3-hide-medium">
+        {{- if .icon }}
+        <i class="w3-margin fa fa-3x {{ .icon }}"></i>
+        {{- end }}
+        {{- if .image }}
+        <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:100px; max-height:100px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
+        {{- end }}
+      </div>
+
       {{- if .description }}
-      <div class="w3-col s4">
+      <div class="w3-col m3">
         {{- .description | markdownify }}
       </div>
       {{- end }}
