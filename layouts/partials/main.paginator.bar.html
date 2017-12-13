@@ -1,6 +1,6 @@
 {{ `<!-- partials/main.paginator.bar.html -->` | safeHTML }}
 
-<div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l1">
+<div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-top w3-margin-bottom w3-theme-l1">
   <div class="w3-bar ">
     {{- if .Paginator.HasPrev }}
     <a href="{{ .Paginator.Prev.URL }}" class="w3-bar-item w3-button">&larr; {{ i18n "newer" }}</a>

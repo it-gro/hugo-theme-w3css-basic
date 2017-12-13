@@ -25,18 +25,17 @@
           {{- partial "main.toc.single.html"        . -}}
           {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
           {{- .Content -}}
-        {{- end -}}
-
-
-        {{- block "contactform" . -}}
-          {{ `<!-- block contactform _default/baseof.html  -->` | safeHTML }}
         {{- end }}
 
-        {{ block "search" . -}}
+        {{- block "contactform" . }}
+          {{ `<!-- block contactform _default/baseof.html  -->` | safeHTML }}
+        {{ end }}
+
+        {{- block "search" . }}
           {{ `<!-- block search _default/baseof.html  -->` | safeHTML }}
         {{ end }}
 
-        {{- if ne .Type "contact" -}} 
+        {{- if ne .Type "contact" }} 
           {{- partial "main.taxonomy.full.bar.html"  . -}}
         {{- end -}}
       </div> {{ `<!-- canvas -->` | safeHTML }}
