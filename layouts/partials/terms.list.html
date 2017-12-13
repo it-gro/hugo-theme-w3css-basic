@@ -1,3 +1,4 @@
+{{ `<!-- partials/terms.list.html -->` | safeHTML }}
 <ul>
 {{- range $key, $term := .Data.Terms.Alphabetical }}
   <li><h4>{{ if $term.Name }}<a class="no-decoration" style="text-transform: capitalize" href="{{ $term.Name | urlize  }}">{{ $term.Name }}</a>{{ else }}({{ i18n "termNotAvailable" }}){{ end }}</h4>

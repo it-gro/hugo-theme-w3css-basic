@@ -1,11 +1,12 @@
+{{ `<!-- partials/main.taxonomy.full.bar.html -->` | safeHTML }}
 
 <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l1">
   <div class="w3-bar ">
 {{- if isset .Site.Taxonomies (lower "categories" ) }}
 {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
-    <a href="{{ $.Site.BaseURL }}categories/" class="taxonomy-button w3-bar-item w3-button w3-mobile"><i class="w3-padding-small fa fa-folder-open-o"></i>{{ i18n "categoriesTitle" }}:</a>
+    <a href="{{ "/categories" | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="taxonomy-button w3-bar-item w3-button w3-mobile"><i class="w3-padding-small fa fa-folder-open-o"></i>{{ i18n "categoriesTitle" }}:</a>
   {{- range $name, $items := .Site.Taxonomies.categories }}
-    {{ if $name }}<a href="{{ $.Site.BaseURL }}categories/{{ $name | urlize | lower }}" class="taxonomy-button w3-bar-item w3-button w3-mobile">{{ $name }} ({{ len $items }})</a>{{ end }}
+    {{ if $name }}<a href="{{ "/categories/" | relURL }}{{ $name | urlize }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="taxonomy-button w3-bar-item w3-button w3-mobile">{{ $name }} ({{ len $items }})</a>{{ end }}
   {{- end }}
 {{- end }}
 {{- end }}
@@ -14,9 +15,9 @@
   <div class="w3-bar ">
 {{- if isset .Site.Taxonomies (lower "tags" ) }}
 {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
-   <a href="{{ $.Site.BaseURL }}tags/" class="taxonomy-button w3-bar-item w3-button w3-mobile"><i class="w3-padding-small fa fa-tags"></i>{{ i18n "tagsTitle" }}:</a>
+   <a href="{{ "/tags" | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="taxonomy-button w3-bar-item w3-button w3-mobile"><i class="w3-padding-small fa fa-tags"></i>{{ i18n "tagsTitle" }}:</a>
   {{- range $name, $items := .Site.Taxonomies.tags }}
-    {{ if $name }}<a href="{{ $.Site.BaseURL }}tags/{{ $name | urlize | lower }}" class="taxonomy-button w3-bar-item w3-button w3-mobile">{{ $name }} ({{ len $items }})</a>{{ end }}
+    {{ if $name }}<a href="{{ "/tags/" | relURL }}{{ $name | urlize }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="taxonomy-button w3-bar-item w3-button w3-mobile">{{ $name }} ({{ len $items }})</a>{{ end }}
   {{- end }}
 {{- end }}
 {{- end }}

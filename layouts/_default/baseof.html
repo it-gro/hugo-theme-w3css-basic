@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-  <!-- layouts/_default/baseof.html -->
+{{ `<!-- _default/baseof.html  -->` | safeHTML }}
   {{  partial "head.html" . -}}
 
   <body>
@@ -15,9 +15,10 @@
         {{- end -}}
 
         {{- block "main" . }}
+          {{- partial "main.blog.date.html"         . -}}
           {{- partial "main.taxonomy.current.html"  . -}}
-          {{ partial "main.teaserpic.single.html" . -}}
-          {{ partial "main.toc.single.html"       . -}}
+          {{- partial "main.teaserpic.single.html"  . -}}
+          {{- partial "main.toc.single.html"        . -}}
           {{- .Content -}}
         {{- end -}}
 

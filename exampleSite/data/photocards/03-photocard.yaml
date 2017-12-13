@@ -2,6 +2,6 @@ weight:      3
 title:       "Nonumy"
 animated:    "rollIn"
 image:       "images/photocards/03-photocard.jpg"
-url:         pages/photocards/03
+url:         pages/front/photocards/03
 description: |
   At vero eos et **accusam** et justo duo dolores et ea rebum

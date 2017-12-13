@@ -1,3 +1,4 @@
+{{ `<!-- partials/front.testimonials.carousel.html -->` | safeHTML }}
 {{- if isset .Site.Params (lower "testimonials" ) }}
 {{- if .Site.Params.testimonials.enable   }}
 {{- if gt (len .Site.Data.testimonials) 0 }}

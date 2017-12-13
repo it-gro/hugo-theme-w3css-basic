@@ -2,7 +2,7 @@ weight:      4
 name:        "Invidunt ut Labore"
 icon:        "fa fa-lightbulb-o"
 animated:    "slideInLeft"
-url:         pages/features/04
+url:         pages/front/features/04
 description: |
   Nam liber tempor cum soluta nobis eleifend option congue nihil
   imperdiet doming id quod mazim placerat facer possim assum. Lorem

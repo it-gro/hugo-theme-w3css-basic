@@ -1,3 +1,4 @@
+{{ `<!-- partials/head.html  -->` | safeHTML }}
 <head>
   {{- partial "head.meta.html" . }}
   <title>
@@ -8,10 +9,10 @@
 
   {{  .Hugo.Generator }}
 
-  {{- partial "head.stylesheets.html" . }}
-  {{- partial "head.fonts.html"       . }}
-  {{- partial "head.ie.html"          . }}
-  {{- partial "head.favicon.html"     . }}
+  {{ partial "head.stylesheets.html" . -}}
+  {{ partial "head.fonts.html"       . -}}
+  {{ partial "head.ie.html"          . -}}
+  {{ partial "head.favicon.html"     . -}}
 </head>
 
 {{- /* emacs                     */}} 

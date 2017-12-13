@@ -1,3 +1,4 @@
+{{ `<!-- partials/contact.form.html  -->` | safeHTML }}
 {{- if isset .Site.Params (lower "email"     ) }}
 {{- if isset .Site.Params (lower "formspree" ) }}
 <form class="w3-panel w3-card-4 w3-theme-d2" method="post" action="https://{{.Site.Params.formspree}}/{{ .Site.Params.email}}">

@@ -44,6 +44,7 @@ functions.
 
 **Go variables and functions are accessible within {{ }}**
 
+
 Accessing a predefined variable "foo":
 
     {{ foo }}

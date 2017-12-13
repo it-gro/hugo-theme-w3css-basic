@@ -1,4 +1,4 @@
-/* 
+ /* 
 https://www.w3schools.com/cssref/css_selectors.asp
 CSS Selectors:
   #id
@@ -45,8 +45,8 @@ a.no-decoration {
   text-decoration: none ;
 }
 
-code {
-  background-color: rgba(255,255,255, 0.4) ; /* adjust to syntax.css Background */
+code.chroma {
+  background-color: rgba(255, 255, 255, .3) ; /* used e.g. for csc* shortcodes; adjust to syntax.css Background */
 }
 
 
