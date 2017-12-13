@@ -18,7 +18,6 @@
         {{ `<!-- range .Site.Data.jumbotron -->` | safeHTML }}
         {{- range $index, $element := first 1 (sort .Site.Data.jumbotron) }}
           {{- template "front-jumbotron-entry" $element }}
-        </div>
         {{- end }} {{/* range */}}
       </div> <!-- "w3-container -->
     </noscript>
@@ -51,8 +50,8 @@
     {{ `<!-- front-jumbotron-entry and .title (or .image .icon) -->` | safeHTML }}
   <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge w3-theme-l2">
     <div class="w3-row-padding">
-        <div class="w3-col m3">
-    <h1>{{- .title -}}</h1>
+      <div class="w3-col m3">
+        <h1>{{- .title -}}</h1>
       </div>
       <div class="w3-col m3 w3-hide-small">
         {{- if .icon }}
