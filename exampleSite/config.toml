@@ -89,16 +89,19 @@ disqusShortname = ""
   weight = 1
   name   = "Home"
   url    = "/index.html"
+  pre    = "fa fa-home"
 
 [[menu.main]]
   weight = 2
   name   = "Contact"
   url    = "/contact"
+  pre    = "fa fa-id-card-o"
 
 [[menu.main]]
   weight = 3
   name   = "Pages"
   url    = "/pages"
+  pre    = "fa fa-list"
 
 # demo submenu
 #[[menu.main]]
@@ -122,11 +125,13 @@ disqusShortname = ""
   weight = 4
   name   = "Blog"
   url    = "/blog"
+  pre    = "fa fa-rss"
 
 [[menu.main]]
   weight = 5
   name   = "FAQ"
   url    = "/faq"
+  pre    = "fa fa-question-circle-o"
 
 
 # right aligned
@@ -151,10 +156,15 @@ disqusShortname = ""
 [[menu.topbar]]
   weight   = 4
   name     = "Email"
-  url      = "/index.html#footer"
+  url      = "#address"
 # url      = "mailto:info@example.com"
   pre      = "fa fa-envelope"
 
+[[menu.topbar]]
+  weight   = 5
+  name     = "Search"
+  url      = "/search"
+  pre      = "fa fa-search"
 
 # if google translate is not an option, provide multilingual menu
 # https://gohugo.io/content-management/multilingual/
@@ -510,11 +520,12 @@ luptatum zzril delenit augue duis dolore te feugait nulla
 facilisi.
              '''
 
-[params.recent_posts]
+[params.recentPosts]
   # used in layouts/partials/footer.html
   footerNumOfPosts = 5
+  enableFooter   = true
   # used in layouts/partials/front.recent_posts.html
-  enable   = true
+  enableFront    = true
   #enable = false
   title    = "From our Blog"
   subtitle = '''

@@ -2,5 +2,5 @@
 weight:      15
 title:       "About this Theme (this is level /hugo-theme-w3css-basic)"
 date:        "2017-11-22T07:42:26+01:00"
-teaserpic:   images/teaserpics/hugo-dolor.png
+teaserpic:   images/teaserpics/gohugo.io/hugo-dolor.png
 ---

@@ -1,9 +1,11 @@
 {{ `<!-- partials/header.nav.html -->` | safeHTML }}
 
 <div class="w3-bar w3-theme-dark w3-hide-small">
+  {{ `<!-- w3-hide-small -------------------- -->` | safeHTML }}
   {{- template "header-nav-entry" . }}
 
   {{- if .Site.Params.menutopbar.socialEnable }}
+    {{ `<!-- range .Site.Menus.topbar.ByWeight -->` | safeHTML }}
     {{- range .Site.Menus.topbar.ByWeight }}
   <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
     {{- end }}
@@ -11,15 +13,19 @@
 
   {{- if .Site.Params.menutopbar.googleTranslateEnable }}
   <span class="w3-bar-item w3-button w3-right">
+    {{- if not .IsHome }}
     {{- partial "header.nav.google.translate.html" . -}}
+    {{- end }}
   </span>
   {{- end }}
 </div> <!-- w3-bar -->
 
 <div class="w3-bar w3-theme-dark w3-small w3-hide-large w3-hide-medium ">
+  {{ `<!-- w3-hide-large w3-hide-medium -------------------- -->` | safeHTML }}
   {{- template "header-nav-entry" . }}
 
   {{- if .Site.Params.menutopbar.socialEnable }}
+    {{ `<!-- range first .Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
     {{- range first .Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight }}
   <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
     {{- end }}
@@ -28,20 +34,32 @@
 
 
 {{- define "header-nav-entry" }}
+  {{ `<!-- header-nav-entry -->` | safeHTML }}
+  {{ `<!-- range .Site.Menus.main -->` | safeHTML }}
   {{- range .Site.Menus.main }}
     {{- if .HasChildren }}
+      {{ `<!-- .HasChildren -->` | safeHTML }}
 
 <div class="w3-dropdown-hover">
   <button class="w3-button">{{ i18n .Name }}</button>
   <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2" > <!-- above owl carousel -->
+    {{ `<!-- range .Children -->` | safeHTML }}
     {{- range .Children }}
-    <a href="{{ .URL }}{{ if and (eq (substr .URL 0 1) "/") $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="w3-bar-item w3-button">{{ i18n .Name }}</a>
+    <a href="{{ .URL }}{{ if and (eq (substr .URL 0 1) "/") $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" 
+       class="w3-bar-item w3-button">{{ i18n .Name }}
+    </a>
     {{- end }}  {{- /* range .Children        */}}
   </div> <!-- w3-dropdown-content -->
 </div>   <!-- w3-dropdown-hover   -->
 
     {{- else }}
-<a href="{{ .URL }}{{ if and (and  (not (in .URL ".html")) (eq (substr .URL 0 1) "/")) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="w3-bar-item w3-button">{{ i18n .Name }}</a>
+      {{ `<!-- not .HasChildren -->` | safeHTML }}
+<a href="{{ .URL }}{{ if and (and  (not (in .URL ".html")) (eq (substr .URL 0 1) "/")) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" 
+   class="w3-bar-item w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{ i18n .Name }}
+</a>
+<a href="{{ .URL }}{{ if and (and  (not (in .URL ".html")) (eq (substr .URL 0 1) "/")) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" 
+   class="w3-bar-item w3-button w3-small w3-hide-large w3-hide-medium"><i class="{{ .Pre }}"></i>&nbsp;{{ substr (i18n .Name) 0 1 | lower }}
+</a>
     {{- end  }}   {{- /* if .HasChildren        */}}
 
   {{- end  }}     {{- /* range .Site.Menus.main */}}

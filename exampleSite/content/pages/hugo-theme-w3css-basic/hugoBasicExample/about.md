@@ -4,7 +4,7 @@ date = "2014-04-09"
 categories = [
     "Hugo Basic Example"
 ]
-teaserpic =   "images/teaserpics/hugo-ipsum.png"
+teaserpic =   "images/teaserpics/gohugo.io/hugo-ipsum.png"
 +++
 
 Hugo is a static site engine written in Go.

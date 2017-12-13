@@ -2,11 +2,12 @@
 {{- if isset .Params (lower "teaserpic" ) }}
   <img alt="" class="w3-image w3-left w3-round " style="max-width:200px; max-height:95px; width: auto; height: auto; margin: 0px 8px 8px 0px;"
        {{- if .Params.teaserpic }}
-       src="{{ .Site.BaseURL}}{{ .Params.teaserpic }}"
+       src="{{ relURL .Params.teaserpic }}"
        {{- else }}
-       src="{{ .Site.BaseURL}}images/teaserpics/placeholder.png"
+       src="{{ relURL "/images/teaserpics/placeholder.png" }}"
        {{- end }}
   />
+
 {{- end }}
 
 {{- /* emacs                 */}}

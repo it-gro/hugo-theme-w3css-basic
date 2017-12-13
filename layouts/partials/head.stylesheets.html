@@ -1,11 +1,12 @@
 {{ `<!-- partials/head.stylesheets.html -->` | safeHTML }}
 
-  <link rel="stylesheet" href="{{ relURL "/vendor/fontawesome/css/font-awesome.min.css"        }}" />
-  <link rel="stylesheet" href="{{ relURL "/vendor/daneden.github.io/animate.css/animate.css"   }}" />
-  <link rel="stylesheet" href="{{ relURL "/vendor/OwlCarousel2/owl.carousel.css"               }}" />
-  <link rel="stylesheet" href="{{ relURL "/vendor/OwlCarousel2/owl.theme.default.min.css"      }}" />
+  <link rel="stylesheet" href="{{ relURL "/vendor/fontawesome/css/font-awesome.min.css"                     }}" />
+  <link rel="stylesheet" href="{{ relURL "/vendor/daneden.github.io/animate.css/animate.min.css"            }}" />
+  <link rel="stylesheet" href="{{ relURL "/vendor/OwlCarousel2/owl.carousel.min.css"                        }}" />
+  <link rel="stylesheet" href="{{ relURL "/vendor/OwlCarousel2/owl.theme.default.min.css"                   }}" />
+  <link rel="stylesheet" href="{{ relURL "/vendor/liwenyip/hugo-easy-gallery/css/hugo-easy-gallery.min.css" }}" />
 
-  <link rel="stylesheet" href="{{ relURL "/vendor/w3css/4/w3.css"                              }}" />
+  <link rel="stylesheet" href="{{ relURL "/vendor/w3css/4/w3.css"                                           }}" />
   {{- /* if and (isset .Site.Params (lower "w3css_color_theme" )) .Site.Params.w3css_color_theme */}}
   {{- if .Site.Params.w3cssColorTheme }}
   <link rel="stylesheet" href="{{ relURL .Site.Params.w3cssColorTheme }}" />
@@ -13,8 +14,8 @@
   <link rel="stylesheet" href="{{ relURL "/vendor/w3css/4/w3-theme-red.css" }}" />
   {{- end }}
 
-  <link rel="stylesheet" href="{{ relURL "/css/syntax.css" }}" />
-  <link rel="stylesheet" href="{{ relURL "/css/style.css"  }}" />
+  <link rel="stylesheet" href="{{ relURL "/css/syntax.min.css" }}" />
+  <link rel="stylesheet" href="{{ relURL "/css/style.min.css"  }}" />
   <link rel="stylesheet" href="{{ relURL "/css/custom.css" }}" />
 
 {{- /* emacs                     */}}

@@ -1,25 +1,28 @@
 {{ `<!-- partials/debug.html  -->` | safeHTML }}
-{{- if isset .Site.Params (lower "debug2" ) }}
+{{- if isset .Site.Params (lower "debug" ) }}
 {{- if .Site.Params.debug }}
 <hr>
+<h2>.Permalink</h2>
 {{- printf "%#v" .Permalink }}
-<hr>
-{{- printf "%#v" $.Site }}
-<hr>
-{{- printf "%#v" . }}
-<hr>
 
+<h2>.</h2>
+{{- printf "%#v" . }}
+
+<h2>.Params</h2>
 <table>
   {{- range $key, $value := .Params }}
     {{ printf "<tr><td>%#v</td><td>%#v</td></tr>" $key $value | safeHTML }}
   {{- end }}
 </table>
 
+<h2>$.Site</h2>
+{{- printf "%#v" $.Site }}
+
+<h2>.Data.Pages</h2>
 <!-- .Data.Pages on the homepage is equivalent to .Site.Pages. -->
 {{ range .Data.Pages }}
-{{/* The context, ".", is now each one of the pages as it goes through the loop */}}
-{{ printf "%#v" . }}
-<hr>
+  {{/* The context, ".", is now each one of the pages as it goes through the loop */}}
+  {{ printf "%#v" . }}</br></br>
 {{- end }}
 
 {{- end }}

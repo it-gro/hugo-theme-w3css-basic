@@ -13,40 +13,36 @@
 {{ end }}
 
 {{ define "main" }}
-
-
-  {{/* partial "main.taxonomy.full.bar.html" . */}}
-
-  {{ $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
-
+  {{- /* partial "main.taxonomy.full.bar.html" . */}}
+  {{ `<!-- .Paginate .Data.Pages "Type" "blog" -->` | safeHTML }}
+  {{- $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
   {{ partial "main.paginator.bar.html" . }}
-
-  {{ range $index, $element := $paginator.Pages }}
-
-
-  {{ if eq (mod $index 3) 0 }}
+  {{ `<!-- back in blog/list.html  -->` | safeHTML }}
+  {{ `<!-- range $paginator.Pages -->` | safeHTML }}
+  {{- range $index, $element := $paginator.Pages }}
+  {{- if eq (mod $index 3) 0 }}
+    {{ `<!-- modulo 0 -->` | safeHTML }}
   <div id="w3-cell-row w3-margin-top w3-margin-bottom">
-  {{ end }}
+  {{ end -}}
 
   <div class="w3-cell w3-mobile ">
+    <div class="w3-card w3-margin-bottom w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-theme-l3">
+      {{ partial "main.teaser_in_card.html" . }}
+      {{ `<!-- back in blog/list.html  -->` | safeHTML }}
+    </div> <!-- w3-card -->
+  </div> <!-- w3-cell -->
 
-      <div class="w3-card w3-margin-bottom w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-theme-l3">
-        {{ partial "main.teaser_in_card.html" . }}
-      </div> <!-- w3-card -->
-    </div> <!-- w3-cell -->
-
-    {{ if eq (add $index 1 ) $paginator.NumberOfElements  }}
+    {{- if eq (add $index 1 ) $paginator.NumberOfElements  }}
+      {{ `<!-- last one -->` | safeHTML }}
   </div> <!-- w3-cell-row -->
-    {{ end }}
-  {{ end }} {{/* range */}}
-
+    {{- end }}
+  {{- end }} {{/* range */}}
 
   {{ partial "main.paginator.bar.html" . }}
+  {{ `<!-- back in blog/list.html  -->` | safeHTML }}
 
 {{ end }}
 
-{{ define "footer" }}
-{{ end }}
 
 {{/* emacs                 */}}
 {{/* Local variables:      */}}

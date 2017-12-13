@@ -7,7 +7,7 @@ tags:
   - hugo
 categories:
   - tools
-teaserpic:      images/teaserpics/hugo-lorem.png
+teaserpic:      images/teaserpics/gohugo.io/hugo-lorem.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

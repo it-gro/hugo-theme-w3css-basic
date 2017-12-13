@@ -1,8 +1,10 @@
 {{ `<!-- partials/contact.form.html  -->` | safeHTML }}
 {{- if isset .Site.Params (lower "email"     ) }}
 {{- if isset .Site.Params (lower "formspree" ) }}
-<form class="w3-panel w3-card-4 w3-theme-d2" method="post" action="https://{{.Site.Params.formspree}}/{{ .Site.Params.email}}">
-  <h3>{{ i18n "contactForm" }}</h3>
+{{ `<!-- .Site.Params.formspree .Site.Params.email  -->` | safeHTML }}
+<form class="w3-panel w3-card-4 w3-theme-d2" method="post" action="https://{{.Site.Params.formspree}}/{{.Site.Params.email}}">
+{{ `<!-- i18n "contactForm" "contactName" "contactMail" "contactMessage"  "contactSend" -->` | safeHTML }}
+  {{/* <h3>{{ i18n "contactForm" }}</h3> */}} {{/* toc on contact page */}}
   <p><label>{{ i18n "contactName" }}    </label> <input    class="w3-input w3-border" name="name"   type="text" required placeholder="Name" ></p>
   <p><label>{{ i18n "contactMail" }}    </label> <input    class="w3-input w3-border" name="email"  type="text" required placeholder="Mail" ></p>
   <p><label>{{ i18n "contactMessage" }} </label> <textarea class="w3-input w3-border" name="message"            required placeholder="Subject" ></textarea></p>

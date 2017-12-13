@@ -1,16 +1,17 @@
 {{ `<!-- partials/footer.bottom.html  -->` | safeHTML }}
-
 <div class="w3-cell-row w3-small w3-theme-l3 ">
 
   <div class="w3-cell w3-cell-middle">
-    {{- if .Site.Params.bottomLeft }}
+    {{ `<!-- .Site.Params.bottomLeft  -->` | safeHTML }}
+    {{ if .Site.Params.bottomLeft }}
       {{- .Site.Params.bottomLeft | markdownify }}
     {{- end }}
   </div> <!-- w3-cell -->
 
   <div class="w3-cell w3-cell-middle">
     <div class="w3-right">
-      {{- if .Site.Params.bottomRight }}
+      {{ `<!-- .Site.Params.bottomRight  -->` | safeHTML }}
+      {{ if .Site.Params.bottomRight }}
         {{- .Site.Params.bottomRight | markdownify }}
       {{- end }}
     </div> <!-- w3-right -->

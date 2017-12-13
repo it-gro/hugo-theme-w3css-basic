@@ -12,16 +12,17 @@
       {{ partial "front.jumbotrons.carousel.html"    . }}
       {{ partial "front.photocards.html"             . }}
       {{ partial "front.features.html"               . }}
-      {{ partial "front.testimonials.carousel.html"  . }}
-      {{ partial "front.see_more.html"               . }}
       {{ partial "front.recent_posts.html"           . }}
+      {{ partial "front.see_more.html"               . }}
       {{ partial "front.clients.carousel.html"       . }}
+      {{ partial "front.testimonials.carousel.html"  . }}
 
       {{ partial "footer.html"        . }}
       {{ partial "footer.bottom.html" . }}
     </div> <!-- all -->
     {{ partial "scripts.html"  . }}
   </body>
+  {{- partial "debug.html" . -}}
 </html>
 
 <!-- emacs -->

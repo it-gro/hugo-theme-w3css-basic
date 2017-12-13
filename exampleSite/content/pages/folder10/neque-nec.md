@@ -13,7 +13,7 @@ tags:
   - Malesuada
 categories:
   - Know-How
-teaserpic:      images/teaserpics/coffee-beans-2258839_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/coffee-beans-2258839_640.jpg
 ---
 
 # Aliquam erat volutpat.

@@ -8,7 +8,7 @@ weight: 10
 categories : [
     "Hugo Basic Example"
 ]
-teaserpic :  "images/teaserpics/hugo-dolor.png"
+teaserpic :  "images/teaserpics/gohugo.io/hugo-dolor.png"
 ---
 
 

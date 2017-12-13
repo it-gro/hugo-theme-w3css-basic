@@ -13,7 +13,7 @@ tags:
   - Fermentum
 categories:
   - Know-How
-teaserpic:      images/teaserpics/monitor-1307227_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/monitor-1307227_640.jpg
 ---
 
 Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non

@@ -1,8 +1,8 @@
 {{ `<!-- partials/main.teaser_in_card.html -->` | safeHTML }}
-<a class="no-decoration" href="{{ .Permalink }}">
+<a class="no-decoration" href="{{ .RelPermalink }}">
 
-  {{- partial "main.teaserpic.card.html" . }}
-  
+  {{ partial "main.teaserpic.card.html" . }}
+  {{ `<!-- back in partials/main.teaser_in_card.html -->` | safeHTML }}
   <h3>
   {{- if .Params.icon }}
     <i class="{{ .Params.icon }}"></i>
@@ -10,7 +10,7 @@
   {{ .Title }}
   </h3>
   {{- if eq .Type "blog" }}
-  <div class="w3-right"><i class="w3-padding-small fa fa-calendar-o" aria-hidden="true"></i>{{ .Date.Format .Site.Params.date_format }}</div>
+  <div class="w3-right"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;<i>{{- partial "main.i18n.date.html" . -}}</i></div>
   {{- end }}
   {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
 </a>
@@ -19,6 +19,7 @@
     {{- if isset .Params (lower "categories" ) }}
     {{- if gt (len .Params.categories) 0 }}
     <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+    {{ `<!-- range .Params.categories -->` | safeHTML }}
     {{ range .Params.categories }}
     {{- if . }}<a class="taxonomy-button w3-button " href="{{ "/categories/" | relURL }}{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}">{{ . }}</a>{{end}}
     {{- end }}<br>
@@ -30,6 +31,7 @@
     {{- if isset .Params (lower "tags" ) }}
     {{- if gt (len .Params.tags) 0 }}
     <i class="fa fa-tags" aria-hidden="true"></i>
+    {{ `<!-- range .Params.tags -->` | safeHTML }}
     {{ range .Params.tags }}
       {{- if . }}<a class="taxonomy-button w3-button " href="{{ "/tags/" | relURL }}{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}">{{ . }}</a>{{end}}
     {{- end }}<br>

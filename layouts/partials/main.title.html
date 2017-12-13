@@ -1,0 +1,13 @@
+{{ `<!-- partials/main.title.html -->` | safeHTML }}
+<h2>
+{{- if .Params.icon }}
+  <i class="{{ .Params.icon }}"></i>
+{{- end }}
+{{ .Title }}
+</h2>
+
+{{- /* emacs                     */}}
+{{- /* Local variables:          */}}
+{{- /* tab-width:        2       */}}
+{{- /* indent-tabs-mode: nil     */}}
+{{- /* End:                      */}}
