@@ -1,19 +1,13 @@
-{{ define "title" }}
-  {{ .Site.Title }} - {{ i18n  "pages" }}
-{{ end }}
-
 {{- define "headline" }}
-{{- `<!-- _default/terms.html  -->` | safeHTML }}
+  {{ `<!-- _default/terms.html -->` | safeHTML }}
+  <h1 class="w3-panel w3-theme-l2">
+  {{ if eq .Data.Singular "category" }}<i class="w3-margin-right fa fa-folder-open-o" aria-hidden="true"></i>{{ i18n "categoryTitle" }}{{ end }} 
+  {{ if eq .Data.Singular "tag"      }}<i class="w3-margin-right fa fa-tag"           aria-hidden="true"></i>{{ i18n "tagTitle" }}     {{ end }} 
+  </h1>
 {{- end }}
 
 {{- define "main" }}
-
-  {{- if .Site.Params.debug }}_default/terms.html{{ end }}
-  {{- partial "terms.list.html" . }}
-
-{{- end }}
-
-{{- define "footer" }}
+  {{ partial "terms.list.html" . }}
 {{- end }}
 
 {{/* emacs                 */}}
