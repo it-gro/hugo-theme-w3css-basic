@@ -104,31 +104,35 @@ disqusShortname = ""
   pre    = "fa fa-list"
 
 # demo submenu
-#[[menu.main]]
-#  weight = 4
-#  name   = "Posts"
-#  identifier = "posts"
-#
-#[[menu.main]]
-#  weight = 1
-#  name   = "News"
-#  url    = "/news/"
-#  parent = "posts"
-#
-#[[menu.main]]
-#  weight = 2
-#  name   = "Blog"
-#  url    = "/blog/"
-#  parent = "posts"
-
 [[menu.main]]
   weight = 4
+  name   = "Theme"
+  pre    = "fa fa-rss"
+  identifier = "theme"
+ 
+[[menu.main]]
+  weight = 1
+  name   = "About"
+  url    = "/pages/hugo-theme-w3css-basic/"
+  pre    = "fa fa-info"
+  parent = "theme"
+ 
+[[menu.main]]
+  weight = 2
+  name   = "Images"
+  url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
+  pre    = "fa fa-picture-o"
+  parent = "theme"
+# end submenu
+
+[[menu.main]]
+  weight = 5
   name   = "Blog"
   url    = "/blog"
   pre    = "fa fa-rss"
 
 [[menu.main]]
-  weight = 5
+  weight = 6
   name   = "FAQ"
   url    = "/faq"
   pre    = "fa fa-question-circle-o"

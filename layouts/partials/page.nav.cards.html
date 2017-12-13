@@ -2,7 +2,7 @@
 {{- .Scratch.Set "nav-icon" "" }}
 {{- $startSection := (.Site.GetPage "section" "pages") }}
 {{- if $startSection }}
-<div class="w3-container w3-theme-l3">
+<div class="w3-container w3-margin-bottom w3-theme-l3">
 
   {{- if not ($.InSection $startSection) }}
       {{- $startSection.Scratch.Set "nav-icon" "fa fa-bullseye"}}
