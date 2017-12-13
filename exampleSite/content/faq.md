@@ -1,6 +1,7 @@
 ---
 title:          "FAQ"
 date:           2017-11-13T15:33:35+01:00
+toc:            true
 description:    >
   Frequently asked questions
 keywords:
@@ -8,7 +9,7 @@ keywords:
   - "How do I"
   - "questions"
   - "what if"
-teaserpic:      images/teaserpics/faq.png
+teaserpic:      images/teaserpics/pixabay.com/faq.png
 ---
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada

@@ -3,6 +3,7 @@
 <div id="footer" class="w3-container w3-theme-d5">
   <div class="w3-margin-bottom w3-row w3-mobile">
 
+    {{ `<!-- Site.Params.aboutUs  -->` | safeHTML }}
     {{- if .Site.Params.aboutUs }}
     <div class="w3-col w3-third">
       <h4>{{ i18n "aboutUs" }}</h4>
@@ -10,15 +11,17 @@
     </div> <!-- w3-col -->
     {{- end }} {{/* if aboutUs */}}
 
-    {{- if isset .Site.Params (lower "recent_posts" ) }}
-    {{- if .Site.Params.recent_posts.enable }}
-    {{- if .Site.Params.recent_posts.footerNumOfPosts }}
+    {{ `<!-- Site.Params.recentPosts  -->` | safeHTML }}
+    {{- if isset .Site.Params (lower "recentPosts" ) }}
+    {{- if .Site.Params.recentPosts.enableFooter }}
+    {{- if .Site.Params.recentPosts.footerNumOfPosts }}
     <div class="w3-col w3-third">
       <h4>{{ i18n "recentPosts" }}</h4>
-      {{- range first .Site.Params.recent_posts.footerNumOfPosts (where .Site.RegularPages "Section" "blog") }}
+      {{ `<!-- range first Site.Params.footerNumOfPosts .Site.RegularPages "Section" "blog" -->` | safeHTML }}
+      {{- range first .Site.Params.recentPosts.footerNumOfPosts (where .Site.RegularPages "Section" "blog") }}
 
         <div class="w3-container ">
-          <a class="no-decoration" href="{{ .Permalink }}">
+          <a class="no-decoration" href="{{ .RelPermalink }}">
             <img class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;" alt=""
             {{- if isset .Params "teaserpic" }}
               src="{{  .Params.teaserpic | relURL }}"
@@ -27,17 +30,19 @@
             {{- end }}
             />
           </a>
-
-          <a class="no-decoration" href="{{ .Permalink }}">{{ .Title }}</a>
+          <a class="no-decoration" href="{{ .RelPermalink }}">{{ .Title }}</a>
         </div>
       {{- end }} {{/* range */}}
+
     </div> <!-- w3-col -->
     {{- end }} {{/* if isset */}}
     {{- end }} {{/* if isset */}}
-    {{- end }} {{/* if recent_posts.enable */}}
+    {{- end }} {{/* if recentPosts.enableFooter */}}
 
+
+    {{ `<!-- Site.Params.address  -->` | safeHTML }}
     {{- if isset .Site.Params (lower "address" ) }}
-    <div class="w3-col w3-third">
+    <div id="address" class="w3-col w3-third">
       <h4>{{ i18n "contactTitle" }}</h4>
       {{- .Site.Params.address | markdownify -}}
       <a href="{{ "/contact" | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="w3-button w3-theme-l4">{{ i18n "contactGoTo" }}</a>

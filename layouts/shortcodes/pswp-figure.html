@@ -1,0 +1,24 @@
+<!--
+Put this file in /layouts/shortcodes/figure.html
+NB this overrides Hugo's built-in "figure" shortcode but is backwards compatible
+-->
+
+<figure {{ with .Get "class" }}class="{{.}}"{{ end }} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <a href="{{ with .Get "link" }}{{.}}{{ else }}{{ .Get "src" }}{{ end }}" {{ with .Get "size" }}data-size="{{.}}"{{ end }} itemprop="contentUrl"> 
+        <img itemprop="thumbnail"
+            src="{{ with .Get "src" }}{{.}}{{ else }}{{ printf "%s." (.Get "thumb") | replace (.Get "link") "." }}{{ end }}"
+            {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{.}}{{else}}{{ .Get "caption" }}{{ end }}"{{ end }}
+            {{ with .Get "width" }}width="{{.}}"{{ end }}/>
+    </a>
+    {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
+    <figcaption>
+        {{ with .Get "title" }}<h4>{{.}}</h4>{{ end }}
+        {{ if or (.Get "caption") (.Get "attr")}}
+        <p>
+        {{ .Get "caption" }}
+        {{ with .Get "attrlink"}}<a href="{{.}}">{{ .Get "attr" }}</a>{{ else }}{{ .Get "attr"}}{{ end }}
+        </p>
+        {{ end }}
+    </figcaption>
+    {{ end }}
+</figure>

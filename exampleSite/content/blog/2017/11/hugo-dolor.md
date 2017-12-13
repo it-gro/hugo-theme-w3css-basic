@@ -7,7 +7,7 @@ tags:
   - hugo
 categories:
   - tools
-teaserpic:   images/teaserpics/hugo-dolor.png
+teaserpic:   images/teaserpics/gohugo.io/hugo-dolor.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

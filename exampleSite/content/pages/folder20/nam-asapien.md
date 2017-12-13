@@ -14,7 +14,7 @@ tags:
   - Fermentum
 categories:
   - Know-How
-teaserpic:      images/teaserpics/matrix-2326147_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/matrix-2326147_640.jpg
 ---
 
 Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non

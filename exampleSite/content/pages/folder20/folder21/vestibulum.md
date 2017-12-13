@@ -13,7 +13,7 @@ tags:
   - Nullam
 categories:
   - Know-How
-teaserpic:      images/teaserpics/parrot-2756488_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/parrot-2756488_640.jpg
 ---
 
 Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non

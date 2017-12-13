@@ -1,8 +1,9 @@
 {{ `<!-- partials/scripts.html -->` | safeHTML }}
 
-  <script src="{{ .Site.BaseURL }}vendor/jquery/jquery-3.2.1.slim.min.js"></script>   <!-- used by owl.carousel  -->
-  <script src="{{ .Site.BaseURL }}vendor/OwlCarousel2/owl.carousel.min.js"></script>
-  <script src="{{ .Site.BaseURL }}js/front.js"></script>
+  <script src={{ "/vendor/jquery/jquery-3.2.1.slim.min.js"  | relURL }}></script>   <!-- used by owl.carousel  -->
+  <script src={{ "/vendor/OwlCarousel2/owl.carousel.min.js" | relURL }}></script>
+
+  <script src={{ "/js/front.min.js" | relURL }}></script>
 
 {{- /* emacs                     */}}
 {{- /* Local variables:          */}}

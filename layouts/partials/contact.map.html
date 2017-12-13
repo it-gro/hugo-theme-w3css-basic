@@ -4,7 +4,9 @@
 {{- if isset .Site.Params (lower "longitude" ) }}
 {{- if isset .Site.Params (lower "envGoogleMapsApiKey") }} {{ $.Scratch.Set "GoogleMapsApiKey" (getenv .Site.Params.envGoogleMapsApiKey) }} {{ end }}
 {{- if isset .Site.Params (lower "googleMapsApiKey"   ) }} {{ $.Scratch.Set "GoogleMapsApiKey"         .Site.Params.googleMapsApiKey     }} {{ end }}
+
 {{- if  ne ($.Scratch.Get "GoogleMapsApiKey") "" }}
+{{ `<!-- GoogleMapsApiKey found  -->` | safeHTML }}
 <script>
   function initMap() {
       var myloc = { lat: {{.Site.Params.latitude}}, lng: {{.Site.Params.longitude}} };
@@ -15,16 +17,19 @@
 <script
   async defer
   src="https://maps.googleapis.com/maps/api/js?key={{$.Scratch.Get "GoogleMapsApiKey"}}&callback=initMap"
-  ></script>
+  >
+</script>
 
 <div id="map" class="w3-panel w3-card-4 w3-theme-l2">
 <noscript>
+  {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }}
   <p>{{ i18n "JsNeeded" }} (google maps)</p>
   <a href="https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z=10" target="_blank">https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z={{.Site.Params.googleMapsZoom}}</a>
 </noscript>
 </div>
 
 {{- else }} {{/* if ne ($.Scratch.Get "GoogleMapsApiKey") ""   */}}
+{{ `<!-- GoogleMapsApiKey empty => fallback  -->` | safeHTML }}
 <div class="w3-card-4 w3-margin w3-round-xxlarge w3-center w3-theme-l2">
   Google Maps: <a href="https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z={{.Site.Params.googleMapsZoom}}" target="_blank"><i class="fa fa-map-marker fa-5x w3-text-theme"></i></a>
 </div>

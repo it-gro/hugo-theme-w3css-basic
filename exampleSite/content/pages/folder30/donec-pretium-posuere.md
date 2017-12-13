@@ -13,7 +13,7 @@ tags:
   - Nullam
 categories:
   - Know-How
-teaserpic:      images/teaserpics/still-life-2366084_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/still-life-2366084_640.jpg
 ---
 
 

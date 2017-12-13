@@ -12,7 +12,7 @@ tags:
   - Nullam
 categories:
   - Know-How
-teaserpic:      images/teaserpics/seeberg-2825904_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/seeberg-2825904_640.jpg
 ---
 
 

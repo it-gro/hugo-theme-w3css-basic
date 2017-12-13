@@ -3,7 +3,7 @@
 {{- if .Site.Params.clients.enable }}
 {{- if gt (len .Site.Data.clients) 0 }}
 <section id="clients" class="w3-theme" >
-  <div class="w3-container w3-theme-l4">
+  <div class="w3-container w3-theme-l3">
 
     <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l2">
       <h2 id="clients-title" >{{ .Site.Params.clients.title }}</h2>
@@ -14,15 +14,19 @@
       </div>
     </div>
 
-    <div class="clients-owl owl-carousel owl-theme">
-      {{- range $index, $element := sort .Site.Data.clients "weight" }}
+    <div class="clients-owl owl-carousel owl-theme w3-margin-bottom">
+      {{ `<!-- range .Site.Data.clients  -->` | safeHTML -}}
+      {{/*- range $index, $element := sort .Site.Data.clients "weight" */}}
+      {{- range $index, $element := .Site.Data.clients }} {{/* use filename for sort order */}}
         <div>{{ template "front-clients-entry" $element }}</div>
       {{- end }}
     </div> <!-- clients-owl -->
 
     <noscript>
       <div class="w3-cell-row w3-text-theme">
-        {{- range $index, $element := first 3 (sort .Site.Data.clients "weight") }}
+        {{ `<!-- range first 3 .Site.Data.clients  -->` | safeHTML -}}
+        {{/*- range $index, $element := first 3 (sort .Site.Data.clients "weight") */}}
+        {{- range $index, $element := first 3 (sort .Site.Data.clients) }}
           <div class="w3-cell w3-mobile">{{ template "front-clients-entry" $element }}</div>
         {{- end }} {{/* range */}}
       </div> <!-- w3-cell -->
@@ -35,7 +39,7 @@
 {{- end }} {{/* if isset    */}}
 
 {{ define "front-clients-entry" }}
-  {{- if .name }} <div class="w3-xlarge"> {{ .name }} </div> {{ end }}
+  {{- if .name }} <div class="w3-large"> {{ .name }} </div> {{ end }}
   {{- if and (    .url) (.image) }}  <a href="{{ .url }}" target="_blank"><img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:100px; max-height:100px; "></a> {{ end }}
   {{- if and (not .url) (.image) }}                                       <img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:100px; max-height:100px; ">     {{ end }}
 {{- end }}

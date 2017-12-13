@@ -4,7 +4,7 @@
   <li><h4>{{ if $term.Name }}<a class="no-decoration" style="text-transform: capitalize" href="{{ $term.Name | urlize  }}">{{ $term.Name }}</a>{{ else }}({{ i18n "termNotAvailable" }}){{ end }}</h4>
   <ul>
   {{- range $page := $term.WeightedPages }}
-  <li><a class="no-decoration"  href="{{ .Permalink}}"> {{ .Title }} </a></li>
+  <li><a class="no-decoration"  href="{{ .RelPermalink}}"> {{ .Title }} </a></li>
   {{- end }}
   </ul>
   </li>

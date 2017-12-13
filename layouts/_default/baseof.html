@@ -2,12 +2,14 @@
 <html lang="{{ .Site.LanguageCode }}">
 {{ `<!-- _default/baseof.html  -->` | safeHTML }}
   {{  partial "head.html" . -}}
+  {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
 
   <body>
     <div id="all" class="w3-theme">
       <header>
         {{ partial "header.marquee.html" . -}}
         {{ partial "header.nav.html"     . -}}
+        {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
       </header>
       <div id="canvas" class="w3-container w3-theme-l4">
         {{ block "headline" . -}}
@@ -15,16 +17,24 @@
         {{- end -}}
 
         {{- block "main" . }}
+          {{ `<!-- block main _default/baseof.html  -->` | safeHTML }}
           {{- partial "main.blog.date.html"         . -}}
           {{- partial "main.taxonomy.current.html"  . -}}
           {{- partial "main.teaserpic.single.html"  . -}}
+          {{- /* partial "main.title.html"          . */ -}}
           {{- partial "main.toc.single.html"        . -}}
+          {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
           {{- .Content -}}
         {{- end -}}
 
 
         {{- block "contactform" . -}}
+          {{ `<!-- block contactform _default/baseof.html  -->` | safeHTML }}
         {{- end }}
+
+        {{ block "search" . -}}
+          {{ `<!-- block search _default/baseof.html  -->` | safeHTML }}
+        {{ end }}
 
         {{- if ne .Type "contact" -}} 
           {{- partial "main.taxonomy.full.bar.html"  . -}}
@@ -32,9 +42,11 @@
       </div> <!-- canvas -->
 
       <footer>
-      {{- block "footer" . -}}
+      {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
+      {{  block "footer" . }}
       {{- partial "footer.html"        . -}}
       {{- partial "footer.bottom.html" . -}}
+      {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
       {{- end -}}
       </footer>
 

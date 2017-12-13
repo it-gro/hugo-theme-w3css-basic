@@ -12,7 +12,7 @@ tags:
   - Nullam
 categories:
   - Know-How
-teaserpic:      images/teaserpics/particles-1373684_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/particles-1373684_640.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

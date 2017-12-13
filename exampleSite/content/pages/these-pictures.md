@@ -15,8 +15,11 @@ tags:
   - pictures
 categories:
   - legal
-teaserpic:      images/teaserpics/coffee-2306471_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/coffee-2306471_640.jpg
 ---
+
+
+{{< ref "hugo-theme-w3css-basic/images-taken-from/_index.md" >}}
 
 # Where did the pictures came from?
 

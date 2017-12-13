@@ -13,7 +13,7 @@ tags:
   - Fermentum
 categories:
   - Know-How
-teaserpic:      images/teaserpics/organic-1280537_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/organic-1280537_640.jpg
 ---
 
 Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec

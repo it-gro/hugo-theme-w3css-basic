@@ -12,7 +12,7 @@ tags:
   - Fermentum
 categories:
   - Know-How
-teaserpic:      images/teaserpics/coffee-cup-2317201_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/coffee-cup-2317201_640.jpg
 ---
 
 Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec

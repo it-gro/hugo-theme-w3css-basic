@@ -13,7 +13,7 @@ categories = [
     "Development",
     "golang",
 ]
-teaserpic =  "images/teaserpics/hugo-lorem.png"
+teaserpic =  "images/teaserpics/gohugo.io/hugo-lorem.png"
 +++
 
 ## Step 1. Install Hugo

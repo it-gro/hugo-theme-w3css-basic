@@ -1,0 +1,36 @@
+{{ `<!-- partials/search.gcse.html  -->` | safeHTML }}
+
+<div class="w3-container w3-margin-bottom w3-theme-l3">
+  
+  <div class="w3-card-4 w3-margin-top ">
+      <div class="w3-margin-top">
+        <script>
+          (function() {
+              var cx = '002931815551392744433:vgxdr87ybgw';
+              var gcse = document.createElement('script');
+              gcse.type = 'text/javascript';
+              gcse.async = true;
+              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(gcse, s);
+          })();
+        </script>
+        <!-- <gcse:search></gcse:search> -->
+        <gcse:searchbox resultsUrl="https://it-grossniklaus.ch" webSearchSafesearch="active" ></gcse:searchbox>
+      </div>
+  </div>
+  
+  <div class="w3-card-4 w3-margin-top ">
+      <div class="w3-margin-top w3-margin-bottom" >
+        <gcse:searchresults></gcse:searchresults>
+      </div>
+  </div>
+  
+</div>
+
+
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}

@@ -14,7 +14,7 @@ tags:
   - tristique
 categories:
   - Vestibulum
-teaserpic:      images/teaserpics/adventure-2528477_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/adventure-2528477_640.jpg
 ---
 
 # Pellentesque dapibus suscipit ligula. 

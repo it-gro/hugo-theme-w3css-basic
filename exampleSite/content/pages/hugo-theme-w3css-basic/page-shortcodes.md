@@ -9,7 +9,7 @@ tags:
   - shortcodes
 categories:
   - This Theme
-teaserpic:      images/teaserpics/hugo-lorem.png
+teaserpic:      images/teaserpics/gohugo.io/hugo-lorem.png
 ---
 
 
@@ -417,4 +417,89 @@ static/css/syntax/syntax.autumn.css
 static/css/syntax/syntax.borland.css
 static/css/syntax/syntax.bw.css
 {{</ cscb >}}
+
+
+
+## heg-gallery
+
+{{< highlight nolan >}}
+{{</* heg-load-photoswipe */>}}
+{{</* heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" /*/>}} 
+{{< /highlight >}}
+
+renders as
+{{< heg-load-photoswipe >}}
+{{< heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" />}} 
+
+
+### Style
+Defined in:
+
+    static/css/style.css
+
+{{< highlight css >}}
+/* -------------------------------------------------- */
+/* hugo-easy-gallery */
+.gallery figcaption, 
+.fancy-figure figcaption {
+  background: #000;
+  color: #FFF;
+  font-size: 85%; 
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+}
+
+.gallery .box figure {
+  float: left;
+  margin: 1em 4px;
+}
+
+.gallery {
+  margin: 10px;
+  max-width: none;
+}
+
+.gallery .box {
+  float: left;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; 
+}
+
+@media only screen and (min-width : 365px) {
+  .gallery .box {
+    width: 50%;
+    padding-bottom: 50%;
+  }
+}
+
+@media only screen and (min-width : 480px) {
+  .gallery .box {
+    width: 33.3%;
+    padding-bottom: 33.3%; 
+  }
+}
+
+@media only screen and (min-width : 760px) {
+  .gallery .box {
+    width: 25%;
+    padding-bottom: 25%;
+  }
+}
+
+@media only screen and (min-width : 1024px) {
+  .gallery .box {
+    width: 20%;
+    padding-bottom: 20%;
+  }
+}
+
+@media only screen and (min-width : 1280px) {
+  .gallery .box {
+    width: 16%;
+    padding-bottom: 16%;
+  }
+}
+{{< /highlight >}}
+
 

@@ -13,28 +13,29 @@ categories:
 icon:           "fa fa-podcast"
 ---
 
-# Where did the logos came from?
+## Where did the logos came from?
 
-* images/clients/company-logo*:    
-https://pixabay.com     
-Creative Commons CC0    
+http://fontawesome.io/icons/
 
-* images/teaserpics/emacs*:    
-https://en.wikipedia.org/wiki/GNU_Emacs,    
-Wikipedia:Text of Creative Commons Attribution-ShareAlike 3.0 Unported License    
+Font Awesome is fully open source and is GPL friendly. You can use it
+for commercial projects, open source projects, or really just about
+whatever you want.
 
-* images/teaserpics/golang*:    
-https://golang.org/doc/gopher/bumper.png,    
-The Go gopher was designed by Renee French. (http://reneefrench.blogspot.com/).    
-The design is licensed under the Creative Commons 3.0 Attributions license. Read this article for more details: https://blog.golang.org/gopher    
+Attribution is no longer required as of Font Awesome 3.0 but is much
+appreciated: "Font Awesome by Dave Gandy - http://fontawesome.io".
 
-* images/teaserpics/hugo*:    
-https://github.com/gohugoio/hugoDocs/tree/master/static/images,    
-https://github.com/gohugoio/hugoDocs/blob/master/LICENSE.md.    
-The Hugo logos are copyright © Steve Francia 2013–2017. The Hugo Gopher is based on an original work by Renée French.    
 
-* images/teaserpics/pygments-main-logo.png:   
-[bitbucket.org/birkenfeld/pygments-main/src/pygments-main/doc/static/logo_only.png ](https://bytebucket.org/birkenfeld/pygments-main/raw/7941677dc77d4f2bf0bbd6140ade85a9454b8b80/doc/_static/logo_only.png)  
-[bitbucket.org/birkenfeld/pygments-main/src/pygments-main/LICENSE](https://bitbucket.org/birkenfeld/pygments-main/src/7941677dc77d4f2bf0bbd6140ade85a9454b8b80/LICENSE?at=default&fileviewer=file-view-default)  
-pygments logo created by Joel Unger. https://dribbble.com/joelunger   
+### Font License
+
+* Applies to all desktop and webfont files in the following directory: font-awesome/fonts/.
+* License: SIL OFL 1.1
+* URL: http://scripts.sil.org/OFL
+
+
+### Brand Icons
+
+* All brand icons are trademarks of their respective owners.
+* The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
+* Brand icons should only be used to represent the company or product to which they refer.
+* Please do not use brand logos for any purpose except to represent that particular brand or service.
 

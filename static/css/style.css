@@ -110,58 +110,58 @@ th:first-child,td:first-child{padding-left:8px}
           animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
 
-          animation-duration: 2s;
-  -webkit-animation-duration: 2s;
+          animation-duration: 0.8s;
+  -webkit-animation-duration: 0.8s;
 }
 
 .photocards-animated0 {
+          animation-delay:    0s;
+  -webkit-animation-delay:    0s;
+}
+
+.photocards-animated1 {
+          animation-delay:    0.5s;
+  -webkit-animation-delay:    0.5s;
+}
+
+.photocards-animated2 {
           animation-delay:    1s;
   -webkit-animation-delay:    1s;
 }
 
-.photocards-animated1 {
+.photocards-animated3 {
+          animation-delay:    1.5s;
+  -webkit-animation-delay:    1.5s;
+}
+
+.photocards-animated4 {
           animation-delay:    2s;
   -webkit-animation-delay:    2s;
 }
 
-.photocards-animated2 {
+.photocards-animated5 {
+          animation-delay:    2.5s;
+  -webkit-animation-delay:    2.5s;
+}
+
+.photocards-animated6 {
           animation-delay:    3s;
   -webkit-animation-delay:    3s;
 }
 
-.photocards-animated3 {
+.photocards-animated7 {
+          animation-delay:    3.5s;
+  -webkit-animation-delay:    3.5s;
+}
+
+.photocards-animated8 {
           animation-delay:    4s;
   -webkit-animation-delay:    4s;
 }
 
-.photocards-animated4 {
-          animation-delay:    5s;
-  -webkit-animation-delay:    5s;
-}
-
-.photocards-animated5 {
-          animation-delay:    6s;
-  -webkit-animation-delay:    6s;
-}
-
-.photocards-animated6 {
-          animation-delay:    7s;
-  -webkit-animation-delay:    7s;
-}
-
-.photocards-animated7 {
-          animation-delay:    8s;
-  -webkit-animation-delay:    8s;
-}
-
-.photocards-animated8 {
-          animation-delay:    9s;
-  -webkit-animation-delay:    9s;
-}
-
 .photocards-animated9 {
-          animation-delay:   10s;
-  -webkit-animation-delay:   10s;
+          animation-delay:   4.5s;
+  -webkit-animation-delay:   4.5s;
 }
 
 
@@ -260,6 +260,70 @@ th:first-child,td:first-child{padding-left:8px}
 #map {
   height: 200px;
 }
+
+/* -------------------------------------------------- */
+/* hugo-easy-gallery */
+.gallery figcaption, 
+.fancy-figure figcaption {
+  background: #000;
+  color: #FFF;
+  font-size: 85%; 
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.9;
+}
+
+.gallery .box figure {
+  float: left;
+  margin: 1em 4px;
+}
+
+.gallery {
+  margin: 10px;
+  max-width: none;
+}
+
+.gallery .box {
+  float: left;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; 
+}
+
+@media only screen and (min-width : 365px) {
+  .gallery .box {
+    width: 50%;
+    padding-bottom: 50%;
+  }
+}
+
+@media only screen and (min-width : 480px) {
+  .gallery .box {
+    width: 33.3%;
+    padding-bottom: 33.3%; /*  */
+  }
+}
+
+@media only screen and (min-width : 760px) {
+  .gallery .box {
+    width: 25%;
+    padding-bottom: 25%;
+  }
+}
+
+@media only screen and (min-width : 1024px) {
+  .gallery .box {
+    width: 20%;
+    padding-bottom: 20%;
+  }
+}
+
+@media only screen and (min-width : 1280px) {
+  .gallery .box {
+    width: 16%;
+    padding-bottom: 16%;
+  }
+}
+
 
 /* ------------------------------------------------------------------------------ */
 /* -- Local variables:      */
