@@ -1,35 +1,32 @@
-{{ define "title" }}
-  {{ .Site.Title }} - {{ i18n  "pages" }}
-{{ end }}
-
 {{ define "headline" }}
-{{- `<!-- _default/taxonomy.html  -->` | safeHTML }}
-<h1 class="w3-panel w3-theme-l2">
-{{ if eq .Data.Singular "category" }}<i class="w3-margin-right fa fa-folder-open-o" aria-hidden="true"></i>{{ i18n "categoryTitle" }}:{{ end }} 
-{{ if eq .Data.Singular "tag"      }}<i class="w3-margin-right fa fa-tag"           aria-hidden="true"></i>{{ i18n "tagTitle" }}:     {{ end }} 
-{{ .Title }}</h1>
+  {{ `<!-- _default/taxonomy.html  -->` | safeHTML }}
+  <h1 class="w3-panel w3-theme-l2">
+  {{ if eq .Data.Singular "category" }}<i class="w3-margin-right fa fa-folder-open-o" aria-hidden="true"></i>{{ i18n "categoryTitle" }}:{{ end }} 
+  {{ if eq .Data.Singular "tag"      }}<i class="w3-margin-right fa fa-tag"           aria-hidden="true"></i>{{ i18n "tagTitle" }}:     {{ end }} 
+  {{ .Title }}</h1>
 {{ end }}
 
 {{ define "main" }}
-  {{- if .Site.Params.debug }}_default/taxonomy.html{{ end }}
-
+  {{ `<!-- _default/taxonomy.html  -->` | safeHTML }}
+  {{ `<!--  .Paginate .Data.Pages -->` | safeHTML }}
   {{/* $paginator := .Paginate (where .Data.Pages "Type" "blog") */}}
   {{ $paginator := .Paginate .Data.Pages }}
   {{ partial "main.paginator.bar.html" . }}
+  {{ `<!--  back in _default/taxonomy.html  -->` | safeHTML }}
+  {{ `<!-- range $paginator.Pages -->` | safeHTML }}
   {{ range $index, $element := $paginator.Pages }}
-
   {{/* range $index, $element := sort .Data.Pages */}}
     {{ if eq (mod $index 3) 0 }}
-    <div class="w3-cell-row w3-margin-top w3-margin-bottom">
+    <div class="w3-cell-row w3-margin-top">
     {{ end }}
       <div class="w3-cell w3-cell-bottom w3-margin-bottom w3-mobile w3-theme-l4 ">
-
-        <div class="w3-card w3-margin-bottom w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-theme-l3">
+        <div class="w3-card w3-margin-right w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l3">
           {{ partial "main.teaser_in_card.html" . }}
         </div> <!-- w3-card -->
-      </div> <!-- w3-cell  -->
+      </div> {{ `<!-- w3-cell -->` | safeHTML }}
     {{ if or (eq (mod $index 3) 2) (eq (add $index 1 ) $paginator.NumberOfElements ) }}
-    </div>  <!-- w3-cell-row -->
+    </div> {{ `<!-- w3-cell-row -->` | safeHTML }}
+
     {{ end }}{{/* if mod */}}
   {{ end }} {{/* range */}}
 
