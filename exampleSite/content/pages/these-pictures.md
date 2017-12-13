@@ -19,11 +19,10 @@ teaserpic:      images/teaserpics/pixabay.com/coffee-2306471_640.jpg
 ---
 
 
-{{< ref "hugo-theme-w3css-basic/images-taken-from/_index.md" >}}
-
 # Where did the pictures came from?
 
-https://pixabay.com/
+* See [Images taken from...](../hugo-theme-w3css-basic/images-taken-from/).
+* https://pixabay.com/
 
 
 # What is Pixabay?

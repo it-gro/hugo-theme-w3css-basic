@@ -7,7 +7,7 @@ tags:
  - emacs
 categories:
   - tools
-teaserpic:      images/teaserpics/emacs-jokes.png
+teaserpic:      images/teaserpics/wikipedia.org/emacs-jokes.png
 ---
 
 Richard M. Stallman (RMS, widely known for creating EMACS) is writing

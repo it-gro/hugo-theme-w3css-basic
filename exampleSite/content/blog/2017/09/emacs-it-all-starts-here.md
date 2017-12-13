@@ -7,7 +7,7 @@ tags:
  - emacs
 categories:
   - tools
-teaserpic:      images/teaserpics/emacs-it-all-starts-here.svg
+teaserpic:      images/teaserpics/wikipedia.org/emacs-it-all-starts-here.svg
 ---
 
 

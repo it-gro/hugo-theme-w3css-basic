@@ -5,17 +5,17 @@
 <div class="w3-container w3-margin-bottom w3-theme-l3">
 
   {{- if not ($.InSection $startSection) }}
-      {{- $startSection.Scratch.Set "nav-icon" "fa fa-bullseye"}}
+      {{- $startSection.Scratch.Set "nav-icon" "fas fa-bullseye"}}
     {{ template "page-nav-entry"  ($startSection ) }}
     {{ if not ($.Parent.InSection $startSection) }}
-      {{- $.Parent.Scratch.Set "nav-icon" "fa fa-arrow-up"}}
+      {{- $.Parent.Scratch.Set "nav-icon" "fas fa-arrow-up"}}
       {{ template "page-nav-entry"  ($.Parent ) }}
     {{- end }}
   {{- end }}
 
   {{- range $index, $element := $.Sections }}
     {{- if not ($element.InSection $) }}
-      {{- $element.Scratch.Set "nav-icon" "fa fa-arrow-down"}}
+      {{- $element.Scratch.Set "nav-icon" "fas fa-arrow-down"}}
       {{ template "page-nav-entry"  ($element ) }}
     {{- end }}
   {{- end }}

@@ -89,39 +89,39 @@ disqusShortname = ""
   weight = 1
   name   = "Home"
   url    = "/index.html"
-  pre    = "fa fa-home"
+  pre    = "fas fa-home"
 
 [[menu.main]]
   weight = 2
   name   = "Contact"
   url    = "/contact"
-  pre    = "fa fa-id-card-o"
+  pre    = "far fa-address-card"
 
 [[menu.main]]
   weight = 3
   name   = "Pages"
   url    = "/pages"
-  pre    = "fa fa-list"
+  pre    = "fas fa-list"
 
 # demo submenu
 [[menu.main]]
   weight = 4
   name   = "Theme"
-  pre    = "fa fa-rss"
+  pre    = "fas fa-rss"
   identifier = "theme"
  
 [[menu.main]]
   weight = 1
   name   = "About"
   url    = "/pages/hugo-theme-w3css-basic/"
-  pre    = "fa fa-info"
+  pre    = "fas fa-info fa-fw"
   parent = "theme"
  
 [[menu.main]]
   weight = 2
   name   = "Images"
   url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
-  pre    = "fa fa-picture-o"
+  pre    = "far fa-images fa-fw"
   parent = "theme"
 # end submenu
 
@@ -135,7 +135,7 @@ disqusShortname = ""
   weight = 6
   name   = "FAQ"
   url    = "/faq"
-  pre    = "fa fa-question-circle-o"
+  pre    = "far fa-question-circle"
 
 
 # right aligned
@@ -143,32 +143,32 @@ disqusShortname = ""
   weight   = 1
   name     = "GitHub"
   url      = "https://github.com/it-gro/hugo-theme-w3css-basic"
-  pre      = "fa fa-github"
+  pre      = "fab fa-github"
 
 #[[menu.topbar]]
 #  weight   = 2
 #  name     = "Facebook"
 #  url      = "http://facebook.com"
-#  pre      = "fa fa-facebook"
+#  pre      = "fab fa-facebook"
 
 #[[menu.topbar]]
 #  weight   = 3
 #  name     = "Twitter"
 #  url      = "http://twitter.com"
-#  pre      = "fa fa-twitter"
+#  pre      = "fab fa-twitter"
 
 [[menu.topbar]]
   weight   = 4
   name     = "Email"
   url      = "#address"
 # url      = "mailto:info@example.com"
-  pre      = "fa fa-envelope"
+  pre      = "fas fa-envelope"
 
 [[menu.topbar]]
   weight   = 5
   name     = "Search"
   url      = "/search"
-  pre      = "fa fa-search"
+  pre      = "fas fa-search"
 
 # if google translate is not an option, provide multilingual menu
 # https://gohugo.io/content-management/multilingual/
@@ -266,51 +266,51 @@ disqusShortname = ""
 #   weight = 1
 #   name   = "GitHub"
 #   url    = "https://github.com/it-gro/hugo-theme-w3css-basic"
-#   pre   = "fa fa-github"
+#   pre   = "fab fa-github"
 #
 # [[languages.en.menu.topbar]]
 #   weight = 2
 #   name   = "Facebook"
 #   url    = "http://facebook.com"
-#   pre   = "fa fa-facebook"
+#   pre   = "fab fa-facebook"
 #
 # [[languages.en.menu.topbar]]
 #   weight = 3
 #   name   = "Twitter"
 #   url    = "http://twitter.com"
-#   pre   = "fa fa-twitter"
+#   pre   = "fab fa-twitter"
 #
 # [[languages.en.menu.topbar]]
 #   weight = 4
 #   name   = "Email"
 #   url    = "#footer"
 # # url    = "mailto:info@example.com"
-#   pre   = "fa fa-envelope"
+#   pre   = "fab fa-envelope"
 #
 # [[languages.de.menu.topbar]]
 #   weight = 1
 #   name   = "GitHub"
 #   url    = "https://github.com/it-gro/hugo-theme-w3css-basic"
-#   pre   = "fa fa-github"
+#   pre   = "fab fa-github"
 #
 # [[languages.de.menu.topbar]]
 #   weight = 2
 #   name   = "Facebook"
 #   url    = "http://facebook.com"
-#   pre   = "fa fa-facebook"
+#   pre   = "fab fa-facebook"
 #
 # [[languages.de.menu.topbar]]
 #   weight = 3
 #   name   = "Twitter"
 #   url    = "http://twitter.com"
-#   pre   = "fa fa-twitter"
+#   pre   = "fab fa-twitter"
 #
 # [[languages.de.menu.topbar]]
 #   weight = 4
 #   name   = "Email"
 #   url    = "#footer"
 # # url    = "mailto:info@example.com"
-#   pre   = "fa fa-envelope"
+#   pre   = "fas fa-envelope"
 
 
 
@@ -332,7 +332,7 @@ disqusShortname = ""
   #w3cssColorTheme = "/css/w3-theme-custom.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
@@ -340,7 +340,7 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-green.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-grey.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-khaki.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
@@ -475,7 +475,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/features'
   #enable  = false
   enable   = true
-  limitTo  = 3
+  #limitTo  = 3
   #limitTo  = 6
 
 [params.testimonials]
@@ -497,7 +497,7 @@ gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
   # enable or disable see_more on frontpage
   enable    = true
  #enable    = false
-  icon      = "fa fa-file-code-o"
+  icon      = "far fa-file-code"
   title     = "Do You want to see More?"
   linkUrl   = "/pages"
   linkText  = "consectetuer adipiscing"
@@ -534,10 +534,7 @@ facilisi.
   title    = "From our Blog"
   subtitle = '''
 Pellentesque habitant morbi tristique senectus et netus et malesuada
-fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-eleifend leo.
+fames ac.
              '''
 
 [params.blog]

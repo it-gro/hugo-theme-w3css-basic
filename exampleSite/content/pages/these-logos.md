@@ -15,13 +15,11 @@ icon:           "fa fa-podcast"
 
 ## Where did the logos came from?
 
-http://fontawesome.io/icons/
-
-Font Awesome is fully open source and is GPL friendly. You can use it
+* http://fontawesome.io/icons/
+* Font Awesome is fully open source and is GPL friendly. You can use it
 for commercial projects, open source projects, or really just about
 whatever you want.
-
-Attribution is no longer required as of Font Awesome 3.0 but is much
+* Attribution is no longer required as of Font Awesome 3.0 but is much
 appreciated: "Font Awesome by Dave Gandy - http://fontawesome.io".
 
 

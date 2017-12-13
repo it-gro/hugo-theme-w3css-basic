@@ -27,7 +27,11 @@ and list templates and basic content files.
 
 # Shortcodes in this Theme for W3.CSS classes
 
-## Style
+## w3-notice-icon
+
+* Inspired by [W3.CSS Notes](https://www.w3schools.com/w3css/w3css_notes.asp)
+
+### Style
 
 * these colors are separate from the ones in w3cssColorTheme
 
@@ -37,17 +41,17 @@ Defined in:
 
 {{< highlight css >}}
 /* for shortcodes w3-notice-icon and w3-alert-icon */
-.shortcode-info {
-  border-color:#4CAF50!important
-}
-.shortcode-check {
-  border-color:#ffeb3b!important
-}
-.shortcode-question {
-  border-color:#2196F3!important
+.shortcode-danger {
+  border-color:#f44336!important
 }
 .shortcode-warning {
-  border-color:#f44336!important
+  border-color:#ffeb3b!important
+}
+.shortcode-info  {
+  border-color:#2196F3!important
+}
+.shortcode-success{
+  border-color:#4CAF50!important
 }
 
 /* for shortcode w3-quote */
@@ -57,19 +61,24 @@ Defined in:
 {{< /highlight >}}
 
 
-## w3-notice-icon
+### Success
+{{< highlight nolang >}}
+{{%/* w3-notice-icon type="success" %}}
+Well done
+{{% /w3-notice-icon */%}}
+{{< /highlight >}}
+renders as
 
-* Inspired by [W3.CSS Notes](https://www.w3schools.com/w3css/w3css_notes.asp)
-* Added fa-icons
-  - fa-info
-  - fa-warning
-  - fa-question
-  - fa-check (I miss "ok" or "success" icon ...)
-* Use custom css for border-colors
-  - -shortcode-info
-  - -shortcode-warning
-  - -shortcode-question
-  - -shortcode-check
+{{% w3-notice-icon type="success" %}}Well done                      {{% /w3-notice-icon %}}
+
+{{< highlight nolang >}}
+{{%/* w3-notice-icon type="success"  heading="Well done" %}}
+Well done
+{{% /w3-notice-icon */%}}
+{{< /highlight >}}
+renders as
+
+{{% w3-notice-icon type="success" heading="Well done"            %}}A message with header           {{% /w3-notice-icon %}}
 
 ### Info
 
@@ -81,83 +90,62 @@ A default disclaimer (=> info)
 
 renders as
 
-{{% w3-notice-icon                                                 %}}A default disclaimer (=> info)  {{% /w3-notice-icon %}}
+{{% w3-notice-icon %}}A default disclaimer (=> info)  {{% /w3-notice-icon %}}
 
 
 {{< highlight nolang >}}
-{{%/* w3-notice-icon head="I'm a heading" %}}
+{{%/* w3-notice-icon heading="I'm a heading" %}}
 A default disclaimer with header
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
 renders as
 
-{{% w3-notice-icon                    head="I'm a heading"       %}}A default disclaimer with header {{% /w3-notice-icon %}}
+{{% w3-notice-icon heading="I'm a heading"  %}}A default disclaimer with header {{% /w3-notice-icon %}}
 
 
 {{< highlight nolang >}}
-{{%/* w3-notice-icon icon="fa-info" head="Show Info" %}}
-No need for icon="fa-info", since this is the default
+{{%/* w3-notice-icon type="info" heading="Show Info" %}}
+No need for type="info", since this is the default
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
 renders as
 
-{{% w3-notice-icon icon="fa-info"     head="Show Info"             %}}No need for icon="fa-info", since this is the default   {{% /w3-notice-icon %}}
-
+{{% w3-notice-icon type="info" heading="Show Info" %}}
+No need for type="info", since this is the default   
+{{% /w3-notice-icon %}}
 
 
 ### Warning
-* select the type of notice by providing the icon-parameter
 
 {{< highlight nolang >}}
-{{%/* w3-notice-icon icon="fa-warning" head="Keep in mind" %}}
+{{%/* w3-notice-icon type="warning" heading="Keep in mind" %}}
 A warning disclaimer
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
 renders as
 
-{{% w3-notice-icon icon="fa-warning"  head="Keep in mind"          %}}A warning disclaimer             {{% /w3-notice-icon %}}
+{{% w3-notice-icon type="warning"  heading="Keep in mind"          %}}A warning disclaimer             {{% /w3-notice-icon %}}
 
 
 
-### Question
+### Danger
 {{< highlight nolang >}}
-{{%/* w3-notice-icon icon="fa-question" %}}
-A question
-{{% /w3-notice-icon */%}}
-{{< /highlight >}}
-renders as
-
-{{% w3-notice-icon icon="fa-question"                              %}}A question                       {{% /w3-notice-icon %}}
-
-{{< highlight nolang >}}
-{{%/* w3-notice-icon icon="fa-question" head="A Question" %}}
-A question with header
-{{% /w3-notice-icon */%}}
-{{< /highlight >}}
-renders as
-
-{{% w3-notice-icon icon="fa-question" head="A Question"            %}}A question with header           {{% /w3-notice-icon %}}
-
-
-
-### Check
-{{< highlight nolang >}}
-{{%/* w3-notice-icon icon="fa-check" %}}
+{{%/* w3-notice-icon type="danger" %}}
 A check disclaimer
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
 renders as
 
-{{% w3-notice-icon icon="fa-check"                                 %}}A check disclaimer               {{% /w3-notice-icon %}}
+{{% w3-notice-icon type="danger"                                 %}}Watch out               {{% /w3-notice-icon %}}
 
 {{< highlight nolang >}}
-{{%/* w3-notice-icon icon="fa-check" head="Check this" %}}
-A check disclaimer with header
+{{%/* w3-notice-icon type="danger" heading="Careful" %}}
+Watch out 
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
 renders as
 
-{{% w3-notice-icon icon="fa-check"    head="Check this"            %}}A check disclaimer with header   {{% /w3-notice-icon %}}
+{{% w3-notice-icon type="danger"  heading="Careful" %}}Watch out   {{% /w3-notice-icon %}}
 
 
 
@@ -169,40 +157,45 @@ renders as
 Some examples:
 
 {{< highlight nolang >}}
-{{%/* w3-alert-icon icon="fa-info" %}}
-Hi, I'm info
+{{%/* w3-alert-icon type="success" %}}
+Hi, I'm a success
 {{% /w3-alert-icon */%}}
 
-{{%/* w3-alert-icon icon="fa-check" head="I'm check" %}}
-A check with title
+{{%/* w3-alert-icon type="info" heading="I'm info" %}}
+An info with title
 {{% /w3-alert-icon */%}}
 
-{{%/* w3-alert-icon icon="fa-warning" %}}
+{{%/* w3-alert-icon type="warning" %}}
 A warning
 {{% /w3-alert-icon */%}}
 
-{{%/* w3-alert-icon icon="fa-warning" head="You have been warned"  %}}
-A warning
+{{%/* w3-alert-icon type="danger" %}}
+Danger: A stronger warning
+{{% /w3-alert-icon */%}}
+
+{{%/* w3-alert-icon type="warning" heading="You have been warned"  %}}
+A warning with heading
 {{% /w3-alert-icon */%}}
 {{< /highlight >}}
 
-{{% w3-alert-icon icon="fa-info"                                  %}}Hi, I'm info       {{% /w3-alert-icon %}}
-{{% w3-alert-icon icon="fa-check"   head="I'm check"              %}}A check with title {{% /w3-alert-icon %}}
-{{% w3-alert-icon icon="fa-warning"                               %}}A warning          {{% /w3-alert-icon %}}
-{{% w3-alert-icon icon="fa-warning" head="You have been warned"   %}}A warning          {{% /w3-alert-icon %}}
+{{% w3-alert-icon type="success"                                   %}}Hi, I'm a success          {{% /w3-alert-icon %}}
+{{% w3-alert-icon type="info"     heading="I'm info"               %}}An info with title         {{% /w3-alert-icon %}}
+{{% w3-alert-icon type="warning"                                   %}}A warning                  {{% /w3-alert-icon %}}
+{{% w3-alert-icon type="danger"                                    %}}Danger: A stronger warning {{% /w3-alert-icon %}}
+{{% w3-alert-icon type="warning"  heading="You have been warned"   %}}A warning with heading     {{% /w3-alert-icon %}}
 
 ## w3-button-icon
 
 {{< highlight nolang >}}
-{{%/* w3-button-icon                           %}}Hi, i'm a button{{% /w3-alert-icon */%}}
-{{%/* w3-button-icon icon="fa-warning"         %}}Purge{{% /w3-alert-icon */%}}
-{{%/* w3-button-icon href="https://google.com" %}}take me to Google{{% /w3-alert-icon */%}}
+{{%/* w3-button-icon                                    %}}Hi, i'm a button{{% /w3-alert-icon */%}}
+{{%/* w3-button-icon icon="fas fa-exclamation-triangle" %}}Purge{{% /w3-alert-icon */%}}
+{{%/* w3-button-icon href="https://google.com"          %}}take me to Google{{% /w3-alert-icon */%}}
 {{< /highlight >}}
 
 renders to:
-{{% w3-button-icon                           %}}Hi, i'm a button{{% /w3-alert-icon %}}
-{{% w3-button-icon icon="fa-warning"         %}}Purge{{% /w3-alert-icon %}}
-{{% w3-button-icon href="https://google.com" %}}take me to Google{{% /w3-alert-icon %}}
+{{% w3-button-icon                                     %}}Hi, i'm a button{{% /w3-alert-icon %}}
+{{% w3-button-icon icon="fas fa-exclamation-triangle"  %}}Purge{{% /w3-alert-icon %}}
+{{% w3-button-icon href="https://google.com"           %}}take me to Google{{% /w3-alert-icon %}}
 
 
 ## w3-badge
@@ -280,20 +273,20 @@ using blockquote:
 ## icon
 
 {{< highlight nolan >}}
-{{</* icon fa-home>}}
-{{< icon "fa-home fa-2x" */>}}
+{{</* icon "fas fa-home">}}
+{{< icon "fas fa-home fa-2x" */>}}
 {{< /highlight >}}
 renders as
-{{< icon fa-home>}}
-{{< icon "fa-home fa-2x">}}
+{{< icon "fas fa-home">}}
+{{< icon "fas fa-home fa-2x">}}
 
 {{< highlight nolan >}}
-{{</* icon name="fa-home" >}}
-{{< icon name="fa-home" size="fa-2x" */>}}
+{{</* icon name="fas fa-home" >}}
+{{< icon name="fas fa-home" size="fa-2x" */>}}
 {{< /highlight >}}
 renders as
-{{< icon name="fa-home" >}}
-{{< icon name="fa-home" size="fa-2x">}}
+{{< icon name="fas fa-home" >}}
+{{< icon name="fas fa-home" size="fa-2x">}}
 
 ## csc
 

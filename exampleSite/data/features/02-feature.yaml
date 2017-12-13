@@ -1,6 +1,6 @@
 weight:      2
 name:        "Vulputate"
-icon:        "fa fa-print"
+icon:        "fas fa-print"
 animated:    "rollIn"
 url:         pages/front/features/02
 description: |
