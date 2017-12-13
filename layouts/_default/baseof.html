@@ -39,7 +39,8 @@
         {{- if ne .Type "contact" -}} 
           {{- partial "main.taxonomy.full.bar.html"  . -}}
         {{- end -}}
-      </div> <!-- canvas -->
+      </div> {{ `<!-- canvas -->` | safeHTML }}
+
 
       <footer>
       {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
@@ -47,13 +48,13 @@
       {{- partial "footer.html"        . -}}
       {{- partial "footer.bottom.html" . -}}
       {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
-      {{- end -}}
+      {{ end }}
       </footer>
 
-    </div> <!-- all -->
-    {{- partial "scripts.html"  . -}}
+    </div> {{ `<!-- all -->` | safeHTML }}
+    {{ partial "scripts.html"  . }}
   </body>
-  {{- partial "debug.html" . -}}
+  {{ partial "debug.html" . -}}
 </html>
 
 {{- /* emacs                     */}}

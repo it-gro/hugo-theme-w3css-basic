@@ -22,19 +22,19 @@
   {{- range $index, $element := $paginator.Pages }}
   {{- if eq (mod $index 3) 0 }}
     {{ `<!-- modulo 0 -->` | safeHTML }}
-  <div id="w3-cell-row w3-margin-top w3-margin-bottom">
+  <div class="w3-container">
   {{ end -}}
 
-  <div class="w3-cell w3-mobile ">
-    <div class="w3-card w3-margin-bottom w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-theme-l3">
-      {{ partial "main.teaser_in_card.html" . }}
-      {{ `<!-- back in blog/list.html  -->` | safeHTML }}
-    </div> <!-- w3-card -->
-  </div> <!-- w3-cell -->
+    <div class="w3-cell w3-mobile ">
+      <div class="w3-card w3-margin-bottom w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-margin-right w3-theme-l3">
+        {{ partial "main.teaser_in_card.html" . }}
+        {{ `<!-- back in blog/list.html  -->` | safeHTML }}
+      </div> {{ `<!-- w3-card -->` | safeHTML }}
+    </div> {{ `<!-- w3-cell -->` | safeHTML }}
 
-    {{- if eq (add $index 1 ) $paginator.NumberOfElements  }}
+    {{- if or (eq (mod $index 3) 2) (eq (add $index 1 ) $paginator.NumberOfElements)  }}
       {{ `<!-- last one -->` | safeHTML }}
-  </div> <!-- w3-cell-row -->
+  </div> {{ `<!-- w3-container -->` | safeHTML }}
     {{- end }}
   {{- end }} {{/* range */}}
 

@@ -16,12 +16,12 @@
         <div class="w3-cell w3-cell-bottom w3-margin-bottom w3-mobile w3-theme-l3 ">
           <div class="w3-card-4 w3-margin-right w3-round-xxlarge w3-theme-l1 {{ if and $element.animated $.Site.Params.photocards.animate }} {{ printf "%s %s %s%d %s" "animated" "photocards-animated" "photocards-animated" $index $element.animated }} {{ end }}">
             {{- if (and $element.image (not $element.url) )  }}
-            <img src="{{ $element.image }}" class="w3-round"                    style="width:100%">
+            <img src="{{ $element.image }}" alt="{{ $element.image }}" class="w3-round"                    style="width:100%">
             {{- end }} {{/* if and image not url */}}
 
             {{- if (and $element.image $element.url)  }}
             <a class="no-decoration" href="{{ $element.url | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}">
-              <img src="{{ $element.image }}" class="w3-round w3-hover-opacity" style="width:100%">
+              <img src="{{ $element.image }}" alt="{{ $element.image }}" class="w3-round w3-hover-opacity" style="width:100%">
               </a>
             {{- end -}} {{/* if and image url */}}
             <div class="w3-container w3-theme-l1">

@@ -18,11 +18,11 @@
       <div class="w3-third">
         <div class="w3-card-4 w3-margin w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off w3-theme-l4">
           <a class="no-decoration" href="{{ $element.RelPermalink }}">
-            <img alt=""
+            <img 
                  {{- if isset $element.Params (lower "teaserpic" ) }}
-                 src={{ $element.Params.teaserpic | relURL }}
+                 src={{ $element.Params.teaserpic | relURL }} alt="{{ $element.Params.teaserpic}} "
                  {{- else }}
-                 src={{ "/images/teaserpics/placeholder.png" | relURL }}
+                 src={{ "/images/teaserpics/placeholder.png" | relURL }} alt="placeholder.png"
                  {{- end }}
                  class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
           <h3>{{- $element.Title }}</h3>
