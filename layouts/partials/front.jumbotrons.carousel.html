@@ -55,7 +55,7 @@
       </div>
       <div class="w3-col m3 w3-hide-small">
         {{- if .icon }}
-        <i class="w3-margin fa fa-5x {{ .icon }}"></i>
+        <i class="w3-margin {{ .icon }} fa-5x"></i>
         {{- end }}
         {{- if .image }}
         <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:180px; max-height:180px; width: auto; height: auto; margin: 8px 0px 8px 0px;">
@@ -64,7 +64,7 @@
 
       <div class="w3-col m3 w3-hide-large w3-hide-medium">
         {{- if .icon }}
-        <i class="w3-margin fa fa-3x {{ .icon }}"></i>
+        <i class="w3-margin  {{ .icon }} fa-3x"></i>
         {{- end }}
         {{- if .image }}
         <img class="w3-image w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:100px; max-height:100px; width: auto; height: auto; margin: 8px 0px 8px 0px;">

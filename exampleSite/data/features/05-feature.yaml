@@ -1,6 +1,6 @@
 weight:      5
 name:        "Sadipscing Elitr"
-icon:        "fa fa-envelope-o"
+icon:        "far fa-envelope"
 animated:    "rollIn"
 url:         pages/front/features/05
 description: |

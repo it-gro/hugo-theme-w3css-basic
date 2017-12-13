@@ -1,6 +1,6 @@
 weight:      1
 name:        "Eleifend"
-icon:        "fa fa-desktop"
+icon:        "fas fa-desktop"
 animated:    "slideInLeft"
 url:         pages/front/features/01
 description: |

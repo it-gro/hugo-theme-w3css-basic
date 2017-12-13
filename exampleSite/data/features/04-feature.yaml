@@ -1,6 +1,6 @@
 weight:      4
 name:        "Invidunt ut Labore"
-icon:        "fa fa-lightbulb-o"
+icon:        "far fa-lightbulb"
 animated:    "slideInLeft"
 url:         pages/front/features/04
 description: |
