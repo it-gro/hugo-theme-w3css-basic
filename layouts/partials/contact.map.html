@@ -23,7 +23,7 @@
 <div id="map" class="w3-panel w3-card-4 w3-theme-l2">
 <noscript>
   {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }}
-  <p>{{ i18n "JsNeeded" }} (google maps)</p>
+  <p>{{ default "no JavaScript" (i18n "JsNeeded") }} (google maps)</p>
   <a href="https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z=10" target="_blank">https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z={{.Site.Params.googleMapsZoom}}</a>
 </noscript>
 </div>

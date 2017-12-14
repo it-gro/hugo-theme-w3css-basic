@@ -1,5 +1,12 @@
 {{ `<!-- partials/header.nav.html -->` | safeHTML }}
 
+{{- if isset .Site.Params.menuConfig (lower "smallDispMenuMaxChars" ) }}
+{{- $.Scratch.Set "smallDispMenuLower" 1 }}
+{{else}}
+{{- $.Scratch.Set "smallDispMenuLower" "" }}
+{{end}}
+{{- $.Scratch.Set "smallDispMenuMaxChars"    (.Site.Params.menuConfig.smallDispMenuMaxChars  | default 99)}}
+
 <div class="w3-bar w3-theme-dark w3-hide-small">
   {{ `<!-- w3-hide-small ******************** -->` | safeHTML }}
   {{- template "header-nav-entry" . }}
@@ -41,13 +48,19 @@
       {{ `<!-- .HasChildren -->` | safeHTML }}
 
 <div class="w3-dropdown-hover">
-  <button class="w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{ if eq (i18n .Name) "" }}{{.Name}}{{else}}{{i18n .Name}}{{end}}</button>
-  <button class="w3-button w3-small w3-hide-large w3-hide-medium"><i class="{{ .Pre }}"></i>&nbsp;{{ if eq (i18n .Name) "" }}{{substr .Name 0 1 | lower}}{{else}}{{substr (i18n .Name) 0 1 | lower}}{{end}}</button>
+  <button class="w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}</button>
+  <button class="w3-button w3-small w3-hide-large w3-hide-medium"><i class="{{ .Pre }}"></i>&nbsp;
+{{- if ($.Scratch.Get "smallDispMenuLower") }}
+  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}
+{{- else}}
+  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars")}}
+{{- end -}}
+</button>
   <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2" > <!-- above owl carousel -->
     {{ `<!-- range .Children -->` | safeHTML }}
     {{- range .Children }}
     <a href="{{ .URL }}{{ if and (eq (substr .URL 0 1) "/") $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" 
-       class="w3-bar-item w3-button"><i class="{{ .Pre }}"></i>&nbsp;{{ if eq (i18n .Name) "" }}{{.Name}}{{else}}{{i18n .Name}}{{end}}
+       class="w3-bar-item w3-button"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}
     </a>
     {{- end }}  {{- /* range .Children        */}}
   </div> <!-- w3-dropdown-content -->
@@ -56,10 +69,15 @@
     {{- else }}
       {{ `<!-- not .HasChildren -->` | safeHTML }}
 <a href="{{ .URL }}{{ if and (and  (not (in .URL ".html")) (eq (substr .URL 0 1) "/")) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" 
-   class="w3-bar-item w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{ if eq (i18n .Name) "" }}{{.Name}}{{else}}{{i18n .Name}}{{end}}
+   class="w3-bar-item w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}
 </a>
 <a href="{{ .URL }}{{ if and (and  (not (in .URL ".html")) (eq (substr .URL 0 1) "/")) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" 
-   class="w3-bar-item w3-button w3-small w3-hide-large w3-hide-medium"><i class="{{ .Pre }}"></i>&nbsp;{{ substr (i18n .Name) 0 1 | lower }}
+   class="w3-bar-item w3-button w3-small w3-hide-large w3-hide-medium"><i class="{{ .Pre }}"></i>&nbsp;
+{{- if ($.Scratch.Get "smallDispMenuLower") }}
+  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}
+{{- else}}
+  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars")}}
+{{- end -}}
 </a>
     {{- end  }}   {{- /* if .HasChildren        */}}
 

@@ -31,7 +31,7 @@
           </div>
           </a>
           <div class="w3-container w3-center">
-            <a href="{{ .RelPermalink }}" class="w3-button">{{ i18n "continueReading" }}</a>
+            <a href="{{ .RelPermalink }}" class="w3-button">{{ default "more" (i18n "continueReading") }}</a>
           </div>
         </div> <!-- w3-container -->
       </div> <!-- w3-third -->
