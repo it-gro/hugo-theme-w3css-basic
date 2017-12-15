@@ -365,6 +365,11 @@ disqusShortname = ""
   latitude         = 46.946692
   longitude        =  7.444186
 
+  # Google Custom Search API
+  # https://cse.google.com/cse/
+  # used in layouts/partials/search.google.gcse.html
+  googleCustomSearchCX = ''
+
   # if environment is not an option => define key here:
   #googleMapsApiKey = ""
 

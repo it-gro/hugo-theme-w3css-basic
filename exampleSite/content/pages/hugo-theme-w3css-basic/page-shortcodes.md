@@ -37,7 +37,7 @@ and list templates and basic content files.
 
 Defined in:
 
-    static/css/custom.css
+    static/css/style.css
 
 {{< highlight css >}}
 /* for shortcodes w3-notice-icon and w3-alert-icon */
@@ -58,6 +58,12 @@ Defined in:
 .shortcode-quote {
   border-color:#4CAF50!important
 }
+
+pre.w3-code, span.w3-codespan{
+  font-family:monospace,monospace; !important;
+  font-size:1em
+}
+
 {{< /highlight >}}
 
 
@@ -268,6 +274,63 @@ using blockquote:
 {{% w3-quote source="Albert Einstein" layout="icon-blockquote"    %}}*Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.*{{% /w3-quote %}}
 
 
+## w3-codespan
+
+* Inspired by [W3.CSS Code](https://www.w3schools.com/w3css/w3css_code.asp)
+* Highlight Inline Code
+* all on one line
+
+{{< highlight nolan >}}
+... command: {{%/* w3-codespan %}}startup *all*{{% /w3-codespan */%}} just try it...
+... command: {{</* w3-codespan >}}startup *all*{{< /w3-codespan */>}} just try it...
+{{< /highlight >}}
+
+This is a cool command: {{% w3-codespan %}}startup *all*{{% /w3-codespan %}} just try it...
+This is a cool command: {{< w3-codespan >}}startup *all*{{< /w3-codespan >}} just try it...
+
+
+## w3-code
+
+* Inspired by [W3.CSS Code](https://www.w3schools.com/w3css/w3css_code.asp)
+* show code block - but no highlighting
+
+
+{{< highlight text >}}
+{{</* w3-code >}}
+genpasswd() {
+    local l=$1
+    [ "$l" == "" ] && l=16
+    tr -dc A-Za-z0-9 < /dev/urandom | head -c ${l} | xargs
+}
+
+genpasswd $1
+{{< /w3-code */>}}
+{{< /highlight >}}
+renders as
+
+{{< w3-code >}}
+genpasswd() {
+    local l=$1
+    [ "$l" == "" ] && l=16
+    tr -dc A-Za-z0-9 < /dev/urandom | head -c ${l} | xargs
+}
+
+genpasswd $1
+{{< /w3-code >}}
+
+
+### Style
+
+    static/css/style.css
+
+{{< highlight css >}}
+pre.w3-code, span.w3-codespan{
+  font-family:monospace,monospace; !important;
+  font-size:1em
+}
+{{< /highlight >}}
+
+
 # Other Shortcodes in this Theme
 
 ## icon
@@ -309,6 +372,13 @@ You may give a class name {{</* csc k >}}cool code{{< /csc */>}}.
 renders as
 
 You may give a class name {{< csc k >}}cool code{{< /csc >}}. Here are the chromastyles classes:
+
+Background style for csc is in `static/css/style.css`:
+{{< highlight css >}}
+code.chroma {
+  background-color: rgba(255, 255, 255, .4) ; /* used e.g. for csc* shortcodes */
+}
+{{< /highlight >}}
 
 
    Class | Type
@@ -380,16 +450,6 @@ gu       | GenericSubheading
 gt       | GenericTraceback
 w        | TextWhitespace
 
-
-### Style
-
-    static/css/style.css
-
-{{< highlight css >}}
-code {
-  background-color: rgba(255,255,255, 0.4) ; /* adjust to syntax.css Background */
-}
-{{< /highlight >}}
 
 ## cscb
 
@@ -496,3 +556,16 @@ Defined in:
 {{< /highlight >}}
 
 
+
+## i18n
+
+* i18n lookup - if no translation found get argument back (default)
+
+{{< highlight nolang >}}
+{{</* i18n "termNotAvailable" >}}
+{{< i18n "foobar" */>}}
+{{< /highlight >}}
+renders as
+
+{{< i18n "termNotAvailable" >}}
+{{< i18n "foobar" >}}

@@ -22,12 +22,12 @@
 
         <div class="w3-container ">
           <a class="no-decoration" href="{{ .RelPermalink }}">
-            <img class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;" alt=""
-            {{- if isset .Params "teaserpic" }}
-              src="{{  .Params.teaserpic | relURL }}"
-            {{- else }}
-              src="{{ "/images/teaserpics/placeholder.png" | relURL  }}"
-            {{- end }}
+            <img class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;" 
+              alt="{{.Params.teaserpic}}"
+              src="{{- if .Params.teaserpic }}
+                   {{- if eq (substr .Params.teaserpic 0 1) "." }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}
+                   {{- end -}}
+                  "
             />
           </a>
           <a class="no-decoration" href="{{ .RelPermalink }}">{{ .Title }}</a>
