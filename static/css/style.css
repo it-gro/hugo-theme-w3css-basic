@@ -5,7 +5,6 @@ CSS Selectors:
   .class
 */
 
-
 /* -------------------------------------------------- */
 /* all */
 
@@ -44,15 +43,6 @@ a.no-decoration {
   padding-right:   8px ;
   text-decoration: none ;
 }
-
-code.chroma {
-  background-color: rgba(255, 255, 255, .3) ; /* used e.g. for csc* shortcodes; adjust to syntax.css Background */
-}
-
-code {
-  background-color: rgba(0, 255, 255, .5) ; /* used e.g. for csc* shortcodes; adjust to syntax.css Background */
-}
-
 
 /* -------------------------------------------------- */
 /* TableOfContents */
@@ -328,6 +318,40 @@ th:first-child,td:first-child{padding-left:8px}
   }
 }
 
+/* -------------------------------------------------- */
+/* highlight with chroma (incl. shortcodes) */
+code.chroma {
+  background-color: rgba(0, 255, 255, .3) ; /* used e.g. for csc* shortcodes; adjust to syntax.css Background */
+}
+
+/* code { */
+/*   background-color: rgba(255, 0, 255, .5) ; /\* used e.g. for csc* shortcodes; adjust to syntax.css Background *\/ */
+/* } */
+
+/* -------------------------------------------------- */
+/* shortcodes w3-notice-icon and w3-alert-icon */
+.shortcode-danger {
+  border-color:#f44336!important
+}
+.shortcode-warning {
+  border-color:#ffeb3b!important
+}
+.shortcode-info  {
+  border-color:#2196F3!important
+}
+.shortcode-success{
+  border-color:#4CAF50!important
+}
+
+/* for shortcode w3-quote */
+.shortcode-quote {
+  border-color:#4CAF50!important
+}
+
+pre.w3-code, span.w3-codespan{
+  font-family:monospace,monospace; !important;
+  font-size:1em
+}
 
 /* ------------------------------------------------------------------------------ */
 /* -- Local variables:      */

@@ -1,11 +1,17 @@
 {{ `<!-- partials/main.teaserpic.list.html -->` | safeHTML }}
 {{- if isset .Params (lower "teaserpic" ) }}
-  <img alt="" class="w3-image w3-left w3-round " style="max-width:200px; max-height:95px; width: auto; height: auto; margin: 0px 8px 8px 0px;"
-       {{- if .Params.teaserpic }}
-       src="{{ relURL .Params.teaserpic }}"
-       {{- else }}
-       src="{{ relURL "/images/teaserpics/placeholder.png" }}"
-       {{- end }}
+  <img class="w3-image w3-left w3-round " style="max-width:200px; max-height:95px; width: auto; height: auto; margin: 0px 8px 8px 0px;"
+       alt="{{.Params.teaserpic}}" 
+       src="{{- if eq (substr .Params.teaserpic 0 1) "." }}
+              {{- if eq (substr .Params.teaserpic 0 3) "../" }}
+                {{substr .Params.teaserpic 3}}
+              {{- else }}
+                {{.Params.teaserpic}}
+            {{- end }}
+            {{- else}}
+              {{- .Params.teaserpic | relURL}}
+            {{- end -}}
+           "
   />
 
 {{- end }}

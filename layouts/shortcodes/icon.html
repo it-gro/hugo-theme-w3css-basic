@@ -1,6 +1,6 @@
 {{ if .IsNamedParams }}
   {{ $.Scratch.Set "myIcon" (.Get "name"  | default "fas fa-question")}}
-  {{ $.Scratch.Set "mySize" (.Get "size"  | default "fa-1x"      )}}
+  {{ $.Scratch.Set "mySize" (.Get "size"  | default "fa-1x"          )}}
 {{else}}
   {{  $.Scratch.Set "myIcon" (.Get 0       | default "fas fa-question")}}
   {{/* throws error: "No shortcode param at .Get 1"                    */}}

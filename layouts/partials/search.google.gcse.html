@@ -6,7 +6,7 @@
       <div class="w3-margin-top">
         <script>
           (function() {
-              var cx = '002931815551392744433:vgxdr87ybgw';
+              var cx = '{{.Site.Params.googleCustomSearchCX}}'
               var gcse = document.createElement('script');
               gcse.type = 'text/javascript';
               gcse.async = true;
@@ -16,7 +16,7 @@
           })();
         </script>
         <!-- <gcse:search></gcse:search> -->
-        <gcse:searchbox resultsUrl="https://it-grossniklaus.ch" webSearchSafesearch="active" ></gcse:searchbox>
+        <gcse:searchbox resultsUrl="{{.Site.BaseURL}}" webSearchSafesearch="active" ></gcse:searchbox>
       </div>
   </div>
   
