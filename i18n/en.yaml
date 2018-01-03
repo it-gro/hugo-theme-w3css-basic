@@ -34,6 +34,9 @@
 - id: contactSend
   translation: "Send Message"
 
+- id: contactVia
+  translation: "Via"
+
 - id: contactTitle
   translation: "Contact"
 
