@@ -1,5 +1,5 @@
 {{ `<!-- partials/main.taxonomy.full.bar.html -->` | safeHTML }}
-
+{{- if or (isset .Params (lower "categories" )) (isset .Params (lower "tags" ))  }}
 <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l1">
   <div class="w3-container w3-padding-small ">
 {{- if isset .Site.Taxonomies (lower "categories" ) }}
@@ -24,6 +24,10 @@
 
   </div> <!-- w3-container -->
 </div> <!-- w3-round -->
+
+{{- else }}
+<div class="w3-container w3-padding-small "></div>
+{{- end }}
 
 {{- /* emacs                     */}}
 {{- /* Local variables:          */}}

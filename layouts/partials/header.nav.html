@@ -32,10 +32,14 @@
   {{- template "header-nav-entry" . }}
 
   {{- if .Site.Params.menutopbar.socialEnable }}
+  {{- if .Site.Menus.topbar }}
+  {{- if .Site.Params.menutopbar.numOfItemsIfSmallDisplay }}
     {{ `<!-- range first .Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
     {{- range first .Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight }}
   <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
     {{- end }}
+  {{- end }}
+  {{- end }}
   {{- end }}
 </div> <!-- w3-bar -->
 
