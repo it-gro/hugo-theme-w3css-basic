@@ -1,21 +1,32 @@
 {{ `<!-- partials/contact.form.html  -->` | safeHTML }}
 {{- if isset .Site.Params (lower "email"     ) }}
-{{- if isset .Site.Params (lower "formspree" ) }}
 {{- if .Site.Params.email }}
-{{ `<!-- .Site.Params.formspree .Site.Params.email  -->` | safeHTML }}
-<form class="w3-panel w3-card-4 w3-theme-d2" method="post" action="https://{{.Site.Params.formspree}}/{{.Site.Params.email}}">
-{{ `<!-- i18n "contactForm" "contactName" "contactMail" "contactMessage"  "contactSend" -->` | safeHTML }}
-  {{/* <h3> {{ default "Contact" (i18n "contactForm"   ) }}</h3> */}} {{/* toc on contact page */}}
-  <p><label>{{ default "Name"    (i18n "contactName"   ) }} </label> <input    class="w3-input w3-border" name="name"   type="text" required placeholder="Name" ></p>
+{{ `<!-- .Site.Params.email ok  -->` | safeHTML }}
+{{- if isset .Site.Params (lower "formspree" ) }}
+{{ `<!-- .Site.Params.formspree ok  -->` | safeHTML }}
+  {{- .Scratch.Set "myAction"  (printf "https://%s/%s" .Site.Params.formspree .Site.Params.email) }}
+  {{- .Scratch.Set "myVia"     (printf "https://%s"    .Site.Params.formspree                   ) }}
+  {{- .Scratch.Set "myEnctype" "application/x-www-form-urlencoded"                                }}
+{{- else}}
+{{ `<!-- .Site.Params.formspree #NA  -->` | safeHTML }}
+  {{- .Scratch.Set "myAction"  (printf "mailto:%s" .Site.Params.email) }}
+  {{- .Scratch.Set "myVia"     (.Scratch.Get "myAction")               }}
+  {{- .Scratch.Set "myEnctype" "text/plain"                            }}
+{{- end }} <!-- if isset -->
+<form class="w3-panel w3-card-4 w3-theme-d2" method="post" action="{{.Scratch.Get "myAction"}}" enctype="{{.Scratch.Get "myEnctype"}}" >
+{{ `<!-- i18n "contactForm" "contactName" "contactMail" "contactMessage"  "contactSend"  "contactVia" -->` | safeHTML }}
+  {{- /* <h3> {{ default "Contact" (i18n "contactForm"   ) }}</h3> */}} {{/* toc on contact page */}}
+  <input name="hint" type="hidden" value="{{ printf "%s %s %s" (i18n "contactSend") (i18n "contactVia") (.Scratch.Get "myVia") }}" >
+  <p><label>{{ default "Name"    (i18n "contactName"   ) }} </label> <input class="w3-input w3-border" name="name"  type="text" required placeholder="Name" ></p>
   {{- if .Site.Params.contact_incl_email }}
-  <p><label>{{ default "Mail"    (i18n "contactMail"   ) }} </label> <input    class="w3-input w3-border" name="email"  type="text" required placeholder="Mail" ></p>
+  <p><label>{{ default "Mail"    (i18n "contactMail"   ) }} </label> <input class="w3-input w3-border" name="email" type="text" required placeholder="Mail" ></p>
   {{- end }}
-  <p><label>{{ default "Message" (i18n "contactMessage") }} </label> <textarea class="w3-input w3-border" name="message"            required placeholder="Subject" ></textarea></p>
-  <p><button class="w3-button"><i class="far fa-envelope"></i> {{ i18n "contactSend" }}</button></p>
+  <p><label>{{ default "Message" (i18n "contactMessage") }} </label> <textarea class="w3-input w3-border" name="message" required placeholder="Message" ></textarea></p>
+  <p><button class="w3-button"><i class="far fa-envelope"></i> {{ i18n "contactSend" }}</button><br/>({{ default "via" (i18n "contactVia") }}  {{.Scratch.Get "myVia"}})</p>
 </form>
+
 {{- end }} <!-- .Site.Params.email -->
-{{- end }} <!-- if isset -->
-{{- end }} <!-- if isset -->
+{{- end }} <!-- if isset email -->
 
 {{- /* emacs                 */}}
 {{- /* Local variables:      */}}

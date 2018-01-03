@@ -5,7 +5,7 @@
 {{ define "headline" }}
 {{- `<!-- blog/list.html  -->` | safeHTML }}
   <div class="w3-card-4 w3-center w3-round-xxlarge w3-theme-d1">
-    <h2>Blog</h2>
+    <h2>{{if .Site.Params.blog.icon }}<i class="{{ .Site.Params.blog.icon }} "></i>{{ end }} {{.Site.Params.blog.title}}</h2>
       {{ if .Site.Params.blog.subtitle }}
       {{ .Site.Params.blog.subtitle | markdownify }}
       {{ end }} {{/* if .subtitle */}}
