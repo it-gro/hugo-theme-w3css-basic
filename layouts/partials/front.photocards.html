@@ -31,7 +31,7 @@
           </div> <!-- w3-card -->
         </div>   <!-- w3-cell -->
 
-        {{- if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
+        {{- if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.photocards) 1 )) }}
           {{ `<!-- modulo 0 or last  -->` | safeHTML }}
       </div>     <!-- w3-cell-row -->
         {{- end }} {{/* if mod */}}
