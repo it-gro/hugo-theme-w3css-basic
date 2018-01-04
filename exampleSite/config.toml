@@ -24,6 +24,14 @@ theme         = "hugo-theme-w3css-basic"
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "en"
 
+#disableFastRender=true
+
+# Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
+enableEmoji   = true
+
+# the length of text to show in a .Summary
+summaryLength = 70
+
 # Pagination (3,6,9,12, ...)
 paginate =  6
 
@@ -477,7 +485,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/photocards'
   #enable  = false
   enable   = true
-  limitTo  = 3
+  #limitTo  = 3
   #limitTo  = 6
 
 [params.features]
@@ -550,6 +558,8 @@ fames ac.
 
 [params.blog]
   # used in layouts/blog/list.html
+  title    = "Blog"
+  icon     = "fas fa-rss"
   subtitle = '''
 ultricies eget, tempor sit amet, ante
              '''
