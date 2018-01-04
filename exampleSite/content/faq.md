@@ -10,6 +10,7 @@ keywords:
   - "questions"
   - "what if"
 teaserpic:      images/teaserpics/pixabay.com/faq.png
+icon:           far fa-question-circle
 ---
 
 Pellentesque habitant morbi tristique senectus et netus et malesuada
