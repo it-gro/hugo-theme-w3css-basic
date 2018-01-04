@@ -2,6 +2,7 @@
 title:          "Contact"
 type:           "contact"
 teaserpic:      images/teaserpics/pixabay.com/contact-2860030_640.jpg
+icon:           "far fa-address-card"
 ---
 
 # We are here to help you
