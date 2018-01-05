@@ -1,7 +1,7 @@
 {{- $myQuoteSource    := .Get "source"       | default ""}}
 {{- $myLayoutType     := .Get "layout"       | default "default"}}
 {{- $myClassesOuter   := .Get "classesOuter" | default "w3-panel w3-leftbar w3-theme-l3 "}}
-{{- $myClassesInner   := .Get "classesInner" | default "w3-serif"}}
+{{- $myClassesInner   := .Get "classesInner" | default ""}}
 {{- $myIcon           := .Get "icon"         | default "fas fa-quote-right"}}
 {{- $myClassesOuter   :=  printf "%s %s " "shortcode-quote" $myClassesOuter }}
 
@@ -18,9 +18,9 @@
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
 </blockquote> 
 {{- else if eq $myLayoutType "icon"}}
- <div class="{{$myClassesOuter}}">
+ <div class="{{$myClassesOuter}} {{$myClassesInner}}">
   <i class="{{$myIcon}} w3-xxlarge w3-margin-right"></i>
-  <span class="{{$myClassesInner}}">{{ .Inner | markdownify }}</span>
+  {{ .Inner | markdownify }}
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
 </div> 
 {{- else if eq $myLayoutType "icon-br"}}
@@ -30,9 +30,9 @@
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
 </div> 
 {{- else if eq $myLayoutType "icon-blockquote"}}
- <blockquote class="{{$myClassesOuter}}">
+ <blockquote class="{{$myClassesOuter}} {{$myClassesInner}}">
   <i class="{{$myIcon}} w3-xxlarge w3-margin-right"></i>
-  <span class="{{$myClassesInner}}">{{ .Inner | markdownify }}</span>
+  {{ .Inner | markdownify }}
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
 </blockquote> 
 {{- else if eq $myLayoutType "icon-br-blockquote"}}
