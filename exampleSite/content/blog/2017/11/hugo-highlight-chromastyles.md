@@ -1,5 +1,5 @@
 ---
-title:       "Hugo - highlight chromastyles"
+title:       "Hugo - **highlight** chromastyles :art:"
 date:        2017-11-24T08:44:12+01:00
 keywords:
   -
