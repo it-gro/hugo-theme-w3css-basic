@@ -11,10 +11,14 @@
 
   {{  .Hugo.Generator }}
 
-  {{ partial "head.stylesheets.html" . -}}
-  {{ partial "head.fonts.html"       . -}}
-  {{ partial "head.ie.html"          . -}}
-  {{ partial "head.favicon.html"     . -}}
+  {{ partial "head.stylesheets.html"      . -}}
+  {{- if .Site.Params.fontsUseGoogleApis }}
+    {{ partial "head.fonts.googleapis.html" . -}}
+  {{- else }}
+    {{ partial "head.fonts.local.html"      . -}}
+  {{- end }}
+  {{ partial "head.ie.html"               . -}}
+  {{ partial "head.favicon.html"          . -}}
   {{ `<!-- back in partials/head.html  -->` | safeHTML }}
 </head>
 
