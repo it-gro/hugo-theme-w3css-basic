@@ -35,7 +35,7 @@
   translation: "Send Message"
 
 - id: contactVia
-  translation: "Via"
+  translation: "via"
 
 - id: contactTitle
   translation: "Contact"

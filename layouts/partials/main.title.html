@@ -3,7 +3,7 @@
 {{- if .Params.icon }}
   <i class="{{ .Params.icon }}"></i>
 {{- end }}
-{{ .Title }}
+{{ .Title  | markdownify | emojify }}
 </h2>
 
 {{- /* emacs                     */}}

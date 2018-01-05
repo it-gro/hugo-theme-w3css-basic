@@ -362,6 +362,9 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-yellow.css"
 
 
+  # used in layouts/partials/head.html
+  fontsUseGoogleApis=true
+
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
   # used in layouts/partials/contact.map.html

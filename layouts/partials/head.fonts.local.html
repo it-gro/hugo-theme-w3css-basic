@@ -1,0 +1,38 @@
+{{ `<!-- partials/head.fonts.local.html -->` | safeHTML }}
+{{- /* https://google-webfonts-helper.herokuapp.com/fonts */}}
+{{- .Scratch.Set "myFontLoadMethod" "css" }}
+{{- if eq (.Scratch.Get "myFontLoadMethod") "css" }}
+  <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-italic.css"         }}" />
+  <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-regular.css"        }}" />
+  <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-mono-v7-latin-regular.css"    }}" />
+  <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-mono-v7-latin-italic.css"     }}" />
+  <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-300.css"            }}" /> -->
+  <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-300italic.css"      }}" /> -->
+  <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-500.css"            }}" /> -->
+  <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-500italic.css"      }}" /> -->
+  <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-700.css"            }}" /> -->
+  <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-700italic.css"      }}" /> -->
+  <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-mono-v7-latin-700.css"        }}" /> -->
+  <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-mono-v7-latin-700italic.css"  }}" /> -->
+{{- else }}
+  {{ partial "head.fonts.local.style.html" . }}
+{{- end -}}
+
+  <style>
+    html, body, h1, h2, h3, h4, h5, h6
+    {
+        {{- /* font-family: 'Oxygen Mono'     , monospace;  */}} 
+        {{- /* font-family: 'Oxygen'          , sans-serif; */}} 
+        {{- /* font-family: 'Roboto Mono'     , monospace;  */}} 
+        {{- /* font-family: 'Roboto'          , sans-serif; */}} 
+        font-family: 'Ubuntu Mono'     , monospace;
+        font-family: 'Ubuntu'          , sans-serif;
+        {{- /* font-family: 'Glegoo'          , serif;      */}}
+    }
+  </style>
+
+{{- /* emacs                     */}}
+{{- /* Local variables:          */}}
+{{- /* tab-width:        2       */}}
+{{- /* indent-tabs-mode: nil     */}}
+{{- /* End:                      */}}

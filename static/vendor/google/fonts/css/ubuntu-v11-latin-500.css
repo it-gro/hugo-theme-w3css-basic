@@ -1,0 +1,13 @@
+/* ubuntu-500 - latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/vendor/google/fonts/ubuntu-v11-latin-500.eot'); /* IE9 Compat Modes */
+  src: local('Ubuntu Light'), local('Ubuntu-Light'),
+       url('/vendor/google/fonts/ubuntu-v11-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/vendor/google/fonts/ubuntu-v11-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/vendor/google/fonts/ubuntu-v11-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('/vendor/google/fonts/ubuntu-v11-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/vendor/google/fonts/ubuntu-v11-latin-500.svg#Ubuntu') format('svg'); /* Legacy iOS */
+}
