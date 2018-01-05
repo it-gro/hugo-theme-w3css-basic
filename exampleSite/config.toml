@@ -131,6 +131,14 @@ disqusShortname = ""
   url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
   pre    = "far fa-images fa-fw"
   parent = "theme"
+
+[[menu.main]]
+  weight = 3
+  name   = "Showcase"
+  url    = "/pages/showcase/"
+  pre    = "fas fa-eye fa-fw"
+  parent = "theme"
+ 
 # end submenu
 
 [[menu.main]]
@@ -338,7 +346,7 @@ disqusShortname = ""
   # used in layouts/partials/head.stylesheets.html
   # set W3.CSS color theme (choose one)
   #w3cssColorTheme = "/css/w3-theme-custom.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
@@ -358,7 +366,7 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-teal.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-teal.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-yellow.css"
 
 
@@ -492,7 +500,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/photocards'
   #enable  = false
   enable   = true
-  #limitTo  = 3
+  limitTo  = 3
   #limitTo  = 6
 
 [params.features]
@@ -501,7 +509,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/features'
   #enable  = false
   enable   = true
-  #limitTo  = 3
+  limitTo  = 3
   #limitTo  = 6
 
 [params.testimonials]
@@ -513,9 +521,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   title    = "Testimonials"
   subtitle = '''
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-et accusam et justo duo dolores et ea rebum. Stet clita kasd
-gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+labore et dolore magna aliquyam erat, sed diam voluptua. 
              '''
 
 [params.seeMore]
@@ -544,10 +550,7 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
   title = "Our Clients"
   subtitle = '''
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-**molestie consequat**, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi.
+**molestie consequat**, vel illum dolore.
              '''
 
 [params.recentPosts]
