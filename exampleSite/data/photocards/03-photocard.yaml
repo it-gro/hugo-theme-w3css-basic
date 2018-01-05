@@ -4,4 +4,5 @@ animated:    "rollIn"
 image:       "images/photocards/pixabay.com/03-photocard.jpg"
 url:         pages/front/photocards/03
 description: |
-  At vero eos et **accusam** et justo duo dolores et ea rebum
+  * At vero eos et **accusam** 
+  * justo duo dolores et ea rebum

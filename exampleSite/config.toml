@@ -131,6 +131,14 @@ disqusShortname = ""
   url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
   pre    = "far fa-images fa-fw"
   parent = "theme"
+
+[[menu.main]]
+  weight = 3
+  name   = "Showcase"
+  url    = "/pages/showcase/"
+  pre    = "fas fa-eye fa-fw"
+  parent = "theme"
+ 
 # end submenu
 
 [[menu.main]]
@@ -436,7 +444,7 @@ consectetuer adipiscing
   formspree = "formspree.io"
   email     = "info@example.com"
 
-  # ToDo (obsolete)
+  # obsolete:
   # Format dates with Go's time formatting
   # used in layouts/taxonomy/_category.html
   #         layouts/taxonomy/_tag.html
@@ -446,8 +454,13 @@ consectetuer adipiscing
   #date_format = "Jan 2 15:04:05 2006 MST"
   #date_format = "Jan 2 15:04:05 2006 -7"
   #date_format = "2006.01.02"
-  date_format = "01.02.2006"
+  # date_format = "01.02.2006"
 
+  # date format (blog) is created using:
+  #  layouts/partials/main.blog.date.html
+  #  layouts/partials/main.i18n.date.html
+  #  layouts/partials/main.i18n.date.short.html
+  #  and i18n/*.yaml
 
 
 # ##################################################
@@ -487,7 +500,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/photocards'
   #enable  = false
   enable   = true
-  #limitTo  = 3
+  limitTo  = 3
   #limitTo  = 6
 
 [params.features]
@@ -496,7 +509,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/features'
   #enable  = false
   enable   = true
-  #limitTo  = 3
+  limitTo  = 3
   #limitTo  = 6
 
 [params.testimonials]
@@ -508,9 +521,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   title    = "Testimonials"
   subtitle = '''
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
-et accusam et justo duo dolores et ea rebum. Stet clita kasd
-gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+labore et dolore magna aliquyam erat, sed diam voluptua. 
              '''
 
 [params.seeMore]
@@ -539,10 +550,7 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
   title = "Our Clients"
   subtitle = '''
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-**molestie consequat**, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi.
+**molestie consequat**, vel illum dolore.
              '''
 
 [params.recentPosts]
