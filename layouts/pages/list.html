@@ -20,7 +20,7 @@
               {{- if $element.Params.icon }}
               <i class="{{ $element.Params.icon }} "></i>
               {{- end }}  {{/* icon */}}
-              {{- $element.Title -}}
+              {{- $element.Title  | markdownify | emojify -}}
               </h3>
             </header>
             <div class="w3-container w3-theme-l2">

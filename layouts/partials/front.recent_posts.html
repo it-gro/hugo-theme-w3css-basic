@@ -27,7 +27,7 @@
                    {{- end -}}
                   "
               class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
-          <h3>{{- $element.Title }}</h3>
+          <h3>{{- $element.Title  | markdownify | emojify }}</h3>
           <div class="">
             {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
           </div>

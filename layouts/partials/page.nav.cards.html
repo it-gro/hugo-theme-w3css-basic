@@ -45,7 +45,7 @@
              src="{{- if eq (substr .Params.teaserpic 0 1) "." }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}"
         />
         {{- end }} {{/* teaserpic */}}
-        <span class="w3-large">{{- $.Title }}</span>
+        <span class="w3-large">{{- $.Title  | markdownify | emojify }}</span>
       </div>
     </a>
 {{- end }}

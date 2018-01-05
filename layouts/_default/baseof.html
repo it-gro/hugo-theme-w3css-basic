@@ -27,22 +27,26 @@
           {{- .Content -}}
         {{- end }}
 
-        {{- block "contactform" . }}
-          {{ `<!-- block contactform _default/baseof.html  -->` | safeHTML }}
-        {{ end }}
+        {{- if eq .Type "contact" }} 
+          {{- block "contactform" . }}
+            {{ `<!-- block contactform _default/baseof.html  -->` | safeHTML }}
+          {{ end }}
+        {{- end -}}
 
-        {{- block "search" . }}
-          {{ `<!-- block search _default/baseof.html  -->` | safeHTML }}
-        {{ end }}
+        {{- if eq .Type "search" }} 
+          {{- block "search" . }}
+            {{ `<!-- block search _default/baseof.html  -->` | safeHTML }}
+          {{ end }}
+        {{- end -}}
 
-        {{- if ne .Type "contact" }} 
+        {{- if and (ne .Type "contact") (ne .Type "search") }} 
           {{- partial "main.taxonomy.full.bar.html"  . -}}
         {{- end -}}
+
+      {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
       </div> {{ `<!-- canvas -->` | safeHTML }}
 
-
       <footer>
-      {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
       {{  block "footer" . }}
       {{- partial "footer.html"        . -}}
       {{- partial "footer.bottom.html" . -}}

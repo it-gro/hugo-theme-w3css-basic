@@ -7,7 +7,7 @@
   {{- if .Params.icon }}
     <i class="{{ .Params.icon }}"></i>
   {{- end }}
-  {{ .Title }}
+  {{ .Title  | markdownify | emojify }}
   </h3>
   {{- if eq .Type "blog" }}
   <div class="w3-right"><i class="far fa-calendar" aria-hidden="true"></i>&nbsp;<i>{{- partial "main.i18n.date.short.html" . -}}</i></div>
