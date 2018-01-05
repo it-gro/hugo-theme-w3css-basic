@@ -30,9 +30,9 @@
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
 </div> 
 {{- else if eq $myLayoutType "icon-blockquote"}}
- <blockquote class="{{$myClassesOuter}}">
+ <blockquote class="{{$myClassesOuter}} {{$myClassesInner}}">
   <i class="{{$myIcon}} w3-xxlarge w3-margin-right"></i>
-  <span class="{{$myClassesInner}}">{{ .Inner | markdownify }}</span>
+  {{ .Inner | markdownify }}
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
 </blockquote> 
 {{- else if eq $myLayoutType "icon-br-blockquote"}}
