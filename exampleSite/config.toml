@@ -371,6 +371,9 @@ disqusShortname = ""
   # if empty => fallback to URL (instead of map)
   # define environment variable (=> key ist not stored in github)
   envGoogleMapsApiKey = "GoogleMapsApiKey"
+  # if environment is not an option => define key here:
+  #googleMapsApiKey = ""
+
   #googleMapsZoom   = 14
   googleMapsZoom   = 3
   latitude         = 46.946692
@@ -379,11 +382,7 @@ disqusShortname = ""
   # Google Custom Search API
   # https://cse.google.com/cse/
   # used in layouts/partials/search.google.gcse.html
-  googleCustomSearchCX = ''
-
-  # if environment is not an option => define key here:
-  #googleMapsApiKey = ""
-
+  googleCustomSearchCX = '002931815551392744433:tnypjyusk2e'
 
   # https://gohugo.io/functions/truncate/
   # used in layouts/pages/list.html
