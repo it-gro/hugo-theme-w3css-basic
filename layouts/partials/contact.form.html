@@ -19,9 +19,9 @@
   <p><label>{{ default "Mail"    (i18n "contactMail"   ) }} </label> <input class="w3-input w3-border" name="email" type="text" required placeholder="Mail" ></p>
   {{- end }}
   <p><label>{{ default "Message" (i18n "contactMessage") }} </label> <textarea class="w3-input w3-border" name="message" required placeholder="Message" ></textarea></p>
-  <p><button class="w3-button" type="submit" formaction="{{.Scratch.Get "myMailToAction"}}" formenctype="{{.Scratch.Get "myMailToEnctype"}}" ><i class="fas fa-at"></i> {{ i18n "contactSend" }} ({{ default "via" (i18n "contactVia") }}  {{.Scratch.Get "myMailToVia"}})</button>
+  <p><button class="w3-button" type="submit" formaction="{{.Scratch.Get "myMailToAction"}}" formenctype="{{.Scratch.Get "myMailToEnctype"}}" ><i class="fas fa-at"></i> {{ i18n "contactSend" }} <span class="w3-small">({{ default "via" (i18n "contactVia") }}  {{.Scratch.Get "myMailToVia"}})</span></button>
   {{- if .Scratch.Get "myFormspreeAction" }}
-  <button class="w3-button" type="submit" formaction="{{.Scratch.Get "myFormspreeAction"}}" formenctype="{{.Scratch.Get "myFormspreeEnctype"}}" ><i class="far fa-envelope"></i> {{ i18n "contactSend" }} ({{ default "via" (i18n "contactVia") }}  {{.Scratch.Get "myFormspreeVia"}})</button>
+  <button class="w3-button" type="submit" formaction="{{.Scratch.Get "myFormspreeAction"}}" formenctype="{{.Scratch.Get "myFormspreeEnctype"}}" ><i class="far fa-envelope"></i> {{ i18n "contactSend" }} <span class="w3-small">({{ default "via" (i18n "contactVia") }}  {{.Scratch.Get "myFormspreeVia"}})</span></button>
   {{- end }}
 </form>
 
