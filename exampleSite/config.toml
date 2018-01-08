@@ -525,13 +525,14 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
   # if set => change menu entry on small displays to lowercase maxChars 
-  smallDispMenuMaxChars = 3
+  #smallDispMenuMaxChars = 3
+  smallDispMenuMaxChars = 2
 
 [params.menuTopBar]
   # used in layouts/partials/header.nav.html
   # enable or disable menu.topbar with social icons (right aligned)
   socialEnable             = true
-  numOfItemsIfSmallDisplay = 1
+  numOfItemsIfSmallDisplay = 0
   googleTranslateEnable    = true
 
 [params.jumbotrons]

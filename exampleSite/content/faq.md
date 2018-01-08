@@ -83,21 +83,18 @@ orci commodo lobortis.
 In id erat non orci commodo lobortis. 
 {{% /w3-notice-icon %}}
 
-Proin neque massa, cursus ut, gravida ut,
-lobortis eget, lacus. Sed diam. Praesent fermentum tempor tellus.
-Nullam tempus. Mauris ac felis vel velit tristique imperdiet. Donec
-at pede. 
-{{< figure src="/images/teaserpics/pixabay.com/adventure-2528477_640-thumb.jpg"  class="no-photoswipe"  title="Title" attr="pixabay.com"  >}}
-Etiam vel neque nec dui dignissim bibendum. Vivamus id
-enim. Phasellus neque orci, porta a, aliquet quis, semper a, massa.
-Phasellus purus. Pellentesque tristique imperdiet tortor. Nam
-euismod tellus id erat.
+Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus. Sed
+diam. Praesent fermentum tempor tellus.  Nullam tempus. Mauris ac
+felis vel velit tristique imperdiet. Donec at pede.  Etiam vel neque
+nec dui dignissim bibendum. Vivamus id enim. Phasellus neque orci,
+porta a, aliquet quis, semper a, massa.  Phasellus purus. Pellentesque
+tristique imperdiet tortor. Nam euismod tellus id erat.
 
 
 {{< heg-load-photoswipe >}}
-{{< heg-figure thumb="-thumb" link="/images/teaserpics/pixabay.com/coffee-2306471_640.jpg"       width="200px" caption-position="bottom" caption-effect="appear" title="title" caption="caption"  >}}
-{{< heg-figure thumb="-thumb" link="/images/teaserpics/pixabay.com/coffee-2714970_640.jpg"       width="200px" caption-position="bottom" caption-effect="appear" attr="attr"          >}}
-{{< heg-figure thumb="-thumb" link="/images/teaserpics/pixabay.com/coffee-beans-2258839_640.jpg" width="200px" caption-position="bottom" caption-effect="appear" caption="pixabay.com" attrlink="https://pixabay.com"  >}}
+{{< heg-figure thumb="-thumb" link="images/teaserpics/pixabay.com/coffee-2306471_640.jpg"       width="200px" caption-position="bottom" caption-effect="appear" title="title" caption="caption"  >}}
+{{< heg-figure thumb="-thumb" link="images/teaserpics/pixabay.com/coffee-2714970_640.jpg"       width="200px" caption-position="bottom" caption-effect="appear" attr="attr"          >}}
+{{< heg-figure thumb="-thumb" link="images/teaserpics/pixabay.com/coffee-beans-2258839_640.jpg" width="200px" caption-position="bottom" caption-effect="appear" caption="pixabay.com" attrlink="https://pixabay.com"  >}}
 
 
 ## 5. Nulla posuere?
