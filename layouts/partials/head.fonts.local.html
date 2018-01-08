@@ -1,7 +1,9 @@
 {{ `<!-- partials/head.fonts.local.html -->` | safeHTML }}
 {{- /* https://google-webfonts-helper.herokuapp.com/fonts */}}
-{{- .Scratch.Set "myFontLoadMethod" "css" }}
-{{- if eq (.Scratch.Get "myFontLoadMethod") "css" }}
+{{- .Scratch.Set "myFontLoadMethod" "style" }}
+{{- if eq (.Scratch.Get "myFontLoadMethod") "style" }}
+  {{ partial "head.fonts.local.style.html" . }}
+{{- else }}
   <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-italic.css"         }}" />
   <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-regular.css"        }}" />
   <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-mono-v7-latin-regular.css"    }}" />
@@ -14,8 +16,6 @@
   <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-v11-latin-700italic.css"      }}" />
   <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-mono-v7-latin-700.css"        }}" /> -->
   <!-- <link rel="stylesheet" href="{{ relURL "vendor/google/fonts/css/ubuntu-mono-v7-latin-700italic.css"  }}" /> -->
-{{- else }}
-  {{ partial "head.fonts.local.style.html" . }}
 {{- end -}}
 
   <style>
