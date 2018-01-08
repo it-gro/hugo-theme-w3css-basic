@@ -353,6 +353,13 @@ pre.w3-code, span.w3-codespan{
   font-size:1em
 }
 
+pre.w3-code, pre.chroma {
+    border-radius:4px;  
+    padding: 0 3px 0 3px;
+    border: 1px solid;
+    overflow: auto;
+}
+
 /* ------------------------------------------------------------------------------ */
 /* -- Local variables:      */
 /* -- tab-width:         2  */

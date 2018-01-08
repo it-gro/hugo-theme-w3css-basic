@@ -7,7 +7,7 @@
 {{end}}
 {{- $.Scratch.Set "smallDispMenuMaxChars"    (.Site.Params.menuConfig.smallDispMenuMaxChars  | default 99)}}
 
-<div class="w3-bar w3-theme-dark w3-hide-small">
+<div class="w3-bar w3-hide-small {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} ">
   {{ `<!-- w3-hide-small ******************** -->` | safeHTML }}
   {{- template "header-nav-entry" . }}
 
@@ -27,7 +27,7 @@
   {{- end }}
 </div> <!-- w3-bar -->
 
-<div class="w3-bar w3-theme-dark w3-small w3-hide-large w3-hide-medium ">
+<div class="w3-bar w3-small w3-hide-large w3-hide-medium {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} ">
   {{ `<!-- w3-hide-large w3-hide-medium ******************** -->` | safeHTML }}
   {{- template "header-nav-entry" . }}
 

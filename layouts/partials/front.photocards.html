@@ -3,7 +3,7 @@
 {{- if .Site.Params.photocards.enable   }}
 {{- if gt (len .Site.Data.photocards) 0 }}
 <section id="photocards" class="w3-theme">
-  <div class="w3-container w3-theme-l3">
+  <div class="w3-container  {{ default `w3-theme-l3` ($.Site.Param `colorFrontPhotocardsContainer`)}} ">
     <p>
     {{ `<!-- range .Site.Data.photocards -->` | safeHTML }}
     {{- range $index, $element := sort .Site.Data.photocards "weight" }}
@@ -15,7 +15,7 @@
       {{- end }}
 
         <div class="w3-col m4 " >
-          <div class="w3-card-4 w3-theme-l1 {{ if and $element.animated $.Site.Params.photocards.animate }} {{ printf "%s %s %s%d %s" "animated" "photocards-animated" "photocards-animated" $index $element.animated }} {{ end }} " >
+          <div class="w3-card-4 {{ default `w3-theme-l1` ($.Site.Param `colorFrontPhotocardsCard`)}} {{ if and $element.animated $.Site.Params.photocards.animate }} {{ printf "%s %s %s%d %s" "animated" "photocards-animated" "photocards-animated" $index $element.animated }} {{ end }} " >
             {{- if (and $element.image (not $element.url) )  }}
             <img src="{{ $element.image }}"   alt="{{ $element.image }}" class="w3-round-large"                   style="width:100%">
             {{- end }} {{/* if and image not url */}}
@@ -24,7 +24,7 @@
             <a class="no-decoration" href="{{ $element.url | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}">
               <img src="{{ $element.image }}" alt="{{ $element.image }}" class="w3-hover-opacity " style="width:100%">
             {{- end -}} {{/* if and image url */}}
-            <div class="w3-container {{if $element.url}}{{printf "%s" "w3-hover-opacity"}}{{end}} w3-theme-l1">
+            <div class="w3-container {{if $element.url}}{{printf "%s" "w3-hover-opacity"}}{{end}} {{ default `w3-theme-l1` ($.Site.Param `colorFrontPhotocardsCardContainer`)}} ">
               <h4>{{- $element.title }}</h4>
               {{ $element.description | markdownify }}
             </div>
