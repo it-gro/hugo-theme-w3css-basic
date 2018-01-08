@@ -3,8 +3,8 @@
 # ##################################################
 # Hugo-defined variables
 # set params.uglyURLs false (see below)
-#baseURL       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
-baseURL       = "http://example.com"
+baseURL       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
+#baseURL       = "http://example.com"
 #default:
 #relativeURLs  = false
 #uglyURLs      = false
@@ -15,11 +15,10 @@ baseURL       = "http://example.com"
 #relativeURLs  = true
 #uglyURLs      = true 
 
-
 title         = "hugo-theme-w3css-basic exampleSite"
+theme         = "hugo-theme-w3css-basic"
 #languageCode  = "de-ch"
 languageCode  = "en-us"
-theme         = "hugo-theme-w3css-basic"
 
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "en"
@@ -35,14 +34,14 @@ summaryLength = 70
 # Pagination (3,6,9,12, ...)
 paginate =  6
 
-# https://help.farbox.com/pygments.html
+# https://gohugo.io/content-management/syntax-highlighting/
 pygmentsUseClassic            = false
 pygmentsCodeFences            = true
 pygmentsCodeFencesGuessSyntax = true
+# https://help.farbox.com/pygments.html
 # https://github.com/alecthomas/chroma
-# hugo gen chromastyles -h
-# hugo gen chromastyles > syntax.css
-# hugo gen chromastyles --style=monokai > syntax.css
+# hugo gen chromastyles --style=autumn        >  syntax.autumn.css          
+# ...
 pygmentsUseClasses            = true
 # => static/css/syntax/syntax/syntax.*.css
 # copy one of them to
@@ -70,10 +69,11 @@ pygmentsUseClasses            = true
 #pygmentsStyle = "vs"
 
 
+
 # ##################################################
 # Theme-defined configuration
 
-# ToDo
+# ToDo:
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
 
@@ -93,6 +93,7 @@ disqusShortname = ""
 # Main menu
 [menu]
 
+# provide translations in i18n/*.yaml
 [[menu.main]]
   weight = 1
   name   = "Home"
@@ -186,149 +187,6 @@ disqusShortname = ""
   url      = "/search"
   pre      = "fas fa-search"
 
-# if google translate is not an option, provide multilingual menu
-# https://gohugo.io/content-management/multilingual/
-#
-# [languages.en]
-# weight = 0
-# languageName = "English"
-#
-# [[languages.en.menu.main]]
-#   weight = 1
-#   name   = "Home"
-#   url    = "/index.html"
-#
-# [[languages.en.menu.main]]
-#   weight = 2
-#   name   = "Contact"
-#   url    = "/contact"
-#
-# [[languages.en.menu.main]]
-#   weight = 3
-#   name   = "Pages"
-#   url    = "/pages"
-#
-# [[languages.en.menu.main]]
-#   weight = 4
-#   name   = "Posts"
-#   identifier = "posts"
-#
-# [[languages.en.menu.main]]
-#   weight = 1
-#   name   = "News"
-#   url    = "/news"
-#   parent = "posts"
-#
-# [[languages.en.menu.main]]
-#   weight = 2
-#   name   = "Blog"
-#   url    = "/blog"
-#   parent = "posts"
-#
-# [[languages.en.menu.main]]
-#   weight = 5
-#   name   = "FAQ"
-#   url    = "/faq"
-#
-# [languages.de]
-# weight = 010
-# languageName = "Deutsch"
-#
-# [[languages.de.menu.main]]
-#   weight = 1
-#   name   = "Home"
-#   url    = "/index.html"
-#
-# [[languages.de.menu.main]]
-#   weight = 2
-#   name   = "Kontakt"
-#   url    = "/contact"
-#
-# [[languages.de.menu.main]]
-#   weight = 3
-#   name   = "Seiten"
-#   url    = "/pages"
-#
-# [[languages.de.menu.main]]
-#   weight = 4
-#   name   = "Posts"
-#   identifier = "posts"
-#
-# [[languages.de.menu.main]]
-#   weight = 1
-#   name   = "News"
-#   url    = "/news"
-#   parent = "posts"
-#
-# [[languages.de.menu.main]]
-#   weight = 2
-#   name   = "Blog"
-#   url    = "/blog"
-#   parent = "posts"
-#
-# [[languages.de.menu.main]]
-#   weight = 5
-#   name   = "FAQ"
-#   url    = "/faq"
-
-# Top bar social links menu
-
-# ToDo:
-#  https://gohugo.io/content-management/menus/
-#  > if you make use of the multilingual feature, you can define language-independent menus.
-#  how?
-
-# [[languages.en.menu.topbar]]
-#   weight = 1
-#   name   = "GitHub"
-#   url    = "https://github.com/it-gro/hugo-theme-w3css-basic"
-#   pre   = "fab fa-github"
-#
-# [[languages.en.menu.topbar]]
-#   weight = 2
-#   name   = "Facebook"
-#   url    = "http://facebook.com"
-#   pre   = "fab fa-facebook"
-#
-# [[languages.en.menu.topbar]]
-#   weight = 3
-#   name   = "Twitter"
-#   url    = "http://twitter.com"
-#   pre   = "fab fa-twitter"
-#
-# [[languages.en.menu.topbar]]
-#   weight = 4
-#   name   = "Email"
-#   url    = "#footer"
-# # url    = "mailto:info@example.com"
-#   pre   = "fab fa-envelope"
-#
-# [[languages.de.menu.topbar]]
-#   weight = 1
-#   name   = "GitHub"
-#   url    = "https://github.com/it-gro/hugo-theme-w3css-basic"
-#   pre   = "fab fa-github"
-#
-# [[languages.de.menu.topbar]]
-#   weight = 2
-#   name   = "Facebook"
-#   url    = "http://facebook.com"
-#   pre   = "fab fa-facebook"
-#
-# [[languages.de.menu.topbar]]
-#   weight = 3
-#   name   = "Twitter"
-#   url    = "http://twitter.com"
-#   pre   = "fab fa-twitter"
-#
-# [[languages.de.menu.topbar]]
-#   weight = 4
-#   name   = "Email"
-#   url    = "#footer"
-# # url    = "mailto:info@example.com"
-#   pre   = "fas fa-envelope"
-
-
 
 # ##################################################
 # theme-defined params
@@ -344,6 +202,9 @@ disqusShortname = ""
   defaultDescription = "example site created with hugo using theme hugo-theme-w3css-basic"
 
   # used in layouts/partials/head.stylesheets.html
+  # https://www.w3schools.com/w3css/w3css_color_themes.asp
+  # https://www.w3schools.com/w3css/w3css_color_generator.asp
+  # Monochromatic Color Schemes
   # set W3.CSS color theme (choose one)
   #w3cssColorTheme = "/css/w3-theme-custom.css"
   w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
@@ -369,6 +230,13 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-teal.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-yellow.css"
 
+  # used in layouts/partials/*.html
+  # used in layouts/blog/*.html
+  # used in layouts/default/*.html
+  # used in layouts/pages/*.html
+  # {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}} 
+  # set the actual color (one of the monochromatic color scheme)
+  color404Container                     = "w3-theme-l3"
   colorPagesListCell                    = "w3-theme-l4"
   colorPagesListCard                    = "w3-theme-l2"
   colorPagesListContainer               = "w3-theme-l2"
@@ -414,11 +282,9 @@ disqusShortname = ""
   colorPageNavCardsLink                 = "w3-theme-l3"
   colorSearchGoogleGcseContainer        = "w3-theme-l3"
 
-  # {{ default `w3-theme-l3` ($.Site.Param `colorSearchGoogleGcseContainer`)}}  
-
 
   # used in layouts/partials/head.html
-  fontsUseGoogleApis=true
+  fontsUseGoogleApis=false
 
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
@@ -455,7 +321,10 @@ disqusShortname = ""
 Vel illum **dolore** eu      
                              
   * feugiat nulla            
-  * facilisis at vero.       
+  * facilisis at vero. 
+
+Nam vestibulum accumsan nisl.
+      
               '''
 
   address   = '''
@@ -474,34 +343,9 @@ consectetuer adipiscing
 
 
   # used in partials/contact.form.html
-  #
-  # Since this template is static, the contact form uses www.formspree.io as a
-  # proxy. The form makes a POST request to their servers to send the actual
-  # email. Visitors can send up to a 1000 emails each month for free.
-  #
-  # What you need to do for the setup?
-  #
-  # - set your email address under 'email' below
-  # - upload the generated site to your server
-  # - send a dummy email yourself to confirm your account
-  # - click the confirm link in the email from www.formspree.io
-  # - you're done. Happy mailing!
-  #
   # Enable the contact form by entering your Formspree.io email
   formspree = "formspree.io"
   email     = "info@example.com"
-
-  # obsolete:
-  # Format dates with Go's time formatting
-  # used in layouts/taxonomy/_category.html
-  #         layouts/taxonomy/_tag.html
-  #         layouts/partials/main.teaser_in_card.html
-  #date_format = "January 2, 2006"
-  #date_format = "January 2 15:04:05 2006 MST"
-  #date_format = "Jan 2 15:04:05 2006 MST"
-  #date_format = "Jan 2 15:04:05 2006 -7"
-  #date_format = "2006.01.02"
-  # date_format = "01.02.2006"
 
   # date format (blog) is created using:
   #  layouts/partials/main.blog.date.html
@@ -525,13 +369,14 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
   # if set => change menu entry on small displays to lowercase maxChars 
-  smallDispMenuMaxChars = 3
+  #smallDispMenuMaxChars = 3
+  smallDispMenuMaxChars = 2
 
 [params.menuTopBar]
   # used in layouts/partials/header.nav.html
   # enable or disable menu.topbar with social icons (right aligned)
   socialEnable             = true
-  numOfItemsIfSmallDisplay = 1
+  numOfItemsIfSmallDisplay = 0
   googleTranslateEnable    = true
 
 [params.jumbotrons]
@@ -591,9 +436,6 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
   # see some examples in 'exampleSite/data/clients'
   enable = true
   #enable = false
-  # All clients are defined in their own files. You can find example items
-  # at 'exampleSite/data/clients'.
-  # For more informtion take a look at the README.
   title = "Our Clients"
   subtitle = '''
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
