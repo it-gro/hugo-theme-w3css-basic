@@ -86,7 +86,7 @@ In id erat non orci commodo lobortis.
 Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus. Sed
 diam. Praesent fermentum tempor tellus.  Nullam tempus. Mauris ac
 felis vel velit tristique imperdiet. Donec at pede.  
-{{< figure src="/images/teaserpics/pixabay.com/adventure-2528477_640-thumb.foo.jpg"  class="no-photoswipe"  title="Title" attr="pixabay.com"  >}}
+{{< figure src="/images/teaserpics/pixabay.com/adventure-2528477_640-thumb.jpg"  class="no-photoswipe"  title="Title" attr="pixabay.com"  >}}
 Etiam vel neque
 nec dui dignissim bibendum. Vivamus id enim. Phasellus neque orci,
 porta a, aliquet quis, semper a, massa.  Phasellus purus. Pellentesque
