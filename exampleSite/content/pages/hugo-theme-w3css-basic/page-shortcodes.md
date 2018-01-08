@@ -64,6 +64,13 @@ pre.w3-code, span.w3-codespan{
   font-size:1em
 }
 
+pre.w3-code, pre.chroma {
+    border-radius:4px;  
+    padding: 0 3px 0 3px;
+    border: 1px solid;
+    overflow: auto;
+}
+
 {{< /highlight >}}
 
 
@@ -162,7 +169,7 @@ renders as
 
 Some examples:
 
-{{< highlight nolang >}}
+{{< highlight nolang "linenos=table,hl_lines=5 9-11,linenostart=11" >}}
 {{%/* w3-alert-icon type="success" %}}
 Hi, I'm a success
 {{% /w3-alert-icon */%}}
@@ -193,15 +200,15 @@ A warning with heading
 ## w3-button-icon
 
 {{< highlight nolang >}}
-{{%/* w3-button-icon                                    %}}Hi, i'm a button{{% /w3-alert-icon */%}}
-{{%/* w3-button-icon icon="fas fa-exclamation-triangle" %}}Purge{{% /w3-alert-icon */%}}
-{{%/* w3-button-icon href="https://google.com"          %}}take me to Google{{% /w3-alert-icon */%}}
+{{%/* w3-button-icon                                    %}}Hi, i'm a button{{% /w3-button-icon */%}}
+{{%/* w3-button-icon icon="fas fa-exclamation-triangle" %}}Purge{{% /w3-button-icon */%}}
+{{%/* w3-button-icon href="https://google.com"          %}}take me to Google{{% /w3-button-icon */%}}
 {{< /highlight >}}
 
 renders to:
-{{% w3-button-icon                                     %}}Hi, i'm a button{{% /w3-alert-icon %}}
-{{% w3-button-icon icon="fas fa-exclamation-triangle"  %}}Purge{{% /w3-alert-icon %}}
-{{% w3-button-icon href="https://google.com"           %}}take me to Google{{% /w3-alert-icon %}}
+{{% w3-button-icon                                     %}}Hi, i'm a button{{% /w3-button-icon %}}
+{{% w3-button-icon icon="fas fa-exclamation-triangle"  %}}Purge{{% /w3-button-icon %}}
+{{% w3-button-icon href="https://google.com"           %}}take me to Google{{% /w3-button-icon %}}
 
 
 ## w3-badge
@@ -217,14 +224,14 @@ renders to:
 
 ## w3-tag
 * Inspired by [W3.CSS Tags](https://www.w3schools.com/w3css/w3css_tags.asp)
-* {{% w3-tag                    %}}42{{% /w3-badge %}}
+* {{% w3-tag                    %}}42{{% /w3-tag %}}
 
-I'm a big one: {{% w3-tag "w3-blue w3-jumbo" %}}42{{% /w3-badge %}}
+I'm a big one: {{% w3-tag "w3-blue w3-jumbo" %}}42{{% /w3-tag %}}
 
 created with:
 {{< highlight nolang >}}
-{{%/* w3-tag                    */%}}42{{%/* /w3-badge */%}}
-{{%/* w3-tag "w3-blue w3-jumbo" */%}}42{{%/* /w3-badge */%}}
+{{%/* w3-tag                    */%}}42{{%/* /w3-tag */%}}
+{{%/* w3-tag "w3-blue w3-jumbo" */%}}42{{%/* /w3-tag */%}}
 {{< /highlight >}}
 
 
@@ -328,6 +335,14 @@ pre.w3-code, span.w3-codespan{
   font-family:monospace,monospace; !important;
   font-size:1em
 }
+
+pre.w3-code, pre.chroma {
+    border-radius:4px;  
+    padding: 0 3px 0 3px;
+    border: 1px solid;
+    overflow: auto;
+}
+
 {{< /highlight >}}
 
 
@@ -371,7 +386,8 @@ You may give a class name {{</* csc k >}}cool code{{< /csc */>}}.
 {{< /highlight >}}
 renders as
 
-You may give a class name {{< csc k >}}cool code{{< /csc >}}. Here are the chromastyles classes:
+You may give a class name {{< csc k >}}cool code{{< /csc >}}. 
+
 
 Background style for csc is in `static/css/style.css`:
 {{< highlight css >}}
@@ -454,6 +470,7 @@ w        | TextWhitespace
 ## cscb
 
 * use a **c**hroma**s**tyle **c**olor for a **b**lock
+* not too use full ...
 
 {{< highlight nolan >}}
 {{</* cscb s >}}
@@ -474,6 +491,10 @@ static/css/syntax/syntax.bw.css
 
 
 ## heg-gallery
+
+* taken from  
+  https://github.com/liwenyip/hugo-easy-gallery/  
+  https://www.liwen.id.au/heg/  
 
 {{< highlight nolan >}}
 {{</* heg-load-photoswipe */>}}
@@ -577,3 +598,10 @@ given:
   translation: "empty"
 {{< /w3-code >}}
 in {{< w3-codespan >}}i18n/en.yaml{{< /w3-codespan >}}
+
+
+## asciicast
+
+* taken from https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
+
+{{< asciicast WJM2LEZQs8VRhNeuZ5NiGPp9I >}}

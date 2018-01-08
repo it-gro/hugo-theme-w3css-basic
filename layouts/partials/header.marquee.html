@@ -1,7 +1,7 @@
 {{ `<!-- partials/header.marquee.html -->` | safeHTML }}
 {{- if .Site.Params.marquee.enable }}
 <div id="marquee" class="w3-theme">
-  <div class="w3-container w3-theme-l1 w3-small">
+  <div class="w3-container w3-small {{ default `w3-theme-l1` ($.Site.Param `colorHeaderMarquee`)}} ">
     <div class="top-marquee">
       {{ `<!-- .Site.Params.marquee.marquee -->` | safeHTML }}
       <div><span>{{ .Site.Params.marquee.marquee | markdownify }}</span></div>

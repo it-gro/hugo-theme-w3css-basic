@@ -1,6 +1,6 @@
 {{ `<!-- partials/search.gcse.html  -->` | safeHTML }}
 
-<div class="w3-container w3-margin-bottom w3-theme-l3">
+<div class="w3-container w3-margin-bottom {{ default `w3-theme-l3` ($.Site.Param `colorSearchGoogleGcseContainer`)}} ">
   
   <div class="w3-card-4 w3-margin-top ">
       <div class="w3-margin-top">

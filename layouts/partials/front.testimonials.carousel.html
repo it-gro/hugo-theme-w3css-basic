@@ -3,9 +3,9 @@
 {{- if .Site.Params.testimonials.enable   }}
 {{- if gt (len .Site.Data.testimonials) 0 }}
 <section id="testimonials" class="w3-theme">
-  <div class="w3-container w3-theme-l4">
+  <div class="w3-container {{ default `w3-theme-l4` ($.Site.Param `colorFrontTestimonialsContainer`)}} ">
 
-    <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom w3-theme-l2">
+    <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom {{ default `w3-theme-l2` ($.Site.Param `colorFrontTestimonialsTitleCard`)}} ">
       <h2 id="testimonials-title">{{ .Site.Params.testimonials.title }}</h2>
       <div class="w3-small">
         {{- .Site.Params.testimonials.subtitle | markdownify }}
@@ -15,7 +15,7 @@
     <div class="testimonials-owl owl-carousel owl-theme w3-margin-bottom">
       {{ `<!-- range .Site.Data.testimonials -->` | safeHTML }}
       {{- range $index, $element := sort .Site.Data.testimonials "weight" }}
-      <div class="w3-card w3-theme-l5">
+      <div class="w3-card {{ default `w3-theme-l5` ($.Site.Param `colorFrontTestimonialsCarouselCard`)}} ">
         {{ template "front-testimonials-entry" $element }}
       </div>       <!-- w3-card -->
       {{- end }} {{/* range */}}
@@ -26,7 +26,7 @@
       {{ `<!-- range first 3 .Site.Data.testimonials -->` | safeHTML }}
         {{- range $index, $element := first 3 (sort .Site.Data.testimonials "weight") }}
           <div class="w3-cell w3-cell-bottom w3-mobile">
-            <div class="w3-card w3-margin w3-theme-l5">
+            <div class="w3-card w3-margin {{ default `w3-theme-l5` ($.Site.Param `colorFrontTestimonialsCarouselCard`)}} ">
                 {{ template "front-testimonials-entry" $element }}
             </div>
           </div>

@@ -1,5 +1,5 @@
 {{ `<!-- partials/footer.bottom.html  -->` | safeHTML }}
-<div class="w3-cell-row w3-small w3-theme-l3 ">
+<div class="w3-cell-row w3-small {{ default `w3-theme-l3` ($.Site.Param `colorFooterBottomCell`)}} ">
 
   <div class="w3-cell w3-cell-middle">
     {{ `<!-- .Site.Params.bottomLeft  -->` | safeHTML }}

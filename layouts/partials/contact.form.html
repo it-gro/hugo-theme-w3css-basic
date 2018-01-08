@@ -11,7 +11,7 @@
   {{- .Scratch.Set "myFormspreeVia"     (printf "https://%s"    .Site.Params.formspree                   ) }}
   {{- .Scratch.Set "myFormspreeEnctype" "application/x-www-form-urlencoded"                                }}
 {{- end }} <!-- if isset -->
-<form class="w3-panel w3-card-4 w3-theme-d2" method="post" >
+<form class="w3-panel w3-card-4 {{ default `w3-theme-d3` ($.Site.Param `colorContactFormPanel`)}} " method="post" >
 {{ `<!-- i18n "contactForm" "contactName" "contactMail" "contactMessage"  "contactSend"  "contactVia" -->` | safeHTML }}
   {{- /* <h3> {{ default "Contact" (i18n "contactForm"   ) }}</h3> */}} {{/* toc on contact page */}}
   <p><label>{{ default "Name"    (i18n "contactName"   ) }} </label> <input class="w3-input w3-border" name="name"  type="text" required placeholder="Name" ></p>
