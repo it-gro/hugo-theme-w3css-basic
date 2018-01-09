@@ -6,16 +6,12 @@ taken from
 quite configurable. Change all colors in the blink of an eye...
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a first view. 
-Visit:
-* https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/
-* https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
-* https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/folder20/folder21/   
-  alternative navigation instead of breadcrumbs (Top/Up/Down & Pages on this level)
 
-It is for:
+It theme is for:
 * Landing pages 
 * Blogs
 * Pages (no blog) in a directory structure with simple navigation (Top/Up/Down & Pages on this level)
+* People who like monochromatic colors
 
 
 It includes resources from:
@@ -61,6 +57,8 @@ It includes resources from:
   * [Contact Map](#contact-map)
   * [Google Custom Search API](#google-custom-search-api)
   * [Footer](#footer)
+* [Shortcodes](#shortcodes)
+* [Showcase](#showcase)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [License](#license)
@@ -105,8 +103,9 @@ My goals for this theme are:
   * google map (if js is enabled)
 * search page
   * google customizable search api
-* page navigation (Top/Up/Down & Pages on this level)
+* alternative navigation instead of breadcrumbs (Top/Up/Down & Pages on this level)
 * hugo-easy-gallery (PhotoSwipe needs js)
+  
 
 
 ## Installation
@@ -327,6 +326,9 @@ ultricies eget, tempor sit amet, ante
 * Page navigation with Top/Up/Down and pages on this level
 
 ![screenshot Page Navigation (up & down)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_330.jpg)
+
+* Check out https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/folder20/folder21/   
+
 
 #### Taxonomy
 * Taxonomy bar (shown if page has a taxonomy)
@@ -723,6 +725,18 @@ pygmentsUseClasses            = true
 * https://github.com/liwenyip/hugo-easy-gallery/
 
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
+
+
+
+## Shortcodes
+
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
+
+
+## Showcase
+
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/
+
 
 ## Usage
 
