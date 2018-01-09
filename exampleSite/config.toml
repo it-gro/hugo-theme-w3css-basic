@@ -3,8 +3,8 @@
 # ##################################################
 # Hugo-defined variables
 # set params.uglyURLs false (see below)
-baseURL       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
-#baseURL       = "http://example.com"
+#baseURL       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
+baseURL       = "http://example.com"
 #default:
 #relativeURLs  = false
 #uglyURLs      = false
@@ -84,7 +84,6 @@ disqusShortname = ""
 [taxonomies]
   tag = "tags"
   category = "categories"
-  test     = "tests"
 
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
@@ -197,7 +196,7 @@ disqusShortname = ""
   uglyUrl            = ".html"
 
   # used in layouts/partials/head.meta.html
-  authorName         = "it-gro"
+  authorName         = "anonymous"
   defaultKeywords    = ["foo", "bar"]
   defaultDescription = "example site created with hugo using theme hugo-theme-w3css-basic"
 
@@ -207,10 +206,10 @@ disqusShortname = ""
   # Monochromatic Color Schemes
   # set W3.CSS color theme (choose one)
   #w3cssColorTheme = "/css/w3-theme-custom.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-dark-grey.css"
@@ -338,12 +337,12 @@ consectetuer adipiscing
               '''
 
   # used in layouts/partials/footer.bottom.html
-  bottomLeft  = "Copyright (c) 2017, *lobortis nisl* ut aliquip ex ea commodo consequat"
+  bottomLeft  = "Copyright (c) 2018, *lobortis nisl* ut aliquip ex ea commodo consequat"
   bottomRight = 'created with [Hugo](https://gohugo.io) '
 
 
   # used in partials/contact.form.html
-  # Enable the contact form by entering your Formspree.io email
+  # Enable the contact form by entering your Formspree.io email
   formspree = "formspree.io"
   email     = "info@example.com"
 
@@ -358,7 +357,7 @@ consectetuer adipiscing
 # more theme defined params
 
 [params.marquee]
-  # enable or disable marquee on frontpage
+  # enable or disable marquee
   enable   = true
  #enable   = false
   marquee  = '''
@@ -390,30 +389,30 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # used in layouts/partials/front.photocards.html
   # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
-  #enable  = false
   enable   = true
-  limitTo  = 3
-  #limitTo  = 6
+  #enable  = false
+  #limitTo  = 3
+  limitTo  = 6
 
 [params.features]
   # used in layouts/partials/front.features.html
   # enable or disable features on frontpage
   # see some examples in 'exampleSite/data/features'
-  #enable  = false
   enable   = true
-  limitTo  = 3
-  #limitTo  = 6
+  #enable  = false
+  #limitTo  = 3
+  limitTo  = 6
 
-[params.testimonials]
-  # used in layouts/partials/front.testimonials.carousel.html
-  # enable or disable testimonials on frontpage
-  # see some examples in 'exampleSite/data/testimonials'
-  enable   = true
-  #enable  = false
-  title    = "Testimonials"
+[params.recentPosts]
+  # used in layouts/partials/footer.html
+  footerNumOfPosts = 5
+  enableFooter   = true
+  # used in layouts/partials/front.recent_posts.html
+  enableFront    = true
+  title    = "From our Blog"
   subtitle = '''
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-labore et dolore magna aliquyam erat, sed diam voluptua. 
+Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac.
              '''
 
 [params.seeMore]
@@ -430,6 +429,18 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
 suscipit lobortis nisl ut aliquip ex ea commodo consequat.
               '''
 
+[params.testimonials]
+  # used in layouts/partials/front.testimonials.carousel.html
+  # enable or disable testimonials on frontpage
+  # see some examples in 'exampleSite/data/testimonials'
+  enable   = true
+  #enable  = false
+  title    = "Testimonials"
+  subtitle = '''
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+labore et dolore magna aliquyam erat, sed diam voluptua. 
+             '''
+
 [params.clients]
   # used in layouts/partials/front.clients.carousel.html
   # enable or disable clients on frontpage
@@ -440,19 +451,6 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
   subtitle = '''
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore.
-             '''
-
-[params.recentPosts]
-  # used in layouts/partials/footer.html
-  footerNumOfPosts = 5
-  enableFooter   = true
-  # used in layouts/partials/front.recent_posts.html
-  enableFront    = true
-  #enable = false
-  title    = "From our Blog"
-  subtitle = '''
-Pellentesque habitant morbi tristique senectus et netus et malesuada
-fames ac.
              '''
 
 [params.blog]

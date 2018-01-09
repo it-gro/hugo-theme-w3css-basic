@@ -25,8 +25,15 @@
         <gcse:searchresults></gcse:searchresults>
       </div>
   </div>
+
+  <noscript>
+    {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }}
+    <p>{{ default "no JavaScript" (i18n "JsNeeded") }} (google custom search)</p>
+    <a href="https://cse.google.com:443/cse/publicurl?cx={{.Site.Params.googleCustomSearchCX}}" target="_blank">https://cse.google.com:443/cse/publicurl?cx={{.Site.Params.googleCustomSearchCX}}</a>
+  </noscript>
   
 </div>
+
 
 
 {{- /* emacs                 */}}
