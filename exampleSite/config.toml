@@ -207,10 +207,10 @@ disqusShortname = ""
   # Monochromatic Color Schemes
   # set W3.CSS color theme (choose one)
   #w3cssColorTheme = "/css/w3-theme-custom.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-dark-grey.css"
@@ -392,8 +392,8 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/photocards'
   #enable  = false
   enable   = true
-  limitTo  = 3
-  #limitTo  = 6
+  #limitTo  = 3
+  limitTo  = 6
 
 [params.features]
   # used in layouts/partials/front.features.html
@@ -401,8 +401,8 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/features'
   #enable  = false
   enable   = true
-  limitTo  = 3
-  #limitTo  = 6
+  #limitTo  = 3
+  limitTo  = 6
 
 [params.recentPosts]
   # used in layouts/partials/footer.html

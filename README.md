@@ -3,14 +3,31 @@
 W3.CSS Basic is a website template built with W3.CSS.  Inspiration was
 taken from
 [Universal](https://themes.gohugo.io/hugo-universal-theme/).  It is
-highly configurable. Change all colors in the blink of an eye...
+quite configurable. Change all colors in the blink of an eye...
+
+See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a first view. 
+Visit:
+* https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/
+* https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
+* https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/folder20/folder21/   
+  alternative navigation instead of breadcrumbs (Top/Up/Down & Pages on this level)
 
 It is for:
 * Landing pages 
 * Blogs
-* Pages (no blog) in a directory structure with navigation
+* Pages (no blog) in a directory structure with simple navigation
 
-See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a first impression.
+It includes resources from:
+* https://www.w3schools.com/w3css/
+* https://fontawesome.com/icons/
+* https://owlcarousel2.github.io/OwlCarousel2/
+* https://daneden.me/animate
+* https://github.com/liwenyip/hugo-easy-gallery/
+* http://photoswipe.com
+* https://fonts.google.com/
+* https://translate.google.com
+* https://cse.google.com
+
 
 ## Table of Contents
 
@@ -29,8 +46,10 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
     * [Testimonials](#testimonials)
     * [Clients](#clients)
   * [Blog](#blog)
-    * [List](#list)
+    * [Blog List](#blog-list)
     * [Date format](#date-format)
+  * [Pages](#pages)
+    * [Pages Navigation](#pages-navigation)
   * [Color Theme](#color-theme)
   * [Emoji](#emoji)
   * [Summary](#summary)
@@ -47,17 +66,15 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 * [Thanks](#thanks)
 
 
-
-
 ## Goals
 
 My goals for this theme are:
 
 * be as universal as the universal theme
+* create a w3css theme (there are many Bootstrap themes)
 * mobile first
 * basic usage without javascript has to be possible 
 * usage with full local delivery (no CDNs) has to be possible (security & privacy concerns)
-* create a w3css theme (there are many Bootstrap themes)
 * try to be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 * support experimenting with monochromatic colors
 * use teaser pictures and icons as eye-catcher
@@ -68,21 +85,21 @@ My goals for this theme are:
 * Monochromatic Color Schemes
 * Works with disabled javascript (using fallbacks)
 * Responsive design
-  * 3 or 1 column layout
+  * 3 (medium, lage) or 1 (small) column layout
   * small menu on small screen (no collapse)
 * Customizable landing page
   * optional marquee (using css)
-  * optional data/jumbotron    (carousel(if js is enabled), optional css animation)
+  * optional data/jumbotron    (carousel (if js is enabled), optional css animation)
   * optional data/photocards   (optional css animation)
   * optional data/features     (optional css animation)
   * optional data/testimonials (carousel (if js is enabled) )
   * optional data/clients      (carousel (if js is enabled) )
 * fontawesome 5 (local)
-* google fonts - either via api or via local files (to avoid tracking)
+* google fonts - either via api or via local files (avoid tracking)
 * optional google translate widget (if js is enabled)
 * contact page
   * optional formspree.io 
-  * mailto: without formspree.io (avoid tracking)
+  * mailto: without formspree.io (avoid leaking)
   * google map (if js is enabled)
 * search page
   * google customizable search api
@@ -112,8 +129,7 @@ theme that you can use as a starting point for your site.
 
 First, let's take a look at the
 [config.toml](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml). It
-will be useful to learn how to customize your site. Feel free to play
-around with the settings.
+will be useful to learn how to customize your site. 
 
 
 ### Language
@@ -128,7 +144,9 @@ defaultContentLanguage = "en"
 
 
 ### Frontpage
+
 #### Marquee
+
 ```yaml
 [params.marquee]
   # enable or disable marquee on frontpage
@@ -138,8 +156,10 @@ At [info@example.com](mailto:info@example.com) vero eos et **accusam**
 et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
              '''
 ```
+![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_100.jpg)
 
 #### Jumbotron
+
 ```yaml
 [params.jumbotrons]
   # used in layouts/partials/front.jumbotrons.carousel.html
@@ -147,6 +167,9 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/jumbotron'
   enable   = true
 ```
+![screenshot Jumbotron Text](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_130.jpg)
+![screenshot Jumbotron Text & Pic](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_140.jpg)
+![screenshot Jumbotron Text & Icon](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_150.jpg)
 
 #### Photocards
 ```yaml
@@ -156,7 +179,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/photocards'
   enable   = true
 ```
-
+![screenshot Photocards (9)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_160.jpg)
 
 #### Features
 ```yaml
@@ -166,6 +189,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/features'
   enable   = true
 ```
+![screenshot Feature (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_170.jpg)
 
 #### Recent Posts
 ```yaml
@@ -181,6 +205,7 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada
 fames ac.
              '''
 ```
+![screenshot Recent Posts](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_180.jpg)
 
 #### See More
 ```yaml
@@ -197,6 +222,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
 suscipit lobortis nisl ut aliquip ex ea commodo consequat.
               '''
 ```
+![screenshot See More](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_190.jpg)
 
 #### Testimonials
 ```yaml
@@ -211,6 +237,7 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
 labore et dolore magna aliquyam erat, sed diam voluptua. 
              '''
 ```
+![screenshot Testimonials](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_210.jpg)
 
 
 #### Clients
@@ -226,10 +253,11 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore.
              '''
 ```
+![screenshot Clients](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_200.jpg)
 
 ### Blog
 
-#### List
+#### Blog List
 ```yaml
 [params.blog]
   # used in layouts/blog/list.html
@@ -239,6 +267,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 ultricies eget, tempor sit amet, ante
              '''
 ```
+![screenshot Blog Paginator (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_230.jpg)
 
 #### Date format
 
@@ -253,6 +282,20 @@ ultricies eget, tempor sit amet, ante
   translation: "Januar"
   ...
 ```
+![screenshot Blog Entry](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_240.jpg)
+
+### Pages
+
+#### Pages Navigation
+
+![screenshot Page Navigation (root)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_320.jpg)
+![screenshot Page Navigation (up & down)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_330.jpg)
+
+#### Taxonomy
+![screenshot Taxonomy Bar](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_250.jpg)
+![screenshot Categories](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_260.jpg)
+![screenshot Tags](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_270.jpg)
+
 
 ### Color Theme
 
@@ -368,7 +411,7 @@ You may use emoji in in titles as well:
 title:       "Hugo - **highlight** :art:"
 ```
 
-e.g._ `main.teaser_in_card.html`
+e.g. in `main.teaser_in_card.html`
 ```
   <h3>
   {{- if .Params.icon }}
@@ -465,6 +508,7 @@ pygmentsUseClasses            = true
 `<button class="w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}</button>`
 
 
+
 ```toml
 # demo submenu
 [[menu.main]]
@@ -495,8 +539,6 @@ pygmentsUseClasses            = true
 
 * right aligned top menu (github, facebook, twitter, ...)
 
-
-
 ```toml
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
@@ -513,6 +555,10 @@ pygmentsUseClasses            = true
 
 * on small displays the root menu entries are truncated
   `{{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}`
+
+![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_100.jpg)
+![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_110.jpg)
+![screenshot numOfItemsIfSmallDisplay 2](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_120.jpg)
 
 
 ### Fonts
@@ -552,6 +598,8 @@ pygmentsUseClasses            = true
   longitude        =  7.444186
 
 ```
+![screenshot Contact](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_290.jpg)
+![screenshot Contact no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_300.jpg)
 
 
 ### Google Custom Search API
@@ -572,6 +620,10 @@ pygmentsUseClasses            = true
   pre      = "fas fa-search"
 ```
 
+![screenshot Search](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_280.jpg)
+![screenshot Search no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_310.jpg)
+
+
 ### Footer
 
 ```toml
@@ -591,14 +643,19 @@ pygmentsUseClasses            = true
 
 ```
 
+![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_220.jpg)
 
 
+### Gallery
+* https://github.com/liwenyip/hugo-easy-gallery/
+![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_340.jpg)
 
 ## Usage
 
 In order to see your site in action, run Hugo's built-in local server.
 
 ```
+$ export GoogleMapsApiKey=GEeawyBOuzOPzbFGizHKGReghibngUZTGjlioZM
 $ hugo server -w --disableFastRender
 ```
 
@@ -638,6 +695,9 @@ They ported [Bootstrapious](https://bootstrapious.com/p/universal-business-e-com
 * ![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/complete.png)
 * ![screenshot theme orange](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/screenshot.png)
 
+![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/complete.png)
+![screenshot 1500x1000](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/screenshot.png)
+![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/tn.png)
 
 
 [![Build Status](https://travis-ci.org/devcows/hugo-universal-theme.svg?branch=master)](https://travis-ci.org/devcows/hugo-universal-theme)
