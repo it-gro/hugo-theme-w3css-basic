@@ -548,7 +548,7 @@ pygmentsUseClasses            = true
 
 ### Menu
 
-* Navbar Long (for medium or large displays)
+* Navbar "Long" (for medium or large displays)
 
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
 
@@ -568,7 +568,7 @@ pygmentsUseClasses            = true
   pre    = "far fa-address-card"
 ```
 
-* `pre` is for fontawesome 5 icons
+* `pre` is for fontawesome version 5 icons
 * name is used for lookup in i18n/*.yaml (=> translation)
 * if no translation is given, the name itself is shown
 `page.nav.html`   
@@ -577,7 +577,7 @@ pygmentsUseClasses            = true
 
 * Submenu (one level)
 
-![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
+![screenshot Marquee & Navbar small](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
 
 
 ```toml
@@ -599,7 +599,7 @@ pygmentsUseClasses            = true
 
 * Topbar: right aligned top menu (github, facebook, twitter, ...)
 
-* Navbar Short with numOfItemsIfSmallDisplay = 2
+* Navbar "Small" with numOfItemsIfSmallDisplay = 2
 
 ![screenshot numOfItemsIfSmallDisplay 2](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_120.jpg)
 
@@ -618,7 +618,7 @@ pygmentsUseClasses            = true
   `{{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}`
 
 
-![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
+![screenshot Marquee & Navbar small](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
 
 
 ```toml
