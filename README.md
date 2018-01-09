@@ -448,7 +448,7 @@ enableEmoji   = true
 ```
 
 
-You may use emoji in in titles as well:
+You may use emoji in titles as well:
 ```yaml
 title:       "Hugo - **highlight** :art:"
 ```
@@ -473,8 +473,11 @@ summaryLength = 70
   teaserTruncateSummary  = 200
 ```
 
-`summaryLength` was introduced in hugo 0.30 (https://gohugo.io/news/0.30-relnotes/). It's measure is "words".
-`teaserTruncateSummary` is in "characters". The Description (first priority) or the Summary (second priority) is truncated:
+`summaryLength` was introduced in hugo 0.30
+(https://gohugo.io/news/0.30-relnotes/). It's measure is "words".
+`teaserTruncateSummary` is in "characters". The Description (first
+priority) or the Summary (second priority) is truncated (without
+cutting words):
 
     {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
 
@@ -529,7 +532,7 @@ pygmentsUseClasses            = true
 
 ### Menu
 
-* Navbar Long
+* Navbar Long (for middle or large displays)
 
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
 
@@ -549,9 +552,9 @@ pygmentsUseClasses            = true
   pre    = "far fa-address-card"
 ```
 
-* `pre` for fontawesome 5 icons
-* name for lookup in i18n/*.yaml (=> translation)
-
+* `pre` is for fontawesome 5 icons
+* name is used for lookup in i18n/*.yaml (=> translation)
+* is no translation is given, the name itself is shown
 `page.nav.html`
 `<button class="w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}</button>`
 
@@ -574,6 +577,7 @@ pygmentsUseClasses            = true
 ```
 
 * Submenu (one level)
+![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
 
 
 ```toml
