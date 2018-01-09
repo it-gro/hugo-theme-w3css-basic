@@ -74,7 +74,7 @@ My goals for this theme are:
 
 * be as universal as the universal theme
 * create a w3css theme (there are many Bootstrap themes)
-* mobile first
+* mobile first, responsive
 * basic usage without javascript has to be possible 
 * usage with full local delivery (no CDNs) has to be possible (security & privacy concerns)
 * try to be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
@@ -548,7 +548,7 @@ pygmentsUseClasses            = true
 
 ### Menu
 
-* Navbar Long (for middle or large displays)
+* Navbar Long (for medium or large displays)
 
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
 
