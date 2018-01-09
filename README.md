@@ -65,6 +65,7 @@ It includes resources from:
 * [Contributing](#contributing)
 * [License](#license)
 * [Thanks](#thanks)
+* [More Screenshots](#more-screenshots)
 
 
 ## Goals
