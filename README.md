@@ -559,6 +559,10 @@ pygmentsUseClasses            = true
 `<button class="w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}</button>`
 
 
+* Submenu (one level)
+
+![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
+
 
 ```toml
 # demo submenu
@@ -576,9 +580,8 @@ pygmentsUseClasses            = true
   parent = "theme"
 ```
 
-* Submenu (one level)
-![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
 
+* Topbar
 
 ```toml
 # right aligned
