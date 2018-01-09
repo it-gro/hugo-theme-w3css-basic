@@ -1,19 +1,18 @@
 # W3.CSS Basic Theme for Hugo
 
-[![Build Status](https://travis-ci.org/devcows/hugo-universal-theme.svg?branch=master)](https://travis-ci.org/devcows/hugo-universal-theme)
-[![Code Climate](https://codeclimate.com/github/devcows/hugo-universal-theme/badges/gpa.svg)](https://codeclimate.com/github/devcows/hugo-universal-theme)
+W3.CSS Basic is a website template built with W3.CSS.  Inspiration was
+taken from
+[Universal](https://themes.gohugo.io/hugo-universal-theme/).  It is
+highly configurable. Change all colors in the blink of an eye...
 
-W3.CSS Basic is a website template built with W3.CSS.
-
-This Hugo theme was inspired by [Universal](https://themes.gohugo.io/hugo-universal-theme/).
-
-* ![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/complete.png)
-* ![screenshot theme orange](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/screenshot.png)
-
+It is for:
+* Landing pages 
+* Blog
+* Pages (no blog) in a directory structure with navigation
 
 ## Table of Contents
 
-* [Motivation](#motivation)
+* [Goals](#goals)
 * [Features](#features)
 * [Installation](#installation)
 * [Configuration](#configuration)
@@ -48,10 +47,18 @@ This Hugo theme was inspired by [Universal](https://themes.gohugo.io/hugo-univer
 
 
 
-## Motivation
+## Goals
 
-* foo
-* bar
+My goals for this theme are:
+
+* be as universal as the universal theme
+* mobile first
+* basic usage without javascript has to be possible 
+* usage with full local delivery (no CDNs) has to be possible (security & privacy concerns)
+* create a w3css theme (there are many Bootstrap themes)
+* try to be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+* support experimenting with monochromatic colors
+* use teaser pictures and icons as eye-catcher
 
 
 ## Features
@@ -63,19 +70,23 @@ This Hugo theme was inspired by [Universal](https://themes.gohugo.io/hugo-univer
   * small menu on small screen (no collapse)
 * Customizable landing page
   * optional marquee (using css)
-  * optional google translate  (if js is enabled)
   * optional data/jumbotron    (carousel(if js is enabled), optional css animation)
   * optional data/photocards   (optional css animation)
   * optional data/features     (optional css animation)
   * optional data/testimonials (carousel (if js is enabled) )
   * optional data/clients      (carousel (if js is enabled) )
+* fontawesome 5 (local)
+* google fonts - either via api or via local files (to avoid tracking)
+* optional google translate widget (if js is enabled)
 * contact page
   * optional formspree.io 
   * mailto: without formspree.io (avoid tracking)
   * google map (if js is enabled)
-* fontawesome 5 (local)
-* google fonts - either via api or via local files (to avoid tracking)
-  
+* search page
+  * google customizable search api
+* page navigation using cards
+* hugo-easy-gallery (PhotoSwipe needs js)
+
 
 ## Installation
 
@@ -162,7 +173,6 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   enableFooter   = true
   # used in layouts/partials/front.recent_posts.html
   enableFront    = true
-  #enable = false
   title    = "From our Blog"
   subtitle = '''
 Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -230,7 +240,7 @@ ultricies eget, tempor sit amet, ante
 
 #### Date format
 
-* Dates as show for the Blog
+* Dates are shown in the blog
 * Short version in teaser
 `{{- .Date.Day}}. {{substr (default .Date.Month (i18n .Date.Month)) 0 3}} {{.Date.Year -}}`
 * Long version in article
@@ -244,24 +254,23 @@ ultricies eget, tempor sit amet, ante
 
 ### Color Theme
 
-All W3.CSS predefined color themes
+All W3.CSS predefined monochromatic color themes
 (https://www.w3schools.com/w3css/w3css_color_themes.asp) are placed in
 the `/static/vendor/w3css/4/` directory.
 
+You may create your own monochromatic color theme using
+https://www.w3schools.com/w3css/w3css_color_generator.asp and then put the css file under `/static/css/w3-theme-custom.css`.
 
-You may create your own color style using
-https://www.w3schools.com/w3css/w3css_color_generator.asp and put the css file under `/static/css/w3-theme-custom.css`.
 
-
-Select the actual color style:
+Select the actual color theme:
 
 ```toml
 [params]
- w3cssColorTheme = "/css/w3-theme-custom.css"
-#w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
+ #w3cssColorTheme = "/css/w3-theme-custom.css"
+ w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
 ```
 
-Available options (available theme files) are:
+Available options (theme files) are:
 ```toml
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
@@ -351,10 +360,22 @@ You can configure all colors within the selected monochromatic color theme:
 enableEmoji   = true
 ```
 
+
 You may use emoji in in titles as well:
 ```yaml
 title:       "Hugo - **highlight** :art:"
 ```
+
+e.g._ `main.teaser_in_card.html`
+```
+  <h3>
+  {{- if .Params.icon }}
+    <i class="{{ .Params.icon }}"></i>
+  {{- end }}
+  {{ .Title  | markdownify | emojify }}
+  </h3>
+```
+
 
 ### Summary
 
@@ -366,7 +387,7 @@ summaryLength = 70
 ```
 
 `summaryLength` was introduced in hugo 0.30 (https://gohugo.io/news/0.30-relnotes/). It's measure is "words".
-After `teaserTruncateSummary` characters the Summary is truncated:
+After `teaserTruncateSummary` characters the Description (first priority) or the Summary (second priority) is truncated:
 
     {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
 
@@ -435,8 +456,12 @@ pygmentsUseClasses            = true
   pre    = "far fa-address-card"
 ```
 
-* `pre` with fontawesome 5 icons
+* `pre` for fontawesome 5 icons
 * name for lookup in i18n/*.yaml (=> translation)
+
+`page.nav.html`
+`<button class="w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}</button>`
+
 
 ```toml
 # demo submenu
@@ -469,6 +494,23 @@ pygmentsUseClasses            = true
 * right aligned top menu (github, facebook, twitter, ...)
 
 
+
+```toml
+[params.menuConfig]
+  # used in layouts/partials/header.nav.html
+  # if set => change menu entry on small displays to lowercase maxChars 
+  smallDispMenuMaxChars = 2
+
+[params.menuTopBar]
+  # used in layouts/partials/header.nav.html
+  # enable or disable menu.topbar with social icons (right aligned)
+  socialEnable             = true
+  numOfItemsIfSmallDisplay = 0
+  googleTranslateEnable    = true
+```
+
+* on small displays the root menu entries are truncated
+  `{{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}`
 
 
 ### Fonts
@@ -590,3 +632,11 @@ creating my starting point: the awesome [Universal](https://themes.gohugo.io/hug
 They ported [Bootstrapious](https://bootstrapious.com/p/universal-business-e-commerce-template).
 
 * www.w3schools.com for creating the free to use W3.CSS CSS framework.
+
+* ![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/complete.png)
+* ![screenshot theme orange](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/screenshot.png)
+
+
+
+[![Build Status](https://travis-ci.org/devcows/hugo-universal-theme.svg?branch=master)](https://travis-ci.org/devcows/hugo-universal-theme)
+[![Code Climate](https://codeclimate.com/github/devcows/hugo-universal-theme/badges/gpa.svg)](https://codeclimate.com/github/devcows/hugo-universal-theme)
