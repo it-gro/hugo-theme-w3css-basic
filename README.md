@@ -186,6 +186,27 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 ![screenshot Jumbotron Text & Icon](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_150.jpg)
 
 
+```
+data/jumbotron/
+├── 01-jumbotron.yaml
+├── 02-jumbotron.yaml
+├── 03-jumbotron.yaml
+├── 04-jumbotron.yaml
+└── 05-jumbotron.yaml
+```
+
+`01-jumbotron.yaml`
+```
+weight:      1
+title:       "Welcome to hugo-theme-w3css-basic exampleSite"
+icon:        
+image:       
+description: |
+  * Lorem ipsum dolor sit amet
+  * Excepteur sint occaecat cupidatat non proident
+```
+
+
 #### Photocards
 ```yaml
 [params.photocards]
@@ -199,6 +220,30 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 
 ![screenshot Photocards (9)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_160.jpg)
 
+```
+data/photocards/
+├── 01-photocard.yaml
+├── 02-photocard.yaml
+├── 03-photocard.yaml
+├── 04-photocard.yaml
+├── 05-photocard.yaml
+├── 06-photocard.yaml
+├── 07-photocard.yaml
+├── 08-photocard.yaml
+└── 09-photocard.yaml
+```
+
+`01-photocard.yaml`
+```
+weight:      1
+title:       "Lorem ipsum"
+animated:    "rollIn"
+image:       "images/photocards/pixabay.com/01-photocard.jpg"
+url:         pages/front/photocards/01
+description: |
+   sed diam nonumy 
+```
+
 
 #### Features
 ```yaml
@@ -211,6 +256,29 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 * Front features
 
 ![screenshot Feature (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_170.jpg)
+
+```
+data/features/
+├── 01-feature.yaml
+├── 02-feature.yaml
+├── 03-feature.yaml
+├── 04-feature.yaml
+├── 05-feature.yaml
+└── 06-feature.yaml
+```
+
+`01-feature.yaml`
+```
+weight:      1
+name:        "Eleifend"
+icon:        "fas fa-desktop"
+animated:    "slideInLeft"
+url:         pages/front/features/01
+description: |
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+  nonumy eirmod tempor invidunt ut labore
+```
+
 
 #### Recent Posts
 ```yaml
@@ -229,6 +297,7 @@ fames ac.
 * Front recent posts
 
 ![screenshot Recent Posts](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_180.jpg)
+
 
 #### See More
 ```yaml
@@ -277,6 +346,27 @@ labore et dolore magna aliquyam erat, sed diam voluptua.
 
 ![screenshot Testimonials](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_210.jpg)
 
+```
+data/testimonials/
+├── 01-testimonial.yaml
+├── 02-testimonial.yaml
+├── 03-testimonial.yaml
+├── 04-testimonial.yaml
+└── 05-testimonial.yaml
+```
+
+`01-testimonial.yaml`
+```
+weight:      1
+name: 	     "John Doe"
+position:    "CEO, Takimata"
+avatar:      "images/testimonials/pixabay.com/person-1.jpg"
+text: 	     | 
+  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+  suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
+  vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+  consequat, vel illum dolore eu feugiat
+```
 
 #### Clients
 ```yaml
@@ -295,6 +385,27 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 
 ![screenshot Clients](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_200.jpg)
 
+
+```
+data/clients/
+├── 01-client.yaml
+├── 02-client.yaml
+├── 03-client.yaml
+├── 04-client.yaml
+├── 05-client.yaml
+└── 06-client.yaml
+```
+
+`01-client.yaml`
+```
+weight: 1
+name:   "customer-1"
+image:  "images/clients/pixabay.com/company-logo-1.png"
+url:    "http://www.customer1.com"
+```
+
+
+
 ### Blog
 
 #### Blog List
@@ -310,6 +421,44 @@ ultricies eget, tempor sit amet, ante
 * Blog with `paginate =  6` (short date)
 
 ![screenshot Blog Paginator (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_230.jpg)
+
+
+```
+content/blog/
+└── 2017
+    ├── 09
+    │   ├── emacs-it-all-starts-here.md
+    │   └── emacs-jokes.md
+    ├── 10
+    │   └── golang-a-closer-look.md
+    └── 11
+        ├── hugo-dolor.md
+        ├── hugo-highlight-chromastyles.md
+        ├── hugo-ipsum.md
+        └── hugo-lorem.md
+```
+
+`hugo-highlight-chromastyles.md`
+```
+---
+title:       "Hugo - **highlight** :art:"
+date:        2017-11-24T08:44:12+01:00
+tags:
+  - Hugo
+categories:
+  - Web
+teaserpic:   images/teaserpics/bitbucket.org/pygments-main-logo.png
+---
+
+Hugo comes with reallly fast syntax highlighting from Chroma.
+...
+
+<!--more-->
+
+In this theme we set
+...
+```
+
 
 #### Date format
 
@@ -341,6 +490,57 @@ ultricies eget, tempor sit amet, ante
 ![screenshot Page Navigation (up & down)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_330.jpg)
 
 * Check out https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/folder20/folder21/   
+
+```
+content/pages/
+├── folder10
+│   ├── _index.md
+│   ├── malesuada-massa.md
+│   └── neque-nec.md
+├── folder20
+│   ├── estdui-fermentum.md
+│   ├── felis-vel-velit.md
+│   ├── folder21
+│   │   ├── folder211
+│   │   │   ├── _index.md
+│   │   │   ├── phasellus.md
+│   │   │   └── rutrum.md
+│   │   ├── _index.md
+│   │   ├── nullam.md
+│   │   └── vestibulum.md
+│   ├── _index.md
+│   ├── magna-orci-ultrices.md
+│   ├── nam-asapien.md
+│   ├── neque-orci.md
+│   └── vestibulum-convallis.md
+├── folder30
+│   ├── donec-pretium-posuere.md
+│   ├── _index.md
+│   └── pellentesque-dapibus-suscipit.md
+├── front
+...
+```
+
+`content/pages/folder20/folder21/_index.md`
+```
+---
+weight:         21
+title:          "Cum sociis natoque (this is level /folder20/folder21)"
+date:           "2017-06-08T01:06:13+02:00"
+teaserpic:      images/teaserpics/gohugo.io/hugo-dolor.png
+---
+```
+
+`content/pages/front/_index.md`
+```
+---
+weight:      18
+title:       "Frontpage Eye-Catcher (this is level /front)"
+date:        2017-11-13T15:37:04+01:00
+teaserpic:
+icon:        "fa fa-globe"
+---
+```
 
 
 #### Taxonomy
@@ -585,7 +785,7 @@ pygmentsUseClasses            = true
 [[menu.main]]
   weight = 4
   name   = "Theme"
-  pre    = "fas fa-rss"
+  pre    = "fas fa-info-circle"
   identifier = "theme"
  
 [[menu.main]]
@@ -782,8 +982,7 @@ cd -
 ````
 
 or change the file names in 
-`layouts/partials/head.stylesheets.html`
-`layouts/partials/scripts.html`
+`layouts/partials/head.stylesheets.html` and `layouts/partials/scripts.html`
 
 
 
