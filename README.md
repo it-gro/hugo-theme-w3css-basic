@@ -570,8 +570,8 @@ pygmentsUseClasses            = true
 
 * `pre` is for fontawesome 5 icons
 * name is used for lookup in i18n/*.yaml (=> translation)
-* is no translation is given, the name itself is shown
-`page.nav.html`
+* if no translation is given, the name itself is shown
+`page.nav.html`   
 `<button class="w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}</button>`
 
 
@@ -767,7 +767,7 @@ For more information check out the official [Hugo documentation](http://gohugo.i
 
 ### Minifier
 
-If you change the themes `style.min.css`, `syntax.min.css` or
+If you change the theme `style.min.css`, `syntax.min.css` or
 `front.js`, you have to apply a minifier. E.g.:
 
 ````bash
@@ -775,7 +775,6 @@ cd themes/hugo-theme-w3css-basic/static/css
 yui-compressor --verbose --type css --line-break 1023 style.css  -o style.min.css
 yui-compressor --verbose --type css --line-break 1023 syntax.css -o syntax.min.css
 cd -
-
 
 cd themes/hugo-theme-w3css-basic/static/js
 yui-compressor --verbose --type js --line-break 1023 --nomunge --preserve-semi front.js -o front.min.js
