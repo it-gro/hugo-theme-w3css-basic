@@ -538,7 +538,7 @@ weight:      18
 title:       "Frontpage Eye-Catcher (this is level /front)"
 date:        2017-11-13T15:37:04+01:00
 teaserpic:
-icon:        "fa fa-globe"
+icon:        "fas fa-globe"
 ---
 ```
 
@@ -696,6 +696,9 @@ priority) or the Summary (second priority) is truncated (without
 cutting words):
 
     {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
+
+`<!--more-->` is still an option to override the summaryLength 
+
 
 ### Pagination
 
@@ -938,17 +941,71 @@ pygmentsUseClasses            = true
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
 
+```
+layouts/shortcodes/
+├── asciicast.html
+├── cscb.html
+├── csc.html
+├── heg-figure.html
+├── heg-gallery.html
+├── heg-load-photoswipe.html
+├── heg-load-photoswipe-theme.html
+├── i18n.html
+├── icon.html
+├── w3-alert-icon.html
+├── w3-badge.html
+├── w3-button-icon.html
+├── w3-code.html
+├── w3-codespan.html
+├── w3-notice-icon.html
+├── w3-quote.html
+└── w3-tag.html
+```
 
 ## Showcase
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/
 
+`content/pages/showcase/video-01.md`
+```
+---
+title:       "Hugo - Static Site Generator"
+date:        2017-12-16T21:46:06+01:00
+teaserpic:   
+icon:        "fab fa-youtube"
+description: "Giraffe Academy, Tutorial 1"
+tags:
+  - Showcase
+categories:
+  - This Theme
+---
+
+{{< youtube qtIqKaDlqXo >}}
+```
 
 ## Gallery
 * https://github.com/liwenyip/hugo-easy-gallery/
 
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
 
+
+`content/pages/showcase/gallery-01.md`
+```
+---
+title:       "Gallery pixabay.com"
+date:        2018-01-05T20:30:54+01:00
+teaserpic:   
+icon:        "fas fa-images"
+description: "Pictures from pixabay.com"
+tags:
+  - Showcase
+categories:
+  - This Theme
+---
+
+{{< heg-load-photoswipe >}}
+{{< heg-gallery dir="/images/photocards/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
+```
 
 ## Usage
 
