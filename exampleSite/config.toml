@@ -115,7 +115,7 @@ disqusShortname = ""
 [[menu.main]]
   weight = 4
   name   = "Theme"
-  pre    = "fas fa-rss"
+  pre    = "fas fa-info-circle"
   identifier = "theme"
  
 [[menu.main]]
