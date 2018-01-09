@@ -5,7 +5,7 @@ taken from
 [Universal](https://themes.gohugo.io/hugo-universal-theme/).  It is
 quite configurable. Change all colors in the blink of an eye...
 
-See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a first view. 
+See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
 It theme is for:
 * Landing pages 
@@ -59,6 +59,7 @@ It includes resources from:
   * [Footer](#footer)
 * [Shortcodes](#shortcodes)
 * [Showcase](#showcase)
+* [Gallery](#gallery)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [License](#license)
@@ -157,7 +158,7 @@ At [info@example.com](mailto:info@example.com) vero eos et **accusam**
 et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
              '''
 ```
-* Marquee text from left to right
+* Marquee text from right to left
 
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
 
@@ -335,7 +336,7 @@ ultricies eget, tempor sit amet, ante
 
 ![screenshot Taxonomy Bar](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_250.jpg)
 
-* Taxonomy lists
+* Terms lists
 
 ![screenshot Categories](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_260.jpg)
 
@@ -721,13 +722,6 @@ pygmentsUseClasses            = true
 ![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_220.jpg)
 
 
-### Gallery
-* https://github.com/liwenyip/hugo-easy-gallery/
-
-![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
-
-
-
 ## Shortcodes
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
@@ -736,6 +730,12 @@ pygmentsUseClasses            = true
 ## Showcase
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/
+
+
+## Gallery
+* https://github.com/liwenyip/hugo-easy-gallery/
+
+![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
 
 
 ## Usage
