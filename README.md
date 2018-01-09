@@ -581,7 +581,12 @@ pygmentsUseClasses            = true
 ```
 
 
-* Topbar
+* Topbar: right aligned top menu (github, facebook, twitter, ...)
+
+* Navbar Short with numOfItemsIfSmallDisplay = 2
+
+![screenshot numOfItemsIfSmallDisplay 2](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_120.jpg)
+
 
 ```toml
 # right aligned
@@ -592,7 +597,13 @@ pygmentsUseClasses            = true
   pre      = "fab fa-github"
 ```
 
-* right aligned top menu (github, facebook, twitter, ...)
+
+* on small displays the root menu entries are truncated
+  `{{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}`
+
+
+![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
+
 
 ```toml
 [params.menuConfig]
@@ -608,16 +619,6 @@ pygmentsUseClasses            = true
   googleTranslateEnable    = true
 ```
 
-* on small displays the root menu entries are truncated
-  `{{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}`
-
-
-![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
-
-
-* Navbar Short with numOfItemsIfSmallDisplay = 2
-
-![screenshot numOfItemsIfSmallDisplay 2](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_120.jpg)
 
 
 
