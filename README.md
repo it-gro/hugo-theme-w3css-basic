@@ -57,6 +57,7 @@ It includes resources from:
   * [Contact Map](#contact-map)
   * [Google Custom Search API](#google-custom-search-api)
   * [Footer](#footer)
+* [Favicons](#favicons)
 * [Shortcodes](#shortcodes)
 * [Showcase](#showcase)
 * [Gallery](#gallery)
@@ -943,6 +944,71 @@ pygmentsUseClasses            = true
 ```
 
 ![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_220.jpg)
+
+
+## Favicons
+
+* You may want to use https://realfavicongenerator.net to create **all** files.
+
+`layouts/partials/head.favicon.html`
+```
+{{ `<!-- partials/head.favicon.html -->` | safeHTML }}
+{{- /*  <!-- Favicon and apple touch icons-->         */}} 
+{{- /*  <!-- use https://realfavicongenerator.net --> */}} 
+  <link rel="apple-touch-icon"      sizes="180x180" href="{{ relURL "/images/favicons/apple-touch-icon.png"       }}" />
+  <link rel="icon" type="image/png" sizes="32x32"   href="{{ relURL "/images/favicons/favicon-32x32.png"          }}" />
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ relURL "/images/favicons/android-chrome-192x192.png" }}" />
+  <link rel="icon" type="image/png" sizes="16x16"   href="{{ relURL "/images/favicons/favicon-16x16.png"          }}" />
+  <link rel="manifest"                              href="{{ relURL "/images/favicons/manifest.json"              }}" />
+  <link rel="mask-icon"  color="#5bbad5"            href="{{ relURL "/images/favicons/safari-pinned-tab.svg"      }}" />
+  <link rel="shortcut icon"                         href="{{ relURL "/images/favicons/favicon.ico"                }}" />
+  <meta name="msapplication-TileImage"           content="{{ relURL "/images/favicons/mstile-144x144.png"         }}" />
+  <meta name="msapplication-config"              content="{{ relURL "/images/favicons/browserconfig.xml"          }}" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color"             content="#ffffff" />
+```
+
+```
+static/images/favicons/
+├── android-chrome-144x144.png
+├── android-chrome-192x192.png
+├── android-chrome-256x256.png
+├── android-chrome-36x36.png
+├── android-chrome-48x48.png
+├── android-chrome-72x72.png
+├── android-chrome-96x96.png
+├── apple-touch-icon-114x114.png
+├── apple-touch-icon-114x114-precomposed.png
+├── apple-touch-icon-120x120.png
+├── apple-touch-icon-120x120-precomposed.png
+├── apple-touch-icon-144x144.png
+├── apple-touch-icon-144x144-precomposed.png
+├── apple-touch-icon-152x152.png
+├── apple-touch-icon-152x152-precomposed.png
+├── apple-touch-icon-180x180.png
+├── apple-touch-icon-180x180-precomposed.png
+├── apple-touch-icon-57x57.png
+├── apple-touch-icon-57x57-precomposed.png
+├── apple-touch-icon-60x60.png
+├── apple-touch-icon-60x60-precomposed.png
+├── apple-touch-icon-72x72.png
+├── apple-touch-icon-72x72-precomposed.png
+├── apple-touch-icon-76x76.png
+├── apple-touch-icon-76x76-precomposed.png
+├── apple-touch-icon.png
+├── apple-touch-icon-precomposed.png
+├── browserconfig.xml
+├── favicon-16x16.png
+├── favicon-32x32.png
+├── favicon.ico
+├── manifest.json
+├── mstile-144x144.png
+├── mstile-150x150.png
+├── mstile-310x150.png
+├── mstile-310x310.png
+├── mstile-70x70.png
+└── safari-pinned-tab.svg
+```
 
 
 ## Shortcodes
