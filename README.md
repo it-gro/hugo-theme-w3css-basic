@@ -88,7 +88,7 @@ My goals for this theme are:
 * Works with disabled javascript (using fallbacks)
 * Responsive design
   * 3 (medium, lage) or 1 (small) column layout
-  * small menu on small screen (no collapse)
+  * small menu (truncated) on small screen (no collapse)
 * Customizable landing page
   * optional marquee (using css)
   * optional data/jumbotron    (carousel (if js is enabled) )
@@ -96,16 +96,16 @@ My goals for this theme are:
   * optional data/features     (optional css animation)
   * optional data/testimonials (carousel (if js is enabled) )
   * optional data/clients      (carousel (if js is enabled) )
-* fontawesome version 5 (local)
-* google fonts - either via api or via local files (avoid tracking)
-* optional google translate widget (if js is enabled)
-* contact page
+* Fontawesome version 5 (local)
+* Google fonts - either via api or via local files (avoid tracking)
+* Optional google translate widget (if js is enabled)
+* Contact page
   * optional formspree.io 
   * mailto: without formspree.io (avoid leaking)
   * google map (if js is enabled)
-* search page
+* Search page
   * google customizable search api
-* alternative navigation instead of breadcrumbs (Top/Up/Down & Pages on this level)
+* Alternative navigation instead of breadcrumbs (Top/Up/Down & Pages on this level)
 * hugo-easy-gallery (PhotoSwipe needs js)
   
 
