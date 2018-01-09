@@ -152,7 +152,7 @@ defaultContentLanguage = "en"
 
 ```yaml
 [params.marquee]
-  # enable or disable marquee on frontpage
+  # enable or disable marquee
   enable   = true
   marquee  = '''
 At [info@example.com](mailto:info@example.com) vero eos et **accusam**

@@ -84,7 +84,6 @@ disqusShortname = ""
 [taxonomies]
   tag = "tags"
   category = "categories"
-  test     = "tests"
 
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
@@ -197,7 +196,7 @@ disqusShortname = ""
   uglyUrl            = ".html"
 
   # used in layouts/partials/head.meta.html
-  authorName         = "it-gro"
+  authorName         = "anonymous"
   defaultKeywords    = ["foo", "bar"]
   defaultDescription = "example site created with hugo using theme hugo-theme-w3css-basic"
 
@@ -343,7 +342,7 @@ consectetuer adipiscing
 
 
   # used in partials/contact.form.html
-  # Enable the contact form by entering your Formspree.io email
+  # Enable the contact form by entering your Formspree.io email
   formspree = "formspree.io"
   email     = "info@example.com"
 
@@ -358,7 +357,7 @@ consectetuer adipiscing
 # more theme defined params
 
 [params.marquee]
-  # enable or disable marquee on frontpage
+  # enable or disable marquee
   enable   = true
  #enable   = false
   marquee  = '''
@@ -390,8 +389,8 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # used in layouts/partials/front.photocards.html
   # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
-  #enable  = false
   enable   = true
+  #enable  = false
   #limitTo  = 3
   limitTo  = 6
 
@@ -399,8 +398,8 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # used in layouts/partials/front.features.html
   # enable or disable features on frontpage
   # see some examples in 'exampleSite/data/features'
-  #enable  = false
   enable   = true
+  #enable  = false
   #limitTo  = 3
   limitTo  = 6
 
@@ -410,7 +409,6 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   enableFooter   = true
   # used in layouts/partials/front.recent_posts.html
   enableFront    = true
-  #enable = false
   title    = "From our Blog"
   subtitle = '''
 Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -454,7 +452,6 @@ labore et dolore magna aliquyam erat, sed diam voluptua.
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore.
              '''
-
 
 [params.blog]
   # used in layouts/blog/list.html
