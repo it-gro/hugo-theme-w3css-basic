@@ -158,6 +158,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
              '''
 ```
 * Marquee text from left to right
+
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
 
 #### Jumbotron
@@ -171,11 +172,17 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 ```
 
 * Front jumbotron text only
+
 ![screenshot Jumbotron Text](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_130.jpg)
+
 * Front jumbotron text & picture
+
 ![screenshot Jumbotron Text & Pic](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_140.jpg)
+
 * Front jumbotron text & icon
+
 ![screenshot Jumbotron Text & Icon](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_150.jpg)
+
 
 #### Photocards
 ```yaml
@@ -200,6 +207,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   enable   = true
 ```
 * Front features
+
 ![screenshot Feature (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_170.jpg)
 
 #### Recent Posts
@@ -217,6 +225,7 @@ fames ac.
              '''
 ```
 * Front recent posts
+
 ![screenshot Recent Posts](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_180.jpg)
 
 #### See More
@@ -235,6 +244,7 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
               '''
 ```
 * Front see more
+
 ![screenshot See More](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_190.jpg)
 
 #### Testimonials
@@ -251,6 +261,7 @@ labore et dolore magna aliquyam erat, sed diam voluptua.
              '''
 ```
 * Front testimonials
+
 ![screenshot Testimonials](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_210.jpg)
 
 
@@ -268,6 +279,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
              '''
 ```
 * Front clients
+
 ![screenshot Clients](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_200.jpg)
 
 ### Blog
@@ -283,6 +295,7 @@ ultricies eget, tempor sit amet, ante
              '''
 ```
 * Blog with `paginate =  6` (short date)
+
 ![screenshot Blog Paginator (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_230.jpg)
 
 #### Date format
@@ -299,6 +312,7 @@ ultricies eget, tempor sit amet, ante
   ...
 ```
 * Blog article (long date)
+
 ![screenshot Blog Entry](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_240.jpg)
 
 ### Pages
@@ -306,17 +320,22 @@ ultricies eget, tempor sit amet, ante
 #### Pages Navigation
 
 * Page navigation top level
+
 ![screenshot Page Navigation (root)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_320.jpg)
 
 * Page navigation with Top/Up/Down and pages on this level
+
 ![screenshot Page Navigation (up & down)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_330.jpg)
 
 #### Taxonomy
 * Taxonomy bar (shown if page has a taxonomy)
+
 ![screenshot Taxonomy Bar](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_250.jpg)
 
 * Taxonomy lists
+
 ![screenshot Categories](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_260.jpg)
+
 ![screenshot Tags](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_270.jpg)
 
 
@@ -511,6 +530,7 @@ pygmentsUseClasses            = true
 ### Menu
 
 * Navbar Long
+
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
 
 
@@ -584,10 +604,12 @@ pygmentsUseClasses            = true
 * on small displays the root menu entries are truncated
   `{{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}`
 
+
 ![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
 
 
 * Navbar Short with numOfItemsIfSmallDisplay = 2
+
 ![screenshot numOfItemsIfSmallDisplay 2](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_120.jpg)
 
 
@@ -631,9 +653,11 @@ pygmentsUseClasses            = true
 
 ```
 * Contact form with map
+
 ![screenshot Contact](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_290.jpg)
 
 * Contact form with disabled Javascript
+
 ![screenshot Contact no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_300.jpg)
 
 
@@ -656,9 +680,11 @@ pygmentsUseClasses            = true
 ```
 
 * Search form 
+
 ![screenshot Search](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_280.jpg)
 
 * Search form with disabled Javascript
+
 ![screenshot Search no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_310.jpg)
 
 
@@ -686,6 +712,7 @@ pygmentsUseClasses            = true
 
 ### Gallery
 * https://github.com/liwenyip/hugo-easy-gallery/
+
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
 
 ## Usage
