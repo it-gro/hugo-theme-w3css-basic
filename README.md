@@ -15,7 +15,8 @@ Visit:
 It is for:
 * Landing pages 
 * Blogs
-* Pages (no blog) in a directory structure with simple navigation
+* Pages (no blog) in a directory structure with simple navigation (Top/Up/Down & Pages on this level)
+
 
 It includes resources from:
 * https://www.w3schools.com/w3css/
@@ -103,7 +104,7 @@ My goals for this theme are:
   * google map (if js is enabled)
 * search page
   * google customizable search api
-* page navigation using cards
+* page navigation (Top/Up/Down & Pages on this level)
 * hugo-easy-gallery (PhotoSwipe needs js)
 
 
@@ -156,7 +157,7 @@ At [info@example.com](mailto:info@example.com) vero eos et **accusam**
 et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
              '''
 ```
-![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_100.jpg)
+![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
 
 #### Jumbotron
 
@@ -167,9 +168,9 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/jumbotron'
   enable   = true
 ```
-![screenshot Jumbotron Text](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_130.jpg)
-![screenshot Jumbotron Text & Pic](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_140.jpg)
-![screenshot Jumbotron Text & Icon](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_150.jpg)
+![screenshot Jumbotron Text](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_130.jpg)
+![screenshot Jumbotron Text & Pic](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_140.jpg)
+![screenshot Jumbotron Text & Icon](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_150.jpg)
 
 #### Photocards
 ```yaml
@@ -179,7 +180,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/photocards'
   enable   = true
 ```
-![screenshot Photocards (9)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_160.jpg)
+![screenshot Photocards (9)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_160.jpg)
 
 #### Features
 ```yaml
@@ -189,7 +190,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/features'
   enable   = true
 ```
-![screenshot Feature (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_170.jpg)
+![screenshot Feature (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_170.jpg)
 
 #### Recent Posts
 ```yaml
@@ -205,7 +206,7 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada
 fames ac.
              '''
 ```
-![screenshot Recent Posts](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_180.jpg)
+![screenshot Recent Posts](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_180.jpg)
 
 #### See More
 ```yaml
@@ -222,7 +223,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
 suscipit lobortis nisl ut aliquip ex ea commodo consequat.
               '''
 ```
-![screenshot See More](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_190.jpg)
+![screenshot See More](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_190.jpg)
 
 #### Testimonials
 ```yaml
@@ -237,7 +238,7 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
 labore et dolore magna aliquyam erat, sed diam voluptua. 
              '''
 ```
-![screenshot Testimonials](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_210.jpg)
+![screenshot Testimonials](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_210.jpg)
 
 
 #### Clients
@@ -253,7 +254,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore.
              '''
 ```
-![screenshot Clients](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_200.jpg)
+![screenshot Clients](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_200.jpg)
 
 ### Blog
 
@@ -267,7 +268,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 ultricies eget, tempor sit amet, ante
              '''
 ```
-![screenshot Blog Paginator (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_230.jpg)
+![screenshot Blog Paginator (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_230.jpg)
 
 #### Date format
 
@@ -282,19 +283,19 @@ ultricies eget, tempor sit amet, ante
   translation: "Januar"
   ...
 ```
-![screenshot Blog Entry](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_240.jpg)
+![screenshot Blog Entry](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_240.jpg)
 
 ### Pages
 
 #### Pages Navigation
 
-![screenshot Page Navigation (root)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_320.jpg)
-![screenshot Page Navigation (up & down)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_330.jpg)
+![screenshot Page Navigation (root)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_320.jpg)
+![screenshot Page Navigation (up & down)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_330.jpg)
 
 #### Taxonomy
-![screenshot Taxonomy Bar](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_250.jpg)
-![screenshot Categories](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_260.jpg)
-![screenshot Tags](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_270.jpg)
+![screenshot Taxonomy Bar](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_250.jpg)
+![screenshot Categories](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_260.jpg)
+![screenshot Tags](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_270.jpg)
 
 
 ### Color Theme
@@ -556,9 +557,9 @@ pygmentsUseClasses            = true
 * on small displays the root menu entries are truncated
   `{{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}`
 
-![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_100.jpg)
-![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_110.jpg)
-![screenshot numOfItemsIfSmallDisplay 2](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_120.jpg)
+![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
+![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
+![screenshot numOfItemsIfSmallDisplay 2](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_120.jpg)
 
 
 ### Fonts
@@ -598,8 +599,8 @@ pygmentsUseClasses            = true
   longitude        =  7.444186
 
 ```
-![screenshot Contact](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_290.jpg)
-![screenshot Contact no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_300.jpg)
+![screenshot Contact](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_290.jpg)
+![screenshot Contact no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_300.jpg)
 
 
 ### Google Custom Search API
@@ -620,8 +621,8 @@ pygmentsUseClasses            = true
   pre      = "fas fa-search"
 ```
 
-![screenshot Search](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_280.jpg)
-![screenshot Search no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_310.jpg)
+![screenshot Search](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_280.jpg)
+![screenshot Search no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_310.jpg)
 
 
 ### Footer
@@ -643,12 +644,12 @@ pygmentsUseClasses            = true
 
 ```
 
-![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_220.jpg)
+![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_220.jpg)
 
 
 ### Gallery
 * https://github.com/liwenyip/hugo-easy-gallery/
-![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/snap_340.jpg)
+![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
 
 ## Usage
 
@@ -692,12 +693,12 @@ They ported [Bootstrapious](https://bootstrapious.com/p/universal-business-e-com
 
 * www.w3schools.com for creating the free to use W3.CSS CSS framework.
 
-* ![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/complete.png)
-* ![screenshot theme orange](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/screenshot.png)
 
-![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/complete.png)
-![screenshot 1500x1000](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/screenshot.png)
-![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/static/images/tn.png)
+![screenshot 1500x1000](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/screenshot.png)
+
+![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.png)
+
+![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/complete.png)
 
 
 [![Build Status](https://travis-ci.org/devcows/hugo-universal-theme.svg?branch=master)](https://travis-ci.org/devcows/hugo-universal-theme)
