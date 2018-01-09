@@ -679,6 +679,9 @@ e.g. in `main.teaser_in_card.html`
   </h3>
 ```
 
+Emoji are good for mobile devices. On desktops support is kind of "poor".
+Firefox users may have a look at https://github.com/eosrei/twemoji-color-font.
+
 
 ### Summary
 
@@ -697,7 +700,7 @@ cutting words):
 
     {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
 
-`<!--more-->` is still an option to override the summaryLength 
+[<!--more-->](https://gohugo.io/content-management/summaries/) is still an option to override the summaryLength 
 
 
 ### Pagination
