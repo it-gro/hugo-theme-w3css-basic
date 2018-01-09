@@ -91,12 +91,12 @@ My goals for this theme are:
   * small menu on small screen (no collapse)
 * Customizable landing page
   * optional marquee (using css)
-  * optional data/jumbotron    (carousel (if js is enabled), optional css animation)
+  * optional data/jumbotron    (carousel (if js is enabled) )
   * optional data/photocards   (optional css animation)
   * optional data/features     (optional css animation)
   * optional data/testimonials (carousel (if js is enabled) )
   * optional data/clients      (carousel (if js is enabled) )
-* fontawesome 5 (local)
+* fontawesome version 5 (local)
 * google fonts - either via api or via local files (avoid tracking)
 * optional google translate widget (if js is enabled)
 * contact page
