@@ -104,7 +104,7 @@ My goals for this theme are:
   * mailto: without formspree.io (avoid leaking)
   * google map (if js is enabled)
 * Search page
-  * google customizable search api
+  * google customizable search api (if js is enabled)
 * Alternative navigation instead of breadcrumbs (Top/Up/Down & Pages on this level)
 * hugo-easy-gallery (PhotoSwipe needs js)
   
