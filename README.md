@@ -700,7 +700,7 @@ cutting words):
 
     {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
 
-[<!--more-->](https://gohugo.io/content-management/summaries/) is still an option to override the summaryLength 
+`<!--more-->` is still an option to override the summaryLength (https://gohugo.io/content-management/summaries/)
 
 
 ### Pagination
