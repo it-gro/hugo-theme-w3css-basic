@@ -7,7 +7,7 @@ quite configurable. Change all colors in the blink of an eye...
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
-It theme is for:
+This theme is for:
 * Landing pages 
 * Blogs
 * Pages (no blog) in a directory structure with simple navigation (Top/Up/Down & Pages on this level)
