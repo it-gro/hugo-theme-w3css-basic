@@ -7,8 +7,10 @@ highly configurable. Change all colors in the blink of an eye...
 
 It is for:
 * Landing pages 
-* Blog
+* Blogs
 * Pages (no blog) in a directory structure with navigation
+
+See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a first impression.
 
 ## Table of Contents
 
