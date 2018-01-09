@@ -679,6 +679,10 @@ e.g. in `main.teaser_in_card.html`
   </h3>
 ```
 
+See https://gohugo.io/functions/emojify/
+
+![screenshot Emoji](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_242.jpg)
+
 Emoji are good for mobile devices. On desktops support is kind of "poor".
 Firefox users may have a look at https://github.com/eosrei/twemoji-color-font.
 
