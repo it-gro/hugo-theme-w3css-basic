@@ -248,6 +248,17 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
 
 ![screenshot See More](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_190.jpg)
 
+
+* The background image is defined in `/static/css/style.css`:
+```css
+/* -------------------------------------------------- */
+/* front.see_more */
+
+#see_more_background {
+  background: url('../images/backgrounds/see_more_background.jpg') center top no-repeat;
+}
+```
+
 #### Testimonials
 ```yaml
 [params.testimonials]
@@ -751,6 +762,29 @@ $ hugo server -w --disableFastRender
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
 For more information check out the official [Hugo documentation](http://gohugo.io/overview/usage/).
+
+
+### Minifier
+
+If you change style.min.css, syntax.min.css or front.js, you have to
+use a minifier:
+
+````bash
+cd themes/hugo-theme-w3css-basic/static/css
+yui-compressor --verbose --type css --line-break 1023 style.css  -o style.min.css
+yui-compressor --verbose --type css --line-break 1023 syntax.css -o syntax.min.css
+cd -
+
+
+cd themes/hugo-theme-w3css-basic/static/js
+yui-compressor --verbose --type js --line-break 1023 --nomunge --preserve-semi front.js -o front.min.js
+cd -
+````
+
+or change the file names in 
+`layouts/partials/head.stylesheets.html`
+`layouts/partials/scripts.html`
+
 
 
 ## Contributing
