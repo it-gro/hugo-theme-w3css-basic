@@ -185,8 +185,10 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/photocards'
   enable   = true
 ```
+
 * Front photocards
 ![screenshot Photocards (9)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_160.jpg)
+
 
 #### Features
 ```yaml
