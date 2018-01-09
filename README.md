@@ -631,7 +631,7 @@ pygmentsUseClasses            = true
 ```
 
 * true: load fonts via Google Font API
-* false load fonts from local. Use https://google-webfonts-helper.herokuapp.com/fonts to download google fonts.
+* false load fonts from local. Use e.g. https://google-webfonts-helper.herokuapp.com/fonts to download google fonts.
 
 ```
 {{ partial "head.stylesheets.html"      . -}}
@@ -749,7 +749,7 @@ request](https://github.com/it-gro/hugo-theme-w3css-basic/pulls).
 
 ## License
 
-This theme is released under the MIT License.
+This theme is released under the [MIT License](LICENSE.md).
 
 ## Thanks
 
@@ -765,13 +765,24 @@ They ported [Bootstrapious](https://bootstrapious.com/p/universal-business-e-com
 
 * www.w3schools.com for creating the free to use W3.CSS CSS framework.
 
+* the contributors to any of                            
+  https://fontawesome.com/icons/					    
+  https://owlcarousel2.github.io/OwlCarousel2/		    
+  https://daneden.me/animate						    
+  https://github.com/liwenyip/hugo-easy-gallery/	    
+  http://photoswipe.com								    
+  for all their work
+  
+## More Screenshots
+
+* 1500x1000
 
 ![screenshot 1500x1000](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/screenshot.png)
 
+
+* 900x600
+
 ![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.png)
 
+* Complete
 ![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/complete.png)
-
-
-[![Build Status](https://travis-ci.org/devcows/hugo-universal-theme.svg?branch=master)](https://travis-ci.org/devcows/hugo-universal-theme)
-[![Code Climate](https://codeclimate.com/github/devcows/hugo-universal-theme/badges/gpa.svg)](https://codeclimate.com/github/devcows/hugo-universal-theme)
