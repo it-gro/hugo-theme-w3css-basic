@@ -786,6 +786,7 @@ They ported [Bootstrapious](https://bootstrapious.com/p/universal-business-e-com
   https://daneden.me/animate						    
   https://github.com/liwenyip/hugo-easy-gallery/	    
   http://photoswipe.com								    
+  https://pixabay.com                                   
   for all their work
   
 ## More Screenshots
