@@ -767,8 +767,8 @@ For more information check out the official [Hugo documentation](http://gohugo.i
 
 ### Minifier
 
-If you change style.min.css, syntax.min.css or front.js, you have to
-use a minifier. E.g.:
+If you change the themes `style.min.css`, `syntax.min.css` or
+`front.js`, you have to apply a minifier. E.g.:
 
 ````bash
 cd themes/hugo-theme-w3css-basic/static/css
