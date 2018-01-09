@@ -57,6 +57,7 @@ It includes resources from:
   * [Contact Map](#contact-map)
   * [Google Custom Search API](#google-custom-search-api)
   * [Footer](#footer)
+* [Favicons](#favicons)
 * [Shortcodes](#shortcodes)
 * [Showcase](#showcase)
 * [Gallery](#gallery)
@@ -74,7 +75,7 @@ My goals for this theme are:
 
 * be as universal as the universal theme
 * create a w3css theme (there are many Bootstrap themes)
-* mobile first
+* mobile first, responsive
 * basic usage without javascript has to be possible 
 * usage with full local delivery (no CDNs) has to be possible (security & privacy concerns)
 * try to be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
@@ -186,6 +187,27 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 ![screenshot Jumbotron Text & Icon](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_150.jpg)
 
 
+```
+data/jumbotron/
+├── 01-jumbotron.yaml
+├── 02-jumbotron.yaml
+├── 03-jumbotron.yaml
+├── 04-jumbotron.yaml
+└── 05-jumbotron.yaml
+```
+
+`01-jumbotron.yaml`
+```
+weight:      1
+title:       "Welcome to hugo-theme-w3css-basic exampleSite"
+icon:        
+image:       
+description: |
+  * Lorem ipsum dolor sit amet
+  * Excepteur sint occaecat cupidatat non proident
+```
+
+
 #### Photocards
 ```yaml
 [params.photocards]
@@ -199,6 +221,30 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 
 ![screenshot Photocards (9)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_160.jpg)
 
+```
+data/photocards/
+├── 01-photocard.yaml
+├── 02-photocard.yaml
+├── 03-photocard.yaml
+├── 04-photocard.yaml
+├── 05-photocard.yaml
+├── 06-photocard.yaml
+├── 07-photocard.yaml
+├── 08-photocard.yaml
+└── 09-photocard.yaml
+```
+
+`01-photocard.yaml`
+```
+weight:      1
+title:       "Lorem ipsum"
+animated:    "rollIn"
+image:       "images/photocards/pixabay.com/01-photocard.jpg"
+url:         pages/front/photocards/01
+description: |
+   sed diam nonumy 
+```
+
 
 #### Features
 ```yaml
@@ -211,6 +257,29 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 * Front features
 
 ![screenshot Feature (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_170.jpg)
+
+```
+data/features/
+├── 01-feature.yaml
+├── 02-feature.yaml
+├── 03-feature.yaml
+├── 04-feature.yaml
+├── 05-feature.yaml
+└── 06-feature.yaml
+```
+
+`01-feature.yaml`
+```
+weight:      1
+name:        "Eleifend"
+icon:        "fas fa-desktop"
+animated:    "slideInLeft"
+url:         pages/front/features/01
+description: |
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+  nonumy eirmod tempor invidunt ut labore
+```
+
 
 #### Recent Posts
 ```yaml
@@ -229,6 +298,7 @@ fames ac.
 * Front recent posts
 
 ![screenshot Recent Posts](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_180.jpg)
+
 
 #### See More
 ```yaml
@@ -277,6 +347,27 @@ labore et dolore magna aliquyam erat, sed diam voluptua.
 
 ![screenshot Testimonials](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_210.jpg)
 
+```
+data/testimonials/
+├── 01-testimonial.yaml
+├── 02-testimonial.yaml
+├── 03-testimonial.yaml
+├── 04-testimonial.yaml
+└── 05-testimonial.yaml
+```
+
+`01-testimonial.yaml`
+```
+weight:      1
+name: 	     "John Doe"
+position:    "CEO, Takimata"
+avatar:      "images/testimonials/pixabay.com/person-1.jpg"
+text: 	     | 
+  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+  suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
+  vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+  consequat, vel illum dolore eu feugiat
+```
 
 #### Clients
 ```yaml
@@ -295,6 +386,27 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 
 ![screenshot Clients](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_200.jpg)
 
+
+```
+data/clients/
+├── 01-client.yaml
+├── 02-client.yaml
+├── 03-client.yaml
+├── 04-client.yaml
+├── 05-client.yaml
+└── 06-client.yaml
+```
+
+`01-client.yaml`
+```
+weight: 1
+name:   "customer-1"
+image:  "images/clients/pixabay.com/company-logo-1.png"
+url:    "http://www.customer1.com"
+```
+
+
+
 ### Blog
 
 #### Blog List
@@ -311,9 +423,47 @@ ultricies eget, tempor sit amet, ante
 
 ![screenshot Blog Paginator (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_230.jpg)
 
+
+```
+content/blog/
+└── 2017
+    ├── 09
+    │   ├── emacs-it-all-starts-here.md
+    │   └── emacs-jokes.md
+    ├── 10
+    │   └── golang-a-closer-look.md
+    └── 11
+        ├── hugo-dolor.md
+        ├── hugo-highlight-chromastyles.md
+        ├── hugo-ipsum.md
+        └── hugo-lorem.md
+```
+
+`hugo-highlight-chromastyles.md`
+```
+---
+title:       "Hugo - **highlight** :art:"
+date:        2017-11-24T08:44:12+01:00
+tags:
+  - Hugo
+categories:
+  - Web
+teaserpic:   images/teaserpics/bitbucket.org/pygments-main-logo.png
+---
+
+Hugo comes with reallly fast syntax highlighting from Chroma.
+...
+
+<!--more-->
+
+In this theme we set
+...
+```
+
+
 #### Date format
 
-* Dates are shown in the blog
+* Dates are shown for blog articles (not other pages)
 * Short version in teaser
 `{{- .Date.Day}}. {{substr (default .Date.Month (i18n .Date.Month)) 0 3}} {{.Date.Year -}}`
 * Long version in article
@@ -323,6 +473,7 @@ ultricies eget, tempor sit amet, ante
 - id: January
   translation: "Januar"
   ...
+
 ```
 * Blog article (long date)
 
@@ -341,6 +492,57 @@ ultricies eget, tempor sit amet, ante
 ![screenshot Page Navigation (up & down)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_330.jpg)
 
 * Check out https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/folder20/folder21/   
+
+```
+content/pages/
+├── folder10
+│   ├── _index.md
+│   ├── malesuada-massa.md
+│   └── neque-nec.md
+├── folder20
+│   ├── estdui-fermentum.md
+│   ├── felis-vel-velit.md
+│   ├── folder21
+│   │   ├── folder211
+│   │   │   ├── _index.md
+│   │   │   ├── phasellus.md
+│   │   │   └── rutrum.md
+│   │   ├── _index.md
+│   │   ├── nullam.md
+│   │   └── vestibulum.md
+│   ├── _index.md
+│   ├── magna-orci-ultrices.md
+│   ├── nam-asapien.md
+│   ├── neque-orci.md
+│   └── vestibulum-convallis.md
+├── folder30
+│   ├── donec-pretium-posuere.md
+│   ├── _index.md
+│   └── pellentesque-dapibus-suscipit.md
+├── front
+...
+```
+
+`content/pages/folder20/folder21/_index.md`
+```
+---
+weight:         21
+title:          "Cum sociis natoque (this is level /folder20/folder21)"
+date:           "2017-06-08T01:06:13+02:00"
+teaserpic:      images/teaserpics/gohugo.io/hugo-dolor.png
+---
+```
+
+`content/pages/front/_index.md`
+```
+---
+weight:      18
+title:       "Frontpage Eye-Catcher (this is level /front)"
+date:        2017-11-13T15:37:04+01:00
+teaserpic:
+icon:        "fas fa-globe"
+---
+```
 
 
 #### Taxonomy
@@ -479,6 +681,13 @@ e.g. in `main.teaser_in_card.html`
   </h3>
 ```
 
+See https://gohugo.io/functions/emojify/
+
+![screenshot Emoji](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_242.jpg)
+
+Emoji are good for mobile devices. On desktops support is kind of "poor".
+Firefox users may have a look at https://github.com/eosrei/twemoji-color-font.
+
 
 ### Summary
 
@@ -496,6 +705,9 @@ priority) or the Summary (second priority) is truncated (without
 cutting words):
 
     {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
+
+`<!--more-->` is still an option to override the summaryLength (https://gohugo.io/content-management/summaries/)
+
 
 ### Pagination
 
@@ -548,7 +760,7 @@ pygmentsUseClasses            = true
 
 ### Menu
 
-* Navbar Long (for middle or large displays)
+* Navbar "Long" (for medium or large displays)
 
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
 
@@ -568,7 +780,7 @@ pygmentsUseClasses            = true
   pre    = "far fa-address-card"
 ```
 
-* `pre` is for fontawesome 5 icons
+* `pre` is for fontawesome version 5 icons
 * name is used for lookup in i18n/*.yaml (=> translation)
 * if no translation is given, the name itself is shown
 `page.nav.html`   
@@ -577,7 +789,7 @@ pygmentsUseClasses            = true
 
 * Submenu (one level)
 
-![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
+![screenshot Marquee & Navbar small](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
 
 
 ```toml
@@ -585,7 +797,7 @@ pygmentsUseClasses            = true
 [[menu.main]]
   weight = 4
   name   = "Theme"
-  pre    = "fas fa-rss"
+  pre    = "fas fa-info-circle"
   identifier = "theme"
  
 [[menu.main]]
@@ -599,7 +811,7 @@ pygmentsUseClasses            = true
 
 * Topbar: right aligned top menu (github, facebook, twitter, ...)
 
-* Navbar Short with numOfItemsIfSmallDisplay = 2
+* Navbar "Small" with numOfItemsIfSmallDisplay = 2
 
 ![screenshot numOfItemsIfSmallDisplay 2](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_120.jpg)
 
@@ -618,7 +830,7 @@ pygmentsUseClasses            = true
   `{{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}`
 
 
-![screenshot Marquee & Navbar short](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
+![screenshot Marquee & Navbar small](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_110.jpg)
 
 
 ```toml
@@ -734,21 +946,140 @@ pygmentsUseClasses            = true
 ![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_220.jpg)
 
 
+## Favicons
+
+* You may want to use https://realfavicongenerator.net to create **all** files.
+
+`layouts/partials/head.favicon.html`
+```
+{{ `<!-- partials/head.favicon.html -->` | safeHTML }}
+{{- /*  <!-- Favicon and apple touch icons-->         */}} 
+{{- /*  <!-- use https://realfavicongenerator.net --> */}} 
+  <link rel="apple-touch-icon"      sizes="180x180" href="{{ relURL "/images/favicons/apple-touch-icon.png"       }}" />
+  <link rel="icon" type="image/png" sizes="32x32"   href="{{ relURL "/images/favicons/favicon-32x32.png"          }}" />
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ relURL "/images/favicons/android-chrome-192x192.png" }}" />
+  <link rel="icon" type="image/png" sizes="16x16"   href="{{ relURL "/images/favicons/favicon-16x16.png"          }}" />
+  <link rel="manifest"                              href="{{ relURL "/images/favicons/manifest.json"              }}" />
+  <link rel="mask-icon"  color="#5bbad5"            href="{{ relURL "/images/favicons/safari-pinned-tab.svg"      }}" />
+  <link rel="shortcut icon"                         href="{{ relURL "/images/favicons/favicon.ico"                }}" />
+  <meta name="msapplication-TileImage"           content="{{ relURL "/images/favicons/mstile-144x144.png"         }}" />
+  <meta name="msapplication-config"              content="{{ relURL "/images/favicons/browserconfig.xml"          }}" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color"             content="#ffffff" />
+```
+
+```
+static/images/favicons/
+├── android-chrome-144x144.png
+├── android-chrome-192x192.png
+├── android-chrome-256x256.png
+├── android-chrome-36x36.png
+├── android-chrome-48x48.png
+├── android-chrome-72x72.png
+├── android-chrome-96x96.png
+├── apple-touch-icon-114x114.png
+├── apple-touch-icon-114x114-precomposed.png
+├── apple-touch-icon-120x120.png
+├── apple-touch-icon-120x120-precomposed.png
+├── apple-touch-icon-144x144.png
+├── apple-touch-icon-144x144-precomposed.png
+├── apple-touch-icon-152x152.png
+├── apple-touch-icon-152x152-precomposed.png
+├── apple-touch-icon-180x180.png
+├── apple-touch-icon-180x180-precomposed.png
+├── apple-touch-icon-57x57.png
+├── apple-touch-icon-57x57-precomposed.png
+├── apple-touch-icon-60x60.png
+├── apple-touch-icon-60x60-precomposed.png
+├── apple-touch-icon-72x72.png
+├── apple-touch-icon-72x72-precomposed.png
+├── apple-touch-icon-76x76.png
+├── apple-touch-icon-76x76-precomposed.png
+├── apple-touch-icon.png
+├── apple-touch-icon-precomposed.png
+├── browserconfig.xml
+├── favicon-16x16.png
+├── favicon-32x32.png
+├── favicon.ico
+├── manifest.json
+├── mstile-144x144.png
+├── mstile-150x150.png
+├── mstile-310x150.png
+├── mstile-310x310.png
+├── mstile-70x70.png
+└── safari-pinned-tab.svg
+```
+
+
 ## Shortcodes
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
 
+```
+layouts/shortcodes/
+├── asciicast.html
+├── cscb.html
+├── csc.html
+├── heg-figure.html
+├── heg-gallery.html
+├── heg-load-photoswipe.html
+├── heg-load-photoswipe-theme.html
+├── i18n.html
+├── icon.html
+├── w3-alert-icon.html
+├── w3-badge.html
+├── w3-button-icon.html
+├── w3-code.html
+├── w3-codespan.html
+├── w3-notice-icon.html
+├── w3-quote.html
+└── w3-tag.html
+```
 
 ## Showcase
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/
 
+`content/pages/showcase/video-01.md`
+```
+---
+title:       "Hugo - Static Site Generator"
+date:        2017-12-16T21:46:06+01:00
+teaserpic:   
+icon:        "fab fa-youtube"
+description: "Giraffe Academy, Tutorial 1"
+tags:
+  - Showcase
+categories:
+  - This Theme
+---
+
+{{< youtube qtIqKaDlqXo >}}
+```
 
 ## Gallery
 * https://github.com/liwenyip/hugo-easy-gallery/
 
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
 
+
+`content/pages/showcase/gallery-01.md`
+```
+---
+title:       "Gallery pixabay.com"
+date:        2018-01-05T20:30:54+01:00
+teaserpic:   
+icon:        "fas fa-images"
+description: "Pictures from pixabay.com"
+tags:
+  - Showcase
+categories:
+  - This Theme
+---
+
+{{< heg-load-photoswipe >}}
+{{< heg-gallery dir="/images/photocards/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
+```
 
 ## Usage
 
@@ -782,8 +1113,7 @@ cd -
 ````
 
 or change the file names in 
-`layouts/partials/head.stylesheets.html`
-`layouts/partials/scripts.html`
+`layouts/partials/head.stylesheets.html` and `layouts/partials/scripts.html`
 
 
 
