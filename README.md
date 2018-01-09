@@ -462,7 +462,7 @@ In this theme we set
 
 #### Date format
 
-* Dates are shown in the blog
+* Dates are shown for blog articles (not other pages)
 * Short version in teaser
 `{{- .Date.Day}}. {{substr (default .Date.Month (i18n .Date.Month)) 0 3}} {{.Date.Year -}}`
 * Long version in article
@@ -472,6 +472,7 @@ In this theme we set
 - id: January
   translation: "Januar"
   ...
+
 ```
 * Blog article (long date)
 
