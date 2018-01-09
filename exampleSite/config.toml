@@ -3,8 +3,8 @@
 # ##################################################
 # Hugo-defined variables
 # set params.uglyURLs false (see below)
-baseURL       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
-#baseURL       = "http://example.com"
+#baseURL       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
+baseURL       = "http://example.com"
 #default:
 #relativeURLs  = false
 #uglyURLs      = false
