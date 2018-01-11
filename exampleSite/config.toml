@@ -3,7 +3,6 @@
 # ##################################################
 # Hugo-defined variables
 # set params.uglyURLs false (see below)
-#baseURL       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
 baseURL       = "http://example.com"
 #default:
 #relativeURLs  = false
@@ -209,7 +208,7 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-dark-grey.css"
@@ -219,7 +218,7 @@ disqusShortname = ""
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-khaki.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
