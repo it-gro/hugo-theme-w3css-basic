@@ -73,7 +73,7 @@ It includes resources from:
 
 My goals for this theme are:
 
-* be as universal as the universal theme
+* be as universal as the [Universal](https://themes.gohugo.io/hugo-universal-theme/) theme
 * create a w3css theme (there are many Bootstrap themes)
 * mobile first, responsive
 * basic usage without javascript has to be possible 
@@ -128,7 +128,7 @@ For more information read the official [setup guide](https://gohugo.io/overview/
 
 After installing the theme we recommend you to take a look at the
 [exampleSite](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite)
-directory. You will find a working Hugo site configured with the this
+directory. You will find a working Hugo site configured with this
 theme that you can use as a starting point for your site.
 
 First, let's take a look at the
@@ -877,7 +877,7 @@ pygmentsUseClasses            = true
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
   # used in layouts/partials/contact.map.html
   # if empty => fallback to URL (instead of map)
-  # define environment variable (=> key ist not stored in github)
+  # define environment variable (=> key is not stored in github)
   envGoogleMapsApiKey = "GoogleMapsApiKey"
   # if environment is not an option => define key here:
   #googleMapsApiKey = ""
@@ -1140,7 +1140,7 @@ Thanks to:
 
 * [devcows](https://github.com/devcows/hugo-universal-theme) for
 creating my starting point: the awesome [Universal](https://themes.gohugo.io/hugo-universal-theme/) theme.     
-They ported [Bootstrapious](https://bootstrapious.com/p/universal-business-e-commerce-template).
+They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-e-commerce-template).
 
 * www.w3schools.com for creating the free to use W3.CSS CSS framework.
 
