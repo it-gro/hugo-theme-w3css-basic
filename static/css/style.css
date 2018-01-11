@@ -257,6 +257,16 @@ th:first-child,td:first-child{padding-left:8px}
 
 /* -------------------------------------------------- */
 /* hugo-easy-gallery */
+figure img {
+  max-width: 100%;
+}
+
+figure figcaption a {
+  position: relative;
+  color: #CCC;
+  /* text-decoration: none; */
+}
+
 .gallery figcaption, 
 .fancy-figure figcaption {
   background: #000;
@@ -317,6 +327,7 @@ th:first-child,td:first-child{padding-left:8px}
     padding-bottom: 16%;
   }
 }
+
 
 /* -------------------------------------------------- */
 /* highlight with chroma (incl. shortcodes) */
