@@ -3,7 +3,7 @@
 W3.CSS Basic is a website template built with W3.CSS.  Inspiration was
 taken from
 [Universal](https://themes.gohugo.io/hugo-universal-theme/).  It is
-quite configurable. Change all colors in the blink of an eye...
+quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite). Change all colors in the blink of an eye...
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
