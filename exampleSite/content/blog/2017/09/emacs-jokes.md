@@ -1,13 +1,13 @@
 ---
 title:       "Emacs Jokes"
 date:        2017-09-10T20:00:00+01:00
-author:      "Bruno Grossniklaus"
 tags:
  - editor
  - emacs
 categories:
   - tools
-teaserpic:      images/teaserpics/wikipedia.org/emacs-jokes.png
+icon:        "fas fa-lock-open"
+teaserpic:   images/teaserpics/wikipedia.org/emacs-jokes.png
 ---
 
 Richard M. Stallman (RMS, widely known for creating EMACS) is writing

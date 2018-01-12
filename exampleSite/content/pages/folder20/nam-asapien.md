@@ -7,8 +7,6 @@ description: >
   lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.
   Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec
   at pede.
-keywords:
-  -
 tags:
   - folder20
   - Fermentum

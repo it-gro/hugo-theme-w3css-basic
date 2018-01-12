@@ -6,8 +6,6 @@ description: >
   at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus id
   enim.  Phasellus neque orci, porta a, aliquet quis, semper a, massa.
   Phasellus purus.
-keywords:
-  -
 tags:
   - folder20
   - Rutrum

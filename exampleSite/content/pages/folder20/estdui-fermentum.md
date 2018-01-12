@@ -5,8 +5,6 @@ description: >
   Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec
   facilisis facilisis, est dui fermentum leo, quis tempor ligula erat
   quis odio.
-keywords:
-  -
 tags:
   - folder20
   - Fermentum

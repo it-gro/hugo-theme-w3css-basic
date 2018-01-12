@@ -5,8 +5,6 @@ description: >
   Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper
   libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc,
   blandit vel, luctus pulvinar, hendrerit id, lorem.
-keywords:
-  -
 tags:
   - folder20
   - Phasellus

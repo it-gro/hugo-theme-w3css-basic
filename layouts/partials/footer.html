@@ -30,7 +30,7 @@
                   "
             />
           </a>
-          <a class="no-decoration" href="{{ .RelPermalink }}">{{ .Title  | markdownify | emojify }}</a>
+          <a class="no-decoration" href="{{ .RelPermalink }}">{{if .Params.icon}}<i class="{{ .Params.icon }}"></i>&nbsp;{{end}}{{ .Title  | markdownify | emojify }}</a>
         </div>
       {{- end }} {{/* range */}}
 

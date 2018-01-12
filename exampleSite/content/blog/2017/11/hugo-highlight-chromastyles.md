@@ -1,13 +1,12 @@
 ---
 title:       "Hugo - **highlight** :art:"
 date:        2017-11-24T08:44:12+01:00
-keywords:
-  -
 tags:
   - Hugo
 categories:
   - Web
 draft:       false
+icon:        
 teaserpic:   images/teaserpics/bitbucket.org/pygments-main-logo.png
 ---
 

@@ -2,20 +2,17 @@
 weight:      10
 title:       "These Pictures"
 date:        2017-11-13T15:33:35+01:00
+teaserpic:   images/teaserpics/pixabay.com/coffee-2306471_640.jpg
 description: >
   Pixabay is a vibrant community of creatives, sharing copyright free
   images and videos. All contents are released under Creative Commons
   CC0, which makes them safe to use without asking for permission or
   giving credit to the artist - even for commercial purposes.
-keywords:
-  -
-  -
 tags:
   - license
   - pictures
 categories:
   - legal
-teaserpic:      images/teaserpics/pixabay.com/coffee-2306471_640.jpg
 ---
 
 

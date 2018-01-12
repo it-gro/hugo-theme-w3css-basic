@@ -2,19 +2,16 @@
 weight:      30
 title:       "Convallis"
 date:        2017-11-13T15:37:04+01:00
+teaserpic:   images/teaserpics/pixabay.com/adventure-2528477_640.jpg
 description: >
   Etiam **laoreet quam** sed arcu. Phasellus at
   dui in ligula mollis ultricies. Integer placerat tristique nisl.
   Praesent augue. 
-keywords:
-  -
-  -
 tags:
   - Phasellus
   - tristique
 categories:
   - Vestibulum
-teaserpic:      images/teaserpics/pixabay.com/adventure-2528477_640.jpg
 ---
 
 # Pellentesque dapibus suscipit ligula. 

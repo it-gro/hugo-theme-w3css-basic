@@ -3,13 +3,12 @@ weight:      20
 title:       "This Theme Shortcodes"
 date:        "2017-11-22T07:41:52+01:00"
 toc:         true
-description: >
+teaserpic:   images/teaserpics/gohugo.io/hugo-lorem.png
 tags:
   - hugo
   - shortcodes
 categories:
   - This Theme
-teaserpic:      images/teaserpics/gohugo.io/hugo-lorem.png
 ---
 
 

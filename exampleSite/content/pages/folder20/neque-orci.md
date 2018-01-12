@@ -6,8 +6,6 @@ description: >
   facilisis facilisis, est dui fermentum leo, quis tempor ligula erat
   quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.
   Sed bibendum.  
-keywords:
-  -
 tags:
   - folder20
   - Fermentum
