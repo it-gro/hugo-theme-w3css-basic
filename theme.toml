@@ -38,7 +38,7 @@ features       = [
                  , "testimonials"
                  , "clients"
                  ]
-min_version    = "0.32.3"
+min_version    = "0.30.2"
 
 [author]
   name         = "Bruno Grossniklaus"
