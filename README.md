@@ -918,9 +918,16 @@ pygmentsUseClasses            = true
   pre      = "fas fa-search"
 ```
 
-* Search form 
 
+* Google does not index github pages (?).   
+  Search on exampleSite: https://it-gro.github.io/hugo-theme-w3css-basic.github.io/search/  
+  is "empty" :-(
+
+
+* Search form 
+ 
 ![screenshot Search](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_280.jpg)
+
 
 * Search form with disabled Javascript
 
