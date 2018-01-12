@@ -255,7 +255,7 @@ description: |
   # enable or disable features on frontpage
   # see some examples in 'exampleSite/data/features'
   enable   = true
-  animate  = true
+  animate  = false
 ```
 * Front features
 
