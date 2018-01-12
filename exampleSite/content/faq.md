@@ -1,16 +1,11 @@
 ---
-title:          "FAQ"
-date:           2017-11-13T15:33:35+01:00
-toc:            true
-description:    >
+title:       "FAQ"
+date:        2017-11-13T15:33:35+01:00
+toc:         true
+icon:        far fa-question-circle
+teaserpic:   images/teaserpics/pixabay.com/faq.png
+description: >
   Frequently asked questions
-keywords:
-  - "FAQ"
-  - "How do I"
-  - "questions"
-  - "what if"
-teaserpic:      images/teaserpics/pixabay.com/faq.png
-icon:           far fa-question-circle
 ---
 
 Pellentesque {{% w3-badge %}}habitant{{% /w3-badge %}} morbi tristique senectus et {{% w3-badge "w3-green" %}}netus{{% /w3-badge %}} netus et malesuada

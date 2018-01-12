@@ -1,7 +1,7 @@
 ---
 title:       "Gallery pixabay.com"
 date:        2018-01-05T20:30:54+01:00
-teaserpic:   
+teaserpic:
 icon:        "fas fa-images"
 description: "Pictures from pixabay.com"
 tags:

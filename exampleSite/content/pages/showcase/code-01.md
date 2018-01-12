@@ -1,7 +1,7 @@
 ---
 title:       "Thumbs"
 date:        2018-01-08T10:34:50+01:00
-teaserpic:   
+teaserpic:
 icon:        "far fa-file-code"
 description: "Create thumbs for gallery"
 tags:

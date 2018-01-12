@@ -1,10 +1,9 @@
 ---
 title:       "Golang - a closer look "
 date:        2017-10-09T00:00:00+01:00
-author:      "Bruno Grossniklaus"
-tags:        
+tags:
   - go
-categories:  
+categories:
   - programming
 teaserpic:      images/teaserpics/gohugo.io/golang-a-closer-look.png
 ---

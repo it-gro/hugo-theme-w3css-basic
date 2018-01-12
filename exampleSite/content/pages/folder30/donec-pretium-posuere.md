@@ -6,8 +6,6 @@ description: >
   nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis
   natoque penatibus et magnis dis parturient montes, nascetur ridiculus
   mus.  Nulla posuere.  Donec vitae dolor.
-keywords:
-  -
 tags:
   - folder30
   - Nullam

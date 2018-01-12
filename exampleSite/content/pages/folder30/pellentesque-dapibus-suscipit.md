@@ -5,8 +5,6 @@ description: >
   Pellentesque dapibus suscipit ligula.  Donec posuere augue in quam.
   Etiam vel tortor sodales tellus ultricies commodo.  Suspendisse
   potenti.  Aenean in sem ac leo mollis blandit.  
-keywords:
-  -
 tags:
   - folder30
   - Nullam

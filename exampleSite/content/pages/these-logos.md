@@ -2,15 +2,14 @@
 weight:      20
 title:       "These Logos"
 date:        2017-11-13T15:33:35+01:00
+icon:       "fa fa-podcast"
 description: >
   Where did the logos came from?
-keywords:
 tags:
   - license
   - logos
 categories:
   - legal
-icon:           "fa fa-podcast"
 ---
 
 ## Where did the logos came from?

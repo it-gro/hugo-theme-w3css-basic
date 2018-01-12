@@ -1,7 +1,6 @@
 ---
 title:       "Hugo - ipsum"
 date:        2017-11-08T00:00:00+01:00
-author:      "Bruno Grossniklaus"
 tags:
   - web
   - hugo

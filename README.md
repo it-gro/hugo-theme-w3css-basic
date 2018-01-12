@@ -57,6 +57,7 @@ It includes resources from:
   * [Contact Map](#contact-map)
   * [Google Custom Search API](#google-custom-search-api)
   * [Footer](#footer)
+* [Front Matter](#front-matter)
 * [Favicons](#favicons)
 * [Shortcodes](#shortcodes)
 * [Showcase](#showcase)
@@ -944,6 +945,48 @@ pygmentsUseClasses            = true
 ```
 
 ![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_220.jpg)
+
+
+## Front Matter
+
+### Pages, Blogs
+
+```
+---
+title:       "{{ replace .TranslationBaseName "-" " " | title }}"
+date:        {{ .Date }}
+toc:         false
+icon:        "fab fa-font-awesome"
+teaserpic:   "images/foo/bar/fa.png"
+description: >
+  I'm an **example** description.
+  I'll show in teaser instead of (calculated) summary.
+tags:
+             - "example tag 1"
+             - "example tag 2"
+categories:
+             - "example cat 1"
+             - "example cat 2"
+---
+```
+
+* for pages add:
+```
+weight:      42
+```
+
+
+### _index.md
+
+```
+---
+weight:      24
+title:       "My **Stuff** :house:"
+date:        2017-11-13T15:37:04+01:00
+teaserpic:   "images/foo/bar/fa.png"
+icon:        "fas fa-list"
+---
+```
 
 
 ## Favicons
