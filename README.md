@@ -216,6 +216,7 @@ description: |
   # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
   enable   = true
+  animate  = true
 ```
 
 * Front photocards
@@ -254,6 +255,7 @@ description: |
   # enable or disable features on frontpage
   # see some examples in 'exampleSite/data/features'
   enable   = true
+  animate  = false
 ```
 * Front features
 

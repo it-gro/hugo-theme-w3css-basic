@@ -392,6 +392,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   #enable  = false
   #limitTo  = 3
   limitTo  = 6
+  animate  = true
 
 [params.features]
   # used in layouts/partials/front.features.html
@@ -401,6 +402,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   #enable  = false
   #limitTo  = 3
   limitTo  = 6
+  animate  = false
 
 [params.recentPosts]
   # used in layouts/partials/footer.html
