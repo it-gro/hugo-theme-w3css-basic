@@ -1,14 +1,14 @@
 ---
 title:       "{{ replace .TranslationBaseName "-" " " | title }}"
 date:        {{ .Date }}
-keywords:
-  -
+toc:         false
+icon:
+teaserpic:
+description:
 tags:
-  -
+             -
 categories:
-  -
-draft:       false
-teaserpic:   images/teaserpics/placeholder.png
+             -
 ---
 
 

@@ -949,6 +949,12 @@ pygmentsUseClasses            = true
 
 ## Front Matter
 
+archetypes:
+```
+blog.md
+pages.md
+```
+
 ### Pages, Blogs
 
 ```
@@ -976,7 +982,8 @@ weight:      42
 ```
 
 
-### _index.md
+### content/pages/*/_index.md
+
 
 ```
 ---
@@ -987,6 +994,9 @@ teaserpic:   "images/foo/bar/fa.png"
 icon:        "fas fa-list"
 ---
 ```
+
+* this defines how the page navigation entries look like. See [Pages Navigation](#pages-navigation) for more.
+
 
 
 ## Favicons
