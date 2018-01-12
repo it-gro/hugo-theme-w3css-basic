@@ -282,7 +282,7 @@ disqusShortname = ""
 
 
   # used in layouts/partials/head.html
-  fontsUseGoogleApis=false
+  fontsUseGoogleApis=true
 
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
