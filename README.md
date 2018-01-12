@@ -10,7 +10,7 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 This theme is for:
 * Landing pages 
 * Blogs
-* Pages (no blog) in a directory structure with simple navigation (Top/Up/Down & Pages on this level)
+* Pages (not blog) in a directory structure with simple navigation (Top/Up/Down & pages on this level)
 * People who like monochromatic colors
 
 
@@ -107,8 +107,8 @@ My goals for this theme are:
   * google map (if js is enabled)
 * Search page
   * google customizable search api (if js is enabled)
-* Alternative navigation instead of breadcrumbs (Top/Up/Down & Pages on this level)
-* hugo-easy-gallery (PhotoSwipe needs js)
+* Alternative navigation instead of breadcrumbs (Top/Up/Down & pages on this level)
+* hugo-easy-gallery (including PhotoSwipe which needs js)
   
 
 
