@@ -134,8 +134,7 @@ figcaption styles
     top: 0;
     padding: 40% 5px;
 }
-.gallery.caption-position-bottom figcaption,
-.fancy-figure.caption-position-bottom figcaption {
+.gallery.caption-position-bottom figcaption {
     padding: 5px;
 }
 .gallery.caption-effect-fade figure:not(:hover) figcaption,
@@ -157,3 +156,15 @@ figcaption p {
     margin: auto; /* override style in theme */
 }
 
+/* changed for w3.css basic theme */
+figure img {
+    max-width: 100%;
+}
+
+.fancy-figure.caption-position-bottom figcaption {
+ padding:3%;
+}
+
+.fancy-figure.caption-position-bottom figcaption footer a {
+		position:relative;
+}
