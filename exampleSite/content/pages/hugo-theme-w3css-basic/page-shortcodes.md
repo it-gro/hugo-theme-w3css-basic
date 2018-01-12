@@ -497,7 +497,7 @@ static/css/syntax/syntax.bw.css
 
 {{< highlight nolan >}}
 {{</* heg-load-photoswipe */>}}
-{{</* heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" /*/>}} 
+{{</* heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" / */>}} 
 {{< /highlight >}}
 
 renders as
@@ -574,6 +574,67 @@ Defined in:
   }
 }
 {{< /highlight >}}
+
+
+## heg-figure
+
+* See for original doc: https://www.liwen.id.au/heg/
+* heg-figure improves the usage of `caption="" title="" attr="" attrlink=""`
+* for demo I set here caption-effect=**"none"** 
+* Inspired by https://stackoverflow.com/questions/21483356/how-to-mark-the-copyright-of-an-image-in-html
+
+### with Thumbs
+
+* here the thumbs as just too small...
+
+{{< highlight nolan >}}
+{{</* heg-load-photoswipe >}}
+{{< heg-figure link="/images/photocards/pixabay.com/01-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="126px" caption="figure caption 1" title="bar 1" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/02-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="160px" caption="figure caption 2" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/03-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="171px" caption="figure caption 3" attr="(c) by bar 3" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/04-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="135px" caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/05-photocard.png" thumb="-thumb" caption-position="bottom" caption-effect="none" width="145px"                    attr="(c) by bar 5" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/06-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="135px"                    attr="(c) by bar 6" attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/07-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="160px"                                        attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/08-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="135px" caption="figure caption 8"             attrlink="https://www.example.com" */>}}
+{{< /highlight >}}
+
+renders as
+{{< heg-figure link="/images/photocards/pixabay.com/01-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="126px" caption="figure caption 1" title="bar 1" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/02-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="160px" caption="figure caption 2" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/03-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="171px" caption="figure caption 3" attr="(c) by bar 3" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/04-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="135px" caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/05-photocard.png" thumb="-thumb" caption-position="bottom" caption-effect="none" width="145px"                    attr="(c) by bar 5" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/06-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="135px"                    attr="(c) by bar 6" attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/07-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="160px"                                        attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/08-photocard.jpg" thumb="-thumb" caption-position="bottom" caption-effect="none" width="135px" caption="figure caption 8"             attrlink="https://www.example.com" >}}
+
+
+### without Thumbs
+{{< highlight nolan >}}
+{{</* heg-load-photoswipe >}}
+{{< heg-figure link="/images/photocards/pixabay.com/01-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 1" title="bar 1" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/02-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 2" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/03-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 3" attr="(c) by bar 3" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/04-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/05-photocard.png" caption-position="bottom" caption-effect="none" width="640px"                    attr="(c) by bar 5" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/06-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px"                    attr="(c) by bar 6" attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/07-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px"                                        attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/08-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 8"             attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/09-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 9" title="bar 9" attr="(c) by bar 9" attrlink="https://www.example.com" */>}}
+{{< /highlight >}}
+
+renders as
+
+{{< heg-figure link="/images/photocards/pixabay.com/01-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 1" title="bar 1" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/02-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 2" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/03-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 3" attr="(c) by bar 3" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/04-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/05-photocard.png" caption-position="bottom" caption-effect="none" width="640px"                    attr="(c) by bar 5" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/06-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px"                    attr="(c) by bar 6" attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/07-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px"                                        attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/08-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 8"             attrlink="https://www.example.com" >}}
+{{< heg-figure link="/images/photocards/pixabay.com/09-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 9" title="bar 9" attr="(c) by bar 9" attrlink="https://www.example.com" >}}
 
 
 

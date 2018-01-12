@@ -1,5 +1,4 @@
-{{ $myClasses := .Get "classes" | default "w3-button w3-ripple w3-theme-l3 "}}
-{{ $myIcon    := .Get "icon"    | default ""  }}
-{{ $myHref    := .Get "href"    | default "#" }}
-
+{{- $myClasses := .Get "classes" | default "w3-button w3-ripple w3-theme-l3 "}}
+{{- $myIcon    := .Get "icon"    | default ""  }}
+{{- $myHref    := .Get "href"    | default "#" }}
 <a class="{{$myClasses}}" href="{{$myHref | relURL }}">{{if $myIcon}}<i class="fa {{$myIcon}} fa-1x"></i>{{end}}&nbsp;{{ .Inner }}</a>
