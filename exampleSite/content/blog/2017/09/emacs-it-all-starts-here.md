@@ -35,7 +35,9 @@ not come with Emacs::); it would be an interesting project to run the
 original TECO Emacs inside of Emacs.
 
 For some not-so-serious alternative reasons for Emacs to have that
-name, check out the file ‘etc/JOKES’ (*note File-name conventions::).
+name, check out the file [etc/JOKES]({{< relref "emacs-jokes.md" >}})
+(*note File-name conventions::).
+
 
 
 ## What is different about Emacs 25?
