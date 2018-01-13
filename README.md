@@ -55,7 +55,7 @@ It includes resources from:
   * [Menu](#menu)
   * [Fonts](#fonts)
   * [Contact Map](#contact-map)
-  * [Google Translation](#Google Translation)
+  * [Google Translation](#google-translation)
   * [Google Custom Search API](#google-custom-search-api)
   * [Footer](#footer)
 * [Front Matter](#front-matter)
