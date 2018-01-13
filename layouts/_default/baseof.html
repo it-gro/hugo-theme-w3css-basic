@@ -24,7 +24,9 @@
           {{- /* partial "main.title.html"          . */ -}}
           {{- partial "main.toc.single.html"        . -}}
           {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
-          {{- .Content -}}
+          {{- /* .Content */}}
+          {{- .Content | replaceRE "(?s:</div>\n?</p>)" "</div>" | safeHTML }}
+          {{- /* .Content | replaceRE "<p><div" "<div" | replaceRE "(?s:</div>\n?</p>)" "</div>" | safeHTML */}}
         {{- end }}
 
         {{- if eq .Type "contact" }} 
