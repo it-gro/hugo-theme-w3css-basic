@@ -323,7 +323,7 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
 ![screenshot See More](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_190.jpg)
 
 
-* The background image is defined in `/static/css/style.css`:
+* The background image is defined in `/static/css/w3css-basic.css`:
 ```css
 /* -------------------------------------------------- */
 /* front.see_more */
@@ -1160,13 +1160,13 @@ For more information check out the official [Hugo documentation](http://gohugo.i
 
 ### Minifier
 
-If you change the theme `style.min.css`, `syntax.min.css` or
+If you change the theme `w3css-basic.min.css`, `syntax.min.css` or
 `front.js`, you have to apply a minifier. E.g.:
 
 ````bash
 cd themes/hugo-theme-w3css-basic/static/css
-yui-compressor --verbose --type css --line-break 1023 style.css  -o style.min.css
-yui-compressor --verbose --type css --line-break 1023 syntax.css -o syntax.min.css
+yui-compressor --verbose --type css --line-break 1023 w3css-basic.css -o w3css-basic.min.css
+yui-compressor --verbose --type css --line-break 1023 syntax.css      -o syntax.min.css
 cd -
 
 cd themes/hugo-theme-w3css-basic/static/js
