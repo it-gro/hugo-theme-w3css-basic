@@ -64,6 +64,9 @@ It includes resources from:
 * [Gallery](#gallery)
 * [Usage](#usage)
   * [Minifier](#minifier)
+* [Workarounds](#workarounds)
+   * [summaryLength](#summaryLength)
+   * [Shortcode output wrapped in <p>](#shortcode-output-wrapped-in-p)
 * [Contributing](#contributing)
 * [License](#license)
 * [Thanks](#thanks)
@@ -1177,6 +1180,26 @@ cd -
 or change the file names in 
 `layouts/partials/head.stylesheets.html` and `layouts/partials/scripts.html`
 
+## Workarounds
+
+### summaryLength
+
+* summaryLength was not configurable until hugo version 0.30
+* teaserTruncateSummary was my workaround
+* see [Summary](#summary)
+
+### Shortcode output wrapped in <p>
+
+[Shortcode output wrapped in <p> tags](https://github.com/gohugoio/hugo/issues/1642)
+
+`layouts/_default/baseof.html`
+````
+{{- .Content | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML }}
+````
+
+See https://discourse.gohugo.io/t/shortcodes-and-p-tags-2/9987
+
+
 
 
 ## Contributing
@@ -1191,6 +1214,7 @@ request](https://github.com/it-gro/hugo-theme-w3css-basic/pulls).
 ## License
 
 This theme is released under the [MIT License](LICENSE.md).
+
 
 ## Thanks
 
