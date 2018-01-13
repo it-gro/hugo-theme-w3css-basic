@@ -108,9 +108,9 @@ My goals for this theme are:
 * Contact page
   * optional formspree.io 
   * mailto: without formspree.io (avoid tracking & leaking)
-  * google map (if js is enabled - do not provide coordinates it to avoid tracking)
+  * google map (if js is enabled - do not provide coordinates to avoid tracking)
 * Search page
-  * google customizable search api (if js is enabled - do not provide to avoid tracking)
+  * google customizable search api (if js is enabled - just do not include search in menu to avoid tracking)
 * Alternative navigation instead of breadcrumbs (Top/Up/Down & pages on this level)
 * hugo-easy-gallery (including PhotoSwipe which needs js)
   
