@@ -74,6 +74,7 @@ pre.w3-code, pre.chroma {
 
 
 ### Success
+
 {{< highlight nolang >}}
 {{%/* w3-notice-icon type="success" %}}
 Well done
@@ -146,6 +147,7 @@ renders as
 
 
 ### Danger
+
 {{< highlight nolang >}}
 {{%/* w3-notice-icon type="danger" %}}
 A check disclaimer
@@ -241,6 +243,7 @@ renders to:
 I'm a big one: {{% w3-tag "w3-blue w3-jumbo" %}}42{{% /w3-tag %}}
 
 created with:
+
 {{< highlight nolang >}}
 {{%/* w3-tag                    */%}}42{{%/* /w3-tag */%}}
 {{%/* w3-tag "w3-blue w3-jumbo" */%}}42{{%/* /w3-tag */%}}
@@ -410,6 +413,7 @@ You may give a class name {{< csc k >}}cool code{{< /csc >}}.
 
 
 Background style for csc is in `static/css/w3css-basic.css`:
+
 {{< highlight css >}}
 code.chroma {
   background-color: rgba(255, 255, 255, .4) ; /* used e.g. for csc* shortcodes */
@@ -632,6 +636,7 @@ renders as
 
 
 ### without Thumbs
+
 {{< highlight nolan >}}
 {{</* heg-load-photoswipe >}}
 {{< heg-figure link="/images/photocards/pixabay.com/01-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 1" title="bar 1" >}}
