@@ -36,7 +36,7 @@ and list templates and basic content files.
 
 Defined in:
 
-    static/css/style.css
+    static/css/w3css-basic.css
 
 {{< highlight css >}}
 /* for shortcodes w3-notice-icon and w3-alert-icon */
@@ -327,7 +327,7 @@ genpasswd $1
 
 ### Style
 
-    static/css/style.css
+    static/css/w3css-basic.css
 
 {{< highlight css >}}
 pre.w3-code, span.w3-codespan{
@@ -388,7 +388,7 @@ renders as
 You may give a class name {{< csc k >}}cool code{{< /csc >}}. 
 
 
-Background style for csc is in `static/css/style.css`:
+Background style for csc is in `static/css/w3css-basic.css`:
 {{< highlight css >}}
 code.chroma {
   background-color: rgba(255, 255, 255, .4) ; /* used e.g. for csc* shortcodes */
@@ -508,7 +508,7 @@ renders as
 ### Style
 Defined in:
 
-    static/css/style.css
+    static/css/w3css-basic.css
 
 {{< highlight css >}}
 /* -------------------------------------------------- */

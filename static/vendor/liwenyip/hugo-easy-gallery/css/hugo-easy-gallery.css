@@ -155,16 +155,3 @@ figcaption styles
 figcaption p {
     margin: auto; /* override style in theme */
 }
-
-/* changed for w3.css basic theme */
-figure img {
-    max-width: 100%;
-}
-
-.fancy-figure.caption-position-bottom figcaption {
- padding:3%;
-}
-
-.fancy-figure.caption-position-bottom figcaption footer a {
-		position:relative;
-}
