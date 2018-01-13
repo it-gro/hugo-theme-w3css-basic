@@ -38,11 +38,11 @@
 {{- end }} {{/* if *.enable */}}
 {{- end }} {{/* if isset    */}}
 
-{{ define "front-clients-entry" }}
+{{- define "front-clients-entry" }}
   {{- if .name }} <div class="w3-large"> {{ .name }} </div> {{ end }}
   {{- if and (    .url) (.image) }}  <a href="{{ .url }}" target="_blank"><img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:100px; max-height:100px; "></a> {{ end }}
   {{- if and (not .url) (.image) }}                                       <img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:100px; max-height:100px; ">     {{ end }}
-{{- end }}
+{{- end -}}
 
 {{- /* emacs                 */}}
 {{- /* Local variables:      */}}

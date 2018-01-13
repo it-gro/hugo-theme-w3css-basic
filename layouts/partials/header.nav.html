@@ -1,11 +1,10 @@
 {{ `<!-- partials/header.nav.html -->` | safeHTML }}
-
 {{- if isset .Site.Params.menuConfig (lower "smallDispMenuMaxChars" ) }}
 {{- $.Scratch.Set "smallDispMenuLower" 1 }}
-{{else}}
+{{- else}}
 {{- $.Scratch.Set "smallDispMenuLower" "" }}
-{{end}}
-{{- $.Scratch.Set "smallDispMenuMaxChars"    (.Site.Params.menuConfig.smallDispMenuMaxChars  | default 99)}}
+{{- end}}
+{{- $.Scratch.Set "smallDispMenuMaxChars"    (.Site.Params.menuConfig.smallDispMenuMaxChars  | default 99) }}
 
 <div class="w3-bar w3-hide-small {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} ">
   {{ `<!-- w3-hide-small ******************** -->` | safeHTML }}

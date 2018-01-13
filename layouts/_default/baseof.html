@@ -18,15 +18,16 @@
 
         {{- block "main" . }}
           {{ `<!-- block main _default/baseof.html  -->` | safeHTML }}
-          {{- partial "main.blog.date.html"         . -}}
+          {{  partial "main.blog.date.html"         . -}}
           {{- partial "main.taxonomy.current.html"  . -}}
           {{- partial "main.teaserpic.single.html"  . -}}
           {{- /* partial "main.title.html"          . */ -}}
           {{- partial "main.toc.single.html"        . -}}
           {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
-          {{- /* .Content */}}
-          {{- .Content | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML }}
-          {{- /* .Content | replaceRE "<p><div" "<div" | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML */}}
+          {{ `<!-- now Content  -->` | safeHTML }}
+          {{/* .Content */}}
+          {{ .Content | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML }}
+          {{/* .Content | replaceRE "<p><div" "<div" | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML */}}
         {{- end }}
 
         {{- if eq .Type "contact" }} 
