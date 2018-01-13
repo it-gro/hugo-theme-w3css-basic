@@ -79,6 +79,7 @@ pre.w3-code, pre.chroma {
 Well done
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
+
 renders as
 
 {{% w3-notice-icon type="success" %}}Well done                      {{% /w3-notice-icon %}}
@@ -88,6 +89,7 @@ renders as
 Well done
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
+
 renders as
 
 {{% w3-notice-icon type="success" heading="Well done"            %}}A message with header           {{% /w3-notice-icon %}}
@@ -110,6 +112,7 @@ renders as
 A default disclaimer with header
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
+
 renders as
 
 {{% w3-notice-icon heading="I'm a heading"  %}}A default disclaimer with header {{% /w3-notice-icon %}}
@@ -120,6 +123,7 @@ renders as
 No need for type="info", since this is the default
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
+
 renders as
 
 {{% w3-notice-icon type="info" heading="Show Info" %}}
@@ -134,6 +138,7 @@ No need for type="info", since this is the default
 A warning disclaimer
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
+
 renders as
 
 {{% w3-notice-icon type="warning"  heading="Keep in mind"          %}}A warning disclaimer             {{% /w3-notice-icon %}}
@@ -146,6 +151,7 @@ renders as
 A check disclaimer
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
+
 renders as
 
 {{% w3-notice-icon type="danger"                                 %}}Watch out               {{% /w3-notice-icon %}}
@@ -155,6 +161,7 @@ renders as
 Watch out 
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
+
 renders as
 
 {{% w3-notice-icon type="danger"  heading="Careful" %}}Watch out   {{% /w3-notice-icon %}}
@@ -312,6 +319,7 @@ genpasswd() {
 genpasswd $1
 {{< /w3-code */>}}
 {{< /highlight >}}
+
 renders as
 
 {{< w3-code >}}
@@ -353,6 +361,7 @@ pre.w3-code, pre.chroma {
 {{</* icon "fas fa-home">}}
 {{< icon "fas fa-home fa-2x" */>}}
 {{< /highlight >}}
+
 renders as
 {{< icon "fas fa-home">}}
 {{< icon "fas fa-home fa-2x">}}
@@ -361,6 +370,7 @@ renders as
 {{</* icon name="fas fa-home" >}}
 {{< icon name="fas fa-home" size="fa-2x" */>}}
 {{< /highlight >}}
+
 renders as
 {{< icon name="fas fa-home" >}}
 {{< icon name="fas fa-home" size="fa-2x">}}
@@ -383,6 +393,7 @@ Here' a cool command:  {{< csc >}}hugo -w -v server --themesDir ../../ --port 14
 {{< highlight nolan >}}
 You may give a class name {{</* csc k >}}cool code{{< /csc */>}}.
 {{< /highlight >}}
+
 renders as
 
 You may give a class name {{< csc k >}}cool code{{< /csc >}}. 
@@ -646,6 +657,7 @@ renders as
 {{</* i18n "termNotAvailable" >}}
 {{< i18n "foobar" */>}}
 {{< /highlight >}}
+
 renders as
 
 {{< i18n "termNotAvailable" >}}
