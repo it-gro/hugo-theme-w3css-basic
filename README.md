@@ -65,8 +65,8 @@ It includes resources from:
 * [Usage](#usage)
   * [Minifier](#minifier)
 * [Workarounds](#workarounds)
-   * [summaryLength](#summaryLength)
-   * [Shortcode output wrapped in <p>](#shortcode-output-wrapped-in-p)
+   * [summaryLength](#summarylength)
+   * [Shortcode output wrapped in <p>](#shortcode-output-wrapped-in-)
 * [Contributing](#contributing)
 * [License](#license)
 * [Thanks](#thanks)
@@ -1184,13 +1184,13 @@ or change the file names in
 
 ### summaryLength
 
-* summaryLength was not configurable until hugo version 0.30
-* teaserTruncateSummary was my workaround
+* `summaryLength` was not configurable until hugo version 0.30
+* `teaserTruncateSummary` was my workaround
 * see [Summary](#summary)
 
-### Shortcode output wrapped in <p>
+### Shortcode output wrapped in &lt;p&gt;
 
-[Shortcode output wrapped in <p> tags](https://github.com/gohugoio/hugo/issues/1642)
+[hugo/issues/1642: Shortcode output wrapped in &lt;p&gt; tags](https://github.com/gohugoio/hugo/issues/1642)
 
 `layouts/_default/baseof.html`
 ````
