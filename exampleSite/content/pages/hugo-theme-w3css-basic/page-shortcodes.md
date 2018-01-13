@@ -198,9 +198,13 @@ A warning with heading
 {{< /highlight >}}
 
 {{% w3-alert-icon type="success"                                   %}}Hi, I'm a success          {{% /w3-alert-icon %}}
+
 {{% w3-alert-icon type="info"     heading="I'm info"               %}}An info with title         {{% /w3-alert-icon %}}
+
 {{% w3-alert-icon type="warning"                                   %}}A warning                  {{% /w3-alert-icon %}}
+
 {{% w3-alert-icon type="danger"                                    %}}Danger: A stronger warning {{% /w3-alert-icon %}}
+
 {{% w3-alert-icon type="warning"  heading="You have been warned"   %}}A warning with heading     {{% /w3-alert-icon %}}
 
 ## w3-button-icon
@@ -213,7 +217,9 @@ A warning with heading
 
 renders to:
 {{% w3-button-icon                                     %}}Hi, i'm a button{{% /w3-button-icon %}}
+
 {{% w3-button-icon icon="fas fa-exclamation-triangle"  %}}Purge{{% /w3-button-icon %}}
+
 {{% w3-button-icon href="https://google.com"           %}}take me to Google{{% /w3-button-icon %}}
 
 
@@ -262,7 +268,9 @@ Some examples:
 {{< /highlight >}}
 
 {{% w3-quote                                                      %}}*a fool with a tool is still a fool*                                        {{% /w3-quote %}}
+
 {{% w3-quote source="Igor Stravinsky" layout="icon"               %}}**A good composer does not imitate; he steals.**                            {{% /w3-quote %}}
+
 {{% w3-quote source="Albert Einstein" layout="icon-br"            %}}*Life is like riding a bicycle. To keep your balance, you must keep moving* {{% /w3-quote %}}
 
 
@@ -283,7 +291,9 @@ using blockquote:
 {{< /highlight >}}
 
 {{% w3-quote source="Albert Einstein" layout="blockquote"         %}}*The true sign of intelligence is not knowledge but imagination*            {{% /w3-quote %}}
+
 {{% w3-quote source="Albert Einstein" layout="icon-br-blockquote" %}}*The only source of knowledge is experience*                                {{% /w3-quote %}}
+
 {{% w3-quote source="Albert Einstein" layout="icon-blockquote"    %}}*Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.*{{% /w3-quote %}}
 
 
