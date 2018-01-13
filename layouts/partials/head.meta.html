@@ -8,7 +8,7 @@
   <meta name="author"       content="{{ .Site.Params.authorName }}" />
 
    
-  {{ if or .Keywords .Params.tags .Params.categories -}}
+  {{- if or .Keywords .Params.tags .Params.categories -}}
   <meta name="keywords"    content="{{ if .Keywords          }} {{ chomp (delimit .Keywords ", "          ) }},{{ end -}}
                                     {{ if .Params.tags       }} {{ chomp (delimit .Params.tags ", "       ) }},{{ end -}}
                                     {{ if .Params.categories }} {{ chomp (delimit .Params.categories ", " ) }} {{ end -}}" />

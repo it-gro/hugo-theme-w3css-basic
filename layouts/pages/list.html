@@ -33,7 +33,7 @@
             </a>
         </div> {{ `<!-- w3-card -->` | safeHTML }}
       </div> {{ `<!-- w3-cell -->` | safeHTML }}
-    {{ if or (eq (mod $index 3) 2) (eq $index (sub (len $.Data.Pages) 1 )) }}
+    {{- if or (eq (mod $index 3) 2) (eq $index (sub (len $.Data.Pages) 1 )) }}
       {{ `<!-- last one -->` | safeHTML }}
     </div> {{ `<!-- w3-cell-row -->` | safeHTML }}
     {{- end }}{{/* if mod */}}

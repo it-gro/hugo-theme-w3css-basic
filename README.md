@@ -1185,7 +1185,9 @@ or change the file names in
 ### summaryLength
 
 * `summaryLength` was not configurable until hugo version 0.30
-* `teaserTruncateSummary` was my workaround
+* `teaserTruncateSummary` was my workaround. But I think it still make
+  sense since summaryLength is in words and teaserTruncateSummary is in
+  characters.
 * see [Summary](#summary)
 
 ### Shortcode output wrapped in &lt;p&gt;

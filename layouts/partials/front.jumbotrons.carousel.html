@@ -29,7 +29,7 @@
 {{- end }} {{/* if isset    */}}
 
 {{- define "front-jumbotron-entry" }}
-  {{ if and .image (not .title) }}
+  {{- if and .image (not .title) }}
     {{ `<!-- front-jumbotron-entry and .image (not .title) -->` | safeHTML }}
     <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom w3-round-xxlarge {{ default `w3-theme-l2` ($.Site.Param.colorFrontJumbotronsContainer)}} ">
       <div class="w3-container w3-margin">
@@ -38,7 +38,7 @@
     </div>
   {{- end }} {{/* if .image */}}
 
-  {{ if and .icon (and (not .title) (not .image) ) }}
+  {{- if and .icon (and (not .title) (not .image) ) }}
     {{ `<!-- front-jumbotron-entry and .image (not .title) -->` | safeHTML }}
     <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom w3-round-xxlarge {{ default `w3-theme-l2` ($.Site.Param.colorFrontJumbotronsContainer)}} ">
       <div class="w3-container w3-margin w3-center ">

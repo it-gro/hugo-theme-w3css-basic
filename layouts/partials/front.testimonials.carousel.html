@@ -40,7 +40,7 @@
 {{- end }} {{/* if *.enable */}}
 {{- end }} {{/* if isset    */}}
 
-{{ define "front-testimonials-entry" }}
+{{- define "front-testimonials-entry" }}
   {{ `<!-- front-testimonials-entry -->` | safeHTML }}
   <div class="w3-container w3-opacity">
     <p>{{- .text | markdownify }}<p>

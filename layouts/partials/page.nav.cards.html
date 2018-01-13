@@ -7,7 +7,7 @@
   {{- if not ($.InSection $startSection) }}
       {{- $startSection.Scratch.Set "nav-icon" "fas fa-bullseye"}}
     {{ template "page-nav-entry"  ($startSection ) }}
-    {{ if not ($.Parent.InSection $startSection) }}
+    {{- if not ($.Parent.InSection $startSection) }}
       {{- $.Parent.Scratch.Set "nav-icon" "fas fa-arrow-up"}}
       {{ template "page-nav-entry"  ($.Parent ) }}
     {{- end }}
