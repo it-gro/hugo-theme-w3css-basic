@@ -15,7 +15,7 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 {{- $filetype := index (findRE "[^.]+$" (.Get "link") ) 0 }}
 {{- $thumb := .Get "src" | default (printf "%s.%s" (replaceRE "\\.[^.]+$" (.Get "thumb") (.Get "link") ) $filetype )  | relURL }}
 <div class="box{{ with .Get "caption-position" }} fancy-figure caption-position-{{.}}{{end}}{{ with .Get "caption-effect" }} caption-effect-{{.}}{{end}}" {{ with .Get "width" }}style="max-width:{{.}}"{{end}}>
-  <figure {{ with .Get "class" }}class="{{.}}"{{ end }} itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+  <figure {{ with .Get "class" }}class="{{.}}"{{ end }} itemprop="associatedMedia" itemscope itemtype="http://schema.org/MediaObject">
     <div class="img"{{ if .Parent }} style="background-image: url('{{ print ($thumb | relURL) }}');"{{ end }}{{ with .Get "size" }} data-size="{{.}}"{{ end }}>
       <img src="{{ $thumb }}" {{ with .Get "alt" | default (.Get "caption") }}alt="{{.}}"{{ end }}/><!-- <img> hidden if in .gallery -->
     </div>
