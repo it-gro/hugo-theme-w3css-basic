@@ -5,6 +5,7 @@
   {{- $.Scratch.Set "myType"    (.Get 0       | default "info")  }}
   {{/* throws error: "No shortcode param at .Get 1"            */}}
   {{/*  $.Scratch.Set "myHeading" (.Get 1       | default ""  )*/}}
+  {{- $.Scratch.Set "myHeading" "" }}
 {{- end}}
 {{- if eq ($.Scratch.Get "myType") "success" }}{{$.Scratch.Set "myIcon" "fas fa-check"                   }}{{end}}
 {{- if eq ($.Scratch.Get "myType") "info"    }}{{$.Scratch.Set "myIcon" "fas fa-info"                    }}{{end}}
