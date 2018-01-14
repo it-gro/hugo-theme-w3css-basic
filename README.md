@@ -133,8 +133,10 @@ For more information read the official [setup guide](https://gohugo.io/overview/
 
 After installing the theme we recommend you to take a look at the
 [exampleSite](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite)
-directory. You will find a working Hugo site configured with this
-theme that you can use as a starting point for your site.
+directory. You will find a working [Hugo
+site](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/)
+configured with this theme that you can use as a starting point for
+your site.
 
 First, let's take a look at the
 [config.toml](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml). It
