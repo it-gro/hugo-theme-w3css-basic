@@ -68,7 +68,7 @@ It includes resources from:
 * [Workarounds](#workarounds)
    * [summaryLength](#summarylength)
    * [Shortcode output wrapped in <p>](#shortcode-output-wrapped-in-)
-* [ToDo's](#todo-s)
+* [ToDo's](#todos)
 * [Contributing](#contributing)
 * [License](#license)
 * [Thanks](#thanks)
