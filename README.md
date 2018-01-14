@@ -68,6 +68,7 @@ It includes resources from:
 * [Workarounds](#workarounds)
    * [summaryLength](#summarylength)
    * [Shortcode output wrapped in <p>](#shortcode-output-wrapped-in-)
+* [Tracking](#tracking)
 * [ToDo's](#todos)
 * [Contributing](#contributing)
 * [License](#license)
@@ -1271,7 +1272,9 @@ But giving those informations to any third-party is not what the visitors expect
 * Why should a third-party (disqus.com) know which blog articles I'v read (even without commenting) ?
 * Why should a third-party (formspree.io) beeing able to read the visitors messages (contact form) ?
 
-If the visitors implicitly agree by clicking on a button ("see comments on disqus.com" or "send message via formspree.io") then this is perfecly fine (for me).
+If the visitors implicitly agree by clicking on a button ("see
+comments on disqus.com" or "send message via formspree.io") then this
+is perfecly fine (for me).
 
 This is why I tried to minimize the external url's and copied all locally.
 
