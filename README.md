@@ -916,7 +916,7 @@ pygmentsUseClasses            = true
 ```
 
 * the google translate widget is currently not shown:
-  * on the home page (Google PageSpeed complains, google bot get's confused)
+  * on the home page (Google PageSpeed complains, google bot gets confused)
   * on small displays
 * set to false to disable on the other pages (you probably want to start with false)
 
