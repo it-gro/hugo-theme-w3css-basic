@@ -3,7 +3,7 @@
 {{- else}}
   {{-  $.Scratch.Set "myClass" (.Get 0       | default "gp")}}
 {{- end}}
-<pre><code class="chroma"><span class="{{ $.Scratch.Get "myClass"}}">{{.Inner | htmlEscape | safeHTML }}</span></code></pre>
+<pre><code class="chroma notranslate"><span class="{{ $.Scratch.Get "myClass"}}">{{.Inner | htmlEscape | safeHTML }}</span></code></pre>
 {{- /*  err      Error                    */}} 
 {{- /*  lntd     LineTableTD              */}} 
 {{- /*  lntable  LineTable                */}} 
