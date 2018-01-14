@@ -421,6 +421,7 @@ code.chroma {
 {{< /highlight >}}
 
 
+{{< highlight text >}}
    Class | Type
 ---------|------
 err      | Error
@@ -489,6 +490,7 @@ gs       | GenericStrong
 gu       | GenericSubheading
 gt       | GenericTraceback
 w        | TextWhitespace
+{{< /highlight >}}
 
 
 ## cscb
