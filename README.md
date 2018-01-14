@@ -915,6 +915,8 @@ pygmentsUseClasses            = true
 
 ### Google Translation
 
+![screenshot Google Translate](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_305.jpg)
+
 ```toml
 [params.menuTopBar]
   googleTranslateEnable    = true
@@ -939,6 +941,8 @@ pygmentsUseClasses            = true
     {{- end }}
   {{- end }}
 ```
+
+![screenshot Google Translate](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_306.jpg)
 
 
 ### Google Custom Search API
@@ -1242,8 +1246,8 @@ See https://discourse.gohugo.io/t/shortcodes-and-p-tags-2/9987
 
 ## ToDo's
 
-*  Enable comments by entering with Disqus   
-   I'l will use: https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
+*  Enable comments with Disqus   
+   I'l use ideas from: https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
 
 
 ## Contributing
