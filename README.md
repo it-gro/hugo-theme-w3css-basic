@@ -1297,9 +1297,9 @@ into the theme (`static/vendor/`*).
 #  pre      = "fas fa-search"
 
 [params]
-  fontsUseGoogleApis    = false
-  # latitude         = 
-  # longitude        = 
+  fontsUseGoogleApis = false
+  # latitude  = 
+  # longitude = 
   formspree = ""
   email     = "info@example.com"
 
