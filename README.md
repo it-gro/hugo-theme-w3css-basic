@@ -1282,12 +1282,12 @@ into the theme (`static/vendor/`*).
 
 ### minimize visitors tracking footprint
 
-* disable menu.topbar search
+* disable menu.topbar search (google custom search)
 * disable google fonts apis
 * disable google maps
-* disable formspree (but keep the email)
+* disable formspree (but keep your email)
 * disable google translate
-* review e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
+* review result e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
 
 ```toml
 #[[menu.topbar]]
