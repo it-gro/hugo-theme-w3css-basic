@@ -1280,7 +1280,7 @@ This is also why I tried to minimize the external url's and copied all
 into the theme (`static/vendor/`*).
 
 
-### minimize visitors tracking footprint
+### minimize visitors exposure to tracking
 
 * disable menu.topbar search (google custom search)
 * disable google fonts apis
