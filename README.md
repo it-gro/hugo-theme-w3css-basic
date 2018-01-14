@@ -1,6 +1,6 @@
 # W3.CSS Basic Theme for Hugo
 
-W3.CSS Basic is a website template built with W3.CSS.  Inspiration was
+W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  Inspiration was
 taken from
 [Universal](https://themes.gohugo.io/hugo-universal-theme/).  It is
 quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml). Change all colors in the blink of an eye...
@@ -55,6 +55,7 @@ It includes resources from:
   * [Menu](#menu)
   * [Fonts](#fonts)
   * [Contact Map](#contact-map)
+  * [Google Translation](#google-translation)
   * [Google Custom Search API](#google-custom-search-api)
   * [Footer](#footer)
 * [Front Matter](#front-matter)
@@ -78,10 +79,10 @@ It includes resources from:
 My goals for this theme are:
 
 * be as universal as the [Universal](https://themes.gohugo.io/hugo-universal-theme/) theme
-* create a w3css theme (there are many Bootstrap themes)
+* create a [W3.CSS](https://www.w3schools.com/w3css/) theme (there are many [Bootstrap](https://getbootstrap.com/) themes)
 * mobile first, responsive
 * basic usage without javascript has to be possible 
-* usage with full local delivery (no CDNs) has to be possible (security & privacy concerns)
+* do not expose visitors to possible tracking by third-party against their will
 * try to be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 * support experimenting with monochromatic colors
 * use teaser pictures and icons as eye-catcher
@@ -102,14 +103,14 @@ My goals for this theme are:
   * optional data/testimonials (carousel (if js is enabled) )
   * optional data/clients      (carousel (if js is enabled) )
 * Fontawesome version 5 (local)
-* Google fonts - either via api or via local files (avoid tracking)
-* Optional google translate widget (if js is enabled)
+* Google fonts - either via api or via local files (choose local to avoid tracking)
+* Optional google translate widget (if js is enabled - disable it to avoid tracking)
 * Contact page
   * optional formspree.io 
-  * mailto: without formspree.io (avoid leaking)
-  * google map (if js is enabled)
+  * mailto: without formspree.io (avoid tracking & leaking)
+  * google map (if js is enabled - do not provide coordinates to avoid tracking)
 * Search page
-  * google customizable search api (if js is enabled)
+  * google customizable search api (if js is enabled - just do not include search in menu to avoid tracking)
 * Alternative navigation instead of breadcrumbs (Top/Up/Down & pages on this level)
 * hugo-easy-gallery (including PhotoSwipe which needs js)
   
@@ -132,8 +133,10 @@ For more information read the official [setup guide](https://gohugo.io/overview/
 
 After installing the theme we recommend you to take a look at the
 [exampleSite](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite)
-directory. You will find a working Hugo site configured with this
-theme that you can use as a starting point for your site.
+directory. You will find a working [Hugo
+site](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/)
+configured with this theme that you can use as a starting point for
+your site.
 
 First, let's take a look at the
 [config.toml](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml). It
@@ -901,6 +904,29 @@ pygmentsUseClasses            = true
 * Contact form with disabled Javascript
 
 ![screenshot Contact no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_300.jpg)
+
+* if no latitude and longitude is given, no map is shown
+
+
+### Google Translation
+
+```toml
+[params.menuTopBar]
+  googleTranslateEnable    = true
+```
+
+* the google translate widget is currently not shown:
+  * on the home page (Google PageSpeed complains)
+  * on small displays
+* set to false to disable on the other pages
+
+
+`layouts/partials/header.nav.html`
+```
+{{- if not .IsHome }}
+{{ partial "header.nav.google.translate.html" . -}}
+{{- end }}
+```
 
 
 ### Google Custom Search API
