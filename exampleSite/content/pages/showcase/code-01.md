@@ -1,5 +1,5 @@
 ---
-title:       "Thumbs"
+title:       "Code highlighting"
 date:        2018-01-08T10:34:50+01:00
 teaserpic:
 icon:        "far fa-file-code"
