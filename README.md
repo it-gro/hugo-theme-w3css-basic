@@ -956,9 +956,10 @@ pygmentsUseClasses            = true
     </div> <!-- w3-col -->
 ```
 
-* results of shortcode highlight, w3-code, w3-codespan
-* currently results of the markdown backticks get translated, which is odd
+* results of shortcode highlight (internal), w3-code, w3-codespan, cscb and csc
+* currently results of markdown backticks get translated, which is odd
 
+![screenshot Google Translate](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_307.jpg)
 
 
 
