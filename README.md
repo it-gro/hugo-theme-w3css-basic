@@ -68,6 +68,7 @@ It includes resources from:
 * [Workarounds](#workarounds)
    * [summaryLength](#summarylength)
    * [Shortcode output wrapped in <p>](#shortcode-output-wrapped-in-)
+* [ToDo's](#todos)
 * [Contributing](#contributing)
 * [License](#license)
 * [Thanks](#thanks)
@@ -853,7 +854,11 @@ pygmentsUseClasses            = true
   # enable or disable menu.topbar with social icons (right aligned)
   socialEnable             = true
   numOfItemsIfSmallDisplay = 0
+
+  # used in layouts/partials/header.nav.html
+  #         layouts/partials/header.nav.google.translate.html
   googleTranslateEnable    = true
+  googleTranslateShowOnHome= false
 ```
 
 
@@ -910,26 +915,35 @@ pygmentsUseClasses            = true
 
 ### Google Translation
 
+![screenshot Google Translate](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_305.jpg)
+
 ```toml
 [params.menuTopBar]
   googleTranslateEnable    = true
+  googleTranslateShowOnHome= false
 ```
 
-* the google translate widget is currently not shown:
-  * on the home page (Google PageSpeed complains, google bot gets confused)
+* the google translate widget is not shown:
   * on small displays
-* set to false to disable on the other pages (you probably want to start with false)
+  * on the home page if googleTranslateShowOnHome is set to false   
+    (Google PageSpeed complains, google bot gets confused)
+* set googleTranslateEnable to false to disable globaly
 
 
 `layouts/partials/header.nav.html`
 ```
-{{- if not .IsHome }}
-{{ partial "header.nav.google.translate.html" . -}}
-{{- end }}
+<div class="w3-bar w3-hide-small ... ">
+  {{- if .Site.Params.menutopbar.googleTranslateEnable }}
+    {{- if or (not .IsHome) .Site.Params.menutopbar.googleTranslateShowOnHome }}
+  <span class="w3-bar-item w3-button w3-right">
+    {{ partial "header.nav.google.translate.html" . -}}
+  </span>
+    {{- end }}
+  {{- end }}
 ```
 
-ToDo:
-* customize this one
+![screenshot Google Translate](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_306.jpg)
+
 
 ### Google Custom Search API
 
@@ -1230,6 +1244,10 @@ or change the file names in
 See https://discourse.gohugo.io/t/shortcodes-and-p-tags-2/9987
 
 
+## ToDo's
+
+*  Enable comments with Disqus   
+   I'l use ideas from: https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
 
 
 ## Contributing

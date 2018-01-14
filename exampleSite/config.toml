@@ -74,6 +74,7 @@ pygmentsUseClasses            = true
 
 # ToDo:
 # Enable comments by entering your Disqus shortname
+# will use: https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
 disqusShortname = ""
 
 
@@ -190,14 +191,46 @@ disqusShortname = ""
 # theme-defined params
 [params]
 
-  debug              = false
-  uglyURLs           = false
-  uglyUrl            = ".html"
+  # meta data
+  # ##############################
 
   # used in layouts/partials/head.meta.html
   authorName         = "anonymous"
   defaultKeywords    = ["foo", "bar"]
   defaultDescription = "example site created with hugo using theme hugo-theme-w3css-basic"
+
+  # multiple lines in toml
+  # https://github.com/toml-lang/toml#user-content-string
+
+  # used in layouts/partials/footer.html
+  # uses markdownify
+  aboutUs   = '''
+Vel illum **dolore** eu      
+                             
+  * feugiat nulla            
+  * facilisis at vero. 
+
+Nam vestibulum accumsan nisl.
+      
+              '''
+
+  address   = '''
+**nobis eleifend**             
+**Soluta nobis eleifend**      
+illum dolore eu feugiat        
+3612 Steffisburg               
+consectetuer adipiscing        
+
+**Switzerland**
+              '''
+
+  # used in layouts/partials/footer.bottom.html
+  bottomLeft  = "Copyright (c) 2018, *lobortis nisl* ut aliquip ex ea commodo consequat"
+  bottomRight = 'created with [Hugo](https://gohugo.io) '
+
+
+  # colors
+  # ##############################
 
   # used in layouts/partials/head.stylesheets.html
   # https://www.w3schools.com/w3css/w3css_color_themes.asp
@@ -281,6 +314,9 @@ disqusShortname = ""
   colorSearchGoogleGcseContainer        = "w3-theme-l3"
 
 
+  # google stuff
+  # ##############################
+
   # used in layouts/partials/head.html
   fontsUseGoogleApis=false
 
@@ -303,42 +339,25 @@ disqusShortname = ""
   # used in layouts/partials/search.google.gcse.html
   googleCustomSearchCX = '002931815551392744433:tnypjyusk2e'
 
+  # for google translate check params.menuTopBar.googleTranslate*
+
+
+  # teasers
+  # ##############################
+
   # https://gohugo.io/functions/truncate/
   # used in layouts/pages/list.html
   #         layouts/partials/front.recent_posts.html
   #         layouts/partials/main.teaser_in_card.html
   teaserTruncateSummary  = 200
 
+  # used in layouts/partials/main.teaserpic.single.html
+  #         layouts/partials/front.recent_posts.html
+  #teaserpicDefault = "/images/teaserpics/placeholder.png"
 
-  # multiple lines in toml
-  # https://github.com/toml-lang/toml#user-content-string
 
-  # used in layouts/partials/footer.html
-  # uses markdownify
-  aboutUs   = '''
-Vel illum **dolore** eu      
-                             
-  * feugiat nulla            
-  * facilisis at vero. 
-
-Nam vestibulum accumsan nisl.
-      
-              '''
-
-  address   = '''
-**nobis eleifend**             
-**Soluta nobis eleifend**      
-illum dolore eu feugiat        
-3612 Steffisburg               
-consectetuer adipiscing        
-
-**Switzerland**
-              '''
-
-  # used in layouts/partials/footer.bottom.html
-  bottomLeft  = "Copyright (c) 2018, *lobortis nisl* ut aliquip ex ea commodo consequat"
-  bottomRight = 'created with [Hugo](https://gohugo.io) '
-
+  # contact form
+  # ##############################
 
   # used in partials/contact.form.html
   # Enable the contact form by entering your Formspree.io email
@@ -350,6 +369,11 @@ consectetuer adipiscing
   #  layouts/partials/main.i18n.date.html
   #  layouts/partials/main.i18n.date.short.html
   #  and i18n/*.yaml
+
+  # developer stuff
+  debug              = false
+  uglyURLs           = false
+  uglyUrl            = ".html"
 
 
 # ##################################################
@@ -375,7 +399,11 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # enable or disable menu.topbar with social icons (right aligned)
   socialEnable             = true
   numOfItemsIfSmallDisplay = 0
+
+  # used in layouts/partials/header.nav.html
+  #         layouts/partials/header.nav.google.translate.html
   googleTranslateEnable    = true
+  googleTranslateShowOnHome= false
 
 [params.jumbotrons]
   # used in layouts/partials/front.jumbotrons.carousel.html
