@@ -905,7 +905,7 @@ pygmentsUseClasses            = true
 
 ![screenshot Contact no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_300.jpg)
 
-* if no latitude and longitude is given, no map is shown
+* if no latitude or longitude is given, no map is shown
 
 
 ### Google Translation
@@ -916,9 +916,9 @@ pygmentsUseClasses            = true
 ```
 
 * the google translate widget is currently not shown:
-  * on the home page (Google PageSpeed complains)
+  * on the home page (Google PageSpeed complains, google bot get's confused)
   * on small displays
-* set to false to disable on the other pages
+* set to false to disable on the other pages (you probably want to start with false)
 
 
 `layouts/partials/header.nav.html`
@@ -928,6 +928,8 @@ pygmentsUseClasses            = true
 {{- end }}
 ```
 
+ToDo:
+* customize this one
 
 ### Google Custom Search API
 
