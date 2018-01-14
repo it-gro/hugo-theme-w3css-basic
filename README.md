@@ -1230,7 +1230,7 @@ For more information check out the official [Hugo documentation](http://gohugo.i
 If you change the theme `w3css-basic.min.css`, `syntax.min.css` or
 `front.js`, you have to apply a minifier. E.g.:
 
-````bash
+```bash
 cd themes/hugo-theme-w3css-basic/static/css
 yui-compressor --verbose --type css --line-break 1023 w3css-basic.css -o w3css-basic.min.css
 yui-compressor --verbose --type css --line-break 1023 syntax.css      -o syntax.min.css
@@ -1239,7 +1239,7 @@ cd -
 cd themes/hugo-theme-w3css-basic/static/js
 yui-compressor --verbose --type js --line-break 1023 --nomunge --preserve-semi front.js -o front.min.js
 cd -
-````
+```
 
 or change the file names in 
 `layouts/partials/head.stylesheets.html` and `layouts/partials/scripts.html`
@@ -1259,9 +1259,9 @@ or change the file names in
 [hugo/issues/1642: Shortcode output wrapped in &lt;p&gt; tags](https://github.com/gohugoio/hugo/issues/1642)
 
 `layouts/_default/baseof.html`
-````
+```
 {{- .Content | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML }}
-````
+```
 
 See https://discourse.gohugo.io/t/shortcodes-and-p-tags-2/9987
 
@@ -1305,7 +1305,6 @@ This is why I tried to minimize the external url's and copied all locally.
 [params.menuTopBar]
   googleTranslateEnable = false
 
-```
 ```
 
 
