@@ -945,6 +945,23 @@ pygmentsUseClasses            = true
 ![screenshot Google Translate](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_306.jpg)
 
 
+####  No translation is done for
+
+* About and Adress in footer (class="notranslate")
+`layouts/partials/footer.html`
+```
+    <div class="w3-col w3-third">
+      <h4>{{ default "About" (i18n "aboutUs") }}</h4>
+      <div class="notranslate">{{- .Site.Params.aboutUs | markdownify }}</div>
+    </div> <!-- w3-col -->
+```
+
+* results of shortcode highlight, w3-code, w3-codespan
+* currently results of the markdown backticks get translated, which is odd
+
+
+
+
 ### Google Custom Search API
 
 ```toml

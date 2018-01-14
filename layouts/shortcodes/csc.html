@@ -3,7 +3,7 @@
 {{- else}}
   {{-  $.Scratch.Set "myClass" (.Get 0       | default "gp")}}
 {{- end}}
-<code class="chroma" style="font-family: monospace,monospace;"><span class="{{ $.Scratch.Get "myClass"}}">{{.Inner}}</span></code>
+<code class="chroma notranslate" style="font-family: monospace,monospace;"><span class="{{ $.Scratch.Get "myClass"}}">{{.Inner}}</span></code>
 {{- /* <pre><code class="chroma" style="font-family: monospace,monospace;"><span class="{{ $.Scratch.Get "myClass"}}">{{.Inner}}</span></code></pre> */}}
 {{- /* <div class="highlight"><pre class="chroma"><span class="{{ $.Scratch.Get "myClass"}}">{{.Inner | htmlEscape | safeHTML }}</span></pre></div> */}}
 {{- /*  err      Error                    */}} 
