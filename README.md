@@ -83,7 +83,7 @@ My goals for this theme are:
 * create a [W3.CSS](https://www.w3schools.com/w3css/) theme (there are many [Bootstrap](https://getbootstrap.com/) themes)
 * mobile first, responsive
 * basic usage without javascript has to be possible 
-* do not expose visitors to possible tracking by third-party against their will
+* do as much as possible not to expose visitors to tracking by third-party against their will
 * try to be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 * support experimenting with monochromatic colors
 * use teaser pictures and icons as eye-catcher
@@ -104,14 +104,14 @@ My goals for this theme are:
   * optional data/testimonials (carousel (if js is enabled) )
   * optional data/clients      (carousel (if js is enabled) )
 * Fontawesome version 5 (local)
-* Google fonts - either via api or via local files (choose local to avoid tracking)
-* Optional google translate widget (if js is enabled - disable it to avoid tracking)
+* Google fonts - either via api or via local files (choose local to reduce tracking)
+* Optional google translate widget (if js is enabled - disable it to reduce tracking)
 * Contact page
   * optional formspree.io 
   * mailto: without formspree.io (avoid tracking & leaking)
-  * google map (if js is enabled - do not provide coordinates to avoid tracking)
+  * google map (if js is enabled - do not provide coordinates to reduce tracking)
 * Search page
-  * google customizable search api (if js is enabled - just do not include search in menu to avoid tracking)
+  * google customizable search api (if js is enabled - just do not include search in menu to reduce tracking)
 * Alternative navigation instead of breadcrumbs (Top/Up/Down & pages on this level)
 * hugo-easy-gallery (including PhotoSwipe which needs js)
   
@@ -868,6 +868,7 @@ pygmentsUseClasses            = true
 ### Fonts
 
 ```toml
+[params]
   # used in layouts/partials/head.html
   fontsUseGoogleApis=false
 ```
@@ -886,7 +887,9 @@ pygmentsUseClasses            = true
 
 ### Contact Map
 
+
 ```toml
+[params]
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
   # used in layouts/partials/contact.map.html
@@ -1260,11 +1263,52 @@ or change the file names in
 
 See https://discourse.gohugo.io/t/shortcodes-and-p-tags-2/9987
 
+## Tracking
+
+Beeing able to analyse the visitors behavior via the log files on the visited site is one thing.
+But giving those informations to any third-party is not what the visitors expect by default.
+* Why should a third-party (disqus.com) know which blog articles I'v read (even without commenting) ?
+* Why should a third-party (formspree.io) beeing able to read the visitors messages (contact form) ?
+
+If the visitors implicitly agree by clicking on a button ("see comments on disqus.com" or "send message via formspree.io") then this is perfecly fine (for me).
+
+This is why I tried to minimize the external url's and copied all locally.
+
+
+### minimize visitors tracking footprint
+
+* disable menu.topbar search
+* disable google fonts apis
+* disable google maps
+* disable formspree (but keep the email)
+* disable google translate
+* review e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
+
+```toml
+#[[menu.topbar]]
+#  weight   = 5
+#  name     = "Search"
+#  url      = "/search"
+#  pre      = "fas fa-search"
+
+[params]
+  fontsUseGoogleApis    = false
+  # latitude         = 
+  # longitude        = 
+  formspree = ""
+  email     = "info@example.com"
+
+[params.menuTopBar]
+  googleTranslateEnable = false
+
+```
+```
+
 
 ## ToDo's
 
 *  Enable comments with Disqus   
-   I'l use ideas from: https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
+   I'll use ideas from: https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
 
 
 ## Contributing
