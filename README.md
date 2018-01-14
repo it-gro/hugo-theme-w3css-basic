@@ -1276,7 +1276,8 @@ If the visitors implicitly agree by clicking on a button ("see
 comments on disqus.com" or "send message via formspree.io") then this
 is perfecly fine (for me).
 
-This is why I tried to minimize the external url's and copied all locally.
+This is also why I tried to minimize the external url's and copied all
+into the theme (`static/vendor/`*).
 
 
 ### minimize visitors tracking footprint
