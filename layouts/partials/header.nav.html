@@ -18,11 +18,11 @@
   {{- end }}
 
   {{- if .Site.Params.menutopbar.googleTranslateEnable }}
+    {{- if or (not .IsHome) .Site.Params.menutopbar.googleTranslateShowOnHome }}
   <span class="w3-bar-item w3-button w3-right">
-    {{- if not .IsHome }}
     {{ partial "header.nav.google.translate.html" . -}}
-    {{- end }}
   </span>
+    {{- end }}
   {{- end }}
 </div> <!-- w3-bar -->
 
