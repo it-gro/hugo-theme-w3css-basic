@@ -531,14 +531,6 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
 ![screenshot Blog Disqus Count](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_370.jpg)
 
 
-`layouts/_default/baseof.html`
-```
-{{- if eq .Type "blog" }} 
-  {{- block "blog-disqus" . }}
-  {{ end }}
-{{- end -}}
-
-```
 
 `layouts/blog/single.html`
 ```
@@ -561,7 +553,6 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
     {{- end }} {{/* disqusButtonShowCount */}}
       <span class="w3-small">({{ default "via" (i18n "disqusVia") }})</span>
       <noscript>
-        {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }}
        <br/>{{ default "no JavaScript" (i18n "JsNeeded") }}
       </noscript>
   </button>
