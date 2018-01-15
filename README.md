@@ -64,6 +64,7 @@ It includes resources from:
 * [Shortcodes](#shortcodes)
 * [Showcase](#showcase)
 * [Gallery](#gallery)
+* [Figure](#figure)
 * [Usage](#usage)
   * [Minifier](#minifier)
 * [Workarounds](#workarounds)
@@ -1269,6 +1270,7 @@ categories:
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
 
 
+
 `content/pages/showcase/gallery-01.md`
 ```
 ---
@@ -1286,6 +1288,32 @@ categories:
 {{< heg-load-photoswipe >}}
 {{< heg-gallery dir="/images/photocards/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
 ```
+
+## Figure
+
+```
+{{</* heg-load-photoswipe >}}
+{{< heg-figure link="/images/photocards/pixabay.com/04-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com" >}}
+```
+
+* `{{< heg-figure .. >}}` improves the usage of `title caption attr attrlink` which are all optional
+
+```
+caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com"
+```
+
+* Shown on page
+
+![screenshot Figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_342.jpg)
+
+
+* Shown with PhotoSwipe
+
+![screenshot Figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_343.jpg)
+
+
+* See  https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#heg-figure for more examples
+
 
 ## Usage
 
