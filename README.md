@@ -523,6 +523,7 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
 
 
 * disqusButtonShowCount = false
+
 ![screenshot Blog Disqus NoCount](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_360.jpg)
 
 
