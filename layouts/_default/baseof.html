@@ -30,6 +30,12 @@
           {{/* .Content | replaceRE "<p><div" "<div" | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML */}}
         {{- end }}
 
+        {{- if eq .Type "blog" }} 
+          {{- block "blog-disqus" . }}
+            {{ `<!-- block blog-disqus _default/baseof.html  -->` | safeHTML }}
+          {{ end }}
+        {{- end -}}
+
         {{- if eq .Type "contact" }} 
           {{- block "contactform" . }}
             {{ `<!-- block contactform _default/baseof.html  -->` | safeHTML }}

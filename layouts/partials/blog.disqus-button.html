@@ -1,0 +1,50 @@
+{{ `<!-- partials/disqus-button.html  -->` | safeHTML }}
+{{- /* https://blog.kulman.sk/delaying-disqus-comments-to-save-requests/ */}}
+{{- if .Site.DisqusShortname }}
+<div class="disqus-comments">
+  <button id="disqus-show-comments" class="w3-button {{ default `w3-theme-l3` ($.Site.Param `colorDisqusButton`)}}"  type="button" onclick="disqusShowComments()">
+    {{- default "Show" (i18n "Show") }}&nbsp;
+    {{- if $.Site.Param `disqusButtonShowCount` }}
+      <span class="disqus-comment-count" data-disqus-url="{{ trim .Permalink "/" }}"></span>
+    {{- else }}
+      {{- default "comments" (i18n "Comments") }}
+    {{- end }} {{/* disqusButtonShowCount */}}
+      <span class="w3-small">({{ default "via" (i18n "disqusVia") }})</span>
+      <noscript>
+        {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }}
+       <br/>{{ default "no JavaScript" (i18n "JsNeeded") }}
+      </noscript>
+  </button>
+  <div id="disqus_thread"></div>
+</div>
+
+{{- if $.Site.Param `disqusButtonShowCount` }}
+<script id="dsq-count-scr" src="//{{.Site.DisqusShortname}}.disqus.com/count.js" async></script>
+{{- end }} {{/* disqusButtonShowCount */}}
+
+<script type="text/javascript">
+  function disqusShowComments () {
+    var disqus_shortname = '{{.Site.DisqusShortname}}';
+    var disqus_config    = function () {
+      this.page.url = '{{ trim .Permalink "/" }}';
+    };
+
+    (function() {
+      var disqus = document.createElement('script');
+      disqus.type = 'text/javascript';
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+    document.getElementById('disqus-show-comments').style.visibility = "hidden";
+  };
+</script>
+
+{{- /* <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> */}}
+{{- end }}
+
+{{- /* emacs                 */}}
+{{- /* Local variables:      */}}
+{{- /* tab-width:        2   */}}
+{{- /* indent-tabs-mode: nil */}}
+{{- /* End:                  */}}

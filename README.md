@@ -45,6 +45,7 @@ It includes resources from:
   * [Blog](#blog)
     * [Blog List](#blog-list)
     * [Date format](#date-format)
+    * [Disqus](#disqus)
   * [Pages](#pages)
     * [Pages Navigation](#pages-navigation)
   * [Color Theme](#color-theme)
@@ -490,6 +491,81 @@ In this theme we set
 
 ![screenshot Blog Entry](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_240.jpg)
 
+#### Disqus
+
+![screenshot Blog Disqus Open](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_380.jpg)
+
+* Hugo ships with an internal Disqus template: https://gohugo.io/content-management/comments/
+* I wanted:
+  * a button the user has to click to show the comments
+  * configure whether the comment count is show on the button or not (disqus.com/count.js)
+* I took some ideas from  https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
+
+
+```toml
+# Enable comments by entering your Disqus shortname
+disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
+
+[params]
+  # disqus (theme)
+  # ##############################
+
+  # used in partials/blog.disqus-button.html 
+  # set to true, if you want to show the count of comments
+  # fires an async request to disqus.com/count.js
+  disqusButtonShowCount = false
+```
+
+
+* No JavaScript fallback
+
+![screenshot Blog Disqus NoJs](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_350.jpg)
+
+
+* disqusButtonShowCount = false
+
+![screenshot Blog Disqus NoCount](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_360.jpg)
+
+
+* disqusButtonShowCount = true
+
+![screenshot Blog Disqus Count](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_370.jpg)
+
+
+
+`layouts/blog/single.html`
+```
+{{ define "blog-disqus" }}
+  {{ partial "blog.disqus-button.html" . }}
+{{ end }}
+```
+
+`layouts/partials/blog.disqus-button.html`
+```
+{{ `<!-- partials/disqus-button.html  -->` | safeHTML }}
+{{- if .Site.DisqusShortname }}
+<div class="disqus-comments">
+  <button id="disqus-show-comments" class="w3-button {{ default `w3-theme-l3` ($.Site.Param `colorDisqusButton`)}}"  type="button" onclick="disqusShowComments()">
+    {{- default "Show" (i18n "Show") }}&nbsp;
+    {{- if $.Site.Param `disqusButtonShowCount` }}
+      {{ <span class="disqus-comment-count" data-disqus-url="{{ trim .Permalink "/" }}"></span> }}
+    {{- else }}
+      {{- default "comments" (i18n "Comments") }}
+    {{- end }} {{/* disqusButtonShowCount */}}
+      <span class="w3-small">({{ default "via" (i18n "disqusVia") }})</span>
+      <noscript>
+       <br/>{{ default "no JavaScript" (i18n "JsNeeded") }}
+      </noscript>
+  </button>
+  <div id="disqus_thread"></div>
+</div>
+
+{{- if $.Site.Param `disqusButtonShowCount` }}
+<script id="dsq-count-scr" src="//{{.Site.DisqusShortname}}.disqus.com/count.js" async></script>
+{{- end }} {{/* disqusButtonShowCount */}}
+```
+
+
 ### Pages
 
 #### Pages Navigation
@@ -630,6 +706,7 @@ You can configure all colors within the selected monochromatic color theme:
   colorBlogListCell                     = "w3-theme-l3"
   colorBaseofCanvas                     = "w3-theme-l4"
   colorBaseofPanel                      = "w3-theme-l2"
+  colorDisqusButton                     = "w3-theme-l3"
   colorTaxonomyPanel                    = "w3-theme-l2"
   colorTaxonomyCell                     = "w3-theme-l4"
   colorTaxonomyCard                     = "w3-theme-l3"
@@ -1310,9 +1387,6 @@ into the theme (`static/vendor/`*).
 
 
 ## ToDo's
-
-*  Enable comments with Disqus   
-   I'll use ideas from: https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
 
 
 ## Contributing

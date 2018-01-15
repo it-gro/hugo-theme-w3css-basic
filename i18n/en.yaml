@@ -73,6 +73,13 @@
 - id: search
   translation: "Search"
 
+- id: Show
+  translation: "Show"
+- id: Comments
+  translation: "comments"
+- id: disqusVia
+  translation: "via disqus.com"
+
 - id: January
   translation: "January"
 - id: February
