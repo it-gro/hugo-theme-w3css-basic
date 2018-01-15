@@ -498,7 +498,7 @@ In this theme we set
 * Hugo ships with an internal Disqus template: https://gohugo.io/content-management/comments/
 * I wanted:
   * a button the user has to click to show the comments
-  * configure whether the comment count is show on the button or not (disqus.com/count.js)
+  * configure whether the comment count is shown on the button or not (disqus.com/count.js)
 * I took some ideas from  https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
 
 
@@ -1006,9 +1006,9 @@ pygmentsUseClasses            = true
 
 * the google translate widget is not shown:
   * on small displays
-  * on the home page if googleTranslateShowOnHome is set to false   
-    (Google PageSpeed complains, google bot gets confused)
-* set googleTranslateEnable to false to disable globaly
+  * on the home page - if googleTranslateShowOnHome is set to false   
+    (Google PageSpeed complains, Google bot gets confused)
+* set googleTranslateEnable to false in order to disable google translate globaly
 
 
 `layouts/partials/header.nav.html`
