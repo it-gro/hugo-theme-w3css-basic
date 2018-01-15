@@ -512,7 +512,7 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
 
   # used in partials/blog.disqus-button.html 
   # set to true, if you want to show the count of comments
-  # fires a async request to disqus.com/count.js
+  # fires an async request to disqus.com/count.js
   disqusButtonShowCount = false
 ```
 
