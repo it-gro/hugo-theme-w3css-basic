@@ -1309,7 +1309,7 @@ caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com
 
 * Shown with PhotoSwipe
 
-![screenshot Figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_343.jpg)
+![screenshot Figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_344.jpg)
 
 
 * See  https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#heg-figure for more examples
