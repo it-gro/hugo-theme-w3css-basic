@@ -62,9 +62,9 @@ It includes resources from:
 * [Front Matter](#front-matter)
 * [Favicons](#favicons)
 * [Shortcodes](#shortcodes)
-* [Showcase](#showcase)
 * [Gallery](#gallery)
 * [Figure](#figure)
+* [Showcase](#showcase)
 * [Usage](#usage)
   * [Minifier](#minifier)
 * [Workarounds](#workarounds)
@@ -1243,27 +1243,6 @@ layouts/shortcodes/
 └── w3-tag.html
 ```
 
-## Showcase
-
-* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/
-
-`content/pages/showcase/video-01.md`
-```
----
-title:       "Hugo - Static Site Generator"
-date:        2017-12-16T21:46:06+01:00
-teaserpic:   
-icon:        "fab fa-youtube"
-description: "Giraffe Academy, Tutorial 1"
-tags:
-  - Showcase
-categories:
-  - This Theme
----
-
-{{< youtube qtIqKaDlqXo >}}
-```
-
 ## Gallery
 * https://github.com/liwenyip/hugo-easy-gallery/
 
@@ -1313,6 +1292,11 @@ caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com
 
 
 * See  https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#heg-figure for more examples
+
+
+## Showcase
+
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/ for more quick examples
 
 
 ## Usage
