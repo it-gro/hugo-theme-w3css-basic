@@ -33,6 +33,9 @@ summaryLength = 70
 # Pagination (3,6,9,12, ...)
 paginate =  6
 
+# Enable comments by entering your Disqus shortname
+disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
+
 # https://gohugo.io/content-management/syntax-highlighting/
 pygmentsUseClassic            = false
 pygmentsCodeFences            = true
@@ -68,14 +71,8 @@ pygmentsUseClasses            = true
 #pygmentsStyle = "vs"
 
 
-
 # ##################################################
 # Theme-defined configuration
-
-# ToDo:
-# Enable comments by entering your Disqus shortname
-# will use: https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
-disqusShortname = ""
 
 
 # ##################################################
@@ -275,6 +272,7 @@ consectetuer adipiscing
   colorBlogListCell                     = "w3-theme-l3"
   colorBaseofCanvas                     = "w3-theme-l4"
   colorBaseofPanel                      = "w3-theme-l2"
+  colorDisqusButton                     = "w3-theme-l3"
   colorTaxonomyPanel                    = "w3-theme-l2"
   colorTaxonomyCell                     = "w3-theme-l4"
   colorTaxonomyCard                     = "w3-theme-l3"
@@ -363,6 +361,15 @@ consectetuer adipiscing
   # Enable the contact form by entering your Formspree.io email
   formspree = "formspree.io"
   email     = "info@example.com"
+
+  # disqus (theme)
+  # ##############################
+
+  # used in partials/blog.disqus-button.html 
+  # set to true, if you want to show the count of comments
+  # fires a async request to disqus.com/count.js
+  disqusButtonShowCount = false
+
 
   # date format (blog) is created using:
   #  layouts/partials/main.blog.date.html
