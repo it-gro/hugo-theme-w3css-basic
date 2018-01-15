@@ -5,8 +5,7 @@
   <button id="disqus-show-comments" class="w3-button {{ default `w3-theme-l3` ($.Site.Param `colorDisqusButton`)}}"  type="button" onclick="disqusShowComments()">
     {{- default "Show" (i18n "Show") }}&nbsp;
     {{- if $.Site.Param `disqusButtonShowCount` }}
-      {{/* <span class="disqus-comment-count" data-disqus-url="{{ trim .Permalink "/" }}"></span> */}}
-		  <span class="disqus-comment-count" data-disqus-url="http://localhost:1313/blog/2017/12/06/rz-wankdorf/"></span>
+      <span class="disqus-comment-count" data-disqus-url="{{ trim .Permalink "/" }}"></span>
     {{- else }}
       {{- default "comments" (i18n "Comments") }}
     {{- end }} {{/* disqusButtonShowCount */}}
@@ -42,7 +41,6 @@
 </script>
 
 {{- /* <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> */}}
-
 {{- end }}
 
 {{- /* emacs                 */}}
