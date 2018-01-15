@@ -64,6 +64,7 @@ It includes resources from:
 * [Shortcodes](#shortcodes)
 * [Showcase](#showcase)
 * [Gallery](#gallery)
+* [Figure](#figure)
 * [Usage](#usage)
   * [Minifier](#minifier)
 * [Workarounds](#workarounds)
@@ -498,7 +499,7 @@ In this theme we set
 * Hugo ships with an internal Disqus template: https://gohugo.io/content-management/comments/
 * I wanted:
   * a button the user has to click to show the comments
-  * configure whether the comment count is show on the button or not (disqus.com/count.js)
+  * configure whether the comment count is shown on the button or not (disqus.com/count.js)
 * I took some ideas from  https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
 
 
@@ -1006,9 +1007,9 @@ pygmentsUseClasses            = true
 
 * the google translate widget is not shown:
   * on small displays
-  * on the home page if googleTranslateShowOnHome is set to false   
-    (Google PageSpeed complains, google bot gets confused)
-* set googleTranslateEnable to false to disable globaly
+  * on the home page - if googleTranslateShowOnHome is set to false   
+    (Google PageSpeed complains, Google bot gets confused)
+* set googleTranslateEnable to false in order to disable google translate globaly
 
 
 `layouts/partials/header.nav.html`
@@ -1269,6 +1270,7 @@ categories:
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
 
 
+
 `content/pages/showcase/gallery-01.md`
 ```
 ---
@@ -1286,6 +1288,32 @@ categories:
 {{< heg-load-photoswipe >}}
 {{< heg-gallery dir="/images/photocards/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
 ```
+
+## Figure
+
+```
+{{</* heg-load-photoswipe >}}
+{{< heg-figure link="/images/photocards/pixabay.com/04-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com" >}}
+```
+
+* `{{< heg-figure .. >}}` improves the usage of `title caption attr attrlink` which are all optional
+
+```
+caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com"
+```
+
+* Shown on page
+
+![screenshot Figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_342.jpg)
+
+
+* Shown with PhotoSwipe
+
+![screenshot Figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_344.jpg)
+
+
+* See  https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#heg-figure for more examples
+
 
 ## Usage
 
@@ -1357,7 +1385,7 @@ This is also why I tried to minimize the external url's and copied all
 into the theme (`static/vendor/`*).
 
 
-### minimize visitors tracking footprint
+### minimize visitors exposure to tracking
 
 * disable menu.topbar search (google custom search)
 * disable google fonts apis
@@ -1374,9 +1402,9 @@ into the theme (`static/vendor/`*).
 #  pre      = "fas fa-search"
 
 [params]
-  fontsUseGoogleApis    = false
-  # latitude         = 
-  # longitude        = 
+  fontsUseGoogleApis = false
+  # latitude  = 
+  # longitude = 
   formspree = ""
   email     = "info@example.com"
 

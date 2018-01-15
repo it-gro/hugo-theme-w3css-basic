@@ -1,6 +1,6 @@
 ---
 title:       "Emacs Jokes"
-date:        2017-09-10T20:00:00+01:00
+date:        1985-03-20T20:00:00+01:00
 tags:
  - editor
  - emacs
