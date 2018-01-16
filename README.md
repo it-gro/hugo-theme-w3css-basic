@@ -372,10 +372,10 @@ data/testimonials/
 `01-testimonial.yaml`
 ```
 weight:      1
-name: 	     "John Doe"
+name:        "John Doe"
 position:    "CEO, Takimata"
 avatar:      "images/testimonials/pixabay.com/person-1.jpg"
-text: 	     | 
+text:        | 
   Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
   suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
   vel eum iriure dolor in hendrerit in vulputate velit esse molestie
@@ -415,7 +415,7 @@ data/clients/
 weight: 1
 name:   "customer-1"
 image:  "images/clients/pixabay.com/company-logo-1.png"
-url:    "http://www.customer1.com"
+url:    "http://www.example.com"
 ```
 
 
@@ -439,10 +439,12 @@ ultricies eget, tempor sit amet, ante
 
 ```
 content/blog/
+├── 1985
+│   └── 03
+│       └── emacs-jokes.md
 └── 2017
     ├── 09
-    │   ├── emacs-it-all-starts-here.md
-    │   └── emacs-jokes.md
+    │   └── emacs-it-all-starts-here.md
     ├── 10
     │   └── golang-a-closer-look.md
     └── 11
@@ -1375,6 +1377,7 @@ into the theme (`static/vendor/`*).
 * disable google fonts apis
 * disable google maps
 * disable formspree (but keep your email)
+* do not show a comment counter on the Disqus Button
 * disable google translate
 * review result e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
 
@@ -1391,6 +1394,7 @@ into the theme (`static/vendor/`*).
   # longitude = 
   formspree = ""
   email     = "info@example.com"
+  disqusButtonShowCount = false
 
 [params.menuTopBar]
   googleTranslateEnable = false
@@ -1430,11 +1434,11 @@ They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-
 * www.w3schools.com for creating the free to use W3.CSS CSS framework.
 
 * the contributors to any of                            
-  https://fontawesome.com/icons/					    
-  https://owlcarousel2.github.io/OwlCarousel2/		    
-  https://daneden.me/animate						    
-  https://github.com/liwenyip/hugo-easy-gallery/	    
-  http://photoswipe.com								    
+  https://fontawesome.com/icons/                        
+  https://owlcarousel2.github.io/OwlCarousel2/          
+  https://daneden.me/animate                            
+  https://github.com/liwenyip/hugo-easy-gallery/        
+  http://photoswipe.com                                 
   https://pixabay.com                                   
   for all their work
   

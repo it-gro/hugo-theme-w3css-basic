@@ -2,22 +2,12 @@
 
 # ##################################################
 # Hugo-defined variables
-# set params.uglyURLs false (see below)
 baseURL       = "http://example.com"
-#default:
-#relativeURLs  = false
-#uglyURLs      = false
-
-# config for local filesystem destination (no webserver):
-# set params.uglyURLs true (see below)
-#baseURL       = ""
-#relativeURLs  = true
-#uglyURLs      = true 
 
 title         = "hugo-theme-w3css-basic exampleSite"
 theme         = "hugo-theme-w3css-basic"
-#languageCode  = "de-ch"
 languageCode  = "en-us"
+#languageCode  = "de-ch"
 
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "en"
@@ -71,9 +61,9 @@ pygmentsUseClasses            = true
 #pygmentsStyle = "vs"
 
 
+
 # ##################################################
 # Theme-defined configuration
-
 
 # ##################################################
 # hugo sections
@@ -384,6 +374,7 @@ consectetuer adipiscing
 
 
 # ##################################################
+# theme sections
 # more theme defined params
 
 [params.marquee]
@@ -498,11 +489,16 @@ ultricies eget, tempor sit amet, ante
              '''
 
 # ##################################################
+# other sections
+
 [blackfriday]
-  #extensions = ["hardLineBreak"]
+  # https://gohugo.io/getting-started/configuration/#blackfriday-options
+  # https://gohugo.io/getting-started/configuration/#blackfriday-extensions
   # https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
   # http://commonmark.org/
   # http://spec.commonmark.org/0.28/
+  # extensions = ["hardLineBreak"]
+
 
 # emacs
 # Local variables:
