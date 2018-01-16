@@ -1404,6 +1404,9 @@ into the theme (`static/vendor/`*).
 
 ## ToDo's
 
+* complete uglyURLs (e.g. submenu) + doc
+* review favicons (remove from theme ?); https://discourse.gohugo.io/t/should-themes-include-favicons/10033
+
 
 ## Contributing
 
