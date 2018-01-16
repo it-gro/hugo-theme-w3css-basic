@@ -69,7 +69,7 @@ It includes resources from:
   * [Minifier](#minifier)
 * [Workarounds](#workarounds)
    * [summaryLength](#summarylength)
-   * [Shortcode output wrapped in <p>](#shortcode-output-wrapped-in-)
+   * [Shortcode output wrapped in &lt;p&gt;](#shortcode-output-wrapped-in-p)
 * [Tracking](#tracking)
 * [ToDo's](#todos)
 * [Contributing](#contributing)
@@ -1404,7 +1404,7 @@ into the theme (`static/vendor/`*).
 
 ## ToDo's
 
-* complete uglyURLs (e.g. submenu) + doc
+* complete uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
 * review favicons (remove from theme ?); https://discourse.gohugo.io/t/should-themes-include-favicons/10033
 
 
