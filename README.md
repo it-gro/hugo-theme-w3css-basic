@@ -536,6 +536,8 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
 
 
 
+Hook:
+
 `layouts/blog/single.html`
 ```
 {{ define "blog-disqus" }}
@@ -543,30 +545,7 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
 {{ end }}
 ```
 
-`layouts/partials/blog.disqus-button.html`
-```
-{{ `<!-- partials/disqus-button.html  -->` | safeHTML }}
-{{- if .Site.DisqusShortname }}
-<div class="disqus-comments">
-  <button id="disqus-show-comments" class="w3-button {{ default `w3-theme-l3` ($.Site.Param `colorDisqusButton`)}}"  type="button" onclick="disqusShowComments()">
-    {{- default "Show" (i18n "Show") }}&nbsp;
-    {{- if $.Site.Param `disqusButtonShowCount` }}
-      {{ <span class="disqus-comment-count" data-disqus-url="{{ trim .Permalink "/" }}"></span> }}
-    {{- else }}
-      {{- default "comments" (i18n "Comments") }}
-    {{- end }} {{/* disqusButtonShowCount */}}
-      <span class="w3-small">({{ default "via" (i18n "disqusVia") }})</span>
-      <noscript>
-       <br/>{{ default "no JavaScript" (i18n "JsNeeded") }}
-      </noscript>
-  </button>
-  <div id="disqus_thread"></div>
-</div>
-
-{{- if $.Site.Param `disqusButtonShowCount` }}
-<script id="dsq-count-scr" src="//{{.Site.DisqusShortname}}.disqus.com/count.js" async></script>
-{{- end }} {{/* disqusButtonShowCount */}}
-```
+=> review `layouts/partials/blog.disqus-button.html`
 
 
 ### Pages
