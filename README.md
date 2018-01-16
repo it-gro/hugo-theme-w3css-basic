@@ -1404,7 +1404,7 @@ into the theme (`static/vendor/`*).
 
 ## ToDo's
 
-* complete uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
+* finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
 * review favicons (remove from theme ?); https://discourse.gohugo.io/t/should-themes-include-favicons/10033
 
 
