@@ -69,7 +69,7 @@ It includes resources from:
   * [Minifier](#minifier)
 * [Workarounds](#workarounds)
    * [summaryLength](#summarylength)
-   * [Shortcode output wrapped in <p>](#shortcode-output-wrapped-in-)
+   * [Shortcode output wrapped in &lt;p&gt;](#shortcode-output-wrapped-in-p)
 * [Tracking](#tracking)
 * [ToDo's](#todos)
 * [Contributing](#contributing)
@@ -372,10 +372,10 @@ data/testimonials/
 `01-testimonial.yaml`
 ```
 weight:      1
-name: 	     "John Doe"
+name:        "John Doe"
 position:    "CEO, Takimata"
 avatar:      "images/testimonials/pixabay.com/person-1.jpg"
-text: 	     | 
+text:        | 
   Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
   suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
   vel eum iriure dolor in hendrerit in vulputate velit esse molestie
@@ -415,7 +415,7 @@ data/clients/
 weight: 1
 name:   "customer-1"
 image:  "images/clients/pixabay.com/company-logo-1.png"
-url:    "http://www.customer1.com"
+url:    "http://www.example.com"
 ```
 
 
@@ -439,10 +439,12 @@ ultricies eget, tempor sit amet, ante
 
 ```
 content/blog/
+├── 1985
+│   └── 03
+│       └── emacs-jokes.md
 └── 2017
     ├── 09
-    │   ├── emacs-it-all-starts-here.md
-    │   └── emacs-jokes.md
+    │   └── emacs-it-all-starts-here.md
     ├── 10
     │   └── golang-a-closer-look.md
     └── 11
@@ -534,6 +536,8 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
 
 
 
+Hook:
+
 `layouts/blog/single.html`
 ```
 {{ define "blog-disqus" }}
@@ -541,30 +545,7 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
 {{ end }}
 ```
 
-`layouts/partials/blog.disqus-button.html`
-```
-{{ `<!-- partials/disqus-button.html  -->` | safeHTML }}
-{{- if .Site.DisqusShortname }}
-<div class="disqus-comments">
-  <button id="disqus-show-comments" class="w3-button {{ default `w3-theme-l3` ($.Site.Param `colorDisqusButton`)}}"  type="button" onclick="disqusShowComments()">
-    {{- default "Show" (i18n "Show") }}&nbsp;
-    {{- if $.Site.Param `disqusButtonShowCount` }}
-      {{ <span class="disqus-comment-count" data-disqus-url="{{ trim .Permalink "/" }}"></span> }}
-    {{- else }}
-      {{- default "comments" (i18n "Comments") }}
-    {{- end }} {{/* disqusButtonShowCount */}}
-      <span class="w3-small">({{ default "via" (i18n "disqusVia") }})</span>
-      <noscript>
-       <br/>{{ default "no JavaScript" (i18n "JsNeeded") }}
-      </noscript>
-  </button>
-  <div id="disqus_thread"></div>
-</div>
-
-{{- if $.Site.Param `disqusButtonShowCount` }}
-<script id="dsq-count-scr" src="//{{.Site.DisqusShortname}}.disqus.com/count.js" async></script>
-{{- end }} {{/* disqusButtonShowCount */}}
-```
+=> review `layouts/partials/blog.disqus-button.html`
 
 
 ### Pages
@@ -845,6 +826,18 @@ pygmentsUseClasses            = true
 #pygmentsStyle = "vim"
 #pygmentsStyle = "vs"
 ```
+
+
+
+    {{< highlight perl "linenos=table,hl_lines=5 7-8 21,linenostart=1" >}}
+    #!/usr/bin/perl
+    ...
+    {{< /highlight >}}
+
+=> https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/code-01/ 
+
+
+
 
 
 ### Menu
@@ -1369,12 +1362,13 @@ This is also why I tried to minimize the external url's and copied all
 into the theme (`static/vendor/`*).
 
 
-### minimize visitors exposure to tracking
+### How to minimize visitors exposure to tracking
 
 * disable menu.topbar search (google custom search)
 * disable google fonts apis
 * disable google maps
 * disable formspree (but keep your email)
+* do not show a comment counter on the Disqus Button
 * disable google translate
 * review result e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
 
@@ -1391,6 +1385,7 @@ into the theme (`static/vendor/`*).
   # longitude = 
   formspree = ""
   email     = "info@example.com"
+  disqusButtonShowCount = false
 
 [params.menuTopBar]
   googleTranslateEnable = false
@@ -1399,6 +1394,9 @@ into the theme (`static/vendor/`*).
 
 
 ## ToDo's
+
+* finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
+* review favicons (remove from theme ?); https://discourse.gohugo.io/t/should-themes-include-favicons/10033
 
 
 ## Contributing
@@ -1430,11 +1428,11 @@ They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-
 * www.w3schools.com for creating the free to use W3.CSS CSS framework.
 
 * the contributors to any of                            
-  https://fontawesome.com/icons/					    
-  https://owlcarousel2.github.io/OwlCarousel2/		    
-  https://daneden.me/animate						    
-  https://github.com/liwenyip/hugo-easy-gallery/	    
-  http://photoswipe.com								    
+  https://fontawesome.com/icons/                        
+  https://owlcarousel2.github.io/OwlCarousel2/          
+  https://daneden.me/animate                            
+  https://github.com/liwenyip/hugo-easy-gallery/        
+  http://photoswipe.com                                 
   https://pixabay.com                                   
   for all their work
   

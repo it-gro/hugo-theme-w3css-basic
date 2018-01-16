@@ -11,7 +11,7 @@ categories:
 ---
 
 
-{{< highlight perl "linenos=table,hl_lines=5 65,linenostart=1" >}}
+{{< highlight perl "linenos=table,hl_lines=5 7-8 21,linenostart=1" >}}
 #!/usr/bin/perl
 
 ##############################################################################
