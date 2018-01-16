@@ -849,6 +849,18 @@ pygmentsUseClasses            = true
 ```
 
 
+
+    {{< highlight perl "linenos=table,hl_lines=5 65,linenostart=1" >}}
+    #!/usr/bin/perl
+    ...
+    {{< /highlight >}}
+
+=> https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/code-01/ 
+
+
+
+
+
 ### Menu
 
 * Navbar "Long" (for medium or large displays)
