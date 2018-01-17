@@ -1180,6 +1180,8 @@ icon:        "fas fa-list"
   <meta name="theme-color"                       content="{{default `#ffffff` $.Site.Params.favicon.themeColor }}" />
 ```
 
+So you need at least these files in your project:
+
 ```
 static/images/favicons/
 ├── android-chrome-192x192.png
