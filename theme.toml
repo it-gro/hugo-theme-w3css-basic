@@ -42,7 +42,7 @@ min_version    = "0.30.2"
 
 [author]
   name         = "Bruno Grossniklaus"
-  homepage     = "it-grossniklaus.ch"
+  homepage     = "https://github.com/it-gro/"
 
 # If porting an existing theme
 [original]
