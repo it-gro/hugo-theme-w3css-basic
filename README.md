@@ -1148,67 +1148,54 @@ icon:        "fas fa-list"
 
 ## Favicons
 
-* You may want to use https://realfavicongenerator.net to create **all** files.
+```toml
+[params.favicon]
+  # you may want to use https://realfavicongenerator.net to generate you files
+  # used in layouts/partials/head.favicon.html
+  # relURL is applied to path 
+  enable    = true
+  path      = "/images/favicons"
+  version   = "a_random_value"
+  maskIicon = "#5bbad5" 
+  tileColor = "#da532c" 
+  themeColor= "#ffffff" 
+```
+
 
 `layouts/partials/head.favicon.html`
 ```
-{{ `<!-- partials/head.favicon.html -->` | safeHTML }}
-{{- /*  <!-- Favicon and apple touch icons-->         */}} 
-{{- /*  <!-- use https://realfavicongenerator.net --> */}} 
-  <link rel="apple-touch-icon"      sizes="180x180" href="{{ relURL "/images/favicons/apple-touch-icon.png"       }}" />
-  <link rel="icon" type="image/png" sizes="32x32"   href="{{ relURL "/images/favicons/favicon-32x32.png"          }}" />
-  <link rel="icon" type="image/png" sizes="192x192" href="{{ relURL "/images/favicons/android-chrome-192x192.png" }}" />
-  <link rel="icon" type="image/png" sizes="16x16"   href="{{ relURL "/images/favicons/favicon-16x16.png"          }}" />
-  <link rel="manifest"                              href="{{ relURL "/images/favicons/manifest.json"              }}" />
-  <link rel="mask-icon"  color="#5bbad5"            href="{{ relURL "/images/favicons/safari-pinned-tab.svg"      }}" />
-  <link rel="shortcut icon"                         href="{{ relURL "/images/favicons/favicon.ico"                }}" />
-  <meta name="msapplication-TileImage"           content="{{ relURL "/images/favicons/mstile-144x144.png"         }}" />
-  <meta name="msapplication-config"              content="{{ relURL "/images/favicons/browserconfig.xml"          }}" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color"             content="#ffffff" />
+{{- $myFaviconVersion := default "a_random_value"   $.Site.Params.favicon.version }}
+{{- $myFaviconPath    := default "/images/favicons" $.Site.Params.favicon.path    }}
+  <link rel="apple-touch-icon"      sizes="180x180" href="{{(printf `%s/%s?v=%s` $myFaviconPath `apple-touch-icon.png`       $myFaviconVersion ) | relURL }}" />
+  <link rel="icon" type="image/png" sizes="16x16"   href="{{(printf `%s/%s?v=%s` $myFaviconPath `favicon-16x16.png`          $myFaviconVersion ) | relURL }}" />
+  <link rel="icon" type="image/png" sizes="192x192" href="{{(printf `%s/%s?v=%s` $myFaviconPath `android-chrome-192x192.png` $myFaviconVersion ) | relURL }}" />
+  <link rel="icon" type="image/png" sizes="32x32"   href="{{(printf `%s/%s?v=%s` $myFaviconPath `favicon-32x32.png`          $myFaviconVersion ) | relURL }}" />
+  <link rel="manifest"                              href="{{(printf `%s/%s?v=%s` $myFaviconPath `manifest.json`              $myFaviconVersion ) | relURL }}" />
+  <link rel="shortcut icon"                         href="{{(printf `%s/%s?v=%s` $myFaviconPath `favicon.ico`                $myFaviconVersion ) | relURL }}" />
+  <meta name="msapplication-TileImage"           content="{{(printf `%s/%s?v=%s` $myFaviconPath `mstile-144x144.png`         $myFaviconVersion ) | relURL }}" />
+  <meta name="msapplication-config"              content="{{(printf `%s/%s?v=%s` $myFaviconPath `browserconfig.xml`          $myFaviconVersion ) | relURL }}" />
+  <link rel="mask-icon"                             href="{{(printf `%s/%s?v=%s` $myFaviconPath `safari-pinned-tab.svg`      $myFaviconVersion ) | relURL }}"
+                                                   color="{{default `#5bbad5` $.Site.Params.favicon.maskIicon }}"  />
+  <meta name="msapplication-TileColor"           content="{{default `#da532c` $.Site.Params.favicon.tileColor }}"  />
+  <meta name="theme-color"                       content="{{default `#ffffff` $.Site.Params.favicon.themeColor }}" />
 ```
 
 ```
 static/images/favicons/
-├── android-chrome-144x144.png
 ├── android-chrome-192x192.png
-├── android-chrome-256x256.png
-├── android-chrome-36x36.png
-├── android-chrome-48x48.png
-├── android-chrome-72x72.png
-├── android-chrome-96x96.png
-├── apple-touch-icon-114x114.png
-├── apple-touch-icon-114x114-precomposed.png
-├── apple-touch-icon-120x120.png
-├── apple-touch-icon-120x120-precomposed.png
-├── apple-touch-icon-144x144.png
-├── apple-touch-icon-144x144-precomposed.png
-├── apple-touch-icon-152x152.png
-├── apple-touch-icon-152x152-precomposed.png
-├── apple-touch-icon-180x180.png
-├── apple-touch-icon-180x180-precomposed.png
-├── apple-touch-icon-57x57.png
-├── apple-touch-icon-57x57-precomposed.png
-├── apple-touch-icon-60x60.png
-├── apple-touch-icon-60x60-precomposed.png
-├── apple-touch-icon-72x72.png
-├── apple-touch-icon-72x72-precomposed.png
-├── apple-touch-icon-76x76.png
-├── apple-touch-icon-76x76-precomposed.png
 ├── apple-touch-icon.png
-├── apple-touch-icon-precomposed.png
 ├── browserconfig.xml
 ├── favicon-16x16.png
 ├── favicon-32x32.png
 ├── favicon.ico
 ├── manifest.json
 ├── mstile-144x144.png
-├── mstile-150x150.png
-├── mstile-310x150.png
-├── mstile-310x310.png
-├── mstile-70x70.png
 └── safari-pinned-tab.svg
 ```
+
+
+* if `baseURL` containts paths (like http://example.com/foo/bar), you need to make sure, this path is also given in browserconfig.xml and manifest.json
+
 
 
 ## Shortcodes
