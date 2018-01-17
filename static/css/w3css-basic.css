@@ -1,4 +1,4 @@
- /* 
+ /*
     hugo-theme-w3css-basic styles
 */
 
@@ -7,22 +7,6 @@
 
 a.no-decoration {
   text-decoration: none !important;
-}
-
-#testimonials-title {
-  font-variant: small-caps;
-}
-
-#see_more_title {
-  font-variant: small-caps;
-}
-
-#recent_posts_title {
-  font-variant: small-caps;
-}
-
-#clients-title {
-  font-variant: small-caps;
 }
 
 .taxonomy-button {
@@ -85,8 +69,10 @@ th:first-child,td:first-child{padding-left:8px}
  100% { transform: translateX(-100%); }
 }
 
+
 /* -------------------------------------------------- */
 /* front.jumbotron.carousel */
+
 #section-jumbotron {
 }
 
@@ -223,13 +209,21 @@ th:first-child,td:first-child{padding-left:8px}
 /* -------------------------------------------------- */
 /* front.testimonials */
 
+#testimonials-title {
+  font-variant: small-caps;
+}
+
 /* -------------------------------------------------- */
 /* front.see_more */
+
+#see_more_title {
+  font-variant: small-caps;
+}
 
 #see_more_background {
   background: url('../images/backgrounds/see_more_background.jpg') center top no-repeat;
 
-  background-color:      rgba(100,100,100, 0.9); 
+  background-color:      rgba(100,100,100, 0.9);
   background-blend-mode: darken;
 
   background-attachment: scroll;
@@ -241,8 +235,16 @@ th:first-child,td:first-child{padding-left:8px}
 /* -------------------------------------------------- */
 /* front.recent_posts */
 
+#recent_posts_title {
+  font-variant: small-caps;
+}
+
 /* -------------------------------------------------- */
 /* front.clients */
+
+#clients-title {
+  font-variant: small-caps;
+}
 
 /* -------------------------------------------------- */
 /* contact */
@@ -265,7 +267,7 @@ figure img {
 }
 
 .fancy-figure.caption-position-bottom figcaption footer a {
-	position:relative;
+  position:relative;
 }
 
 figure figcaption a {
@@ -274,11 +276,11 @@ figure figcaption a {
   /* text-decoration: none; */
 }
 
-.gallery figcaption, 
+.gallery figcaption,
 .fancy-figure figcaption {
   background: #000;
   color: #FFF;
-  font-size: 85%; 
+  font-size: 85%;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0.9;
 }
@@ -297,7 +299,7 @@ figure figcaption a {
   float: left;
   position: relative;
   width: 100%;
-  padding-bottom: 100%; 
+  padding-bottom: 100%;
 }
 
 @media only screen and (min-width : 365px) {
@@ -377,20 +379,12 @@ pre.w3-code, span.w3-codespan{
 
 /* wfor w3-code and chroma styles */
 pre.w3-code, pre.chroma {
-  border-radius:4px;  
+  border-radius:4px;
   padding: 0 3px 0 3px;
   border: 1px solid;
   overflow: auto;
 }
 
-/* .pswp__caption a */
-/* , .pswp__caption small a */
-/* , .pswp__caption__center a { */
-/*   color: #CCC; */
-/* } */
-
-
-</style>
 /* ------------------------------------------------------------------------------ */
 /* -- Local variables:      */
 /* -- tab-width:         2  */
