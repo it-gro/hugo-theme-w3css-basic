@@ -306,7 +306,8 @@ consectetuer adipiscing
   # ##############################
 
   # used in layouts/partials/head.html
-  fontsUseGoogleApis=false
+  # use true for https://themes.gohugo.io/hugo-theme-w3css-basic
+  fontsUseGoogleApis=true
 
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
