@@ -8,6 +8,7 @@ quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exam
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
 This theme is for:
+
 * Landing pages 
 * Blogs
 * Pages (not blog) in a directory structure with simple navigation (Top/Up/Down & pages on this level)
@@ -15,6 +16,7 @@ This theme is for:
 
 
 It includes resources from:
+
 * https://www.w3schools.com/w3css/
 * https://fontawesome.com/icons/
 * https://owlcarousel2.github.io/OwlCarousel2/
@@ -171,6 +173,7 @@ At [info@example.com](mailto:info@example.com) vero eos et **accusam**
 et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
              '''
 ```
+
 * Marquee text from right to left
 
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
@@ -334,6 +337,7 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
 
 
 * The background image is defined in `/static/css/w3css-basic.css`:
+
 ```css
 /* -------------------------------------------------- */
 /* front.see_more */
@@ -454,7 +458,8 @@ content/blog/
         └── hugo-lorem.md
 ```
 
-`hugo-highlight-chromastyles.md`
+`hugo-highlight-chromastyles.md`:
+
 ```
 ---
 title:       "Hugo - **highlight** :art:"
@@ -484,6 +489,7 @@ In this theme we set
 * Long version in article
 `{{- .Date.Day}}. {{default .Date.Month (i18n .Date.Month)}} {{.Date.Year -}}`
 * provide the translation in i18n/*.yaml
+
 ```yaml
 - id: January
   translation: "Januar"
@@ -494,15 +500,16 @@ In this theme we set
 
 ![screenshot Blog Entry](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_240.jpg)
 
-#### Disqus
 
-![screenshot Blog Disqus Open](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_380.jpg)
+#### Disqus
 
 * Hugo ships with an internal Disqus template: https://gohugo.io/content-management/comments/
 * I wanted:
   * a button the user has to click to show the comments
   * configure whether the comment count is shown on the button or not (disqus.com/count.js)
 * I took some ideas from  https://discourse.gohugo.io/t/delaying-disqus-comments-to-save-a-ton-of-requests/6847
+
+![screenshot Blog Disqus Open](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_380.jpg)
 
 
 ```toml
@@ -1256,7 +1263,7 @@ categories:
 ## Figure
 
 ```
-{{</* heg-load-photoswipe >}}
+{{< heg-load-photoswipe >}}
 {{< heg-figure link="/images/photocards/pixabay.com/04-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com" >}}
 ```
 
