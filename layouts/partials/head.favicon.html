@@ -14,8 +14,8 @@
   <meta name="msapplication-TileImage"           content="{{(printf `%s/%s?v=%s` $myFaviconPath `mstile-144x144.png`         $myFaviconVersion ) | relURL }}" />
   <meta name="msapplication-config"              content="{{(printf `%s/%s?v=%s` $myFaviconPath `browserconfig.xml`          $myFaviconVersion ) | relURL }}" />
   <link rel="mask-icon"                             href="{{(printf `%s/%s?v=%s` $myFaviconPath `safari-pinned-tab.svg`      $myFaviconVersion ) | relURL }}"
-                                                   color="{{default `#5bbad5` $.Site.Params.favicon.maskIicon }}"  />
-  <meta name="msapplication-TileColor"           content="{{default `#da532c` $.Site.Params.favicon.tileColor }}"  />
+                                                   color="{{default `#5bbad5` $.Site.Params.favicon.maskIcon }}"   />
+  <meta name="msapplication-TileColor"           content="{{default `#da532c` $.Site.Params.favicon.msapplicationTileColor }}"  />
   <meta name="theme-color"                       content="{{default `#ffffff` $.Site.Params.favicon.themeColor }}" />
 {{- end }} {{/* .Site.Params.favicon.enable  */}}
 {{- end }} {{/* isset  */}}

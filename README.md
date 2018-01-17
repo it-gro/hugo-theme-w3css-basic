@@ -1150,15 +1150,15 @@ icon:        "fas fa-list"
 
 ```toml
 [params.favicon]
-  # you may want to use https://realfavicongenerator.net to generate you files
+  # you may want to use https://realfavicongenerator.net to generate your files
   # used in layouts/partials/head.favicon.html
   # relURL is applied to path 
   enable    = true
   path      = "/images/favicons"
   version   = "a_random_value"
-  maskIicon = "#5bbad5" 
-  tileColor = "#da532c" 
-  themeColor= "#ffffff" 
+  maskIcon  = "#5bbad5"
+  tileColor = "#da532c"
+  themeColor= "#ffffff"
 ```
 
 
