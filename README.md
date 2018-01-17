@@ -1153,12 +1153,12 @@ icon:        "fas fa-list"
   # you may want to use https://realfavicongenerator.net to generate your files
   # used in layouts/partials/head.favicon.html
   # relURL is applied to path 
-  enable    = true
-  path      = "/images/favicons"
-  version   = "a_random_value"
-  maskIcon  = "#5bbad5"
-  tileColor = "#da532c"
-  themeColor= "#ffffff"
+  enable                 = false
+  path                   = "/images/favicons"
+  version                = "a_random_value"
+  maskIcon               = "#5bbad5"
+  msapplicationTileColor = "#da532c"
+  themeColor             = "#ffffff"
 ```
 
 
@@ -1175,8 +1175,8 @@ icon:        "fas fa-list"
   <meta name="msapplication-TileImage"           content="{{(printf `%s/%s?v=%s` $myFaviconPath `mstile-144x144.png`         $myFaviconVersion ) | relURL }}" />
   <meta name="msapplication-config"              content="{{(printf `%s/%s?v=%s` $myFaviconPath `browserconfig.xml`          $myFaviconVersion ) | relURL }}" />
   <link rel="mask-icon"                             href="{{(printf `%s/%s?v=%s` $myFaviconPath `safari-pinned-tab.svg`      $myFaviconVersion ) | relURL }}"
-                                                   color="{{default `#5bbad5` $.Site.Params.favicon.maskIicon }}"  />
-  <meta name="msapplication-TileColor"           content="{{default `#da532c` $.Site.Params.favicon.tileColor }}"  />
+                                                   color="{{default `#5bbad5` $.Site.Params.favicon.maskIcon }}"   />
+  <meta name="msapplication-TileColor"           content="{{default `#da532c` $.Site.Params.favicon.msapplicationTileColor }}"  />
   <meta name="theme-color"                       content="{{default `#ffffff` $.Site.Params.favicon.themeColor }}" />
 ```
 
