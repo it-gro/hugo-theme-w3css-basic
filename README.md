@@ -1197,7 +1197,7 @@ static/images/favicons/
 ```
 
 
-* if `baseURL` containts paths (like http://example.com/foo/bar) you
+* if `baseURL` containts paths (like example.com/foo/bar) you
   need to make sure this path is also given in browserconfig.xml and
   manifest.json
 
