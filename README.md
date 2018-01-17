@@ -1388,7 +1388,6 @@ into the theme (`static/vendor/`*).
 ## ToDo's
 
 * finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
-* review favicons (remove from theme ?); https://discourse.gohugo.io/t/should-themes-include-favicons/10033
 
 
 ## Contributing
