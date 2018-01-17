@@ -1180,6 +1180,7 @@ icon:        "fas fa-list"
   <meta name="theme-color"                       content="{{default `#ffffff` $.Site.Params.favicon.themeColor }}" />
 ```
 
+
 So you need at least these files in your project:
 
 ```
@@ -1196,7 +1197,9 @@ static/images/favicons/
 ```
 
 
-* if `baseURL` containts paths (like http://example.com/foo/bar), you need to make sure, this path is also given in browserconfig.xml and manifest.json
+* if `baseURL` containts paths (like http://example.com/foo/bar) you
+  need to make sure this path is also given in browserconfig.xml and
+  manifest.json
 
 
 
