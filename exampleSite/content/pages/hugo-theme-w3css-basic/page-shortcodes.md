@@ -713,3 +713,104 @@ in {{< w3-codespan >}}i18n/en.yaml{{< /w3-codespan >}}
 * taken from https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
 
 {{< asciicast WJM2LEZQs8VRhNeuZ5NiGPp9I >}}
+
+
+# Experimental
+
+## lkti: Lookup by Title
+
+* **l**oo**k** **b**y **Ti**tle
+* hugo has build in shortcodes [ref](https://gohugo.io/functions/ref) and [relref](https://gohugo.io/functions/relref): https://gohugo.io/content-management/shortcodes/
+* These shortcodes will look up the pages by their relative path
+  (e.g., blog/post.md) or their logical name (post.md)
+* I created a shortcode to get a (list) of pages by their **Title**
+* search can be done with [eq](https://gohugo.io/functions/eq) (which
+  is default) or [in](https://gohugo.io/functions/in) (substring)
+
+{{< highlight text >}}
+Argument | Position -1 | Default | What             | Remark
+---------|-------------|---------|------------------|-------
+search   | 0           |         | string to search |
+op       | 1           | eq      | eq|in            |
+mod      | 2           |         | i                | (Modifier) i:ignore case
+ul       | 3           |         |                  | if not empty: create unordered list
+type     | 4           | regular | regular|all      | regular:$.Site.RegularPages  all:$.Site.Pages)
+ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
+{{< /highlight >}}
+
+
+* An easy and short usage would be:
+
+{{< highlight nolang >}}
+See more here: {{</* lkti "Vestibulum" */>}}
+{{< /highlight >}}
+
+See more here: {{< lkti "Vestibulum" >}}
+
+* Here are more examples with **eq** operator
+
+Shortcode                                                      | Result
+---------------------------------------------------------------|--------------------------------
+lkti search="Vestibulum"                                       | {{< lkti search="Vestibulum"                                       >}}
+lkti search="Vestibulum" type="regular" op="eq"                | {{< lkti search="Vestibulum" type="regular" op="eq"                >}}
+lkti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" | {{< lkti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" >}}
+lkti search="VeSTIBULUM"                        mod="i" ul="1" | {{< lkti search="VeSTIBULUM"                        mod="i" ul="1" >}}
+lkti search="Phasellus"  type="all"                     ul="1" | {{< lkti search="Phasellus"  type="all"                     ul="1" >}}
+lkti search="Phasellus"  type="all" ofm=".Title"        ul="1" | {{< lkti search="Phasellus"  type="all" ofm=".Title"        ul="1" >}}
+lkti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" | {{< lkti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" >}}
+lkti search="Phasellus"  type="all" ofm=".RelPermalink"        | {{< lkti search="Phasellus"  type="all" ofm=".RelPermalink"        >}}
+
+
+* Here are some examples with **in** operator
+
+Shortcode                                                                   | Result
+----------------------------------------------------------------------------|--------------------------------
+lkti op="in" search="theme"                                                 | {{< lkti op="in" search="theme"                                                         >}}
+lkti op="in" search="theme"                                  mod="i" ul="1" | {{< lkti op="in" search="theme"                                  mod="i" ul="1"         >}}
+lkti op="in" search="theme"  type="all"                      mod="i" ul="1" | {{< lkti op="in" search="theme"  type="all"                      mod="i" ul="1"         >}}
+lkti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1" | {{< lkti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1"         >}}
+lkti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1" | {{< lkti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1"         >}}
+
+* With positional arguments:
+
+{{< highlight nolang >}}
+See more here: {{</* lkti "Vestibulum" "in" "i" "ul" */>}}
+{{< /highlight >}}
+
+See more here: {{< lkti "Vestibulum" "in" "i" "ul" >}}
+
+{{< highlight nolang >}}
+See more here: {{</* lkti "Vestibulum" "in" "" "ul" */>}}
+{{< /highlight >}}
+
+See more here: {{< lkti "Vestibulum" "in" "" "ul" >}}
+
+
+
+## lktx: Lookup in Taxonomy
+
+* this is case insentive
+
+{{< highlight text >}}
+Argument | Position -1 | Default | What             | Remark
+---------|-------------|---------|------------------|-------
+search   | 0           |         | string to search | in the taxonomy (of the term below)
+term     | 1           | tags    | term             | a valid taxonomy term
+ofm      | 2           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
+{{< /highlight >}}
+
+* An easy and short usage would be:
+
+{{< highlight nolang >}}
+See more here: {{</* lktx "go" */>}}
+{{< /highlight >}}
+
+See more here: {{< lktx "Go" >}}
+
+Shortcode                                                | Result
+---------------------------------------------------------|--------------------------------
+lktx                   search="web"                      | {{< lktx                   search="web"                     >}}
+lktx term="tags"       search="web"                      | {{< lktx term="tags"       search="web"                     >}}
+lktx term="categories" search="web"                      | {{< lktx term="categories" search="web"                     >}}
+lktx                   search="web" ofm=".Kind .Title"   | {{< lktx                   search="web" ofm=".Kind .Title"  >}}
+lktx                   search="web" ofm=".RelPermalink"  | {{< lktx                   search="web" ofm=".RelPermalink" >}}

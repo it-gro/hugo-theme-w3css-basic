@@ -1,0 +1,76 @@
+{{/* https://github.com/it-gro/hugo-theme-w3css-basic */}}
+{{- if .IsNamedParams }}
+  {{- $.Scratch.Set "theString"       (.Get "search"    | default ""        )}}
+  {{- $.Scratch.Set "theOperator"     (.Get "op"        | default "eq"      )}}
+  {{- $.Scratch.Set "theModifiers"    (.Get "mod"       | default ""        )}}
+  {{- $.Scratch.Set "theHtmlList"     (.Get "ul"        | default ""        )}}
+  {{- $.Scratch.Set "theType"         (.Get "type"      | default "regular" )}}
+  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ".Title"  )}}
+{{- else }}
+  {{- if gt (len .Params) 0 }} {{$.Scratch.Set "theString"     (.Get 0) }} {{else}} {{$.Scratch.Set "theString"    ""        }} {{end}}
+  {{- if gt (len .Params) 1 }} {{$.Scratch.Set "theOperator"   (.Get 1) }} {{else}} {{$.Scratch.Set "theOperator"  "eq"      }} {{end}}
+  {{- if gt (len .Params) 2 }} {{$.Scratch.Set "theModifiers"  (.Get 2) }} {{else}} {{$.Scratch.Set "theModifiers" ""        }} {{end}}
+  {{- if gt (len .Params) 3 }} {{$.Scratch.Set "theHtmlList"   (.Get 3) }} {{else}} {{$.Scratch.Set "theHtmlList"  ""        }} {{end}}
+  {{- if gt (len .Params) 4 }} {{$.Scratch.Set "theType"       (.Get 4) }} {{else}} {{$.Scratch.Set "theType"      "regular" }} {{end}}
+  {{- if gt (len .Params) 5 }} {{$.Scratch.Set "theOutFormat"  (.Get 5) }} {{else}} {{$.Scratch.Set "theOutFormat" ".Title"  }} {{end}}
+{{- end }}
+
+{{- if isset .Site.Params (lower "debug" ) }}
+{{- if .Site.Params.debug }}
+<br/>
+"theString"   : {{- $.Scratch.Get "theString"    }} <br/>
+"theOperator" : {{- $.Scratch.Get "theOperator"  }} <br/>
+"theModifiers": {{- $.Scratch.Get "theModifiers" }} <br/>
+"theHtmlList" : {{- $.Scratch.Get "theHtmlList"  }} <br/>
+"theType"     : {{- $.Scratch.Get "theType"      }} <br/>
+"theOutFormat": {{- $.Scratch.Get "theOutFormat" }} <br/>
+{{- end }}
+{{- end }}
+
+{{- if $.Scratch.Get "theHtmlList" }}<ul>{{end}}
+{{- if eq "regular" ($.Scratch.Get "theType") }}
+  {{- range $.Site.RegularPages }}
+    {{- if ($.Scratch.Get "theOperator") | eq "eq" }}
+      {{- if or (eq .Title ($.Scratch.Get "theString"  )) (and (eq "i" ($.Scratch.Get "theModifiers"))   (eq (lower .Title) (lower ($.Scratch.Get "theString")) ) )   }}
+      {{- if $.Scratch.Get "theHtmlList" }}<li>{{end}}
+        <a href="{{.URL}}">{{.Title}}</a>&nbsp;
+      {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
+      {{- end }}
+    {{- end }}
+    {{- if ($.Scratch.Get "theOperator") | eq "in" }}
+      {{- if or (in .Title ($.Scratch.Get "theString"  )) (and (eq "i" ($.Scratch.Get "theModifiers"))   (in (lower .Title) (lower ($.Scratch.Get "theString")) ) )   }}
+      {{- if $.Scratch.Get "theHtmlList" }}<li>{{end}}
+        <a href="{{.URL}}">{{.Title}}</a>&nbsp;
+      {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- if eq "all" ($.Scratch.Get "theType") }}
+  {{- range $.Site.Pages }}
+    {{- if ($.Scratch.Get "theOperator") | eq "eq" }}
+      {{- if or (eq .Title ($.Scratch.Get "theString"  )) (and (findRE "i" ($.Scratch.Get "theModifiers"))   (eq (lower .Title) (lower ($.Scratch.Get "theString")) ) )   }}
+      {{- if $.Scratch.Get "theHtmlList" }}<li>{{end}}
+        <a href="{{.URL}}">
+          {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
+          {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
+          {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title}}       {{end}}
+        </a>&nbsp;
+      {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
+      {{- end }}
+    {{- end }}
+    {{- if ($.Scratch.Get "theOperator") | eq "in" }}
+      {{- if or (in .Title ($.Scratch.Get "theString"  )) (and (findRE "i" ($.Scratch.Get "theModifiers"))   (in (lower .Title) (lower ($.Scratch.Get "theString")) ) )   }}
+      {{- if $.Scratch.Get "theHtmlList" }}<li>{{end}}
+        <a href="{{.URL}}">
+          {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
+          {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
+          {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title}}       {{end}}
+        </a>&nbsp;
+      {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- if $.Scratch.Get "theHtmlList" }}</ul>{{end}}

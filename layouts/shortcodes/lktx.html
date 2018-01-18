@@ -1,0 +1,34 @@
+{{/* https://github.com/it-gro/hugo-theme-w3css-basic */}}
+{{- if .IsNamedParams }}
+  {{- $.Scratch.Set "theString"       (.Get "search"    | default ""        )}}
+  {{- $.Scratch.Set "theTerm"         (.Get "term"      | default "tags"    )}}
+  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ".Title"  )}}
+  {{- $.Scratch.Set "theHtmlList"     (.Get "ul"                            )}}
+{{- else }}
+  {{- if gt (len .Params) 0 }} {{$.Scratch.Set "theString"     (.Get 0) }} {{else}} {{$.Scratch.Set "theString"    ""       }} {{end}}
+  {{- if gt (len .Params) 1 }} {{$.Scratch.Set "theTerm"       (.Get 1) }} {{else}} {{$.Scratch.Set "theTerm"      "tags"   }} {{end}}
+  {{- if gt (len .Params) 2 }} {{$.Scratch.Set "theOutFormat"  (.Get 2) }} {{else}} {{$.Scratch.Set "theOutFormat" ".Title" }} {{end}}
+  {{- if gt (len .Params) 3 }} {{$.Scratch.Set "theHtmlList"   (.Get 3) }}                                                    {{end}}
+{{- end }}
+
+{{- if isset .Site.Params (lower "debug" ) }}
+{{- if .Site.Params.debug }}
+<br/>
+"theTerm"     : {{- $.Scratch.Get "theTerm"      }} <br/>
+"theString"   : {{- $.Scratch.Get "theString"    }} <br/>
+"theOutFormat": {{- $.Scratch.Get "theOutFormat" }} <br/>
+"theHtmlList" : {{- $.Scratch.Get "theHtmlList"  }} <br/>
+{{- end }}
+{{- end }}
+
+{{- if $.Scratch.Get "theHtmlList" }}<ul>{{end}}
+  {{- with $.Site.GetPage "taxonomy" ($.Scratch.Get "theTerm") (lower ($.Scratch.Get "theString")) }}
+    {{- if $.Scratch.Get "theHtmlList" }}<li>{{end}}
+      <a href="{{.URL}}">
+        {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp{{end}}
+        {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
+        {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title}}       {{end}}
+      </a>&nbsp;
+    {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
+  {{- end }}
+{{- if $.Scratch.Get "theHtmlList" }}</ul>{{end}}

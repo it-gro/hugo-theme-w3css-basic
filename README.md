@@ -1222,9 +1222,10 @@ layouts/shortcodes/
 ├── heg-figure.html
 ├── heg-gallery.html
 ├── heg-load-photoswipe.html
-├── heg-load-photoswipe-theme.html
 ├── i18n.html
 ├── icon.html
+├── lkti.html
+├── lktx.html
 ├── w3-alert-icon.html
 ├── w3-badge.html
 ├── w3-button-icon.html
@@ -1234,6 +1235,11 @@ layouts/shortcodes/
 ├── w3-quote.html
 └── w3-tag.html
 ```
+
+* currently experimental are:
+  * [Lookup by Title](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#lkti-lookup-by-title)
+  * [Lookup in Taxonomy](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#lktx-lookup-in-taxonomy)
+
 
 ## Gallery
 * https://github.com/liwenyip/hugo-easy-gallery/
