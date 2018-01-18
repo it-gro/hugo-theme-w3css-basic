@@ -25,7 +25,7 @@
   {{- with $.Site.GetPage "taxonomy" ($.Scratch.Get "theTerm") (lower ($.Scratch.Get "theString")) }}
     {{- if $.Scratch.Get "theHtmlList" }}<li>{{end}}
       <a href="{{.URL}}">
-        {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp{{end}}
+        {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
         {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
         {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title}}       {{end}}
       </a>&nbsp;

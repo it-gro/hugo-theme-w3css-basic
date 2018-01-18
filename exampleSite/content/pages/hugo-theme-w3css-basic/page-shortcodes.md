@@ -779,9 +779,11 @@ See more here: {{</* lkti "Vestibulum" "in" "i" "ul" */>}}
 
 See more here: {{< lkti "Vestibulum" "in" "i" "ul" >}}
 
+
 {{< highlight nolang >}}
 See more here: {{</* lkti "Vestibulum" "in" "" "ul" */>}}
 {{< /highlight >}}
+
 
 See more here: {{< lkti "Vestibulum" "in" "" "ul" >}}
 
@@ -790,6 +792,7 @@ See more here: {{< lkti "Vestibulum" "in" "" "ul" >}}
 ## lktx: Lookup in Taxonomy
 
 * this is case insentive
+* ToDo: allow "in": currently just **eq** is implemented
 
 {{< highlight text >}}
 Argument | Position -1 | Default | What             | Remark
