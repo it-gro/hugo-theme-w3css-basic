@@ -42,7 +42,7 @@ features       = [
 min_version    = "0.30.2"
 
 [author]
-  name         = "Bruno Grossniklaus"
+  name         = "it-gro"
   homepage     = "https://github.com/it-gro/"
 
 # If porting an existing theme
