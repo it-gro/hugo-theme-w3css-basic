@@ -9,6 +9,7 @@ homepage       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
 tags           = [
                    "blog"
                  , "contact form"
+                 , "disqus"
                  , "font awesome"
                  , "gallery"
                  , "landing page"
