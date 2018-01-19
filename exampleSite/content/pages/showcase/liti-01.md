@@ -14,13 +14,17 @@ categories:
 
 ## liti: List by Title
 
-`{{</* liti "About Hugo" */>}}`
+{{< cscb c >}}
+{{</* liti "About Hugo" */>}}
+{{< /cscb >}}
 
 Here is the page with the title {{< liti "About Hugo" >}}
 
 
 
-`{{</* liti "pixabay.com" "in" */>}}`
+{{< cscb c >}}
+{{</* liti "pixabay.com" "in" */>}}
+{{< /cscb >}}
 Pages with pixabay.com in it's title. 
 
 Here they are: {{< liti "pixabay.com" "in" >}}
@@ -29,7 +33,9 @@ Here they are: {{< liti "pixabay.com" "in" >}}
 
 ### All pages with hugo in it's title
 
-`{{</* liti "hugo" "in" "i" "ul" */>}}`
+{{< cscb c >}}
+{{</* liti "hugo" "in" "i" "ul" */>}}
+{{< /cscb >}}
 
 Here they are: 
 
@@ -39,7 +45,9 @@ Here they are:
 
 ### Really all pages with hugo in it's title
 
-`{{</* liti "hugo" "in" "i" "ul" "all" ".Kind .RelPermalink" */>}}`
+{{< cscb c >}}
+{{</* liti "hugo" "in" "i" "ul" "all" ".Kind .RelPermalink" */>}}
+{{< /cscb >}}
 
 Here they are: 
 
