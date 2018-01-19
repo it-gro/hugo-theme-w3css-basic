@@ -382,9 +382,9 @@ consectetuer adipiscing
   # you may want to use https://realfavicongenerator.net to generate your files
   # used in layouts/partials/head.favicon.html
   # relURL is applied to path 
-  enable                 = true
+  enable                 = false
   path                   = "/images/favicons"
-  version                = "gH2ZthzW"
+  version                = "a_random_value"
   maskIcon               = "#5bbad5"
   msapplicationTileColor = "#da532c"
   themeColor             = "#ffffff"
