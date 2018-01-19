@@ -1,0 +1,520 @@
+# https://gohugo.io/getting-started/configuration/#toml-configuration
+
+# ##################################################
+# Hugo-defined variables
+baseURL       = "http://example.com"
+
+title         = "W3.CSS Basic exampleSite"
+theme         = "hugo-theme-w3css-basic"
+languageCode  = "en-us"
+#languageCode  = "de-ch"
+
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "en"
+
+#disableFastRender=true
+
+# Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
+enableEmoji   = true
+
+# the length of text to show in a .Summary
+summaryLength = 70
+
+# Pagination (3,6,9,12, ...)
+paginate =  6
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
+
+# https://gohugo.io/content-management/syntax-highlighting/
+pygmentsUseClassic            = false
+pygmentsCodeFences            = true
+pygmentsCodeFencesGuessSyntax = true
+# https://help.farbox.com/pygments.html
+# https://github.com/alecthomas/chroma
+# hugo gen chromastyles --style=autumn        >  syntax.autumn.css          
+# ...
+pygmentsUseClasses            = true
+# => static/css/syntax/syntax/syntax.*.css
+# copy one of them to
+# static/css/syntax/syntax.css
+# alternative (if shortcodes/csc*.html are not used):
+# set pygmentsUseClassic to false on choose one of the following:
+#pygmentsStyle = "autumn"
+#pygmentsStyle = "borland"
+#pygmentsStyle = "bw"
+#pygmentsStyle = "colorful"
+#pygmentsStyle = "default"
+#pygmentsStyle = "emacs"
+#pygmentsStyle = "friendly"
+#pygmentsStyle = "fruity"
+#pygmentsStyle = "manni"
+#pygmentsStyle = "monokai"
+#pygmentsStyle = "murphy"
+#pygmentsStyle = "native"
+#pygmentsStyle = "pastie"
+#pygmentsStyle = "perldoc"
+#pygmentsStyle = "rrt"
+#pygmentsStyle = "tango"
+#pygmentsStyle = "trac"
+#pygmentsStyle = "vim"
+#pygmentsStyle = "vs"
+
+
+
+# ##################################################
+# Theme-defined configuration
+
+# ##################################################
+# hugo sections
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[Permalinks]
+  blog = "/blog/:year/:month/:day/:filename/"
+
+
+# Main menu
+[menu]
+
+# provide translations in i18n/*.yaml
+[[menu.main]]
+  weight = 1
+  name   = "Home"
+  url    = "/index.html"
+  pre    = "fas fa-home"
+
+[[menu.main]]
+  weight = 2
+  name   = "Contact"
+  url    = "/contact"
+  pre    = "far fa-address-card"
+
+[[menu.main]]
+  weight = 3
+  name   = "Pages"
+  url    = "/pages"
+  pre    = "fas fa-list"
+
+# demo submenu
+[[menu.main]]
+  weight = 4
+  name   = "Theme"
+  pre    = "fas fa-info-circle"
+  identifier = "theme"
+ 
+[[menu.main]]
+  weight = 1
+  name   = "About"
+  url    = "/pages/hugo-theme-w3css-basic/"
+  pre    = "fas fa-info fa-fw"
+  parent = "theme"
+ 
+[[menu.main]]
+  weight = 2
+  name   = "Images"
+  url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
+  pre    = "far fa-images fa-fw"
+  parent = "theme"
+
+[[menu.main]]
+  weight = 3
+  name   = "Showcase"
+  url    = "/pages/showcase/"
+  pre    = "fas fa-eye fa-fw"
+  parent = "theme"
+ 
+# end submenu
+
+[[menu.main]]
+  weight = 5
+  name   = "Blog"
+  url    = "/blog"
+  pre    = "fa fa-rss"
+
+[[menu.main]]
+  weight = 6
+  name   = "FAQ"
+  url    = "/faq"
+  pre    = "far fa-question-circle"
+
+
+# right aligned
+[[menu.topbar]]
+  weight   = 1
+  name     = "GitHub"
+  url      = "https://github.com/it-gro/hugo-theme-w3css-basic"
+  pre      = "fab fa-github"
+
+#[[menu.topbar]]
+#  weight   = 2
+#  name     = "Facebook"
+#  url      = "http://facebook.com"
+#  pre      = "fab fa-facebook"
+
+#[[menu.topbar]]
+#  weight   = 3
+#  name     = "Twitter"
+#  url      = "http://twitter.com"
+#  pre      = "fab fa-twitter"
+
+[[menu.topbar]]
+  weight   = 4
+  name     = "Email"
+  url      = "#address"
+# url      = "mailto:info@example.com"
+  pre      = "fas fa-envelope"
+
+[[menu.topbar]]
+  weight   = 5
+  name     = "Search"
+  url      = "/search"
+  pre      = "fas fa-search"
+
+
+# ##################################################
+# theme-defined params
+[params]
+
+  # meta data
+  # ##############################
+
+  # used in layouts/partials/head.meta.html
+  authorName         = "anonymous"
+  defaultKeywords    = ["foo", "bar"]
+  defaultDescription = "example site created with hugo using theme hugo-theme-w3css-basic"
+
+  # multiple lines in toml
+  # https://github.com/toml-lang/toml#user-content-string
+
+  # used in layouts/partials/footer.html
+  # uses markdownify
+  aboutUs   = '''
+Vel illum **dolore** eu      
+                             
+  * feugiat nulla            
+  * facilisis at vero. 
+
+Nam vestibulum accumsan nisl.
+      
+              '''
+
+  address   = '''
+**nobis eleifend**             
+**Soluta nobis eleifend**      
+illum dolore eu feugiat        
+3612 Steffisburg               
+consectetuer adipiscing        
+
+**Switzerland**
+              '''
+
+  # used in layouts/partials/footer.bottom.html
+  bottomLeft  = "Copyright (c) 2018, *lobortis nisl* ut aliquip ex ea commodo consequat"
+  bottomRight = 'created with [Hugo](https://gohugo.io) '
+
+
+  # colors
+  # ##############################
+
+  # used in layouts/partials/head.stylesheets.html
+  # https://www.w3schools.com/w3css/w3css_color_themes.asp
+  # https://www.w3schools.com/w3css/w3css_color_generator.asp
+  # Monochromatic Color Schemes
+  # set W3.CSS color theme (choose one)
+  #w3cssColorTheme = "/css/w3-theme-custom.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-dark-grey.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-orange.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-purple.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-green.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-grey.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-khaki.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-teal.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-yellow.css"
+
+  # used in layouts/partials/*.html
+  # used in layouts/blog/*.html
+  # used in layouts/default/*.html
+  # used in layouts/pages/*.html
+  # {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}} 
+  # set the actual color (one of the monochromatic color scheme)
+  color404Container                     = "w3-theme-l3"
+  colorPagesListCell                    = "w3-theme-l4"
+  colorPagesListCard                    = "w3-theme-l2"
+  colorPagesListContainer               = "w3-theme-l2"
+  colorBlogListCard                     = "w3-theme-d1"
+  colorBlogListCell                     = "w3-theme-l3"
+  colorBaseofCanvas                     = "w3-theme-l4"
+  colorBaseofPanel                      = "w3-theme-l2"
+  colorDisqusButton                     = "w3-theme-l3"
+  colorTaxonomyPanel                    = "w3-theme-l2"
+  colorTaxonomyCell                     = "w3-theme-l4"
+  colorTaxonomyCard                     = "w3-theme-l3"
+  colorTermsPanel                       = "w3-theme-l2"
+  colorContactFormPanel                 = "w3-theme-d3"
+  colorContactMapPanel                  = "w3-theme-l2"
+  colorContactMapCard                   = "w3-theme-l2"
+  colorFooterBottomCell                 = "w3-theme-l3"
+  colorFooterContainer                  = "w3-theme-d5"
+  colorFooterButton                     = "w3-theme-l4"
+  colorFrontClientsContainer            = "w3-theme-l3"
+  colorFrontClientsCard                 = "w3-theme-l2"
+  colorFrontFeaturesContainer           = "w3-theme-l4"
+  colorFrontFeaturesCard                = "w3-theme-l3"
+  colorFrontJumbotronsSection           = "w3-theme-l4"
+  colorFrontJumbotronsContainer         = "w3-theme-l2"
+  colorFrontPhotocardsContainer         = "w3-theme-l3"
+  colorFrontPhotocardsCard              = "w3-theme-l1"
+  colorFrontPhotocardsCardContainer     = "w3-theme-l1"
+  colorFrontRecentPostsContainer        = "w3-theme-l3"
+  colorFrontRecentPostsTitleCard        = "w3-theme-l2"
+  colorFrontRecentPostsCard             = "w3-theme-l4"
+  colorFrontRecentPostsCardButton       = "w3-theme-l4"
+  colorFrontSeeMoreContainer            = "w3-theme-l4"
+  colorFrontSeeMoreButton               = "w3-theme-l4"
+  colorFrontSeeMoreText                 = "w3-text-white"
+  colorFrontTestimonialsContainer       = "w3-theme-l4"
+  colorFrontTestimonialsTitleCard       = "w3-theme-l2"
+  colorFrontTestimonialsCarouselCard    = "w3-theme-l5"
+  colorHeaderMarquee                    = "w3-theme-l1"
+  colorHeaderNav                        = "w3-theme-dark"
+  colorPaginatorBar                     = "w3-theme-l1"
+  colorTaxonomyBar                      = "w3-theme-l1"
+  colorPageNavCardsContainer            = "w3-theme-l3"
+  colorPageNavCardsCard                 = "w3-theme-l1"
+  colorPageNavCardsLink                 = "w3-theme-l3"
+  colorSearchGoogleGcseContainer        = "w3-theme-l3"
+
+
+  # google stuff
+  # ##############################
+
+  # used in layouts/partials/head.html
+  # use true for https://themes.gohugo.io/hugo-theme-w3css-basic
+  fontsUseGoogleApis=false
+
+  # Google Maps API key
+  # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
+  # used in layouts/partials/contact.map.html
+  # if empty => fallback to URL (instead of map)
+  # define environment variable (=> key ist not stored in github)
+  envGoogleMapsApiKey = "GoogleMapsApiKey"
+  # if environment is not an option => define key here:
+  #googleMapsApiKey = ""
+
+  #googleMapsZoom   = 14
+  googleMapsZoom   = 3
+  latitude         = 46.946692
+  longitude        =  7.444186
+
+  # Google Custom Search API
+  # https://cse.google.com/cse/
+  # used in layouts/partials/search.google.gcse.html
+  googleCustomSearchCX = '002931815551392744433:tnypjyusk2e'
+
+  # for google translate check params.menuTopBar.googleTranslate*
+
+
+  # teasers
+  # ##############################
+
+  # https://gohugo.io/functions/truncate/
+  # used in layouts/pages/list.html
+  #         layouts/partials/front.recent_posts.html
+  #         layouts/partials/main.teaser_in_card.html
+  teaserTruncateSummary  = 200
+
+  # used in layouts/partials/main.teaserpic.single.html
+  #         layouts/partials/front.recent_posts.html
+  #teaserpicDefault = "/images/teaserpics/placeholder.png"
+
+
+  # contact form
+  # ##############################
+
+  # used in partials/contact.form.html
+  # Enable the contact form by entering your Formspree.io email
+  formspree = "formspree.io"
+  email     = "info@example.com"
+
+  # disqus (theme)
+  # ##############################
+
+  # used in partials/blog.disqus-button.html 
+  # set to true, if you want to show the count of comments
+  # fires an async request to disqus.com/count.js
+  disqusButtonShowCount = false
+
+
+  # date format (blog) is created using:
+  #  layouts/partials/main.blog.date.html
+  #  layouts/partials/main.i18n.date.html
+  #  layouts/partials/main.i18n.date.short.html
+  #  and i18n/*.yaml
+
+  # developer stuff
+  debug              = false
+  uglyURLs           = false
+  uglyUrl            = ".html"
+
+
+# ##################################################
+# theme sections
+# more theme defined params
+
+[params.favicon]
+  # you may want to use https://realfavicongenerator.net to generate your files
+  # used in layouts/partials/head.favicon.html
+  # relURL is applied to path 
+  enable                 = true
+  path                   = "/images/favicons"
+  version                = "gH2ZthzW"
+  maskIcon               = "#5bbad5"
+  msapplicationTileColor = "#da532c"
+  themeColor             = "#ffffff"
+
+
+[params.marquee]
+  # enable or disable marquee
+  enable   = true
+ #enable   = false
+  marquee  = '''
+At [info@example.com](mailto:info@example.com) vero eos et **accusam**
+et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
+             '''
+
+[params.menuConfig]
+  # used in layouts/partials/header.nav.html
+  # if set => change menu entry on small displays to lowercase maxChars 
+  #smallDispMenuMaxChars = 3
+  smallDispMenuMaxChars = 2
+
+[params.menuTopBar]
+  # used in layouts/partials/header.nav.html
+  # enable or disable menu.topbar with social icons (right aligned)
+  socialEnable             = true
+  numOfItemsIfSmallDisplay = 0
+
+  # used in layouts/partials/header.nav.html
+  #         layouts/partials/header.nav.google.translate.html
+  googleTranslateEnable    = true
+  googleTranslateShowOnHome= false
+
+[params.jumbotrons]
+  # used in layouts/partials/front.jumbotrons.carousel.html
+  # enable or disable jumbotrons on frontpage
+  # see some examples in 'exampleSite/data/jumbotron'
+  enable   = true
+  #enable   = false
+
+[params.photocards]
+  # used in layouts/partials/front.photocards.html
+  # enable or disable photocards on frontpage
+  # see some examples in 'exampleSite/data/photocards'
+  enable   = true
+  #enable  = false
+  #limitTo  = 3
+  limitTo  = 6
+  animate  = true
+
+[params.features]
+  # used in layouts/partials/front.features.html
+  # enable or disable features on frontpage
+  # see some examples in 'exampleSite/data/features'
+  enable   = true
+  #enable  = false
+  #limitTo  = 3
+  limitTo  = 6
+  animate  = false
+
+[params.recentPosts]
+  # used in layouts/partials/footer.html
+  footerNumOfPosts = 5
+  enableFooter   = true
+  # used in layouts/partials/front.recent_posts.html
+  enableFront    = true
+  title    = "From our Blog"
+  subtitle = '''
+Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac.
+             '''
+
+[params.seeMore]
+  # used in layouts/partials/front.see_more.html
+  # enable or disable see_more on frontpage
+  enable    = true
+ #enable    = false
+  icon      = "far fa-file-code"
+  title     = "Do You want to see More?"
+  linkUrl   = "/pages"
+  linkText  = "consectetuer adipiscing"
+  subtitle  = '''
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              '''
+
+[params.testimonials]
+  # used in layouts/partials/front.testimonials.carousel.html
+  # enable or disable testimonials on frontpage
+  # see some examples in 'exampleSite/data/testimonials'
+  enable   = true
+  #enable  = false
+  title    = "Testimonials"
+  subtitle = '''
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+labore et dolore magna aliquyam erat, sed diam voluptua. 
+             '''
+
+[params.clients]
+  # used in layouts/partials/front.clients.carousel.html
+  # enable or disable clients on frontpage
+  # see some examples in 'exampleSite/data/clients'
+  enable = true
+  #enable = false
+  title = "Our Clients"
+  subtitle = '''
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+**molestie consequat**, vel illum dolore.
+             '''
+
+[params.blog]
+  # used in layouts/blog/list.html
+  title    = "Blog"
+  icon     = "fas fa-rss"
+  subtitle = '''
+ultricies eget, tempor sit amet, ante
+             '''
+
+# ##################################################
+# other sections
+
+[blackfriday]
+  # https://gohugo.io/getting-started/configuration/#blackfriday-options
+  # https://gohugo.io/getting-started/configuration/#blackfriday-extensions
+  # https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+  # http://commonmark.org/
+  # http://spec.commonmark.org/0.28/
+  # extensions = ["hardLineBreak"]
+
+
+# emacs
+# Local variables:
+# tab-width:        2
+# indent-tabs-mode: nil
+# End:
