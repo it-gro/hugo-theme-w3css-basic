@@ -132,7 +132,7 @@ pygmentsUseClasses            = true
   weight = 5
   name   = "Blog"
   url    = "/blog"
-  pre    = "fa fa-rss"
+  pre    = "fas fa-rss"
 
 [[menu.main]]
   weight = 6
@@ -313,7 +313,7 @@ consectetuer adipiscing
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
   # used in layouts/partials/contact.map.html
   # if empty => fallback to URL (instead of map)
-  # define environment variable (=> key ist not stored in github)
+  # define environment variable (=> key is not stored in github)
   envGoogleMapsApiKey = "GoogleMapsApiKey"
   # if environment is not an option => define key here:
   #googleMapsApiKey = ""
