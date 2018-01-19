@@ -504,13 +504,13 @@ ultricies eget, tempor sit amet, ante
 # other sections
 
 [blackfriday]
+  # extensions = ["noEmptyLineBeforeBlock"]
+  # extensions = ["hardLineBreak"]
   # https://gohugo.io/getting-started/configuration/#blackfriday-options
   # https://gohugo.io/getting-started/configuration/#blackfriday-extensions
   # https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
   # http://commonmark.org/
   # http://spec.commonmark.org/0.28/
-  # extensions = ["hardLineBreak"]
-
 
 # emacs
 # Local variables:

@@ -1,9 +1,9 @@
 # W3.CSS Basic Theme for Hugo
 
-W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  Inspiration was
-taken from
-[Universal](https://themes.gohugo.io/hugo-universal-theme/).  It is
-quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml). Change all colors in the blink of an eye...
+W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
+Inspiration was taken from [Universal](https://themes.gohugo.io/hugo-universal-theme/).
+It is quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml).
+Change all colors in the blink of an eye...
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
@@ -805,7 +805,7 @@ pygmentsCodeFences            = true
 pygmentsCodeFencesGuessSyntax = true
 # https://help.farbox.com/pygments.html
 # https://github.com/alecthomas/chroma
-# hugo gen chromastyles --style=autumn        >  syntax.autumn.css          
+# hugo gen chromastyles --style=autumn        >  syntax.autumn.css
 # ...
 pygmentsUseClasses            = true
 # => static/css/syntax/syntax/syntax.*.css
@@ -835,14 +835,15 @@ pygmentsUseClasses            = true
 ```
 
 
+```
+{{< highlight perl "linenos=table,hl_lines=5 7-8 21,linenostart=1" >}}
+#!/usr/bin/perl
+...
+{{< /highlight >}}
+```
 
-    {{< highlight perl "linenos=table,hl_lines=5 7-8 21,linenostart=1" >}}
-    #!/usr/bin/perl
-    ...
-    {{< /highlight >}}
 
 => https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/code-01/ 
-
 
 
 
@@ -1250,6 +1251,7 @@ layouts/shortcodes/
 
 
 `content/pages/showcase/gallery-01.md`
+
 ```
 ---
 title:       "Gallery pixabay.com"
@@ -1274,7 +1276,8 @@ categories:
 {{< heg-figure link="/images/photocards/pixabay.com/04-photocard.jpg" caption-position="bottom" caption-effect="none" width="640px" caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com" >}}
 ```
 
-* `{{< heg-figure .. >}}` improves the usage of `title caption attr attrlink` which are all optional
+* This themes version of `{{</* heg-figure .. */>}}` improves the
+  usage of `title caption attr attrlink` which are all optional
 
 ```
 caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com"
@@ -1458,4 +1461,5 @@ They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-
 
 ![screenshot complete](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/complete.png)
 
+---
 
