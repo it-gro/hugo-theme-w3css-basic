@@ -42,11 +42,11 @@
             {{- range $value.Pages }}
               {{- if or (eq "*" ($.Scratch.Get "theTitle") )  (eq (lower .LinkTitle ) (lower ($.Scratch.Get "theTitle"))) }}
                 <li>{{ $taxonomyname }}/{{$taxonomyterm}}
-									<a href="{{ .Permalink}}">
+                  <a href="{{ .Permalink}}">
                     {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
                     {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
                     {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.LinkTitle}}   {{end}}
-								</a> </li>
+                </a> </li>
             {{- end }}
             {{- end }} {{/* range Pages */}}
           {{- end }} {{/* if theOutMode */}}
@@ -64,11 +64,11 @@
             {{- range $value.Pages }}
               {{- if or (eq "*" ($.Scratch.Get "theTitle") )  (in (lower .LinkTitle ) (lower ($.Scratch.Get "theTitle"))) }}
                 <li>{{ $taxonomyname }}/{{$taxonomyterm}}
-									<a href="{{ .Permalink}}">
+                  <a href="{{ .Permalink}}">
                     {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
                     {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
                     {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.LinkTitle}}   {{end}}
-								</a> </li>
+                </a> </li>
             {{- end }}
             {{- end }} {{/* range $value.Pages */}}
           {{- end }} {{/* if theOutMode */}}
