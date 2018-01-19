@@ -33,14 +33,14 @@
     {{- if ($.Scratch.Get "theOperator") | eq "eq" }}
       {{- if or (eq .Title ($.Scratch.Get "theString"  )) (and (eq "i" ($.Scratch.Get "theModifiers"))   (eq (lower .Title) (lower ($.Scratch.Get "theString")) ) )   }}
       {{- if $.Scratch.Get "theHtmlList" }}<li>{{end}}
-        <a href="{{.URL}}">{{.Title}}</a>&nbsp;
+        <a href="{{.URL}}">{{.Title | markdownify | emojify }}</a>&nbsp;
       {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
       {{- end }}
     {{- end }}
     {{- if ($.Scratch.Get "theOperator") | eq "in" }}
       {{- if or (in .Title ($.Scratch.Get "theString"  )) (and (eq "i" ($.Scratch.Get "theModifiers"))   (in (lower .Title) (lower ($.Scratch.Get "theString")) ) )   }}
       {{- if $.Scratch.Get "theHtmlList" }}<li>{{end}}
-        <a href="{{.URL}}">{{.Title}}</a>&nbsp;
+        <a href="{{.URL}}">{{.Title | markdownify | emojify }}</a>&nbsp;
       {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
       {{- end }}
     {{- end }}
@@ -55,7 +55,7 @@
         <a href="{{.URL}}">
           {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
           {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
-          {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title}}       {{end}}
+          {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title | markdownify | emojify }} {{end}}
         </a>&nbsp;
       {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
       {{- end }}
@@ -66,7 +66,7 @@
         <a href="{{.URL}}">
           {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
           {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
-          {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title}}       {{end}}
+          {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title | markdownify | emojify }} {{end}}
         </a>&nbsp;
       {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
       {{- end }}

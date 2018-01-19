@@ -727,7 +727,7 @@ in {{< w3-codespan >}}i18n/en.yaml{{< /w3-codespan >}}
 * by default this list is not given as a `<ul>` list - just one or more links without newlines
 * search can be done with [eq](https://gohugo.io/functions/eq) (which
   is default) or [in](https://gohugo.io/functions/in) (substring)
-* the case is relevant by default, Use the modifier to ignore the case (mod="i")
+* the case is relevant by default. Use the modifier to ignore (mod="i")
 
 
 {{< highlight text >}}
@@ -749,6 +749,15 @@ See more here: {{</* liti "Vestibulum" */>}}
 {{< /cscb >}}
 
 See more here: {{< liti "Vestibulum" >}}
+
+{{< cscb c >}}
+See more here: {{</* liti "highlight" "in" */>}}
+{{< /cscb >}}
+
+See more here: {{< liti "highlight" "in" >}}
+
+
+
 
 Here are more examples using **eq** operator
 
@@ -815,6 +824,7 @@ See more here: {{</* litt term="Go" */>}}
 {{< /cscb >}}
 
 See more here: {{< litt term="Go" >}}
+
 
 {{< cscb c >}}
 See more here: {{</* litt "tags" "Go" */>}}
