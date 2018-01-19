@@ -25,8 +25,8 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
         {{- with .Get "title" }}<h4>{{.}}</h4>{{ end }}
         {{- with .Get "caption" }}<p>{{.}}</p>{{ end }}
         {{- if or (.Get "attr") (.Get "attrlink") }}
-			  <footer><small>{{if .Get "attrlink"}}<a href="{{.Get `attrlink`}}">{{ default (.Get "attrlink") (.Get "attr") }}</a>{{ else }}{{ .Get "attr"}}{{ end }}</small></footer>
-			  {{- end }}
+        <footer><small>{{if .Get "attrlink"}}<a href="{{.Get `attrlink`}}">{{ default (.Get "attrlink") (.Get "attr") }}</a>{{ else }}{{ .Get "attr"}}{{ end }}</small></footer>
+        {{- end }}
       </figcaption>
     {{- end }}
   </figure>
