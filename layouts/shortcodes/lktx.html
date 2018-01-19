@@ -1,34 +1,82 @@
 {{/* https://github.com/it-gro/hugo-theme-w3css-basic */}}
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set "theString"       (.Get "search"    | default ""        )}}
-  {{- $.Scratch.Set "theTerm"         (.Get "term"      | default "tags"    )}}
+  {{- $.Scratch.Set "theTaxonomy"     (.Get "tax"       | default "tags"    )}}
+  {{- $.Scratch.Set "theTaxTerm"      (.Get "term"      | default "*"       )}}
+  {{- $.Scratch.Set "theTitle"        (.Get "title"     | default "*"       )}}
+  {{- $.Scratch.Set "theOperator"     (.Get "op"        | default "eq"      )}}
+  {{- $.Scratch.Set "theOutMode"      (.Get "om"        | default "t"       )}}
   {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ".Title"  )}}
-  {{- $.Scratch.Set "theHtmlList"     (.Get "ul"                            )}}
 {{- else }}
-  {{- if gt (len .Params) 0 }} {{$.Scratch.Set "theString"     (.Get 0) }} {{else}} {{$.Scratch.Set "theString"    ""       }} {{end}}
-  {{- if gt (len .Params) 1 }} {{$.Scratch.Set "theTerm"       (.Get 1) }} {{else}} {{$.Scratch.Set "theTerm"      "tags"   }} {{end}}
-  {{- if gt (len .Params) 2 }} {{$.Scratch.Set "theOutFormat"  (.Get 2) }} {{else}} {{$.Scratch.Set "theOutFormat" ".Title" }} {{end}}
-  {{- if gt (len .Params) 3 }} {{$.Scratch.Set "theHtmlList"   (.Get 3) }}                                                    {{end}}
+  {{- if gt (len .Params) 0 }} {{$.Scratch.Set "theTaxonomy"   (.Get 0) }} {{else}} {{$.Scratch.Set "theTaxonomy"   "tags"   }} {{end}}
+  {{- if gt (len .Params) 1 }} {{$.Scratch.Set "theTaxTerm"    (.Get 1) }} {{else}} {{$.Scratch.Set "theTaxTerm"    "*"      }} {{end}}
+  {{- if gt (len .Params) 2 }} {{$.Scratch.Set "theTitle"      (.Get 2) }} {{else}} {{$.Scratch.Set "theTitle"      "*"      }} {{end}}
+  {{- if gt (len .Params) 3 }} {{$.Scratch.Set "theOperator"   (.Get 3) }} {{else}} {{$.Scratch.Set "theOperator"   "eq"     }} {{end}}
+  {{- if gt (len .Params) 4 }} {{$.Scratch.Set "theOutMode"    (.Get 4) }} {{else}} {{$.Scratch.Set "theOutMode"    "t"      }} {{end}}
+  {{- if gt (len .Params) 5 }} {{$.Scratch.Set "theOutFormat"  (.Get 5) }} {{else}} {{$.Scratch.Set "theOutFormat"  ".Title" }} {{end}}
 {{- end }}
 
 {{- if isset .Site.Params (lower "debug" ) }}
 {{- if .Site.Params.debug }}
 <br/>
-"theTerm"     : {{- $.Scratch.Get "theTerm"      }} <br/>
-"theString"   : {{- $.Scratch.Get "theString"    }} <br/>
-"theOutFormat": {{- $.Scratch.Get "theOutFormat" }} <br/>
-"theHtmlList" : {{- $.Scratch.Get "theHtmlList"  }} <br/>
+"theTaxonomy"  : {{- $.Scratch.Get "theTaxonomy"    }} <br/>
+"theTaxTerm"   : {{- $.Scratch.Get "theTaxTerm"     }} <br/>
+"theTitle"     : {{- $.Scratch.Get "theTitle"       }} <br/>
+"theOperator"  : {{- $.Scratch.Get "theOperator"    }} <br/>
+"theOutMode"   : {{- $.Scratch.Get "theOutMode"     }} <br/>
+"theOutFormat" : {{- $.Scratch.Get "theOutFormat"   }} <br/>
 {{- end }}
 {{- end }}
 
-{{- if $.Scratch.Get "theHtmlList" }}<ul>{{end}}
-  {{- with $.Site.GetPage "taxonomy" ($.Scratch.Get "theTerm") (lower ($.Scratch.Get "theString")) }}
-    {{- if $.Scratch.Get "theHtmlList" }}<li>{{end}}
-      <a href="{{.URL}}">
-        {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
-        {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
-        {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title}}       {{end}}
-      </a>&nbsp;
-    {{- if $.Scratch.Get "theHtmlList" }}</li>{{end}}
-  {{- end }}
-{{- if $.Scratch.Get "theHtmlList" }}</ul>{{end}}
+<ul>
+{{- range $taxonomyname, $taxonomy := $.Site.Taxonomies }}
+  {{- if or (eq "*" ($.Scratch.Get "theTaxonomy")) (eq (lower $taxonomyname) (lower ($.Scratch.Get "theTaxonomy")) ) }}
+    {{- range $taxonomyterm, $value := $taxonomy }}
+
+      {{- if ($.Scratch.Get "theOperator") | eq "eq" }}
+        {{- if or (eq "*" ($.Scratch.Get "theTaxTerm") )  (eq (lower $taxonomyterm) (lower ($.Scratch.Get "theTaxTerm"))) }}
+          {{- if and (findRE "t" ($.Scratch.Get "theOutMode")) (ne "*" ($.Scratch.Get "theTaxTerm")) }}
+            <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}/{{$taxonomyterm | urlize}}">{{ $taxonomyname }}/{{$taxonomyterm}}</a>
+          {{- end }} {{/* if theOutMode */}}
+
+          {{- if findRE "p" ($.Scratch.Get "theOutMode") }}
+            {{- range $value.Pages }}
+              {{- if or (eq "*" ($.Scratch.Get "theTitle") )  (eq (lower .LinkTitle ) (lower ($.Scratch.Get "theTitle"))) }}
+                <li>{{ $taxonomyname }}/{{$taxonomyterm}}
+									<a href="{{ .Permalink}}">
+                    {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
+                    {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
+                    {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.LinkTitle}}   {{end}}
+								</a> </li>
+            {{- end }}
+            {{- end }} {{/* range Pages */}}
+          {{- end }} {{/* if theOutMode */}}
+
+        {{- end }} {{/* if eq */}}
+      {{- end }} {{/* if theOperator */}}
+
+      {{- if ($.Scratch.Get "theOperator") | eq "in"}}
+        {{- if or (in "*" ($.Scratch.Get "theTaxTerm") )  (in (lower $taxonomyterm) (lower ($.Scratch.Get "theTaxTerm"))) }}
+          {{- if findRE "t" ($.Scratch.Get "theOutMode") }}
+          <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}/{{$taxonomyterm | urlize}}">{{ $taxonomyname }}/{{$taxonomyterm}}</a>
+          {{- end }} {{/* if theOutMode */}}
+
+          {{- if findRE "p" ($.Scratch.Get "theOutMode") }}
+            {{- range $value.Pages }}
+              {{- if or (eq "*" ($.Scratch.Get "theTitle") )  (in (lower .LinkTitle ) (lower ($.Scratch.Get "theTitle"))) }}
+                <li>{{ $taxonomyname }}/{{$taxonomyterm}}
+									<a href="{{ .Permalink}}">
+                    {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
+                    {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
+                    {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.LinkTitle}}   {{end}}
+								</a> </li>
+            {{- end }}
+            {{- end }} {{/* range $value.Pages */}}
+          {{- end }} {{/* if theOutMode */}}
+
+        {{- end }} {{/* if in */}}
+      {{- end }} {{/* if theOperator */}}
+
+    {{- end }}   {{/* range $taxonomyterm */}}
+  {{- end }}     {{/* range $taxonomyname */}}
+{{- end }}       {{/* if theTaxonomy */}}
+</ul>

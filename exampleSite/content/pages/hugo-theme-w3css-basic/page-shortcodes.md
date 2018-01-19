@@ -788,32 +788,72 @@ See more here: {{</* lkti "Vestibulum" "in" "" "ul" */>}}
 See more here: {{< lkti "Vestibulum" "in" "" "ul" >}}
 
 
+## lktt: Lookup by Taxonomy/Term (just one result)
 
-## lktx: Lookup in Taxonomy
-
-* this is case insentive
-* ToDo: allow "in": currently just **eq** is implemented
-
-{{< highlight text >}}
 Argument | Position -1 | Default | What             | Remark
 ---------|-------------|---------|------------------|-------
-search   | 0           |         | string to search | in the taxonomy (of the term below)
-term     | 1           | tags    | term             | a valid taxonomy term
+tax      | 0           | tags    | taxonomy         | 
+term     | 1           | *       | taxonomyterm     | 
 ofm      | 2           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
-{{< /highlight >}}
 
-* An easy and short usage would be:
 
 {{< highlight nolang >}}
-See more here: {{</* lktx "go" */>}}
+See more here: {{</* lktt term="Go" */>}}
 {{< /highlight >}}
 
-See more here: {{< lktx "Go" >}}
+See more here: {{< lktt term="Go" >}}
 
-Shortcode                                                | Result
----------------------------------------------------------|--------------------------------
-lktx                   search="web"                      | {{< lktx                   search="web"                     >}}
-lktx term="tags"       search="web"                      | {{< lktx term="tags"       search="web"                     >}}
-lktx term="categories" search="web"                      | {{< lktx term="categories" search="web"                     >}}
-lktx                   search="web" ofm=".Kind .Title"   | {{< lktx                   search="web" ofm=".Kind .Title"  >}}
-lktx                   search="web" ofm=".RelPermalink"  | {{< lktx                   search="web" ofm=".RelPermalink" >}}
+{{< highlight nolang >}}
+See more here: {{</* lktt "tags" "Go" */>}}
+{{< /highlight >}}
+
+See more here: {{< lktt "tags" "Go" >}}
+
+{{< highlight nolang >}}
+See more here: {{</* lktt "categories" "Golang" ".RelPermalink" */>}}
+{{< /highlight >}}
+
+See more here: {{< lktt "categories" "Golang" ".RelPermalink" >}}
+
+
+
+## lktx: Lookup by Taxonomy (full search)
+
+* ignoring case
+
+Argument | Position -1 | Default | What             | Remark
+---------|-------------|---------|------------------|-------
+tax      | 0           | tags    | string to search | in the taxonomy
+term     | 1           | *       | string to search | in the taxonomy term 
+title    | 2           | *       | string to search | in the title
+op       | 3           | eq      | en|in            | eq or in search
+om       | 4           | t       | t,p              | output *t*axonomyterm *p*age
+ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
+
+* using positional parameters:
+
+Shortcode                     | Result
+------------------------------|-----------------------------
+lktx "*" "Nullam"             | {{< lktx "*" "Nullam"             >}}
+lktx "*" "*" "Null" "in" "p"  | {{< lktx "*" "*" "Null" "in" "p"  >}}
+
+
+* using named parameters:
+
+Shortcode                               | Result
+--------------------------------------- |---------------------------
+lktx tax="tags" term="pictures" op="in" | {{< lktx tax="tags" term="pictures" op="in" >}}
+lktx            term="Nullam"           | {{< lktx            term="Nullam"           >}}
+lktx            term="Nullam" om="t"    | {{< lktx            term="Nullam" om="t"    >}}
+lktx            term="Nullam" om="p"    | {{< lktx            term="Nullam" om="p"    >}}
+lktx            term="Nullam" om="tp"   | {{< lktx            term="Nullam" om="tp"   >}}
+
+
+Shortcode                                                     | Result
+--------------------------------------------------------------|--------------------------------
+lktx                   term="web"                             | {{< lktx                   term="web"                            >}}
+lktx tax="tags"        term="web" om="p"                      | {{< lktx tax="tags"        term="web" om="p"                     >}}
+lktx tax="tags"        term="web" om="p" ofm=".RelPermalink"  | {{< lktx tax="tags"        term="web" om="p" ofm=".RelPermalink" >}}
+lktx tax="categories"  term="web"                             | {{< lktx tax="categories"  term="web"                            >}}
+
+

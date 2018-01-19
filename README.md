@@ -1225,6 +1225,7 @@ layouts/shortcodes/
 ├── i18n.html
 ├── icon.html
 ├── lkti.html
+├── lktt.html
 ├── lktx.html
 ├── w3-alert-icon.html
 ├── w3-badge.html
@@ -1238,8 +1239,8 @@ layouts/shortcodes/
 
 * currently experimental are:
   * [Lookup by Title](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#lkti-lookup-by-title)
-  * [Lookup in Taxonomy](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#lktx-lookup-in-taxonomy)
-
+  * [Lookup in Taxonomy / Term](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#lktt-lookup-by-taxonomy-term-just-one-result)
+  * [Lookup in Taxonomy with search](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#lktx-lookup-by-taxonomy-full-search)
 
 ## Gallery
 * https://github.com/liwenyip/hugo-easy-gallery/

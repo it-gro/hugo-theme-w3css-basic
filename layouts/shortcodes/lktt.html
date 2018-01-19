@@ -1,0 +1,32 @@
+{{/* https://github.com/it-gro/hugo-theme-w3css-basic */}}
+{{- if .IsNamedParams }}
+  {{- $.Scratch.Set "theTaxonomy"     (.Get "tax"       | default "tags"    )}}
+  {{- $.Scratch.Set "theTaxTerm"      (.Get "term"      | default "*"       )}}
+  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ".Title"  )}}
+{{- else }}
+  {{- if gt (len .Params) 0 }} {{$.Scratch.Set "theTaxonomy"   (.Get 0) }} {{else}} {{$.Scratch.Set "theTaxonomy"   "tags"   }} {{end}}
+  {{- if gt (len .Params) 1 }} {{$.Scratch.Set "theTaxTerm"    (.Get 1) }} {{else}} {{$.Scratch.Set "theTaxTerm"    "*"      }} {{end}}
+  {{- if gt (len .Params) 2 }} {{$.Scratch.Set "theOutFormat"  (.Get 2) }} {{else}} {{$.Scratch.Set "theOutFormat"  ".Title" }} {{end}}
+{{- end }}
+
+{{- if isset .Site.Params (lower "debug" ) }}
+{{- if .Site.Params.debug }}
+<br/>
+"theTaxonomy"  : {{- $.Scratch.Get "theTaxonomy"    }} <br/>
+"theTaxTerm"   : {{- $.Scratch.Get "theTaxTerm"     }} <br/>
+"theTitle"     : {{- $.Scratch.Get "theTitle"       }} <br/>
+"theSearchType": {{- $.Scratch.Get "theSearchType"  }} <br/>
+"theModifiers" : {{- $.Scratch.Get "theModifiers"   }} <br/>
+"theOperator"  : {{- $.Scratch.Get "theOperator"    }} <br/>
+"theOutFormat" : {{- $.Scratch.Get "theOutFormat"   }} <br/>
+"theHtmlList"  : {{- $.Scratch.Get "theHtmlList"    }} <br/>
+{{- end }}
+{{- end }}
+
+  {{- with $.Site.GetPage "taxonomy" ($.Scratch.Get "theTaxonomy") (lower ($.Scratch.Get "theTaxTerm")) }}
+      <a href="{{.URL}}">
+        {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
+        {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
+        {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title}}       {{end}}
+      </a>&nbsp;
+  {{- end }}
