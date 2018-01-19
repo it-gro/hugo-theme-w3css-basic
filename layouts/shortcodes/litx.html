@@ -45,7 +45,7 @@
                   <a href="{{ .Permalink}}">
                     {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
                     {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
-                    {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.LinkTitle}}   {{end}}
+                    {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title | markdownify | emojify }} {{end}}
                 </a> </li>
             {{- end }}
             {{- end }} {{/* range Pages */}}
@@ -67,7 +67,7 @@
                   <a href="{{ .Permalink}}">
                     {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
                     {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
-                    {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.LinkTitle}}   {{end}}
+                    {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title | markdownify | emojify }} {{end}}
                 </a> </li>
             {{- end }}
             {{- end }} {{/* range $value.Pages */}}
