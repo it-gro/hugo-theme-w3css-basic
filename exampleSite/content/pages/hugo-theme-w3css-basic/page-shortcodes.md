@@ -717,7 +717,7 @@ in {{< w3-codespan >}}i18n/en.yaml{{< /w3-codespan >}}
 
 # Experimental
 
-## lkti: Lookup by Title
+## liti: List by Title
 
 * **l**oo**k** **b**y **Ti**tle
 * hugo has build in shortcodes [ref](https://gohugo.io/functions/ref) and [relref](https://gohugo.io/functions/relref): https://gohugo.io/content-management/shortcodes/
@@ -742,53 +742,53 @@ ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelP
 * An easy and short usage would be:
 
 {{< highlight nolang >}}
-See more here: {{</* lkti "Vestibulum" */>}}
+See more here: {{</* liti "Vestibulum" */>}}
 {{< /highlight >}}
 
-See more here: {{< lkti "Vestibulum" >}}
+See more here: {{< liti "Vestibulum" >}}
 
 * Here are more examples with **eq** operator
 
 Shortcode                                                      | Result
 ---------------------------------------------------------------|--------------------------------
-lkti search="Vestibulum"                                       | {{< lkti search="Vestibulum"                                       >}}
-lkti search="Vestibulum" type="regular" op="eq"                | {{< lkti search="Vestibulum" type="regular" op="eq"                >}}
-lkti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" | {{< lkti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" >}}
-lkti search="VeSTIBULUM"                        mod="i" ul="1" | {{< lkti search="VeSTIBULUM"                        mod="i" ul="1" >}}
-lkti search="Phasellus"  type="all"                     ul="1" | {{< lkti search="Phasellus"  type="all"                     ul="1" >}}
-lkti search="Phasellus"  type="all" ofm=".Title"        ul="1" | {{< lkti search="Phasellus"  type="all" ofm=".Title"        ul="1" >}}
-lkti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" | {{< lkti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" >}}
-lkti search="Phasellus"  type="all" ofm=".RelPermalink"        | {{< lkti search="Phasellus"  type="all" ofm=".RelPermalink"        >}}
+liti search="Vestibulum"                                       | {{< liti search="Vestibulum"                                       >}}
+liti search="Vestibulum" type="regular" op="eq"                | {{< liti search="Vestibulum" type="regular" op="eq"                >}}
+liti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" | {{< liti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" >}}
+liti search="VeSTIBULUM"                        mod="i" ul="1" | {{< liti search="VeSTIBULUM"                        mod="i" ul="1" >}}
+liti search="Phasellus"  type="all"                     ul="1" | {{< liti search="Phasellus"  type="all"                     ul="1" >}}
+liti search="Phasellus"  type="all" ofm=".Title"        ul="1" | {{< liti search="Phasellus"  type="all" ofm=".Title"        ul="1" >}}
+liti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" | {{< liti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" >}}
+liti search="Phasellus"  type="all" ofm=".RelPermalink"        | {{< liti search="Phasellus"  type="all" ofm=".RelPermalink"        >}}
 
 
 * Here are some examples with **in** operator
 
 Shortcode                                                                   | Result
 ----------------------------------------------------------------------------|--------------------------------
-lkti op="in" search="theme"                                                 | {{< lkti op="in" search="theme"                                                         >}}
-lkti op="in" search="theme"                                  mod="i" ul="1" | {{< lkti op="in" search="theme"                                  mod="i" ul="1"         >}}
-lkti op="in" search="theme"  type="all"                      mod="i" ul="1" | {{< lkti op="in" search="theme"  type="all"                      mod="i" ul="1"         >}}
-lkti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1" | {{< lkti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1"         >}}
-lkti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1" | {{< lkti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1"         >}}
+liti op="in" search="theme"                                                 | {{< liti op="in" search="theme"                                                         >}}
+liti op="in" search="theme"                                  mod="i" ul="1" | {{< liti op="in" search="theme"                                  mod="i" ul="1"         >}}
+liti op="in" search="theme"  type="all"                      mod="i" ul="1" | {{< liti op="in" search="theme"  type="all"                      mod="i" ul="1"         >}}
+liti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1" | {{< liti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1"         >}}
+liti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1" | {{< liti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1"         >}}
 
 * With positional arguments:
 
 {{< highlight nolang >}}
-See more here: {{</* lkti "Vestibulum" "in" "i" "ul" */>}}
+See more here: {{</* liti "Vestibulum" "in" "i" "ul" */>}}
 {{< /highlight >}}
 
-See more here: {{< lkti "Vestibulum" "in" "i" "ul" >}}
+See more here: {{< liti "Vestibulum" "in" "i" "ul" >}}
 
 
 {{< highlight nolang >}}
-See more here: {{</* lkti "Vestibulum" "in" "" "ul" */>}}
+See more here: {{</* liti "Vestibulum" "in" "" "ul" */>}}
 {{< /highlight >}}
 
 
-See more here: {{< lkti "Vestibulum" "in" "" "ul" >}}
+See more here: {{< liti "Vestibulum" "in" "" "ul" >}}
 
 
-## lktt: Lookup by Taxonomy/Term (just one result)
+## litt: List by Taxonomy/Term (just one result)
 
 Argument | Position -1 | Default | What             | Remark
 ---------|-------------|---------|------------------|-------
@@ -798,26 +798,26 @@ ofm      | 2           | .Title  |                  | (OutputFormat) .Kind .RelP
 
 
 {{< highlight nolang >}}
-See more here: {{</* lktt term="Go" */>}}
+See more here: {{</* litt term="Go" */>}}
 {{< /highlight >}}
 
-See more here: {{< lktt term="Go" >}}
+See more here: {{< litt term="Go" >}}
 
 {{< highlight nolang >}}
-See more here: {{</* lktt "tags" "Go" */>}}
+See more here: {{</* litt "tags" "Go" */>}}
 {{< /highlight >}}
 
-See more here: {{< lktt "tags" "Go" >}}
+See more here: {{< litt "tags" "Go" >}}
 
 {{< highlight nolang >}}
-See more here: {{</* lktt "categories" "Golang" ".RelPermalink" */>}}
+See more here: {{</* litt "categories" "Golang" ".RelPermalink" */>}}
 {{< /highlight >}}
 
-See more here: {{< lktt "categories" "Golang" ".RelPermalink" >}}
+See more here: {{< litt "categories" "Golang" ".RelPermalink" >}}
 
 
 
-## lktx: Lookup by Taxonomy (full search)
+## litx: List by Taxonomy (full search)
 
 * ignoring case
 
@@ -834,26 +834,26 @@ ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelP
 
 Shortcode                     | Result
 ------------------------------|-----------------------------
-lktx "*" "Nullam"             | {{< lktx "*" "Nullam"             >}}
-lktx "*" "*" "Null" "in" "p"  | {{< lktx "*" "*" "Null" "in" "p"  >}}
+litx "*" "Nullam"             | {{< litx "*" "Nullam"             >}}
+litx "*" "*" "Null" "in" "p"  | {{< litx "*" "*" "Null" "in" "p"  >}}
 
 
 * using named parameters:
 
 Shortcode                               | Result
 --------------------------------------- |---------------------------
-lktx tax="tags" term="pictures" op="in" | {{< lktx tax="tags" term="pictures" op="in" >}}
-lktx            term="Nullam"           | {{< lktx            term="Nullam"           >}}
-lktx            term="Nullam" om="t"    | {{< lktx            term="Nullam" om="t"    >}}
-lktx            term="Nullam" om="p"    | {{< lktx            term="Nullam" om="p"    >}}
-lktx            term="Nullam" om="tp"   | {{< lktx            term="Nullam" om="tp"   >}}
+litx tax="tags" term="pictures" op="in" | {{< litx tax="tags" term="pictures" op="in" >}}
+litx            term="Nullam"           | {{< litx            term="Nullam"           >}}
+litx            term="Nullam" om="t"    | {{< litx            term="Nullam" om="t"    >}}
+litx            term="Nullam" om="p"    | {{< litx            term="Nullam" om="p"    >}}
+litx            term="Nullam" om="tp"   | {{< litx            term="Nullam" om="tp"   >}}
 
 
 Shortcode                                                     | Result
 --------------------------------------------------------------|--------------------------------
-lktx                   term="web"                             | {{< lktx                   term="web"                            >}}
-lktx tax="tags"        term="web" om="p"                      | {{< lktx tax="tags"        term="web" om="p"                     >}}
-lktx tax="tags"        term="web" om="p" ofm=".RelPermalink"  | {{< lktx tax="tags"        term="web" om="p" ofm=".RelPermalink" >}}
-lktx tax="categories"  term="web"                             | {{< lktx tax="categories"  term="web"                            >}}
+litx                   term="web"                             | {{< litx                   term="web"                            >}}
+litx tax="tags"        term="web" om="p"                      | {{< litx tax="tags"        term="web" om="p"                     >}}
+litx tax="tags"        term="web" om="p" ofm=".RelPermalink"  | {{< litx tax="tags"        term="web" om="p" ofm=".RelPermalink" >}}
+litx tax="categories"  term="web"                             | {{< litx tax="categories"  term="web"                            >}}
 
 
