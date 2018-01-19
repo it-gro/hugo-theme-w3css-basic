@@ -69,13 +69,14 @@ pygmentsUseClasses            = true
 # hugo sections
 
 [taxonomies]
-  tag = "tags"
+  tag      = "tags"
   category = "categories"
 
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
 
 
+# ##################################################
 # Main menu
 [menu]
 
@@ -132,7 +133,7 @@ pygmentsUseClasses            = true
   weight = 5
   name   = "Blog"
   url    = "/blog"
-  pre    = "fa fa-rss"
+  pre    = "fas fa-rss"
 
 [[menu.main]]
   weight = 6
@@ -306,14 +307,13 @@ consectetuer adipiscing
   # ##############################
 
   # used in layouts/partials/head.html
-  # use true for https://themes.gohugo.io/hugo-theme-w3css-basic
   fontsUseGoogleApis=false
 
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
   # used in layouts/partials/contact.map.html
   # if empty => fallback to URL (instead of map)
-  # define environment variable (=> key ist not stored in github)
+  # define environment variable (=> key is not stored in github)
   envGoogleMapsApiKey = "GoogleMapsApiKey"
   # if environment is not an option => define key here:
   #googleMapsApiKey = ""
@@ -360,7 +360,6 @@ consectetuer adipiscing
   # set to true, if you want to show the count of comments
   # fires an async request to disqus.com/count.js
   disqusButtonShowCount = false
-
 
   # date format (blog) is created using:
   #  layouts/partials/main.blog.date.html
@@ -505,13 +504,13 @@ ultricies eget, tempor sit amet, ante
 # other sections
 
 [blackfriday]
+  # extensions = ["noEmptyLineBeforeBlock"]
+  # extensions = ["hardLineBreak"]
   # https://gohugo.io/getting-started/configuration/#blackfriday-options
   # https://gohugo.io/getting-started/configuration/#blackfriday-extensions
   # https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
   # http://commonmark.org/
   # http://spec.commonmark.org/0.28/
-  # extensions = ["hardLineBreak"]
-
 
 # emacs
 # Local variables:
