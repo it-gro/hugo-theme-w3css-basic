@@ -39,9 +39,9 @@
 {{- end }} {{/* if isset    */}}
 
 {{- define "front-clients-entry" }}
-  {{- if .name }} <div class="w3-large"> {{ .name }} </div> {{ end }}
-  {{- if and (    .url) (.image) }}  <a href="{{ .url }}" target="_blank"><img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:100px; max-height:100px; "></a> {{ end }}
-  {{- if and (not .url) (.image) }}                                       <img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="max-width:100px; max-height:100px; ">     {{ end }}
+  {{- if .name }} <div class="w3-large w3-center"> {{ .name }} </div> {{ end }}
+  {{- if and (    .url) (.image) }}  <a href="{{ .url }}" target="_blank"><img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="margin:0 auto; max-width:100px; max-height:100px; "></a> {{ end }}
+  {{- if and (not .url) (.image) }}                                       <img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="margin:0 auto; max-width:100px; max-height:100px; ">     {{ end }}
 {{- end -}}
 
 {{- /* emacs                 */}}
