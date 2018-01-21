@@ -1108,8 +1108,6 @@ pygmentsUseClasses            = true
 
 * If you like comments in the html source, this one is for you
 
-ToDo: enableHtmlComment
-
 
 ```yaml
 # flags used for tracing and html comment output
@@ -1117,8 +1115,12 @@ ToDo: enableHtmlComment
   #   html-comment          enable partials html comment output 
   #   debug-shortcodes      enable all shortcodes debugging output
   #   debug-shortcode-liti  enable all shortcode liti debugging output
-  traceFlags         = "html-comment:"
+  # traceFlags       = "html-comment:debug-shortcode-liti"
+  traceFlags         = "html-comment"
 ```
+
+If `traceFlags` includes the word `html-comment` some HTML comments will
+be included in the html source code.
 
 
 
@@ -1476,7 +1478,9 @@ They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-
 
 * 900x600
 
-![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.png)
+![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.1.png)
+
+![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.2.png)
 
 
 * Complete
