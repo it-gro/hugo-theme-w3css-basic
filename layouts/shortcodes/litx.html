@@ -1,18 +1,24 @@
 {{/* https://github.com/it-gro/hugo-theme-w3css-basic */}}
+{{- $.Scratch.Set "theTaxonomy"     "tags"   }}
+{{- $.Scratch.Set "theTaxTerm"      "*"      }}
+{{- $.Scratch.Set "theTitle"        "*"      }}
+{{- $.Scratch.Set "theOperator"     "eq"     }}
+{{- $.Scratch.Set "theOutMode"      "t"      }}
+{{- $.Scratch.Set "theOutFormat"    ".Title" }}
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set "theTaxonomy"     (.Get "tax"       | default "tags"    )}}
-  {{- $.Scratch.Set "theTaxTerm"      (.Get "term"      | default "*"       )}}
-  {{- $.Scratch.Set "theTitle"        (.Get "title"     | default "*"       )}}
-  {{- $.Scratch.Set "theOperator"     (.Get "op"        | default "eq"      )}}
-  {{- $.Scratch.Set "theOutMode"      (.Get "om"        | default "t"       )}}
-  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ".Title"  )}}
+  {{- $.Scratch.Set "theTaxonomy"     (.Get "tax"       | default ($.Scratch.Get "theTaxonomy"  ) )}}
+  {{- $.Scratch.Set "theTaxTerm"      (.Get "term"      | default ($.Scratch.Get "theTaxTerm"   ) )}}
+  {{- $.Scratch.Set "theTitle"        (.Get "title"     | default ($.Scratch.Get "theTitle"     ) )}}
+  {{- $.Scratch.Set "theOperator"     (.Get "op"        | default ($.Scratch.Get "theOperator"  ) )}}
+  {{- $.Scratch.Set "theOutMode"      (.Get "om"        | default ($.Scratch.Get "theOutMode"   ) )}}
+  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ($.Scratch.Get "theOutFormat" ) )}}
 {{- else }}
-  {{- if gt (len .Params) 0 }} {{$.Scratch.Set "theTaxonomy"   (.Get 0) }} {{else}} {{$.Scratch.Set "theTaxonomy"   "tags"   }} {{end}}
-  {{- if gt (len .Params) 1 }} {{$.Scratch.Set "theTaxTerm"    (.Get 1) }} {{else}} {{$.Scratch.Set "theTaxTerm"    "*"      }} {{end}}
-  {{- if gt (len .Params) 2 }} {{$.Scratch.Set "theTitle"      (.Get 2) }} {{else}} {{$.Scratch.Set "theTitle"      "*"      }} {{end}}
-  {{- if gt (len .Params) 3 }} {{$.Scratch.Set "theOperator"   (.Get 3) }} {{else}} {{$.Scratch.Set "theOperator"   "eq"     }} {{end}}
-  {{- if gt (len .Params) 4 }} {{$.Scratch.Set "theOutMode"    (.Get 4) }} {{else}} {{$.Scratch.Set "theOutMode"    "t"      }} {{end}}
-  {{- if gt (len .Params) 5 }} {{$.Scratch.Set "theOutFormat"  (.Get 5) }} {{else}} {{$.Scratch.Set "theOutFormat"  ".Title" }} {{end}}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theTaxonomy"   (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theTaxTerm"    (.Get $myPos) }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theTitle"      (.Get $myPos) }} {{end}}
+  {{- $myPos := 3}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theOperator"   (.Get $myPos) }} {{end}}
+  {{- $myPos := 4}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theOutMode"    (.Get $myPos) }} {{end}}
+  {{- $myPos := 5}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theOutFormat"  (.Get $myPos) }} {{end}}
 {{- end }}
 
 {{- if isset .Site.Params (lower "debug" ) }}

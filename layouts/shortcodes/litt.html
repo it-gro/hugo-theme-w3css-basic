@@ -1,12 +1,15 @@
 {{/* https://github.com/it-gro/hugo-theme-w3css-basic */}}
+{{- $.Scratch.Set "theTaxonomy"  "tags"   }}
+{{- $.Scratch.Set "theTaxTerm"   "*"      }}
+{{- $.Scratch.Set "theOutFormat" ".Title" }}
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set "theTaxonomy"     (.Get "tax"       | default "tags"    )}}
-  {{- $.Scratch.Set "theTaxTerm"      (.Get "term"      | default "*"       )}}
-  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ".Title"  )}}
+  {{- $.Scratch.Set "theTaxonomy"     (.Get "tax"       | default ($.Scratch.Get "theTaxonomy"  ) )}}
+  {{- $.Scratch.Set "theTaxTerm"      (.Get "term"      | default ($.Scratch.Get "theTaxTerm"   ) )}}
+  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ($.Scratch.Get "theOutFormat" ) )}}
 {{- else }}
-  {{- if gt (len .Params) 0 }} {{$.Scratch.Set "theTaxonomy"   (.Get 0) }} {{else}} {{$.Scratch.Set "theTaxonomy"   "tags"   }} {{end}}
-  {{- if gt (len .Params) 1 }} {{$.Scratch.Set "theTaxTerm"    (.Get 1) }} {{else}} {{$.Scratch.Set "theTaxTerm"    "*"      }} {{end}}
-  {{- if gt (len .Params) 2 }} {{$.Scratch.Set "theOutFormat"  (.Get 2) }} {{else}} {{$.Scratch.Set "theOutFormat"  ".Title" }} {{end}}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theTaxonomy"   (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theTaxTerm"    (.Get $myPos) }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theOutFormat"  (.Get $myPos) }} {{end}}
 {{- end }}
 
 {{- if isset .Site.Params (lower "debug" ) }}

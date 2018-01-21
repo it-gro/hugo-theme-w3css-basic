@@ -1,5 +1,5 @@
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set "myClass" (.Get "class" | default "gp")}}
+  {{- $.Scratch.Set "myClass" (.Get "class"  | default "gp")}}
 {{- else}}
   {{-  $.Scratch.Set "myClass" (.Get 0       | default "gp")}}
 {{- end}}
