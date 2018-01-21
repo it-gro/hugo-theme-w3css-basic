@@ -1,4 +1,13 @@
-{{- $myClasses := .Get "classes" | default "w3-button w3-ripple w3-theme-l3 "}}
-{{- $myIcon    := .Get "icon"    | default ""  }}
-{{- $myHref    := .Get "href"    | default "#" }}
-<a class="{{$myClasses}}" href="{{$myHref | relURL }}">{{if $myIcon}}<i class="fa {{$myIcon}} fa-1x"></i>{{end}}&nbsp;{{ .Inner }}</a>
+{{- $.Scratch.Set "theClasses" "w3-button w3-ripple w3-theme-l3 " }}
+{{- $.Scratch.Set "theHref"    "#"                                }}
+{{- $.Scratch.Set "theIcon"    ""                                 }}
+{{- if .IsNamedParams }}
+  {{- $.Scratch.Set "theClasses" (.Get "classes" | default ($.Scratch.Get "theClasses") ) }}
+  {{- $.Scratch.Set "theHref"    (.Get "href"    | default ($.Scratch.Get "theHref")    )}}
+  {{- $.Scratch.Set "theIcon"    (.Get "icon"    | default ($.Scratch.Get "theIcon")    )}}
+{{- else}}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theClasses" (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theHref"    (.Get $myPos) }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theIcon"    (.Get $myPos) }} {{end}}
+{{- end}}
+<a class="{{$.Scratch.Get `theClasses`}}" href="{{$.Scratch.Get `theHref`}} | relURL }}">{{if $.Scratch.Get `theIcon`}}<i class="fa {{$.Scratch.Get `theIcon`}} fa-1x"></i>{{end}}&nbsp;{{ .Inner }}</a>

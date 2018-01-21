@@ -1,4 +1,9 @@
 <!-- https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/asciicast.html  -->
 {{- $id := .Get 0 }}
 <script type="text/javascript" src="https://asciinema.org/a/{{ $id }}.js" id="asciicast-{{ $id }}" data-rows="10" async></script>
+<noscript>
+  {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }}
+  <p>{{ default "no JavaScript" (i18n "JsNeeded") }} (asciinema)</p>
+  <a href="https://asciinema.org/a/{{ $id }}">https://asciinema.org/a/{{ $id }}</a>
+</noscript>
 {{- /* trackers (as of 2018-01-14): asciinema.org, gravatar.com */}}

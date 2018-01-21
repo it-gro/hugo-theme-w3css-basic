@@ -1,18 +1,24 @@
 {{/* https://github.com/it-gro/hugo-theme-w3css-basic */}}
+{{- $.Scratch.Set "theString"       ""        }}
+{{- $.Scratch.Set "theOperator"     "eq"      }}
+{{- $.Scratch.Set "theModifiers"    ""        }}
+{{- $.Scratch.Set "theHtmlList"     ""        }}
+{{- $.Scratch.Set "theType"         "regular" }}
+{{- $.Scratch.Set "theOutFormat"    ".Title"  }}
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set "theString"       (.Get "search"    | default ""        )}}
-  {{- $.Scratch.Set "theOperator"     (.Get "op"        | default "eq"      )}}
-  {{- $.Scratch.Set "theModifiers"    (.Get "mod"       | default ""        )}}
-  {{- $.Scratch.Set "theHtmlList"     (.Get "ul"        | default ""        )}}
-  {{- $.Scratch.Set "theType"         (.Get "type"      | default "regular" )}}
-  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ".Title"  )}}
+  {{- $.Scratch.Set "theString"       (.Get "search"    | default ($.Scratch.Get "theString"     ) )}}
+  {{- $.Scratch.Set "theOperator"     (.Get "op"        | default ($.Scratch.Get "theOperator"   ) )}}
+  {{- $.Scratch.Set "theModifiers"    (.Get "mod"       | default ($.Scratch.Get "theModifiers"  ) )}}
+  {{- $.Scratch.Set "theHtmlList"     (.Get "ul"        | default ($.Scratch.Get "theHtmlList"   ) )}}
+  {{- $.Scratch.Set "theType"         (.Get "type"      | default ($.Scratch.Get "theType"       ) )}}
+  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ($.Scratch.Get "theOutFormat"  ) )}}
 {{- else }}
-  {{- if gt (len .Params) 0 }} {{$.Scratch.Set "theString"     (.Get 0) }} {{else}} {{$.Scratch.Set "theString"    ""        }} {{end}}
-  {{- if gt (len .Params) 1 }} {{$.Scratch.Set "theOperator"   (.Get 1) }} {{else}} {{$.Scratch.Set "theOperator"  "eq"      }} {{end}}
-  {{- if gt (len .Params) 2 }} {{$.Scratch.Set "theModifiers"  (.Get 2) }} {{else}} {{$.Scratch.Set "theModifiers" ""        }} {{end}}
-  {{- if gt (len .Params) 3 }} {{$.Scratch.Set "theHtmlList"   (.Get 3) }} {{else}} {{$.Scratch.Set "theHtmlList"  ""        }} {{end}}
-  {{- if gt (len .Params) 4 }} {{$.Scratch.Set "theType"       (.Get 4) }} {{else}} {{$.Scratch.Set "theType"      "regular" }} {{end}}
-  {{- if gt (len .Params) 5 }} {{$.Scratch.Set "theOutFormat"  (.Get 5) }} {{else}} {{$.Scratch.Set "theOutFormat" ".Title"  }} {{end}}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theString"     (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theOperator"   (.Get $myPos) }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theModifiers"  (.Get $myPos) }} {{end}}
+  {{- $myPos := 3}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theHtmlList"   (.Get $myPos) }} {{end}}
+  {{- $myPos := 4}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theType"       (.Get $myPos) }} {{end}}
+  {{- $myPos := 5}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theOutFormat"  (.Get $myPos) }} {{end}}
 {{- end }}
 
 {{- if isset .Site.Params (lower "debug" ) }}
