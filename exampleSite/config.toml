@@ -367,6 +367,18 @@ consectetuer adipiscing
   #  layouts/partials/main.i18n.date.short.html
   #  and i18n/*.yaml
 
+  # enable output of shortcode hc (html comment)
+  # used in layouts/shortcodes/hc.html
+  enableHC = true
+
+  # flags used for tracing and html comment output
+  # currently used:
+  #   html-comment          enable partials html comment output 
+  #   debug-shortcodes      enable all shortcodes debugging output
+  #   debug-shortcode-liti  enable all shortcode liti debugging output
+  # traceFlags       = "html-comment:debug-shortcode-liti"
+  traceFlags         = "html-comment:debug-shortcode-liti"
+
   # developer stuff
   debug              = false
   uglyURLs           = false

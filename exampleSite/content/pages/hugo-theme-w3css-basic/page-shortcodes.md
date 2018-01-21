@@ -710,6 +710,7 @@ in {{< w3-codespan >}}i18n/en.yaml{{< /w3-codespan >}}
 ## asciicast
 
 * taken from https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
+* added no javascript fallback
 
 {{< asciicast WJM2LEZQs8VRhNeuZ5NiGPp9I >}}
 
@@ -877,3 +878,61 @@ Shortcode                                                                 | Resu
 {{</* litx tax="categories"  term="web"                             */>}} | {{< litx tax="categories"  term="web"                            >}}
 {{</* litx tax="*"           term="web" om="p"                      */>}} | {{< litx tax="*"           term="web" om="p"                     >}}
 {{</* litx tax="*"           term="web" om="pt" ofm=".RelPermalink" */>}} | {{< litx tax="*"           term="web" om="pt" ofm=".RelPermalink" >}}
+
+
+## hc
+
+HTML comment may be included in markdown via:
+
+{{< highlight html >}}
+<!--
+foo
+bar
+-->
+{{< /highlight >}}
+
+
+Via the `hc` (**H**tml **C**omment) shortcode HTML comments may be enabled or disabled in the output:
+
+`config.toml`
+{{< highlight toml >}}
+[params]
+  enableHC = true
+{{< /highlight >}}
+
+Here's how to use it:
+
+
+{{< cscb c >}}
+{{</* hc "foo" */>}}
+{{< /cscb >}}
+
+Look in the html source. Here's a comment:
+{{< hc "foo" />}}
+seen?
+
+{{< cscb c >}}
+{{</* hc >}}
+this works
+as well
+{{< /hc */>}}
+{{< /cscb >}}
+
+{{< hc >}}
+this is 
+a comment
+{{< /hc >}}
+
+
+{{< cscb c >}}
+{{</* hc "some test">}}
+more 1
+more 2
+{{< /hc */>}}
+{{< /cscb >}}
+
+{{< hc "text 1">}}
+line 1
+line 2
+{{< /hc >}}
+
