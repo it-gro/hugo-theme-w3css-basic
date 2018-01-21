@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/page.nav.cards.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/page.nav.cards.html -->` | safeHTML }} 
+{{- end}}
 {{- .Scratch.Set "nav-icon" "" }}
 {{- $startSection := (.Site.GetPage "section" "pages") }}
 {{- if $startSection }}

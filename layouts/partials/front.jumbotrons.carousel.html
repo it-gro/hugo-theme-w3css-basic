@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/front.jumbotrons.carousel.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/front.jumbotrons.carousel.html -->` | safeHTML }} 
+{{- end}}
 {{- if isset $.Site.Params (lower "jumbotrons" ) }}
 {{- if $.Site.Params.jumbotrons.enable   }}
 {{- if gt (len .Site.Data.jumbotron) 0  }}
@@ -6,7 +8,9 @@
   <div id="container-jumbotron" class="{{ default `w3-theme-l4` ($.Site.Param `colorFrontJumbotronsSection`)}} ">
 
     <div class="jumbotron-owl owl-carousel owl-theme ">
-      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range .Site.Data.jumbotron -->` | safeHTML }} {{end}}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+        {{ `<!-- range .Site.Data.jumbotron -->` | safeHTML }} 
+      {{- end}}
       {{/*- range $index, $element := sort .Site.Data.jumbotron "weight" */}}
       {{- range $index, $element := .Site.Data.jumbotron }} {{/* use filename for sort order */}}
         {{- template "front-jumbotron-entry" $element }}
@@ -15,7 +19,9 @@
 
     <noscript>
       <div class="w3-container">
-        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range .Site.Data.jumbotron -->` | safeHTML }} {{end}}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+          {{ `<!-- range .Site.Data.jumbotron -->` | safeHTML }} 
+        {{- end}}
         {{- range $index, $element := first 1 (sort .Site.Data.jumbotron) }}
           {{- template "front-jumbotron-entry" $element }}
         {{- end }} {{/* range */}}
@@ -30,7 +36,9 @@
 
 {{- define "front-jumbotron-entry" }}
   {{- if and .image (not .title) }}
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- front-jumbotron-entry and .image (not .title) -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- front-jumbotron-entry and .image (not .title) -->` | safeHTML }} 
+    {{- end}}
     <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom w3-round-xxlarge {{ default `w3-theme-l2` ($.Site.Param.colorFrontJumbotronsContainer)}} ">
       <div class="w3-container w3-margin">
         <img class="w3-image w3-center w3-round" alt="" src="{{ .image | relURL }}"  style="max-width:140px; max-height:140px; width: auto; height: auto; margin: auto">
@@ -39,7 +47,9 @@
   {{- end }} {{/* if .image */}}
 
   {{- if and .icon (and (not .title) (not .image) ) }}
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- front-jumbotron-entry and .image (not .title) -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- front-jumbotron-entry and .image (not .title) -->` | safeHTML }} 
+    {{- end}}
     <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom w3-round-xxlarge {{ default `w3-theme-l2` ($.Site.Param.colorFrontJumbotronsContainer)}} ">
       <div class="w3-container w3-margin w3-center ">
         <i class="{{ .icon }} fa-4x"></i>
@@ -48,7 +58,9 @@
   {{- end }} {{/* if .image */}}
 
   {{- if and .title (not ( or .image .icon)) }}
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- front-jumbotron-entry and .title (not ( or .image .icon)) -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- front-jumbotron-entry and .title (not ( or .image .icon)) -->` | safeHTML }} 
+    {{- end}}
   <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom w3-round-xxlarge {{ default `w3-theme-l2` ($.Site.Param.colorFrontJumbotronsContainer)}} ">
     <h1>{{- .title -}}</h1>
     {{ if .description }}<div>{{ .description | markdownify }}</div>{{ end }}
@@ -56,7 +68,9 @@
   {{- end }} {{/* if .title */}}
 
   {{- if and .title (or .image .icon) }}
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- front-jumbotron-entry and .title (or .image .icon) -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- front-jumbotron-entry and .title (or .image .icon) -->` | safeHTML }}
+    {{- end}}
   <div class="w3-container w3-margin-top w3-margin-left w3-margin-right w3-round-xxlarge {{ default `w3-theme-l2` ($.Site.Param.colorFrontJumbotronsContainer)}} ">
     <div class="w3-row-padding">
       <div class="w3-col m3">

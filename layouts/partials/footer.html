@@ -1,9 +1,13 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/footer.html  -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/footer.html  -->` | safeHTML }} 
+{{- end}}
 <div id="footer" class="w3-container {{ default `w3-theme-d5` ($.Site.Param `colorFooterContainer`)}} ">
 
   <div class="w3-margin-bottom w3-row w3-mobile">
 
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- Site.Params.aboutUs  -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- Site.Params.aboutUs  -->` | safeHTML }} 
+    {{- end}}
     {{- if $.Site.Params.aboutUs }}
     <div class="w3-col w3-third">
       <h4>{{ default "About" (i18n "aboutUs") }}</h4>
@@ -11,13 +15,17 @@
     </div> <!-- w3-col -->
     {{- end }} {{/* if aboutUs */}}
 
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- Site.Params.recentPosts  -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- Site.Params.recentPosts  -->` | safeHTML }} 
+    {{- end}}
     {{- if isset $.Site.Params (lower "recentPosts" ) }}
     {{- if $.Site.Params.recentPosts.enableFooter }}
     {{- if $.Site.Params.recentPosts.footerNumOfPosts }}
     <div class="w3-col w3-third">
       <h4>{{ default "Posts" (i18n "recentPosts") }}</h4>
-      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range first Site.Params.footerNumOfPosts .Site.RegularPages "Section" "blog" -->` | safeHTML }} {{end}}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+        {{ `<!-- range first Site.Params.footerNumOfPosts .Site.RegularPages "Section" "blog" -->` | safeHTML }} 
+      {{- end}}
       {{- range first $.Site.Params.recentPosts.footerNumOfPosts (where .Site.RegularPages "Section" "blog") }}
 
         <div class="w3-container ">
@@ -40,7 +48,9 @@
     {{- end }} {{/* if recentPosts.enableFooter */}}
 
 
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- Site.Params.address  -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- Site.Params.address  -->` | safeHTML }} 
+    {{- end}}
     {{- if isset $.Site.Params (lower "address" ) }}
     <div id="address" class="w3-col w3-third">
       <h4>{{ default "Contact" (i18n "contactTitle") }}</h4>

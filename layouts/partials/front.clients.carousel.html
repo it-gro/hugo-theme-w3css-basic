@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/front.clients.carousel.html  -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/front.clients.carousel.html  -->` | safeHTML }} 
+{{- end}}
 {{- if isset $.Site.Params (lower "clients" ) }}
 {{- if $.Site.Params.clients.enable }}
 {{- if gt (len .Site.Data.clients) 0 }}
@@ -15,7 +17,9 @@
     </div>
 
     <div class="clients-owl owl-carousel owl-theme w3-margin-bottom">
-      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range .Site.Data.clients  -->` | safeHTML -}} {{end}}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+        {{ `<!-- range .Site.Data.clients  -->` | safeHTML -}} 
+      {{- end}}
       {{/*- range $index, $element := sort .Site.Data.clients "weight" */}}
       {{- range $index, $element := .Site.Data.clients }} {{/* use filename for sort order */}}
         <div>{{ template "front-clients-entry" $element }}</div>
@@ -24,7 +28,9 @@
 
     <noscript>
       <div class="w3-cell-row w3-text-theme">
-        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range first 3 .Site.Data.clients  -->` | safeHTML -}} {{end}}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+          {{ `<!-- range first 3 .Site.Data.clients  -->` | safeHTML -}} 
+        {{- end}}
         {{/*- range $index, $element := first 3 (sort .Site.Data.clients "weight") */}}
         {{- range $index, $element := first 3 (sort .Site.Data.clients) }}
           <div class="w3-cell w3-mobile">{{ template "front-clients-entry" $element }}</div>

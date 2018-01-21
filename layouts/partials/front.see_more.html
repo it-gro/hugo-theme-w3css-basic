@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/front.see_more.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/front.see_more.html -->` | safeHTML }} 
+{{- end}}
 {{- if isset $.Site.Params (lower "seemore" ) }}
 {{- if $.Site.Params.seeMore.enable  }}
 <section id="see_more" class="w3-theme">

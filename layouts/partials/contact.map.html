@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/contact.map.html  -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/contact.map.html  -->` | safeHTML }} 
+{{- end}}
 <!-- https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=de -->
 {{- if isset $.Site.Params (lower "latitude"  ) }}
 {{- if isset $.Site.Params (lower "longitude" ) }}
@@ -6,7 +8,9 @@
 {{- if isset $.Site.Params (lower "googleMapsApiKey"   ) }} {{ $.Scratch.Set "GoogleMapsApiKey"         $.Site.Params.googleMapsApiKey     }} {{ end }}
 
 {{- if  ne ($.Scratch.Get "GoogleMapsApiKey") "" }}
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- GoogleMapsApiKey found  -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- GoogleMapsApiKey found  -->` | safeHTML }} 
+{{- end}}
 <script>
   function initMap() {
       var myloc = { lat: {{.Site.Params.latitude}}, lng: {{.Site.Params.longitude}} };
@@ -22,14 +26,18 @@
 
 <div id="map" class="w3-panel w3-card-4 {{ default `w3-theme-l2` ($.Site.Param `colorContactMapPanel`)}} ">
 <noscript>
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }} {{end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }} 
+{{- end}}
   <p>{{ default "no JavaScript" (i18n "JsNeeded") }} (google maps)</p>
   <a href="https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z=10" target="_blank">https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z={{.Site.Params.googleMapsZoom}}</a>
 </noscript>
 </div>
 
 {{- else }} {{/* if ne ($.Scratch.Get "GoogleMapsApiKey") ""   */}}
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- GoogleMapsApiKey empty => fallback  -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- GoogleMapsApiKey empty => fallback  -->` | safeHTML }} 
+{{- end}}
 <div class="w3-card-4 w3-margin w3-round-xxlarge w3-center {{ default `w3-theme-l2` ($.Site.Param `colorContactMapCard`)}} ">
   Google Maps: <a href="https://maps.google.com/maps?q={{.Site.Params.latitude}},{{.Site.Params.longitude}}&z={{.Site.Params.googleMapsZoom}}" target="_blank"><i class="fas fa-map-marker-alt fa-5x w3-text-theme"></i></a>
 </div>

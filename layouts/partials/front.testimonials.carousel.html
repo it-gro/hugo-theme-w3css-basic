@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/front.testimonials.carousel.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/front.testimonials.carousel.html -->` | safeHTML }} 
+{{- end}}
 {{- if isset $.Site.Params (lower "testimonials" ) }}
 {{- if $.Site.Params.testimonials.enable   }}
 {{- if gt (len .Site.Data.testimonials) 0 }}
@@ -13,7 +15,9 @@
     </div>   <!-- w3-card -->
 
     <div class="testimonials-owl owl-carousel owl-theme w3-margin-bottom">
-      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range .Site.Data.testimonials -->` | safeHTML }} {{end}}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+        {{ `<!-- range .Site.Data.testimonials -->` | safeHTML }} 
+      {{- end}}
       {{- range $index, $element := sort .Site.Data.testimonials "weight" }}
       <div class="w3-card {{ default `w3-theme-l5` ($.Site.Param `colorFrontTestimonialsCarouselCard`)}} ">
         {{ template "front-testimonials-entry" $element }}
@@ -23,7 +27,9 @@
 
     <noscript>
       <div class="w3-cell-row">
-      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range first 3 .Site.Data.testimonials -->` | safeHTML }} {{end}}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+        {{ `<!-- range first 3 .Site.Data.testimonials -->` | safeHTML }} 
+      {{- end}}
         {{- range $index, $element := first 3 (sort .Site.Data.testimonials "weight") }}
           <div class="w3-cell w3-cell-bottom w3-mobile">
             <div class="w3-card w3-margin {{ default `w3-theme-l5` ($.Site.Param `colorFrontTestimonialsCarouselCard`)}} ">
@@ -41,7 +47,9 @@
 {{- end }} {{/* if isset    */}}
 
 {{- define "front-testimonials-entry" }}
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- front-testimonials-entry -->` | safeHTML }} {{end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+    {{ `<!-- front-testimonials-entry -->` | safeHTML }} 
+  {{- end}}
   <div class="w3-container w3-opacity">
     <p>{{- .text | markdownify }}<p>
   </div>

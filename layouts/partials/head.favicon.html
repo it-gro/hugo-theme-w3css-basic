@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/head.favicon.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/head.favicon.html -->` | safeHTML }} 
+{{- end}}
 {{- if isset $.Site.Params (lower "favicon" ) }}
 {{- if $.Site.Params.favicon.enable  }}
 {{- /*  <!-- Favicon and apple touch icons-->         */}} 

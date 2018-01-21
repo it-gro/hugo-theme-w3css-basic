@@ -1,14 +1,22 @@
 {{- define "main" }}
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- pages/list.html  -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- pages/list.html  -->` | safeHTML }} 
+{{- end}}
   {{- if $.Site.Params.debug }}pages/list.html{{ end }}
 
   {{ partial "page.nav.cards.html" . }}
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- back in pages/list.html  -->` | safeHTML }} {{end}}
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range .Data.Pages.ByWeigh  -->` | safeHTML }} {{end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+    {{ `<!-- back in pages/list.html  -->` | safeHTML }} 
+  {{- end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+    {{ `<!-- range .Data.Pages.ByWeigh  -->` | safeHTML }} 
+  {{- end}}
   {{/*- range $index, $element := sort .Data.Pages ".weight" */}}
   {{- range $index, $element := .Data.Pages.ByWeight }}
     {{- if eq (mod $index 3) 0 }}
-    {{ `<!-- modulo 0 -->` | safeHTML }}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- modulo 0 -->` | safeHTML }}
+    {{- end}}
     <div class="w3-cell-row w3-margin-bottom">
     {{- end }}
 
@@ -31,11 +39,19 @@
               {{- /* or $element.Description $element.Summary | markdownify */}}
             </div>
             </a>
-        </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- w3-card -->` | safeHTML }} {{end}}
-      </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- w3-cell -->` | safeHTML }} {{end}}
+        </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+                 {{ `<!-- w3-card -->` | safeHTML }}
+               {{- end}}
+      </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+               {{ `<!-- w3-cell -->` | safeHTML }} 
+             {{- end}}
     {{- if or (eq (mod $index 3) 2) (eq $index (sub (len $.Data.Pages) 1 )) }}
-      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- last one -->` | safeHTML }} {{end}}
-    </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- w3-cell-row -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- last one -->` | safeHTML }} 
+    {{- end}}
+    </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+             {{ `<!-- w3-cell-row -->` | safeHTML }} 
+           {{- end}}
     {{- end }}{{/* if mod */}}
   {{- end }} {{/* range */}}
 {{- end }}

@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/front.recent_posts.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/front.recent_posts.html -->` | safeHTML }} 
+{{- end}}
 {{- if isset $.Site.Params (lower "recentPosts" ) }}
 {{- if $.Site.Params.recentPosts.enableFront }}
 <section id="recentPosts" class="w3-theme">
@@ -12,7 +14,9 @@
     </div>   <!-- w3-card -->
 
     <div class="w3-row">
-      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range first 3 .Site.RegularPages "Section" "blog" -->` | safeHTML }} {{end}}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+        {{ `<!-- range first 3 .Site.RegularPages "Section" "blog" -->` | safeHTML }} 
+      {{- end}}
       {{- range $index, $element := first 3 (where .Site.RegularPages "Section" "blog") }}
 
       <div class="w3-third">
