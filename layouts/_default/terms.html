@@ -1,5 +1,7 @@
 {{- define "headline" }}
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- _default/terms.html -->` | safeHTML }} {{end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+    {{ `<!-- _default/terms.html -->` | safeHTML }} 
+  {{- end}}
   <h1 class="w3-panel {{ default `w3-theme-l2` (.Param `colorTermsPanel`)}} ">
   {{ if eq .Data.Singular "category" }}<i class="w3-margin-right fas fa-folder-open" aria-hidden="true"></i>{{ default "Categories" (i18n "categoriesTitle") }}{{ end }} 
   {{ if eq .Data.Singular "tag"      }}<i class="w3-margin-right fas fa-tags"        aria-hidden="true"></i>{{ default "Tags" (i18n "tagsTitle") }}     {{ end }} 

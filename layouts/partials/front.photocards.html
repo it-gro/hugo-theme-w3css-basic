@@ -1,16 +1,22 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/front.photocards.html  -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/front.photocards.html  -->` | safeHTML }} 
+{{- end}}
 {{- if isset $.Site.Params (lower "photocards" ) }}
 {{- if $.Site.Params.photocards.enable   }}
 {{- if gt (len .Site.Data.photocards) 0 }}
 <section id="photocards" class="w3-theme">
   <div class="w3-container  {{ default `w3-theme-l3` ($.Site.Param `colorFrontPhotocardsContainer`)}} ">
     <p>
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range .Site.Data.photocards -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- range .Site.Data.photocards -->` | safeHTML }} 
+    {{- end}}
     {{- range $index, $element := sort .Site.Data.photocards "weight" }}
     {{- if or (not $.Site.Params.photocards.limitTo) (lt $index $.Site.Params.photocards.limitTo) }}
 
       {{- if eq (mod $index 3) 0 }}
-        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- modulo 0  -->` | safeHTML }} {{end}}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+          {{ `<!-- modulo 0  -->` | safeHTML }} 
+        {{- end}}
       <div class="w3-row-padding ">
       {{- end }}
 
@@ -36,7 +42,9 @@
         </div>   <!-- w3-col -->
 
         {{- if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.photocards) 1 )) }}
-          {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- modulo 0 or last  -->` | safeHTML }} {{end}}
+          {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+            {{ `<!-- modulo 0 or last  -->` | safeHTML }} 
+          {{- end}}
       </div>     <!-- w3-cell-row -->
         {{- end }} {{/* if mod */}}
 

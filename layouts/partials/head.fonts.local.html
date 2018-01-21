@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/head.fonts.local.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/head.fonts.local.html -->` | safeHTML }} 
+{{- end}}
 {{- /* https://google-webfonts-helper.herokuapp.com/fonts */}}
 {{- .Scratch.Set "myFontLoadMethod" "style" }}
 {{- if eq (.Scratch.Get "myFontLoadMethod") "style" }}

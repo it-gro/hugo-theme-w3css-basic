@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/head.stylesheets.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/head.stylesheets.html -->` | safeHTML }} 
+{{- end}}
   <link rel="stylesheet" href="{{ relURL "vendor/fontawesome/css/fontawesome-all.min.css"                  }}" />
   <link rel="stylesheet" href="{{ relURL "vendor/daneden.github.io/animate.css/animate.min.css"            }}" />
   <link rel="stylesheet" href="{{ relURL "vendor/OwlCarousel2/owl.carousel.min.css"                        }}" />

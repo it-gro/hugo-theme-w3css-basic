@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/main.taxonomy.current.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/main.taxonomy.current.html -->` | safeHTML }} 
+{{- end}}
 <div class="w3-right-align ">
 {{- if isset .Params (lower "categories" ) }}
 {{- if not (eq (len .Params.categories) 0) }}

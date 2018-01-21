@@ -1,15 +1,21 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/front.features.html  -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/front.features.html  -->` | safeHTML }} 
+{{- end}}
 {{- if isset $.Site.Params (lower "features" ) }}
 {{- if $.Site.Params.features.enable   }}
 {{- if gt (len .Site.Data.features) 0 }}
 <section id="features" class="w3-theme">
   <div class="w3-container {{ default `w3-theme-l4` ($.Site.Param `colorFrontFeaturesContainer`)}} ">
     <p>
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range Site.Data.features -->` | safeHTML }} {{end}}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+      {{ `<!-- range Site.Data.features -->` | safeHTML }} 
+    {{- end}}
     {{- range $index, $element := sort .Site.Data.features "weight" }}
       {{- if or (not $.Site.Params.features.limitTo) (lt $index $.Site.Params.features.limitTo) }}
         {{- if eq (mod $index 3) 0 }}
-          {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- modulo 0 -->` | safeHTML }} {{end}}
+          {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+            {{ `<!-- modulo 0 -->` | safeHTML }} 
+          {{- end}}
       <div class="w3-row-padding ">
         {{- end }}
         <div class="w3-col m4 ">
@@ -37,7 +43,9 @@
           <p>
         </div> <!-- w3-col -->
         {{- if or (eq (mod $index 3) 2) (eq $index (sub (len $.Site.Data.features) 1 )) }}
-          {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- modulo 2 or last -->` | safeHTML }} {{end}}
+          {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+            {{ `<!-- modulo 2 or last -->` | safeHTML }} 
+          {{- end}}
       </div>   <!-- w3-row -->
       
         {{- end }} {{/* mod   */}}

@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/header.nav.google.translate.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/header.nav.google.translate.html -->` | safeHTML }} 
+{{- end}}
 <span id="google_translate_element"></span>
 <script>
   function googleTranslateElementInit() {

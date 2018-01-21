@@ -2,8 +2,11 @@
 {{ end }}
 
 {{ define "headline" }}
-{{- `<!-- 404.html  -->` | safeHTML }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+    {{- `<!-- 404.html  -->` | safeHTML }}
+  {{- end}}
 {{ end }}
+
 
 {{ define "main" }}
   <h3 class="w3-center" >We are sorry - this page is not here </h3>

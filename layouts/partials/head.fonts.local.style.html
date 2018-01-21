@@ -1,4 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/head.fonts.local.style.html -->` | safeHTML }} {{end}}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{ `<!-- partials/head.fonts.local.style.html -->` | safeHTML }} 
+{{- end}}
 <style>
 /* ubuntu-mono-italic - latin */
 @font-face {
