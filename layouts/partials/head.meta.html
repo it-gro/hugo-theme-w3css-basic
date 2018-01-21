@@ -1,23 +1,23 @@
-{{ `<!-- partials/head.meta.html -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/head.meta.html -->` | safeHTML }} {{end}}
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="content-type"    content="text/html; charset=utf-8" />
   <meta name="viewport"              content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <meta name="robots"                content="all,follow" />
   <meta name="googlebot"             content="index,follow,snippet,archive" />
-  <meta name="author"                content="{{ .Site.Params.authorName }}" />
+  <meta name="author"                content="{{ $.Site.Params.authorName }}" />
    
   {{- if or .Keywords .Params.tags .Params.categories -}}
   <meta name="keywords"              content="{{ if .Keywords          }} {{ chomp (delimit .Keywords ", "          ) }},{{ end -}}
                                               {{ if .Params.tags       }} {{ chomp (delimit .Params.tags ", "       ) }},{{ end -}}
                                               {{ if .Params.categories }} {{ chomp (delimit .Params.categories ", " ) }} {{ end -}}" />
-  {{ else if .Site.Params.DefaultKeywords }}
-  <meta name="keywords"              content="{{- delimit .Site.Params.defaultKeywords ", " }}" />
+  {{ else if $.Site.Params.DefaultKeywords }}
+  <meta name="keywords"              content="{{- delimit $.Site.Params.defaultKeywords ", " }}" />
   {{- end }}
    
   {{- if .Description }}
   <meta name="description"           content="{{- chomp .Description -}}" />
-  {{- else if .Site.Params.DefaultDescription }}
-  <meta name="description"           content="{{- chomp .Site.Params.defaultDescription -}}" />
+  {{- else if $.Site.Params.DefaultDescription }}
+  <meta name="description"           content="{{- chomp $.Site.Params.defaultDescription -}}" />
   {{- end -}}
 
 {{- /* emacs                     */}}

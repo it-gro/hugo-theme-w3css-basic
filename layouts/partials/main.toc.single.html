@@ -1,4 +1,4 @@
-{{ `<!-- partials/main.toc.single.html -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/main.toc.single.html -->` | safeHTML }} {{end}}
 {{- if .Params.toc }}
 {{ .TableOfContents }}
 {{- end }}

@@ -1,4 +1,4 @@
-{{ `<!-- partials/terms.list.html -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/terms.list.html -->` | safeHTML }} {{end}}
 <ul>
 {{- range $key, $term := .Data.Terms.Alphabetical }}
   <li><h4>{{ if $term.Name }}<a class="w3-button taxonomy-text-button" style="text-transform: capitalize" href="{{ $term.Name | urlize  }}">{{ $term.Name }}</a>{{ else }}({{ default "empty" (i18n "termNotAvailable") }}){{ end }}</h4>

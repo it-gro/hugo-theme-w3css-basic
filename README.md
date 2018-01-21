@@ -61,6 +61,7 @@ It includes resources from:
   * [Google Translation](#google-translation)
   * [Google Custom Search API](#google-custom-search-api)
   * [Footer](#footer)
+  * [Tracing](#tracing)
 * [Front Matter](#front-matter)
 * [Favicons](#favicons)
 * [Shortcodes](#shortcodes)
@@ -1102,6 +1103,25 @@ pygmentsUseClasses            = true
 ![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_220.jpg)
 
 
+
+### Tracing
+
+* If you like comments in the html source, this one is for you
+
+ToDo: enableHtmlComment
+
+
+```yaml
+# flags used for tracing and html comment output
+  # currently used:
+  #   html-comment          enable partials html comment output 
+  #   debug-shortcodes      enable all shortcodes debugging output
+  #   debug-shortcode-liti  enable all shortcode liti debugging output
+  traceFlags         = "html-comment:"
+```
+
+
+
 ## Front Matter
 
 archetypes:
@@ -1218,8 +1238,9 @@ static/images/favicons/
 ```
 layouts/shortcodes/
 ├── asciicast.html
-├── cscb.html
 ├── csc.html
+├── cscb.html
+├── hc.html
 ├── heg-figure.html
 ├── heg-gallery.html
 ├── heg-load-photoswipe.html
@@ -1243,11 +1264,11 @@ layouts/shortcodes/
   * [List by Taxonomy / Term](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#litt-list-by-taxonomy-term-just-one-result)
   * [List by Taxonomy with search](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#litx-list-by-taxonomy-full-search)
 
+
 ## Gallery
 * https://github.com/liwenyip/hugo-easy-gallery/
 
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
-
 
 
 `content/pages/showcase/gallery-01.md`
@@ -1334,6 +1355,7 @@ cd -
 
 or change the file names in 
 `layouts/partials/head.stylesheets.html` and `layouts/partials/scripts.html`
+
 
 ## Workarounds
 

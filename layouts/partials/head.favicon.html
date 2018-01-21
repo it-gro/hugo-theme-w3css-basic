@@ -1,6 +1,6 @@
-{{ `<!-- partials/head.favicon.html -->` | safeHTML }}
-{{- if isset .Site.Params (lower "favicon" ) }}
-{{- if .Site.Params.favicon.enable  }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/head.favicon.html -->` | safeHTML }} {{end}}
+{{- if isset $.Site.Params (lower "favicon" ) }}
+{{- if $.Site.Params.favicon.enable  }}
 {{- /*  <!-- Favicon and apple touch icons-->         */}} 
 {{- /*  <!-- use https://realfavicongenerator.net to generate you files --> */}} 
 {{- $myFaviconVersion := default "a_random_value"   $.Site.Params.favicon.version }}
@@ -17,7 +17,7 @@
                                                    color="{{default `#5bbad5` $.Site.Params.favicon.maskIcon }}"   />
   <meta name="msapplication-TileColor"           content="{{default `#da532c` $.Site.Params.favicon.msapplicationTileColor }}"  />
   <meta name="theme-color"                       content="{{default `#ffffff` $.Site.Params.favicon.themeColor }}" />
-{{- end }} {{/* .Site.Params.favicon.enable  */}}
+{{- end }} {{/* $.Site.Params.favicon.enable  */}}
 {{- end }} {{/* isset  */}}
 
 {{- /* emacs                     */}}

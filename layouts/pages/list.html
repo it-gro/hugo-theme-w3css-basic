@@ -1,10 +1,10 @@
 {{- define "main" }}
-{{ `<!-- pages/list.html  -->` | safeHTML }}
-  {{- if .Site.Params.debug }}pages/list.html{{ end }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- pages/list.html  -->` | safeHTML }} {{end}}
+  {{- if $.Site.Params.debug }}pages/list.html{{ end }}
 
   {{ partial "page.nav.cards.html" . }}
-  {{ `<!-- back in pages/list.html  -->` | safeHTML }}
-  {{ `<!-- range .Data.Pages.ByWeigh  -->` | safeHTML }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- back in pages/list.html  -->` | safeHTML }} {{end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range .Data.Pages.ByWeigh  -->` | safeHTML }} {{end}}
   {{/*- range $index, $element := sort .Data.Pages ".weight" */}}
   {{- range $index, $element := .Data.Pages.ByWeight }}
     {{- if eq (mod $index 3) 0 }}
@@ -27,15 +27,15 @@
               {{- if $element.Params.teaserpic }}
               {{ partial "main.teaserpic.list.html" . }}
               {{- end }}
-              {{- or .Description .Summary | markdownify | truncate ( or .Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
+              {{- or .Description .Summary | markdownify | truncate ( or $.Site.Params.teaserTruncateSummary 160)  | replaceRE "<.?p>" "" | safeHTML }}
               {{- /* or $element.Description $element.Summary | markdownify */}}
             </div>
             </a>
-        </div> {{ `<!-- w3-card -->` | safeHTML }}
-      </div> {{ `<!-- w3-cell -->` | safeHTML }}
+        </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- w3-card -->` | safeHTML }} {{end}}
+      </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- w3-cell -->` | safeHTML }} {{end}}
     {{- if or (eq (mod $index 3) 2) (eq $index (sub (len $.Data.Pages) 1 )) }}
-      {{ `<!-- last one -->` | safeHTML }}
-    </div> {{ `<!-- w3-cell-row -->` | safeHTML }}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- last one -->` | safeHTML }} {{end}}
+    </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- w3-cell-row -->` | safeHTML }} {{end}}
     {{- end }}{{/* if mod */}}
   {{- end }} {{/* range */}}
 {{- end }}

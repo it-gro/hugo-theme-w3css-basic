@@ -1,6 +1,6 @@
-{{ `<!-- partials/debug.html  -->` | safeHTML }}
-{{- if isset .Site.Params (lower "debug" ) }}
-{{- if .Site.Params.debug }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/debug.html  -->` | safeHTML }} {{end}}
+{{- if isset $.Site.Params (lower "debug" ) }}
+{{- if $.Site.Params.debug }}
 <hr>
 <h2>.Permalink</h2>
 {{- printf "%#v" .Permalink }}

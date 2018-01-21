@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-{{ `<!-- index.html  -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- index.html  -->` | safeHTML }} {{end}}
   {{ partial "head.html" . }}
 
   <body>

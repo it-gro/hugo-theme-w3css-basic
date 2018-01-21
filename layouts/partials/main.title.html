@@ -1,4 +1,4 @@
-{{ `<!-- partials/main.title.html -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/main.title.html -->` | safeHTML }} {{end}}
 <h2>
 {{- if .Params.icon }}
   <i class="{{ .Params.icon }}"></i>

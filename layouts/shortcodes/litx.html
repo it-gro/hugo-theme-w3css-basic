@@ -21,8 +21,7 @@
   {{- $myPos := 5}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theOutFormat"  (.Get $myPos) }} {{end}}
 {{- end }}
 
-{{- if isset .Site.Params (lower "debug" ) }}
-{{- if .Site.Params.debug }}
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-litx)\b` $.Site.Params.traceFlags) }}
 <br/>
 "theTaxonomy"  : {{- $.Scratch.Get "theTaxonomy"    }} <br/>
 "theTaxTerm"   : {{- $.Scratch.Get "theTaxTerm"     }} <br/>
@@ -30,7 +29,6 @@
 "theOperator"  : {{- $.Scratch.Get "theOperator"    }} <br/>
 "theOutMode"   : {{- $.Scratch.Get "theOutMode"     }} <br/>
 "theOutFormat" : {{- $.Scratch.Get "theOutFormat"   }} <br/>
-{{- end }}
 {{- end }}
 
 <ul>
