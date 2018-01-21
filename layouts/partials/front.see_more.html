@@ -1,14 +1,14 @@
-{{ `<!-- partials/front.see_more.html -->` | safeHTML }}
-{{- if isset .Site.Params (lower "seemore" ) }}
-{{- if .Site.Params.seeMore.enable  }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/front.see_more.html -->` | safeHTML }} {{end}}
+{{- if isset $.Site.Params (lower "seemore" ) }}
+{{- if $.Site.Params.seeMore.enable  }}
 <section id="see_more" class="w3-theme">
   <div class="w3-container {{ default `w3-theme-l4` ($.Site.Param `colorFrontSeeMoreContainer`)}} ">
     <div id="see_more_background" class="w3-container w3-margin-top w3-margin-bottom" >
       <div  class="w3-container w3-center w3-margin-top w3-margin-bottom {{ default `w3-text-white` ($.Site.Param `colorFrontSeeMoreText`)}} ">
-        <div><i class="w3-jumbo {{ .Site.Params.seeMore.icon }}"></i></div>
-        <div id="see_more_title" class="w3-xxlarge">{{ .Site.Params.seeMore.title }}</div>
-        <div class="w3-small-disabled">{{ .Site.Params.seeMore.subtitle }}</div>
-        <div><a href="{{ .Site.Params.seeMore.linkUrl | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="w3-margin-top w3-button {{ default `w3-theme-l4` ($.Site.Param `colorFrontSeeMoreButton`)}} ">{{ .Site.Params.seeMore.linkText }}</a></div>
+        <div><i class="w3-jumbo {{ $.Site.Params.seeMore.icon }}"></i></div>
+        <div id="see_more_title" class="w3-xxlarge">{{ $.Site.Params.seeMore.title }}</div>
+        <div class="w3-small-disabled">{{ $.Site.Params.seeMore.subtitle }}</div>
+        <div><a href="{{ $.Site.Params.seeMore.linkUrl | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}" class="w3-margin-top w3-button {{ default `w3-theme-l4` ($.Site.Param `colorFrontSeeMoreButton`)}} ">{{ $.Site.Params.seeMore.linkText }}</a></div>
       </div>   <!-- w3-container -->
     </div>     <!-- see_more_background -->
   </div>       <!-- see_w3-container -->

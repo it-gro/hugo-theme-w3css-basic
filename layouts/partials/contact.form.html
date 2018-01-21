@@ -1,21 +1,21 @@
-{{ `<!-- partials/contact.form.html  -->` | safeHTML }}
-{{- if isset .Site.Params (lower "email"     ) }}
-{{- if .Site.Params.email }}
-{{ `<!-- .Site.Params.email ok  -->` | safeHTML }}
-{{- .Scratch.Set "myMailToAction"  (printf "mailto:%s" .Site.Params.email) }}
+{{- if or .Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/contact.form.html  -->` | safeHTML }} {{end}}
+{{- if isset $.Site.Params (lower "email"     ) }}
+{{- if $.Site.Params.email }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- $.Site.Params.email ok  -->` | safeHTML }} {{end}}
+{{- .Scratch.Set "myMailToAction"  (printf "mailto:%s" $.Site.Params.email) }}
 {{- .Scratch.Set "myMailToVia"     "mail"                                  }}
 {{- .Scratch.Set "myMailToEnctype" "text/plain"                            }}
-{{- if isset .Site.Params (lower "formspree" ) }}
-{{ `<!-- .Site.Params.formspree ok  -->` | safeHTML }}
-  {{- .Scratch.Set "myFormspreeAction"  (printf "https://%s/%s" .Site.Params.formspree .Site.Params.email) }}
-  {{- .Scratch.Set "myFormspreeVia"     (printf "https://%s"    .Site.Params.formspree                   ) }}
+{{- if isset $.Site.Params (lower "formspree" ) }}
+{{ `<!-- $.Site.Params.formspree ok  -->` | safeHTML }}
+  {{- .Scratch.Set "myFormspreeAction"  (printf "https://%s/%s" $.Site.Params.formspree $.Site.Params.email) }}
+  {{- .Scratch.Set "myFormspreeVia"     (printf "https://%s"    $.Site.Params.formspree                   ) }}
   {{- .Scratch.Set "myFormspreeEnctype" "application/x-www-form-urlencoded"                                }}
 {{- end }} <!-- if isset -->
 <form class="w3-panel w3-card-4 {{ default `w3-theme-d3` ($.Site.Param `colorContactFormPanel`)}} " method="post" >
-{{ `<!-- i18n "contactForm" "contactName" "contactMail" "contactMessage"  "contactSend"  "contactVia" -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- i18n "contactForm" "contactName" "contactMail" "contactMessage"  "contactSend"  "contactVia" -->` | safeHTML }} {{end}}
   {{- /* <h3> {{ default "Contact" (i18n "contactForm"   ) }}</h3> */}} {{/* toc on contact page */}}
   <p><label>{{ default "Name"    (i18n "contactName"   ) }} </label> <input class="w3-input w3-border" name="name"  type="text" required placeholder="Name" ></p>
-  {{- if .Site.Params.contact_incl_email }}
+  {{- if $.Site.Params.contact_incl_email }}
   <p><label>{{ default "Mail"    (i18n "contactMail"   ) }} </label> <input class="w3-input w3-border" name="email" type="text" required placeholder="Mail" ></p>
   {{- end }}
   <p><label>{{ default "Message" (i18n "contactMessage") }} </label> <textarea class="w3-input w3-border" name="message" required placeholder="Message" ></textarea></p>
@@ -25,7 +25,7 @@
   {{- end }}
 </form>
 
-{{- end }} <!-- .Site.Params.email -->
+{{- end }} <!-- $.Site.Params.email -->
 {{- end }} <!-- if isset email -->
 
 {{- /* emacs                 */}}

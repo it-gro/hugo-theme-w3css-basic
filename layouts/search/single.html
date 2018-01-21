@@ -1,5 +1,5 @@
 {{ define "search" }}
-{{- `<!-- pages/search/single.html  -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{- `<!-- pages/search/single.html  -->` | safeHTML }} {{end}}
   {{ partial "search.google.gcse.html" . }}
 {{ end }}
 

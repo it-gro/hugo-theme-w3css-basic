@@ -3,43 +3,43 @@
 {{ end }}
 
 {{ define "headline" }}
-{{- `<!-- blog/list.html  -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{- `<!-- blog/list.html  -->` | safeHTML }} {{end}}
   <div class="w3-card-4 w3-center w3-round-xxlarge {{ default `w3-theme-d1` ($.Site.Param `colorBlogListCard`)}}">
-    <h2>{{if .Site.Params.blog.icon }}<i class="{{ .Site.Params.blog.icon }} "></i>{{ end }} {{.Site.Params.blog.title}}</h2>
-      {{- if .Site.Params.blog.subtitle }}
-      {{ .Site.Params.blog.subtitle | markdownify }}
+    <h2>{{if $.Site.Params.blog.icon }}<i class="{{ $.Site.Params.blog.icon }} "></i>{{ end }} {{.Site.Params.blog.title}}</h2>
+      {{- if $.Site.Params.blog.subtitle }}
+      {{ $.Site.Params.blog.subtitle | markdownify }}
       {{- end }} {{/* if .subtitle */}}
   </div>   <!-- w3-card -->
 {{- end }}
 
 {{- define "main" }}
   {{- /* partial "main.taxonomy.full.bar.html" . */}}
-  {{ `<!-- .Paginate .Data.Pages "Type" "blog" -->` | safeHTML }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- .Paginate .Data.Pages "Type" "blog" -->` | safeHTML }} {{end}}
   {{- $paginator := .Paginate (where .Data.Pages "Type" "blog") }}
   {{ partial "main.paginator.bar.html" . }}
-  {{ `<!-- back in blog/list.html  -->` | safeHTML }}
-  {{ `<!-- range $paginator.Pages -->` | safeHTML }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- back in blog/list.html  -->` | safeHTML }} {{end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- range $paginator.Pages -->` | safeHTML }} {{end}}
   {{- range $index, $element := $paginator.Pages }}
   {{- if eq (mod $index 3) 0 }}
-    {{ `<!-- modulo 0 -->` | safeHTML }}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- modulo 0 -->` | safeHTML }} {{end}}
   <div class="w3-cell-row w3-margin-top">
   {{- end -}}
 
     <div class="w3-cell w3-cell-bottom w3-mobile">
       <div class="w3-card w3-margin-right w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off {{ default `w3-theme-l3` ($.Site.Param `colorBlogListCell`)}} ">
         {{ partial "main.teaser_in_card.html" . }}
-        {{ `<!-- back in blog/list.html  -->` | safeHTML }}
-      </div> {{ `<!-- w3-card -->` | safeHTML }}
-    </div> {{ `<!-- w3-cell -->` | safeHTML }}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- back in blog/list.html  -->` | safeHTML }} {{end}}
+      </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- w3-card -->` | safeHTML }} {{end}}
+    </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- w3-cell -->` | safeHTML }} {{end}}
 
     {{- if or (eq (mod $index 3) 2) (eq (add $index 1 ) $paginator.NumberOfElements)  }}
-      {{ `<!-- last one -->` | safeHTML }}
-  </div> {{ `<!-- w3-cell-row -->` | safeHTML }}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- last one -->` | safeHTML }} {{end}}
+  </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- w3-cell-row -->` | safeHTML }} {{end}}
     {{- end }}
   {{- end }} {{/* range */}}
 
   {{ partial "main.paginator.bar.html" . }}
-  {{ `<!-- back in blog/list.html  -->` | safeHTML }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- back in blog/list.html  -->` | safeHTML }} {{end}}
 
 {{- end }}
 

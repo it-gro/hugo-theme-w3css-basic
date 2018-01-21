@@ -1,4 +1,4 @@
-{{ `<!-- partials/main.teaserpic.list.html -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/main.teaserpic.list.html -->` | safeHTML }} {{end}}
 {{- if isset .Params (lower "teaserpic" ) }}
   <img class="w3-image w3-left w3-round " style="max-width:200px; max-height:95px; width: auto; height: auto; margin: 0px 8px 8px 0px;"
        alt="{{.Params.teaserpic}}" 

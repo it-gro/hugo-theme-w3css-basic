@@ -1,4 +1,4 @@
-{{ `<!-- partials/main.paginator.bar.html -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/main.paginator.bar.html -->` | safeHTML }} {{end}}
 
 <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-top w3-margin-bottom {{ default `w3-theme-l1` ($.Site.Param `colorPaginatorBar`)}} ">
   <div class="w3-bar ">

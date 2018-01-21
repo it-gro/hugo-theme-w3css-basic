@@ -1,8 +1,8 @@
-{{ `<!-- partials/head.html  -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/head.html  -->` | safeHTML }} {{end}}
 <head>
-  {{ `<!-- nothing to see here, go away ...  -->` | safeHTML }}
+  {{ `<!-- hi there - what do you expect to see? ...  -->` | safeHTML }}
     {{ partial "head.meta.html" . }}
-  {{ `<!-- back in partials/head.html  -->` | safeHTML }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- back in partials/head.html  -->` | safeHTML }} {{end}}
   <title>
     {{- block "title" . -}}
     {{ .Site.Title }}
@@ -12,14 +12,14 @@
   {{  .Hugo.Generator }}
 
   {{ partial "head.stylesheets.html"      . -}}
-  {{- if .Site.Params.fontsUseGoogleApis }}
+  {{- if $.Site.Params.fontsUseGoogleApis }}
     {{ partial "head.fonts.googleapis.html" . -}}
   {{- else }}
     {{ partial "head.fonts.local.html"      . -}}
   {{- end }}
   {{ partial "head.ie.html"               . -}}
   {{ partial "head.favicon.html"          . -}}
-  {{ `<!-- back in partials/head.html  -->` | safeHTML }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- back in partials/head.html  -->` | safeHTML }} {{end}}
 </head>
 
 {{- /* emacs                     */}} 

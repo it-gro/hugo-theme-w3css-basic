@@ -1,2 +1,2 @@
-{{- /* .Date.Format .Site.Params.date_format */}}
+{{- /* .Date.Format $.Site.Params.date_format */}}
 {{- .Date.Day}}. {{substr (default .Date.Month (i18n .Date.Month)) 0 3}} {{.Date.Year -}}

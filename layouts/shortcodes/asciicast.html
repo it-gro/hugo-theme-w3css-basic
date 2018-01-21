@@ -2,7 +2,7 @@
 {{- $id := .Get 0 }}
 <script type="text/javascript" src="https://asciinema.org/a/{{ $id }}.js" id="asciicast-{{ $id }}" data-rows="10" async></script>
 <noscript>
-  {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }} {{end}}
   <p>{{ default "no JavaScript" (i18n "JsNeeded") }} (asciinema)</p>
   <a href="https://asciinema.org/a/{{ $id }}">https://asciinema.org/a/{{ $id }}</a>
 </noscript>

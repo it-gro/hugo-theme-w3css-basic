@@ -1,0 +1,4 @@
+{{- if or $.Site.Params.enableHC }}
+  {{- with .Get 0}}{{ printf "<!-- %s -->" . | safeHTML }} {{end}}
+  {{- printf "<!-- %s -->" .Inner | safeHTML }}
+{{- end}}

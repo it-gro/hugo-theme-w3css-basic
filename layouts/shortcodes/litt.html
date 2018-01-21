@@ -12,13 +12,11 @@
   {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theOutFormat"  (.Get $myPos) }} {{end}}
 {{- end }}
 
-{{- if isset .Site.Params (lower "debug" ) }}
-{{- if .Site.Params.debug }}
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-litt)\b` $.Site.Params.traceFlags) }}
 <br/>
 "theTaxonomy"  : {{- $.Scratch.Get "theTaxonomy"    }} <br/>
 "theTaxTerm"   : {{- $.Scratch.Get "theTaxTerm"     }} <br/>
 "theOutFormat" : {{- $.Scratch.Get "theOutFormat"   }} <br/>
-{{- end }}
 {{- end }}
 
 {{- with $.Site.GetPage "taxonomy" ($.Scratch.Get "theTaxonomy") (lower ($.Scratch.Get "theTaxTerm")) }}

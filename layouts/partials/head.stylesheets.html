@@ -1,4 +1,4 @@
-{{ `<!-- partials/head.stylesheets.html -->` | safeHTML }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- partials/head.stylesheets.html -->` | safeHTML }} {{end}}
   <link rel="stylesheet" href="{{ relURL "vendor/fontawesome/css/fontawesome-all.min.css"                  }}" />
   <link rel="stylesheet" href="{{ relURL "vendor/daneden.github.io/animate.css/animate.min.css"            }}" />
   <link rel="stylesheet" href="{{ relURL "vendor/OwlCarousel2/owl.carousel.min.css"                        }}" />
@@ -6,9 +6,9 @@
   <link rel="stylesheet" href="{{ relURL "vendor/liwenyip/hugo-easy-gallery/css/hugo-easy-gallery.min.css" }}" />
 
   <link rel="stylesheet" href="{{ relURL "vendor/w3css/4/w3.css"                                           }}" />
-  {{- /* if and (isset .Site.Params (lower "w3css_color_theme" )) .Site.Params.w3css_color_theme */}}
-  {{- if .Site.Params.w3cssColorTheme }}
-  <link rel="stylesheet" href="{{ relURL .Site.Params.w3cssColorTheme }}" />
+  {{- /* if and (isset $.Site.Params (lower "w3css_color_theme" )) $.Site.Params.w3css_color_theme */}}
+  {{- if $.Site.Params.w3cssColorTheme }}
+  <link rel="stylesheet" href="{{ relURL $.Site.Params.w3cssColorTheme }}" />
   {{- else }}
   <link rel="stylesheet" href="{{ relURL "vendor/w3css/4/w3-theme-red.css" }}" />
   {{- end }}
