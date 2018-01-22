@@ -1055,7 +1055,7 @@ pygmentsUseClasses            = true
   googleCustomSearchCX = '002931815551392744433:tnypjyusk2e'
 ```
 
-* Used in search page:
+* Used for search page /search which is linked into the toolbar menu here:
 
 ```toml
 [[menu.topbar]]
@@ -1429,6 +1429,8 @@ into the theme (`static/vendor/`*).
 ## ToDo's
 
 * more testing for the lit* shortcodes
+* optional google analytics
+* if fontsUseGoogleApis=true the actual font may be configurable (no overriding needed)
 * finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
 
 
