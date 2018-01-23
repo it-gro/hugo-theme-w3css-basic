@@ -18,15 +18,9 @@
         {{ `<!-- $.Site.Params.bottomRight  -->` | safeHTML }} 
       {{- end}}
       {{ if $.Site.Params.bottomRight }}
-        {{- $.Site.Params.bottomRight | markdownify }}
+        {{- replaceRE `\[Hugo\]` (printf "[Hugo %s]" .Hugo.Version) $.Site.Params.bottomRight | markdownify }}
       {{- end }}
     </div> <!-- w3-right -->
   </div>   <!-- w3-cell  -->
 
 </div>     <!-- w3-cell-row -->
-
-{{- /* emacs                     */}}
-{{- /* Local variables:          */}}
-{{- /* tab-width:        2       */}}
-{{- /* indent-tabs-mode: nil     */}}
-{{- /* End:                      */}}

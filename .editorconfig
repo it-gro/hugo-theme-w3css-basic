@@ -1,0 +1,17 @@
+# EditorConfig is awesome: http://EditorConfig.org
+# http://editorconfig.org/#download
+# http://editorconfig.org/#supported-properties
+
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.{md,html,css,js,toml,yaml}]
+charset = utf-8
+trim_trailing_whitespace = true
+
+[*.{md,html,css,js,toml,yaml}]
+indent_style = space
+indent_size  = 2
