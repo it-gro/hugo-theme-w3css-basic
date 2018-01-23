@@ -32,7 +32,7 @@ pygmentsCodeFences            = true
 pygmentsCodeFencesGuessSyntax = true
 # https://help.farbox.com/pygments.html
 # https://github.com/alecthomas/chroma
-# hugo gen chromastyles --style=autumn        >  syntax.autumn.css          
+# hugo gen chromastyles --style=autumn        >  syntax.autumn.css
 # ...
 pygmentsUseClasses            = true
 # => static/css/syntax/syntax/syntax.*.css
@@ -105,14 +105,14 @@ pygmentsUseClasses            = true
   name   = "Theme"
   pre    = "fas fa-info-circle"
   identifier = "theme"
- 
+
 [[menu.main]]
   weight = 1
   name   = "About"
   url    = "/pages/hugo-theme-w3css-basic/"
   pre    = "fas fa-info fa-fw"
   parent = "theme"
- 
+
 [[menu.main]]
   weight = 2
   name   = "Images"
@@ -126,7 +126,7 @@ pygmentsUseClasses            = true
   url    = "/pages/showcase/"
   pre    = "fas fa-eye fa-fw"
   parent = "theme"
- 
+
 # end submenu
 
 [[menu.main]]
@@ -193,21 +193,21 @@ pygmentsUseClasses            = true
   # used in layouts/partials/footer.html
   # uses markdownify
   aboutUs   = '''
-Vel illum **dolore** eu      
-                             
-  * feugiat nulla            
-  * facilisis at vero. 
+Vel illum **dolore** eu
+
+  * feugiat nulla
+  * facilisis at vero.
 
 Nam vestibulum accumsan nisl.
-      
+
               '''
 
   address   = '''
-**nobis eleifend**             
-**Soluta nobis eleifend**      
-illum dolore eu feugiat        
-3612 Steffisburg               
-consectetuer adipiscing        
+**nobis eleifend**
+**Soluta nobis eleifend**
+illum dolore eu feugiat
+3612 Steffisburg
+consectetuer adipiscing
 
 **Switzerland**
               '''
@@ -253,7 +253,7 @@ consectetuer adipiscing
   # used in layouts/blog/*.html
   # used in layouts/default/*.html
   # used in layouts/pages/*.html
-  # {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}} 
+  # {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}}
   # set the actual color (one of the monochromatic color scheme)
   color404Container                     = "w3-theme-l3"
   colorPagesListCell                    = "w3-theme-l4"
@@ -357,7 +357,7 @@ consectetuer adipiscing
   # disqus (theme)
   # ##############################
 
-  # used in partials/blog.disqus-button.html 
+  # used in partials/blog.disqus-button.html
   # set to true, if you want to show the count of comments
   # fires an async request to disqus.com/count.js
   disqusButtonShowCount = false
@@ -374,7 +374,7 @@ consectetuer adipiscing
 
   # flags used for tracing and html comment output
   # currently used:
-  #   html-comment          enable partials html comment output 
+  #   html-comment          enable partials html comment output
   #   debug-shortcodes      enable all shortcodes debugging output
   #   debug-shortcode-liti  enable all shortcode liti debugging output
   # traceFlags       = "html-comment:debug-shortcode-liti"
@@ -393,7 +393,7 @@ consectetuer adipiscing
 [params.favicon]
   # you may want to use https://realfavicongenerator.net to generate your files
   # used in layouts/partials/head.favicon.html
-  # relURL is applied to path 
+  # relURL is applied to path
   enable                 = false
   path                   = "/images/favicons"
   version                = "a_random_value"
@@ -413,7 +413,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
-  # if set => change menu entry on small displays to lowercase maxChars 
+  # if set => change menu entry on small displays to lowercase maxChars
   #smallDispMenuMaxChars = 3
   smallDispMenuMaxChars = 2
 
@@ -490,7 +490,7 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
   title    = "Testimonials"
   subtitle = '''
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-labore et dolore magna aliquyam erat, sed diam voluptua. 
+labore et dolore magna aliquyam erat, sed diam voluptua.
              '''
 
 [params.clients]
@@ -524,10 +524,3 @@ ultricies eget, tempor sit amet, ante
   # https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
   # http://commonmark.org/
   # http://spec.commonmark.org/0.28/
-
-
-# emacs
-# Local variables:
-# tab-width:        2
-# indent-tabs-mode: nil
-# End:

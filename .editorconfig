@@ -10,8 +10,24 @@ insert_final_newline = true
 
 [*.{md,html,css,js,toml,yaml}]
 charset = utf-8
-trim_trailing_whitespace = true
-
-[*.{md,html,css,js,toml,yaml}]
 indent_style = space
 indent_size  = 2
+
+[*.{html,css,js,toml,yaml}]
+trim_trailing_whitespace = true
+
+[**.{min.css,min.js}]
+indent_style	       = ignore
+insert_final_newline = ignore
+
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = 80
+
+[*.py]
+indent_size     = 4
+max_line_length = 80
+
+
+[Makefile]
+indent_style = tab
