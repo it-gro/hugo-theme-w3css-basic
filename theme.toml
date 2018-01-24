@@ -50,9 +50,3 @@ min_version    = "0.30.2"
   name         = "Universal"
   homepage     = "https://github.com/devcows/hugo-universal-theme"
   repo         = "https://github.com/devcows/hugo-universal-theme.git"
-
-# emacs
-# Local variables:
-# tab-width:        2
-# indent-tabs-mode: nil
-# End:
