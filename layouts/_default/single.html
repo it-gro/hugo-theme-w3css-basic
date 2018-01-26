@@ -1,2 +1,5 @@
 {{ define "headline" }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+  {{- `<!-- _default/single.html (headline)  -->` | safeHTML }} 
+{{- end}}
 {{ end }}

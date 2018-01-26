@@ -1,6 +1,6 @@
 {{- define "main" }}
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- pages/list.html  -->` | safeHTML }} 
+{{ `<!-- pages/list.html (main) -->` | safeHTML }} 
 {{- end}}
   {{- if $.Site.Params.debug }}pages/list.html{{ end }}
 
