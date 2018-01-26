@@ -4,7 +4,7 @@
 
 {{ define "headline" }}
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{- `<!-- blog/list.html  -->` | safeHTML }} 
+{{- `<!-- blog/list.html (headline) -->` | safeHTML }} 
 {{- end}}
   <div class="w3-card-4 w3-center w3-round-xxlarge {{ default `w3-theme-d1` ($.Site.Param `colorBlogListCard`)}}">
     <h2>{{if $.Site.Params.blog.icon }}<i class="{{ $.Site.Params.blog.icon }} "></i>{{ end }} {{.Site.Params.blog.title}}</h2>
@@ -15,6 +15,9 @@
 {{- end }}
 
 {{- define "main" }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+{{- `<!-- blog/list.html (main) -->` | safeHTML }} 
+{{- end}}
   {{- /* partial "main.taxonomy.full.bar.html" . */}}
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
     {{ `<!-- .Paginate .Data.Pages "Type" "blog" -->` | safeHTML }} 

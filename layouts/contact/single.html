@@ -1,4 +1,7 @@
 {{ define "contactform" }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+{{- `<!-- contact/single.html (contactform)  -->` | safeHTML }} 
+{{- end}}
   {{ partial "contact.form.html" . }}
   {{ partial "contact.map.html" . }}
 {{ end }}
