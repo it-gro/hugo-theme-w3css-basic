@@ -51,6 +51,7 @@ It includes resources from:
   * [Pages](#pages)
     * [Pages Navigation](#pages-navigation)
   * [Color Theme](#color-theme)
+  * [Favicons](#favicons)
   * [Emoji](#emoji)
   * [Summary](#summary)
   * [Pagination](#pagination)
@@ -63,7 +64,6 @@ It includes resources from:
   * [Footer](#footer)
   * [Tracing](#tracing)
 * [Front Matter](#front-matter)
-* [Favicons](#favicons)
 * [Shortcodes](#shortcodes)
 * [Gallery](#gallery)
 * [Figure](#figure)
@@ -737,6 +737,63 @@ You can configure all colors within the selected monochromatic color theme:
 ```
 
 
+## Favicons
+
+```toml
+[params.favicon]
+  # you may want to use https://realfavicongenerator.net to generate your files
+  # used in layouts/partials/head.favicon.html
+  # relURL is applied to path 
+  enable                 = false
+  path                   = "/images/favicons"
+  version                = "a_random_value"
+  maskIcon               = "#5bbad5"
+  msapplicationTileColor = "#da532c"
+  themeColor             = "#ffffff"
+```
+
+
+`layouts/partials/head.favicon.html`
+```
+{{- $myFaviconVersion := default "a_random_value"   $.Site.Params.favicon.version }}
+{{- $myFaviconPath    := default "/images/favicons" $.Site.Params.favicon.path    }}
+  <link rel="apple-touch-icon"      sizes="180x180" href="{{(printf `%s/%s?v=%s` $myFaviconPath `apple-touch-icon.png`       $myFaviconVersion ) | relURL }}" />
+  <link rel="icon" type="image/png" sizes="16x16"   href="{{(printf `%s/%s?v=%s` $myFaviconPath `favicon-16x16.png`          $myFaviconVersion ) | relURL }}" />
+  <link rel="icon" type="image/png" sizes="192x192" href="{{(printf `%s/%s?v=%s` $myFaviconPath `android-chrome-192x192.png` $myFaviconVersion ) | relURL }}" />
+  <link rel="icon" type="image/png" sizes="32x32"   href="{{(printf `%s/%s?v=%s` $myFaviconPath `favicon-32x32.png`          $myFaviconVersion ) | relURL }}" />
+  <link rel="manifest"                              href="{{(printf `%s/%s?v=%s` $myFaviconPath `manifest.json`              $myFaviconVersion ) | relURL }}" />
+  <link rel="shortcut icon"                         href="{{(printf `%s/%s?v=%s` $myFaviconPath `favicon.ico`                $myFaviconVersion ) | relURL }}" />
+  <meta name="msapplication-TileImage"           content="{{(printf `%s/%s?v=%s` $myFaviconPath `mstile-144x144.png`         $myFaviconVersion ) | relURL }}" />
+  <meta name="msapplication-config"              content="{{(printf `%s/%s?v=%s` $myFaviconPath `browserconfig.xml`          $myFaviconVersion ) | relURL }}" />
+  <link rel="mask-icon"                             href="{{(printf `%s/%s?v=%s` $myFaviconPath `safari-pinned-tab.svg`      $myFaviconVersion ) | relURL }}"
+                                                   color="{{default `#5bbad5` $.Site.Params.favicon.maskIcon }}"   />
+  <meta name="msapplication-TileColor"           content="{{default `#da532c` $.Site.Params.favicon.msapplicationTileColor }}"  />
+  <meta name="theme-color"                       content="{{default `#ffffff` $.Site.Params.favicon.themeColor }}" />
+```
+
+
+So you need at least these files in your project:
+
+```
+static/images/favicons/
+├── android-chrome-192x192.png
+├── apple-touch-icon.png
+├── browserconfig.xml
+├── favicon-16x16.png
+├── favicon-32x32.png
+├── favicon.ico
+├── manifest.json
+├── mstile-144x144.png
+└── safari-pinned-tab.svg
+```
+
+
+* if `baseURL` containts paths (like `example.com/foo/bar`) you
+  need to make sure this path (`/foo/bar/`) is also given in browserconfig.xml and
+  manifest.json
+
+
+
 ### Emoji
 
 ```toml
@@ -1176,63 +1233,6 @@ icon:        "fas fa-list"
 
 
 
-## Favicons
-
-```toml
-[params.favicon]
-  # you may want to use https://realfavicongenerator.net to generate your files
-  # used in layouts/partials/head.favicon.html
-  # relURL is applied to path 
-  enable                 = false
-  path                   = "/images/favicons"
-  version                = "a_random_value"
-  maskIcon               = "#5bbad5"
-  msapplicationTileColor = "#da532c"
-  themeColor             = "#ffffff"
-```
-
-
-`layouts/partials/head.favicon.html`
-```
-{{- $myFaviconVersion := default "a_random_value"   $.Site.Params.favicon.version }}
-{{- $myFaviconPath    := default "/images/favicons" $.Site.Params.favicon.path    }}
-  <link rel="apple-touch-icon"      sizes="180x180" href="{{(printf `%s/%s?v=%s` $myFaviconPath `apple-touch-icon.png`       $myFaviconVersion ) | relURL }}" />
-  <link rel="icon" type="image/png" sizes="16x16"   href="{{(printf `%s/%s?v=%s` $myFaviconPath `favicon-16x16.png`          $myFaviconVersion ) | relURL }}" />
-  <link rel="icon" type="image/png" sizes="192x192" href="{{(printf `%s/%s?v=%s` $myFaviconPath `android-chrome-192x192.png` $myFaviconVersion ) | relURL }}" />
-  <link rel="icon" type="image/png" sizes="32x32"   href="{{(printf `%s/%s?v=%s` $myFaviconPath `favicon-32x32.png`          $myFaviconVersion ) | relURL }}" />
-  <link rel="manifest"                              href="{{(printf `%s/%s?v=%s` $myFaviconPath `manifest.json`              $myFaviconVersion ) | relURL }}" />
-  <link rel="shortcut icon"                         href="{{(printf `%s/%s?v=%s` $myFaviconPath `favicon.ico`                $myFaviconVersion ) | relURL }}" />
-  <meta name="msapplication-TileImage"           content="{{(printf `%s/%s?v=%s` $myFaviconPath `mstile-144x144.png`         $myFaviconVersion ) | relURL }}" />
-  <meta name="msapplication-config"              content="{{(printf `%s/%s?v=%s` $myFaviconPath `browserconfig.xml`          $myFaviconVersion ) | relURL }}" />
-  <link rel="mask-icon"                             href="{{(printf `%s/%s?v=%s` $myFaviconPath `safari-pinned-tab.svg`      $myFaviconVersion ) | relURL }}"
-                                                   color="{{default `#5bbad5` $.Site.Params.favicon.maskIcon }}"   />
-  <meta name="msapplication-TileColor"           content="{{default `#da532c` $.Site.Params.favicon.msapplicationTileColor }}"  />
-  <meta name="theme-color"                       content="{{default `#ffffff` $.Site.Params.favicon.themeColor }}" />
-```
-
-
-So you need at least these files in your project:
-
-```
-static/images/favicons/
-├── android-chrome-192x192.png
-├── apple-touch-icon.png
-├── browserconfig.xml
-├── favicon-16x16.png
-├── favicon-32x32.png
-├── favicon.ico
-├── manifest.json
-├── mstile-144x144.png
-└── safari-pinned-tab.svg
-```
-
-
-* if `baseURL` containts paths (like `example.com/foo/bar`) you
-  need to make sure this path (`/foo/bar/`) is also given in browserconfig.xml and
-  manifest.json
-
-
-
 ## Shortcodes
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
@@ -1384,6 +1384,7 @@ See https://discourse.gohugo.io/t/shortcodes-and-p-tags-2/9987
 
 Beeing able to analyse the visitors behavior via the log files on the visited site is one thing.
 But giving those informations to any third-party is not what the visitors expect by default.
+
 * Why should a third-party (disqus.com) know which blog articles I'v read (even without commenting) ?
 * Why should a third-party (formspree.io) beeing able to read the visitors messages (contact form) ?
 
@@ -1460,7 +1461,7 @@ Thanks to:
 creating my starting point: the awesome [Universal](https://themes.gohugo.io/hugo-universal-theme/) theme.     
 They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-e-commerce-template).
 
-* www.w3schools.com for creating the free to use W3.CSS CSS framework.
+* [www.w3schools.com](https://www.w3schools.com) for creating the free to use [W3.CSS](https://www.w3schools.com/w3css/) CSS framework.
 
 * the contributors to any of                            
   https://fontawesome.com/icons/                        
