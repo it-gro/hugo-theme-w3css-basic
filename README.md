@@ -12,7 +12,7 @@ This theme is for:
 * Landing pages 
 * Blogs
 * Pages (not blog) in a directory structure with simple navigation (Top/Up/Down & pages on this level)
-* People who like monochromatic colors
+* People who like [monochromatic colors](https://www.w3schools.com/colors/colors_monochromatic.asp)
 
 
 It includes resources from:
