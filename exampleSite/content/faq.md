@@ -17,6 +17,11 @@ egestas semper. Aenean ultricies mi vitae est. Mauris placerat
 eleifend leo.
 
 
+| Right | Center | Left |
+| -----:|:------:|:---- |
+|     1 |   2    | 3    |
+
+
 ## 1. Phasellus at dui in ligula mollis ultricies?
 
 Fusce suscipit, wisi nec {{% w3-tag %}}facilisi {{% /w3-tag %}} est dui
