@@ -49,7 +49,7 @@ tr:nth-child(even){}
 tr:nth-child(odd){}
 tr:nth-child(even){}
 tbody tr:hover{background-color:#ccc}
-td,th{padding:2px 8px;display:table-cell;text-align:left;vertical-align:top}
+td,th{padding:2px 8px;display:table-cell;vertical-align:top}
 th:first-child,td:first-child{padding-left:8px}
 
 /* -------------------------------------------------- */

@@ -118,3 +118,13 @@ nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
 
 {{< heg-gallery dir="/images/photocards/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
 
+
+## 6. Praesent fermentum tempor
+
+| Right | Center | Left |
+| -----:|:------:|:---- |
+|     1 |   2    | 3    |
+
+| default | is left
+| --------|--------
+|    42   |   foo
