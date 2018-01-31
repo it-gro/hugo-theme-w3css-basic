@@ -1,24 +1,34 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/head.fonts.googleapis.html -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/head.fonts.googleapis.html -->` | safeHTML }}
 {{- end}}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" />
-  {{- /*
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono" /> -->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" /> -->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Glegoo" /> -->
-  */}}
-
+{{- if $.Site.Params.googleApiFonts }}
+  {{- range $.Site.Params.googleApiFonts }}
+    {{ if . }}
+      {{- if not (in ($.Scratch.Get "family") (printf "%s|" (replaceRE ` ` "+" .) )  ) }}
+        {{- $.Scratch.Set "family" (printf "%s|%s" ($.Scratch.Get "family" | default "" ) (replaceRE ` ` "+" . )) }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  {{- $.Scratch.Set "family" (strings.TrimPrefix "|" ($.Scratch.Get "family") ) }}
+{{- end }}
+  {{ if  $.Scratch.Get "family" }}
+    {{$myHref := (printf `href="%s%s"` "https://fonts.googleapis.com/css?family=" ($.Scratch.Get `family` | safeHTML) )  }}
+    <link rel="stylesheet" {{$myHref | safeHTMLAttr}} />
+  {{- else }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" />
+  {{- end }}
   <style>
     html, body, h1, h2, h3, h4, h5, h6
     {
+  {{ if  $.Scratch.Get "family" }}
+    {{- range $myGenericName, $myFamilyName  := $.Site.Params.googleApiFonts }}
+      {{- if and $myFamilyName $myGenericName }}
+        font-family: '{{$myFamilyName}}'     , {{$myGenericName}};
+      {{- end}}
+    {{- end }}
+  {{- else }}
         font-family: 'Ubuntu Mono'     , monospace;
         font-family: 'Ubuntu'          , sans-serif;
-        {{- /*
-        font-family: 'Oxygen Mono'     , monospace; 
-        font-family: 'Oxygen'          , sans-serif; 
-        font-family: 'Roboto Mono'     , monospace; 
-        font-family: 'Roboto'          , sans-serif; 
-        font-family: 'Glegoo'          , serif;     
-        */}}
+  {{- end }}
     }
   </style>
