@@ -3,7 +3,7 @@
 W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
 Inspiration was taken from [Universal](https://themes.gohugo.io/hugo-universal-theme/).
 It is quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml).
-Change all colors in the blink of an eye...
+Change all colors in the blink of an eye or choose any google font...
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
@@ -91,15 +91,15 @@ My goals for this theme are:
 * basic usage without javascript has to be possible 
 * do as much as possible not to expose visitors to tracking by third-party against their will
 * try to be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
-* support experimenting with monochromatic colors
+* support experimenting with [monochromatic colors](https://www.w3schools.com/colors/colors_monochromatic.asp)
 * use teaser pictures and icons as eye-catcher
 
 
 ## Features
 
-* Monochromatic Color Schemes
+* [Monochromatic Color](https://www.w3schools.com/colors/colors_monochromatic.asp) Schemes
 * Works with disabled javascript (using fallbacks)
-* Responsive design
+* [Responsive design](https://search.google.com/test/mobile-friendly?url=https://it-gro.github.io/hugo-theme-w3css-basic.github.io)
   * 3 (medium, lage) or 1 (small) column layout
   * small menu (truncated) on small screen (no collapse)
 * Customizable landing page
@@ -109,18 +109,19 @@ My goals for this theme are:
   * optional data/features     (optional css animation)
   * optional data/testimonials (carousel (if js is enabled) )
   * optional data/clients      (carousel (if js is enabled) )
-* Fontawesome version 5 (local)
-* Google fonts - either via api or via local files (choose local to reduce tracking)
-* Optional google translate widget (if js is enabled - disable it to reduce tracking)
+* [Fontawesome](https://fontawesome.com/icons?d=gallery) version 5 (local)
+* [Google fonts](https://fonts.google.com/) - either via api (any font) or via local files (choose local to reduce tracking)
+* Optional [google translate](https://translate.google.com/manager/website) widget (if js is enabled - disable it to reduce tracking)
 * Contact page
-  * optional formspree.io 
-  * mailto: without formspree.io (avoid tracking & leaking)
-  * google map (if js is enabled - do not provide coordinates to reduce tracking)
+  * optional [formspree.io ](https://formspree.io)
+  * mailto: without [formspree.io ](https://formspree.io) (avoid tracking & leaking)
+  * [google map](https://developers.google.com/maps/documentation/javascript/) (if js is enabled - do not provide coordinates to reduce tracking)
 * Search page
-  * google customizable search api (if js is enabled - just do not include search in menu to reduce tracking)
+  * [google customizable search](https://cse.google.ch/cse) api (if js is enabled - just do not include search in menu to reduce tracking)
 * Alternative navigation instead of breadcrumbs (Top/Up/Down & pages on this level)
-* hugo-easy-gallery (including PhotoSwipe which needs js)
+* [hugo-easy-gallery](https://www.liwen.id.au/heg/) (including [PhotoSwipe](http://photoswipe.com/) which needs js)
   
+
 
 
 ## Installation
@@ -1008,11 +1009,13 @@ pygmentsUseClasses            = true
 ```toml
 [params]
   # used in layouts/partials/head.html
+  # if fontsUseGoogleApis=true then choose your fonts in [params.googleApiFonts]  (see below)
   fontsUseGoogleApis=false
 ```
 
-* true: load fonts via Google Font API
-* false load fonts from local. Use e.g. https://google-webfonts-helper.herokuapp.com/fonts to download google fonts.
+* false: load fonts from `/static/vendor/google/fonts`. Use e.g. https://google-webfonts-helper.herokuapp.com/fonts to download google fonts.
+* true: load fonts via Google font API
+
 
 ```
 {{ partial "head.stylesheets.html"      . -}}
@@ -1022,6 +1025,91 @@ pygmentsUseClasses            = true
     {{ partial "head.fonts.local.html"      . -}}
   {{- end }}
 ```
+
+#### Choose any Font via fonts.googleapis.com
+
+If you set `fontsUseGoogleApis=true` you can choose any font from
+https://fonts.google.com
+
+Here are just a few examples. To start with uncomment one font set.
+
+
+```toml
+[params.googleApiFonts]
+  # only relevant if fontsUseGoogleApis=true
+  # used in partials/head.fonts.googleapis.html
+
+  # choose a google font family name for a generic name
+  # generic names may be empty
+  # default, if no key at all is given in params.googleApiFonts: Ubuntu + Ubuntu Mono
+
+  # (default) Set: Ubuntu
+  #monospace  = "Ubuntu Mono"
+  #sans-serif = "Ubuntu"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Glegoo
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = "Glegoo"
+  #cursive    = ""
+
+  # Set: Days One
+  monospace  = ""
+  sans-serif = "Days One"
+  serif      = ""
+  cursive    = ""
+
+  # Set: Quantico
+  #monospace  = ""
+  #sans-serif = "Quantico"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Roboto
+  #monospace  = "Roboto Mono"
+  #sans-serif = "Roboto"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Patrick Hand
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Patrick Hand"
+
+  # Set: Rammetto One
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Rammetto One"
+
+  # Set: Oxygen
+  #monospace  = "Oxygen Mono"
+  #sans-serif = "Oxygen"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Carter One
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Carter One"
+
+  # Set: Parisienne
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Parisienne"
+
+  # Set: Rochester
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Rochester"
+```
+
 
 ### Contact Map
 
@@ -1484,6 +1572,8 @@ They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-
 ![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.1.png)
 
 ![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.2.png)
+
+![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.3.png)
 
 
 * Complete
