@@ -530,10 +530,10 @@ ultricies eget, tempor sit amet, ante
   #cursive    = ""
 
   # Set: Glegoo
-  monospace  = ""
-  sans-serif = ""
-  serif      = "Glegoo"
-  cursive    = ""
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = "Glegoo"
+  #cursive    = ""
 
   # Set: Days One
   #monospace  = ""
@@ -584,10 +584,10 @@ ultricies eget, tempor sit amet, ante
   #cursive    = "Parisienne"
 
   # Set: Rochester
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Rochester"
+  monospace  = ""
+  sans-serif = ""
+  serif      = ""
+  cursive    = "Rochester"
 
 
 
