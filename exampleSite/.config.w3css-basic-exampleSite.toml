@@ -513,6 +513,80 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 ultricies eget, tempor sit amet, ante
              '''
 
+[params.googleApiFonts]
+  # only relevant if fontsUseGoogleApis=true
+  # used in partials/head.fonts.googleapis.html
+
+  # choose a google font family name for a generic name
+  # generic names may be empty
+  # default, if no key at all is given in params.googleApiFonts: Ubuntu + Ubuntu Mono
+
+  # (default) Set: Ubuntu
+  #monospace  = "Ubuntu Mono"
+  #sans-serif = "Ubuntu"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Glegoo
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = "Glegoo"
+  #cursive    = ""
+
+  # Set: Days One
+  monospace  = ""
+  sans-serif = "Days One"
+  serif      = ""
+  cursive    = ""
+
+  # Set: Quantico
+  #monospace  = ""
+  #sans-serif = "Quantico"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Roboto
+  #monospace  = "Roboto Mono"
+  #sans-serif = "Roboto"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Patrick Hand
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Patrick Hand"
+
+  # Set: Rammetto One
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Rammetto One"
+
+  # Set: Oxygen
+  #monospace  = "Oxygen Mono"
+  #sans-serif = "Oxygen"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Carter One
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Carter One"
+
+  # Set: Parisienne
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Parisienne"
+
+  # Set: Rochester
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Rochester"
+
 # ##################################################
 # other sections
 
