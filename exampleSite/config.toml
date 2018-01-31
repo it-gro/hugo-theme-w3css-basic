@@ -226,7 +226,7 @@ consectetuer adipiscing
   # Monochromatic Color Schemes
   # set W3.CSS color theme (choose one)
   #w3cssColorTheme = "/css/w3-theme-custom.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
@@ -239,7 +239,7 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-khaki.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
@@ -308,7 +308,9 @@ consectetuer adipiscing
 
   # used in layouts/partials/head.html
   # use true for https://themes.gohugo.io/hugo-theme-w3css-basic
+  # if fontsUseGoogleApis=true then choose your fonts in [params.googleApiFonts]  (see below)
   fontsUseGoogleApis=true
+
 
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
@@ -513,8 +515,85 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 ultricies eget, tempor sit amet, ante
              '''
 
+[params.googleApiFonts]
+  # only relevant if fontsUseGoogleApis=true
+  # used in partials/head.fonts.googleapis.html
+
+  # choose a google font family name for a generic name
+  # generic names may be empty
+  # default, if no key at all is given in params.googleApiFonts: Ubuntu + Ubuntu Mono
+
+  # (default) Set: Ubuntu
+  #monospace  = "Ubuntu Mono"
+  #sans-serif = "Ubuntu"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Glegoo
+  monospace  = ""
+  sans-serif = ""
+  serif      = "Glegoo"
+  cursive    = ""
+
+  # Set: Days One
+  #monospace  = ""
+  #sans-serif = "Days One"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Quantico
+  #monospace  = ""
+  #sans-serif = "Quantico"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Roboto
+  #monospace  = "Roboto Mono"
+  #sans-serif = "Roboto"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Patrick Hand
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Patrick Hand"
+
+  # Set: Rammetto One
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Rammetto One"
+
+  # Set: Oxygen
+  #monospace  = "Oxygen Mono"
+  #sans-serif = "Oxygen"
+  #serif      = ""
+  #cursive    = ""
+
+  # Set: Carter One
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Carter One"
+
+  # Set: Parisienne
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Parisienne"
+
+  # Set: Rochester
+  #monospace  = ""
+  #sans-serif = ""
+  #serif      = ""
+  #cursive    = "Rochester"
+
+
+
 # ##################################################
 # other sections
+
 
 [blackfriday]
   # extensions = ["noEmptyLineBeforeBlock"]
