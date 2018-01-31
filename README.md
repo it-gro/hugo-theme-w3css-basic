@@ -118,7 +118,7 @@ My goals for this theme are:
   * [google map](https://developers.google.com/maps/documentation/javascript/) (if js is enabled - do not provide coordinates to reduce tracking)
 * Search page
   * [google customizable search](https://cse.google.ch/cse) api (if js is enabled - just do not include search in menu to reduce tracking)
-* Alternative navigation instead of breadcrumbs (Top/Up/Down & pages on this level)
+* [Alternative navigation](#pages-navigation) instead of breadcrumbs (Top/Up/Down & pages on this level)
 * [hugo-easy-gallery](https://www.liwen.id.au/heg/) (including [PhotoSwipe](http://photoswipe.com/) which needs js)
   
 
