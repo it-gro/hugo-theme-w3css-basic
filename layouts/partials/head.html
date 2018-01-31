@@ -1,11 +1,14 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/head.html  -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/head.html  -->` | safeHTML }}
 {{- end}}
 <head>
   {{ `<!-- hi there - what do you expect to see? ...  -->` | safeHTML }}
+  {{- if and $.Site.Params.enableGoogleAnalyticsGtag $.Site.GoogleAnalytics }}
+    {{ partial "head.google.analytics" . }}
+  {{- end}}
     {{ partial "head.meta.html" . }}
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-    {{ `<!-- back in partials/head.html  -->` | safeHTML }} 
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- back in partials/head.html  -->` | safeHTML }}
   {{- end}}
   <title>
     {{- block "title" . -}}
@@ -23,7 +26,7 @@
   {{- end }}
   {{ partial "head.ie.html"               . -}}
   {{ partial "head.favicon.html"          . -}}
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-    {{ `<!-- back in partials/head.html  -->` | safeHTML }} 
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- back in partials/head.html  -->` | safeHTML }}
   {{- end}}
 </head>
