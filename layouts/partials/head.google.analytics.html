@@ -1,0 +1,13 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/head.google.analytics.html -->` | safeHTML }}
+{{- end}}
+{{- if and $.Site.Params.enableGoogleAnalyticsGtag $.Site.GoogleAnalytics }}
+  {{- /* <!-- Global site tag (gtag.js) - Google Analytics --> */}}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{$.Site.GoogleAnalytics}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{$.Site.GoogleAnalytics}}');
+  </script>
+{{- end -}}
