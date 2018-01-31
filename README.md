@@ -1519,7 +1519,6 @@ into the theme (`static/vendor/`*).
 
 * more testing for the lit* shortcodes
 * optional google analytics
-* if fontsUseGoogleApis=true the actual font may be configurable (no overriding needed)
 * finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
 
 
