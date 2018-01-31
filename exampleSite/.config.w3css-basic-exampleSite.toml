@@ -61,6 +61,9 @@ pygmentsUseClasses            = true
 #pygmentsStyle = "vs"
 
 
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = "UA-113314068-1"
+
 
 # ##################################################
 # Theme-defined configuration
@@ -309,6 +312,8 @@ consectetuer adipiscing
   # used in layouts/partials/head.html
   # use true for https://themes.gohugo.io/hugo-theme-w3css-basic
   fontsUseGoogleApis=true
+
+  enableGoogleAnalyticsGtag=true
 
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
