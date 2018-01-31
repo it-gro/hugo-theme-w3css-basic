@@ -212,17 +212,24 @@ A warning with heading
 ## w3-button-icon
 
 {{< highlight nolang >}}
-{{%/* w3-button-icon                                    %}}Hi, i'm a button{{% /w3-button-icon */%}}
-{{%/* w3-button-icon icon="fas fa-exclamation-triangle" %}}Purge{{% /w3-button-icon */%}}
-{{%/* w3-button-icon href="https://google.com"          %}}take me to Google{{% /w3-button-icon */%}}
+{{%/* w3-button-icon                                                %}}Hello world{{% /w3-button-icon %}}
+{{% w3-button-icon icon="fab fa-google" href="https://google.com" %}}take me to Google{{% /w3-button-icon %}}
+{{% w3-button-icon "/blog"                                        %}}take me to Blog{{% /w3-button-icon %}}
+{{% w3-button-icon "/faq" "far fa-question-circle"                %}}take me to FAQ{{% /w3-button-icon %}}
+{{% w3-button-icon icon="fas fa-exclamation-triangle" classes="w3-button w3-circle w3-theme-d3" %}}Purge{{% /w3-button-icon */%}}
 {{< /highlight >}}
 
 renders to:
-{{% w3-button-icon                                     %}}Hi, i'm a button{{% /w3-button-icon %}}
 
-{{% w3-button-icon icon="fas fa-exclamation-triangle"  %}}Purge{{% /w3-button-icon %}}
+{{% w3-button-icon                                     %}}Hello world{{% /w3-button-icon %}}
 
-{{% w3-button-icon href="https://google.com"           %}}take me to Google{{% /w3-button-icon %}}
+{{% w3-button-icon icon="fab fa-google" href="https://google.com"           %}}take me to Google{{% /w3-button-icon %}}
+
+{{% w3-button-icon "/blog"      %}}take me to Blog{{% /w3-button-icon %}}
+
+{{% w3-button-icon "/faq" "far fa-question-circle"     %}}take me to FAQ{{% /w3-button-icon %}}
+
+{{% w3-button-icon icon="fas fa-exclamation-triangle" classes="w3-button w3-circle w3-theme-d3" %}}Purge{{% /w3-button-icon %}}
 
 
 ## w3-badge
