@@ -62,7 +62,7 @@ It includes resources from:
   * [Contact Map](#contact-map)
   * [Google Translation](#google-translation)
   * [Google Custom Search API](#google-custom-search-api)
-  * [Google Analytics-Tracking using gtag.js](#google-analytics-tracking-using-gtag-js)
+  * [Google Analytics-Tracking using gtag.js](#google-analytics-tracking-using-gtagjs)
   * [Footer](#footer)
   * [Tracing](#tracing)
 * [Front Matter](#front-matter)
