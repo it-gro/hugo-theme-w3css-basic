@@ -1064,12 +1064,6 @@ Here are just a few examples. To start with uncomment one font set.
   serif      = ""
   cursive    = ""
 
-  # Set: Quantico
-  #monospace  = ""
-  #sans-serif = "Quantico"
-  #serif      = ""
-  #cursive    = ""
-
   # Set: Roboto
   #monospace  = "Roboto Mono"
   #sans-serif = "Roboto"
@@ -1082,35 +1076,6 @@ Here are just a few examples. To start with uncomment one font set.
   #serif      = ""
   #cursive    = "Patrick Hand"
 
-  # Set: Rammetto One
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Rammetto One"
-
-  # Set: Oxygen
-  #monospace  = "Oxygen Mono"
-  #sans-serif = "Oxygen"
-  #serif      = ""
-  #cursive    = ""
-
-  # Set: Carter One
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Carter One"
-
-  # Set: Parisienne
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Parisienne"
-
-  # Set: Rochester
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Rochester"
 ```
 
 
