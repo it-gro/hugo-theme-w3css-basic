@@ -1247,7 +1247,7 @@ googleAnalytics = ""
   enableGoogleGtag=true
 ```
 
-* Gtag is not used if enableGoogleGtag is not set to true or the tracking code is not given
+* Gtag.js is not used if `enableGoogleGtag` is not set to `true` or the tracking code is not given (`googleAnalytics`)
 
 ```
 {{- if and $.Site.Params.enableGooglesGtag $.Site.GoogleAnalytics }}
