@@ -62,7 +62,7 @@ pygmentsUseClasses            = true
 
 
 # Enable Google Analytics by entering your tracking code
-googleAnalytics = "UA-113314068-1"
+googleAnalytics = "UA-113314068-2"
 
 
 # ##################################################
@@ -314,8 +314,11 @@ consectetuer adipiscing
   # if fontsUseGoogleApis=true then choose your fonts in [params.googleApiFonts]  (see below)
   fontsUseGoogleApis=true
 
-  enableGoogleAnalyticsGtag=true
-
+  # https://developers.google.com/gtagjs/
+  # used in layouts/partials/head.google.gtags.html
+  # you need to enter the Tracking-ID above
+  # googleAnalytics = ""
+  enableGoogleGtag=true
 
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key

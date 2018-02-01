@@ -3,8 +3,8 @@
 {{- end}}
 <head>
   {{ `<!-- hi there - what do you expect to see? ...  -->` | safeHTML }}
-  {{- if and $.Site.Params.enableGoogleAnalyticsGtag $.Site.GoogleAnalytics }}
-    {{ partial "head.google.analytics" . }}
+  {{- if and $.Site.Params.enableGoogleGtag $.Site.GoogleAnalytics }}
+    {{ partial "head.google.gtags.html" . }}
   {{- end}}
     {{ partial "head.meta.html" . }}
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
