@@ -1,7 +1,7 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- partials/head.google.gtags.html -->` | safeHTML }}
 {{- end}}
-{{- if and $.Site.Params.enableGooglesGtag $.Site.GoogleAnalytics }}
+{{- if and $.Site.Params.enableGoogleGtag $.Site.GoogleAnalytics }}
   {{- /* <!-- Global site tag (gtag.js) - Google Analytics --> */}}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{$.Site.GoogleAnalytics}}"></script>
   <script>
