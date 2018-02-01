@@ -59,6 +59,7 @@ It includes resources from:
   * [Syntax Highlighting](#syntax-highlighting)
   * [Menu](#menu)
   * [Fonts](#fonts)
+    * [Choose any Font via fonts.googleapis.com](#choose-any-font-viafontsgoogleapiscom)
   * [Contact Map](#contact-map)
   * [Google Translation](#google-translation)
   * [Google Custom Search API](#google-custom-search-api)
