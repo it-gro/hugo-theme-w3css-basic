@@ -26,6 +26,7 @@ It includes resources from:
 * https://fonts.google.com/
 * https://translate.google.com
 * https://cse.google.com
+* https://developers.google.com/gtagjs/devguide/snippet
 
 
 ## Table of Contents
@@ -58,9 +59,11 @@ It includes resources from:
   * [Syntax Highlighting](#syntax-highlighting)
   * [Menu](#menu)
   * [Fonts](#fonts)
+    * [Choose any Font via fonts.googleapis.com](#choose-any-font-via-fontsgoogleapiscom)
   * [Contact Map](#contact-map)
   * [Google Translation](#google-translation)
   * [Google Custom Search API](#google-custom-search-api)
+  * [Google Analytics-Tracking using gtag.js](#google-analytics-tracking-using-gtagjs)
   * [Footer](#footer)
   * [Tracing](#tracing)
 * [Front Matter](#front-matter)
@@ -112,13 +115,14 @@ My goals for this theme are:
 * [Fontawesome](https://fontawesome.com/icons?d=gallery) version 5 (local)
 * [Google fonts](https://fonts.google.com/) - either via api (any font) or via local files (choose local to reduce tracking)
 * Optional [google translate](https://translate.google.com/manager/website) widget (if js is enabled - disable it to reduce tracking)
+* Optional [Google global site tags](https://developers.google.com/gtagjs/) with your [GA_TRACKING_ID](https://support.google.com/analytics/answer/1008080) (do not activate to reduce tracking))
 * Contact page
   * optional [formspree.io ](https://formspree.io)
   * mailto: without [formspree.io ](https://formspree.io) (avoid tracking & leaking)
   * [google map](https://developers.google.com/maps/documentation/javascript/) (if js is enabled - do not provide coordinates to reduce tracking)
 * Search page
   * [google customizable search](https://cse.google.ch/cse) api (if js is enabled - just do not include search in menu to reduce tracking)
-* Alternative navigation instead of breadcrumbs (Top/Up/Down & pages on this level)
+* [Alternative navigation](#pages-navigation) instead of breadcrumbs (Top/Up/Down & pages on this level)
 * [hugo-easy-gallery](https://www.liwen.id.au/heg/) (including [PhotoSwipe](http://photoswipe.com/) which needs js)
   
 
@@ -1061,12 +1065,6 @@ Here are just a few examples. To start with uncomment one font set.
   serif      = ""
   cursive    = ""
 
-  # Set: Quantico
-  #monospace  = ""
-  #sans-serif = "Quantico"
-  #serif      = ""
-  #cursive    = ""
-
   # Set: Roboto
   #monospace  = "Roboto Mono"
   #sans-serif = "Roboto"
@@ -1079,35 +1077,6 @@ Here are just a few examples. To start with uncomment one font set.
   #serif      = ""
   #cursive    = "Patrick Hand"
 
-  # Set: Rammetto One
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Rammetto One"
-
-  # Set: Oxygen
-  #monospace  = "Oxygen Mono"
-  #sans-serif = "Oxygen"
-  #serif      = ""
-  #cursive    = ""
-
-  # Set: Carter One
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Carter One"
-
-  # Set: Parisienne
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Parisienne"
-
-  # Set: Rochester
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Rochester"
 ```
 
 
@@ -1224,6 +1193,36 @@ Here are just a few examples. To start with uncomment one font set.
 * Search form with disabled Javascript
 
 ![screenshot Search no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_310.jpg)
+
+
+### Google Analytics-Tracking using gtag.js
+
+* This theme uses the new gtags.js (not the old google analytics.js)
+* [Analytics-Tracking using gtag.js](https://support.google.com/analytics/answer/1008080)
+* [gtag.js Developer Guide](https://developers.google.com/gtagjs/)
+
+
+```toml
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+
+[params]
+  # https://developers.google.com/gtagjs/
+  # used in layouts/partials/head.google.gtags.html
+  # you need to enter the Tracking-ID above
+  enableGoogleGtag=true
+```
+
+* Firefox has a [Tracking  Protection](https://support.mozilla.org/en-US/kb/tracking-protection) which
+  prevents `gtag.js` tracking by default.
+* `gtag.js` is not used if `enableGoogleGtag` is not set to `true` or the tracking code is not given (`googleAnalytics`)
+
+```
+{{- if and $.Site.Params.enableGooglesGtag $.Site.GoogleAnalytics }}
+  {{- /* <!-- Global site tag (gtag.js) - Google Analytics --> */}}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{$.Site.GoogleAnalytics}}"></script>
+```
+
 
 
 ### Footer
@@ -1486,13 +1485,15 @@ into the theme (`static/vendor/`*).
 
 ### How to minimize visitors exposure to tracking
 
-* disable menu.topbar search (google custom search)
+* disable google gtags (analytics)
+* disable google translate
 * disable google fonts apis
 * disable google maps
+* disable menu.topbar search (google custom search)
 * disable formspree (but keep your email)
 * do not show a comment counter on the Disqus Button
-* disable google translate
 * review result e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
+
 
 ```toml
 #[[menu.topbar]]
@@ -1519,7 +1520,6 @@ into the theme (`static/vendor/`*).
 
 * more testing for the lit* shortcodes
 * optional google analytics
-* if fontsUseGoogleApis=true the actual font may be configurable (no overriding needed)
 * finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
 
 
