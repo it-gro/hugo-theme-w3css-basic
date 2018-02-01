@@ -26,6 +26,7 @@ It includes resources from:
 * https://fonts.google.com/
 * https://translate.google.com
 * https://cse.google.com
+* https://developers.google.com/gtagjs/devguide/snippet
 
 
 ## Table of Contents
@@ -61,6 +62,7 @@ It includes resources from:
   * [Contact Map](#contact-map)
   * [Google Translation](#google-translation)
   * [Google Custom Search API](#google-custom-search-api)
+  * [Google Analytics-Tracking using gtag.js](#google-analytics-tracking-using-gtag-js)
   * [Footer](#footer)
   * [Tracing](#tracing)
 * [Front Matter](#front-matter)
@@ -112,6 +114,7 @@ My goals for this theme are:
 * [Fontawesome](https://fontawesome.com/icons?d=gallery) version 5 (local)
 * [Google fonts](https://fonts.google.com/) - either via api (any font) or via local files (choose local to reduce tracking)
 * Optional [google translate](https://translate.google.com/manager/website) widget (if js is enabled - disable it to reduce tracking)
+* Optional [Google global site tags](https://developers.google.com/gtagjs/) with your [GA_TRACKING_ID](https://support.google.com/analytics/answer/1008080) (do not activate to reduce tracking))
 * Contact page
   * optional [formspree.io ](https://formspree.io)
   * mailto: without [formspree.io ](https://formspree.io) (avoid tracking & leaking)
@@ -1226,6 +1229,34 @@ Here are just a few examples. To start with uncomment one font set.
 ![screenshot Search no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_310.jpg)
 
 
+### Google Analytics-Tracking using gtag.js
+
+* This theme uses the new gtags.js (not the old google analytics.js)
+* [Analytics-Tracking using gtag.js](https://support.google.com/analytics/answer/1008080)
+* [gtag.js Developer Guide](https://developers.google.com/gtagjs/)
+
+
+```toml
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+
+[params]
+  # https://developers.google.com/gtagjs/
+  # used in layouts/partials/head.google.gtags.html
+  # you need to enter the Tracking-ID above
+  enableGoogleGtag=true
+```
+
+* Gtag is not used if enableGoogleGtag is not set to true or the tracking code is not given
+
+```
+{{- if and $.Site.Params.enableGooglesGtag $.Site.GoogleAnalytics }}
+  {{- /* <!-- Global site tag (gtag.js) - Google Analytics --> */}}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{$.Site.GoogleAnalytics}}"></script>
+```
+
+
+
 ### Footer
 
 ```toml
@@ -1486,13 +1517,15 @@ into the theme (`static/vendor/`*).
 
 ### How to minimize visitors exposure to tracking
 
-* disable menu.topbar search (google custom search)
+* disable google gtags (analytics)
+* disable google translate
 * disable google fonts apis
 * disable google maps
+* disable menu.topbar search (google custom search)
 * disable formspree (but keep your email)
 * do not show a comment counter on the Disqus Button
-* disable google translate
 * review result e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
+
 
 ```toml
 #[[menu.topbar]]

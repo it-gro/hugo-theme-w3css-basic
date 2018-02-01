@@ -1,5 +1,5 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-  {{ `<!-- partials/head.google.analytics.html -->` | safeHTML }}
+  {{ `<!-- partials/head.google.gtags.html -->` | safeHTML }}
 {{- end}}
 {{- if and $.Site.Params.enableGooglesGtag $.Site.GoogleAnalytics }}
   {{- /* <!-- Global site tag (gtag.js) - Google Analytics --> */}}
