@@ -1213,6 +1213,8 @@ googleAnalytics = ""
   enableGoogleGtag=true
 ```
 
+* Firefox has a [Tracking  Protection](https://support.mozilla.org/en-US/kb/tracking-protection) which
+  prevents gtag.js tracking by default.
 * Gtag.js is not used if `enableGoogleGtag` is not set to `true` or the tracking code is not given (`googleAnalytics`)
 
 ```
