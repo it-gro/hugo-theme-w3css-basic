@@ -567,6 +567,7 @@ ultricies eget, tempor sit amet, ante
 [params.googleApiFonts.family.kbd]
 [params.googleApiFonts.family.samp]
 
+  # for starters ...
   # sans-serif = "Capriola"
   # sans-serif = "Days One"
   # sans-serif = "Open Sans"
@@ -585,6 +586,7 @@ ultricies eget, tempor sit amet, ante
   # serif      = "Roboto Slab"
   #
   # monospace  = "Cousine"
+  # monospace  = "Nova Mono"
   # monospace  = "Oxygen Mono"
   # monospace  = "Roboto Mono"
   # monospace  = "Space Mono"
@@ -594,6 +596,7 @@ ultricies eget, tempor sit amet, ante
   # cursive    = "Carter One"
   # cursive    = "Courgette"
   # cursive    = "Creepster"
+  # cursive    = "Nova Slim"
   # cursive    = "Parisienne"
   # cursive    = "Patrick Hand"
   # cursive    = "Rammetto One"
