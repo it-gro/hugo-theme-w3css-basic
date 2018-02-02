@@ -230,7 +230,7 @@ consectetuer adipiscing
   # set W3.CSS color theme (choose one)
   #w3cssColorTheme = "/css/w3-theme-custom.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
@@ -243,7 +243,7 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-khaki.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
