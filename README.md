@@ -1035,7 +1035,7 @@ pygmentsUseClasses            = true
 If you set `fontsUseGoogleApis=true` you can choose any font from
 https://fonts.google.com
 
-Here are just two examples.
+Here are just some examples.
 
 
 ```toml
@@ -1240,6 +1240,7 @@ define key here: #googleMapsApiKey = ""
   longitude        =  7.444186
 
 ```
+
 * Contact form with map
 
 ![screenshot Contact](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_290.jpg)
@@ -1286,6 +1287,7 @@ define key here: #googleMapsApiKey = ""
 ####  No translation is done for
 
 * About and Adress in footer (class="notranslate")
+
 `layouts/partials/footer.html`
 ```
     <div class="w3-col w3-third">
@@ -1439,6 +1441,7 @@ categories:
 ```
 
 * for pages add:
+
 ```
 weight:      42
 ```
@@ -1496,6 +1499,7 @@ layouts/shortcodes/
 
 
 ## Gallery
+
 * https://github.com/liwenyip/hugo-easy-gallery/
 
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
