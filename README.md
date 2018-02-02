@@ -1180,7 +1180,7 @@ or just as short as this:
 > Use the following CSS rules to specify these families:    
 > font-family: 'Roboto', sans-serif;
 
-(Do not add the "+" sign - this is done in the partial)
+(Do not add the "+" or "|" signs in the api url - this is done in the partial)
 
 Here is a random list of some fonts you may want to try to get the
 impression. Copy them to the [params.googleApiFonts.family.*] sections.
@@ -1227,19 +1227,30 @@ cursive    = "Romanesco"
 ### Contact Map
 
 
-```toml [params] # Google Maps API key # get our own:
-https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
-# used in layouts/partials/contact.map.html # if empty => fallback to URL
-(instead of map) # define environment variable (=> key is not stored in github)
-envGoogleMapsApiKey = "GoogleMapsApiKey" # if environment is not an option =>
-define key here: #googleMapsApiKey = ""
+```toml 
+[params] 
+  # Google Maps API key
+  # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
+  # used in layouts/partials/contact.map.html
+  # if empty => fallback to URL (instead of map)
+  # define environment variable (=> key is not stored in github)
+  envGoogleMapsApiKey = "GoogleMapsApiKey"
+  # if environment is not an option => define key here:
+  #googleMapsApiKey = ""
 
   #googleMapsZoom   = 14
   googleMapsZoom   = 3
   latitude         = 46.946692
   longitude        =  7.444186
-
 ```
+
+Here's how to use the environment variable:
+
+```bash
+$ export GoogleMapsApiKey=GEeawyBOuzOPzbFGizHKGReghibngUZTGjlioZM
+$ hugo
+```
+
 
 * Contact form with map
 
