@@ -1,0 +1,6 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/scripts.top.html -->` | safeHTML }}
+{{- end}}
+{{- if .IsHome }}
+{{- end }}
+  <script src="{{ "js/custom.top.js"                         | relURL }}"></script> 
