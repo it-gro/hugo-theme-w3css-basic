@@ -3,7 +3,7 @@
 W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
 Inspiration was taken from [Universal](https://themes.gohugo.io/hugo-universal-theme/).
 It is quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml).
-Change all colors in the blink of an eye or choose Google fonts or use the new Global Site Tags.
+Change all colors in the blink of an eye,  choose Google fonts or use the new Global Site Tags.
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
@@ -59,11 +59,11 @@ It includes resources from:
   * [Syntax Highlighting](#syntax-highlighting)
   * [Menu](#menu)
   * [Fonts](#fonts)
-    * [Choose any Font via fonts.googleapis.com](#choose-any-font-via-fonts-googleapis-com)
+    * [Choose any Font via googleapis](#choose-any-font-via-googleapis)
   * [Contact Map](#contact-map)
   * [Google Translation](#google-translation)
   * [Google Custom Search API](#google-custom-search-api)
-  * [Google Analytics-Tracking using gtag.js](#google-analytics-tracking-using-gtagjs)
+  * [Google Analytics-Tracking using gtag](#google-analytics-tracking-using-gtag)
   * [Footer](#footer)
   * [Tracing](#tracing)
 * [Front Matter](#front-matter)
@@ -1030,7 +1030,7 @@ pygmentsUseClasses            = true
   {{- end }}
 ```
 
-#### Choose any Font via fonts.googleapis.com
+#### Choose any Font via googleapis
 
 If you set `fontsUseGoogleApis=true` you can choose any font from
 https://fonts.google.com
@@ -1281,7 +1281,7 @@ define key here: #googleMapsApiKey = ""
 ![screenshot Search no JavaScript](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_310.jpg)
 
 
-### Google Analytics-Tracking using gtag.js
+### Google Analytics-Tracking using gtag
 
 * The Global Site Tag (gtag.js) is the new version of Google Analytics JavaScript capture API.
 * This theme uses the new gtags.js (not the old google analytics.js)
