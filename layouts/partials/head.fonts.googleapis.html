@@ -1,34 +1,56 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- partials/head.fonts.googleapis.html -->` | safeHTML }}
 {{- end}}
-{{- if $.Site.Params.googleApiFonts }}
-  {{- range $.Site.Params.googleApiFonts }}
-    {{- if . }}
-      {{- if not (in ($.Scratch.Get "family") (printf "%s|" (replaceRE ` ` "+" .) )  ) }}
-        {{- $.Scratch.Set "family" (printf "%s|%s" ($.Scratch.Get "family" | default "" ) (replaceRE ` ` "+" . )) }}
+{{- $myStyleTagsText    := slice "html" "body" }}
+{{- $myStyleTagsHeading := slice "h1" "h2" "h3" "h4" "h5" "h6" }}
+{{- $myStyleTagsMono    := slice "pre" "code" "kbd" "samp" }}
+{{- $myStyleTags := union $myStyleTagsText (union $myStyleTagsHeading $myStyleTagsMono) }}
+{{- $myStyleTagFallbackText    := "html" }}
+{{- $myStyleTagFallbackHeading := cond ( gt (len (index $.Site.Params.googleApiFonts.family "h1" ) ) 0 ) "h1"  "html" }}
+{{- $myStyleTagFallbackMono    := cond ( gt (len (index $.Site.Params.googleApiFonts.family "pre") ) 0 ) "pre" "html" }}
+
+{{- range $se := $myStyleTags }}
+  {{- if index $.Site.Params.googleApiFonts.family $se }}
+    {{- range (index $.Site.Params.googleApiFonts.family $se ) }}
+      {{- if . }}
+        {{- if not (in ($.Scratch.Get "family") (printf "%s|" (trim . " ") )  ) }}
+          {{- $.Scratch.Set "family" (printf "%s|%s" ($.Scratch.Get "family" | default "" ) (trim . " ") ) }}
+        {{- end }}
       {{- end }}
     {{- end }}
+    {{- $.Scratch.Set "family" ((strings.TrimPrefix "|" ($.Scratch.Get "family") ) | replaceRE ` ` "+") }}
   {{- end }}
-  {{- $.Scratch.Set "family" (strings.TrimPrefix "|" ($.Scratch.Get "family") ) }}
 {{- end }}
-  {{- if  $.Scratch.Get "family" }}
-    {{- $myHref := (printf `href="%s%s"` "https://fonts.googleapis.com/css?family=" ($.Scratch.Get `family`) )  }}
-    <link rel="stylesheet" {{$myHref | safeHTMLAttr}} />
-  {{- else }}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" />
-  {{- end }}
-  <style>
-    html, body, h1, h2, h3, h4, h5, h6
-    {
-  {{- if  $.Scratch.Get "family" }}
-    {{- range $myGenericName, $myFamilyName  := $.Site.Params.googleApiFonts }}
-      {{- if and $myFamilyName $myGenericName }}
-      font-family: '{{$myFamilyName}}', {{$myGenericName}};
-      {{- end}}
+
+{{- if  $.Scratch.Get "family" }}
+  {{- $myHref := (printf `href="%s%s"` "https://fonts.googleapis.com/css?family=" ($.Scratch.Get `family`) )  }}
+  <link rel="stylesheet" {{$myHref | safeHTMLAttr}} />
+{{- else }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" />
+{{- end }}
+
+{{- template "googleapis.font-family" (dict "family" $.Site.Params.googleapifonts.family "tags" $myStyleTagsText    "fallback" $myStyleTagFallbackText   ) }}
+{{- template "googleapis.font-family" (dict "family" $.Site.Params.googleapifonts.family "tags" $myStyleTagsHeading "fallback" $myStyleTagFallbackHeading) }}
+{{- template "googleapis.font-family" (dict "family" $.Site.Params.googleapifonts.family "tags" $myStyleTagsMono    "fallback" $myStyleTagFallbackMono   ) }}
+
+{{- define "googleapis.font-family" }}
+  {{- $theGoogleApiFontsFamily := index . "family"   }}
+  {{- $theStyleTags            := index . "tags"     }}
+  {{- $theStyleTagFallback     := index . "fallback" }}
+
+  {{- range $se := $theStyleTags }}
+    {{- if index $theGoogleApiFontsFamily  $se }}
+  <style> {{$se}} {
+      {{- range $g, $f := (index $theGoogleApiFontsFamily $se ) -}}
+        {{- if . }}font-family: '{{$f}}', {{$g}}; {{ end }}
+      {{- end -}} } </style>
+    {{- else }}
+  <style> {{$se}} {
+      {{- if index $theGoogleApiFontsFamily $theStyleTagFallback }}
+        {{- range $g, $f := (index $theGoogleApiFontsFamily $theStyleTagFallback ) }}
+          {{- if . }}font-family: '{{$f}}', {{$g}}; {{ end }}
+        {{- end }}
+      {{- end -}} } </style>
     {{- end }}
-  {{- else }}
-      font-family: 'Ubuntu'     , sans-serif;
-      font-family: 'Ubuntu Mono', monospace;
   {{- end }}
-    }
-  </style>
+{{- end}}
