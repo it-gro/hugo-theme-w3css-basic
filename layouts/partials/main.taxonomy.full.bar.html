@@ -1,5 +1,5 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/main.taxonomy.full.bar.html -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/main.taxonomy.full.bar.html -->` | safeHTML }}
 {{- end}}
 {{- if or (isset .Params (lower "categories" )) (isset .Params (lower "tags" ))  }}
 <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-top  w3-margin-bottom {{ default `w3-theme-l1` ($.Site.Param `colorTaxonomyBar`)}} ">

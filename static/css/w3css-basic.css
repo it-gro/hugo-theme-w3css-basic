@@ -381,8 +381,10 @@ code.chroma {
 /* -------------------------------------------------- */
 /* shortcodes w3-code w3-codespan */
 pre.w3-code, span.w3-codespan{
-  font-family:monospace,monospace; !important;
-  font-size:1em
+  font-family:monospace,monospace !important;
+  /* font-family:monospace,monospace; */
+  /* font-family: initial !important;*/
+  font-size:1em;
 }
 
 /* wfor w3-code and chroma styles */

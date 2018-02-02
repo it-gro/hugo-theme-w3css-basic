@@ -311,9 +311,10 @@ consectetuer adipiscing
 
   # used in layouts/partials/head.html
   # use true for https://themes.gohugo.io/hugo-theme-w3css-basic
-  # if fontsUseGoogleApis=true then choose your fonts in [params.googleApiFonts]  (see below)
+  # if fontsUseGoogleApis=true then choose your fonts in [params.googleApiFonts.family.*]  (see below)
   fontsUseGoogleApis=true
 
+  # Global Site Tag
   # https://developers.google.com/gtagjs/
   # used in layouts/partials/head.google.gtags.html
   # you need to enter the Tracking-ID above
@@ -523,80 +524,81 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 ultricies eget, tempor sit amet, ante
              '''
 
-[params.googleApiFonts]
-  # only relevant if fontsUseGoogleApis=true
-  # used in partials/head.fonts.googleapis.html
+[params.googleApiFonts.family]
+  # this section is only relevant if fontsUseGoogleApis=true
 
-  # choose a google font family name for a generic name
-  # generic names may be empty
-  # default, if no key at all is given in params.googleApiFonts: Ubuntu + Ubuntu Mono
+  # https://www.w3.org/Style/Examples/007/fonts.en.html
+  # the predefined generic font names are:
+  # sans-serif = ""
+  # serif      = ""
+  # monospace  = ""
+  # cursive    = ""
+  # fantasy    = ""
 
-  # (default) Set: Ubuntu
-  #monospace  = "Ubuntu Mono"
-  #sans-serif = "Ubuntu"
-  #serif      = ""
-  #cursive    = ""
+  # used in static/vendor/w3css/4/w3.css
+  #   code,kbd,pre,samp     : monospace
+  #   html,body             : sans-serif
+  #   h1                    : serif
+  #   h1,h2,h3,h4,h5,h6     : sans-serif
+  #   .w3-code,.w3-codespan : Consolas,"courier new"
 
-  # Set: Glegoo
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = "Glegoo"
-  #cursive    = ""
+[params.googleApiFonts.family.html]
+  # this is the fallback for body
+  # serif, sans-serif or even cursive
+  sans-serif = "Poppins"
+[params.googleApiFonts.family.body]
+  # probably empty
 
-  # Set: Days One
-  #monospace  = ""
-  #sans-serif = "Days One"
-  #serif      = ""
-  #cursive    = ""
+[params.googleApiFonts.family.h1]
+  # this is the fallback for h2.. h6 - if left empty => html is fallback
+  # serif, sans-serif or even cursive
+  sans-serif = "Days One"
+[params.googleApiFonts.family.h2]
+[params.googleApiFonts.family.h3]
+[params.googleApiFonts.family.h4]
+[params.googleApiFonts.family.h5]
+[params.googleApiFonts.family.h6]
 
-  # Set: Quantico
-  #monospace  = ""
-  #sans-serif = "Quantico"
-  #serif      = ""
-  #cursive    = ""
+[params.googleApiFonts.family.pre]
+  # this is the fallback for code, kdb, samp - if left empty => html is fallback
+  # monospace or sans-serif
+  monospace  = "Cousine"
+[params.googleApiFonts.family.code]
+[params.googleApiFonts.family.kbd]
+[params.googleApiFonts.family.samp]
 
-  # Set: Roboto
-  #monospace  = "Roboto Mono"
-  #sans-serif = "Roboto"
-  #serif      = ""
-  #cursive    = ""
-
-  # Set: Patrick Hand
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Patrick Hand"
-
-  # Set: Rammetto One
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Rammetto One"
-
-  # Set: Oxygen
-  #monospace  = "Oxygen Mono"
-  #sans-serif = "Oxygen"
-  #serif      = ""
-  #cursive    = ""
-
-  # Set: Carter One
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Carter One"
-
-  # Set: Parisienne
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Parisienne"
-
-  # Set: Rochester
-  monospace  = ""
-  sans-serif = ""
-  serif      = ""
-  cursive    = "Rochester"
-
+  # sans-serif = "Capriola"
+  # sans-serif = "Days One"
+  # sans-serif = "Open Sans"
+  # sans-serif = "Oswald"
+  # sans-serif = "Oxygen"
+  # sans-serif = "Paytone One"
+  # sans-serif = "Poppins"
+  # sans-serif = "Quantico"
+  # sans-serif = "Raleway"
+  # sans-serif = "Roboto"
+  # sans-serif = "Ubuntu"
+  #
+  # serif      = "Gabriela"
+  # serif      = "Glegoo"
+  # serif      = "Noticia Text"
+  # serif      = "Roboto Slab"
+  #
+  # monospace  = "Cousine"
+  # monospace  = "Oxygen Mono"
+  # monospace  = "Roboto Mono"
+  # monospace  = "Space Mono"
+  # monospace  = "Ubuntu Mono"
+  #
+  # cursive    = "Caesar Dressing"
+  # cursive    = "Carter One"
+  # cursive    = "Courgette"
+  # cursive    = "Creepster"
+  # cursive    = "Parisienne"
+  # cursive    = "Patrick Hand"
+  # cursive    = "Rammetto One"
+  # cursive    = "Rochester"
+  # cursive    = "Romanesco"
 
 
 # ##################################################

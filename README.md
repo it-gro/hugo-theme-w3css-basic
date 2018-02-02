@@ -3,7 +3,7 @@
 W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
 Inspiration was taken from [Universal](https://themes.gohugo.io/hugo-universal-theme/).
 It is quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml).
-Change all colors in the blink of an eye or choose any google font...
+Change all colors in the blink of an eye or choose Google fonts or use the new Global Site Tags.
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
@@ -59,7 +59,7 @@ It includes resources from:
   * [Syntax Highlighting](#syntax-highlighting)
   * [Menu](#menu)
   * [Fonts](#fonts)
-    * [Choose any Font via fonts.googleapis.com](#choose-any-font-via-fontsgoogleapiscom)
+    * [Choose any Font via fonts.googleapis.com](#choose-any-font-via-fonts-googleapis-com)
   * [Contact Map](#contact-map)
   * [Google Translation](#google-translation)
   * [Google Custom Search API](#google-custom-search-api)
@@ -115,7 +115,7 @@ My goals for this theme are:
 * [Fontawesome](https://fontawesome.com/icons?d=gallery) version 5 (local)
 * [Google fonts](https://fonts.google.com/) - either via api (any font) or via local files (choose local to reduce tracking)
 * Optional [google translate](https://translate.google.com/manager/website) widget (if js is enabled - disable it to reduce tracking)
-* Optional [Google global site tags](https://developers.google.com/gtagjs/) with your [GA_TRACKING_ID](https://support.google.com/analytics/answer/1008080) (do not activate to reduce tracking))
+* Optional  [Google Global Site Tags](https://developers.google.com/gtagjs/) with your [GA_TRACKING_ID](https://support.google.com/analytics/answer/1008080) (do not activate to reduce tracking))
 * Contact page
   * optional [formspree.io ](https://formspree.io)
   * mailto: without [formspree.io ](https://formspree.io) (avoid tracking & leaking)
@@ -1013,12 +1013,12 @@ pygmentsUseClasses            = true
 ```toml
 [params]
   # used in layouts/partials/head.html
-  # if fontsUseGoogleApis=true then choose your fonts in [params.googleApiFonts]  (see below)
+  # if fontsUseGoogleApis=true then choose your fonts in [params.googleApiFonts.family.*]  (see below)
   fontsUseGoogleApis=false
 ```
 
 * false: load fonts from `/static/vendor/google/fonts`. Use e.g. https://google-webfonts-helper.herokuapp.com/fonts to download google fonts.
-* true: load fonts via Google font API
+* true: load fonts via Google font API 
 
 
 ```
@@ -1039,60 +1039,146 @@ Here are just a few examples. To start with uncomment one font set.
 
 
 ```toml
-[params.googleApiFonts]
-  # only relevant if fontsUseGoogleApis=true
-  # used in partials/head.fonts.googleapis.html
+[params.googleApiFonts.family]
+  # https://www.w3.org/Style/Examples/007/fonts.en.html
+  # the predefined generic font names are:
+  # sans-serif = ""
+  # serif      = ""
+  # monospace  = ""
+  # cursive    = ""
+  # fantasy    = ""
 
-  # choose a google font family name for a generic name
-  # generic names may be empty
-  # default, if no key at all is given in params.googleApiFonts: Ubuntu + Ubuntu Mono
+  # used in static/vendor/w3css/4/w3.css
+  #   code,kbd,pre,samp     : monospace
+  #   html,body             : sans-serif
+  #   h1                    : serif
+  #   h1,h2,h3,h4,h5,h6     : sans-serif
+  #   .w3-code,.w3-codespan : Consolas,"courier new"
 
-  # (default) Set: Ubuntu
-  #monospace  = "Ubuntu Mono"
-  #sans-serif = "Ubuntu"
-  #serif      = ""
-  #cursive    = ""
+[params.googleApiFonts.family.html]
+  # this is the fallback for body
+  # serif, sans-serif or even cursive
+   sans-serif      = "Oswald"
+[params.googleApiFonts.family.body]
+  # probably empty
 
-  # Set: Glegoo
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = "Glegoo"
-  #cursive    = ""
+[params.googleApiFonts.family.h1]
+  # this is the fallback for h2.. h6 - if left empty => html is fallback
+  # serif, sans-serif or even cursive
+  sans-serif = "Creepster"
+[params.googleApiFonts.family.h2]
+[params.googleApiFonts.family.h3]
+[params.googleApiFonts.family.h4]
+[params.googleApiFonts.family.h5]
+[params.googleApiFonts.family.h6]
 
-  # Set: Days One
-  monospace  = ""
+[params.googleApiFonts.family.pre]
+  # this is the fallback for code, kdb, samp - if left empty => html is fallback
+  # monospace or sans-serif
+  monospace  = "Space Mono"
+[params.googleApiFonts.family.code]
+[params.googleApiFonts.family.kbd]
+[params.googleApiFonts.family.samp]
+```
+
+This would lead to:
+
+```html
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Creepster|Space+Mono" />
+  <style> html {font-family: 'Oswald', sans-serif; } </style>
+  <style> body {font-family: 'Oswald', sans-serif; } </style>
+  <style> h1 {font-family: 'Creepster', sans-serif; } </style>
+  <style> h2 {font-family: 'Creepster', sans-serif; } </style>
+  <style> h3 {font-family: 'Creepster', sans-serif; } </style>
+  <style> h4 {font-family: 'Creepster', sans-serif; } </style>
+  <style> h5 {font-family: 'Creepster', sans-serif; } </style>
+  <style> h6 {font-family: 'Creepster', sans-serif; } </style>
+  <style> pre {font-family: 'Space Mono', monospace; } </style>
+  <style> code {font-family: 'Space Mono', monospace; } </style>
+  <style> kbd {font-family: 'Space Mono', monospace; } </style>
+  <style> samp {font-family: 'Space Mono', monospace; } </style>
+```
+
+
+An other example would be:
+
+```toml
+[params.googleApiFonts.family.html]
+  sans-serif = "Poppins"
+[params.googleApiFonts.family.body]
+[params.googleApiFonts.family.h1]
   sans-serif = "Days One"
-  serif      = ""
-  cursive    = ""
-
-  # Set: Roboto
-  #monospace  = "Roboto Mono"
-  #sans-serif = "Roboto"
-  #serif      = ""
-  #cursive    = ""
-
-  # Set: Patrick Hand
-  #monospace  = ""
-  #sans-serif = ""
-  #serif      = ""
-  #cursive    = "Patrick Hand"
+[params.googleApiFonts.family.h2]
+[params.googleApiFonts.family.h3]
+[params.googleApiFonts.family.h4]
+[params.googleApiFonts.family.h5]
+[params.googleApiFonts.family.h6]
+[params.googleApiFonts.family.pre]
+  monospace  = "Cousine"
+[params.googleApiFonts.family.code]
+[params.googleApiFonts.family.kbd]
+[params.googleApiFonts.family.samp]
 
 ```
+
+* You need to go to https://fonts.google.com/ to get your selection.
+* There is a usefull list: **Popular Pairings with ...** under *See Specimen*
+* After selecting a Font click *Family Selected*. You see e.g.:
+
+> Use the following CSS rules to specify these families: 
+> font-family: 'Roboto', sans-serif;
+
+(Do not add the "+" sign - this is done in the partial)
+
+Here is a random list of some fonts to choose from:
+
+```toml
+sans-serif = "Capriola"
+sans-serif = "Days One"
+sans-serif = "Open Sans"
+sans-serif = "Oswald"
+sans-serif = "Oxygen"
+sans-serif = "Paytone One"
+sans-serif = "Poppins"
+sans-serif = "Quantico"
+sans-serif = "Raleway"
+sans-serif = "Roboto"
+sans-serif = "Ubuntu"
+
+serif      = "Gabriela"
+serif      = "Glegoo"
+serif      = "Noticia Text"
+serif      = "Roboto Slab"
+
+monospace  = "Cousine"
+monospace  = "Oxygen Mono"
+monospace  = "Roboto Mono"
+monospace  = "Space Mono"
+monospace  = "Ubuntu Mono"
+
+cursive    = "Caesar Dressing"
+cursive    = "Carter One"
+cursive    = "Courgette"
+cursive    = "Creepster"
+cursive    = "Parisienne"
+cursive    = "Patrick Hand"
+cursive    = "Rammetto One"
+cursive    = "Rochester"
+cursive    = "Romanesco"
+```
+
+
 
 
 ### Contact Map
 
 
-```toml
-[params]
-  # Google Maps API key
-  # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
-  # used in layouts/partials/contact.map.html
-  # if empty => fallback to URL (instead of map)
-  # define environment variable (=> key is not stored in github)
-  envGoogleMapsApiKey = "GoogleMapsApiKey"
-  # if environment is not an option => define key here:
-  #googleMapsApiKey = ""
+```toml [params] # Google Maps API key # get our own:
+https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
+# used in layouts/partials/contact.map.html # if empty => fallback to URL
+(instead of map) # define environment variable (=> key is not stored in github)
+envGoogleMapsApiKey = "GoogleMapsApiKey" # if environment is not an option =>
+define key here: #googleMapsApiKey = ""
 
   #googleMapsZoom   = 14
   googleMapsZoom   = 3
@@ -1197,6 +1283,7 @@ Here are just a few examples. To start with uncomment one font set.
 
 ### Google Analytics-Tracking using gtag.js
 
+* The Global Site Tag (gtag.js) is the new version of Google Analytics JavaScript capture API.
 * This theme uses the new gtags.js (not the old google analytics.js)
 * [Analytics-Tracking using gtag.js](https://support.google.com/analytics/answer/1008080)
 * [gtag.js Developer Guide](https://developers.google.com/gtagjs/)
