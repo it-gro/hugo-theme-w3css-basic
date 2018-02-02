@@ -1,0 +1,7 @@
+{{ range (seq 0 (sub (len .Params) 1) ) }}
+  {{ printf "<%s>" ($.Get . ) | safeHTML }}
+{{ end }}
+{{ $.Inner }}
+{{ range (seq (sub (len .Params) 1) -1 0)  }}
+  {{ printf "</%s>" ($.Get .) | safeHTML }}
+{{ end }}

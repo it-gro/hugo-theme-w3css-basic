@@ -722,6 +722,39 @@ in {{< w3-codespan >}}i18n/en.yaml{{< /w3-codespan >}}
 {{< asciicast WJM2LEZQs8VRhNeuZ5NiGPp9I >}}
 
 
+## html-tag
+
+* surround text with a html tag
+
+{{< highlight nolang >}}
+We meet at {{</* html-tag time >}}23:59{{< /html-tag */>}}. Don't be late.
+{{< /highlight >}}
+
+We meet at {{< html-tag time >}}23:59{{< /html-tag >}}. Don't be late.
+
+## html-tags
+
+* surround text with nested html tags
+
+{{< highlight nolang >}}
+We meet at {{</* html-tags time sup >}}23:59{{< /html-tags */>}}. Don't be late.
+{{< /highlight >}}
+
+We meet at {{< html-tags time sup >}}23:59{{< /html-tags >}}. Don't be late.
+
+
+## html-tag-classes
+
+* surround text with a html tag including some classes
+
+{{< highlight nolang >}}
+We meet at {{</* html-tag-classes time w3-xxxlarge w3-text-red >}}23:59{{< /html-tag-classes */>}}. Don't be late.
+{{< /highlight >}}
+
+We meet at {{< html-tag-classes time w3-xxxlarge w3-text-red >}}23:59{{< /html-tag-classes >}}. Don't be late.
+
+
+
 # Experimental
 
 ## liti: List by Title

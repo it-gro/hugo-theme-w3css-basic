@@ -1,37 +1,47 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- partials/head.fonts.googleapis.html -->` | safeHTML }}
 {{- end}}
-{{- $myStyleTagsText    := slice "html" "body" }}
-{{- $myStyleTagsHeading := slice "h1" "h2" "h3" "h4" "h5" "h6" }}
-{{- $myStyleTagsMono    := slice "pre" "code" "kbd" "samp" }}
-{{- $myStyleTags := union $myStyleTagsText (union $myStyleTagsHeading $myStyleTagsMono) }}
-{{- $myStyleTagFallbackText    := "html" }}
-{{- $myStyleTagFallbackHeading := cond ( gt (len (index $.Site.Params.googleApiFonts.family "h1" ) ) 0 ) "h1"  "html" }}
-{{- $myStyleTagFallbackMono    := cond ( gt (len (index $.Site.Params.googleApiFonts.family "pre") ) 0 ) "pre" "html" }}
+{{- if isset $.Site.Params (lower "googleApiFonts") }}
+  {{- if isset $.Site.Params.googleApiFonts (lower "family") }}
+    {{- if $.Site.Params.googleApiFonts.family }}
 
-{{- range $se := $myStyleTags }}
-  {{- if index $.Site.Params.googleApiFonts.family $se }}
-    {{- range (index $.Site.Params.googleApiFonts.family $se ) }}
-      {{- if . }}
-        {{- if not (in ($.Scratch.Get "family") (printf "%s|" (trim . " ") )  ) }}
-          {{- $.Scratch.Set "family" (printf "%s|%s" ($.Scratch.Get "family" | default "" ) (trim . " ") ) }}
+      {{- $myStyleTagsText    := $.Site.Params.googleApiFonts.family.tagsText }}
+      {{- $myStyleTagsHeading := $.Site.Params.googleApiFonts.family.tagsHeading }}
+      {{- $myStyleTagsMono    := $.Site.Params.googleApiFonts.family.tagsMono }}
+      {{- $myStyleTags        := union $myStyleTagsText (union $myStyleTagsHeading $myStyleTagsMono) }}
+
+      {{- $myStyleTagFallbackText    := $.Site.Params.googleApiFonts.family.fallbackText | default "html" }}
+      {{- $myStyleTagFallbackHeading := cond (isset $.Site.Params.googleApiFonts.family (lower "fallbackHeading") ) $.Site.Params.googleApiFonts.family.fallbackHeading  "html" }}
+      {{- $myStyleTagFallbackMono    := cond (isset $.Site.Params.googleApiFonts.family (lower "fallbackMono"   ) ) $.Site.Params.googleApiFonts.family.fallbackMono     "html" }}
+
+      {{- range $se := $myStyleTags }}
+        {{- if index $.Site.Params.googleApiFonts.family $se }}
+          {{- range (index $.Site.Params.googleApiFonts.family $se ) }}
+            {{- if . }}
+              {{- if not (in ($.Scratch.Get "family") (printf "%s|" (trim . " ") )  ) }}
+                {{- $.Scratch.Set "family" (printf "%s|%s" ($.Scratch.Get "family" | default "" ) (trim . " ") ) }}
+              {{- end }}
+            {{- end }}
+          {{- end }}
+          {{- $.Scratch.Set "family" ((strings.TrimPrefix "|" ($.Scratch.Get "family") ) | replaceRE ` ` "+") }}
         {{- end }}
       {{- end }}
-    {{- end }}
-    {{- $.Scratch.Set "family" ((strings.TrimPrefix "|" ($.Scratch.Get "family") ) | replaceRE ` ` "+") }}
-  {{- end }}
-{{- end }}
 
-{{- if  $.Scratch.Get "family" }}
-  {{- $myHref := (printf `href="%s%s"` "https://fonts.googleapis.com/css?family=" ($.Scratch.Get `family`) )  }}
+      {{- if  $.Scratch.Get "family" }}
+        {{- $myHref := (printf `href="%s%s"` "https://fonts.googleapis.com/css?family=" ($.Scratch.Get `family`) )  }}
   <link rel="stylesheet" {{$myHref | safeHTMLAttr}} />
-{{- else }}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" />
-{{- end }}
+      {{- else }}
+        {{/* no font names found ... */}}
+      {{- end }}
 
-{{- template "googleapis.font-family" (dict "family" $.Site.Params.googleapifonts.family "tags" $myStyleTagsText    "fallback" $myStyleTagFallbackText   ) }}
-{{- template "googleapis.font-family" (dict "family" $.Site.Params.googleapifonts.family "tags" $myStyleTagsHeading "fallback" $myStyleTagFallbackHeading) }}
-{{- template "googleapis.font-family" (dict "family" $.Site.Params.googleapifonts.family "tags" $myStyleTagsMono    "fallback" $myStyleTagFallbackMono   ) }}
+      {{- template "googleapis.font-family" (dict "family" $.Site.Params.googleapifonts.family "tags" $myStyleTagsText    "fallback" $myStyleTagFallbackText   ) }}
+      {{- template "googleapis.font-family" (dict "family" $.Site.Params.googleapifonts.family "tags" $myStyleTagsHeading "fallback" $myStyleTagFallbackHeading) }}
+      {{- template "googleapis.font-family" (dict "family" $.Site.Params.googleapifonts.family "tags" $myStyleTagsMono    "fallback" $myStyleTagFallbackMono   ) }}
+
+    {{- end }} {{/* $.Site.Params.googleApiFonts.family */}}
+  {{- end }} {{/* family */}}
+{{- end }} {{/* googleApiFonts */}}
+
 
 {{- define "googleapis.font-family" }}
   {{- $theGoogleApiFontsFamily := index . "family"   }}
