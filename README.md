@@ -1715,7 +1715,6 @@ into the theme (`static/vendor/`*).
 ## ToDo's
 
 * more testing for the lit* shortcodes
-* optional google analytics
 * finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
 
 
