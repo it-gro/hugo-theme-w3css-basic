@@ -542,30 +542,35 @@ ultricies eget, tempor sit amet, ante
   #   h1,h2,h3,h4,h5,h6     : sans-serif
   #   .w3-code,.w3-codespan : Consolas,"courier new"
 
+  # https://www.w3schools.com/tags/ref_byfunc.asp
+  # tagsText        = [ "html", "body" ]
+  # tagsText        = [ "html", "body", "abbr", "address", "article" "aside" "blockquote", "caption", "cite", "dfn", "em", "ins", "main", "mark", "s", "section", "summary", "time" ]
+  # tagsText        = [ "html", "body", "abbr", "address", "blockquote", "cite", "dfn", "em", "ins", "mark", "s", "time" ]
+  tagsText        = [ "html", "body", "time" ]
+  tagsHeading     = [ "h1", "h2", "h3", "h4", "h5", "h6" ]
+  tagsMono        = [ "pre", "code", "kbd", "samp", "data" ]
+
+  # these parameter sections must exist, the others are optional
+  fallbackText    = "html"
+  fallbackHeading = "h1"
+  fallbackMono    = "pre"
+
 [params.googleApiFonts.family.html]
   # this is the fallback for body
   # serif, sans-serif or even cursive
   sans-serif = "Poppins"
-[params.googleApiFonts.family.body]
-  # probably empty
-
+[params.googleApiFonts.family.time]
+  # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
+  cursive    = "Creepster"
 [params.googleApiFonts.family.h1]
   # this is the fallback for h2.. h6 - if left empty => html is fallback
   # serif, sans-serif or even cursive
   sans-serif = "Days One"
-[params.googleApiFonts.family.h2]
-[params.googleApiFonts.family.h3]
-[params.googleApiFonts.family.h4]
-[params.googleApiFonts.family.h5]
-[params.googleApiFonts.family.h6]
 
 [params.googleApiFonts.family.pre]
   # this is the fallback for code, kdb, samp - if left empty => html is fallback
   # monospace or sans-serif
   monospace  = "Cousine"
-[params.googleApiFonts.family.code]
-[params.googleApiFonts.family.kbd]
-[params.googleApiFonts.family.samp]
 
   # for starters ...
   # sans-serif = "Capriola"

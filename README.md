@@ -2,7 +2,7 @@
 
 W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
 Inspiration was taken from [Universal](https://themes.gohugo.io/hugo-universal-theme/).
-It is quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml).
+It is quite [configurable](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/exampleSite/config.toml).
 Change all colors in the blink of an eye,  choose Google fonts or use the new Global Site Tags.
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
@@ -1035,7 +1035,15 @@ pygmentsUseClasses            = true
 If you set `fontsUseGoogleApis=true` you can choose any font from
 https://fonts.google.com
 
-Here are just some examples.
+Hash Borgir had a very good idea: [discourse.gohugo.io](https://discourse.gohugo.io/t/how-to-dynamically-use-google-fonts-in-a-hugo-website-config-toml/4423).
+He wrote an aricle: [How To Dynamically Use Google Fonts In A Hugo Website](https://stoned.io/web-development/hugo/How-To-Dynamically-Use-Google-Fonts-In-A-Hugo-Website/).
+
+I had the same goal - here's my implementation. It's all done in the
+[config.yaml](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/exampleSite/config.toml)
+file.
+
+
+Here's the relevant part:
 
 
 ```toml
@@ -1055,28 +1063,28 @@ Here are just some examples.
   #   h1,h2,h3,h4,h5,h6     : sans-serif
   #   .w3-code,.w3-codespan : Consolas,"courier new"
 
+  # https://www.w3schools.com/tags/ref_byfunc.asp
+  # tagsText        = [ "html", "body" ]
+  tagsText        = [ "html", "body", "abbr", "address", "blockquote", "cite", "dfn", "em", "ins", "mark", "s", "time" ]
+  tagsHeading     = [ "h1", "h2", "h3", "h4", "h5", "h6" ]
+  tagsMono        = [ "pre", "code", "kbd", "samp" ]
+
+  # these parameter sections must exist, the others are optional
+  fallbackText    = "html"
+  fallbackHeading = "h1"
+  fallbackMono    = "pre"
+
 [params.googleApiFonts.family.html]
-  # this is the fallback for body
   # serif, sans-serif or even cursive
-   sans-serif      = "Oswald"
-[params.googleApiFonts.family.body]
-  # probably empty
+  sans-serif      = "Oswald"
 
 [params.googleApiFonts.family.h1]
-  # this is the fallback for h2.. h6 - if left empty => html is fallback
   # serif, sans-serif or even cursive
   sans-serif = "Creepster"
-[params.googleApiFonts.family.h2]
-[params.googleApiFonts.family.h3]
-[params.googleApiFonts.family.h4]
-[params.googleApiFonts.family.h5]
-[params.googleApiFonts.family.h6]
 
 [params.googleApiFonts.family.pre]
-  # this is the fallback for code, kdb, samp - if left empty => html is fallback
   # monospace or sans-serif
   monospace  = "Space Mono"
-[params.googleApiFonts.family.code]
 [params.googleApiFonts.family.kbd]
   monospace  = ""
 [params.googleApiFonts.family.samp]
@@ -1087,17 +1095,27 @@ Here are just some examples.
 This would lead to:
 
 ```html
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Creepster|Space+Mono" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Creepster|Space+Mono|Roboto" />
   <style> html {font-family: 'Oswald', sans-serif; } </style>
   <style> body {font-family: 'Oswald', sans-serif; } </style>
+  <style> abbr {font-family: 'Oswald', sans-serif; } </style>
+  <style> address {font-family: 'Oswald', sans-serif; } </style>
+  <style> blockquote {font-family: 'Oswald', sans-serif; } </style>
+  <style> cite {font-family: 'Oswald', sans-serif; } </style>
+  <style> dfn {font-family: 'Oswald', sans-serif; } </style>
+  <style> em {font-family: 'Oswald', sans-serif; } </style>
+  <style> ins {font-family: 'Oswald', sans-serif; } </style>
+  <style> mark {font-family: 'Oswald', sans-serif; } </style>
+  <style> s {font-family: 'Oswald', sans-serif; } </style>
+  <style> time {font-family: 'Oswald', sans-serif; } </style>
   <style> h1 {font-family: 'Creepster', sans-serif; } </style>
   <style> h2 {font-family: 'Creepster', sans-serif; } </style>
   <style> h3 {font-family: 'Creepster', sans-serif; } </style>
   <style> h4 {font-family: 'Creepster', sans-serif; } </style>
   <style> h5 {font-family: 'Creepster', sans-serif; } </style>
   <style> h6 {font-family: 'Creepster', sans-serif; } </style>
-  <style> pre {font-family: 'Cousine', monospace; } </style>
-  <style> code {font-family: 'Cousine', monospace; } </style>
+  <style> pre {font-family: 'Space Mono', monospace; } </style>
+  <style> code {font-family: 'Space Mono', monospace; } </style>
   <style> kbd {} </style>
   <style> samp {font-family: 'Roboto', sans-serif; } </style>
 ```
@@ -1106,31 +1124,35 @@ This would lead to:
   idea).
 
 
-
 An other example would be:
 
 ```toml
+[params.googleApiFonts.family]
+  tagsText        = [ "html", "body", "time" ]
+  tagsHeading     = [ "h1", "h2", "h3", "h4", "h5", "h6" ]
+  tagsMono        = [ "pre", "code" ]
+  fallbackText    = "html"
+  fallbackHeading = "h1"
+  fallbackMono    = "pre"
+
 [params.googleApiFonts.family.html]
   sans-serif = "Poppins"
-[params.googleApiFonts.family.body]
+[params.googleApiFonts.family.time]
+  cursive    = "Creepster"
 [params.googleApiFonts.family.h1]
   sans-serif = "Days One"
-[params.googleApiFonts.family.h2]
-[params.googleApiFonts.family.h3]
-[params.googleApiFonts.family.h4]
-[params.googleApiFonts.family.h5]
-[params.googleApiFonts.family.h6]
 [params.googleApiFonts.family.pre]
   monospace  = "Cousine"
-[params.googleApiFonts.family.code]
-[params.googleApiFonts.family.kbd]
-[params.googleApiFonts.family.samp]
 ```
 
+
+gives:
+
 ```html
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Days+One|Cousine" />
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Days+One|Cousine" />
   <style> html {font-family: 'Poppins', sans-serif; } </style>
   <style> body {font-family: 'Poppins', sans-serif; } </style>
+  <style> time {font-family: 'Creepster', cursive; } </style>
   <style> h1 {font-family: 'Days One', sans-serif; } </style>
   <style> h2 {font-family: 'Days One', sans-serif; } </style>
   <style> h3 {font-family: 'Days One', sans-serif; } </style>
@@ -1139,23 +1161,35 @@ An other example would be:
   <style> h6 {font-family: 'Days One', sans-serif; } </style>
   <style> pre {font-family: 'Cousine', monospace; } </style>
   <style> code {font-family: 'Cousine', monospace; } </style>
-  <style> kbd {font-family: 'Cousine', monospace; } </style>
-  <style> samp {font-family: 'Cousine', monospace; } </style>
 ```
 
+* So for the HTML tag `<time>` we use a different font-family. See
+https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#html-tag
+how this look's like.
 
-or just as short as this:
+* Of course this can be done via custom css as well, but here we have all in one
+  place. Setting the fonts we need from fonts.googleapis.com and applying it to
+  a bunch of tags. No pre or post processing needed.
+
+
+
+A short version (just 2 fonts) looks like this:
+
 ```toml
+  tagsText        = [ "html", "body" ]
+  tagsHeading     = [ "h1", "h2", "h3", "h4", "h5", "h6" ]
+  tagsMono        = [ "pre", "code" ]
+  fallbackText    = "html"
+  fallbackHeading = "html"
+  fallbackMono    = "pre"
+
 [params.googleApiFonts.family.html]
   cursive    = "Nova Slim"
-[params.googleApiFonts.family.h1]
 [params.googleApiFonts.family.pre]
-  monospace   = "Nova Mono"
+  monospace  = "Nova Mono"
 ```
 
-`params.googleApiFonts.family` **html**,**h1**,**pre** must be present, but they may be empty.
-
-
+gives:
 
 ```html
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nova+Slim|Nova+Mono" />
@@ -1169,9 +1203,8 @@ or just as short as this:
   <style> h6 {font-family: 'Nova Slim', cursive; } </style>
   <style> pre {font-family: 'Nova Mono', monospace; } </style>
   <style> code {font-family: 'Nova Mono', monospace; } </style>
-  <style> kbd {font-family: 'Nova Mono', monospace; } </style>
-  <style> samp {font-family: 'Nova Mono', monospace; } </style>
 ```
+
 
 * You need to go to https://fonts.google.com/  (preview the fonts).
 * There is a usefull list: **Popular Pairings with ...** under *See Specimen*
@@ -1488,6 +1521,9 @@ layouts/shortcodes/
 ├── heg-figure.html
 ├── heg-gallery.html
 ├── heg-load-photoswipe.html
+├── html-tag-classes.html
+├── html-tag.html
+├── html-tags.html
 ├── i18n.html
 ├── icon.html
 ├── liti.html
