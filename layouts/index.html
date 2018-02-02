@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- index.html  -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- index.html  -->` | safeHTML }}
 {{- end}}
   {{ partial "head.html" . }}
 
@@ -22,7 +22,7 @@
       {{ partial "footer.html"        . }}
       {{ partial "footer.bottom.html" . }}
     </div> <!-- all -->
-    {{ partial "scripts.html"  . }}
+    {{ partial "scripts.bottom.html"  . }}
   </body>
   {{- partial "debug.html" . -}}
 </html>
