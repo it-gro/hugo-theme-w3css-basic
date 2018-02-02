@@ -1035,7 +1035,7 @@ pygmentsUseClasses            = true
 If you set `fontsUseGoogleApis=true` you can choose any font from
 https://fonts.google.com
 
-Here are just a few examples. To start with uncomment one font set.
+Here are just two examples.
 
 
 ```toml
@@ -1121,16 +1121,18 @@ An other example would be:
 
 ```
 
-* You need to go to https://fonts.google.com/ to get your selection.
+* You need to go to https://fonts.google.com/ to preview the fonts.
 * There is a usefull list: **Popular Pairings with ...** under *See Specimen*
 * After selecting a Font click *Family Selected*. You see e.g.:
 
-> Use the following CSS rules to specify these families: 
+> Use the following CSS rules to specify these families:    
 > font-family: 'Roboto', sans-serif;
 
 (Do not add the "+" sign - this is done in the partial)
 
-Here is a random list of some fonts to choose from:
+Here is a random list of some fonts you may want to try to get the
+impression. Copy them to the [params.googleApiFonts.family.*] sections.
+
 
 ```toml
 sans-serif = "Capriola"
