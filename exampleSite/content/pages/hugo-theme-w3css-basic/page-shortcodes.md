@@ -737,10 +737,10 @@ We meet at {{< html-tag time >}}23:59{{< /html-tag >}}. Don't be late.
 * surround text with nested html tags
 
 {{< highlight nolang >}}
-We meet at {{</* html-tags time sup >}}23:59{{< /html-tags */>}}. Don't be late.
+We meet at {{</* html-tags sup time >}}23:59{{< /html-tags */>}}. Don't be late.
 {{< /highlight >}}
 
-We meet at {{< html-tags time sup >}}23:59{{< /html-tags >}}. Don't be late.
+We meet at {{< html-tags sup time >}}23:59{{< /html-tags >}}. Don't be late.
 
 
 ## html-tag-classes

@@ -1037,7 +1037,6 @@ https://fonts.google.com
 
 Hash Borgir had a cool idea: [How To Dynamically Use Google Fonts In A Hugo
 Website](https://stoned.io/web-development/hugo/How-To-Dynamically-Use-Google-Fonts-In-A-Hugo-Website/).
-
 I had the same goal. It's all configured in the
 [config.yaml](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/exampleSite/config.toml)
 file.
