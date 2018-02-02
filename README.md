@@ -1078,7 +1078,10 @@ Here are just two examples.
   monospace  = "Space Mono"
 [params.googleApiFonts.family.code]
 [params.googleApiFonts.family.kbd]
+  monospace  = ""
 [params.googleApiFonts.family.samp]
+  sans-serif = "Roboto"
+
 ```
 
 This would lead to:
@@ -1093,11 +1096,15 @@ This would lead to:
   <style> h4 {font-family: 'Creepster', sans-serif; } </style>
   <style> h5 {font-family: 'Creepster', sans-serif; } </style>
   <style> h6 {font-family: 'Creepster', sans-serif; } </style>
-  <style> pre {font-family: 'Space Mono', monospace; } </style>
-  <style> code {font-family: 'Space Mono', monospace; } </style>
-  <style> kbd {font-family: 'Space Mono', monospace; } </style>
-  <style> samp {font-family: 'Space Mono', monospace; } </style>
+  <style> pre {font-family: 'Cousine', monospace; } </style>
+  <style> code {font-family: 'Cousine', monospace; } </style>
+  <style> kbd {} </style>
+  <style> samp {font-family: 'Roboto', sans-serif; } </style>
 ```
+
+* Note how `kbd` is "blanked" and `samp` has it's own style (just to give you the
+  idea).
+
 
 
 An other example would be:
@@ -1118,10 +1125,55 @@ An other example would be:
 [params.googleApiFonts.family.code]
 [params.googleApiFonts.family.kbd]
 [params.googleApiFonts.family.samp]
-
 ```
 
-* You need to go to https://fonts.google.com/ to preview the fonts.
+```html
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Days+One|Cousine" />
+  <style> html {font-family: 'Poppins', sans-serif; } </style>
+  <style> body {font-family: 'Poppins', sans-serif; } </style>
+  <style> h1 {font-family: 'Days One', sans-serif; } </style>
+  <style> h2 {font-family: 'Days One', sans-serif; } </style>
+  <style> h3 {font-family: 'Days One', sans-serif; } </style>
+  <style> h4 {font-family: 'Days One', sans-serif; } </style>
+  <style> h5 {font-family: 'Days One', sans-serif; } </style>
+  <style> h6 {font-family: 'Days One', sans-serif; } </style>
+  <style> pre {font-family: 'Cousine', monospace; } </style>
+  <style> code {font-family: 'Cousine', monospace; } </style>
+  <style> kbd {font-family: 'Cousine', monospace; } </style>
+  <style> samp {font-family: 'Cousine', monospace; } </style>
+```
+
+
+or just as short as this:
+```toml
+[params.googleApiFonts.family.html]
+  cursive    = "Nova Slim"
+[params.googleApiFonts.family.h1]
+[params.googleApiFonts.family.pre]
+  monospace   = "Nova Mono"
+```
+
+`params.googleApiFonts.family` **html**,**h1**,**pre** must be present, but they may be empty.
+
+
+
+```html
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nova+Slim|Nova+Mono" />
+  <style> html {font-family: 'Nova Slim', cursive; } </style>
+  <style> body {font-family: 'Nova Slim', cursive; } </style>
+  <style> h1 {font-family: 'Nova Slim', cursive; } </style>
+  <style> h2 {font-family: 'Nova Slim', cursive; } </style>
+  <style> h3 {font-family: 'Nova Slim', cursive; } </style>
+  <style> h4 {font-family: 'Nova Slim', cursive; } </style>
+  <style> h5 {font-family: 'Nova Slim', cursive; } </style>
+  <style> h6 {font-family: 'Nova Slim', cursive; } </style>
+  <style> pre {font-family: 'Nova Mono', monospace; } </style>
+  <style> code {font-family: 'Nova Mono', monospace; } </style>
+  <style> kbd {font-family: 'Nova Mono', monospace; } </style>
+  <style> samp {font-family: 'Nova Mono', monospace; } </style>
+```
+
+* You need to go to https://fonts.google.com/  (preview the fonts).
 * There is a usefull list: **Popular Pairings with ...** under *See Specimen*
 * After selecting a Font click *Family Selected*. You see e.g.:
 
