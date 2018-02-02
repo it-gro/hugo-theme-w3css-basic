@@ -1035,10 +1035,9 @@ pygmentsUseClasses            = true
 If you set `fontsUseGoogleApis=true` you can choose any font from
 https://fonts.google.com
 
-Hash Borgir had a very good idea: [discourse.gohugo.io](https://discourse.gohugo.io/t/how-to-dynamically-use-google-fonts-in-a-hugo-website-config-toml/4423).
-He wrote an aricle: [How To Dynamically Use Google Fonts In A Hugo Website](https://stoned.io/web-development/hugo/How-To-Dynamically-Use-Google-Fonts-In-A-Hugo-Website/).
-
-I had the same goal - here's my implementation. It's all done in the
+Hash Borgir had a cool idea: [How To Dynamically Use Google Fonts In A Hugo
+Website](https://stoned.io/web-development/hugo/How-To-Dynamically-Use-Google-Fonts-In-A-Hugo-Website/).
+I had the same goal. It's all configured in the
 [config.yaml](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/exampleSite/config.toml)
 file.
 
@@ -1165,7 +1164,7 @@ gives:
 
 * So for the HTML tag `<time>` we use a different font-family. See
 https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#html-tag
-how this look's like.
+how this look's like (the actual fonts may vary since I change them just for fun ...).
 
 * Of course this can be done via custom css as well, but here we have all in one
   place. Setting the fonts we need from fonts.googleapis.com and applying it to
@@ -1215,8 +1214,13 @@ gives:
 
 (Do not add the "+" or "|" signs in the api url - this is done in the partial)
 
+* You may want to check Hash Borgir
+[article](https://stoned.io/web-development/hugo/How-To-Dynamically-Use-Google-Fonts-In-A-Hugo-Website/)
+since he describes the https://fonts.google.com/ part with some screenshots.
+  
+
 Here is a random list of some fonts you may want to try to get the
-impression. Copy them to the [params.googleApiFonts.family.*] sections.
+impression. Copy them to the `[params.googleApiFonts.family.*]` sections.
 
 
 ```toml
