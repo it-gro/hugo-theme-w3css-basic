@@ -1,6 +1,16 @@
 {{- printf `<%s class="` ($.Get 0 ) | safeHTML }}
 {{- range (seq 1 (sub (len .Params) 1) ) }}
-  {{- printf "%s " ($.Get . ) | safeHTML }}
+{{-      if eq ($.Get .) `colPrimary`  }}{{ printf "%s " (default `w3-purple`      ($.Site.Param `colorAlertPrimary`  ) | replaceRE `w3-` "w3-text-" ) | safeHTML }}
+{{- else if eq ($.Get .) `colSecondary`}}{{ printf "%s " (default `w3-aqua`        ($.Site.Param `colorAlertSecondary`) | replaceRE `w3-` "w3-text-" ) | safeHTML }}
+{{- else if eq ($.Get .) `colSuccess`  }}{{ printf "%s " (default `w3-light-green` ($.Site.Param `colorAlertSuccess`  ) | replaceRE `w3-` "w3-text-" ) | safeHTML }}
+{{- else if eq ($.Get .) `colInfo`     }}{{ printf "%s " (default `w3-light-blue`  ($.Site.Param `colorAlertInfo`     ) | replaceRE `w3-` "w3-text-" ) | safeHTML }}
+{{- else if eq ($.Get .) `colWarning`  }}{{ printf "%s " (default `w3-yellow`      ($.Site.Param `colorAlertWarning`  ) | replaceRE `w3-` "w3-text-" ) | safeHTML }}
+{{- else if eq ($.Get .) `colDanger`   }}{{ printf "%s " (default `w3-red`         ($.Site.Param `colorAlertDanger`   ) | replaceRE `w3-` "w3-text-" ) | safeHTML }}
+{{- else if eq ($.Get .) `colDark`     }}{{ printf "%s " (default `w3-dark-grey`   ($.Site.Param `colorAlertDark`     ) | replaceRE `w3-` "w3-text-" ) | safeHTML }}
+{{- else if eq ($.Get .) `colLight`    }}{{ printf "%s " (default `w3-grey`        ($.Site.Param `colorAlertLight`    ) | replaceRE `w3-` "w3-text-" ) | safeHTML }}
+{{- else }}
+{{- printf "%s " ($.Get . ) | safeHTML }}
+{{- end }}
 {{- end }}
 {{- printf `">` | safeHTML }}
 {{- $.Inner }}

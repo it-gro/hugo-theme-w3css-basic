@@ -26,6 +26,55 @@ and list templates and basic content files.
 
 # Shortcodes in this Theme for W3.CSS classes
 
+
+
+## alert
+
+* Inspired by http://getbootstrap.com/docs/4.0/components/alerts/ and https://www.w3schools.com/w3css/w3css_panels.asp
+
+Configuration is in `config.toml`:
+
+```toml
+[params]
+  colorAlertPrimary                     = "w3-purple"
+  colorAlertSecondary                   = "w3-aqua"
+  colorAlertSuccess                     = "w3-light-green"
+  colorAlertInfo                        = "w3-light-blue"
+  colorAlertWarning                     = "w3-yellow"
+  colorAlertDanger                      = "w3-red"
+  colorAlertDark                        = "w3-dark-grey"
+  colorAlertLight                       = "w3-grey"
+```
+
+{{< highlight nolang >}}
+{{</* alert type="primary"   intro="Primary Alert"   >}}This is a primary alert—check it out!   {{< /alert >}}
+{{< alert type="secondary" intro="Secondary Alert" >}}This is a secondary alert—check it out! {{< /alert >}}
+{{< alert type="success"   intro="Success Alert"   >}}This is a info success—check it out!    {{< /alert >}}
+{{< alert type="info"      intro="Info Alert"      >}}This is a info alert—check it out!      {{< /alert >}}
+{{< alert type="warning"   intro="Warning Alert"   >}}This is a warning alert—check it out!   {{< /alert >}}
+{{< alert type="danger"    intro="Danger Alert"    >}}This is a danger alert—check it out!    {{< /alert >}}
+{{< alert type="dark"      intro="Dark Alert"      >}}This is a dark alert—check it out!      {{< /alert >}}
+{{< alert type="light"     intro="Light Alert"     >}}This is a light alert—check it out!     {{< /alert */>}}
+{{< /highlight  >}}
+
+{{< alert type="primary"   intro="Primary Alert"   >}}This is a primary alert—check it out!   {{< /alert >}}
+
+{{< alert type="secondary" intro="Secondary Alert" >}}This is a secondary alert—check it out! {{< /alert >}}
+
+{{< alert type="success"   intro="Success Alert"   >}}This is a info success—check it out!    {{< /alert >}}
+
+{{< alert type="info"      intro="Info Alert"      >}}This is a info alert—check it out!      {{< /alert >}}
+
+{{< alert type="warning"   intro="Warning Alert"   >}}This is a warning alert—check it out!   {{< /alert >}}
+
+{{< alert type="danger"    intro="Danger Alert"    >}}This is a danger alert—check it out!    {{< /alert >}}
+
+{{< alert type="dark"      intro="Dark Alert"      >}}This is a dark alert—check it out!      {{< /alert >}}
+
+{{< alert type="light"     intro="Light Alert"     >}}This is a light alert—check it out!     {{< /alert >}}
+
+
+
 ## w3-notice-icon
 
 * Inspired by [W3.CSS Notes](https://www.w3schools.com/w3css/w3css_notes.asp)
@@ -753,51 +802,27 @@ We meet at {{</* html-tag-classes time w3-xxxlarge w3-text-red >}}23:59{{< /html
 
 We meet at {{< html-tag-classes time w3-xxxlarge w3-text-red >}}23:59{{< /html-tag-classes >}}. Don't be late.
 
-
-## alert
-
-* inspired by http://getbootstrap.com/docs/4.0/components/alerts/ and https://www.w3schools.com/w3css/w3css_panels.asp
-
-```toml
-[params]
-  colorAlertPrimary                     = "w3-purple"
-  colorAlertSecondary                   = "w3-aqua"
-  colorAlertSuccess                     = "w3-light-green"
-  colorAlertInfo                        = "w3-light-blue"
-  colorAlertWarning                     = "w3-yellow"
-  colorAlertDanger                      = "w3-red"
-  colorAlertDark                        = "w3-dark-grey"
-  colorAlertLight                       = "w3-grey"
-
-```
+You can use the `colorAlert*` values (see [alter](#alert) ) using:
 
 {{< highlight nolang >}}
-{{</* alert type="primary"   intro="Primary Alert"   >}}This is a primary alert—check it out!   {{< /alert >}}
-{{< alert type="secondary" intro="Secondary Alert" >}}This is a secondary alert—check it out! {{< /alert >}}
-{{< alert type="success"   intro="Success Alert"   >}}This is a info success—check it out!    {{< /alert >}}
-{{< alert type="info"      intro="Info Alert"      >}}This is a info alert—check it out!      {{< /alert >}}
-{{< alert type="warning"   intro="Warning Alert"   >}}This is a warning alert—check it out!   {{< /alert >}}
-{{< alert type="danger"    intro="Danger Alert"    >}}This is a danger alert—check it out!    {{< /alert >}}
-{{< alert type="dark"      intro="Dark Alert"      >}}This is a dark alert—check it out!      {{< /alert >}}
-{{< alert type="light"     intro="Light Alert"     >}}This is a light alert—check it out!     {{< /alert */>}}
-{{< /highlight  >}}
+We meet at {{</* html-tag-classes time w3-xxxlarge colDanger >}}23:59{{< /html-tag-classes */>}}. Don't be late.
+{{< /highlight >}}
 
-{{< alert type="primary"   intro="Primary Alert"   >}}This is a primary alert—check it out!   {{< /alert >}}
+We meet at {{< html-tag-classes time w3-xxxlarge colDanger >}}23:59{{< /html-tag-classes >}}. Don't be late.
 
-{{< alert type="secondary" intro="Secondary Alert" >}}This is a secondary alert—check it out! {{< /alert >}}
+This works as well
 
-{{< alert type="success"   intro="Success Alert"   >}}This is a info success—check it out!    {{< /alert >}}
+{{< highlight nolang >}}
+{{%/* html-tag-classes div w3-container w3-card-4 w3-theme-d3 %}}
+## Hello
+World
+{{% /html-tag-classes */%}}
+{{< /highlight >}}
 
-{{< alert type="info"      intro="Info Alert"      >}}This is a info alert—check it out!      {{< /alert >}}
-
-{{< alert type="warning"   intro="Warning Alert"   >}}This is a warning alert—check it out!   {{< /alert >}}
-
-{{< alert type="danger"    intro="Danger Alert"    >}}This is a danger alert—check it out!    {{< /alert >}}
-
-{{< alert type="dark"      intro="Dark Alert"      >}}This is a dark alert—check it out!      {{< /alert >}}
-
-{{< alert type="light"     intro="Light Alert"     >}}This is a light alert—check it out!     {{< /alert >}}
-
+{{% html-tag-classes div w3-container w3-card-4 w3-theme-d3 %}}
+## Hello
+World
+{{% /html-tag-classes %}}
 
 
 # Experimental
