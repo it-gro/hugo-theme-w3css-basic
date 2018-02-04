@@ -305,6 +305,41 @@ consectetuer adipiscing
   colorPageNavCardsLink                 = "w3-theme-l3"
   colorSearchGoogleGcseContainer        = "w3-theme-l3"
 
+  # used in layouts/shortcodes/alert.html
+  colorAlertPrimary                     = "w3-purple"
+  colorAlertSecondary                   = "w3-aqua"
+  colorAlertSuccess                     = "w3-light-green"
+  colorAlertInfo                        = "w3-light-blue"
+  colorAlertWarning                     = "w3-yellow"
+  colorAlertDanger                      = "w3-red"
+  colorAlertDark                        = "w3-dark-grey"
+  colorAlertLight                       = "w3-grey"
+
+  # w3-amber
+  # w3-aqua
+  # w3-blue
+  # w3-blue-grey
+  # w3-brown
+  # w3-cyan
+  # w3-dark-grey
+  # w3-deep-orange
+  # w3-deep-purple
+  # w3-green
+  # w3-grey
+  # w3-indigo
+  # w3-khaki
+  # w3-light-blue
+  # w3-light-green
+  # w3-light-grey
+  # w3-lime
+  # w3-orange
+  # w3-pink
+  # w3-purple
+  # w3-red
+  # w3-sand
+  # w3-teal
+  # w3-white
+  # w3-yellow
 
   # google stuff
   # ##############################
