@@ -1,3 +1,9 @@
++++
+[blackfriday]
+  extensions = ["noEmptyLineBeforeBlock"]
++++
+
+
 # W3.CSS Basic Theme for Hugo
 
 W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
@@ -8,7 +14,6 @@ Change all colors in the blink of an eye,  choose Google fonts or use the new Gl
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
 This theme is for:
-
 * Landing pages 
 * Blogs
 * Pages (not blog) in a directory structure with simple navigation (Top/Up/Down & pages on this level)
