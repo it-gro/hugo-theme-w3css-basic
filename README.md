@@ -175,7 +175,7 @@ defaultContentLanguage = "en"
 
 #### Marquee
 
-```yaml
+```toml
 [params.marquee]
   # enable or disable marquee
   enable   = true
@@ -191,7 +191,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 
 #### Jumbotron
 
-```yaml
+```toml
 [params.jumbotrons]
   # used in layouts/partials/front.jumbotrons.carousel.html
   # enable or disable jumbotrons on frontpage
@@ -234,7 +234,7 @@ description: |
 
 
 #### Photocards
-```yaml
+```toml
 [params.photocards]
   # used in layouts/partials/front.photocards.html
   # enable or disable photocards on frontpage
@@ -273,7 +273,7 @@ description: |
 
 
 #### Features
-```yaml
+```toml
 [params.features]
   # used in layouts/partials/front.features.html
   # enable or disable features on frontpage
@@ -309,7 +309,7 @@ description: |
 
 
 #### Recent Posts
-```yaml
+```toml
 [params.recentPosts]
   # used in layouts/partials/footer.html
   footerNumOfPosts = 5
@@ -328,7 +328,7 @@ fames ac.
 
 
 #### See More
-```yaml
+```toml
 [params.seeMore]
   # used in layouts/partials/front.see_more.html
   # enable or disable see_more on frontpage
@@ -359,7 +359,7 @@ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
 ```
 
 #### Testimonials
-```yaml
+```toml
 [params.testimonials]
   # used in layouts/partials/front.testimonials.carousel.html
   # enable or disable testimonials on frontpage
@@ -398,7 +398,7 @@ text:        |
 ```
 
 #### Clients
-```yaml
+```toml
 [params.clients]
   # used in layouts/partials/front.clients.carousel.html
   # enable or disable clients on frontpage
@@ -438,7 +438,7 @@ url:    "http://www.example.com"
 ### Blog
 
 #### Blog List
-```yaml
+```toml
 [params.blog]
   # used in layouts/blog/list.html
   title    = "Blog"
@@ -1043,7 +1043,7 @@ https://fonts.google.com
 Hash Borgir had a cool idea: [How To Dynamically Use Google Fonts In A Hugo
 Website](https://stoned.io/web-development/hugo/How-To-Dynamically-Use-Google-Fonts-In-A-Hugo-Website/).
 I had the same goal. It's all configured in the
-[config.yaml](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/exampleSite/config.toml)
+[config.toml](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/exampleSite/config.toml)
 file.
 
 
@@ -1449,7 +1449,7 @@ googleAnalytics = ""
 * If you like comments in the html source, this one is for you
 
 
-```yaml
+```toml
 # flags used for tracing and html comment output
   # currently used:
   #   html-comment          enable partials html comment output 
@@ -1462,6 +1462,38 @@ googleAnalytics = ""
 If `traceFlags` includes the word `html-comment` some HTML comments will
 be included in the html source code.
 
+
+## Custom CSS and JS
+
+```toml
+  # custom css and custom js
+  # this theme comes with the following "empty" files
+  #   static/css/custom.css
+  #   static/js/custom.bottom.js
+  #   static/js/custom.top.js
+  # a project can create these in the project dir in order to overwrite them
+  # https://gohugo.io/themes/customizing/#override-static-files
+
+  # in addition the folloing array may be files with paths or URLS
+  #   custom_css        = [ "css/custom_foo.css", "https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css" ]
+  #   custom_js_top     = [ "js/custom_top_bar.js" ]
+  #   custom_js_bottom  = [ "js/custom_bottom_foo.js", "https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" ]
+  # used in layouts/partials/head.stylesheets.html
+  # used in layouts/partials/scripts.bottom.html
+  # used in layouts/partials/scripts.top.html
+  custom_css        = [ ]
+  custom_js_top     = [ ]
+  custom_js_bottom  = [ ]
+```
+
+```
+static/
+├── css
+│   ├── custom.css
+├── js
+│   ├── custom.bottom.js
+│   ├── custom.top.js
+```
 
 
 ## Front Matter
