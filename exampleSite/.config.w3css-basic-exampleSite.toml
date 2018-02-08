@@ -426,6 +426,25 @@ consectetuer adipiscing
   # traceFlags       = "html-comment:debug-shortcode-liti"
   traceFlags         = "html-comment"
 
+  # custom css and custom js
+  # this theme comes with the following "empty" files
+  #   static/css/custom.css
+  #   static/js/custom.bottom.js
+  #   static/js/custom.top.js
+  # a project can create these in the project dir in order to overwrite them
+  # https://gohugo.io/themes/customizing/#override-static-files
+
+  # in addition the folloing array may be files with paths or URLS
+  #   custom_css        = [ "css/custom_foo.css", "https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css" ]
+  #   custom_js_top     = [ "js/custom_top_bar.js" ]
+  #   custom_js_bottom  = [ "js/custom_bottom_foo.js", "https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" ]
+  # used in layouts/partials/head.stylesheets.html
+  # used in layouts/partials/scripts.bottom.html
+  # used in layouts/partials/scripts.top.html
+  custom_css        = [ ]
+  custom_js_top     = [ ]
+  custom_js_bottom  = [ ]
+
   # developer stuff
   debug              = false
   uglyURLs           = false
