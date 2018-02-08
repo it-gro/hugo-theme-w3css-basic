@@ -71,6 +71,7 @@ It includes resources from:
   * [Google Analytics-Tracking using gtag](#google-analytics-tracking-using-gtag)
   * [Footer](#footer)
   * [Tracing](#tracing)
+* [Custom CSS and JS](#custom-css-and-js)
 * [Front Matter](#front-matter)
 * [Shortcodes](#shortcodes)
 * [Gallery](#gallery)
@@ -1465,26 +1466,8 @@ be included in the html source code.
 
 ## Custom CSS and JS
 
-```toml
-  # custom css and custom js
-  # this theme comes with the following "empty" files
-  #   static/css/custom.css
-  #   static/js/custom.bottom.js
-  #   static/js/custom.top.js
-  # a project can create these in the project dir in order to overwrite them
-  # https://gohugo.io/themes/customizing/#override-static-files
 
-  # in addition the folloing array may be files with paths or URLS
-  #   custom_css        = [ "css/custom_foo.css", "https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css" ]
-  #   custom_js_top     = [ "js/custom_top_bar.js" ]
-  #   custom_js_bottom  = [ "js/custom_bottom_foo.js", "https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" ]
-  # used in layouts/partials/head.stylesheets.html
-  # used in layouts/partials/scripts.bottom.html
-  # used in layouts/partials/scripts.top.html
-  custom_css        = [ ]
-  custom_js_top     = [ ]
-  custom_js_bottom  = [ ]
-```
+* This theme comes with the following "empty" files
 
 ```
 static/
@@ -1494,6 +1477,30 @@ static/
 │   ├── custom.bottom.js
 │   ├── custom.top.js
 ```
+
+* A project can create these in the project dir in order to overwrite them. See
+  https://gohugo.io/themes/customizing/#override-static-files from more
+  information.
+
+* In addition the following arrays may be files with paths or URLS
+
+```
+  custom_css        = [ ]
+  custom_js_top     = [ ]
+  custom_js_bottom  = [ ]
+```
+
+
+```toml
+[params]
+  # used in layouts/partials/head.stylesheets.html
+  # used in layouts/partials/scripts.bottom.html
+  # used in layouts/partials/scripts.top.html
+  custom_css        = [ ]
+  custom_js_top     = [ ]
+  custom_js_bottom  = [ ]
+```
+
 
 
 ## Front Matter

@@ -434,7 +434,7 @@ consectetuer adipiscing
   # a project can create these in the project dir in order to overwrite them
   # https://gohugo.io/themes/customizing/#override-static-files
 
-  # in addition the folloing array may be files with paths or URLS
+  # in addition the following arrays may be files with paths or URLS
   #   custom_css        = [ "css/custom_foo.css", "https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css" ]
   #   custom_js_top     = [ "js/custom_top_bar.js" ]
   #   custom_js_bottom  = [ "js/custom_bottom_foo.js", "https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" ]
