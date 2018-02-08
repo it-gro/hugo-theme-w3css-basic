@@ -427,7 +427,6 @@ consectetuer adipiscing
   # traceFlags       = "html-comment:debug-shortcode-liti"
   traceFlags         = "html-comment"
 
-
   # custom css and custom js
   # this theme comes with the following "empty" files
   #   static/css/custom.css
