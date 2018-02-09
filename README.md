@@ -338,6 +338,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
 suscipit lobortis nisl ut aliquip ex ea commodo consequat.
               '''
 ```
+
 * Front see more
 
 ![screenshot See More](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_190.jpg)
@@ -367,6 +368,7 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
 labore et dolore magna aliquyam erat, sed diam voluptua. 
              '''
 ```
+
 * Front testimonials
 
 ![screenshot Testimonials](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_210.jpg)
@@ -394,6 +396,7 @@ text:        |
 ```
 
 #### Clients
+
 ```toml
 [params.clients]
   # used in layouts/partials/front.clients.carousel.html
@@ -406,6 +409,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore.
              '''
 ```
+
 * Front clients
 
 ![screenshot Clients](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_200.jpg)
@@ -443,6 +447,7 @@ url:    "http://www.example.com"
 ultricies eget, tempor sit amet, ante
              '''
 ```
+
 * Blog with `paginate =  6` (short date)
 
 ![screenshot Blog Paginator (6)](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_230.jpg)
@@ -503,6 +508,7 @@ In this theme we set
   ...
 
 ```
+
 * Blog article (long date)
 
 ![screenshot Blog Entry](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_240.jpg)
@@ -629,6 +635,7 @@ icon:        "fas fa-globe"
 
 
 #### Taxonomy
+
 * Taxonomy bar (shown if page has a taxonomy)
 
 ![screenshot Taxonomy Bar](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_250.jpg)
@@ -1557,6 +1564,7 @@ icon:        "fas fa-list"
 
 ```
 layouts/shortcodes/
+├── alert.html
 ├── asciicast.html
 ├── csc.html
 ├── cscb.html
@@ -1613,6 +1621,21 @@ categories:
 {{< heg-load-photoswipe >}}
 {{< heg-gallery dir="/images/photocards/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
 ```
+
+
+* This themes version of `{{</* heg-gallery .. */>}}` improves the caption's configuration (filename):
+  * show file extensions - or not
+  * do humanize - or not
+  * the values below are the defaults:
+
+```toml
+[params.gallery]
+  # used in layouts/shortcodes/heg-gallery.html
+  # showFileExtension = true
+  # humanizeCaption   = false
+```
+
+
 
 ## Figure
 
