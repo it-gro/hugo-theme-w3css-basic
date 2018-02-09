@@ -661,6 +661,11 @@ ultricies eget, tempor sit amet, ante
 # ##################################################
 # other sections
 
+[params.gallery]
+  # used in layouts/shortcodes/heg-gallery.html
+  # showFileExtension = true
+  # humanizeCaption   = false
+
 [blackfriday]
   # extensions = ["noEmptyLineBeforeBlock"]
   # extensions = ["hardLineBreak"]

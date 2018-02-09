@@ -665,6 +665,12 @@ ultricies eget, tempor sit amet, ante
   # cursive    = "Romanesco"
 
 
+[params.gallery]
+  # used in layouts/shortcodes/heg-gallery.html
+  # showFileExtension = true
+  # humanizeCaption   = false
+
+
 # ##################################################
 # other sections
 
