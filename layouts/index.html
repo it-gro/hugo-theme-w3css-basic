@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- index.html  -->` | safeHTML }}
-{{- end}}
+  {{- end}}
   {{ partial "head.html" . }}
 
   <body>
     <div id="all" class="theme-layouts-index w3-theme">
       <header>
         {{ partial "header.marquee.html" . }}
+        {{ partial "header.rss.html"     . }}
         {{ partial "header.nav.html"     . }}
       </header>
       {{ partial "front.jumbotrons.carousel.html"    . }}
