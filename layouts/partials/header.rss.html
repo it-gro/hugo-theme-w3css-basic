@@ -2,6 +2,6 @@
 {{ `<!-- partials/header.rss.html -->` | safeHTML }}
 {{- end}}
 {{- if .Site.RSSLink }}
-<link rel="alternate" type="application/rss+xml" title='{{ .Site.Title }} (rss+xml alternate)' href='{{ .RSSLink }}'/>
-{{/* <link rel="feed"      type="application/rss+xml" title='{{ .Site.Title }} (rss+xml feed)'      href='{{ .RSSLink }}'/> */}}
+<link href='{{ .RSSLink }}' rel="alternate" type="application/rss+xml" title='{{ .Site.Title }} (rss+xml alternate)' />
+{{/* <link href='{{ .RSSLink }}' rel="feed"      type="application/rss+xml" title='{{ .Site.Title }} (rss+xml feed)'      /> */}}
 {{- end -}}

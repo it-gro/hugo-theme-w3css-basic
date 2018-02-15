@@ -65,6 +65,13 @@ pygmentsUseClasses            = true
 googleAnalytics = "UA-113314068-1"
 
 
+# RSS Feed
+# Do not build RSS files
+disableRSS = false
+# maximum number of items in the RSS feed
+rssLimit   = 10
+
+
 # ##################################################
 # Theme-defined configuration
 
