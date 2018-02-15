@@ -6,26 +6,26 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 -->
 <!-- count how many times we've called this shortcode; load the css if it's the first time -->
 */}}
-{{- if not ($.Page.Scratch.Get "figurecount") }}<link rel="stylesheet" href="{{ relURL "/vendor/liwenyip/hugo-easy-gallery/css/hugo-easy-gallery.css" }}" />{{ end }}
-{{- $.Page.Scratch.Add "figurecount" 1 -}}
+{{- if not ($.Page.Scratch.Get `figurecount`) }}<link rel="stylesheet" href='{{ relURL `/vendor/liwenyip/hugo-easy-gallery/css/hugo-easy-gallery.css` }}' />{{ end }}
+{{- $.Page.Scratch.Add `figurecount` 1 -}}
 {{- /*
-{{ $.Page.Scratch.Get "figurecount" }}
+{{ $.Page.Scratch.Get `figurecount` }}
 */}}
 <!-- use either src or link-thumb for thumbnail image -->
-{{- $filetype := index (findRE "[^.]+$" (.Get "link") ) 0 }}
-{{- $thumb := .Get "src" | default (printf "%s.%s" (replaceRE "\\.[^.]+$" (.Get "thumb") (.Get "link") ) $filetype )  | relURL }}
-<div class="box{{ with .Get "caption-position" }} fancy-figure caption-position-{{.}}{{end}}{{ with .Get "caption-effect" }} caption-effect-{{.}}{{end}}" {{ with .Get "width" }}style="max-width:{{.}}"{{end}}>
-  <figure {{ with .Get "class" }}class="{{.}}"{{ end }} itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img"{{ if .Parent }} style="background-image: url('{{ print ($thumb | relURL) }}');"{{ end }}{{ with .Get "size" }} data-size="{{.}}"{{ end }}>
-      <img itemprop="associatedMedia" src="{{ $thumb }}" {{ with .Get "alt" | default (.Get "caption") }}alt="{{.}}"{{ end }}/><!-- <img> hidden if in .gallery -->
+{{- $filetype := index (findRE `[^.]+$` (.Get `link`) ) 0 }}
+{{- $thumb := .Get `src` | default (printf `%s.%s` (replaceRE `\\.[^.]+$` (.Get `thumb`) (.Get `link`) ) $filetype )  | relURL }}
+<div class='box{{ with .Get `caption-position` }} fancy-figure caption-position-{{.}}{{end}}{{ with .Get `caption-effect` }} caption-effect-{{.}}{{end}}' {{ with .Get `width` }}style='max-width:{{.}}'{{end}}>
+  <figure {{ with .Get `class` }}class='{{.}}'{{ end }} itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img"{{ if .Parent }} style="background-image: url('{{ print ($thumb | relURL) }}');"{{ end }}{{ with .Get `size` }} data-size='{{.}}'{{ end }}>
+      <img itemprop="associatedMedia" src='{{ $thumb }}' {{ with .Get `alt` | default (.Get `caption`) }}alt='{{.}}'{{ end }}/><!-- <img> hidden if in .gallery -->
     </div>
-    {{ with .Get "link" | default (.Get "src") }}<a itemprop="associatedMedia" href="{{. | relURL}}" ></a>{{ end }}
-    {{- if or (or (.Get "title") (.Get "caption")) (or (.Get "attr") (.Get "attrlink"))  }}
+    {{ with .Get `link` | default (.Get `src`) }}<a itemprop="associatedMedia" href='{{. | relURL}}' ></a>{{ end }}
+    {{- if or (or (.Get `title`) (.Get `caption`)) (or (.Get `attr`) (.Get `attrlink`))  }}
       <figcaption>
-        {{- with .Get "title" }}<h4>{{.}}</h4>{{ end }}
-        {{- with .Get "caption" }}<p>{{.}}</p>{{ end }}
-        {{- if or (.Get "attr") (.Get "attrlink") }}
-        <footer><small>{{if .Get "attrlink"}}<a href="{{.Get `attrlink`}}">{{ default (.Get "attrlink") (.Get "attr") }}</a>{{ else }}{{ .Get "attr"}}{{ end }}</small></footer>
+        {{- with .Get `title` }}<h4>{{.}}</h4>{{ end }}
+        {{- with .Get `caption` }}<p>{{.}}</p>{{ end }}
+        {{- if or (.Get `attr`) (.Get `attrlink`) }}
+        <footer><small>{{if .Get `attrlink`}}<a href='{{.Get `attrlink`}}'>{{ default (.Get `attrlink`) (.Get `attr`) }}</a>{{ else }}{{ .Get `attr`}}{{ end }}</small></footer>
         {{- end }}
       </figcaption>
     {{- end }}

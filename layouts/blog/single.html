@@ -1,6 +1,6 @@
-{{ define "blog-disqus" }}
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-{{- `<!-- blog/single.html (blog-disqus) -->` | safeHTML }} 
+{{ define `blog-disqus` }}
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+{{- `<!-- blog/single.html (blog-disqus) -->` | safeHTML }}
 {{- end}}
-  {{ partial "blog.disqus-button.html" . }}
+  {{ partial `blog.disqus-button.html` . }}
 {{ end }}

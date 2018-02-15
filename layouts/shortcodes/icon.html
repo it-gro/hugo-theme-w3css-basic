@@ -1,10 +1,10 @@
-{{- $.Scratch.Set "theIcon" "fas fa-question" }}
-{{- $.Scratch.Set "theSize" "fa-1x"           }}
+{{- $.Scratch.Set `theIcon` `fas fa-question` }}
+{{- $.Scratch.Set `theSize` `fa-1x`           }}
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set "theIcon" (.Get "name"  | default ($.Scratch.Get "theIcon") ) }}
-  {{- $.Scratch.Set "theSize" (.Get "size"  | default ($.Scratch.Get "theSize") )}}
+  {{- $.Scratch.Set `theIcon` (.Get `name`  | default ($.Scratch.Get `theIcon`) ) }}
+  {{- $.Scratch.Set `theSize` (.Get `size`  | default ($.Scratch.Get `theSize`) )}}
 {{- else}}
-  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theIcon" (.Get $myPos) }} {{end}}
-  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theSize" (.Get $myPos) }} {{end}}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theIcon` (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theSize` (.Get $myPos) }} {{end}}
 {{- end}}
-<span class="{{ $.Scratch.Get "theIcon"}} {{$.Scratch.Get "theSize"}}" aria-hidden="true"></span>
+<span class='{{ $.Scratch.Get `theIcon`}} {{$.Scratch.Get `theSize`}}' aria-hidden="true"></span>

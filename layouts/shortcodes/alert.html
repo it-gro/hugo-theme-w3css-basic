@@ -1,31 +1,31 @@
 {{/* https://github.com/it-gro/hugo-theme-w3css-basic */}}
-{{- $.Scratch.Set "theType"  "info" }}
-{{- $.Scratch.Set "theIntro"  ""    }}
+{{- $.Scratch.Set `theType`  `info` }}
+{{- $.Scratch.Set `theIntro`  ``    }}
 {{- if .IsNamedParams }}
-{{- $.Scratch.Set "theType"  (.Get "type"   | default ($.Scratch.Get "theType"  ) )}}
-{{- $.Scratch.Set "theIntro" (.Get "intro"  | default ($.Scratch.Get "theIntro" ) )}}
+{{- $.Scratch.Set `theType`  (.Get `type`   | default ($.Scratch.Get `theType`  ) )}}
+{{- $.Scratch.Set `theIntro` (.Get `intro`  | default ($.Scratch.Get `theIntro` ) )}}
 {{- else }}
-{{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theType"  (.Get $myPos) }} {{end}}
-{{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theIntro" (.Get $myPos) }} {{end}}
+{{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theType`  (.Get $myPos) }} {{end}}
+{{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theIntro` (.Get $myPos) }} {{end}}
 {{- end }}
 
-{{- $.Scratch.Set "myClass" "w3-blue" }}
-{{- if eq ($.Scratch.Get "theType") "primary"   }}{{$.Scratch.Set "myClass" (default `w3-purple`      ($.Site.Param `colorAlertPrimary`  ) ) }}{{end}}
-{{- if eq ($.Scratch.Get "theType") "secondary" }}{{$.Scratch.Set "myClass" (default `w3-aqua`        ($.Site.Param `colorAlertSecondary`) ) }}{{end}}
-{{- if eq ($.Scratch.Get "theType") "success"   }}{{$.Scratch.Set "myClass" (default `w3-light-green` ($.Site.Param `colorAlertSuccess`  ) ) }}{{end}}
-{{- if eq ($.Scratch.Get "theType") "info"      }}{{$.Scratch.Set "myClass" (default `w3-light-blue`  ($.Site.Param `colorAlertInfo`     ) ) }}{{end}}
-{{- if eq ($.Scratch.Get "theType") "warning"   }}{{$.Scratch.Set "myClass" (default `w3-yellow`      ($.Site.Param `colorAlertWarning`  ) ) }}{{end}}
-{{- if eq ($.Scratch.Get "theType") "danger"    }}{{$.Scratch.Set "myClass" (default `w3-red`         ($.Site.Param `colorAlertDanger`   ) ) }}{{end}}
-{{- if eq ($.Scratch.Get "theType") "dark"      }}{{$.Scratch.Set "myClass" (default `w3-dark-grey`   ($.Site.Param `colorAlertDark`     ) ) }}{{end}}
-{{- if eq ($.Scratch.Get "theType") "light"     }}{{$.Scratch.Set "myClass" (default `w3-grey`        ($.Site.Param `colorAlertLight`    ) ) }}{{end}}
+{{- $.Scratch.Set `myClass` `w3-blue` }}
+{{- if eq ($.Scratch.Get `theType`) `primary`   }}{{$.Scratch.Set `myClass` (default `w3-purple`      ($.Site.Param `colorAlertPrimary`  ) ) }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `secondary` }}{{$.Scratch.Set `myClass` (default `w3-aqua`        ($.Site.Param `colorAlertSecondary`) ) }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `success`   }}{{$.Scratch.Set `myClass` (default `w3-light-green` ($.Site.Param `colorAlertSuccess`  ) ) }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `info`      }}{{$.Scratch.Set `myClass` (default `w3-light-blue`  ($.Site.Param `colorAlertInfo`     ) ) }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `warning`   }}{{$.Scratch.Set `myClass` (default `w3-yellow`      ($.Site.Param `colorAlertWarning`  ) ) }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `danger`    }}{{$.Scratch.Set `myClass` (default `w3-red`         ($.Site.Param `colorAlertDanger`   ) ) }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `dark`      }}{{$.Scratch.Set `myClass` (default `w3-dark-grey`   ($.Site.Param `colorAlertDark`     ) ) }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `light`     }}{{$.Scratch.Set `myClass` (default `w3-grey`        ($.Site.Param `colorAlertLight`    ) ) }}{{end}}
 
 {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-liti)\b` $.Site.Params.traceFlags) }}
 <br/>
-"theType"   : {{- $.Scratch.Get "theType"  }} <br/>
-"theIntro"  : {{- $.Scratch.Get "theIntro" }} <br/>
-"myClass"   : {{- $.Scratch.Get "myClass"  }} <br/>
+"theType"   : {{- $.Scratch.Get `theType`  }} <br/>
+"theIntro"  : {{- $.Scratch.Get `theIntro` }} <br/>
+"myClass"   : {{- $.Scratch.Get `myClass`  }} <br/>
 {{- end }}
 
-<div class=" w3-panel {{$.Scratch.Get `myClass`}}"><span class="{{$.Scratch.Get `myClass`}}">
-  <p><strong>{{$.Scratch.Get "theIntro"}}</strong> {{.Inner}}</p>
+<div class=' w3-panel {{$.Scratch.Get `myClass`}}'><span class='{{$.Scratch.Get `myClass`}}'>
+  <p><strong>{{$.Scratch.Get `theIntro`}}</strong> {{.Inner}}</p>
 </span></div>
