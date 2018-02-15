@@ -1,5 +1,5 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/head.ie.html -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/head.ie.html -->` | safeHTML }}
 {{- end}}
   <!-- Responsivity for older IE -->
   {{ `

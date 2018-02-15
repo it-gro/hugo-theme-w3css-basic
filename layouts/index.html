@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang='{{ .Site.LanguageCode }}'>
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- index.html  -->` | safeHTML }}
   {{- end}}
-  {{ partial "head.html" . }}
+  {{ partial `head.html` . }}
 
   <body>
     <div id="all" class="theme-layouts-index w3-theme">
       <header>
-        {{ partial "header.marquee.html" . }}
-        {{ partial "header.rss.html"     . }}
-        {{ partial "header.nav.html"     . }}
+        {{ partial `header.marquee.html` . }}
+        {{ partial `header.rss.html`     . }}
+        {{ partial `header.nav.html`     . }}
       </header>
-      {{ partial "front.jumbotrons.carousel.html"    . }}
-      {{ partial "front.photocards.html"             . }}
-      {{ partial "front.features.html"               . }}
-      {{ partial "front.recent_posts.html"           . }}
-      {{ partial "front.see_more.html"               . }}
-      {{ partial "front.clients.carousel.html"       . }}
-      {{ partial "front.testimonials.carousel.html"  . }}
+      {{ partial `front.jumbotrons.carousel.html`    . }}
+      {{ partial `front.photocards.html`             . }}
+      {{ partial `front.features.html`               . }}
+      {{ partial `front.recent_posts.html`           . }}
+      {{ partial `front.see_more.html`               . }}
+      {{ partial `front.clients.carousel.html`       . }}
+      {{ partial `front.testimonials.carousel.html`  . }}
 
-      {{ partial "footer.html"        . }}
-      {{ partial "footer.bottom.html" . }}
+      {{ partial `footer.html`        . }}
+      {{ partial `footer.bottom.html` . }}
     </div> <!-- all -->
-    {{ partial "scripts.bottom.html"  . }}
+    {{ partial `scripts.bottom.html`  . }}
   </body>
-  {{- partial "debug.html" . -}}
+  {{- partial `debug.html` . -}}
 </html>

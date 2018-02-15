@@ -1,50 +1,50 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/page.nav.cards.html -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/page.nav.cards.html -->` | safeHTML }}
 {{- end}}
-{{- .Scratch.Set "nav-icon" "" }}
-{{- $startSection := (.Site.GetPage "section" "pages") }}
+{{- .Scratch.Set `nav-icon` `` }}
+{{- $startSection := (.Site.GetPage `section` `pages`) }}
 {{- if $startSection }}
-<div class="w3-container w3-margin-bottom {{ default `w3-theme-l3` ($.Site.Param `colorPageNavCardsContainer`)}} ">
+<div class='w3-container w3-margin-bottom {{ default `w3-theme-l3` ($.Site.Param `colorPageNavCardsContainer`)}} '>
 
   {{- if not ($.InSection $startSection) }}
-      {{- $startSection.Scratch.Set "nav-icon" "fas fa-bullseye"}}
-    {{ template "page-nav-entry"  ($startSection ) }}
+      {{- $startSection.Scratch.Set `nav-icon` `fas fa-bullseye`}}
+    {{ template `page-nav-entry`  ($startSection ) }}
     {{- if not ($.Parent.InSection $startSection) }}
-      {{- $.Parent.Scratch.Set "nav-icon" "fas fa-arrow-up"}}
-      {{ template "page-nav-entry"  ($.Parent ) }}
+      {{- $.Parent.Scratch.Set `nav-icon` `fas fa-arrow-up`}}
+      {{ template `page-nav-entry`  ($.Parent ) }}
     {{- end }}
   {{- end }}
 
   {{- range $index, $element := $.Sections }}
     {{- if not ($element.InSection $) }}
-      {{- $element.Scratch.Set "nav-icon" "fas fa-arrow-down"}}
-      {{ template "page-nav-entry"  ($element ) }}
+      {{- $element.Scratch.Set `nav-icon` `fas fa-arrow-down`}}
+      {{ template `page-nav-entry`  ($element ) }}
     {{- end }}
   {{- end }}
 
 </div>
 {{- end }}
 
-{{- define "page-nav-entry" }}
-  <a class="no-decoration" href="{{ $.RelPermalink }}">
-    <div class="w3-card-4 w3-margin-top w3-margin-bottom w3-round-xxlarge  w3-hover-shadow w3-opacity-min w3-hover-opacity-off {{ default `w3-theme-l1` ($.Site.Param `colorPageNavCardsCard`)}} ">
-      {{- if isset $.Site.Params (lower "debug" ) }}
+{{- define `page-nav-entry` }}
+  <a class="no-decoration" href='{{ $.RelPermalink }}'>
+    <div class='w3-card-4 w3-margin-top w3-margin-bottom w3-round-xxlarge  w3-hover-shadow w3-opacity-min w3-hover-opacity-off {{ default `w3-theme-l1` ($.Site.Param `colorPageNavCardsCard`)}} '>
+      {{- if isset $.Site.Params (lower `debug` ) }}
         {{- if $.Site.Params.debug }}
-          <div class="{{ default `w3-theme-l3` ($.Site.Param `colorPageNavCardsLink`)}} ">{{ $.RelPermalink }}</div>
+          <div class='{{ default `w3-theme-l3` ($.Site.Param `colorPageNavCardsLink`)}} '>{{ $.RelPermalink }}</div>
         {{- end }}
       {{- end }} {{/* isset */}}
 
-        {{- if ne ($.Scratch.Get "nav-icon") "" }}
-        <i class="w3-padding-small {{ .Scratch.Get "nav-icon" }} fa-2x"></i>
-        {{- end }} 
-     
+        {{- if ne ($.Scratch.Get `nav-icon`) `` }}
+        <i class='w3-padding-small {{ .Scratch.Get `nav-icon` }} fa-2x'></i>
+        {{- end }}
+
         {{- if $.Params.icon }}
-        <i class="w3-padding-small {{ $.Params.icon }} fa-2x"></i>
+        <i class='w3-padding-small {{ $.Params.icon }} fa-2x'></i>
         {{- end }}  {{/* icon */}}
         {{- if $.Params.teaserpic }}
         <img class="w3-image w3-round " style="max-width:40px; max-height:40px; width: auto; height: auto; margin: 8px 8px 0px 8px;"
-             alt="{{.Params.teaserpic}}" 
-             src="{{- if eq (substr .Params.teaserpic 0 1) "." }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}"
+             alt='{{.Params.teaserpic}}'
+             src='{{- if eq (substr .Params.teaserpic 0 1) `.` }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}'
         />
         {{- end }} {{/* teaserpic */}}
         <span class="w3-large">{{- $.Title  | markdownify | emojify }}</span>

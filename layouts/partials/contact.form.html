@@ -1,33 +1,33 @@
-{{- if or .Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/contact.form.html  -->` | safeHTML }} 
+{{- if or .Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/contact.form.html  -->` | safeHTML }}
 {{- end}}
-{{- if isset $.Site.Params (lower "email"     ) }}
+{{- if isset $.Site.Params (lower `email`     ) }}
 {{- if $.Site.Params.email }}
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- $.Site.Params.email ok  -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- $.Site.Params.email ok  -->` | safeHTML }}
 {{- end}}
-{{- .Scratch.Set "myMailToAction"  (printf "mailto:%s" $.Site.Params.email) }}
-{{- .Scratch.Set "myMailToVia"     "mail"                                  }}
-{{- .Scratch.Set "myMailToEnctype" "text/plain"                            }}
-{{- if isset $.Site.Params (lower "formspree" ) }}
+{{- .Scratch.Set `myMailToAction`  (printf `mailto:%s` $.Site.Params.email) }}
+{{- .Scratch.Set `myMailToVia`     `mail`                                  }}
+{{- .Scratch.Set `myMailToEnctype` `text/plain`                            }}
+{{- if isset $.Site.Params (lower `formspree` ) }}
 {{ `<!-- $.Site.Params.formspree ok  -->` | safeHTML }}
-  {{- .Scratch.Set "myFormspreeAction"  (printf "https://%s/%s" $.Site.Params.formspree $.Site.Params.email) }}
-  {{- .Scratch.Set "myFormspreeVia"     (printf "https://%s"    $.Site.Params.formspree                   ) }}
-  {{- .Scratch.Set "myFormspreeEnctype" "application/x-www-form-urlencoded"                                }}
+  {{- .Scratch.Set `myFormspreeAction`  (printf `https://%s/%s` $.Site.Params.formspree $.Site.Params.email) }}
+  {{- .Scratch.Set `myFormspreeVia`     (printf `https://%s`    $.Site.Params.formspree                   ) }}
+  {{- .Scratch.Set `myFormspreeEnctype` `application/x-www-form-urlencoded`                                }}
 {{- end }} <!-- if isset -->
-<form class="w3-panel w3-card-4 {{ default `w3-theme-d3` ($.Site.Param `colorContactFormPanel`)}} " method="post" >
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- i18n "contactForm" "contactName" "contactMail" "contactMessage"  "contactSend"  "contactVia" -->` | safeHTML }} 
+<form class='w3-panel w3-card-4 {{ default `w3-theme-d3` ($.Site.Param `colorContactFormPanel`)}} ' method="post" >
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- i18n "contactForm" "contactName" "contactMail" "contactMessage"  "contactSend"  "contactVia" -->` | safeHTML }}
 {{- end}}
-  {{- /* <h3> {{ default "Contact" (i18n "contactForm"   ) }}</h3> */}} {{/* toc on contact page */}}
-  <p><label>{{ default "Name"    (i18n "contactName"   ) }} </label> <input class="w3-input w3-border" name="name"  type="text" required placeholder="Name" ></p>
+  {{- /* <h3> {{ default `Contact` (i18n `contactForm`   ) }}</h3> */}} {{/* toc on contact page */}}
+  <p><label>{{ default `Name`    (i18n `contactName`   ) }} </label> <input class="w3-input w3-border" name="name"  type="text" required placeholder="Name" ></p>
   {{- if $.Site.Params.contact_incl_email }}
-  <p><label>{{ default "Mail"    (i18n "contactMail"   ) }} </label> <input class="w3-input w3-border" name="email" type="text" required placeholder="Mail" ></p>
+  <p><label>{{ default `Mail`    (i18n `contactMail`   ) }} </label> <input class="w3-input w3-border" name="email" type="text" required placeholder="Mail" ></p>
   {{- end }}
-  <p><label>{{ default "Message" (i18n "contactMessage") }} </label> <textarea class="w3-input w3-border" name="message" required placeholder="Message" ></textarea></p>
-  <p><button class="w3-button" type="submit" formaction="{{.Scratch.Get "myMailToAction"}}" formenctype="{{.Scratch.Get "myMailToEnctype"}}" ><i class="fas fa-at"></i> {{ i18n "contactSend" }} <span class="w3-small">({{ default "via" (i18n "contactVia") }}  {{.Scratch.Get "myMailToVia"}})</span></button>
-  {{- if .Scratch.Get "myFormspreeAction" }}
-  <button class="w3-button" type="submit" formaction="{{.Scratch.Get "myFormspreeAction"}}" formenctype="{{.Scratch.Get "myFormspreeEnctype"}}" ><i class="far fa-envelope"></i> {{ i18n "contactSend" }} <span class="w3-small">({{ default "via" (i18n "contactVia") }}  {{.Scratch.Get "myFormspreeVia"}})</span></button>
+  <p><label>{{ default `Message` (i18n `contactMessage`) }} </label> <textarea class="w3-input w3-border" name="message" required placeholder="Message" ></textarea></p>
+  <p><button class="w3-button" type="submit" formaction='{{.Scratch.Get `myMailToAction`}}' formenctype='{{.Scratch.Get `myMailToEnctype`}}' ><i class="fas fa-at"></i> {{ i18n `contactSend` }} <span class="w3-small">({{ default `via` (i18n `contactVia`) }}  {{.Scratch.Get `myMailToVia`}})</span></button>
+  {{- if .Scratch.Get `myFormspreeAction` }}
+  <button class="w3-button" type="submit" formaction='{{.Scratch.Get `myFormspreeAction`}}' formenctype='{{.Scratch.Get `myFormspreeEnctype`}}' ><i class="far fa-envelope"></i> {{ i18n `contactSend` }} <span class="w3-small">({{ default `via` (i18n `contactVia`) }}  {{.Scratch.Get `myFormspreeVia`}})</span></button>
   {{- end }}
 </form>
 

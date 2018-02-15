@@ -1,20 +1,20 @@
-{{- $.Scratch.Set "theType"    "info" }}
-{{- $.Scratch.Set "theHeading" ""     }}
+{{- $.Scratch.Set `theType`    `info` }}
+{{- $.Scratch.Set `theHeading` ``     }}
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set "theType"    (.Get "type"     | default ($.Scratch.Get "theType"    ) )}}
-  {{- $.Scratch.Set "theHeading" (.Get "heading"  | default ($.Scratch.Get "theHeading" ) )}}
+  {{- $.Scratch.Set `theType`    (.Get `type`     | default ($.Scratch.Get `theType`    ) )}}
+  {{- $.Scratch.Set `theHeading` (.Get `heading`  | default ($.Scratch.Get `theHeading` ) )}}
 {{- else}}
-  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theType"    (.Get $myPos) }} {{end}}
-  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theHeading" (.Get $myPos) }} {{end}}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theType`    (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theHeading` (.Get $myPos) }} {{end}}
 {{- end}}
-{{- if eq ($.Scratch.Get "theType") "success" }}{{$.Scratch.Set "theIcon" "fas fa-check"                   }}{{end}}
-{{- if eq ($.Scratch.Get "theType") "info"    }}{{$.Scratch.Set "theIcon" "fas fa-info"                    }}{{end}}
-{{- if eq ($.Scratch.Get "theType") "warning" }}{{$.Scratch.Set "theIcon" "fas fas fa-exclamation-triangle"}}{{end}}
-{{- if eq ($.Scratch.Get "theType") "danger"  }}{{$.Scratch.Set "theIcon" "fas fa-bomb"                    }}{{end}}
-<div class="w3-panel w3-leftbar shortcode-{{ $.Scratch.Get "theType" }}">
-{{- if eq ($.Scratch.Get "theHeading") "" }}
-      <i class="w3-margin-right {{$.Scratch.Get "theIcon"}} fa-2x"></i>
+{{- if eq ($.Scratch.Get `theType`) `success` }}{{$.Scratch.Set `theIcon` `fas fa-check`                   }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `info`    }}{{$.Scratch.Set `theIcon` `fas fa-info`                    }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `warning` }}{{$.Scratch.Set `theIcon` `fas fas fa-exclamation-triangle`}}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `danger`  }}{{$.Scratch.Set `theIcon` `fas fa-bomb`                    }}{{end}}
+<div class='w3-panel w3-leftbar shortcode-{{ $.Scratch.Get `theType` }}'>
+{{- if eq ($.Scratch.Get `theHeading`) `` }}
+      <i class='w3-margin-right {{$.Scratch.Get `theIcon`}} fa-2x'></i>
 {{- else }}
-  <h3><i class="w3-margin-right {{$.Scratch.Get "theIcon"}} "></i>{{ $.Scratch.Get "theHeading" }}</h3>
+  <h3><i class='w3-margin-right {{$.Scratch.Get `theIcon`}} '></i>{{ $.Scratch.Get `theHeading` }}</h3>
 {{- end }}
 {{- .Inner }}</div>

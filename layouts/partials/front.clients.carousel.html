@@ -1,13 +1,13 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/front.clients.carousel.html  -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/front.clients.carousel.html  -->` | safeHTML }}
 {{- end}}
-{{- if isset $.Site.Params (lower "clients" ) }}
+{{- if isset $.Site.Params (lower `clients` ) }}
 {{- if $.Site.Params.clients.enable }}
 {{- if gt (len .Site.Data.clients) 0 }}
 <section id="clients" class="w3-theme" >
-  <div class="w3-container {{ default `w3-theme-l3` ($.Site.Param `colorFrontClientsContainer`)}}">
+  <div class='w3-container {{ default `w3-theme-l3` ($.Site.Param `colorFrontClientsContainer`)}}'>
 
-    <div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom {{ default `w3-theme-l2` ($.Site.Param `colorFrontClientsCard`)}} ">
+    <div class='w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom {{ default `w3-theme-l2` ($.Site.Param `colorFrontClientsCard`)}} '>
       <h2 id="clients-title" >{{ $.Site.Params.clients.title }}</h2>
       <div class="w3-small">
         {{- if $.Site.Params.clients.subtitle }}
@@ -17,23 +17,23 @@
     </div>
 
     <div class="clients-owl owl-carousel owl-theme w3-margin-bottom">
-      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-        {{ `<!-- range .Site.Data.clients  -->` | safeHTML -}} 
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- range .Site.Data.clients  -->` | safeHTML -}}
       {{- end}}
-      {{/*- range $index, $element := sort .Site.Data.clients "weight" */}}
+      {{/*- range $index, $element := sort .Site.Data.clients `weight` */}}
       {{- range $index, $element := .Site.Data.clients }} {{/* use filename for sort order */}}
-        <div>{{ template "front-clients-entry" $element }}</div>
+        <div>{{ template `front-clients-entry` $element }}</div>
       {{- end }}
     </div> <!-- clients-owl -->
 
     <noscript>
       <div class="w3-cell-row w3-text-theme">
-        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-          {{ `<!-- range first 3 .Site.Data.clients  -->` | safeHTML -}} 
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range first 3 .Site.Data.clients  -->` | safeHTML -}}
         {{- end}}
-        {{/*- range $index, $element := first 3 (sort .Site.Data.clients "weight") */}}
+        {{/*- range $index, $element := first 3 (sort .Site.Data.clients `weight`) */}}
         {{- range $index, $element := first 3 (sort .Site.Data.clients) }}
-          <div class="w3-cell w3-mobile">{{ template "front-clients-entry" $element }}</div>
+          <div class="w3-cell w3-mobile">{{ template `front-clients-entry` $element }}</div>
         {{- end }} {{/* range */}}
       </div> <!-- w3-cell -->
     </noscript>
@@ -44,8 +44,8 @@
 {{- end }} {{/* if *.enable */}}
 {{- end }} {{/* if isset    */}}
 
-{{- define "front-clients-entry" }}
+{{- define `front-clients-entry` }}
   {{- if .name }} <div class="w3-large w3-center"> {{ .name }} </div> {{ end }}
-  {{- if and (    .url) (.image) }}  <a href="{{ .url }}" target="_blank"><img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="margin:0 auto; max-width:100px; max-height:100px; "></a> {{ end }}
-  {{- if and (not .url) (.image) }}                                       <img src="{{ .image }}" alt="{{ .name }}" class="w3-image" style="margin:0 auto; max-width:100px; max-height:100px; ">     {{ end }}
+  {{- if and (    .url) (.image) }}  <a href='{{ .url }}' target="_blank"><img src='{{ .image }}' alt='{{ .name }}' class="w3-image" style="margin:0 auto; max-width:100px; max-height:100px; "></a> {{ end }}
+  {{- if and (not .url) (.image) }}                                       <img src='{{ .image }}' alt='{{ .name }}' class='w3-image' style="margin:0 auto; max-width:100px; max-height:100px; ">     {{ end }}
 {{- end -}}

@@ -1,28 +1,28 @@
 {{/* https://github.com/it-gro/hugo-theme-w3css-basic */}}
-{{- $.Scratch.Set "theTaxonomy"  "tags"   }}
-{{- $.Scratch.Set "theTaxTerm"   "*"      }}
-{{- $.Scratch.Set "theOutFormat" ".Title" }}
+{{- $.Scratch.Set `theTaxonomy`  `tags`   }}
+{{- $.Scratch.Set `theTaxTerm`   `*`      }}
+{{- $.Scratch.Set `theOutFormat` `.Title` }}
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set "theTaxonomy"     (.Get "tax"       | default ($.Scratch.Get "theTaxonomy"  ) )}}
-  {{- $.Scratch.Set "theTaxTerm"      (.Get "term"      | default ($.Scratch.Get "theTaxTerm"   ) )}}
-  {{- $.Scratch.Set "theOutFormat"    (.Get "ofm"       | default ($.Scratch.Get "theOutFormat" ) )}}
+  {{- $.Scratch.Set `theTaxonomy`     (.Get `tax`       | default ($.Scratch.Get `theTaxonomy`  ) )}}
+  {{- $.Scratch.Set `theTaxTerm`      (.Get `term`      | default ($.Scratch.Get `theTaxTerm`   ) )}}
+  {{- $.Scratch.Set `theOutFormat`    (.Get `ofm`       | default ($.Scratch.Get `theOutFormat` ) )}}
 {{- else }}
-  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theTaxonomy"   (.Get $myPos) }} {{end}}
-  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theTaxTerm"    (.Get $myPos) }} {{end}}
-  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theOutFormat"  (.Get $myPos) }} {{end}}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theTaxonomy`   (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theTaxTerm`    (.Get $myPos) }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theOutFormat`  (.Get $myPos) }} {{end}}
 {{- end }}
 
 {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-litt)\b` $.Site.Params.traceFlags) }}
 <br/>
-"theTaxonomy"  : {{- $.Scratch.Get "theTaxonomy"    }} <br/>
-"theTaxTerm"   : {{- $.Scratch.Get "theTaxTerm"     }} <br/>
-"theOutFormat" : {{- $.Scratch.Get "theOutFormat"   }} <br/>
+`theTaxonomy`  : {{- $.Scratch.Get `theTaxonomy`    }} <br/>
+`theTaxTerm`   : {{- $.Scratch.Get `theTaxTerm`     }} <br/>
+`theOutFormat` : {{- $.Scratch.Get `theOutFormat`   }} <br/>
 {{- end }}
 
-{{- with $.Site.GetPage "taxonomy" ($.Scratch.Get "theTaxonomy") (lower ($.Scratch.Get "theTaxTerm")) }}
-  <a href="{{.URL}}">
-    {{- if findRE ".Kind"         ($.Scratch.Get "theOutFormat")}}{{.Kind -}}:&nbsp;{{end}}
-    {{- if findRE ".RelPermalink" ($.Scratch.Get "theOutFormat")}}{{.RelPermalink}}{{end}}
-    {{- if findRE ".Title"        ($.Scratch.Get "theOutFormat")}}{{.Title | markdownify | emojify }} {{end}}
+{{- with $.Site.GetPage `taxonomy` ($.Scratch.Get `theTaxonomy`) (lower ($.Scratch.Get `theTaxTerm`)) }}
+  <a href='{{.URL}}'>
+    {{- if findRE `.Kind`         ($.Scratch.Get `theOutFormat`)}}{{.Kind -}}:&nbsp;{{end}}
+    {{- if findRE `.RelPermalink` ($.Scratch.Get `theOutFormat`)}}{{.RelPermalink}}{{end}}
+    {{- if findRE `.Title`        ($.Scratch.Get `theOutFormat`)}}{{.Title | markdownify | emojify }} {{end}}
   </a>&nbsp;
 {{- end }}

@@ -65,6 +65,13 @@ pygmentsUseClasses            = true
 googleAnalytics = "UA-113314068-2"
 
 
+# RSS Feed
+# Do not build RSS files
+disableRSS = false
+# maximum number of items in the RSS feed
+rssLimit   = 10
+
+
 # ##################################################
 # Theme-defined configuration
 
@@ -229,7 +236,7 @@ consectetuer adipiscing
   # Monochromatic Color Schemes
   # set W3.CSS color theme (choose one)
   #w3cssColorTheme = "/css/w3-theme-custom.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
@@ -243,7 +250,7 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-khaki.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
@@ -612,19 +619,16 @@ ultricies eget, tempor sit amet, ante
   fallbackMono    = "pre"
 
 [params.googleApiFonts.family.html]
-  # this is the fallback for body
   # serif, sans-serif or even cursive
   sans-serif = "Poppins"
 [params.googleApiFonts.family.time]
   # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
   cursive    = "Creepster"
 [params.googleApiFonts.family.h1]
-  # this is the fallback for h2.. h6 - if left empty => html is fallback
   # serif, sans-serif or even cursive
   sans-serif = "Days One"
 
 [params.googleApiFonts.family.pre]
-  # this is the fallback for code, kdb, samp - if left empty => html is fallback
   # monospace or sans-serif
   monospace  = "Cousine"
 

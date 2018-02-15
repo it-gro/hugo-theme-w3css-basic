@@ -1,45 +1,45 @@
 {{/* no positional arguments by intention */}}
-{{- $myQuoteSource    := .Get "source"       | default ""}}
-{{- $myLayoutType     := .Get "layout"       | default "default"}}
-{{- $myClassesOuter   := .Get "classesOuter" | default "w3-panel w3-leftbar w3-theme-l3 "}}
-{{- $myClassesInner   := .Get "classesInner" | default ""}}
-{{- $myIcon           := .Get "icon"         | default "fas fa-quote-right"}}
-{{- $myClassesOuter   :=  printf "%s %s " "shortcode-quote" $myClassesOuter }}
+{{- $myQuoteSource    := .Get `source`       | default ``}}
+{{- $myLayoutType     := .Get `layout`       | default `default`}}
+{{- $myClassesOuter   := .Get `classesOuter` | default `w3-panel w3-leftbar w3-theme-l3 `}}
+{{- $myClassesInner   := .Get `classesInner` | default ``}}
+{{- $myIcon           := .Get `icon`         | default `fas fa-quote-right`}}
+{{- $myClassesOuter   :=  printf `%s %s ` `shortcode-quote` $myClassesOuter }}
 
-{{- if eq $myLayoutType "default" }}
- <div class="{{$myClassesOuter}}">
-  <p class="{{$myClassesInner}}">
+{{- if eq $myLayoutType `default` }}
+ <div class='{{$myClassesOuter}}'>
+  <p class='{{$myClassesInner}}'>
   {{ .Inner | markdownify }}
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
-</div> 
-{{- else if eq $myLayoutType "blockquote"}}
- <blockquote class="{{$myClassesOuter}}">
-  <p class="{{$myClassesInner}}">
+</div>
+{{- else if eq $myLayoutType `blockquote`}}
+ <blockquote class='{{$myClassesOuter}}'>
+  <p class='{{$myClassesInner}}'>
   <i>{{ .Inner | markdownify }}</i>
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
-</blockquote> 
-{{- else if eq $myLayoutType "icon"}}
- <div class="{{$myClassesOuter}} {{$myClassesInner}}">
-  <i class="{{$myIcon}} w3-xxlarge w3-margin-right"></i>
+</blockquote>
+{{- else if eq $myLayoutType `icon`}}
+ <div class='{{$myClassesOuter}} {{$myClassesInner}}'>
+  <i class='{{$myIcon}} w3-xxlarge w3-margin-right'></i>
   {{ .Inner | markdownify }}
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
-</div> 
-{{- else if eq $myLayoutType "icon-br"}}
- <div class="{{$myClassesOuter}}">
-  <i class="{{$myIcon}} w3-xxlarge"></i><br>
-  <div class="{{$myClassesInner}}">{{ .Inner | markdownify }}</div>
+</div>
+{{- else if eq $myLayoutType `icon-br`}}
+ <div class='{{$myClassesOuter}}'>
+  <i class='{{$myIcon}} w3-xxlarge'></i><br>
+  <div class='{{$myClassesInner}}'>{{ .Inner | markdownify }}</div>
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
-</div> 
-{{- else if eq $myLayoutType "icon-blockquote"}}
- <blockquote class="{{$myClassesOuter}} {{$myClassesInner}}">
-  <i class="{{$myIcon}} w3-xxlarge w3-margin-right"></i>
+</div>
+{{- else if eq $myLayoutType `icon-blockquote`}}
+ <blockquote class='{{$myClassesOuter}} {{$myClassesInner}}'>
+  <i class='{{$myIcon}} w3-xxlarge w3-margin-right'></i>
   {{ .Inner | markdownify }}
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
-</blockquote> 
-{{- else if eq $myLayoutType "icon-br-blockquote"}}
- <blockquote class="{{$myClassesOuter}}">
-  <i class="{{$myIcon}} w3-xxlarge"></i><br>
-  <div class="{{$myClassesInner}}">{{ .Inner | markdownify }}</div>
+</blockquote>
+{{- else if eq $myLayoutType `icon-br-blockquote`}}
+ <blockquote class='{{$myClassesOuter}}'>
+  <i class='{{$myIcon}} w3-xxlarge'></i><br>
+  <div class='{{$myClassesInner}}'>{{ .Inner | markdownify }}</div>
   {{- if $myQuoteSource }}<p>{{$myQuoteSource | markdownify }}{{end}}
-</blockquote> 
+</blockquote>
 {{- end}}

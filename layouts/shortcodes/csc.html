@@ -1,74 +1,74 @@
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set "myClass" (.Get "class"  | default "gp")}}
+  {{- $.Scratch.Set `myClass` (.Get `class`  | default `gp`)}}
 {{- else}}
-  {{-  $.Scratch.Set "myClass" (.Get 0       | default "gp")}}
+  {{-  $.Scratch.Set `myClass` (.Get 0       | default `gp`)}}
 {{- end}}
-<code class="chroma notranslate" style="font-family: monospace,monospace;"><span class="{{ $.Scratch.Get "myClass"}}">{{.Inner}}</span></code>
-{{- /* <pre><code class="chroma" style="font-family: monospace,monospace;"><span class="{{ $.Scratch.Get "myClass"}}">{{.Inner}}</span></code></pre> */}}
-{{- /* <div class="highlight"><pre class="chroma"><span class="{{ $.Scratch.Get "myClass"}}">{{.Inner | htmlEscape | safeHTML }}</span></pre></div> */}}
-{{- /*  err      Error                    */}} 
-{{- /*  lntd     LineTableTD              */}} 
-{{- /*  lntable  LineTable                */}} 
-{{- /*  hl       LineHighlight            */}} 
-{{- /*  lnt      LineNumbersTable         */}} 
-{{- /*  ln       LineNumbers              */}} 
-{{- /*  k        Keyword                  */}} 
-{{- /*  kc       KeywordConstant          */}} 
-{{- /*  kd       KeywordDeclaration       */}} 
-{{- /*  kn       KeywordNamespace         */}} 
-{{- /*  kp       KeywordPseudo            */}} 
-{{- /*  kr       KeywordReserved          */}} 
-{{- /*  kt       KeywordType              */}} 
-{{- /*  na       NameAttribute            */}} 
-{{- /*  nb       NameBuiltin              */}} 
-{{- /*  nc       NameClass                */}} 
-{{- /*  no       NameConstant             */}} 
-{{- /*  nd       NameDecorator            */}} 
-{{- /*  ni       NameEntity               */}} 
-{{- /*  ne       NameException            */}} 
-{{- /*  nf       NameFunction             */}} 
-{{- /*  nl       NameLabel                */}} 
-{{- /*  nn       NameNamespace            */}} 
-{{- /*  nt       NameTag                  */}} 
-{{- /*  nv       NameVariable             */}} 
-{{- /*  s        LiteralString            */}} 
-{{- /*  sa       LiteralStringAffix       */}} 
-{{- /*  sb       LiteralStringBacktick    */}} 
-{{- /*  sc       LiteralStringChar        */}} 
-{{- /*  dl       LiteralStringDelimiter   */}} 
-{{- /*  sd       LiteralStringDoc         */}} 
-{{- /*  s2       LiteralStringDouble      */}} 
-{{- /*  se       LiteralStringEscape      */}} 
-{{- /*  sh       LiteralStringHeredoc     */}} 
-{{- /*  si       LiteralStringInterpol    */}} 
-{{- /*  sx       LiteralStringOther       */}} 
-{{- /*  sr       LiteralStringRegex       */}} 
-{{- /*  s1       LiteralStringSingle      */}} 
-{{- /*  ss       LiteralStringSymbol      */}} 
-{{- /*  m        LiteralNumber            */}} 
-{{- /*  mb       LiteralNumberBin         */}} 
-{{- /*  mf       LiteralNumberFloat       */}} 
-{{- /*  mh       LiteralNumberHex         */}} 
-{{- /*  mi       LiteralNumberInteger     */}} 
-{{- /*  il       LiteralNumberIntegerLong */}} 
-{{- /*  mo       LiteralNumberOct         */}} 
-{{- /*  o        Operator                 */}} 
-{{- /*  ow       OperatorWord             */}} 
-{{- /*  c        Comment                  */}} 
-{{- /*  ch       CommentHashbang          */}} 
-{{- /*  cm       CommentMultiline         */}} 
-{{- /*  c1       CommentSingle            */}} 
-{{- /*  cs       CommentSpecial           */}} 
-{{- /*  cp       CommentPreproc           */}} 
-{{- /*  cpf      CommentPreprocFile       */}} 
-{{- /*  gd       GenericDeleted           */}} 
-{{- /*  ge       GenericEmph              */}} 
-{{- /*  gr       GenericError             */}} 
-{{- /*  gh       GenericHeading           */}} 
-{{- /*  gi       GenericInserted          */}} 
-{{- /*  go       GenericOutput            */}} 
-{{- /*  gp       GenericPrompt            */}} 
-{{- /*  gs       GenericStrong            */}} 
-{{- /*  gu       GenericSubheading        */}} 
-{{- /*  gt       GenericTraceback         */}} 
-{{- /*  w        TextWhitespace           */}} 
+<code class="chroma notranslate" style="font-family: monospace,monospace;"><span class='{{ $.Scratch.Get `myClass`}}'>{{.Inner}}</span></code>
+{{- /* <pre><code class="chroma" style="font-family: monospace,monospace;"><span class='{{ $.Scratch.Get `myClass`}}'>{{.Inner}}</span></code></pre> */}}
+{{- /* <div class="highlight"><pre class="chroma"><span class='{{ $.Scratch.Get `myClass`}}'>{{.Inner | htmlEscape | safeHTML }}</span></pre></div> */}}
+{{- /*  err      Error                    */}}
+{{- /*  lntd     LineTableTD              */}}
+{{- /*  lntable  LineTable                */}}
+{{- /*  hl       LineHighlight            */}}
+{{- /*  lnt      LineNumbersTable         */}}
+{{- /*  ln       LineNumbers              */}}
+{{- /*  k        Keyword                  */}}
+{{- /*  kc       KeywordConstant          */}}
+{{- /*  kd       KeywordDeclaration       */}}
+{{- /*  kn       KeywordNamespace         */}}
+{{- /*  kp       KeywordPseudo            */}}
+{{- /*  kr       KeywordReserved          */}}
+{{- /*  kt       KeywordType              */}}
+{{- /*  na       NameAttribute            */}}
+{{- /*  nb       NameBuiltin              */}}
+{{- /*  nc       NameClass                */}}
+{{- /*  no       NameConstant             */}}
+{{- /*  nd       NameDecorator            */}}
+{{- /*  ni       NameEntity               */}}
+{{- /*  ne       NameException            */}}
+{{- /*  nf       NameFunction             */}}
+{{- /*  nl       NameLabel                */}}
+{{- /*  nn       NameNamespace            */}}
+{{- /*  nt       NameTag                  */}}
+{{- /*  nv       NameVariable             */}}
+{{- /*  s        LiteralString            */}}
+{{- /*  sa       LiteralStringAffix       */}}
+{{- /*  sb       LiteralStringBacktick    */}}
+{{- /*  sc       LiteralStringChar        */}}
+{{- /*  dl       LiteralStringDelimiter   */}}
+{{- /*  sd       LiteralStringDoc         */}}
+{{- /*  s2       LiteralStringDouble      */}}
+{{- /*  se       LiteralStringEscape      */}}
+{{- /*  sh       LiteralStringHeredoc     */}}
+{{- /*  si       LiteralStringInterpol    */}}
+{{- /*  sx       LiteralStringOther       */}}
+{{- /*  sr       LiteralStringRegex       */}}
+{{- /*  s1       LiteralStringSingle      */}}
+{{- /*  ss       LiteralStringSymbol      */}}
+{{- /*  m        LiteralNumber            */}}
+{{- /*  mb       LiteralNumberBin         */}}
+{{- /*  mf       LiteralNumberFloat       */}}
+{{- /*  mh       LiteralNumberHex         */}}
+{{- /*  mi       LiteralNumberInteger     */}}
+{{- /*  il       LiteralNumberIntegerLong */}}
+{{- /*  mo       LiteralNumberOct         */}}
+{{- /*  o        Operator                 */}}
+{{- /*  ow       OperatorWord             */}}
+{{- /*  c        Comment                  */}}
+{{- /*  ch       CommentHashbang          */}}
+{{- /*  cm       CommentMultiline         */}}
+{{- /*  c1       CommentSingle            */}}
+{{- /*  cs       CommentSpecial           */}}
+{{- /*  cp       CommentPreproc           */}}
+{{- /*  cpf      CommentPreprocFile       */}}
+{{- /*  gd       GenericDeleted           */}}
+{{- /*  ge       GenericEmph              */}}
+{{- /*  gr       GenericError             */}}
+{{- /*  gh       GenericHeading           */}}
+{{- /*  gi       GenericInserted          */}}
+{{- /*  go       GenericOutput            */}}
+{{- /*  gp       GenericPrompt            */}}
+{{- /*  gs       GenericStrong            */}}
+{{- /*  gu       GenericSubheading        */}}
+{{- /*  gt       GenericTraceback         */}}
+{{- /*  w        TextWhitespace           */}}

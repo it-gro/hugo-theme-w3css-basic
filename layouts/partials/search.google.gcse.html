@@ -1,9 +1,9 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/search.gcse.html  -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/search.gcse.html  -->` | safeHTML }}
 {{- end}}
 
-<div class="w3-container w3-margin-bottom {{ default `w3-theme-l3` ($.Site.Param `colorSearchGoogleGcseContainer`)}} ">
-  
+<div class='w3-container w3-margin-bottom {{ default `w3-theme-l3` ($.Site.Param `colorSearchGoogleGcseContainer`)}} '>
+
   <div class="w3-card-4 w3-margin-top ">
       <div class="w3-margin-top">
         <script>
@@ -18,10 +18,10 @@
           })();
         </script>
         <!-- <gcse:search></gcse:search> -->
-        <gcse:searchbox resultsUrl="{{.Site.BaseURL}}" webSearchSafesearch="active" ></gcse:searchbox>
+        <gcse:searchbox resultsUrl='{{.Site.BaseURL}}' webSearchSafesearch="active" ></gcse:searchbox>
       </div>
   </div>
-  
+
   <div class="w3-card-4 w3-margin-top ">
       <div class="w3-margin-top w3-margin-bottom" >
         <gcse:searchresults></gcse:searchresults>
@@ -29,11 +29,11 @@
   </div>
 
   <noscript>
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-      {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }} 
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+      {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }}
     {{- end}}
-    <p>{{ default "no JavaScript" (i18n "JsNeeded") }} (google custom search)</p>
-    <a href="https://cse.google.com:443/cse/publicurl?cx={{.Site.Params.googleCustomSearchCX}}" target="_blank">https://cse.google.com:443/cse/publicurl?cx={{.Site.Params.googleCustomSearchCX}}</a>
+    <p>{{ default `no JavaScript` (i18n `JsNeeded`) }} (google custom search)</p>
+    <a href='https://cse.google.com:443/cse/publicurl?cx={{.Site.Params.googleCustomSearchCX}}' target="_blank">https://cse.google.com:443/cse/publicurl?cx={{.Site.Params.googleCustomSearchCX}}</a>
   </noscript>
-  
+
 </div>

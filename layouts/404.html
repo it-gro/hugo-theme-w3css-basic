@@ -1,23 +1,23 @@
-{{ define "title" }}
+{{ define `title` }}
 {{ end }}
 
-{{ define "headline" }}
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+{{ define `headline` }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{- `<!-- 404.html (headline)  -->` | safeHTML }}
   {{- end}}
 {{ end }}
 
 
-{{ define "main" }}
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
+{{ define `main` }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{- `<!-- 404.html (main) -->` | safeHTML }}
   {{- end}}
   <h3 class="w3-center" >We are sorry - this page is not here </h3>
-  <div class="w3-container w3-center {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}} ">
-    <a href="{{ relURL "/" }}" class="w3-button"><i class="fa fa-home"></i> Go to Homepage</a>
+  <div class='w3-container w3-center {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}} '>
+    <a href='{{ relURL "/" }}' class="w3-button"><i class="fa fa-home"></i> Go to Homepage</a>
   </div>
 {{ end }}
 
 
-{{ define "footer" }}
+{{ define `footer` }}
 {{ end }}

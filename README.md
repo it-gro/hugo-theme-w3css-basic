@@ -2,7 +2,7 @@
 
 W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
 Inspiration was taken from [Universal](https://themes.gohugo.io/hugo-universal-theme/).
-It is quite [configurable](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/exampleSite/config.toml).
+It is quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml)
 Change all colors in the blink of an eye,  choose Google fonts or use the new Global Site Tags.
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
@@ -1777,7 +1777,6 @@ into the theme (`static/vendor/`*).
 ## ToDo's
 
 * more testing for the lit* shortcodes
-* optional google analytics
 * finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
 
 

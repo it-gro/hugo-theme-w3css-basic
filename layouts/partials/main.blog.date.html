@@ -1,6 +1,6 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/head.blog.date.html -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/head.blog.date.html -->` | safeHTML }}
 {{- end}}
-{{- if eq .Type "blog" }}
-<div class="w3-left"><i class="far fa-calendar" aria-hidden="true"></i>&nbsp;{{- partial "main.i18n.date.html" . -}}</div>
+{{- if eq .Type `blog` }}
+<div class="w3-left"><i class="far fa-calendar" aria-hidden="true"></i>&nbsp;{{- partial `main.i18n.date.html` . -}}</div>
 {{- end }}
