@@ -26,6 +26,6 @@
 "myClass"   : {{- $.Scratch.Get `myClass`  }} <br/>
 {{- end }}
 
-<div class=' w3-panel {{$.Scratch.Get `myClass`}}'><span class='{{$.Scratch.Get `myClass`}}'>
+<div class=' w3-panel {{$.Scratch.Get `myClass`}}'><div class='{{$.Scratch.Get `myClass`}}'>
   <p><strong>{{$.Scratch.Get `theIntro`}}</strong> {{.Inner}}</p>
-</span></div>
+</div></div>
