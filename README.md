@@ -65,6 +65,7 @@ It includes resources from:
   * [Google Custom Search API](#google-custom-search-api)
   * [Google Analytics-Tracking using gtag](#google-analytics-tracking-using-gtag)
   * [Footer](#footer)
+  * [RSS](#rss)
   * [Tracing](#tracing)
 * [Custom CSS and JS](#custom-css-and-js)
 * [Front Matter](#front-matter)
@@ -1445,6 +1446,22 @@ googleAnalytics = ""
 
 ![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_220.jpg)
 
+
+### RSS
+
+* This theme uses the Hugo's embedded rss.xml https://gohugo.io/templates/rss/#the-embedded-rss-xml
+* Default configuration is explained here:
+  * https://gohugo.io/templates/rss/#configure-rss
+  * https://gohugo.io/getting-started/configuration/#toml-configuration
+
+
+```toml
+# RSS Feed
+# Do not build RSS files
+disableRSS = false
+# maximum number of items in the RSS feed
+rssLimit   = 10
+```
 
 
 ### Tracing
