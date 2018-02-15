@@ -1,1 +1,1 @@
-{{ printf "<%s>%s</%s>" ($.Get 0 ) $.Inner ($.Get 0 ) | safeHTML }}
+{{ printf `<%s>%s</%s>` ($.Get 0 ) $.Inner ($.Get 0 ) | safeHTML }}

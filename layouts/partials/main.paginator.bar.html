@@ -1,19 +1,19 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/main.paginator.bar.html -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/main.paginator.bar.html -->` | safeHTML }}
 {{- end}}
 
-<div class="w3-card-4 w3-center w3-round-xxlarge w3-margin-top w3-margin-bottom {{ default `w3-theme-l1` ($.Site.Param `colorPaginatorBar`)}} ">
+<div class='w3-card-4 w3-center w3-round-xxlarge w3-margin-top w3-margin-bottom {{ default `w3-theme-l1` ($.Site.Param `colorPaginatorBar`)}} '>
   <div class="w3-bar ">
     {{- if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}" class="w3-bar-item w3-button">&larr; {{ default "prev" (i18n "newer") }}</a>
+    <a href='{{ .Paginator.Prev.URL }}' class="w3-bar-item w3-button">&larr; {{ default `prev` (i18n `newer`) }}</a>
     {{- else }}
-    <a href="#"                                            class="w3-bar-item w3-button w3-disabled">&larr; {{ default "prev" (i18n "newer") }}</a>
+    <a href="#"                                            class="w3-bar-item w3-button w3-disabled">&larr; {{ default `prev` (i18n `newer`) }}</a>
     {{- end }}
 
     {{- if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}" class="w3-bar-item w3-button">{{ default "next" (i18n "older") }} &rarr;</a>
+    <a href='{{ .Paginator.Next.URL }}' class="w3-bar-item w3-button">{{ default `next` (i18n `older`) }} &rarr;</a>
     {{- else }}
-    <a href="#"                                            class="w3-bar-item w3-button w3-disabled">{{ default "next" (i18n "older") }} &rarr;</a>
+    <a href="#"                                            class="w3-bar-item w3-button w3-disabled">{{ default `next` (i18n `older`) }} &rarr;</a>
     {{- end }}
   </div> <!-- w3-bar -->
 </div> <!-- w3-round -->

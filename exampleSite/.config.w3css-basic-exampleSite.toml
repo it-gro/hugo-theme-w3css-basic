@@ -65,6 +65,13 @@ pygmentsUseClasses            = true
 googleAnalytics = "UA-113314068-1"
 
 
+# RSS Feed
+# Do not build RSS files
+disableRSS = false
+# maximum number of items in the RSS feed
+rssLimit   = 10
+
+
 # ##################################################
 # Theme-defined configuration
 
@@ -230,7 +237,7 @@ consectetuer adipiscing
   # set W3.CSS color theme (choose one)
   #w3cssColorTheme = "/css/w3-theme-custom.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
@@ -245,7 +252,7 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
@@ -608,19 +615,16 @@ ultricies eget, tempor sit amet, ante
   fallbackMono    = "pre"
 
 [params.googleApiFonts.family.html]
-  # this is the fallback for body
   # serif, sans-serif or even cursive
-   sans-serif      = "Oswald"
+  #sans-serif = "Oswald"
+  sans-serif = "Capriola"
 [params.googleApiFonts.family.time]
-  cursive    = "Creepster"
-
+  # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
+  # cursive    = "Creepster"
 [params.googleApiFonts.family.h1]
-  # this is the fallback for h2.. h6 - if left empty => html is fallback
   # serif, sans-serif or even cursive
-  sans-serif = "Creepster"
-
+  # sans-serif = "Creepster"
 [params.googleApiFonts.family.pre]
-  # this is the fallback for code, kdb, samp - if left empty => html is fallback
   # monospace or sans-serif
   monospace  = "Space Mono"
 

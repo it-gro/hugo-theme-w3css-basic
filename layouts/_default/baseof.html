@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang='{{ .Site.LanguageCode }}'>
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- _default/baseof.html  -->` | safeHTML }}
   {{- end}}
-  {{  partial "head.html" . -}}
+  {{  partial `head.html` . -}}
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
   {{- end}}
@@ -11,27 +11,27 @@
   <body>
     <div id="all" class="w3-theme">
       <header>
-        {{ partial "header.marquee.html" . -}}
-        {{ partial "header.rss.html"     . -}}
-        {{ partial "header.nav.html"     . -}}
+        {{ partial `header.marquee.html` . -}}
+        {{ partial `header.rss.html`     . -}}
+        {{ partial `header.nav.html`     . -}}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
         {{- end}}
       </header>
-      <div id="canvas" class="w3-container {{ default `w3-theme-l4` ($.Site.Param `colorBaseofCanvas`)}} ">
-        {{ block "headline" . -}}
-        <h1 class="w3-panel {{ default `w3-theme-l2` ($.Site.Param `colorBaseofPanel`)}} ">{{ if $.Params.icon }}<i class="{{ $.Params.icon }} fa-1x"></i>{{ end }} {{ .Title | markdownify | emojify }} </h1>
+      <div id="canvas" class='w3-container {{ default `w3-theme-l4` ($.Site.Param `colorBaseofCanvas`)}} '>
+        {{ block `headline` . -}}
+        <h1 class='w3-panel {{ default `w3-theme-l2` ($.Site.Param `colorBaseofPanel`)}} '>{{ if $.Params.icon }}<i class='{{ $.Params.icon }} fa-1x'></i>{{ end }} {{ .Title | markdownify | emojify }} </h1>
         {{- end -}}
 
-        {{- block "main" . }}
+        {{- block `main` . }}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- block main _default/baseof.html  -->` | safeHTML }}
         {{- end}}
-        {{  partial "main.blog.date.html"         . -}}
-        {{- partial "main.taxonomy.current.html"  . -}}
-        {{- partial "main.teaserpic.single.html"  . -}}
-        {{- /* partial "main.title.html"          . */ -}}
-        {{- partial "main.toc.single.html"        . -}}
+        {{  partial `main.blog.date.html`         . -}}
+        {{- partial `main.taxonomy.current.html`  . -}}
+        {{- partial `main.teaserpic.single.html`  . -}}
+        {{- /* partial `main.title.html`          . */ -}}
+        {{- partial `main.toc.single.html`        . -}}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
         {{- end}}
@@ -39,36 +39,36 @@
         {{ `<!-- now Content  -->` | safeHTML }}
         {{- end}}
         {{/* .Content */}}
-        {{ .Content | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML }}
-        {{/* .Content | replaceRE "<p><div" "<div" | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML */}}
+        {{ .Content | replaceRE `(?s:</div>\n?</p>)` `</div>` | replaceRE `(?s:</pre>\n?</p>)` `</pre>` | safeHTML }}
+        {{/* .Content | replaceRE `<p><div` `<div` | replaceRE `(?s:</div>\n?</p>)` `</div>` | replaceRE `(?s:</pre>\n?</p>)` `</pre>` | safeHTML */}}
         {{- end }}
 
-        {{- if eq .Type "blog" }}
-        {{- block "blog-disqus" . }}
+        {{- if eq .Type `blog` }}
+        {{- block `blog-disqus` . }}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- block blog-disqus _default/baseof.html  -->` | safeHTML }}
         {{- end}}
           {{ end }}
           {{- end -}}
 
-          {{- if eq .Type "contact" }}
-          {{- block "contactform" . }}
+          {{- if eq .Type `contact` }}
+          {{- block `contactform` . }}
           {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
           {{ `<!-- block contactform _default/baseof.html  -->` | safeHTML }}
           {{- end}}
           {{ end }}
           {{- end -}}
 
-          {{- if eq .Type "search" }}
-          {{- block "search" . }}
+          {{- if eq .Type `search` }}
+          {{- block `search` . }}
           {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
           {{ `<!-- block search _default/baseof.html  -->` | safeHTML }}
           {{- end}}
           {{ end }}
           {{- end -}}
 
-          {{- if and (ne .Type "contact") (ne .Type "search") }}
-          {{- partial "main.taxonomy.full.bar.html"  . -}}
+          {{- if and (ne .Type `contact`) (ne .Type `search`) }}
+          {{- partial `main.taxonomy.full.bar.html`  . -}}
           {{- end -}}
 
           {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
@@ -79,9 +79,9 @@
       {{- end}}
 
       <footer>
-        {{  block "footer" . }}
-        {{- partial "footer.html"        . -}}
-        {{- partial "footer.bottom.html" . -}}
+        {{  block `footer` . }}
+        {{- partial `footer.html`        . -}}
+        {{- partial `footer.bottom.html` . -}}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
         {{- end}}
@@ -91,7 +91,7 @@
     </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- all -->` | safeHTML }}
     {{- end}}
-    {{ partial "scripts.bottom.html"  . }}
+    {{ partial `scripts.bottom.html`  . }}
   </body>
-  {{ partial "debug.html" . -}}
+  {{ partial `debug.html` . -}}
 </html>

@@ -1,42 +1,42 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- partials/header.nav.html -->` | safeHTML }}
 {{- end}}
-{{- if isset $.Site.Params.menuConfig (lower "smallDispMenuMaxChars" ) }}
-{{- $.Scratch.Set "smallDispMenuLower" 1 }}
+{{- if isset $.Site.Params.menuConfig (lower `smallDispMenuMaxChars` ) }}
+{{- $.Scratch.Set `smallDispMenuLower` 1 }}
 {{- else}}
-{{- $.Scratch.Set "smallDispMenuLower" "" }}
+{{- $.Scratch.Set `smallDispMenuLower` `` }}
 {{- end}}
-{{- $.Scratch.Set "smallDispMenuMaxChars"    ($.Site.Params.menuConfig.smallDispMenuMaxChars  | default 99) }}
+{{- $.Scratch.Set `smallDispMenuMaxChars`    ($.Site.Params.menuConfig.smallDispMenuMaxChars  | default 99) }}
 
-<div class="w3-bar w3-hide-small {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} ">
+<div class='w3-bar w3-hide-small {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- w3-hide-small ******************** -->` | safeHTML }}
   {{- end}}
-  {{- template "header-nav-entry" . }}
+  {{- template `header-nav-entry` . }}
 
   {{- if $.Site.Params.menutopbar.socialEnable }}
     {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
       {{ `<!-- range .Site.Menus.topbar.ByWeight -->` | safeHTML }}
     {{- end}}
     {{- range .Site.Menus.topbar.ByWeight }}
-  <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
+  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right"><i class='{{ .Pre }}'></i></a>
     {{- end }}
   {{- end }}
 
   {{- if $.Site.Params.menutopbar.googleTranslateEnable }}
     {{- if or (not .IsHome) $.Site.Params.menutopbar.googleTranslateShowOnHome }}
   <span class="w3-bar-item w3-button w3-right">
-    {{ partial "header.nav.google.translate.html" . -}}
+    {{ partial `header.nav.google.translate.html` . -}}
   </span>
     {{- end }}
   {{- end }}
 </div> <!-- w3-bar -->
 
-<div class="w3-bar w3-small w3-hide-large w3-hide-medium {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} ">
+<div class='w3-bar w3-small w3-hide-large w3-hide-medium {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- w3-hide-large w3-hide-medium ******************** -->` | safeHTML }}
   {{- end}}
-  {{- template "header-nav-entry" . }}
+  {{- template `header-nav-entry` . }}
 
   {{- if $.Site.Params.menutopbar.socialEnable }}
   {{- if .Site.Menus.topbar }}
@@ -45,7 +45,7 @@
       {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
     {{- end}}
     {{- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight }}
-  <a href="{{ .URL }}" target="_blank" class="w3-bar-item w3-button w3-right"><i class="{{ .Pre }}"></i></a>
+  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right"><i class='{{ .Pre }}'></i></a>
     {{- end }}
   {{- end }}
   {{- end }}
@@ -53,7 +53,7 @@
 </div> <!-- w3-bar -->
 
 
-{{- define "header-nav-entry" }}
+{{- define `header-nav-entry` }}
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- header-nav-entry -->` | safeHTML }}
   {{- end}}
@@ -67,12 +67,12 @@
       {{- end}}
 
 <div class="w3-dropdown-hover">
-  <button class="w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}</button>
-  <button class="w3-button w3-small w3-hide-large w3-hide-medium"><i class="{{ .Pre }}"></i>&nbsp;
-{{- if ($.Scratch.Get "smallDispMenuLower") }}
-  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}
+  <button class="w3-button w3-hide-small"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</button>
+  <button class="w3-button w3-small w3-hide-large w3-hide-medium"><i class='{{ .Pre }}'></i>&nbsp;
+{{- if ($.Scratch.Get `smallDispMenuLower`) }}
+  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`) | lower}}
 {{- else}}
-  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars")}}
+  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`)}}
 {{- end -}}
 </button>
   <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2" > <!-- above owl carousel -->
@@ -80,8 +80,8 @@
       {{ `<!-- range .Children -->` | safeHTML }}
     {{- end}}
     {{- range .Children }}
-    <a href="{{ .URL }}{{ if and (eq (substr .URL 0 1) "/") $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}"
-       class="w3-bar-item w3-button"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}
+    <a href='{{ .URL }}{{ if and (eq (substr .URL 0 1) `/`) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'
+       class="w3-bar-item w3-button"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}
     </a>
     {{- end }}  {{- /* range .Children        */}}
   </div> <!-- w3-dropdown-content -->
@@ -91,15 +91,15 @@
       {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- not .HasChildren -->` | safeHTML }}
       {{- end}}
-<a href="{{ .URL }}{{ if and (and  (not (in .URL ".html")) (eq (substr .URL 0 1) "/")) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}"
-   class="w3-bar-item w3-button w3-hide-small"><i class="{{ .Pre }}"></i>&nbsp;{{default .Name (i18n .Name)}}
+<a href='{{ .URL }}{{ if and (and  (not (in .URL `.html`)) (eq (substr .URL 0 1) `/`)) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'
+   class="w3-bar-item w3-button w3-hide-small"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}
 </a>
-<a href="{{ .URL }}{{ if and (and  (not (in .URL ".html")) (eq (substr .URL 0 1) "/")) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}"
-   class="w3-bar-item w3-button w3-small w3-hide-large w3-hide-medium"><i class="{{ .Pre }}"></i>&nbsp;
-{{- if ($.Scratch.Get "smallDispMenuLower") }}
-  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars") | lower}}
+<a href='{{ .URL }}{{ if and (and  (not (in .URL `.html`)) (eq (substr .URL 0 1) `/`)) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'
+   class="w3-bar-item w3-button w3-small w3-hide-large w3-hide-medium"><i class='{{ .Pre }}'></i>&nbsp;
+{{- if ($.Scratch.Get `smallDispMenuLower`) }}
+  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`) | lower}}
 {{- else}}
-  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get "smallDispMenuMaxChars")}}
+  {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`)}}
 {{- end -}}
 </a>
     {{- end  }}   {{- /* if .HasChildren        */}}

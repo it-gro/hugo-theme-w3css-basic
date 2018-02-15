@@ -1,11 +1,11 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/footer.bottom.html  -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/footer.bottom.html  -->` | safeHTML }}
 {{- end}}
-<div class="w3-cell-row w3-small {{ default `w3-theme-l3` ($.Site.Param `colorFooterBottomCell`)}} ">
+<div class='w3-cell-row w3-small {{ default `w3-theme-l3` ($.Site.Param `colorFooterBottomCell`)}} '>
 
   <div class="w3-cell w3-cell-middle">
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-      {{ `<!-- $.Site.Params.bottomLeft  -->` | safeHTML }} 
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+      {{ `<!-- $.Site.Params.bottomLeft  -->` | safeHTML }}
     {{- end}}
     {{ if $.Site.Params.bottomLeft }}
       {{- $.Site.Params.bottomLeft | markdownify }}
@@ -14,11 +14,11 @@
 
   <div class="w3-cell w3-cell-middle">
     <div class="w3-right">
-      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-        {{ `<!-- $.Site.Params.bottomRight  -->` | safeHTML }} 
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- $.Site.Params.bottomRight  -->` | safeHTML }}
       {{- end}}
       {{ if $.Site.Params.bottomRight }}
-        {{- replaceRE `\[Hugo\]` (printf "[Hugo %s]" .Hugo.Version) $.Site.Params.bottomRight | markdownify }}
+        {{- replaceRE `\[Hugo\]` (printf `[Hugo %s]` .Hugo.Version) $.Site.Params.bottomRight | markdownify }}
       {{- end }}
     </div> <!-- w3-right -->
   </div>   <!-- w3-cell  -->
