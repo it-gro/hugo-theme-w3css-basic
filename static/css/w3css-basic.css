@@ -33,6 +33,15 @@ a.no-decoration {
   text-decoration: none ;
 }
 
+kbd {
+  font-size: 0.8em;
+  background-color: #fff;
+  padding: 0px 1px 0px 1px;;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 4px;
+}
+
 /* -------------------------------------------------- */
 /* TableOfContents */
 
@@ -387,7 +396,7 @@ pre.w3-code, span.w3-codespan{
   font-size:1em;
 }
 
-/* wfor w3-code and chroma styles */
+/* for w3-code and chroma styles */
 pre.w3-code, pre.chroma {
   border-radius:4px;
   padding: 0 3px 0 3px;

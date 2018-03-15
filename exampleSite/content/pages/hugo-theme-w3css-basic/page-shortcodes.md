@@ -825,6 +825,35 @@ World
 {{% /html-tag-classes %}}
 
 
+## kbd
+* show keyboard sequences
+
+{{< highlight nolang >}}
+Press {{</* kbd "Ctrl+Shift+A" "5" >}} or {{< kbd "CTRL" "ALT" "DEL" */>}}
+{{< /highlight >}}
+
+Press {{< kbd "Ctrl+Shift+A" "5" >}} or {{< kbd "CTRL" "ALT" "DEL" >}}
+
+### style
+    static/css/w3css-basic.css
+
+{{< highlight css >}}
+
+kbd {
+  font-size: 0.8em;
+  background-color: #fff;
+  padding: 0px 1px 0px 1px;;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 4px;
+}
+
+{{< /highlight >}}
+
+
+
+
+
 # Experimental
 
 ## liti: List by Title

@@ -48,9 +48,9 @@ name, check out the file [etc/JOKES]({{< relref "emacs-jokes.md" >}})
 
 * Emacs can now dynamically load external modules compiled as shared
   libraries.
-
-* ‘C-x 8’ has new shorthands for several popular characters, type
-  ‘C-x 8 C-h’ to list shorthands.
+ 
+* {{< kbd "C-x" "8" >}} has new shorthands for several popular characters, type
+  {{< kbd "C-x" "8" "C-h">}} to list shorthands.
 
 * A new minor mode ‘global-eldoc-mode’ is enabled by default, and
   shows in the echo area or in the mode line the argument list of the

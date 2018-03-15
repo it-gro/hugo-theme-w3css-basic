@@ -3,5 +3,9 @@
 {{- end}}
 {{- if .Site.RSSLink }}
 <link href='{{ .Site.RSSLink }}' rel="alternate" type="application/rss+xml" title='{{ .Site.Title }} (rss+xml alternate)' />
-{{/* <link href='{{ .Site.RSSLink }}' rel="feed"      type="application/rss+xml" title='{{ .Site.Title }} (rss+xml feed)'      /> */}}
 {{- end -}}
+{{/*
+{{- range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{- end -}}
+*/}}
