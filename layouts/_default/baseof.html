@@ -19,10 +19,15 @@
         {{- end}}
       </header>
       <div id="canvas" class='w3-container {{ default `w3-theme-l4` ($.Site.Param `colorBaseofCanvas`)}} '>
-        {{ block `headline` . -}}
-        <h1 class='w3-panel {{ default `w3-theme-l2` ($.Site.Param `colorBaseofPanel`)}} '>{{ if $.Params.icon }}<i class='{{ $.Params.icon }} fa-1x'></i>{{ end }} {{ .Title | markdownify | emojify }} </h1>
-        {{- end -}}
-
+        {{- block `headline` . }}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- block headline _default/baseof.html  -->` | safeHTML }}
+        {{- end}}
+          <h1 class='w3-panel {{ default `w3-theme-l2` ($.Site.Param `colorBaseofPanel`)}} '>
+          {{ if $.Params.icon }}<i class='{{ $.Params.icon }} fa-1x'></i>{{ end }}
+          {{ .Title | markdownify | emojify }} </h1>
+        {{- end}}
+        {{/* {{  partial `main.headline.html` . -}} */}}
         {{- block `main` . }}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- block main _default/baseof.html  -->` | safeHTML }}
@@ -44,36 +49,36 @@
         {{- end }}
 
         {{- if eq .Type `blog` }}
-        {{- block `blog-disqus` . }}
-        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-        {{ `<!-- block blog-disqus _default/baseof.html  -->` | safeHTML }}
-        {{- end}}
+          {{- block `blog-disqus` . }}
+            {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+              {{ `<!-- block blog-disqus _default/baseof.html  -->` | safeHTML }}
+            {{- end}}
           {{ end }}
-          {{- end -}}
+        {{- end -}}
 
-          {{- if eq .Type `contact` }}
+        {{- if eq .Type `contact` }}
           {{- block `contactform` . }}
-          {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-          {{ `<!-- block contactform _default/baseof.html  -->` | safeHTML }}
-          {{- end}}
+            {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+              {{ `<!-- block contactform _default/baseof.html  -->` | safeHTML }}
+            {{- end}}
           {{ end }}
-          {{- end -}}
+        {{- end -}}
 
-          {{- if eq .Type `search` }}
+        {{- if eq .Type `search` }}
           {{- block `search` . }}
-          {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-          {{ `<!-- block search _default/baseof.html  -->` | safeHTML }}
-          {{- end}}
+            {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+              {{ `<!-- block search _default/baseof.html  -->` | safeHTML }}
+            {{- end}}
           {{ end }}
-          {{- end -}}
+        {{- end -}}
 
-          {{- if and (ne .Type `contact`) (ne .Type `search`) }}
+        {{- if and (ne .Type `contact`) (ne .Type `search`) }}
           {{- partial `main.taxonomy.full.bar.html`  . -}}
-          {{- end -}}
+        {{- end -}}
 
-          {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-          {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
-          {{- end}}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
+        {{- end}}
       </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
       {{ `<!-- canvas -->` | safeHTML }}
       {{- end}}

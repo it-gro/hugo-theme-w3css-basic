@@ -2,16 +2,16 @@
   {{ `<!-- partials/main.paginator.bar.html -->` | safeHTML }}
 {{- end}}
 
-<div class='w3-card-4 w3-center w3-round-xxlarge w3-margin-top w3-margin-bottom {{ default `w3-theme-l1` ($.Site.Param `colorPaginatorBar`)}} '>
-  <div class="w3-bar ">
+<div class='w3-center w3-round-xxlarge w3-margin-top w3-margin-bottom {{ default `w3-theme-l1` ($.Site.Param `colorPaginatorBar`)}} '>
+  <div class="w3-bar " style="vertical-align: middle" >
     {{- if .Paginator.HasPrev }}
-    <a href='{{ .Paginator.Prev.URL }}' class="w3-bar-item w3-button">&larr; {{ default `prev` (i18n `newer`) }}</a>
+    <a href='{{ .Paginator.Prev.URL }}' class="w3-bar-item w3-button " style="vertical-align"><b>&larr; {{ default `prev` (i18n `newer`) }}</b></a>
     {{- else }}
     <a href="#"                                            class="w3-bar-item w3-button w3-disabled">&larr; {{ default `prev` (i18n `newer`) }}</a>
     {{- end }}
 
     {{- if .Paginator.HasNext }}
-    <a href='{{ .Paginator.Next.URL }}' class="w3-bar-item w3-button">{{ default `next` (i18n `older`) }} &rarr;</a>
+    <a href='{{ .Paginator.Next.URL }}' class="w3-bar-item w3-button "><b>{{ default `next` (i18n `older`) }} &rarr;</b></a>
     {{- else }}
     <a href="#"                                            class="w3-bar-item w3-button w3-disabled">{{ default `next` (i18n `older`) }} &rarr;</a>
     {{- end }}
