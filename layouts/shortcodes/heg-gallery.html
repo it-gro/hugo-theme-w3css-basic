@@ -18,14 +18,14 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
     {{- range $files -}}
       <!-- skip files that aren't images, or that inlcude the thumb suffix in their name -->
       {{- $thumbext := $.Get `thumb` | default `-thumb` }}
-      {{- $isthumb := .Name | findRE ($thumbext | printf `%s\\.`) }}<!-- is the current file a thumbnail image? -->
-      {{- $isimg := lower .Name | findRE `\\.(gif|jpg|jpeg|tiff|png|bmp|svg)` }}<!-- is the current file an image? -->
+      {{- $isthumb := .Name | findRE ($thumbext | printf `%s\.`) }}<!-- is the current file a thumbnail image? -->
+      {{- $isimg := lower .Name | findRE `\.(gif|jpg|jpeg|tiff|png|bmp|svg)` }}<!-- is the current file an image? -->
       {{- if and $isimg (not $isthumb) }}
-        {{- $caption :=  cond ($.Site.Params.gallery.showFileExtension | default true )  .Name  (.Name | replaceRE `\\.[^.]+$` ``) }}
+        {{- $caption :=  cond ($.Site.Params.gallery.showFileExtension | default true )  .Name  (.Name | replaceRE `\.[^.]+$` ``) }}
         {{- $caption :=  cond ($.Site.Params.gallery.humanizeCaption   | default false)  ($caption | humanize) $caption }}
         {{- $linkURL := print $baseURL ($.Get `dir`) `/` .Name | absURL }}<!-- absolute URL to hi-res image -->
         {{- $filetype := index (findRE `[^.]+$` .Name ) 0 }}<!-- file extension of image -->
-        {{- $thumb := .Name | replaceRE `\\.[^.]+$` (printf `%s.%s` $thumbext $filetype) }}<!-- filename of thumbnail image -->
+        {{- $thumb := .Name | replaceRE `\.[^.]+$` (printf `%s.%s` $thumbext $filetype) }}<!-- filename of thumbnail image -->
         {{- $thumbexists := where $files `Name` $thumb }}<!-- does a thumbnail image exist? -->
         {{- $thumbURL := print $baseURL ($.Get `dir`) `/` $thumb | absURL }}<!-- absolute URL to thumbnail image -->
         <div class="box">
