@@ -9,6 +9,11 @@ a.no-decoration {
   text-decoration: none !important;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .taxonomy-button {
   padding-top:    2px !important;
   padding-right:  6px !important;
