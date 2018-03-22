@@ -1,12 +1,17 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- partials/header.nav.html -->` | safeHTML }}
 {{- end}}
+{{- $.Scratch.Set `smallDispMenuMaxCharsDefault` 99 }}
+{{- if isset $.Site.Params (lower `menuConfig` ) }}
 {{- if isset $.Site.Params.menuConfig (lower `smallDispMenuMaxChars` ) }}
 {{- $.Scratch.Set `smallDispMenuLower` 1 }}
 {{- else}}
 {{- $.Scratch.Set `smallDispMenuLower` `` }}
 {{- end}}
-{{- $.Scratch.Set `smallDispMenuMaxChars`    ($.Site.Params.menuConfig.smallDispMenuMaxChars  | default 99) }}
+{{- $.Scratch.Set `smallDispMenuMaxChars`    ($.Site.Params.menuConfig.smallDispMenuMaxChars  | default ($.Scratch.Get `smallDispMenuMaxCharsDefault`) ) }}
+{{- else}}
+{{- $.Scratch.Set `smallDispMenuMaxChars`    ($.Scratch.Get `smallDispMenuMaxCharsDefault`) }}
+{{- end}}
 
 <div class='w3-bar w3-hide-small {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
