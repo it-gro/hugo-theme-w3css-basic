@@ -1594,6 +1594,7 @@ layouts/shortcodes/
 ├── html-tags.html
 ├── i18n.html
 ├── icon.html
+├── kbd.html
 ├── liti.html
 ├── litt.html
 ├── litx.html

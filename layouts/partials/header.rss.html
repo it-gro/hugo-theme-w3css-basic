@@ -2,6 +2,10 @@
 {{ `<!-- partials/header.rss.html -->` | safeHTML }}
 {{- end}}
 {{- if .Site.RSSLink }}
-<link href='{{ .RSSLink }}' rel="alternate" type="application/rss+xml" title='{{ .Site.Title }} (rss+xml alternate)' />
-{{/* <link href='{{ .RSSLink }}' rel="feed"      type="application/rss+xml" title='{{ .Site.Title }} (rss+xml feed)'      /> */}}
+<link href='{{ .Site.RSSLink }}' rel="alternate" type="application/rss+xml" title='{{ .Site.Title }} (rss+xml alternate)' />
 {{- end -}}
+{{/*
+{{- range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{- end -}}
+*/}}

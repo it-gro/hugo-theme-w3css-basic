@@ -71,6 +71,10 @@ disableRSS = false
 # maximum number of items in the RSS feed
 rssLimit   = 10
 
+[outputs]
+home = [ "HTML", "RSS" ]
+section = [ "HTML", "RSS"]
+
 
 # ##################################################
 # Theme-defined configuration
