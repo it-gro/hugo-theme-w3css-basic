@@ -27,7 +27,7 @@
               src='{{- if .Params.teaserpic }}
                    {{- if eq (substr .Params.teaserpic 0 1) `.` }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}
                    {{- else }}
-                   {{- $.Site.Params.teaserpicDefault | relURL }}
+                   {{/*- $.Site.Params.teaserpicDefault | relURL */}} {{/* ToDo */}}
                    {{- end -}}
                   '
               class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
