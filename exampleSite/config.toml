@@ -312,7 +312,7 @@ consectetuer adipiscing
   colorPaginatorBar                     = "w3-theme-l1"
   colorTaxonomyBar                      = "w3-theme-l1"
   colorPageNavCardsContainer            = "w3-theme-l3"
-  colorPageNavCardsCard                 = "w3-theme-l1"
+  colorPageNavCardsCard                 = "w3-theme-d3"
   colorPageNavCardsLink                 = "w3-theme-l3"
   colorSearchGoogleGcseContainer        = "w3-theme-l3"
 

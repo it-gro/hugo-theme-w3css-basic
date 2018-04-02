@@ -267,8 +267,8 @@ consectetuer adipiscing
   # set the actual color (one of the monochromatic color scheme)
   color404Container                     = "w3-theme-l3"
   colorPagesListCell                    = "w3-theme-l4"
-  colorPagesListCard                    = "w3-theme-l2"
-  colorPagesListContainer               = "w3-theme-l2"
+  colorPagesListCard                    = "w3-theme-l1"
+  colorPagesListContainer               = "w3-theme-l1"
   colorBlogListCard                     = "w3-theme-d1"
   colorBlogListCell                     = "w3-theme-l3"
   colorBaseofCanvas                     = "w3-theme-l4"
@@ -308,7 +308,7 @@ consectetuer adipiscing
   colorPaginatorBar                     = "w3-theme-l1"
   colorTaxonomyBar                      = "w3-theme-l1"
   colorPageNavCardsContainer            = "w3-theme-l3"
-  colorPageNavCardsCard                 = "w3-theme-l1"
+  colorPageNavCardsCard                 = "w3-theme-d3"
   colorPageNavCardsLink                 = "w3-theme-l3"
   colorSearchGoogleGcseContainer        = "w3-theme-l3"
 
