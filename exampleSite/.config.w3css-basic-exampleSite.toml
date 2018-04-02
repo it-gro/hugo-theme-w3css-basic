@@ -85,6 +85,10 @@ rssLimit   = 10
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
 
+# [mediaTypes]
+#   [mediaTypes."application/pdf"]
+#   suffix = "pdf"
+
 
 # ##################################################
 # Main menu
@@ -430,8 +434,8 @@ consectetuer adipiscing
   #   html-comment          enable partials html comment output
   #   debug-shortcodes      enable all shortcodes debugging output
   #   debug-shortcode-liti  enable all shortcode liti debugging output
-  # traceFlags       = "html-comment:debug-shortcode-liti"
-  traceFlags         = "html-comment"
+   traceFlags       = "html-comment:debug-shortcode-liti"
+  #traceFlags         = "html-comment"
 
   # custom css and custom js
   # this theme comes with the following "empty" files
