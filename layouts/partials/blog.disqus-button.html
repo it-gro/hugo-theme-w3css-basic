@@ -1,5 +1,5 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-  {{ `<!-- partials/disqus-button.html -->` | safeHTML }}
+  {{ `<!-- partials/blog.disqus-button.html -->` | safeHTML }}
 {{- end}}
 {{- /* https://blog.kulman.sk/delaying-disqus-comments-to-save-requests/ */}}
 {{- if .Site.DisqusShortname }}
