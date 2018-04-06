@@ -583,7 +583,7 @@ static/css/syntax/syntax.bw.css
 
 * See https://gohugo.io/content-management/image-processing/
 * inspired by layouts/shortcodes/imgproc.html
-* See [Hugo image processing (res-figure)](/blog/2018/04/02/image-processing-with-hugo/) for more information
+* See [Hugo image processing (res-figure)]({{< relref "blog/2018/04/02/image-processing-with-hugo/index.md" >}}) for more information
 
 {{< w3-code >}}
 {{</* res-figure "img/pixabay.com/penguin-21*" />}} 

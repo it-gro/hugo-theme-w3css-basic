@@ -15,3 +15,5 @@ categories:
 
 * see [shortcodes heg-gallery]({{< relref "pages/hugo-theme-w3css-basic/page-shortcodes/index.md#heg-gallery" >}})  
   and [shortcodes heg-figure]( {{< relref "pages/hugo-theme-w3css-basic/page-shortcodes/index.md#heg-figure" >}})   
+
+* see as well [shortcodes res-figure]( {{< relref "blog/2018/04/02/image-processing-with-hugo/index.md" >}})
