@@ -71,6 +71,25 @@ disableRSS = false
 # maximum number of items in the RSS feed
 rssLimit   = 10
 
+[outputs]
+home = [ "HTML", "RSS" ]
+section = [ "HTML", "RSS"]
+
+[imaging]
+# https://gohugo.io/content-management/image-processing/
+# Default resample filter used for resizing. Default is Box,
+# a simple and fast averaging filter appropriate for downscaling.
+# See https://github.com/disintegration/imaging
+resampleFilter = "box"
+
+# Defatult JPEG quality setting. Default is 75.
+quality = 75
+
+# Anchor used when cropping pictures.
+# Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+# Smart Cropping is content aware and tries to find the best crop for each image.
+# Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+anchor = "smart"
 
 # ##################################################
 # Theme-defined configuration
@@ -84,6 +103,10 @@ rssLimit   = 10
 
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
+
+# [mediaTypes]
+#   [mediaTypes."application/pdf"]
+#   suffix = "pdf"
 
 
 # ##################################################
@@ -428,9 +451,9 @@ consectetuer adipiscing
   # flags used for tracing and html comment output
   # currently used:
   #   html-comment          enable partials html comment output
-  #   debug-shortcodes      enable all shortcodes debugging output
+  #   debug-shortcodes      enable all shortcodes debugging outpt
   #   debug-shortcode-liti  enable all shortcode liti debugging output
-  # traceFlags       = "html-comment:debug-shortcode-liti"
+  #traceFlags       = "html-comment:debug-shortcode-res-figure"
   traceFlags         = "html-comment"
 
   # custom css and custom js
@@ -626,7 +649,7 @@ ultricies eget, tempor sit amet, ante
   # sans-serif = "Creepster"
 [params.googleApiFonts.family.pre]
   # monospace or sans-serif
-  monospace  = "Space Mono"
+  monospace  = "Oxygen Mono"
 
   # a random list of google api fonts:
   # sans-serif = "Capriola"
@@ -649,7 +672,7 @@ ultricies eget, tempor sit amet, ante
   # monospace  = "Cousine"
   # monospace  = "Oxygen Mono"
   # monospace  = "Roboto Mono"
-  # monospace  = "Space Mono"
+  # monospace  = "Space Mono"     # problem with />
   # monospace  = "Ubuntu Mono"
   #
   # cursive    = "Caesar Dressing"
@@ -669,6 +692,14 @@ ultricies eget, tempor sit amet, ante
   # used in layouts/shortcodes/heg-gallery.html
   # showFileExtension = true
   # humanizeCaption   = false
+
+
+[params.resources]
+	# used in layouts/shortcodes/res-figure.html
+	defaultImageCommand	= "Resize"
+	defaultImageOptions	=	"300x"
+	defaultImageCaption	= "%%N"
+
 
 [blackfriday]
   # extensions = ["noEmptyLineBeforeBlock"]

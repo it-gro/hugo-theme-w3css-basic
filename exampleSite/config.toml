@@ -75,6 +75,22 @@ rssLimit   = 10
 home = [ "HTML", "RSS" ]
 section = [ "HTML", "RSS"]
 
+[imaging]
+# https://gohugo.io/content-management/image-processing/
+# Default resample filter used for resizing. Default is Box,
+# a simple and fast averaging filter appropriate for downscaling.
+# See https://github.com/disintegration/imaging
+resampleFilter = "box"
+
+# Defatult JPEG quality setting. Default is 75.
+quality = 75
+
+# Anchor used when cropping pictures.
+# Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+# Smart Cropping is content aware and tries to find the best crop for each image.
+# Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+anchor = "smart"
+
 
 # ##################################################
 # Theme-defined configuration
@@ -435,7 +451,7 @@ consectetuer adipiscing
   #   html-comment          enable partials html comment output
   #   debug-shortcodes      enable all shortcodes debugging output
   #   debug-shortcode-liti  enable all shortcode liti debugging output
-  # traceFlags       = "html-comment:debug-shortcode-liti"
+  #traceFlags       = "html-comment:debug-shortcodes"
   traceFlags         = "html-comment"
 
   # custom css and custom js
@@ -677,6 +693,13 @@ ultricies eget, tempor sit amet, ante
   # used in layouts/shortcodes/heg-gallery.html
   # showFileExtension = true
   # humanizeCaption   = false
+
+
+[params.resources]
+	# used in layouts/shortcodes/res-figure.html
+	defaultImageCommand	= "Resize"
+	defaultImageOptions	=	"300x"
+	defaultImageCaption	= "%%N"
 
 
 # ##################################################

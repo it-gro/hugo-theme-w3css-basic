@@ -1,0 +1,98 @@
+{{/*-
+  https://gohugo.io/content-management/image-processing/
+  inspired by layouts/shortcodes/imgproc.html
+*/}}
+
+{{- $myDefaultCommand := $.Site.Params.resources.defaultImageCommand | default `Resize` }}
+{{- $myDefaultOptions := $.Site.Params.resources.defaultImageOptions | default `300x`   }}
+{{- $myDefaultCaption := $.Site.Params.resources.defaultImageCaption | default `%%N`   }}
+
+{{- if .IsNamedParams }}
+  {{- $.Scratch.Set `theMatch`       (.Get `match`)  }}
+  {{- $.Scratch.Set `theCommand`     (.Get `cmd`  )  }}
+  {{- $.Scratch.Set `theOptions`     (.Get `opt`  )  }}
+  {{- $.Scratch.Set `theCaption`     (.Get `cap`  )  }}
+{{- else }}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theMatch`    (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theCommand`  (.Get $myPos) }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theOptions`  (.Get $myPos) }} {{end}}
+  {{- $myPos := 3}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theCaption`  (.Get $myPos) }} {{end}}
+{{- end }}
+
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-figure)\b` $.Site.Params.traceFlags) }}
+<br/>
+"theMatch"    : {{- $.Scratch.Get `theMatch`    }} <br/>
+"theCommand"  : {{- $.Scratch.Get `theCommand`  }} <br/>
+"theOptions"  : {{- $.Scratch.Get `theOptions`  }} <br/>
+"theCaption"  : {{- $.Scratch.Get `theCaption`  }} <br/>
+{{- end }}
+
+{{- range $myResource := (.Page.Resources.Match (printf "%s*" ($.Scratch.Get `theMatch`))) }}
+  {{- if eq $myResource.ResourceType "image" }}
+
+    {{- $myCommand  := ( ($.Scratch.Get `theCommand` ) | default $myResource.Params.imgcmd  | default $myDefaultCommand ) }}
+    {{- $myOptions  := ( ($.Scratch.Get `theOptions` ) | default $myResource.Params.imgopt  | default $myDefaultOptions ) }}
+    {{- $myCaption  := ( ($.Scratch.Get `theCaption` ) | default $myResource.Params.caption | default $myDefaultCaption ) }}
+
+    {{- $myCapFileName     := replaceRE `.*/`      (``) ($myResource.Name) }}
+    {{- $myCapFileBase     := replaceRE `\.[^.]+$` (``) ($myCapFileName)   }}
+    {{- $myCapFileHumanize := humanize $myCapFileBase }}
+
+    {{- $myCaption := replaceRE `%%n` (`<br>`)             $myCaption }}
+    {{- $myCaption := replaceRE `%%f`  ($myResource.Name)  $myCaption }}
+    {{- $myCaption := replaceRE `%%F`  ($myCapFileName)    $myCaption }}
+    {{- $myCaption := replaceRE `%%B`  ($myCapFileBase)    $myCaption }}
+    {{- $myCaption := replaceRE `%%T`  ($myResource.Title) $myCaption }}
+    {{- $myCaption := replaceRE `%%N`  (cond (eq $myResource.Name $myResource.Title) (humanize $myCapFileBase) (humanize $myResource.Title) ) $myCaption }}
+    {{- $myCaption := replaceRE `%%L`  (cond (not (isset $myResource.Params "licenselink") ) ($myResource.Params.license) (printf "<a href='%s'>%s</a>" $myResource.Params.licenselink $myResource.Params.license) ) $myCaption }}
+    {{- $myCaption := replaceRE `%%O`  (cond (not (isset $myResource.Params "originlink" ) ) ($myResource.Params.origin)  (printf "<a href='%s'>%s</a>" $myResource.Params.originlink  $myResource.Params.origin)  ) $myCaption }}
+    {{- $myCaption := replaceRE `%%A`  (cond (not (isset $myResource.Params "attrlink"   ) ) ($myResource.Params.attrby)  (printf "<a href='%s'>%s</a>" $myResource.Params.attrlink    $myResource.Params.attrby)  ) $myCaption }}
+    {{- $myCaption := replaceRE `%%I`  (printf "%s '%s'" $myCommand $myOptions) $myCaption }}
+
+    {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-figure)\b` $.Site.Params.traceFlags) }}
+      <br/>
+      "$myCommand"                     : {{ $myCommand                     }} <br/>
+      "$myOptions"                     : {{ $myOptions                     }} <br/>
+      "$myCaption"                     : {{ $myCaption                     }} <br/>
+      "$myResource.Name"               : {{ $myResource.Name               }} <br/>
+      "$myResource.Title"              : {{ $myResource.Title              }} <br/>
+      "$myResource.Params.origin"      : {{ $myResource.Params.origin      }} <br/>
+      "$myResource.Params.originlink"  : {{ $myResource.Params.originlink  }} <br/>
+      "$myResource.Params.license"     : {{ $myResource.Params.license     }} <br/>
+      "$myResource.Params.licenselink" : {{ $myResource.Params.licenselink }} <br/>
+      "$myResource.Params.attrby"      : {{ $myResource.Params.attrby      }} <br/>
+      "$myResource.Params.attrlink"    : {{ $myResource.Params.attrlink    }} <br/>
+      "$myResource.Params.imgcmd"      : {{ $myResource.Params.imgcmd      }} <br/>
+      "$myResource.Params.imgopt"      : {{ $myResource.Params.imgopt      }} <br/>
+    {{- end }}
+
+    {{- if eq $myCommand `Fill`}}
+      {{- $.Scratch.Set `myImageConverted` ($myResource.Fill $myOptions) }}
+    {{- else if eq $myCommand `Fit`}}
+      {{- $.Scratch.Set `myImageConverted` ($myResource.Fit $myOptions) }}
+    {{- else if eq $myCommand `Resize`}}
+      {{- $.Scratch.Set `myImageConverted` ($myResource.Resize $myOptions) }}
+    {{- else }}
+      {{- errorf "Invalid image processing command: '%s' for '%s'. Must be one of Fill, Fit or Resize."  $myCommand $myResource.Name}}
+    {{- end }}
+    {{- $myImage := $.Scratch.Get `myImageConverted` }}
+
+    <figure class='res-figure no-photoswipe'  style="width: {{ $myImage.Width }}px;">
+      <img src="{{ $myImage.RelPermalink }}"
+           alt="{{ $myCapFileName }}"
+           width="{{ $myImage.Width }}px" height="{{ $myImage.Height }}px"
+      >
+      <figcaption class='res-figcaption'>
+        {{- with $.Inner }}
+          {{- . }}
+        {{- else }}
+          {{ $myCaption | safeHTML }}
+        {{- end }}
+      </figcaption>
+    </figure>
+
+  {{- else}}
+    {{- errorf "'%s' has .ResourceType '%s'. Must be image."  $myResource.Name $myResource.ResourceType}}
+  {{- end }} {{/* if .ResourceType */}}
+
+{{- end }} {{/* range */}}

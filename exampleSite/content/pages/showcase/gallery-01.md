@@ -13,5 +13,5 @@ categories:
 {{< heg-load-photoswipe >}}
 {{< heg-gallery dir="/images/photocards/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
 
-* see [shortcodes heg-gallery]({{< relref "pages/hugo-theme-w3css-basic/page-shortcodes.md#heg-gallery" >}})  
-  and [shortcodes heg-figure]({{< relref "pages/hugo-theme-w3css-basic/page-shortcodes.md#heg-figure" >}})   
+* see [shortcodes heg-gallery]({{< relref "pages/hugo-theme-w3css-basic/page-shortcodes/index.md#heg-gallery" >}})  
+  and [shortcodes heg-figure]( {{< relref "pages/hugo-theme-w3css-basic/page-shortcodes/index.md#heg-figure" >}})   
