@@ -44,8 +44,7 @@
         {{ `<!-- now Content  -->` | safeHTML }}
         {{- end}}
         {{/* .Content */}}
-        {{ .Content | replaceRE `(?s:</div>\n?</p>)` `</div>` | replaceRE `(?s:</pre>\n?</p>)` `</pre>` | replaceRE `(?s:</figure>\n?</p>)` `</figure>` | safeHTML }}
-        {{/* .Content | replaceRE `<p><div` `<div` | replaceRE `(?s:</div>\n?</p>)` `</div>` | replaceRE `(?s:</pre>\n?</p>)` `</pre>` | safeHTML */}}
+        {{ .Content | replaceRE `(?s:</div>\s?</p>)` `</div>` | replaceRE `(?s:</pre>\s?</p>)` `</pre>` | replaceRE `(?s:</figure>\s*</p>)` `</figure>` | safeHTML }}
         {{- end }}
 
         {{- if eq .Type `blog` }}
