@@ -80,7 +80,7 @@
     <figure class='res-figure no-photoswipe'  style="width: {{ $myImage.Width }}px;">
       <img src="{{ $myImage.RelPermalink }}"
            alt="{{ $myCapFileName }}"
-           width="{{ $myImage.Width }}px" height="{{ $myImage.Height }}px"
+           width="{{ $myImage.Width }}" height="{{ $myImage.Height }}"
       >
       <figcaption class='res-figcaption'>
         {{- with $.Inner }}

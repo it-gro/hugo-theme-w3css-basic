@@ -104,7 +104,7 @@ resources:
 ## res-figure Parameters
 
 Argument | Position -1 | Default | What             | Remark
----------|-------------|:--------|:-----------------|:------
+---------|-------------|---------|------------------|-------
 match    | 0           | *       | images           | in page resource
 cmd      | 1           | Resize  | command          | Fill, Fit or Resize
 opt      | 2           | 300x    | options          | command options
@@ -114,7 +114,7 @@ cap      | 3           | %%N     | caption format   | see below
 
 ### Caption format
 Code | What
------|:------------
+-----|-------------
 %%n  | newline
 %%f  | .Name
 %%F  | Filename
