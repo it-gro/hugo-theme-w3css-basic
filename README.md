@@ -1628,7 +1628,7 @@ layouts/shortcodes/
 
 * https://gohugo.io/content-management/image-processing/
 * Support via shortcode `res-figure`
-* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/blog/2018/04/02/image-processing-with-hugo/
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/image-processing-with-hugo/
 
 
 ## Gallery
