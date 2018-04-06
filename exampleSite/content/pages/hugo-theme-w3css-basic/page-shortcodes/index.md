@@ -5,10 +5,18 @@ date:        "2017-11-22T07:41:52+01:00"
 toc:         true
 teaserpic:   images/teaserpics/gohugo.io/hugo-lorem.png
 tags:
-  - hugo
   - shortcodes
+  - Showcase
 categories:
   - This Theme
+resources:
+  - src:           img/pixabay.com/*.jpg
+    params:
+      origin:      pixabay.com
+      originlink:  https://pixabay.com
+      license:     Creative Commons CC0 
+      licenselink: "https://pixabay.com/en/service/terms/#usage"
+      caption:     "%%I%%n%%B%%n%%O%%n%%L"
 ---
 
 
@@ -569,6 +577,23 @@ static/css/syntax/syntax.borland.css
 static/css/syntax/syntax.bw.css
 {{</ cscb >}}
 
+## Page Resources
+
+### res-figure
+
+* See https://gohugo.io/content-management/image-processing/
+* inspired by layouts/shortcodes/imgproc.html
+* See [Hugo image processing (res-figure)]({{< relref "image-processing-with-hugo" >}}) for more information
+
+{{< w3-code >}}
+{{</* res-figure "img/pixabay.com/penguin-21*" />}} 
+{{< res-figure "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
+{{< res-figure "img/pixabay.com/penguin-21*" "Fill" "200x200" / */>}} 
+{{< /w3-code >}}
+
+{{< res-figure "img/pixabay.com/penguin-21*" />}} 
+{{< res-figure "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
+{{< res-figure "img/pixabay.com/penguin-21*" "Fill" "200x200" />}} 
 
 
 ## heg-gallery

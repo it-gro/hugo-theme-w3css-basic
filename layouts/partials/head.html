@@ -27,6 +27,7 @@
   {{ partial `head.ie.html`               . -}}
   {{ partial `head.favicon.html`          . -}}
   {{ partial `scripts.top.html`           . -}}
+  {{ partial `head.rss.html`              . -}}
 
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- back in partials/head.html  -->` | safeHTML }}

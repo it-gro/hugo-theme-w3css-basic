@@ -5,6 +5,16 @@
 /* -------------------------------------------------- */
 /* all */
 
+/*
+clear
+https://www.w3schools.com/cssref/pr_class_clear.asp
+<div class="clearfix"></div>
+*/
+
+.clearfix{
+    clear:both
+}
+
 a.no-decoration {
   text-decoration: none !important;
 }
@@ -292,11 +302,12 @@ figure img {
   position:relative;
 }
 
+/* DELETE ME
 figure figcaption a {
   position: relative;
-  color: #CCC;
-  /* text-decoration: none; */
+  color: #F00;
 }
+*/
 
 .gallery figcaption,
 .fancy-figure figcaption {
@@ -357,6 +368,35 @@ figure figcaption a {
     width: 16%;
     padding-bottom: 16%;
   }
+}
+
+
+
+/* -------------------------------------------------- */
+/* shortcut res-figure */
+
+.res-figure {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+
+.res-figcaption {
+/*
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.2);
+*/
+    text-align: center;
+    font-size: 75%;
+    padding: 0px;
+    line-height: 1;
+}
+
+.res-figcaption a {
+  position: relative;
+  /* font-size: 80%; */
+  /* background: rgba(0, 0, 0, 0.1); */
+  /* text-decoration: none; */
 }
 
 

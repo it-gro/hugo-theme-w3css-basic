@@ -71,6 +71,25 @@ disableRSS = false
 # maximum number of items in the RSS feed
 rssLimit   = 10
 
+[outputs]
+home = [ "HTML", "RSS" ]
+section = [ "HTML", "RSS"]
+
+[imaging]
+# https://gohugo.io/content-management/image-processing/
+# Default resample filter used for resizing. Default is Box,
+# a simple and fast averaging filter appropriate for downscaling.
+# See https://github.com/disintegration/imaging
+resampleFilter = "box"
+
+# Defatult JPEG quality setting. Default is 75.
+quality = 75
+
+# Anchor used when cropping pictures.
+# Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+# Smart Cropping is content aware and tries to find the best crop for each image.
+# Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+anchor = "smart"
 
 # ##################################################
 # Theme-defined configuration
@@ -84,6 +103,10 @@ rssLimit   = 10
 
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
+
+# [mediaTypes]
+#   [mediaTypes."application/pdf"]
+#   suffix = "pdf"
 
 
 # ##################################################
@@ -119,7 +142,8 @@ rssLimit   = 10
 [[menu.main]]
   weight = 1
   name   = "About"
-  url    = "/pages/hugo-theme-w3css-basic/"
+  url    = "/categories/this-theme/"
+  #url    = "/pages/hugo-theme-w3css-basic/"
   pre    = "fas fa-info fa-fw"
   parent = "theme"
 
@@ -252,12 +276,44 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
-  w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-teal.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-yellow.css"
+
+
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2006-sand-dollar.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2007-chili-pepper.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2008-blue-izis.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2009-mimosa.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2010-turquise.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2011-honeysucle.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2012-tangerine-tango.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2013-emerald.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2014-radiand-orchid.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2015-marsala.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-airy-blue.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-aurora-red.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-bodacious.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-buttercup.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-fiesta.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-green-flash.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lilac-grey.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-limpet-shell.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lush-medow.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-peach-echo.css"
+  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-potters-clay.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-riverside.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-rose-quarts.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-serenity.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-sharkskin.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-snorkel-blue.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css"
 
   # used in layouts/partials/*.html
   # used in layouts/blog/*.html
@@ -428,9 +484,9 @@ consectetuer adipiscing
   # flags used for tracing and html comment output
   # currently used:
   #   html-comment          enable partials html comment output
-  #   debug-shortcodes      enable all shortcodes debugging output
+  #   debug-shortcodes      enable all shortcodes debugging outpt
   #   debug-shortcode-liti  enable all shortcode liti debugging output
-  # traceFlags       = "html-comment:debug-shortcode-liti"
+  #traceFlags       = "html-comment:debug-shortcode-res-figure"
   traceFlags         = "html-comment"
 
   # custom css and custom js
@@ -626,7 +682,7 @@ ultricies eget, tempor sit amet, ante
   # sans-serif = "Creepster"
 [params.googleApiFonts.family.pre]
   # monospace or sans-serif
-  monospace  = "Space Mono"
+  monospace  = "Oxygen Mono"
 
   # a random list of google api fonts:
   # sans-serif = "Capriola"
@@ -649,7 +705,7 @@ ultricies eget, tempor sit amet, ante
   # monospace  = "Cousine"
   # monospace  = "Oxygen Mono"
   # monospace  = "Roboto Mono"
-  # monospace  = "Space Mono"
+  # monospace  = "Space Mono"     # problem with />
   # monospace  = "Ubuntu Mono"
   #
   # cursive    = "Caesar Dressing"
@@ -669,6 +725,14 @@ ultricies eget, tempor sit amet, ante
   # used in layouts/shortcodes/heg-gallery.html
   # showFileExtension = true
   # humanizeCaption   = false
+
+
+[params.resources]
+	# used in layouts/shortcodes/res-figure.html
+	defaultImageCommand	= "Resize"
+	defaultImageOptions	=	"300x"
+	defaultImageCaption	= "%%N"
+
 
 [blackfriday]
   # extensions = ["noEmptyLineBeforeBlock"]

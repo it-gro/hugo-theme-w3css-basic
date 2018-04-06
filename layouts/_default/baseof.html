@@ -12,13 +12,13 @@
     <div id="all" class="w3-theme">
       <header>
         {{ partial `header.marquee.html` . -}}
-        {{ partial `header.rss.html`     . -}}
         {{ partial `header.nav.html`     . -}}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
         {{- end}}
       </header>
       <div id="canvas" class='w3-container {{ default `w3-theme-l4` ($.Site.Param `colorBaseofCanvas`)}} '>
+
         {{- block `headline` . }}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- block headline _default/baseof.html  -->` | safeHTML }}
@@ -27,7 +27,7 @@
           {{ if $.Params.icon }}<i class='{{ $.Params.icon }} fa-1x'></i>{{ end }}
           {{ .Title | markdownify | emojify }} </h1>
         {{- end}}
-        {{/* {{  partial `main.headline.html` . -}} */}}
+
         {{- block `main` . }}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- block main _default/baseof.html  -->` | safeHTML }}
@@ -44,8 +44,7 @@
         {{ `<!-- now Content  -->` | safeHTML }}
         {{- end}}
         {{/* .Content */}}
-        {{ .Content | replaceRE `(?s:</div>\n?</p>)` `</div>` | replaceRE `(?s:</pre>\n?</p>)` `</pre>` | safeHTML }}
-        {{/* .Content | replaceRE `<p><div` `<div` | replaceRE `(?s:</div>\n?</p>)` `</div>` | replaceRE `(?s:</pre>\n?</p>)` `</pre>` | safeHTML */}}
+        {{ .Content | replaceRE `(?s:</div>\s?</p>)` `</div>` | replaceRE `(?s:</pre>\s?</p>)` `</pre>` | replaceRE `(?s:</figure>\s*</p>)` `</figure>` | safeHTML }}
         {{- end }}
 
         {{- if eq .Type `blog` }}

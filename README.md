@@ -70,6 +70,8 @@ It includes resources from:
 * [Custom CSS and JS](#custom-css-and-js)
 * [Front Matter](#front-matter)
 * [Shortcodes](#shortcodes)
+* [Page Resources](#page-resources)
+  * [Images](#images)
 * [Gallery](#gallery)
 * [Figure](#figure)
 * [Showcase](#showcase)
@@ -690,6 +692,37 @@ w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-teal.css"
 w3cssColorTheme = "/vendor/w3css/4/w3-theme-yellow.css"
+
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2006-sand-dollar.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2007-chili-pepper.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2008-blue-izis.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2009-mimosa.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2010-turquise.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2011-honeysucle.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2012-tangerine-tango.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2013-emerald.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2014-radiand-orchid.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2015-marsala.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-airy-blue.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-aurora-red.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-bodacious.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-buttercup.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-fiesta.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-green-flash.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lilac-grey.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-limpet-shell.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lush-medow.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-peach-echo.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-potters-clay.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-riverside.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-rose-quarts.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-serenity.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-sharkskin.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-snorkel-blue.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css"
+w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css"
 ```
 
 
@@ -1578,6 +1611,8 @@ icon:        "fas fa-list"
 ## Shortcodes
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
+  and https://it-gro.github.io/hugo-theme-w3css-basic.github.io/blog/2018/04/02/image-processing-with-hugo/
+
 
 ```
 layouts/shortcodes/
@@ -1598,6 +1633,7 @@ layouts/shortcodes/
 ├── liti.html
 ├── litt.html
 ├── litx.html
+├── res-figure.html
 ├── w3-alert-icon.html
 ├── w3-badge.html
 ├── w3-button-icon.html
@@ -1612,6 +1648,18 @@ layouts/shortcodes/
   * [List by Title](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#liti-list-by-title)
   * [List by Taxonomy / Term](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#litt-list-by-taxonomy-term-just-one-result)
   * [List by Taxonomy with search](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#litx-list-by-taxonomy-full-search)
+
+
+## Page Resources
+
+* https://gohugo.io/content-management/page-resources/
+* ToDo (support via shortcode)
+
+### Images
+
+* https://gohugo.io/content-management/image-processing/
+* Support via shortcode `res-figure`
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/image-processing-with-hugo/
 
 
 ## Gallery

@@ -1,0 +1,24 @@
+/* https://www.w3schools.com/w3css/w3css_color_generator.asp */
+/* 2016 Warm Taupe               #af9483  */
+.w3-theme-l5 {color:#000 !important; background-color:#faf9f8 !important}
+.w3-theme-l4 {color:#000 !important; background-color:#efeae6 !important}
+.w3-theme-l3 {color:#000 !important; background-color:#dfd4cd !important}
+.w3-theme-l2 {color:#000 !important; background-color:#cfbfb4 !important}
+.w3-theme-l1 {color:#000 !important; background-color:#bfa99b !important}
+.w3-theme-d1 {color:#fff !important; background-color:#a48470 !important}
+.w3-theme-d2 {color:#fff !important; background-color:#95745f !important}
+.w3-theme-d3 {color:#fff !important; background-color:#836654 !important}
+.w3-theme-d4 {color:#fff !important; background-color:#705748 !important}
+.w3-theme-d5 {color:#fff !important; background-color:#5d493c !important}
+
+.w3-theme-light {color:#000 !important; background-color:#faf9f8 !important}
+.w3-theme-dark {color:#fff !important; background-color:#5d493c !important}
+.w3-theme-action {color:#fff !important; background-color:#5d493c !important}
+
+.w3-theme {color:#fff !important; background-color:#af9483 !important}
+.w3-text-theme {color:#af9483 !important}
+.w3-border-theme {border-color:#af9483 !important}
+
+.w3-hover-theme:hover {color:#fff !important; background-color:#af9483 !important}
+.w3-hover-text-theme {color:#af9483 !important}
+.w3-hover-border-theme:hover {border-color:#af9483 !important}
