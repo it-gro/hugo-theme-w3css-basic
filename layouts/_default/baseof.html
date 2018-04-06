@@ -12,7 +12,6 @@
     <div id="all" class="w3-theme">
       <header>
         {{ partial `header.marquee.html` . -}}
-        {{ partial `header.rss.html`     . -}}
         {{ partial `header.nav.html`     . -}}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
@@ -45,7 +44,7 @@
         {{ `<!-- now Content  -->` | safeHTML }}
         {{- end}}
         {{/* .Content */}}
-        {{ .Content | replaceRE `(?s:</div>\n?</p>)` `</div>` | replaceRE `(?s:</pre>\n?</p>)` `</pre>` | safeHTML }}
+        {{ .Content | replaceRE `(?s:</div>\n?</p>)` `</div>` | replaceRE `(?s:</pre>\n?</p>)` `</pre>` | replaceRE `(?s:</figure>\n?</p>)` `</figure>` | safeHTML }}
         {{/* .Content | replaceRE `<p><div` `<div` | replaceRE `(?s:</div>\n?</p>)` `</div>` | replaceRE `(?s:</pre>\n?</p>)` `</pre>` | safeHTML */}}
         {{- end }}
 

@@ -1,5 +1,5 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-{{ `<!-- partials/header.rss.html -->` | safeHTML }}
+{{ `<!-- partials/head.rss.html -->` | safeHTML }}
 {{- end}}
 {{- if .Site.RSSLink }}
 <link href='{{ .Site.RSSLink }}' rel="alternate" type="application/rss+xml" title='{{ .Site.Title }} (rss+xml alternate)' />
