@@ -1661,6 +1661,8 @@ layouts/shortcodes/
 * Support via shortcode `res-figure`
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/image-processing-with-hugo/
 
+![screenshot Image Showcase](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_338.jpg)
+
 
 ## Gallery
 
@@ -1842,6 +1844,7 @@ into the theme (`static/vendor/`*).
 
 ## ToDo's
 
+* Page Resources shortcode (attachements)
 * more testing for the lit* shortcodes
 * finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
 
