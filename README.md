@@ -1578,6 +1578,8 @@ icon:        "fas fa-list"
 ## Shortcodes
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
+  and https://it-gro.github.io/hugo-theme-w3css-basic.github.io/blog/2018/04/02/image-processing-with-hugo/
+
 
 ```
 layouts/shortcodes/
@@ -1598,6 +1600,7 @@ layouts/shortcodes/
 ├── liti.html
 ├── litt.html
 ├── litx.html
+├── res-figure.html
 ├── w3-alert-icon.html
 ├── w3-badge.html
 ├── w3-button-icon.html
@@ -1612,6 +1615,18 @@ layouts/shortcodes/
   * [List by Title](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#liti-list-by-title)
   * [List by Taxonomy / Term](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#litt-list-by-taxonomy-term-just-one-result)
   * [List by Taxonomy with search](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#litx-list-by-taxonomy-full-search)
+
+
+## Page Resources
+
+* https://gohugo.io/content-management/page-resources/
+* ToDo (support via shortcode)
+
+### Images
+
+* https://gohugo.io/content-management/image-processing/
+* Support via shortcode `res-figure`
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/blog/2018/04/02/image-processing-with-hugo/
 
 
 ## Gallery
