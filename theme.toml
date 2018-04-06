@@ -4,7 +4,7 @@
 name           = "W3.CSS Basic"
 license        = "MIT"
 licenselink    = "https://github.com/it-gro/hugo-theme-w3css-basic/blob/master/LICENSE.md"
-description    = "Built with W3.CSS. Uses monochromatic colors"
+description    = "This theme is built with W3.CSS and is highly configurable. More than 50 monochromatic color themes and 25 shortcodes. Supports image page resource."
 homepage       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
 tags           = [
                    "blog"
@@ -33,19 +33,20 @@ features       = [
                  , "google analytics"
                  , "google custom search"
                  , "google fonts"
+                 , "carousel"
                  , "google map"
                  , "google translate"
                  , "hugo-easy-gallery"
-                 , "carousel"
-                 , "w3css"
-                 , "marquee"
                  , "jumbotron"
+                 , "marquee"
+                 , "page resources"
                  , "photocards"
+                 , "w3css"
                  , "features"
                  , "testimonials"
                  , "clients"
                  ]
-min_version    = "0.30.2"
+min_version    = "0.37.1"
 
 [author]
   name         = "it-gro"
