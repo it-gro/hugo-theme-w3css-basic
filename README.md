@@ -70,6 +70,8 @@ It includes resources from:
 * [Custom CSS and JS](#custom-css-and-js)
 * [Front Matter](#front-matter)
 * [Shortcodes](#shortcodes)
+* [Page Resources](#page-resources)
+  * [Images](#images)
 * [Gallery](#gallery)
 * [Figure](#figure)
 * [Showcase](#showcase)
