@@ -288,6 +288,31 @@ th:first-child,td:first-child{padding-left:8px}
 }
 
 
+/* ------------------------- */
+/* nav */
+.header-nav-menu-topbar-small
+, .header-nav-menu-dropdown-small
+, .header-nav-menu-small
+{
+  padding-left: 4px  !important;
+  padding-right:4px !important;
+}
+
+.header-nav-menu-topbar-medium
+, .header-nav-menu-dropdown-medium
+, .header-nav-menu-medium
+{
+  padding-left: 8px!important;
+  padding-right:8px !important;
+}
+
+.header-nav-menu-topbar-large
+, .header-nav-menu-dropdown-large
+, .header-nav-menu-large
+{
+}
+
+
 /* -------------------------------------------------- */
 /* hugo-easy-gallery */
 figure img {

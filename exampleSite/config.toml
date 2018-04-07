@@ -545,8 +545,9 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuTopBar]
   # used in layouts/partials/header.nav.html
   # enable or disable menu.topbar with social icons (right aligned)
-  socialEnable             = true
-  numOfItemsIfSmallDisplay = 1
+  socialEnable              = true
+  numOfItemsIfSmallDisplay  = 1
+  numOfItemsIfMediumDisplay = 3
 
   # used in layouts/partials/header.nav.html
   #         layouts/partials/header.nav.google.translate.html
