@@ -24,7 +24,7 @@
       {{ `<!-- range .Site.Menus.topbar.ByWeight -->` | safeHTML }}
     {{- end}}
     {{- range .Site.Menus.topbar.ByWeight }}
-  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right" style="padding-left:4px;padding-right:4px;"><i class='{{ .Pre }}'></i></a>
+  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right" ><i class='{{ .Pre }}'></i></a>
     {{- end }}
   {{- end }}
 
@@ -50,7 +50,7 @@
       {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
     {{- end}}
     {{- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight }}
-  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right"><i class='{{ .Pre }}'></i></a>
+  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right" style="padding-left:4px;padding-right:4px;"><i class='{{ .Pre }}'></i></a>
     {{- end }}
   {{- end }}
   {{- end }}
@@ -73,7 +73,7 @@
 
 <div class="w3-dropdown-hover">
   <button class="w3-button w3-hide-small"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</button>
-  <button class="w3-button w3-small w3-hide-large w3-hide-medium"><i class='{{ .Pre }}'></i>&nbsp;
+  <button class="w3-button w3-small w3-hide-large w3-hide-medium" style="padding-left:4px;padding-right:4px;"><i class='{{ .Pre }}'></i>&nbsp;
 {{- if ($.Scratch.Get `smallDispMenuLower`) }}
   {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`) | lower}}
 {{- else}}
