@@ -108,7 +108,7 @@
         {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`)}}
       {{- end -}}
   </button>
-  <div class="w3-dropdown-content w3-bar-block w3-card-4" >
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> <!-- above owl carousel -->
       {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- range .Children -->` | safeHTML }}
       {{- end}}
