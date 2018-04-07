@@ -379,6 +379,7 @@ figure figcaption a {
   display: inline-block;
   background: rgba(0, 0, 0, 0.1);
   padding: 5px;
+  margin: 10px;
 }
 
 .res-figcaption {
