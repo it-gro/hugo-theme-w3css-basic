@@ -24,7 +24,7 @@
       {{ `<!-- range .Site.Menus.topbar.ByWeight -->` | safeHTML }}
     {{- end}}
     {{- range .Site.Menus.topbar.ByWeight }}
-  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right" style="padding:8px;"><i class='{{ .Pre }}'></i></a>
+  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right" style="padding-left:4px;padding-right:4px;"><i class='{{ .Pre }}'></i></a>
     {{- end }}
   {{- end }}
 
@@ -100,7 +100,7 @@
    class="w3-bar-item w3-button w3-hide-small"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}
 </a>
 <a href='{{ .URL }}{{ if and (and  (not (in .URL `.html`)) (eq (substr .URL 0 1) `/`)) $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'
-   class="w3-bar-item w3-button w3-small w3-hide-large w3-hide-medium" style="padding:8px;" ><i class='{{ .Pre }}'></i>&nbsp;
+   class="w3-bar-item w3-button w3-small w3-hide-large w3-hide-medium" style="padding-left:4px;padding-right:4px;" ><i class='{{ .Pre }}'></i>&nbsp;
 {{- if ($.Scratch.Get `smallDispMenuLower`) }}
   {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`) | lower}}
 {{- else}}
