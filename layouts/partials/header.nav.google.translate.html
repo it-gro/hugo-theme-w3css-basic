@@ -1,7 +1,7 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} 
-  {{ `<!-- partials/header.nav.google.translate.html -->` | safeHTML }} 
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/header.nav.google.translate.html -->` | safeHTML }}
 {{- end}}
-<span id="google_translate_element"></span>
+<span class="w3-bar-item w3-right" id="google_translate_element"></span>
 <script>
   function googleTranslateElementInit() {
     new google.translate.TranslateElement(
