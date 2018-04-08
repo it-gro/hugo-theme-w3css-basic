@@ -12,7 +12,62 @@
 {{- if $.Site.Params.w3cssColorTheme }}
 <link rel="stylesheet" href='{{ relURL $.Site.Params.w3cssColorTheme }}' />
 {{- else }}
-<link rel="stylesheet" href='{{ relURL `vendor/w3css/4/w3-theme-red.css` }}' />
+  <link rel="stylesheet" href='{{ relURL `vendor/w3css/4/w3-theme-red.css` }}' />
+{{- end }}
+
+{{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-amber.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-black.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-blue-grey.css`   }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-blue.css`        }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-brown.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-cyan.css`        }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-dark-grey.css`   }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-deep-orange.css` }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-deep-purple.css` }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-green.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-grey.css`        }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-indigo.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-khaki.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-light-blue.css`  }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-light-green.css` }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-lime.css`        }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-orange.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-pink.css`        }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-purple.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-red.css`         }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-teal.css`        }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/w3-theme-yellow.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2006-sand-dollar.css`     }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2007-chili-pepper.css`    }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2008-blue-izis.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2009-mimosa.css`          }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2010-turquise.css`        }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2011-honeysucle.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2012-tangerine-tango.css` }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2013-emerald.css`         }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2014-radiand-orchid.css`  }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2015-marsala.css`         }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-airy-blue.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-aurora-red.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-bodacious.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-buttercup.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css`    }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-fiesta.css`          }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-green-flash.css`     }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lilac-grey.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-limpet-shell.css`    }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lush-medow.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-peach-echo.css`      }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-potters-clay.css`    }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-riverside.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-rose-quarts.css`     }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-serenity.css`        }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-sharkskin.css`       }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-snorkel-blue.css`    }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css`   }}' />
+  <link rel="stylesheet" id="theme-colors" ref='{{ relURL `/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css`      }}' />
 {{- end }}
 
 <link rel="stylesheet" href='{{ relURL `css/syntax.min.css`       }}' />

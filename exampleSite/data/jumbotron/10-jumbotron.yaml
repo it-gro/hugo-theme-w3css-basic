@@ -1,0 +1,9 @@
+weight:      10
+title:       If privacy matters
+icon:
+image:
+description: |
+  * Works with disabled javascript (using fallbacks)
+  * Local fonts
+  * Libs are local (no cdn)
+  * Google stuff can be disabled

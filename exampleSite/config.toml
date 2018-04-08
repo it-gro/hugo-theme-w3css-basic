@@ -554,6 +554,14 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   googleTranslateEnable    = true
   googleTranslateShowOnHome= false
 
+  # used in layouts/partials/header.nav.html
+  #         layouts/partials/header.nav.theme_color_selector.html
+  #         layouts/partials/head.stylesheets.html
+  #         layouts/partials/scripts.bottom.html
+  # This may help you to to define w3cssColorTheme
+  themeColorSelectorEnable = true
+
+
 [params.jumbotrons]
   # used in layouts/partials/front.jumbotrons.carousel.html
   # enable or disable jumbotrons on frontpage

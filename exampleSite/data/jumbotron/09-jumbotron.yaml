@@ -1,0 +1,10 @@
+weight:      9
+title:       Quite unique
+icon:
+image:
+description: |
+  * Alternative navigation (Top/Up/Down & pages on this level)
+  * Optional fine grained tracing via embedded comments
+  * Configurable Truncate
+  * Truncate menu entries on small displays
+  * Custom Summary using word count

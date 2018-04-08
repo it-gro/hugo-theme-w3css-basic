@@ -1,8 +1,10 @@
 weight:      5
-title:       "abore et dolore"
-icon:        "far fa-handshake"
-image:       ""
+title:       Optional Google Features
+icon:
+image:
 description: |
-  * no sea takimata sanctus est Lorem
-  * Fusce sagittis, libero non molestie
-  * Nam vestibulum accumsan nisl
+    * Fonts - either via api or via local files
+    * Translate Widget
+    * Global Site Tags with your GA_TRACKING_ID
+    * Map on Contact page
+    * Search page with google customizable search api

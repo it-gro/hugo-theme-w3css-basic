@@ -283,7 +283,6 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-teal.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-yellow.css"
 
-
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2006-sand-dollar.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2007-chili-pepper.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2008-blue-izis.css"
@@ -301,12 +300,12 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-fiesta.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-green-flash.css"
-  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css"
+  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lilac-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-limpet-shell.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lush-medow.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-peach-echo.css"
-  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-potters-clay.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-potters-clay.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-riverside.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-rose-quarts.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-serenity.css"
@@ -556,6 +555,14 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   #         layouts/partials/header.nav.google.translate.html
   googleTranslateEnable    = true
   googleTranslateShowOnHome= false
+
+  # used in layouts/partials/header.nav.html
+  #         layouts/partials/header.nav.theme_color_selector.html
+  #         layouts/partials/head.stylesheets.html
+  #         layouts/partials/scripts.bottom.html
+  # This may help you to to define w3cssColorTheme
+  themeColorSelectorEnable = true
+
 
 [params.jumbotrons]
   # used in layouts/partials/front.jumbotrons.carousel.html
