@@ -42,7 +42,7 @@
         <i class='w3-padding-small {{ $.Params.icon }} fa-2x'></i>
         {{- end }}  {{/* icon */}}
         {{- if $.Params.teaserpic }}
-        <img class="w3-image w3-round " style="max-width:40px; max-height:40px; width: auto; height: auto; margin: 8px 8px 0px 8px;"
+        <img class="w3-image w3-round " style="vertical-align:bottom; max-width:40px; max-height:40px; width: auto; height: auto; margin: 0px 4px 4px 4px;"
              alt='{{.Params.teaserpic}}'
              src='{{- if eq (substr .Params.teaserpic 0 1) `.` }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}'
         />
