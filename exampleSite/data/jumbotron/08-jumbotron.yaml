@@ -1,0 +1,8 @@
+weight:      8
+title:       Blog
+icon:
+image:
+description: |
+  * Optional Disqus
+  * Count on comment button may be disabled (privacy)
+  * Lists for taxonomy and termy

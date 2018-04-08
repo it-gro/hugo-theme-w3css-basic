@@ -1,8 +1,9 @@
 weight:      4
-title:       "diam voluptua"
-icon:        ""
-image:       "images/jumbotrons/pixabay.com/seeberg-2825904_640.jpg"
+title:       Customizable landing page
+icon:
+image:
 description: |
-  * justo duo dolores
-  * Nullam rutrum
-  * Sed id ligula 
+   * Optional Marquee, Jumbotron
+   * Optional Photocards, Features
+   * Optional Recent Posts, See More
+   * Optional Clients, Testimonials

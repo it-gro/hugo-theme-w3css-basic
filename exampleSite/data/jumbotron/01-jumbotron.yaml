@@ -1,7 +1,8 @@
 weight:      1
 title:       "Welcome to W3.CSS Basic exampleSite"
-icon:        
-image:       
+icon:
+image:
 description: |
-  * Lorem ipsum dolor sit amet
-  * Excepteur sint occaecat cupidatat non proident
+  * Built with W3.CSS
+  * Highly configurable
+  * Change all colors in the blink of an eye

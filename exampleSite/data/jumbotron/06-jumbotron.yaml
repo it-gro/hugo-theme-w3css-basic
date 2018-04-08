@@ -1,0 +1,9 @@
+weight:      5
+title:       Cool stuff included
+icon:
+image:
+description: |
+  * Fontawesome version 5
+  * Owl Carousel
+  * Animate.css
+  * hugo-easy-gallery including PhotoSwipe

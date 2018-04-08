@@ -1,8 +1,8 @@
 weight:      3
-title:       "euismod tincidunt"
-icon:        "fab fa-superpowers"
-image:       ""
+title:       Responsive design
+icon:
+image:
 description: |
-  * justo duo dolores
-  * sed diam nonumy eirmod tempor
-  * invidunt ut labore et dolore
+  * mobile first
+  * 3 (medium, lage) or 1 (small) column layout
+  * small menu (truncated) on small screen (no collapse)
