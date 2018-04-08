@@ -5,11 +5,13 @@
 <script src='{{ `vendor/jquery/jquery-3.2.1.slim.min.js`  | relURL }}'></script> <!-- used by owl.carousel, setStyleSheet  -->
 {{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
   <script>
-  function setStyleSheet(){
-    var cssUrl = document.getElementById("theme_color_selector").value;
-    var stylesheet = document.getElementById("theme-colors");
-    stylesheet.setAttribute('href', cssUrl);
-  }
+    function setStyleSheet(){
+      var cssName    = document.getElementById("theme_color_selector").value;
+      var stylesheet = document.getElementById("theme-colors");
+      var cssPrefix  = '{{ relURL `vendor/w3css/4/`}}';
+      var href       = cssPrefix.concat(cssName);
+      stylesheet.setAttribute('href', href);
+    }
   </script>
 {{- end }}
 
