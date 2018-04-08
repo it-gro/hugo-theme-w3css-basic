@@ -556,7 +556,6 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   googleTranslateEnable    = true
   googleTranslateShowOnHome= false
 
-
   # used in layouts/partials/header.nav.html
   #         layouts/partials/header.nav.theme_color_selector.html
   #         layouts/partials/head.stylesheets.html
