@@ -38,7 +38,7 @@
   {{- end }}
 
   {{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
-    {{ partial `header.nav.theme_color_selector.html` . -}}
+    {{ partial `header.nav.large.theme_color_selector.html` . -}}
   {{- end }}
 
   {{- end }} {{/* topbar */}}
@@ -66,7 +66,7 @@
   {{- end }}{{/* socialEnable */}}
 
   {{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
-    {{ partial `header.nav.theme_color_selector.html` . -}}
+    {{ partial `header.nav.medium.theme_color_selector.html` . -}}
   {{- end }}
 
   {{- end }} {{/* topbar */}}

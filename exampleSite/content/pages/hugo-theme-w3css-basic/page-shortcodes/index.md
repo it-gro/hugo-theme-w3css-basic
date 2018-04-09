@@ -595,6 +595,16 @@ static/css/syntax/syntax.bw.css
 {{< res-figure "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
 {{< res-figure "img/pixabay.com/penguin-21*" "Fill" "200x200" />}} 
 
+### res-attach
+* See https://gohugo.io/content-management/page-resources/
+* See [Attachments via Hugo Page Resources]({{< relref "attach-page-resources" >}}) for more information
+
+{{< w3-code >}}
+{{</* res-attach */>}}
+{{< /w3-code >}}
+
+{{< res-attach >}}
+
 
 ## heg-gallery
 

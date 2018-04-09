@@ -300,7 +300,7 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-fiesta.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-green-flash.css"
-  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lilac-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-limpet-shell.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lush-medow.css"
@@ -310,7 +310,7 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-rose-quarts.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-serenity.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-sharkskin.css"
-  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-snorkel-blue.css"
+  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-snorkel-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css"
 
@@ -321,9 +321,8 @@ consectetuer adipiscing
   # {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}}
   # set the actual color (one of the monochromatic color scheme)
   color404Container                     = "w3-theme-l3"
-  colorPagesListCell                    = "w3-theme-l4"
   colorPagesListCard                    = "w3-theme-l1"
-  colorPagesListContainer               = "w3-theme-l1"
+  colorPagesListCell                    = "w3-theme-l4"
   colorBlogListCard                     = "w3-theme-d1"
   colorBlogListCell                     = "w3-theme-l3"
   colorBaseofCanvas                     = "w3-theme-l4"
