@@ -830,10 +830,10 @@ We meet at {{< html-tag-classes time w3-xxxlarge w3-text-blue >}}23:59{{< /html-
 You can use the `colorAlert*` values (see [alert](#alert) ) using:
 
 {{< highlight nolang >}}
-We meet at {{</* html-tag-classes time w3-xxxlarge colDanger >}}23:59{{< /html-tag-classes */>}}. Don't be late.
+We meet at {{</* html-tag-classes time w3-xxxlarge colorDanger >}}23:59{{< /html-tag-classes */>}}. Don't be late.
 {{< /highlight >}}
 
-We meet at {{< html-tag-classes time w3-xxxlarge colDanger >}}23:59{{< /html-tag-classes >}}. Don't be late.
+We meet at {{< html-tag-classes time w3-xxxlarge colorDanger >}}23:59{{< /html-tag-classes >}}. Don't be late.
 
 This works as well
 
