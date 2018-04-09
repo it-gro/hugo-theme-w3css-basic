@@ -736,9 +736,8 @@ You can configure all colors within the selected monochromatic color theme:
   # e.g. {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}} 
 
   color404Container                     = "w3-theme-l3"
-  colorPagesListCell                    = "w3-theme-l4"
   colorPagesListCard                    = "w3-theme-l1"
-  colorPagesListContainer               = "w3-theme-l1"
+  colorPagesListCell                    = "w3-theme-l4"
   colorBlogListCard                     = "w3-theme-d1"
   colorBlogListCell                     = "w3-theme-l3"
   colorBaseofCanvas                     = "w3-theme-l4"

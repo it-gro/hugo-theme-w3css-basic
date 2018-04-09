@@ -1,7 +1,8 @@
 ---
 title:       "Gallery pixabay.com"
 date:        2018-04-06T19:10:03+02:00
-teaserpic:
+teaserpic:   images/teaserpics/pixabay.com/paint-2985569_640.jpg
+teaserpicNotOnPage:
 icon:        "fas fa-images"
 description: "Pictures from pixabay.com"
 tags:

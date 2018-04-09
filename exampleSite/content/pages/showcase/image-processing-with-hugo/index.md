@@ -2,13 +2,13 @@
 title:          Hugo image processing (`res-figure`)
 date:           2018-04-06T20:18:31+02:00
 icon:           far fa-images
-#teaserpic:      images/teaserpics/pixabay.com/particles-1373684_640.jpg
+teaserpic:      images/teaserpics/pixabay.com/particles-1373684_640.jpg
 toc:            true
 tags:
+  - Showcase
   - shortcodes
   - resources
   - images
-  - Showcase
 categories:
   - This Theme
 resources:
@@ -68,9 +68,8 @@ resources:
 ---
 
 Image page resources can be resized and cropped.
-<!--more-->
-
 This theme provides a shortcode `res-figure`  for page resource image processing.
+<!--more-->
 
 
 # Demo /* Resize 150x 
