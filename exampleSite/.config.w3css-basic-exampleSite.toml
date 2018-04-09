@@ -484,8 +484,9 @@ consectetuer adipiscing
   #   html-comment          enable partials html comment output
   #   debug-shortcodes      enable all shortcodes debugging outpt
   #   debug-shortcode-liti  enable all shortcode liti debugging output
-  #traceFlags = "html-comment:debug-shortcode-res-attach"
-  traceFlags = "html-comment"
+  #traceFlags       = "html-comment:debug-shortcodes"
+  #traceFlags       = "html-comment:debug-shortcode-res-figure"
+  traceFlags         = "html-comment"
 
   # custom css and custom js
   # this theme comes with the following "empty" files
