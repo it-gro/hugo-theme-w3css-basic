@@ -850,6 +850,35 @@ World
 {{% /html-tag-classes %}}
 
 
+## classify
+{{< highlight nolang >}}
+{{</* classify "w3-blue" >}}
+foo | bar
+----|----
+ 24 | 42
+{{< /classify */>}}
+{{< /highlight >}}
+
+{{< classify "w3-blue" >}}
+foo | bar
+----|----
+ 24 | 42
+{{< /classify >}}
+
+
+{{< highlight nolang >}}
+{{</* classify "w3-green" "span" >}}
+**foo** bar   
+24 42
+{{< /classify */>}}
+{{< /highlight >}}
+
+{{< classify "w3-green" "span" >}}
+**foo** bar   
+24 42
+{{< /classify >}}
+
+
 ## kbd
 * show keyboard sequences
 
