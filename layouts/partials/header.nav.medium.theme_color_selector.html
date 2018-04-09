@@ -1,13 +1,13 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-  {{ `<!-- partials/header.nav.theme_color_selector.html -->` | safeHTML }}
+  {{ `<!-- partials/header.nav.medium.theme_color_selector.html -->` | safeHTML }}
 {{- end}}
 
-<select id="theme_color_selector"
+<select id="medium_theme_color_selector"
         title="This may help you to to define w3cssColorTheme in your config.toml. All color themes are from www.w3schools.com/w3css."
         class="w3-bar-item w3-right w3-padding-small w3-theme-d2"
         style="margin-top: 6px;"
         translate="no"
-        onchange="setStyleSheet()">
+        onchange="setStyleSheet('medium_theme_color_selector')">
   <option value="" disabled="" selected="">preview colors</option>
   <option value='w3-theme-amber.css'                                                > amber</option>
   <option value='w3-theme-black.css'                                                > black</option>
