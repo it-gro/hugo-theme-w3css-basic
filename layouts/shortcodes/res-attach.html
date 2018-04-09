@@ -24,10 +24,10 @@
 "theLabelIcon" : {{- $.Scratch.Get `theLabelIcon` }} <br/>
 {{- end }}
 
-<ul class=" " >
 {{- if gt (len ($.Scratch.Get `theLabelIcon`)) 0 }}
-  {{printf "<span class='%s aria-hidden='true'></span>&nbsp;" ($.Scratch.Get `theLabelIcon`) | safeHTML }}
+  {{printf "<span class='%s' aria-hidden='true'></span>&nbsp;" ($.Scratch.Get `theLabelIcon`) | safeHTML }}
 {{- end }}
+<ul class=" " >
 {{ default ($.Scratch.Get `theLabelText`) (i18n ($.Scratch.Get `theLabelText`)) }}
 {{/*- range $myResource := ( .Page.Resources.Match (printf "%s*" ($.Scratch.Get `theMatch`))) */}}
 {{- range $myResource := ( (.Page.Resources.ByType `application`).Match (printf "%s*" ($.Scratch.Get `theMatch`))) }}
