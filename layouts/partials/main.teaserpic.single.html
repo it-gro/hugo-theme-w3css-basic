@@ -1,17 +1,18 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- partials/main.teaserpic.single.html -->` | safeHTML }}
 {{- end}}
-{{- if isset .Params (lower `teaserpic` ) }}
+
+{{- if and (isset .Params (lower `teaserpic` )) (not (isset .Params (lower `teaserpicNotOnPage`)) )  }}
 {{- if ne (trim .Params.teaserpic ` `) `` }}
   <img class="w3-hide-small w3-image w3-right w3-round " style="max-width:400px; max-height:200px; width: auto; height: auto; margin: 8px 0px 8px 8px; "
        alt='{{.Params.teaserpic}}'
        src='{{- if eq (substr .Params.teaserpic 0 1) `.` }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}'
   />
 {{- else }}
-  {{- if isset .Params (lower `teaserpicDefault` ) }}
+  {{- if isset $.Site.Params (lower `teaserpicDefault` ) }}
     <img class="w3-hide-large w3-hide-medium w3-image w3-right w3-round " style="max-width:140px; max-height:140px; width: auto; height: auto; margin: 8px 0px 8px 8px; "
-         alt='.Site.Params.teaserpicDefault'
-         src='{{.Site.Params.teaserpicDefault | relURL }}'
+         alt='$.Site.Params.teaserpicDefault'
+         src='{{$.Site.Params.teaserpicDefault | relURL }}'
     />
   {{- end }}
 {{- end }}
