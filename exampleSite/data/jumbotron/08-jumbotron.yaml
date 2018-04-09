@@ -4,5 +4,5 @@ icon:
 image:
 description: |
   * Optional Disqus
-  * Count on comment button may be disabled (privacy)
+  * Optional privacy protection (disable count) for Disqus
   * Lists for taxonomy and termy

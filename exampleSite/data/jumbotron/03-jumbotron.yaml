@@ -3,6 +3,6 @@ title:       Responsive design
 icon:
 image:
 description: |
-  * mobile first
+  * Mobile first
   * 3 (medium, lage) or 1 (small) column layout
-  * small menu (truncated) on small screen (no collapse)
+  * Small menu (first characters) on small screen (no collapse)
