@@ -1,0 +1,13 @@
+{{- .Scratch.Set `theClasses`  ``    }}
+{{- .Scratch.Set `theTag`      `div` }}
+{{- if .IsNamedParams }}
+{{- .Scratch.Set `theClasses`  (.Get `classes` | default (.Scratch.Get `theClasses` ) )}}
+{{- .Scratch.Set `theTag`      (.Get `tag`     | default (.Scratch.Get `theTag`     ) )}}
+{{- else }}
+{{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{.Scratch.Set `theClasses`  (.Get $myPos) }} {{end}}
+{{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{.Scratch.Set `theTag`      (.Get $myPos) }} {{end}}
+{{- end }}
+
+{{- printf `<%s class="%s">` (.Scratch.Get `theTag`) (.Scratch.Get `theClasses`) | safeHTML }}
+{{- .Inner | markdownify | emojify }}
+{{- printf `</%s>` (.Scratch.Get `theTag`) | safeHTML }}
