@@ -1,0 +1,60 @@
+{{/*-
+  https://gohugo.io/content-management/page-resources/
+*/}}
+
+{{- $myDefaultCaption := $.Site.Params.resources.defaultAttachCaption | default `%%T`   }}
+{{- $.Scratch.Set `theMatch`     `**`                }}
+{{- $.Scratch.Set `theLabelText` `Attachments`       }}
+{{- $.Scratch.Set `theLabelIcon` `fas fa-paperclip`  }}
+
+{{- if .IsNamedParams }}
+  {{- $.Scratch.Set `theMatch`       (.Get `match`)  }}
+  {{- $.Scratch.Set `theLabelText`   (.Get `label`)  }}
+  {{- $.Scratch.Set `theLabelIcon`   (.Get `icon`)   }}
+{{- else }}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theMatch`     (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theLabelText` (.Get $myPos) }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theLabelIcon` (.Get $myPos) }} {{end}}
+{{- end }}
+
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-attach)\b` $.Site.Params.traceFlags) }}
+<br/>
+"theMatch"     : {{- $.Scratch.Get `theMatch`     }} <br/>
+"theLabelText" : {{- $.Scratch.Get `theLabelText` }} <br/>
+"theLabelIcon" : {{- $.Scratch.Get `theLabelIcon` }} <br/>
+{{- end }}
+
+<ul class=" " >
+{{- if gt (len ($.Scratch.Get `theLabelIcon`)) 0 }}
+  {{printf "<span class='%s aria-hidden='true'></span>&nbsp;" ($.Scratch.Get `theLabelIcon`) | safeHTML }}
+{{- end }}
+{{ default ($.Scratch.Get `theLabelText`) (i18n ($.Scratch.Get `theLabelText`)) }}
+{{/*- range $myResource := ( .Page.Resources.Match (printf "%s*" ($.Scratch.Get `theMatch`))) */}}
+{{- range $myResource := ( (.Page.Resources.ByType `application`).Match (printf "%s*" ($.Scratch.Get `theMatch`))) }}
+  {{- $myExt := replaceRE `.*\.` (``) ($myResource.Name) }}
+  {{-      if eq $myExt "pdf" }}  {{$.Scratch.Set `icon` `far file-pdf`     }}
+  {{- else if eq $myExt "docx" }} {{$.Scratch.Set `icon` `far fa-file-word` }}
+  {{- else if eq $myExt "xlsx" }} {{$.Scratch.Set `icon` `far fa-file-excel`}}
+  {{- else }}                     {{$.Scratch.Set `icon` `far fa-file`      }}
+  {{- end}}
+
+  {{- $myLinkText := $myResource.Title }}
+  {{- $myIcon := (cond (gt (len (default "" $myResource.Params.icon)) 0) ($myResource.Params.icon) ($.Scratch.Get `icon`) ) }}
+
+  {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-attach)\b` $.Site.Params.traceFlags) }}
+    <br/>
+    "$myResource.Name"               : {{ $myResource.Name               }} <br/>
+    "$myResource.Title"              : {{ $myResource.Title              }} <br/>
+    "$myResource.ResourceType"       : {{ $myResource.ResourceType       }} <br/>
+    "$myResource.Permalink"          : {{ $myResource.Permalink          }} <br/>
+    "$myResource.RelPermalink"       : {{ $myResource.RelPermalink       }} <br/>
+    "$myLinkText"                    : {{ $myLinkText                    }} <br/>
+    "$myIcon"                        : {{ $myIcon                        }} <br/>
+  {{- end }}
+
+  <li>
+  <a href="{{$myResource.RelPermalink}}">{{printf "<span class='%s' aria-hidden='true'></span>" $myIcon | safeHTML }}&nbsp;{{$myLinkText}}</a>
+  </li>
+
+{{- end }} {{/* range */}}
+</ul>
