@@ -320,51 +320,91 @@ consectetuer adipiscing
   # used in layouts/pages/*.html
   # {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}}
   # set the actual color (one of the monochromatic color scheme)
-  color404Container                     = "w3-theme-l3"
-  colorPagesListCard                    = "w3-theme-l1"
-  colorPagesListCell                    = "w3-theme-l4"
-  colorBlogListCard                     = "w3-theme-d1"
-  colorBlogListCell                     = "w3-theme-l3"
+  #
+  # layouts/partials/header.marquee.html
+  colorHeaderMarquee                    = "w3-theme-l1"
+  #
+  # layouts/partials/header.nav.html
+  colorHeaderNav                        = "w3-theme-dark"
+  #
+  # layouts/_default/baseof.html
   colorBaseofCanvas                     = "w3-theme-l4"
   colorBaseofPanel                      = "w3-theme-l2"
-  colorDisqusButton                     = "w3-theme-l3"
-  colorTaxonomyPanel                    = "w3-theme-l2"
-  colorTaxonomyCell                     = "w3-theme-l4"
-  colorTaxonomyCard                     = "w3-theme-l3"
-  colorTermsPanel                       = "w3-theme-l2"
-  colorContactFormPanel                 = "w3-theme-d3"
-  colorContactMapPanel                  = "w3-theme-l2"
-  colorContactMapCard                   = "w3-theme-l2"
-  colorFooterBottomCell                 = "w3-theme-l3"
-  colorFooterContainer                  = "w3-theme-d5"
-  colorFooterButton                     = "w3-theme-l4"
-  colorFrontClientsContainer            = "w3-theme-l3"
+  #
+  # layouts/partials/front.*.html
   colorFrontClientsCard                 = "w3-theme-l2"
-  colorFrontFeaturesContainer           = "w3-theme-l4"
+  colorFrontClientsContainer            = "w3-theme-l3"
   colorFrontFeaturesCard                = "w3-theme-l3"
-  colorFrontJumbotronsSection           = "w3-theme-l4"
+  colorFrontFeaturesContainer           = "w3-theme-l4"
   colorFrontJumbotronsContainer         = "w3-theme-l2"
-  colorFrontPhotocardsContainer         = "w3-theme-l3"
+  colorFrontJumbotronsSection           = "w3-theme-l4"
   colorFrontPhotocardsCard              = "w3-theme-l1"
   colorFrontPhotocardsCardContainer     = "w3-theme-l1"
-  colorFrontRecentPostsContainer        = "w3-theme-l3"
-  colorFrontRecentPostsTitleCard        = "w3-theme-l2"
+  colorFrontPhotocardsContainer         = "w3-theme-l3"
   colorFrontRecentPostsCard             = "w3-theme-l4"
   colorFrontRecentPostsCardButton       = "w3-theme-l4"
-  colorFrontSeeMoreContainer            = "w3-theme-l4"
+  colorFrontRecentPostsContainer        = "w3-theme-l3"
+  colorFrontRecentPostsTitleCard        = "w3-theme-l2"
   colorFrontSeeMoreButton               = "w3-theme-l4"
+  colorFrontSeeMoreContainer            = "w3-theme-l4"
   colorFrontSeeMoreText                 = "w3-text-white"
+  colorFrontTestimonialsCarouselCard    = "w3-theme-l5"
   colorFrontTestimonialsContainer       = "w3-theme-l4"
   colorFrontTestimonialsTitleCard       = "w3-theme-l2"
-  colorFrontTestimonialsCarouselCard    = "w3-theme-l5"
-  colorHeaderMarquee                    = "w3-theme-l1"
-  colorHeaderNav                        = "w3-theme-dark"
-  colorPaginatorBar                     = "w3-theme-l1"
-  colorTaxonomyBar                      = "w3-theme-l1"
-  colorPageNavCardsContainer            = "w3-theme-l3"
+  #
+  # layouts/partials/page.nav.cards.html
   colorPageNavCardsCard                 = "w3-theme-d3"
   colorPageNavCardsLink                 = "w3-theme-l3"
+  colorPageNavCardsContainer            = "w3-theme-l3"
+  #
+  # layouts/pages/list.html:
+  colorPagesListCard                    = "w3-theme-l3"
+  colorPagesListCell                    = "w3-theme-l4"
+  colorPagesListContainer               = "w3-theme-l4"
+  #
+  # layouts/blog/list.html
+  colorBlogListCard                     = "w3-theme-l3"
+  colorBlogListCell                     = "w3-theme-l4"
+  colorBlogListContainer                = "w3-theme-l4"
+  #
+  # layouts/_default/taxonomy.html
+  colorTaxonomyCard                     = "w3-theme-l3"
+  colorTaxonomyCell                     = "w3-theme-l4"
+  colorTaxonomyContainer                = "w3-theme-l4"
+  #
+  # layouts/partials/main.paginator.bar.html
+  colorPaginatorBar                     = "w3-theme-l1"
+  #
+  # layouts/_default/taxonomy.html
+  colorTaxonomyBar                      = "w3-theme-l1"
+  colorTaxonomyPanel                    = "w3-theme-l2"
+  #
+  #layouts/_default/terms.html:
+  colorTermsPanel                       = "w3-theme-l2"
+  #
+  # layouts/partials/blog.disqus-button.html
+  colorDisqusButton                     = "w3-theme-l3"
+  #
+  # layouts/partials/contact.form.html
+  colorContactFormPanel                 = "w3-theme-d3"
+  #
+  # layouts/partials/contact.map.html
+  colorContactMapCard                   = "w3-theme-l2"
+  colorContactMapPanel                  = "w3-theme-l2"
+  #
+  # layouts/partials/search.google.gcse.html
   colorSearchGoogleGcseContainer        = "w3-theme-l3"
+  #
+  # layouts/partials/footer.bottom.html
+  colorFooterBottomCell                 = "w3-theme-l3"
+  #
+  # layouts/partials/footer.html
+  colorFooterButton                     = "w3-theme-l4"
+  colorFooterContainer                  = "w3-theme-d5"
+  #
+  # layouts/404.html
+  color404Container                     = "w3-theme-l3"
+
 
   # used in layouts/shortcodes/alert.html
   colorAlertPrimary                     = "w3-purple"
@@ -684,7 +724,7 @@ ultricies eget, tempor sit amet, ante
   sans-serif = "Capriola"
 [params.googleApiFonts.family.time]
   # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
-  # cursive    = "Creepster"
+    cursive    = "Creepster"
 [params.googleApiFonts.family.h1]
   # serif, sans-serif or even cursive
   # sans-serif = "Creepster"
