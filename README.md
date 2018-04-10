@@ -72,6 +72,7 @@ It includes resources from:
 * [Shortcodes](#shortcodes)
 * [Page Resources](#page-resources)
   * [Images](#images)
+  * [Attachments](#attachments)
 * [Gallery](#gallery)
 * [Figure](#figure)
 * [Showcase](#showcase)
