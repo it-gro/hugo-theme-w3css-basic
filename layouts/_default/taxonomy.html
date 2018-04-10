@@ -24,6 +24,9 @@
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- range $paginator.Pages -->` | safeHTML }}
   {{- end}}
+
+  <div id='TaxonomyContainer' class=' {{ default `w3-theme-l4` ($.Site.Param `colorTaxonomyContainer`)}} '>
+
   {{- range $index, $element := $paginator.Pages }}
   {{/* range $index, $element := sort .Data.Pages */}}
     {{- if eq (mod $index 3) 0 }}
@@ -43,6 +46,10 @@
 
     {{- end }}{{/* if mod */}}
   {{- end }} {{/* range */}}
+
+  </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+           {{ `<!-- TaxonomyContainer -->` | safeHTML }}
+         {{- end}}
 
   {{ partial `main.paginator.bar.html` . }}
 
