@@ -1665,6 +1665,7 @@ icon:        "fas fa-list"
 layouts/shortcodes/
 ├── alert.html
 ├── asciicast.html
+├── classify.html
 ├── csc.html
 ├── cscb.html
 ├── hc.html
@@ -1680,6 +1681,7 @@ layouts/shortcodes/
 ├── liti.html
 ├── litt.html
 ├── litx.html
+├── res-attach.html
 ├── res-figure.html
 ├── w3-alert-icon.html
 ├── w3-badge.html
@@ -1700,7 +1702,6 @@ layouts/shortcodes/
 ## Page Resources
 
 * https://gohugo.io/content-management/page-resources/
-* ToDo (support via shortcode)
 
 ### Images
 
@@ -1709,6 +1710,12 @@ layouts/shortcodes/
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/image-processing-with-hugo/
 
 ![screenshot Image Showcase](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_338.jpg)
+
+## Attachments
+* Support via shortcode `res-attach`
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/attach-page-resources/
+
+![screenshot Attachments](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_336.jpg)
 
 
 ## Gallery
