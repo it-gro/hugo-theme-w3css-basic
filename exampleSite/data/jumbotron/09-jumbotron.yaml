@@ -5,6 +5,5 @@ image:
 description: |
   * Alternative navigation (Top/Up/Down & pages on this level)
   * Optional fine grained tracing via embedded comments
-  * Configurable Truncate
-  * shorten menu entries on small displays
+  * Shorten menu entries on small displays
   * Custom Summary using truncate
