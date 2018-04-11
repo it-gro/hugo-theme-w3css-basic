@@ -104,3 +104,6 @@
   translation: "November"
 - id: December
   translation: "December"
+
+- id: Attachments
+  translation: "Attachments"
