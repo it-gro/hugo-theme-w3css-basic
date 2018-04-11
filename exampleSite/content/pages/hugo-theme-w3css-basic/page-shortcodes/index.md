@@ -699,7 +699,7 @@ Defined in:
 
 * See for original doc: https://www.liwen.id.au/heg/
 * heg-figure improves the usage of `caption="" title="" attr="" attrlink=""`
-* for demo I set here caption-effect=**"none"** 
+* for this demo I set caption-effect=**"none"** 
 * Inspired by https://stackoverflow.com/questions/21483356/how-to-mark-the-copyright-of-an-image-in-html
 
 ### with Thumbs

@@ -107,3 +107,6 @@
   translation: "November"
 - id: December
   translation: "Dezember"
+
+- id: Attachments
+  translation: "Beilagen"

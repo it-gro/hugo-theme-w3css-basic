@@ -1789,18 +1789,17 @@ caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com
 
 ## Showcase
 
-* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/ for more quick examples
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/ for more examples
 
 
 ## Usage
 
-In order to see your site in action, run Hugo's built-in local server.
-
+To see the exampleSite use:
 ```
+$ cd exampleSite/
 $ export GoogleMapsApiKey=GEeawyBOuzOPzbFGizHKGReghibngUZTGjlioZM
-$ hugo server -w --disableFastRender
+$ hugo server -w --disableFastRender --navigateToChanged --themesDir ../../
 ```
-
 
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
@@ -1843,8 +1842,11 @@ or change the file names in
 
 `layouts/_default/baseof.html`
 ```
-{{- .Content | replaceRE "(?s:</div>\n?</p>)" "</div>" | replaceRE "(?s:</pre>\n?</p>)" "</pre>" | safeHTML }}
+{{ .Content | replaceRE `(?s:</div>\s?</p>)` `</div>` | replaceRE `(?s:</pre>\s?</p>)` `</pre>` | replaceRE `(?s:</figure>\s*</p>)` `</figure>` | safeHTML }}
 ```
+
+
+
 
 See https://discourse.gohugo.io/t/shortcodes-and-p-tags-2/9987
 
@@ -1875,8 +1877,11 @@ into the theme (`static/vendor/`*).
 * do not show a comment counter on the Disqus Button
 * review result e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
 
+All of the above ist done in `config.toml`
 
 ```toml
+googleAnalytics = ""
+
 #[[menu.topbar]]
 #  weight   = 5
 #  name     = "Search"
@@ -1899,9 +1904,7 @@ into the theme (`static/vendor/`*).
 
 ## ToDo's
 
-* Page Resources shortcode (attachements)
-* more testing for the lit* shortcodes
-* finish uglyURLs (e.g. submenu) + doc (how to deploy to filesystem)
+* see [issue tracker](https://github.com/it-gro/hugo-theme-w3css-basic/issues)
 
 
 ## Contributing
