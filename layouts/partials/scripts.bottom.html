@@ -8,7 +8,7 @@
     function setStyleSheet(id){
       var cssName    = document.getElementById(id).value;
       var stylesheet = document.getElementById("theme-colors");
-      var cssPrefix  = '{{ relURL `vendor/w3css/4/`}}';
+      var cssPrefix  = '{{ absURL `vendor/w3css/4/`}}'; /* relURL => fails on https://themes.gohugo.io/theme */
       var href       = cssPrefix.concat(cssName);
       stylesheet.setAttribute('href', href);
     }

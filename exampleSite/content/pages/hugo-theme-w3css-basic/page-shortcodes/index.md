@@ -566,7 +566,7 @@ w        | TextWhitespace
 static/css/syntax/syntax.autumn.css
 static/css/syntax/syntax.borland.css
 static/css/syntax/syntax.bw.css
-{{< cscb */>}}
+{{< /cscb */>}}
 {{< /highlight >}}
 
 renders as
@@ -575,7 +575,7 @@ renders as
 static/css/syntax/syntax.autumn.css
 static/css/syntax/syntax.borland.css
 static/css/syntax/syntax.bw.css
-{{</ cscb >}}
+{{< /cscb >}}
 
 ## Page Resources
 
