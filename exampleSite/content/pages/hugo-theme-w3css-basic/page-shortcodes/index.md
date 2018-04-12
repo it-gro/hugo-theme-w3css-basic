@@ -55,9 +55,9 @@ Configuration is in `config.toml`:
 ```
 
 {{< highlight nolang >}}
-{{</* alert type="primary"   intro="Primary Alert"   >}}This is a primary alert—check it out!   {{< /alert >}}
+{{</* alert type="primary" intro="Primary Alert"   >}}This is a primary alert—check it out! {{< /alert >}}
 {{< alert type="secondary" intro="Secondary Alert" >}}This is a secondary alert—check it out! {{< /alert >}}
-{{< alert type="success"   intro="Success Alert"   >}}This is a info success—check it out!    {{< /alert >}}
+{{< alert type="success"   intro="Success Alert"   >}}This is a success alert—check it out!   {{< /alert >}}
 {{< alert type="info"      intro="Info Alert"      >}}This is a info alert—check it out!      {{< /alert >}}
 {{< alert type="warning"   intro="Warning Alert"   >}}This is a warning alert—check it out!   {{< /alert >}}
 {{< alert type="danger"    intro="Danger Alert"    >}}This is a danger alert—check it out!    {{< /alert >}}
@@ -69,7 +69,7 @@ Configuration is in `config.toml`:
 
 {{< alert type="secondary" intro="Secondary Alert" >}}This is a secondary alert—check it out! {{< /alert >}}
 
-{{< alert type="success"   intro="Success Alert"   >}}This is a info success—check it out!    {{< /alert >}}
+{{< alert type="success"   intro="Success Alert"   >}}This is a success alert—check it out!   {{< /alert >}}
 
 {{< alert type="info"      intro="Info Alert"      >}}This is a info alert—check it out!      {{< /alert >}}
 
@@ -938,7 +938,7 @@ kbd {
 Argument | Position -1 | Default | What             | Remark
 ---------|-------------|---------|------------------|-------
 search   | 0           |         | string to search |
-op       | 1           | eq      | eq|in            |
+op       | 1           | eq      | eq|in            | (Operator)
 mod      | 2           |         | i                | (Modifier) i:ignore case
 ul       | 3           |         |                  | if not empty: create unordered list
 type     | 4           | regular | regular|all      | regular:$.Site.RegularPages  all:$.Site.Pages)
@@ -1056,8 +1056,8 @@ Argument | Position -1 | Default | What             | Remark
 tax      | 0           | tags    | string to search | in the taxonomy
 term     | 1           | *       | string to search | in the taxonomy term 
 title    | 2           | *       | string to search | in the title
-op       | 3           | eq      | en|in            | eq or in search
-om       | 4           | t       | t,p              | output *t*axonomyterm *p*age
+op       | 3           | eq      | en|in            | (Operator) *eq* or *in* search
+om       | 4           | t       | t,p              | (OutputMode) *t*axonomyterm *p*age
 ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
 
 
