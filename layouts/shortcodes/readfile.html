@@ -1,0 +1,41 @@
+{{/*-
+  inspired by https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/readfile.html
+*/}}
+
+{{- $.Scratch.Set `theFile`          `.`     }}
+{{- $.Scratch.Set `theMarkdownify`   ``      }}
+{{- $.Scratch.Set `theHighlightLang` `md`    }}
+
+{{- if .IsNamedParams -}}
+  {{- $.Scratch.Set `theFile`           (.Get `file`) }}
+  {{- $.Scratch.Set `theMarkdownify`    (.Get `md`  ) }}
+  {{- $.Scratch.Set `theHighlightLang`  (.Get `hll` ) }}
+{{- else -}}
+  {{- $myPos := 0}} {{- if gt (len .Params) $myPos }} {{- $.Scratch.Set `theFile`           (.Get $myPos) }} {{- end -}}
+  {{- $myPos := 1}} {{- if gt (len .Params) $myPos }} {{- $.Scratch.Set `theMarkdownify`    (.Get $myPos) }} {{- end -}}
+  {{- $myPos := 2}} {{- if gt (len .Params) $myPos }} {{- $.Scratch.Set `theHighlightLang`  (.Get $myPos) }} {{- end -}}
+{{- end -}}
+
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-readfile)\b` $.Site.Params.traceFlags) -}}
+<br/>
+"theFile"        : {{- $.Scratch.Get `theFile`        }} <br/>
+"theMarkdownify" : {{- $.Scratch.Get `theMarkdownify` }} <br/>
+"theHighlight"   : {{- $.Scratch.Get `theHighlight`   }} <br/>
+{{- end -}}
+
+{{- if (findRE `((\.)|(\\\.))$` ($.Scratch.Get `theFile`) ) -}}
+<pre class="w3-code notranslate">
+  {{- printf "%s" ($.Scratch.Get `theFile`) -}}
+  {{- range readDir  ($.Scratch.Get `theFile`) }}
+     {{- printf "\n%s %s %10s %s" .Mode (.ModTime.Format "2006-01-02") (cond .Mode.IsDir "" (string .Size) ) .Name }}
+  {{- end }}
+</pre>
+{{- else }}
+  {{- if eq ($.Scratch.Get `theMarkdownify`) "true" -}}
+    {{- ($.Scratch.Get `theFile`)  | readFile | markdownify -}}
+  {{- else if  ($.Scratch.Get `theHighlightLang`) -}}
+    {{- highlight (($.Scratch.Get `theFile`)  | readFile) ($.Scratch.Get `theHighlightLang`) "" -}}
+  {{- else -}}
+    {{- ($.Scratch.Get `theFile`)  | readFile | safeHTML }}
+  {{- end -}}
+{{- end -}}

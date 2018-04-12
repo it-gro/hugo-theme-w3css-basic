@@ -34,8 +34,6 @@ and list templates and basic content files.
 
 # Shortcodes in this Theme for W3.CSS classes
 
-
-
 ## alert
 
 * Inspired by http://getbootstrap.com/docs/4.0/components/alerts/ and https://www.w3schools.com/w3css/w3css_panels.asp
@@ -914,6 +912,49 @@ kbd {
 
 {{< /highlight >}}
 
+
+
+## readfile
+
+* inspired by https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/readfile.html
+* reads a file (or directory) and optionally renders ist using markdownify or highlight
+
+Argument | Position -1 | Default | What             | Remark
+---------|-------------|---------|------------------|-------
+file     | 0           | .       | a file (or dir)  | . or ending in /. => directory
+md       | 1           |         | markdownify      | if "true" => process using markdownify 
+hll      | 2           | md      | highlight lang   | see [list-of-chroma-highlighting-languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages)
+
+{{< w3-code >}}
+{{</* readfile "content/." */>}}
+{{< /w3-code >}}
+
+renders as:
+{{< readfile "content/." >}}
+
+
+{{< w3-code >}}
+{{</* readfile "pages/hugo-theme-w3css-basic/_index.md" "" "yaml" */>}}
+{{< /w3-code >}}
+
+renders as:
+{{< readfile "pages/hugo-theme-w3css-basic/_index.md" "" "yaml">}}
+
+
+{{< w3-code >}}
+{{</* readfile file="pages/hugo-theme-w3css-basic/_index.md" hll="yaml" */>}}
+{{< /w3-code >}}
+
+renders as:
+{{< readfile file="pages/hugo-theme-w3css-basic/_index.md" hll="yaml">}}
+
+
+{{< w3-code >}}
+{{</* readfile file="pages/showcase/video-03.md" hll="md" */>}}
+{{< /w3-code >}}
+
+renders as:
+{{< readfile file="pages/showcase/video-03.md" hll="md" >}}
 
 
 

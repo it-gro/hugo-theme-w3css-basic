@@ -26,28 +26,32 @@
 
 <div class="w3-container w3-center">
     {{- if isset .Params (lower `categories` ) }}
-    {{- if gt (len .Params.categories) 0 }}
-    <a href='{{ `/categories` | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}' class="taxonomy-button w3-button"><i class="far fa-folder-open" aria-hidden="true"></i></a>
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-      {{ `<!-- range .Params.categories -->` | safeHTML }}
-    {{- end}}
-    {{ range .Params.categories }}
-    {{- if . }}<a class="taxonomy-button w3-button " href='{{ `/categories/` | relURL }}{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'>{{ . }}</a>{{end}}
-    {{- end }}<br>
-    {{- end }}
+      {{- if gt (len .Params.categories) 0 }}
+        {{- if .Params.categories }}
+        <a href='{{ `/categories` | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}' class="taxonomy-button w3-button"><i class="far fa-folder-open" aria-hidden="true"></i></a>
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range .Params.categories -->` | safeHTML }}
+        {{- end}}
+        {{ range .Params.categories }}
+          {{- if . }}<a class="taxonomy-button w3-button " href='{{ `/categories/` | relURL }}{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'>{{ . }}</a>{{end}}
+        {{- end }}<br>
+        {{- end }}
+      {{- end }}
     {{- end }}
   </div>
 
   <div class="w3-container w3-center ">
-    {{- if isset .Params (lower `tags` ) }}
-    {{- if gt (len .Params.tags) 0 }}
-    <a href='{{ `/tags` | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}' class="taxonomy-button w3-button"><i class="fas fa-tags" aria-hidden="true"></i></a>
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-      {{ `<!-- range .Params.tags -->` | safeHTML }}
-    {{- end}}
-    {{ range .Params.tags }}
-      {{- if . }}<a class="taxonomy-button w3-button " href='{{ `/tags/` | relURL }}{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'>{{ . }}</a>{{end}}
-    {{- end }}<br>
+  {{- if isset .Params (lower `tags` ) }}
+    {{- if .Params.tags }}
+      {{- if gt (len .Params.tags) 0 }}
+      <a href='{{ `/tags` | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}' class="taxonomy-button w3-button"><i class="fas fa-tags" aria-hidden="true"></i></a>
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range .Params.tags -->` | safeHTML }}
+        {{- end}}
+        {{ range .Params.tags }}
+          {{- if . }}<a class="taxonomy-button w3-button " href='{{ `/tags/` | relURL }}{{ . | urlize }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'>{{ . }}</a>{{end}}
+        {{- end }}<br>
+      {{- end }}
     {{- end }}
-    {{- end }}
+  {{- end }}
   </div>
