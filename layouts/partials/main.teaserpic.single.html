@@ -6,7 +6,7 @@
 {{- if ne (trim .Params.teaserpic ` `) `` }}
   <img class="w3-hide-small w3-image w3-right w3-round " style="max-width:400px; max-height:200px; width: auto; height: auto; margin: 8px 0px 8px 8px; "
        alt='{{.Params.teaserpic}}'
-       src='{{- if eq (substr .Params.teaserpic 0 1) `.` }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}'
+       src='{{ cond (eq (substr .Params.teaserpic 0 1 ) `/` ) (.Params.teaserpic | relURL) (.Params.teaserpic)  }}'
   />
 {{- else }}
   {{- if isset $.Site.Params (lower `teaserpicDefault` ) }}
