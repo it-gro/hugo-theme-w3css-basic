@@ -2,7 +2,7 @@
 weight:      30
 title:       "Convallis"
 date:        2017-11-13T15:37:04+01:00
-teaserpic:   images/teaserpics/pixabay.com/matrix-2326147_640.jpg
+teaserpic:   /images/teaserpics/pixabay.com/matrix-2326147_640.jpg
 description: >
   Etiam **laoreet quam** sed arcu. Phasellus at
   dui in ligula mollis ultricies. Integer placerat tristique nisl.

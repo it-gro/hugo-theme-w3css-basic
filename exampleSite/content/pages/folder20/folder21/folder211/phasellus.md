@@ -10,7 +10,7 @@ tags:
   - Phasellus
 categories:
   - Know-How
-teaserpic:      images/teaserpics/pixabay.com/coffee-beans-2258839_640.jpg
+teaserpic:      /images/teaserpics/pixabay.com/coffee-beans-2258839_640.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

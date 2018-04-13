@@ -1,7 +1,7 @@
 ---
 title:          "Contact"
 type:           "contact"
-teaserpic:      images/teaserpics/pixabay.com/contact-2860030_640.jpg
+teaserpic:      /images/teaserpics/pixabay.com/contact-2860030_640.jpg
 icon:           "far fa-address-card"
 ---
 

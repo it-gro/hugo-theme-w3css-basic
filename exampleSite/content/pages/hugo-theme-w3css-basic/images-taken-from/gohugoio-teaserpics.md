@@ -7,7 +7,7 @@ tags:
   - license
 categories:
   - legal
-teaserpic:   images/teaserpics/pixabay.com/green-1738220_640.jpg
+teaserpic:   /images/teaserpics/pixabay.com/green-1738220_640.jpg
 description: "License: Apache License 2.0"
 ---
 

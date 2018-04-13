@@ -2,7 +2,7 @@
 title:          Attachments
 date:           2018-04-09T13:38:46+02:00
 icon:           fas fa-paperclip
-teaserpic:      images/teaserpics/pixabay.com/paperclip-178126_640.jpg
+teaserpic:      /images/teaserpics/pixabay.com/paperclip-178126_640.jpg
 toc:            true
 tags:
   - Showcase

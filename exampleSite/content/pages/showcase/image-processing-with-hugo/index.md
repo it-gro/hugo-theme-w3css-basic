@@ -2,7 +2,7 @@
 title:          Image Processing (`res-figure`)
 date:           2018-04-06T20:18:31+02:00
 icon:           far fa-images
-teaserpic:      images/teaserpics/pixabay.com/particles-1373684_640.jpg
+teaserpic:      /images/teaserpics/pixabay.com/particles-1373684_640.jpg
 toc:            true
 tags:
   - Showcase
