@@ -8,6 +8,7 @@ Change all colors in the blink of an eye,  choose Google fonts or use Google Glo
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
 
+---
 ## Latest News
 
 * Added shortcodes:
@@ -21,7 +22,7 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
   * Added color theme preview via color theme selector (not on small displays)
   ![screenshot color theme selector](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_500.jpg)
 
-* Front-matter teaserpic param now supports images from page bundle. Starting the path with / => static
+* Front-matter teaserpic param now supports images from page bundle. Start the path with / to deliver from static
 
 ```yaml
 ---
@@ -30,6 +31,7 @@ teaserpic:   myImg/coffee-2608864.jpg
 ---
 ```
 
+---
 
 This theme is for:
 
@@ -97,7 +99,7 @@ It includes resources from:
 * [Page Resources](#page-resources)
   * [Images](#images)
   * [Attachments](#attachments)
-* [Include Files](#include files)
+* [Include Files](#include-files)
 * [Gallery](#gallery)
 * [Figure](#figure)
 * [Showcase](#showcase)
