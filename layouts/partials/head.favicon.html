@@ -7,15 +7,15 @@
 {{- /*  <!-- use https://realfavicongenerator.net to generate you files --> */}}
 {{- $myFaviconVersion := default `a_random_value`   $.Site.Params.favicon.version }}
 {{- $myFaviconPath    := default `/images/favicons` $.Site.Params.favicon.path    }}
-  <link rel="apple-touch-icon"      sizes="180x180" href='{{(printf `%s/%s?v=%s` $myFaviconPath `apple-touch-icon.png`       $myFaviconVersion ) | relURL }}' />
-  <link rel="icon" type="image/png" sizes="16x16"   href='{{(printf `%s/%s?v=%s` $myFaviconPath `favicon-16x16.png`          $myFaviconVersion ) | relURL }}' />
-  <link rel="icon" type="image/png" sizes="192x192" href='{{(printf `%s/%s?v=%s` $myFaviconPath `android-chrome-192x192.png` $myFaviconVersion ) | relURL }}' />
-  <link rel="icon" type="image/png" sizes="32x32"   href='{{(printf `%s/%s?v=%s` $myFaviconPath `favicon-32x32.png`          $myFaviconVersion ) | relURL }}' />
-  <link rel="manifest"                              href='{{(printf `%s/%s?v=%s` $myFaviconPath `manifest.json`              $myFaviconVersion ) | relURL }}' />
-  <link rel="shortcut icon"                         href='{{(printf `%s/%s?v=%s` $myFaviconPath `favicon.ico`                $myFaviconVersion ) | relURL }}' />
-  <meta name="msapplication-TileImage"           content='{{(printf `%s/%s?v=%s` $myFaviconPath `mstile-144x144.png`         $myFaviconVersion ) | relURL }}' />
-  <meta name="msapplication-config"              content='{{(printf `%s/%s?v=%s` $myFaviconPath `browserconfig.xml`          $myFaviconVersion ) | relURL }}' />
-  <link rel="mask-icon"                             href='{{(printf `%s/%s?v=%s` $myFaviconPath `safari-pinned-tab.svg`      $myFaviconVersion ) | relURL }}'
+  <link rel="apple-touch-icon"      sizes="180x180" href='{{(printf `%s/%s?v=%s`   $myFaviconPath `apple-touch-icon.png`       $myFaviconVersion ) | relURL }}' />
+  <link rel="icon" type="image/png" sizes="16x16"   href='{{(printf `%s/%s?v=%s`   $myFaviconPath `favicon-16x16.png`          $myFaviconVersion ) | relURL }}' />
+  <link rel="icon" type="image/png" sizes="192x192" href='{{(printf `%s/%s?v=%s`   $myFaviconPath `android-chrome-192x192.png` $myFaviconVersion ) | relURL }}' />
+  <link rel="icon" type="image/png" sizes="32x32"   href='{{(printf `%s/%s?v=%s`   $myFaviconPath `favicon-32x32.png`          $myFaviconVersion ) | relURL }}' />
+  <link rel="manifest"                              href='{{(printf `%s/%s?v=%s`   $myFaviconPath `manifest.json`              $myFaviconVersion ) | relURL }}' />
+  <link rel="shortcut icon"                         href='{{(printf `%s/%s?v=%s`   $myFaviconPath `favicon.ico`                $myFaviconVersion ) | relURL }}' />
+  <meta name="msapplication-TileImage"           content='{{(printf `./%s/%s?v=%s` $myFaviconPath `mstile-144x144.png`         $myFaviconVersion ) | absURL }}' />
+  <meta name="msapplication-config"              content='{{(printf `./%s/%s?v=%s` $myFaviconPath `browserconfig.xml`          $myFaviconVersion ) | absURL }}' />
+  <link rel="mask-icon"                             href='{{(printf `%s/%s?v=%s`   $myFaviconPath `safari-pinned-tab.svg`      $myFaviconVersion ) | relURL }}'
                                                    color='{{default `#5bbad5` $.Site.Params.favicon.maskIcon }}'   />
   <meta name="msapplication-TileColor"           content='{{default `#da532c` $.Site.Params.favicon.msapplicationTileColor }}'  />
   <meta name="theme-color"                       content='{{default `#ffffff` $.Site.Params.favicon.themeColor }}' />

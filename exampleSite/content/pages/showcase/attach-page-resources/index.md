@@ -1,5 +1,5 @@
 ---
-title:          Attachments via Hugo Page Resources
+title:          Attachments
 date:           2018-04-09T13:38:46+02:00
 icon:           fas fa-paperclip
 teaserpic:      images/teaserpics/pixabay.com/paperclip-178126_640.jpg

@@ -1659,7 +1659,6 @@ icon:        "fas fa-list"
 ## Shortcodes
 
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/
-  and https://it-gro.github.io/hugo-theme-w3css-basic.github.io/blog/2018/04/02/image-processing-with-hugo/
 
 
 ```

@@ -3,7 +3,7 @@ weight:      20
 title:       "This Theme Shortcodes"
 date:        "2017-11-22T07:41:52+01:00"
 toc:         true
-teaserpic:   images/teaserpics/gohugo.io/hugo-lorem.png
+teaserpic:   images/teaserpics/pixabay.com/blue-2863550_640.png
 tags:
   - shortcodes
   - Showcase
@@ -34,8 +34,6 @@ and list templates and basic content files.
 
 # Shortcodes in this Theme for W3.CSS classes
 
-
-
 ## alert
 
 * Inspired by http://getbootstrap.com/docs/4.0/components/alerts/ and https://www.w3schools.com/w3css/w3css_panels.asp
@@ -55,9 +53,9 @@ Configuration is in `config.toml`:
 ```
 
 {{< highlight nolang >}}
-{{</* alert type="primary"   intro="Primary Alert"   >}}This is a primary alert—check it out!   {{< /alert >}}
+{{</* alert type="primary" intro="Primary Alert"   >}}This is a primary alert—check it out! {{< /alert >}}
 {{< alert type="secondary" intro="Secondary Alert" >}}This is a secondary alert—check it out! {{< /alert >}}
-{{< alert type="success"   intro="Success Alert"   >}}This is a info success—check it out!    {{< /alert >}}
+{{< alert type="success"   intro="Success Alert"   >}}This is a success alert—check it out!   {{< /alert >}}
 {{< alert type="info"      intro="Info Alert"      >}}This is a info alert—check it out!      {{< /alert >}}
 {{< alert type="warning"   intro="Warning Alert"   >}}This is a warning alert—check it out!   {{< /alert >}}
 {{< alert type="danger"    intro="Danger Alert"    >}}This is a danger alert—check it out!    {{< /alert >}}
@@ -69,7 +67,7 @@ Configuration is in `config.toml`:
 
 {{< alert type="secondary" intro="Secondary Alert" >}}This is a secondary alert—check it out! {{< /alert >}}
 
-{{< alert type="success"   intro="Success Alert"   >}}This is a info success—check it out!    {{< /alert >}}
+{{< alert type="success"   intro="Success Alert"   >}}This is a success alert—check it out!   {{< /alert >}}
 
 {{< alert type="info"      intro="Info Alert"      >}}This is a info alert—check it out!      {{< /alert >}}
 
@@ -566,7 +564,7 @@ w        | TextWhitespace
 static/css/syntax/syntax.autumn.css
 static/css/syntax/syntax.borland.css
 static/css/syntax/syntax.bw.css
-{{< cscb */>}}
+{{< /cscb */>}}
 {{< /highlight >}}
 
 renders as
@@ -575,7 +573,7 @@ renders as
 static/css/syntax/syntax.autumn.css
 static/css/syntax/syntax.borland.css
 static/css/syntax/syntax.bw.css
-{{</ cscb >}}
+{{< /cscb >}}
 
 ## Page Resources
 
@@ -916,6 +914,49 @@ kbd {
 
 
 
+## readfile
+
+* inspired by https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/readfile.html
+* reads a file (or directory) and optionally renders ist using markdownify or highlight
+
+Argument | Position -1 | Default | What             | Remark
+---------|-------------|---------|------------------|-------
+file     | 0           | .       | a file (or dir)  | . or ending in /. => directory
+md       | 1           |         | markdownify      | if "true" => process using markdownify 
+hll      | 2           | md      | highlight lang   | see [list-of-chroma-highlighting-languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages)
+
+{{< w3-code >}}
+{{</* readfile "content/." */>}}
+{{< /w3-code >}}
+
+renders as:
+{{< readfile "content/." >}}
+
+
+{{< w3-code >}}
+{{</* readfile "pages/hugo-theme-w3css-basic/_index.md" "" "yaml" */>}}
+{{< /w3-code >}}
+
+renders as:
+{{< readfile "pages/hugo-theme-w3css-basic/_index.md" "" "yaml">}}
+
+
+{{< w3-code >}}
+{{</* readfile file="pages/hugo-theme-w3css-basic/_index.md" hll="yaml" */>}}
+{{< /w3-code >}}
+
+renders as:
+{{< readfile file="pages/hugo-theme-w3css-basic/_index.md" hll="yaml">}}
+
+
+{{< w3-code >}}
+{{</* readfile file="pages/showcase/video-03.md" hll="md" */>}}
+{{< /w3-code >}}
+
+renders as:
+{{< readfile file="pages/showcase/video-03.md" hll="md" >}}
+
+
 
 
 # Experimental
@@ -938,7 +979,7 @@ kbd {
 Argument | Position -1 | Default | What             | Remark
 ---------|-------------|---------|------------------|-------
 search   | 0           |         | string to search |
-op       | 1           | eq      | eq|in            |
+op       | 1           | eq      | eq|in            | (Operator)
 mod      | 2           |         | i                | (Modifier) i:ignore case
 ul       | 3           |         |                  | if not empty: create unordered list
 type     | 4           | regular | regular|all      | regular:$.Site.RegularPages  all:$.Site.Pages)
@@ -1056,8 +1097,8 @@ Argument | Position -1 | Default | What             | Remark
 tax      | 0           | tags    | string to search | in the taxonomy
 term     | 1           | *       | string to search | in the taxonomy term 
 title    | 2           | *       | string to search | in the title
-op       | 3           | eq      | en|in            | eq or in search
-om       | 4           | t       | t,p              | output *t*axonomyterm *p*age
+op       | 3           | eq      | en|in            | (Operator) *eq* or *in* search
+om       | 4           | t       | t,p              | (OutputMode) *t*axonomyterm *p*age
 ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
 
 

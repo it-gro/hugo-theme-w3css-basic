@@ -3,12 +3,12 @@
 {{- end}}
 
 <select id="medium_theme_color_selector"
-        title="This may help you to to define w3cssColorTheme in your config.toml. All color themes are from www.w3schools.com/w3css."
-        class="w3-bar-item w3-right w3-padding-small w3-theme-d2"
-        style="margin-top: 6px;"
+        title="This may help you to to define w3cssColorTheme in your config.toml. All color themes are taken from www.w3schools.com/w3css."
+        class="w3-bar-item w3-right w3-padding-small w3-theme-d2 w3-small "
+        style="margin-top: 4px;"
         translate="no"
         onchange="setStyleSheet('medium_theme_color_selector')">
-  <option value="" disabled="" selected="">preview colors</option>
+  <option value="" disabled="" selected="">preview themes</option>
   <option value='w3-theme-amber.css'                                                > amber</option>
   <option value='w3-theme-black.css'                                                > black</option>
   <option value='w3-theme-blue-grey.css'                                            > blue grey</option>
@@ -32,6 +32,7 @@
   <option value='w3-theme-teal.css'                                                 > teal</option>
   <option value='w3-theme-yellow.css'                                               > yellow</option>
 
+  <option value="" disabled="" selected="">preview color of year</option>
   <option value='color_of_the_year/w3-theme-color-of-year-2016-airy-blue.css'       > airy blue</option>
   <option value='color_of_the_year/w3-theme-color-of-year-2016-aurora-red.css'      > aurora red</option>
   <option value='color_of_the_year/w3-theme-color-of-year-2008-blue-izis.css'       > blue izis</option>
@@ -64,3 +65,9 @@
   <option value='color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css'      > warm taupe</option>
 
 </select>
+
+<noscript>
+  <style>
+    #medium_theme_color_selector {display:none;}
+  </style>
+</noscript>

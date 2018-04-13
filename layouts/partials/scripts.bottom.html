@@ -2,13 +2,13 @@
 {{ `<!-- partials/scripts.bottom.html -->` | safeHTML }}
 {{- end}}
 
-<script src='{{ `vendor/jquery/jquery-3.2.1.slim.min.js`  | relURL }}'></script> <!-- used by owl.carousel, setStyleSheet  -->
+<script src='{{ `/vendor/jquery/jquery-3.2.1.slim.min.js` | relURL }}'></script> <!-- used by owl.carousel, setStyleSheet  -->
 {{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
   <script>
     function setStyleSheet(id){
       var cssName    = document.getElementById(id).value;
       var stylesheet = document.getElementById("theme-colors");
-      var cssPrefix  = '{{ relURL `vendor/w3css/4/`}}';
+      var cssPrefix  = '{{ `vendor/w3css/4/` | absURL }}'; {{/* do NOT start with a / */}}
       var href       = cssPrefix.concat(cssName);
       stylesheet.setAttribute('href', href);
     }
@@ -16,11 +16,11 @@
 {{- end }}
 
 {{- if .IsHome }}
-<script src='{{ `vendor/OwlCarousel2/owl.carousel.min.js` | relURL }}'></script>
-<script src='{{ `js/front.min.js`                         | relURL }}'></script> <!-- patches owl.carousel  -->
+<script src='{{ `/vendor/OwlCarousel2/owl.carousel.min.js` | relURL }}'></script>
+<script src='{{ `/js/front.min.js`                         | relURL }}'></script> <!-- patches owl.carousel  -->
 {{- end }}
 
-<script src='{{ `js/custom.bottom.js`                     | relURL }}'></script>
+<script src='{{ `/js/custom.bottom.js`                     | relURL }}'></script>
 {{- range .Site.Params.custom_js_bottom }}
-<script src='{{ .                                         | relURL }}'></script>
+<script src='{{ .                                          | absURL }}'></script>
 {{- end }}

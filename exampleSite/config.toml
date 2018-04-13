@@ -2,7 +2,7 @@
 
 # ##################################################
 # Hugo-defined variables
-baseURL       = "http://example.com"
+baseURL       = "https://example.com"
 
 title         = "hugo-theme-w3css-basic exampleSite"
 theme         = "hugo-theme-w3css-basic"
