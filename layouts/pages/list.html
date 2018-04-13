@@ -6,7 +6,7 @@
 
   {{ partial `page.nav.cards.html` . }}
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-    {{ `<!-- back in pages/list.html  -->` | safeHTML }}
+    {{ `<!-- back in pages/list.html (main) -->` | safeHTML }}
   {{- end}}
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- range .Data.Pages.ByWeigh  -->` | safeHTML }}
@@ -27,7 +27,7 @@
         <div class='w3-card w3-margin-right w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off {{ default `w3-theme-l3` ($.Site.Param `colorPagesListCard`)}} '>
         {{ partial `main.teaser_in_card.html` . }}
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-          {{ `<!-- back in blog/list.html  -->` | safeHTML }}
+          {{ `<!-- back in pages/list.html (main)   -->` | safeHTML }}
         {{- end}}
 
         </div> {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
