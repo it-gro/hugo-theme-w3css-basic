@@ -2,10 +2,38 @@
 
 W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
 Inspiration was taken from [Universal](https://themes.gohugo.io/hugo-universal-theme/).
-It is quite [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml)
-Change all colors in the blink of an eye,  choose Google fonts or use the new Global Site Tags.
+It is highly [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml)
+Change all colors in the blink of an eye,  choose Google fonts or use Google Global Site Tags.
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
+
+
+## Latest News
+
+* Added shortcodes:
+
+  * res-figure
+  ![screenshot res-figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_502.jpg)
+   
+  * res-attach
+  ![screenshot res-attach](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_504.jpg)
+   
+  * readfile
+  ![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)
+   
+  * Added color theme preview via color theme selector (not on small displays)
+  ![screenshot color theme selector](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_500.jpg)
+
+
+* Front-matter teaserpic param now supports images from page bundle. Starting the path with / => static
+
+```yaml
+---
+title:       "This Theme Readme (github)"
+teaserpic:   myImg/coffee-2608864.jpg
+---
+```
+
 
 This theme is for:
 
@@ -73,6 +101,7 @@ It includes resources from:
 * [Page Resources](#page-resources)
   * [Images](#images)
   * [Attachments](#attachments)
+* [Include Files](#include files)
 * [Gallery](#gallery)
 * [Figure](#figure)
 * [Showcase](#showcase)
@@ -1681,6 +1710,7 @@ layouts/shortcodes/
 ├── liti.html
 ├── litt.html
 ├── litx.html
+├── readfile.html
 ├── res-attach.html
 ├── res-figure.html
 ├── w3-alert-icon.html
@@ -1711,11 +1741,44 @@ layouts/shortcodes/
 
 ![screenshot Image Showcase](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_338.jpg)
 
-## Attachments
+### Attachments
+
 * Support via shortcode `res-attach`
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/attach-page-resources/
 
 ![screenshot Attachments](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_336.jpg)
+
+
+## Include Files
+
+* Inspired by https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/readfile.html
+* Reads a file (or directory) and optionally renders ist using markdownify or highlight
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#readfile
+
+```
+{{</* readfile "content/." */>}}
+```
+
+=>
+
+```
+content/.
+Lrwxrwxrwx 2018-04-06         15 README.md
+drwxrwxr-x 2018-04-06            blog
+-rw-rw-r-- 2018-04-13        972 contact.md
+-rw-rw-r-- 2018-04-13       5407 faq.md
+drwxrwxr-x 2018-04-13            pages
+-rw-rw-r-- 2018-04-13        190 search.md
+```
+
+
+```
+{{</* readfile file="content/README.md" md="true" */>}}
+```
+
+=> include a markdownified markdown file
+
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/readme/
 
 
 ## Gallery
@@ -1961,6 +2024,8 @@ They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-
 ![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.3.png)
 
 ![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.4.png)
+
+![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.5.png)
 
 
 * Complete
