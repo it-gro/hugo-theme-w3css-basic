@@ -6,21 +6,27 @@
 {{- if eq (.Scratch.Get `myFontLoadMethod`) `style` }}
   {{ partial `head.fonts.local.style.html` . }}
 {{- else }}
-  <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-v11-latin-italic.css`         }}' />
-  <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-v11-latin-regular.css`        }}' />
-  <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-mono-v7-latin-regular.css`    }}' />
-  <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-mono-v7-latin-italic.css`     }}' />
+{{- /*
+Currently I see no way to prefix
+  src: url('/vendor/...')
+with the (optional) path (subdir) defined in BaseURL.
+So I keep these files, but do not support them...
+*/}}
+  <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-v11-latin-italic.css`         }}' />
+  <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-v11-latin-regular.css`        }}' />
+  <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-mono-v7-latin-regular.css`    }}' />
+  <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-mono-v7-latin-italic.css`     }}' />
   {{- /*
-  <!-- <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-v11-latin-300.css`            }}' /> -->
-  <!-- <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-v11-latin-300italic.css`      }}' /> -->
-  <!-- <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-v11-latin-500.css`            }}' /> -->
-  <!-- <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-v11-latin-500italic.css`      }}' /> -->
+  <!-- <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-v11-latin-300.css`            }}' /> -->
+  <!-- <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-v11-latin-300italic.css`      }}' /> -->
+  <!-- <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-v11-latin-500.css`            }}' /> -->
+  <!-- <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-v11-latin-500italic.css`      }}' /> -->
   */}}
-  <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-v11-latin-700.css`            }}' />
-  <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-v11-latin-700italic.css`      }}' />
+  <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-v11-latin-700.css`            }}' />
+  <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-v11-latin-700italic.css`      }}' />
   {{- /*
-  <!-- <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-mono-v7-latin-700.css`        }}' /> -->
-  <!-- <link rel="stylesheet" href='{{ relURL `vendor/google/fonts/css/ubuntu-mono-v7-latin-700italic.css`  }}' /> -->
+  <!-- <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-mono-v7-latin-700.css`        }}' /> -->
+  <!-- <link rel="stylesheet" href='{{ relURL `/vendor/google/fonts/css/ubuntu-mono-v7-latin-700italic.css`  }}' /> -->
   */}}
 {{- end }}
 
