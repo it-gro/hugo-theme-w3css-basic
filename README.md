@@ -14,16 +14,12 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 
   * res-figure
   ![screenshot res-figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_502.jpg)
-   
   * res-attach
   ![screenshot res-attach](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_504.jpg)
-   
   * readfile
   ![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)
-   
   * Added color theme preview via color theme selector (not on small displays)
   ![screenshot color theme selector](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_500.jpg)
-
 
 * Front-matter teaserpic param now supports images from page bundle. Starting the path with / => static
 
