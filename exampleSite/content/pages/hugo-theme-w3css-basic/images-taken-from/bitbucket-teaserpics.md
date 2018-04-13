@@ -7,7 +7,7 @@ tags:
   - license
 categories:
   - legal
-teaserpic:   images/teaserpics/pixabay.com/pencil-1067670_640.jpg
+teaserpic:   /images/teaserpics/pixabay.com/pencil-1067670_640.jpg
 description: "License: Redistribution and use in source and binary forms are permitted (conditions apply)"
 ---
 

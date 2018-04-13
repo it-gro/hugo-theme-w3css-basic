@@ -13,7 +13,7 @@ tags:
   - Malesuada
 categories:
   - Know-How
-teaserpic:      images/teaserpics/pixabay.com/coffee-2714970_640.jpg
+teaserpic:      /images/teaserpics/pixabay.com/coffee-2714970_640.jpg
 ---
 
 # Praesent augue.  Fusce commodo.

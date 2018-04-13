@@ -7,7 +7,7 @@ tags:
   - license
 categories:
   - legal
-teaserpic:   images/teaserpics/pixabay.com/paint-2985569_640.jpg
+teaserpic:   /images/teaserpics/pixabay.com/paint-2985569_640.jpg
 description: "License: Creative Commons CC0"
 ---
 

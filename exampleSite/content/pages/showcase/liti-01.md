@@ -1,7 +1,7 @@
 ---
 title:       "Shortcode liti"
 date:        2018-01-18T20:01:00+01:00
-teaserpic:   images/teaserpics/gohugo.io/hugo-dolor.png
+teaserpic:   /images/teaserpics/gohugo.io/hugo-dolor.png
 icon:        "fas fa-search"
 description: "Shortcode **liti** *List by Title*"
 toc:         true

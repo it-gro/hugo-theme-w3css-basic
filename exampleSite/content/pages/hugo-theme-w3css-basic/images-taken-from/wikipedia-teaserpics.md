@@ -7,7 +7,7 @@ tags:
   - license
 categories:
   - legal
-teaserpic:   images/teaserpics/pixabay.com/wikimedia-commons-679587_640.png
+teaserpic:   /images/teaserpics/pixabay.com/wikimedia-commons-679587_640.png
 description: "License: Creative Commons Attribution-ShareAlike 3.0"
 ---
 

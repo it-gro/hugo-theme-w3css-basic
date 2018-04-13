@@ -7,7 +7,7 @@ tags:
 categories:
   - tools
 icon:        "fas fa-lock-open"
-teaserpic:   images/teaserpics/wikipedia.org/emacs-jokes.png
+teaserpic:   /images/teaserpics/wikipedia.org/emacs-jokes.png
 ---
 
 Richard M. Stallman (RMS, widely known for creating EMACS) is writing

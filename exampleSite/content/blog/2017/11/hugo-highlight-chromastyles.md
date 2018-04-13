@@ -7,7 +7,7 @@ categories:
   - Web
 draft:       false
 icon:        
-teaserpic:   images/teaserpics/bitbucket.org/pygments-main-logo.png
+teaserpic:   /images/teaserpics/bitbucket.org/pygments-main-logo.png
 ---
 
 Hugo comes with reallly fast syntax highlighting from Chroma.
