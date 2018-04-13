@@ -67,26 +67,8 @@ pygmentsStyle = "emacs"
 
 These are the supported languages:
 
-ABNF, ANTLR, APL, ActionScript, ActionScript 3, Ada, Angular2,
-ApacheConf, AppleScript, Awk, BNF, Base Makefile, Bash, Batchfile,
-BlitzBasic, Brainfuck, C, C#, C++, CFEngine3, CMake, COBOL, CSS, Cap'n
-Proto, Ceylon, ChaiScript, Cheetah, Clojure, CoffeeScript, Common
-Lisp, Coq, Crystal, Cython, DTD, Dart, Diff, Django/Jinja, Docker,
-EBNF, Elixir, Elm, EmacsLisp, Erlang, FSharp, Factor, Fish, Forth,
-Fortran, GAS, GDScript, GLSL, Genshi, Genshi HTML, Genshi Text,
-Gnuplot, Go, Groovy, HTML, Handlebars, Haskell, Haxe, Hexdump, Hy,
-INI, Idris, Io, JSON, Java, JavaScript, Julia, Kotlin, LLVM, Lighttpd
-configuration file, Lua, Mako, Mason, Mathematica, MiniZinc, Modula-2,
-MySQL, Myghty, NASM, Newspeak, Nginx configuration file, Nim, OCaml,
-Octave, PHP, PL/pgSQL, POVRay, PacmanConf, Perl, Pig, PkgConfig,
-PostScript, PostgreSQL SQL dialect, PowerShell, Prolog, Protocol
-Buffer, Puppet, Python, Python 3, QBasic, R, Racket, Ragel, Rexx,
-Ruby, Rust, SPARQL, SQL, Sass, Scala, Scheme, Scilab, Smalltalk,
-Smarty, Snobol, SquidConf, SVG, Swift, TASM, Tcl, Tcsh, Termcap,
-Terminfo, Terraform, Thrift, Transact-SQL, Turtle, Twig, TypeScript,
-TypoScript, TypoScriptCssData, TypoScriptHtmlData, VHDL, VimL, XML,
-Xorg, YAML, cfstatement, markdown, reStructuredText, reg,
-systemverilog, verilog
+{{< chroma-lexers >}}
+
 
 Check https://github.com/alecthomas/chroma for more information.
 
