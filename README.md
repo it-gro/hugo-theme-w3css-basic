@@ -511,7 +511,7 @@ tags:
   - Hugo
 categories:
   - Web
-teaserpic:   images/teaserpics/bitbucket.org/pygments-main-logo.png
+teaserpic:   /images/teaserpics/bitbucket.org/pygments-main-logo.png
 ---
 
 Hugo comes with reallly fast syntax highlighting from Chroma.
@@ -649,7 +649,7 @@ content/pages/
 weight:         21
 title:          "Cum sociis natoque (this is level /folder20/folder21)"
 date:           "2017-06-08T01:06:13+02:00"
-teaserpic:      images/teaserpics/gohugo.io/hugo-dolor.png
+teaserpic:      /images/teaserpics/gohugo.io/hugo-dolor.png
 ---
 ```
 
@@ -1646,7 +1646,7 @@ title:       "{{ replace .TranslationBaseName "-" " " | title }}"
 date:        {{ .Date }}
 toc:         false
 icon:        "fab fa-font-awesome"
-teaserpic:   "images/foo/bar/fa.png"
+teaserpic:   "teaser.png"
 description: >
   I'm an **example** description.
   I'll show in teaser instead of (calculated) summary.
@@ -1674,7 +1674,7 @@ weight:      42
 weight:      24
 title:       "My **Stuff** :house:"
 date:        2017-11-13T15:37:04+01:00
-teaserpic:   "images/foo/bar/fa.png"
+teaserpic:   "/images/teaserpics/teaser.png"
 icon:        "fas fa-list"
 ---
 ```
