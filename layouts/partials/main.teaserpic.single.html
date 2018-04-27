@@ -11,7 +11,7 @@
 {{- else }}
   {{- if isset $.Site.Params (lower `teaserpicDefault` ) }}
     <img class="w3-hide-large w3-hide-medium w3-image w3-right w3-round " style="max-width:140px; max-height:140px; width: auto; height: auto; margin: 8px 0px 8px 8px; "
-         alt='$.Site.Params.teaserpicDefault'
+         alt='{{$.Site.Params.teaserpicDefault}}'
          src='{{$.Site.Params.teaserpicDefault | relURL }}'
     />
   {{- end }}
