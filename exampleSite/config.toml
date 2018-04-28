@@ -502,9 +502,13 @@ consectetuer adipiscing
   # ##############################
 
   # used in partials/blog.disqus-button.html
-  # set to true, if you want to show the count of comments
+  # set to false if you dont want to have a button "show comments", but show the comments right away
+  disqusButtonShow      = false
+  # set to true, if you want to show the count of comments within the "show comments" button
   # fires an async request to disqus.com/count.js
   disqusButtonShowCount = false
+  # set to true if you dont want a GDPR agreement with the visitor
+  # disqusSkipAgree = true
 
   # date format (blog) is created using:
   #  layouts/partials/main.blog.date.html
