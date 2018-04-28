@@ -1,0 +1,7 @@
+{{/* taken from https://github.com/gohugoio/hugoDocs/blob/master/layouts/shortcodes/chroma-lexers.html */}}
+<dl>
+{{  range .Site.Data.json.docs.chroma.lexers }}
+<dt>{{ .Name }}</dt>
+<dd>{{ delimit .Aliases ", " }}</dd>
+{{ end }}
+</dl>

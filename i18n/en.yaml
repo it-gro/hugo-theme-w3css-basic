@@ -107,3 +107,9 @@
 
 - id: Attachments
   translation: "Attachments"
+
+- id: "disqusTxtAgree"
+  translation: "Show comments powered by [disqus.com](https://disqus.com). Agree to the [Terms](https://help.disqus.com/terms-and-policies/terms-of-service) first. Our terms: tbd "
+
+- id: "disqusBtnAgree"
+  translation: "Yes, I Agree"

@@ -62,7 +62,7 @@
       {{ `<!-- front-jumbotron-entry and .title (not ( or .image .icon)) -->` | safeHTML }}
     {{- end}}
   <div class='w3-container w3-margin-top w3-margin-left w3-margin-right w3-margin-bottom w3-round-xxlarge {{ default `w3-theme-l2` ($.Site.Param.colorFrontJumbotronsContainer)}} '>
-    <h1>{{- .title -}}</h1>
+    <h1>{{- .title | markdownify -}}</h1>
     {{ if .description }}<div>{{ .description | markdownify }}</div>{{ end }}
   </div>
   {{- end }} {{/* if .title */}}
