@@ -414,7 +414,8 @@ figure figcaption a {
 */
     text-align: center;
     font-size: 75%;
-    padding: 0px;
+    /* padding: 0px; */
+    padding-top: 6px;
     line-height: 1;
 }
 
