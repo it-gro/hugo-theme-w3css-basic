@@ -486,8 +486,11 @@ consectetuer adipiscing
   teaserTruncateSummary  = 200
 
   # used in layouts/partials/main.teaserpic.single.html
+  teaserPicResource  = "teaser.*"
+
+  # ToDo
   #         layouts/partials/front.recent_posts.html
-  #teaserpicDefault = "/images/teaserpics/placeholder.png"
+
 
 
   # contact form
@@ -526,8 +529,8 @@ consectetuer adipiscing
   #   debug-shortcodes      enable all shortcodes debugging output
   #   debug-shortcode-liti  enable all shortcode liti debugging output
   #traceFlags       = "html-comment:debug-shortcodes"
-  #traceFlags       = "html-comment:debug-shortcode-res-figure"
-  traceFlags         = "html-comment"
+  traceFlags       = "html-comment:debug-shortcode-res-debug"
+  #traceFlags         = "html-comment"
 
   # custom css and custom js
   # this theme comes with the following "empty" files

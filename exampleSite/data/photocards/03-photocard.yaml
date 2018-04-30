@@ -1,8 +1,8 @@
 weight:      3
 title:       "Nonumy"
 animated:    "rollIn"
-image:       "images/photocards/pixabay.com/03-photocard.jpg"
+resImg:      "photocards/pixabay.com/03-photocard.jpg"
 url:         pages/front/photocards/03
 description: |
-  * At vero eos et **accusam** 
+  * At vero eos et **accusam**
   * justo duo dolores et ea rebum

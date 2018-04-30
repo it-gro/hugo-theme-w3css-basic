@@ -2,12 +2,12 @@
 weight:      200
 title:       "teaserpics (github.com/gohugoio)"
 date:        2017-12-08T08:57:33+01:00
+resImgTeaser: teaserpics/pixabay.com/green-1738220_640.jpg
 tags:
   - pictures
   - license
 categories:
   - legal
-teaserpic:   /images/teaserpics/pixabay.com/green-1738220_640.jpg
 description: "License: Apache License 2.0"
 ---
 

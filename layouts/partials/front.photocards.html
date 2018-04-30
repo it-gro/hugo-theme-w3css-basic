@@ -22,21 +22,35 @@
 
         <div class="w3-col m4 " >
           <div class='w3-card-4 {{ default `w3-theme-l1` ($.Site.Param `colorFrontPhotocardsCard`)}} {{ if and $element.animated $.Site.Params.photocards.animate }} {{ printf `%s %s %s%d %s` `animated` `photocards-animated` `photocards-animated` $index $element.animated }} {{ end }} ' >
-            {{- if (and $element.image (not $element.url) )  }}
-            <img src='{{ $element.image }}'   alt='{{ $element.image }}' class="w3-round-large"                   style="width:100%">
-            {{- end }} {{/* if and image not url */}}
 
-            {{- if (and $element.image $element.url)  }}
-            <a class="no-decoration" href='{{ $element.url | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'>
-              <img src='{{ $element.image }}' alt='{{ $element.image }}' class="w3-hover-opacity " style="width:100%">
-            {{- end -}} {{/* if and image url */}}
+          {{- if $element.url  }}
+            {{- $.Scratch.Set `myImgClass` `w3-hover-opacity` }}
+            {{- $.Scratch.Set `myImgStyle` `width:100%`     }}
+          <a class="no-decoration" href='{{ $element.url | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}'>
+          {{- end }}
+
+          {{- if not $element.url  }}
+            {{- $.Scratch.Set `myImgClass` `w3-round-large` }}
+            {{- $.Scratch.Set `myImgStyle` `width:100%`     }}
+          {{- end }}
+
+          {{- $myImgClass  := $.Scratch.Get `myImgClass` }}
+          {{- $myImgStyle  := $.Scratch.Get `myImgStyle` }}
+
+          {{- $myImg       := index $element `resImg`                       }} {{/* case sensitive ! */}}
+          {{- $myImgCmd    := index $element `resImgCmd` | default `Resize` }}
+          {{- $myImgOpt    := index $element `resImgOpt` | default `300x`   }}
+          {{ partial `resource.image.html` (dict `page` $.Page `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
+
+          {{- if $element.url  }}
+          </a>
+          {{- end -}} {{/* if and image url */}}
+
             <div class='w3-container {{if $element.url}}{{printf `%s` `w3-hover-opacity`}}{{end}} {{ default `w3-theme-l1` ($.Site.Param `colorFrontPhotocardsCardContainer`)}} '>
               <h4>{{- $element.title }}</h4>
               {{ $element.description | markdownify }}
             </div>
-            {{- if (and $element.image $element.url)  }}
-            </a>
-            {{- end -}} {{/* if and image url */}}
+
           </div> <!-- w3-card -->
           <p>
         </div>   <!-- w3-col -->

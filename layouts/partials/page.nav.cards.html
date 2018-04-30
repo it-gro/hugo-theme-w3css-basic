@@ -41,12 +41,18 @@
         {{- if $.Params.icon }}
         <i class='w3-padding-small {{ $.Params.icon }} fa-2x'></i>
         {{- end }}  {{/* icon */}}
-        {{- if $.Params.teaserpic }}
-        <img class="w3-image w3-round " style="vertical-align:bottom; max-width:40px; max-height:40px; width: auto; height: auto; margin: 0px 4px 4px 4px;"
-             alt='{{.Params.teaserpic}}'
-             src='{{- if eq (substr .Params.teaserpic 0 1) `.` }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}'
-        />
+
+        {{- if $.Params.resImgTeaser }}
+          {{- $myImgClass  := "w3-image w3-round " }}
+          {{- $myImgStyle  := "vertical-align:bottom; max-width:40px; max-height:40px; width: auto; height: auto; margin: 0px 4px 4px 4px; " }}
+          {{- $myImg       := .Params.resImgTeaser                       }} {{/* case insensitive */}}
+          {{- $myImgCmd    := .Params.resImgTeaserCmd | default `Resize` }}
+          {{- $myImgOpt    := .Params.resImgTeaserOpt | default `40x`    }}
+          {{ partial `resource.image.html` (dict `page` . `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
+
+
         {{- end }} {{/* teaserpic */}}
+
         <span class="w3-large">{{- $.Title  | markdownify | emojify }}</span>
       </div>
     </a>

@@ -6,7 +6,7 @@ tags:
   - hugo
 categories:
   - tools
-teaserpic:      /images/teaserpics/gohugo.io/hugo-ipsum.png
+resImgTeaser:  teaserpics/gohugo.io/hugo-ipsum.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

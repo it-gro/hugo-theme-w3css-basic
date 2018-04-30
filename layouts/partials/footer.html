@@ -30,13 +30,14 @@
 
         <div class="w3-container ">
           <a class="no-decoration" href='{{ .RelPermalink }}'>
-            <img class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;"
-              alt='{{.Params.teaserpic}}'
-              src='{{- if .Params.teaserpic }}
-                   {{- if eq (substr .Params.teaserpic 0 1) `.` }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}
-                   {{- end -}}
-                  '
-            />
+
+          {{- $myImgClass  := `w3-image w3-left w3-round w3-hover-opacity` }}
+          {{- $myImgStyle  := `max-width:60px; max-height:20px; width: auto; height: auto; margin: 0px 8px 16px 0px;` }}
+          {{- $myImg       := .Param `resImgTeaser`                       }} {{/* case insensitive */}}
+          {{- $myImgCmd    := .Param `resImgTeaserCmd` | default `Resize` }}
+          {{- $myImgOpt    := .Param `resImgTeaserOpt` | default `60x`    }}
+          {{ partial `resource.image.html` (dict `page` $.Page `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
+
           </a>
           <a class="no-decoration" href='{{ .RelPermalink }}'>{{if .Params.icon}}<i class='{{ .Params.icon }}'></i>&nbsp;{{end}}{{ .Title  | markdownify | emojify }}</a>
         </div>

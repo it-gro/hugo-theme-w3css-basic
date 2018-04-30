@@ -10,7 +10,7 @@ tags:
   - Fermentum
 categories:
   - Know-How
-teaserpic:      /images/teaserpics/pixabay.com/girl-2696947_640.jpg
+resImgTeaser:  teaserpics/pixabay.com/girl-2696947_640.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

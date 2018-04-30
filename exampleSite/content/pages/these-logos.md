@@ -1,9 +1,9 @@
 ---
-weight:      20
-title:       "These Logos"
-date:        2017-11-13T15:33:35+01:00
-icon:       "fa fa-podcast"
-teaserpic:   /images/teaserpics/pixabay.com/adventure-2528477_640.jpg
+weight:             20
+title:              "These Logos"
+date:               2017-11-13T15:33:35+01:00
+icon:               "fa fa-podcast"
+resImgTeaser:  teaserpics/pixabay.com/adventure-2528477_640.jpg
 description: >
   Where did the logos came from?
 tags:

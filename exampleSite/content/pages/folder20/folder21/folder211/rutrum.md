@@ -11,7 +11,7 @@ tags:
   - Rutrum
 categories:
   - Know-How
-teaserpic:      /images/teaserpics/pixabay.com/adventure-2528477_640.jpg
+resImgTeaser:  teaserpics/pixabay.com/adventure-2528477_640.jpg
 ---
 
 Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non

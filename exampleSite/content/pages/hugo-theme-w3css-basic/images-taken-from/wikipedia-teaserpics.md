@@ -2,12 +2,12 @@
 weight:      210
 title:       "teaserpics (wikipedia.org)"
 date:        2017-12-08T08:57:37+01:00
+resImgTeaser: teaserpics/pixabay.com/wikimedia-commons-679587_640.png
 tags:
   - pictures
   - license
 categories:
   - legal
-teaserpic:   /images/teaserpics/pixabay.com/wikimedia-commons-679587_640.png
 description: "License: Creative Commons Attribution-ShareAlike 3.0"
 ---
 

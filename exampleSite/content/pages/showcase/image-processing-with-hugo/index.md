@@ -1,9 +1,9 @@
 ---
-title:          Image Processing (`res-figure`)
-date:           2018-04-06T20:18:31+02:00
-icon:           far fa-images
-teaserpic:      /images/teaserpics/pixabay.com/particles-1373684_640.jpg
-toc:            true
+title:              Image Processing (`res-figure`)
+date:               2018-04-06T20:18:31+02:00
+icon:               far fa-images
+resImgTeaser:  teaserpics/pixabay.com/particles-1373684_640.jpg
+toc:                true
 tags:
   - Showcase
   - shortcodes
@@ -67,7 +67,12 @@ resources:
       attrlink:    https://pixabay.com/en/users/boudewijns8880-1460019/
 ---
 
-Image page resources can be resized and cropped.
+Image page resources can be resized and cropped. 
+This only works for
+[images](https://gohugo.io/content-management/image-processing/#the-image-page-resource)
+which are [page
+resources](https://gohugo.io/content-management/page-resources/), not for images
+in the /static folder.
 This theme provides a shortcode `res-figure`  for page resource image processing.
 <!--more-->
 

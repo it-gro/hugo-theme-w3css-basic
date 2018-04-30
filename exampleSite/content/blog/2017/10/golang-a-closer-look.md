@@ -5,7 +5,7 @@ tags:
   - go
 categories:
   - programming
-teaserpic:      /images/teaserpics/gohugo.io/golang-a-closer-look.png
+resImgTeaser: teaserpics/gohugo.io/golang-a-closer-look.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
