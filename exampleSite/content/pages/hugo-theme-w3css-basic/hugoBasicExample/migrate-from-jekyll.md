@@ -6,7 +6,7 @@ weight: 10
 categories : [
     "Hugo Basic Example",
 ]
-teaserpic :  "/images/teaserpics/gohugo.io/hugo-lorem.png"
+resImgTeaser: teaserpics/gohugo.io/hugo-lorem.png
 ---
 
 ## Move static content to `static`

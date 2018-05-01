@@ -1,6 +1,6 @@
 ---
-author: "Michael Henderson"
-date: 2014-09-28
+author:      "Michael Henderson"
+date:        2014-09-28
 linktitle: Creating a New Theme
 menu:
 title: Creating a New Theme
@@ -8,7 +8,7 @@ weight: 10
 categories : [
     "Hugo Basic Example"
 ]
-teaserpic :  "/images/teaserpics/gohugo.io/hugo-dolor.png"
+resImgTeaser:  teaserpics/gohugo.io/hugo-dolor.png
 ---
 
 
