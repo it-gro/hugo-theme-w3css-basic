@@ -1,7 +1,7 @@
 weight:      8
 title:       Blog
+resImg:
 icon:
-image:
 description: |
   * Optional Disqus
   * Optional privacy protection (disable count) for Disqus

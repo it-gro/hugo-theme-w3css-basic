@@ -488,11 +488,6 @@ consectetuer adipiscing
   #         layouts/partials/main.teaser_in_card.html
   teaserTruncateSummary  = 200
 
-  # used in layouts/partials/main.teaserpic.single.html
-  #         layouts/partials/front.recent_posts.html
-  #teaserpicDefault = "/images/teaserpics/placeholder.png"
-
-
   # contact form
   # ##############################
 

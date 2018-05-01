@@ -1,47 +1,57 @@
-{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+{{- $thePage      :=  index . `page`    }}
+{{- $theImgClass  := (index . `class`) | default ""       }}
+{{- $theImgStyle  := (index . `style`) | default ""       }}
+{{- $theResImg    := (index . `img`)   | default ``       }}
+{{- $theResImgCmd := (index . `cmd`)   | default `Resize` }}
+{{- $theResImgOpt := (index . `opt`)   | default `300x`   }}
+
+{{- $thePage.Scratch.Set `myResImg` ``}}
+{{- $thePage.Scratch.Set `myImage`  ``}}
+
+{{- if or $thePage.Site.Params.debug (findRE `\bhtml-comment\b` $thePage.Site.Params.traceFlags) }}
   {{ `<!-- partials/resource.image.html  -->` | safeHTML }}
 {{- end}}
 
-{{- $ourPage      :=  index . `page`    }}
-{{- $ourImgClass  := (index . `class`) | default ""       }}
-{{- $ourImgStyle  := (index . `style`) | default ""       }}
-{{- $ourResImg    := (index . `img`)   | default ``       }}
-{{- $ourResImgCmd := (index . `cmd`)   | default `Resize` }}
-{{- $ourResImgOpt := (index . `opt`)   | default `300x`   }}
+{{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource.image)\b` $thePage.Site.Params.traceFlags) }}
+<br/>
+thePage      : {{- $thePage      }} <br/>
+theImgClass  : {{- $theImgClass  }} <br/>
+theImgStyle  : {{- $theImgStyle  }} <br/>
+theResImg    : {{- $theResImg    }} <br/>
+theResImgCmd : {{- $theResImgCmd }} <br/>
+theResImgOpt : {{- $theResImgOpt }} <br/>
+{{- end }}
 
-{{- $ourPage.Scratch.Set `myResImg` ``}}
-{{- $ourPage.Scratch.Set `myImage`  ``}}
-
-{{- $ourResources := $ourPage.Site.GetPage "page" "resources/images" }}
-{{- if $ourResources }}
-  {{- if len ($ourResources.Resources.ByType `image`) }}
-    {{- if ($ourResImg)  }}
-      {{ $ourPage.Scratch.Set `myResImg` ( ($ourResources.Resources.ByType `image`).GetMatch ($ourResImg) ) }}
+{{- $theResources := $thePage.Site.GetPage "page" "resources/images" }}
+{{- if $theResources }}
+  {{- if len ($theResources.Resources.ByType `image`) }}
+    {{- if ($theResImg)  }}
+      {{ $thePage.Scratch.Set `myResImg` ( ($theResources.Resources.ByType `image`).GetMatch ($theResImg) ) }}
     {{- end }}
   {{- end }}
 {{- end }}
 
-{{- if $ourPage.Resources.ByType `image` }}
-  {{- if ($ourResImg)  }}
-    {{ $ourPage.Scratch.Set `myResImg` ( ( ($ourPage.Resources.ByType `image`).GetMatch ($ourResImg))  | default ($ourPage.Scratch.Get `myResImg`) ) }}
+{{- if $thePage.Resources.ByType `image` }}
+  {{- if ($theResImg)  }}
+    {{ $thePage.Scratch.Set `myResImg` ( ( ($thePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
   {{- end }}
 {{- end }}
 
-{{- if ne ($ourPage.Scratch.Get `myResImg`) `` }}
-  {{- $myResource := $ourPage.Scratch.Get `myResImg` }}
-  {{- if      eq $ourResImgCmd `Fill`   }}{{$ourPage.Scratch.Set `myImage` ($myResource.Fill   $ourResImgOpt)}}
-  {{- else if eq $ourResImgCmd `Fit`    }}{{$ourPage.Scratch.Set `myImage` ($myResource.Fit    $ourResImgOpt)}}
-  {{- else if eq $ourResImgCmd `Resize` }}{{$ourPage.Scratch.Set `myImage` ($myResource.Resize $ourResImgOpt)}}
+{{- if ne ($thePage.Scratch.Get `myResImg`) `` }}
+  {{- $myResource := $thePage.Scratch.Get `myResImg` }}
+  {{- if      eq $theResImgCmd `Fill`   }}{{$thePage.Scratch.Set `myImage` ($myResource.Fill   $theResImgOpt)}}
+  {{- else if eq $theResImgCmd `Fit`    }}{{$thePage.Scratch.Set `myImage` ($myResource.Fit    $theResImgOpt)}}
+  {{- else if eq $theResImgCmd `Resize` }}{{$thePage.Scratch.Set `myImage` ($myResource.Resize $theResImgOpt)}}
   {{- else }}
-    {{- errorf "Invalid image processing command: '%s' for '%s'. Must be one of Fill, Fit or Resize."  $myResource $ourResImgCmd}}
+    {{- errorf "Invalid image processing command: '%s' for '%s'. Must be one of Fill, Fit or Resize."  $myResource $theResImgCmd}}
   {{- end }}
 {{- end }}
-{{- $myImage := $ourPage.Scratch.Get `myImage` }}
+{{- $myImage := $thePage.Scratch.Get `myImage` }}
 
 {{- if $myImage }}
 <img
-  class="{{ $ourImgClass }}"
-  style="{{ $ourImgStyle  | safeCSS }}"
+  class="{{ $theImgClass }}"
+  style="{{ $theImgStyle  | safeCSS }}"
   src='{{ $myImage.RelPermalink | absURL }}'
   alt='{{ $myImage.Name }}'
   >

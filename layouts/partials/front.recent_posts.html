@@ -25,9 +25,9 @@
 
           {{- $myImgClass  := `w3-image w3-left w3-round w3-hover-opacity` }}
           {{- $myImgStyle  := `max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;` }}
-          {{- $myImg       := $element.Param `resImgTeaser`                       }} {{/* case insensitive */}}
-          {{- $myImgCmd    := $element.Param `resImgTeaserCmd` | default `Resize` }}
-          {{- $myImgOpt    := $element.Param `resImgTeaserOpt` | default `150x`   }}
+          {{- $myImg       := $element.Params.resImgTeaser                       }} {{/* case insensitive */}}
+          {{- $myImgCmd    := $element.Params.resImgTeaserCmd | default `Resize` }}
+          {{- $myImgOpt    := $element.Params.resImgTeaserOpt | default `150x`   }}
           {{ partial `resource.image.html` (dict `page` $element `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
 
           <h3>{{- $element.Title  | markdownify | emojify }}</h3>

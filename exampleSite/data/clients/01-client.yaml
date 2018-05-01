@@ -1,4 +1,4 @@
-weight: 1
-name:   "customer-1"
+weight:  1
+name:    "customer-1"
 resImg:  "clients/pixabay.com/company-logo-1.png"
-url:    "http://www.example.com"
+url:     "http://www.example.com"

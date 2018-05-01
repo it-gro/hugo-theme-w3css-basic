@@ -1,13 +1,13 @@
 ---
-title:       "Hugo - **highlight** :art:"
-date:        2017-11-24T08:44:12+01:00
+title:         "Hugo - **highlight** :art:"
+date:          2017-11-24T08:44:12+01:00
+resImgTeaser:  teaserpics/bitbucket.org/pygments-main-logo.png
+icon:        
 tags:
   - Hugo
 categories:
   - Web
 draft:       false
-icon:        
-resImgTeaser:  teaserpics/bitbucket.org/pygments-main-logo.png
 ---
 
 Hugo comes with reallly fast syntax highlighting from Chroma.

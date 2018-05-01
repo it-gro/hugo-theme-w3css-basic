@@ -1,7 +1,7 @@
 weight:      4
 title:       Customizable landing page
+resImg:
 icon:
-image:
 description: |
    * Optional Marquee, Jumbotron
    * Optional Photocards, Features

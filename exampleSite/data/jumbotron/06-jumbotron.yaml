@@ -1,7 +1,7 @@
 weight:      5
 title:       Cool stuff included
+resImg:
 icon:
-image:
 description: |
   * Fontawesome version 5
   * Owl Carousel

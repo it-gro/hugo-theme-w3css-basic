@@ -1,7 +1,7 @@
 weight:      1
 title:       "Welcome to W3.CSS Basic exampleSite"
+resImg:      "photocards/pixabay.com/04-photocard.jpg"
 icon:
-image:
 description: |
   * Built with W3.CSS
   * Highly configurable
