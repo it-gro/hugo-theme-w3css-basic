@@ -52,7 +52,7 @@ theResImgOpt : {{- $theResImgOpt }} <br/>
 <img
   class="{{ $theImgClass }}"
   style="{{ $theImgStyle  | safeCSS }}"
-  src='{{ $myImage.RelPermalink | absURL }}'
-  alt='{{ $myImage.Name }}'
+  src='{{ $myImage.Permalink    }}'
+  alt='{{ $myImage.RelPermalink }}'
   >
 {{- end }}
