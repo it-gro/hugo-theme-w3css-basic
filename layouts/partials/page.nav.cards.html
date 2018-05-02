@@ -51,7 +51,7 @@
           {{ partial `resource.image.html` (dict `page` . `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
 
 
-        {{- end }} {{/* teaserpic */}}
+        {{- end }} {{/* resImgTeaser */}}
 
         <span class="w3-large">{{- $.Title  | markdownify | emojify }}</span>
       </div>
