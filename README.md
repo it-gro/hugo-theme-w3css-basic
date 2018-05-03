@@ -53,7 +53,7 @@ See [These Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/page
 
 ```toml
   # This may help you to to select a w3cssColorTheme
-  themeColorSelectorEnable = false
+  themeColorSelectorEnable = true
 ```
 
 ---
