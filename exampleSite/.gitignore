@@ -1,4 +1,5 @@
 public/
+resources/_gen/
 themes
 .config.2.toml
 
