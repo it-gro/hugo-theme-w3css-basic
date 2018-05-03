@@ -486,7 +486,6 @@ consectetuer adipiscing
   teaserTruncateSummary  = 200
 
 
-
   # contact form
   # ##############################
 
@@ -556,6 +555,27 @@ consectetuer adipiscing
 # ##################################################
 # theme sections
 # more theme defined params
+
+[params.cookieconsent]
+  # https://cookieconsent.insites.com/download/
+  # used in layouts/partials/head.cookieconsent.html
+  enable           = true
+  popupBackground  = "#efefef"
+  popupText        = "#404040"
+  buttonBackground = "#8ec760"
+  buttonText       = "#ffffff"
+  #static           = "true"
+  position         = "bottom"
+  #position         = "top"
+  #position         = "bottom-left"
+  #position         = "bottom-right"
+  #position         = "top-left"
+  #position         = "top-right"
+  #theme            = ""
+  theme            = "classic"
+  #theme            = "edgeless"
+  href             = "https://cookiesandyou.com"
+
 
 [params.favicon]
   # you may want to use https://realfavicongenerator.net to generate your files

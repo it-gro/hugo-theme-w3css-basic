@@ -81,7 +81,7 @@ features       = [
                  , "testimonials"
                  , "w3css"
                  ]
-min_version    = "0.37.1"
+min_version    = "0.39"
 
 [author]
   name         = "it-gro"
