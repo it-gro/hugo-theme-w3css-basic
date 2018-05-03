@@ -12,9 +12,9 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 ## Latest News
 
 * Added [cookieconsent](https://cookieconsent.insites.com/)
-![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_510.jpg)
+[![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_510.jpg)](#cookieconsent)
 
-![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_512.jpg)
+[![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_512.jpg)](#cookieconsent)
 
 * Teaser images are now resource images
 * New Front Matter (replacing ```teaserPic```):
@@ -41,21 +41,21 @@ See [These Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/page
 ```toml
   disqusSkipAgree = true
 ```
-![screenshot DiscusAgree](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_514.jpg)
+[![screenshot DiscusAgree](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_514.jpg)](#disqus)
 
 
 
 * Added shortcodes:
 
   * res-figure
-  ![screenshot res-figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_502.jpg)
+  [![screenshot res-figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_502.jpg)](#images)
   * res-attach
-  ![screenshot res-attach](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_504.jpg)
+  [![screenshot res-attach](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_504.jpg)](#attachments)
   * readfile
-  ![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)
+  [![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)](#include-files)
   
   * Added color theme preview via color theme selector (not on small displays)
-  ![screenshot color theme selector](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_500.jpg)
+  [![screenshot color theme selector](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_500.jpg)](#color-theme)
 
 ```toml
   # This may help you to to select a w3cssColorTheme
@@ -1912,7 +1912,7 @@ The images is processed using hugo's build in image commands (resize to a reason
 ## Include Files
 
 * Inspired by https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/readfile.html
-* Reads a file (or directory) and optionally renders ist using markdownify or highlight
+* Reads a file (or directory) and optionally renders it using markdownify or highlight
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#readfile
 
 ```
