@@ -599,7 +599,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   #         layouts/partials/header.nav.theme_color_selector.html
   #         layouts/partials/head.stylesheets.html
   #         layouts/partials/scripts.bottom.html
-  # This may help you to to define w3cssColorTheme
+  # This may help you to to select a w3cssColorTheme
   themeColorSelectorEnable = true
 
 
