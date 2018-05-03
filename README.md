@@ -11,7 +11,33 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 ---
 ## Latest News
 
-* Teaser images are now resource images with reasonale resize dimensions.
+* Teaser images are now resource images
+* New Front Matter (replacing ```teaserPic```):
+
+```yaml
+resImgTeaser:          teaserpics/pixabay.com/adventure-2528477.jpg
+```
+
+Default is to resize with reasonale dimensions. You may overwrite the defaults:
+
+```yaml
+resImgTeaser:          teaserpics/pixabay.com/adventure-2528477.jpg
+resImgTeaserCmd:       Fill
+resImgTeaserOpt:       400x400
+resImgTeaserInCardCmd: Fill
+resImgTeaserInCardOpt: "150x50 Bottom"
+```
+
+See [These Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages) for a demo.
+
+* User has now to agree to Disqus. You may skip this via
+
+`config.toml`
+```toml
+  disqusSkipAgree = true
+```
+
+
 
 * Added shortcodes:
 
@@ -90,6 +116,7 @@ It includes resources from:
 * [Front Matter](#front-matter)
 * [Shortcodes](#shortcodes)
 * [Page Resources](#page-resources)
+  * [Headless Images](#headless-images)
   * [Images](#images)
   * [Attachments](#attachments)
 * [Include Files](#include-files)
@@ -1729,10 +1756,7 @@ layouts/shortcodes/
 
 * images may be stored as resource for a headless page:
 
-```content/resources/images/```
-
-
-```index.md```
+`content/resources/images/index.md`
 
 ```yaml
 ---
@@ -1760,13 +1784,25 @@ content/resources/images/
 ```
 
 
-```layouts/partials/resource.image.html```
+`layouts/partials/resource.image.html`
 
 ```
 {{- $ourResources := $ourPage.Site.GetPage "page" "resources/images" }}
   {{ $ourPage.Scratch.Set `myResImg` ( ($ourResources.Resources.ByType `image`).GetMatch ($ourResImg) ) }}
 {{- end }}
 ```
+
+A new headless page with the resources may be given in front matter via `resImgRelPath`:
+
+```
+{{- $myResourcePage := $thePage.Site.GetPage "page" ($thePage.Dir) ($thePage.Param `resImgRelPath`) "index.md" }}
+{{ $thePage.Scratch.Set `myResImg` ( ( ($myResourcePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
+```
+
+And of course the page itself may have the image resources:
+
+```
+{{ $thePage.Scratch.Set `myResImg` ( ( ($thePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
 ```
 
 
