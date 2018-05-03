@@ -184,7 +184,7 @@ My goals for this theme are:
 
 Go to the directory where you have your Hugo site and run:
 
-```
+```bash
 $ mkdir themes
 $ cd themes
 $ git clone https://github.com/it-gro/hugo-theme-w3css-basic
@@ -269,11 +269,11 @@ data/jumbotron/
 ```
 
 `01-jumbotron.yaml`
-```
+```yaml
 weight:      1
 title:       "Welcome to hugo-theme-w3css-basic exampleSite"
 icon:        
-image:       
+resImg:      
 description: |
   * Lorem ipsum dolor sit amet
   * Excepteur sint occaecat cupidatat non proident
@@ -308,11 +308,11 @@ data/photocards/
 ```
 
 `01-photocard.yaml`
-```
+```yaml
 weight:      1
 title:       "Lorem ipsum"
 animated:    "rollIn"
-image:       "images/photocards/pixabay.com/01-photocard.jpg"
+resImg:      "photocards/pixabay.com/01-photocard.jpg"
 url:         pages/front/photocards/01
 description: |
    sed diam nonumy 
@@ -343,7 +343,7 @@ data/features/
 ```
 
 `01-feature.yaml`
-```
+```yaml
 weight:      1
 name:        "Eleifend"
 icon:        "fas fa-desktop"
@@ -434,11 +434,11 @@ data/testimonials/
 ```
 
 `01-testimonial.yaml`
-```
+```yaml
 weight:      1
 name:        "John Doe"
 position:    "CEO, Takimata"
-avatar:      "images/testimonials/pixabay.com/person-1.jpg"
+resImg:      "testimonials/pixabay.com/person-1.jpg"
 text:        | 
   Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
   suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
@@ -477,10 +477,10 @@ data/clients/
 ```
 
 `01-client.yaml`
-```
+```yaml
 weight: 1
 name:   "customer-1"
-image:  "images/clients/pixabay.com/company-logo-1.png"
+resImg: "images/clients/pixabay.com/company-logo-1.png"
 url:    "http://www.example.com"
 ```
 
@@ -523,7 +523,7 @@ content/blog/
 
 `hugo-highlight-chromastyles.md`:
 
-```
+```yaml
 ---
 title:         "Hugo - **highlight** :art:"
 date:          2017-11-24T08:44:12+01:00
@@ -664,7 +664,8 @@ content/pages/
 ```
 
 `content/pages/folder20/folder21/_index.md`
-```
+
+```yaml
 ---
 weight:        21
 title:         "Cum sociis natoque (this is level /folder20/folder21)"
@@ -674,7 +675,7 @@ resImgTeaser:  teaserpics/gohugo.io/hugo-dolor.png
 ```
 
 `content/pages/front/_index.md`
-```
+```yaml
 ---
 weight:      18
 title:       "Frontpage Eye-Catcher (this is level /front)"
@@ -1630,7 +1631,7 @@ static/
 
 * In addition the following arrays may be files with paths or URLS
 
-```
+```toml
   custom_css        = [ "css/custom_foo.css", "https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css" ]
   custom_js_top     = [ "js/custom_top_bar.js" ]
   custom_js_bottom  = [ "js/custom_bottom_foo.js", "https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" ]
@@ -1659,7 +1660,7 @@ pages.md
 
 ### Pages, Blogs
 
-```
+```yaml
 ---
 title:         "{{ replace .TranslationBaseName "-" " " | title }}"
 date:          {{ .Date }}
@@ -1682,7 +1683,7 @@ categories:
 
 * for pages add:
 
-```
+```yaml
 weight:      42
 ```
 
@@ -1690,7 +1691,7 @@ weight:      42
 ### content/pages/*/_index.md
 
 
-```
+```yaml
 ---
 weight:        24
 title:         "My **Stuff** :house:"
@@ -1808,7 +1809,7 @@ And of course the page itself may have the image resources:
 
 Given a front matter
 
-```
+```yaml
 resImgTeaser:  teaserpics/pixabay.com/paint-2985569_640.jpg
 ```
 
@@ -1872,7 +1873,7 @@ drwxrwxr-x 2018-04-13            pages
 
 `content/pages/showcase/gallery-01.md`
 
-```
+```yaml
 ---
 title:         "Gallery pixabay.com"
 date:          2018-01-05T20:30:54+01:00
@@ -1939,7 +1940,7 @@ caption="figure caption 4" attr="(c) by bar 4" attrlink="https://www.example.com
 ## Usage
 
 To see the exampleSite use:
-```
+```bash
 $ cd exampleSite/
 $ export GoogleMapsApiKey=GEeawyBOuzOPzbFGizHKGReghibngUZTGjlioZM
 $ hugo server -w --disableFastRender --navigateToChanged --themesDir ../../
