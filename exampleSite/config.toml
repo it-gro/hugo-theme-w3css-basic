@@ -724,9 +724,11 @@ ultricies eget, tempor sit amet, ante
   # serif, sans-serif or even cursive
   #sans-serif = "Poppins"
   sans-serif = "Ubuntu"
+
 [params.googleApiFonts.family.time]
   # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
   cursive    = "Creepster"
+
 [params.googleApiFonts.family.h1]
   # serif, sans-serif or even cursive
   sans-serif = "Days One"
