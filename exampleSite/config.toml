@@ -570,7 +570,7 @@ consectetuer adipiscing
 
 
 [params.marquee]
-  # enable or disable marquee
+  # enable or disable marquee on frontpage
   enable   = true
  #enable   = false
   marquee  = '''

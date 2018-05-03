@@ -5,8 +5,8 @@
 {{- if not (isset .Params (lower `teaserpicNotOnPage`) )  }}
   {{- $myImgClass  := "w3-hide-small w3-image w3-right w3-round " }}
   {{- $myImgStyle  := "max-width:400px; max-height:200px; width: auto; height: auto; margin: 8px 0px  8px 8px; " }}
-  {{- $myImg       := .Params.resImgTeaser                       }} {{/* case insensitive */}}
-  {{- $myImgCmd    := .Params.resImgTeaserCmd | default `Resize` }}
-  {{- $myImgOpt    := .Params.resImgTeaserOpt | default `300x`   }}
+  {{- $myImg       := .Param `resImgTeaser`                       }} {{/* case insensitive */}}
+  {{- $myImgCmd    := .Param `resImgTeaserCmd` | default `Resize` }}
+  {{- $myImgOpt    := .Param `resImgTeaserOpt` | default `300x`   }}
   {{ partial `resource.image.html` (dict `page` . `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
 {{- end }}

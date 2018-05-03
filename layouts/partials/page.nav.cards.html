@@ -42,12 +42,12 @@
         <i class='w3-padding-small {{ $.Params.icon }} fa-2x'></i>
         {{- end }}  {{/* icon */}}
 
-        {{- if $.Params.resImgTeaser }}
+        {{- if .Param `resImgTeaser` }}
           {{- $myImgClass  := "w3-image w3-round " }}
           {{- $myImgStyle  := "vertical-align:bottom; max-width:40px; max-height:40px; width: auto; height: auto; margin: 0px 4px 4px 4px; " }}
-          {{- $myImg       := .Params.resImgTeaser                       }} {{/* case insensitive */}}
-          {{- $myImgCmd    := .Params.resImgTeaserCmd | default `Resize` }}
-          {{- $myImgOpt    := .Params.resImgTeaserOpt | default `40x`    }}
+          {{- $myImg       := .Param `resImgTeaser`                       }} {{/* case insensitive */}}
+          {{- $myImgCmd    := .Param `resImgTeaserCmd` | default `Resize` }}
+          {{- $myImgOpt    := .Param `resImgTeaserOpt` | default `40x`    }}
           {{ partial `resource.image.html` (dict `page` . `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
 
 

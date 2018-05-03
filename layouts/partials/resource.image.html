@@ -20,55 +20,33 @@ theImgStyle    : {{- $theImgStyle    }} <br/>
 theResImg      : {{- $theResImg      }} <br/>
 theResImgCmd   : {{- $theResImgCmd   }} <br/>
 theResImgOpt   : {{- $theResImgOpt   }} <br/>
-thePage.Parent : {{- $thePage.Parent }} <br/>
 {{- end }}
 
-{{- $theResources := $thePage.Site.GetPage "page" "resources/images" }}
-      {{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
-      <br/>
-      theResources: {{- $theResources }} <br/>
-      {{- end }}
-{{- if $theResources }}
-  {{- if len ($theResources.Resources.ByType `image`) }}
+{{- $myGlobalResourcePage := $thePage.Site.GetPage "page" "resources/images" }}
+{{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
+  <br/>
+  myGlobalResources: {{- $myGlobalResourcePage.File.Path }} <br/>
+{{- end }}
+{{- if $myGlobalResourcePage }}
+  {{- if len ($myGlobalResourcePage.Resources.ByType `image`) }}
     {{- if ($theResImg)  }}
-      {{ $thePage.Scratch.Set `myResImg` ( ($theResources.Resources.ByType `image`).GetMatch ($theResImg) ) }}
-      {{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
-      <br/>
-      myResImg: {{- $thePage.Scratch.Get `myResImg` }} <br/>
-      {{- end }}
+      {{ $thePage.Scratch.Set `myResImg` ( ($myGlobalResourcePage.Resources.ByType `image`).GetMatch ($theResImg) ) }}
     {{- end }}
   {{- end }}
 {{- end }}
 
-{{- if $thePage.Parent }}
-  {{- range $myResource := ($thePage.Parent).Resources.Match "**"  }}
-      <br/> fooooo
-      thePage.Parent      : {{ $thePage.Parent.File.Path      }} <br/>
-      .Name               : {{ $myResource.Name               }} <br/>
-      .Title              : {{ $myResource.Title              }} <br/>
-      .ResourceType       : {{ $myResource.ResourceType       }} <br/>
-      .Permalink          : {{ $myResource.Permalink          }} <br/>
-      .RelPermalink       : {{ $myResource.RelPermalink       }} <br/>
-  {{- end }} {{/* range */}}
 
-  {{- if $thePage.Parent.Resources.ByType `image` }}
-    {{- if ($theResImg)  }}
-      {{ $thePage.Scratch.Set `myResImg` ( ( ($thePage.Parent.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
-        {{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
-        <br/>
-        myResImg: {{- $thePage.Scratch.Get `myResImg` }} <br/>
-        {{- end }}
-    {{- end }}
-  {{- end }}
-{{- end }}
+{{- if $thePage.Param `resImgRelPath`}}
+  {{- $myResourcePage := $thePage.Site.GetPage "page" ($thePage.Dir) ($thePage.Param `resImgRelPath`) "index.md" }}
+  {{- if $myResourcePage }}
+    {{ $thePage.Scratch.Set `myResImg` ( ( ($myResourcePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
+  {{- end }} {{/* if $myResourcePage */}}
+{{- end }} {{/* if resImgRelPath */}}
+
 
 {{- if $thePage.Resources.ByType `image` }}
   {{- if ($theResImg)  }}
     {{ $thePage.Scratch.Set `myResImg` ( ( ($thePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
-      {{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
-      <br/>
-      myResImg: {{- $thePage.Scratch.Get `myResImg` }} <br/>
-      {{- end }}
   {{- end }}
 {{- end }}
 
