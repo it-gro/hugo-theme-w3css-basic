@@ -11,6 +11,7 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 ---
 ## Latest News
 
+* Added [cookieconsent](https://cookieconsent.insites.com/)
 * Teaser images are now resource images
 * New Front Matter (replacing ```teaserPic```):
 
@@ -78,6 +79,8 @@ It includes resources from:
 * https://translate.google.com
 * https://cse.google.com
 * https://developers.google.com/gtagjs/devguide/snippet
+* https://cookieconsent.insites.com
+
 
 
 ## Table of Contents
@@ -116,6 +119,7 @@ It includes resources from:
   * [Google Custom Search API](#google-custom-search-api)
   * [Google Analytics-Tracking using gtag](#google-analytics-tracking-using-gtag)
   * [Footer](#footer)
+  * [cookieconsent](#cookieconsent)
   * [RSS](#rss)
   * [Tracing](#tracing)
 * [Custom CSS and JS](#custom-css-and-js)
@@ -1579,6 +1583,56 @@ googleAnalytics = ""
 ```
 
 ![screenshot Footer](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_220.jpg)
+
+
+### cookieconsent
+
+* https://cookieconsent.insites.com
+
+```
+static/vendor/insites/
+└── cookieconsent
+    ├── cookieconsent.3.0.6.min.css
+    └── cookieconsent.3.0.6.min.js
+```
+
+`i18n/en.yaml`
+```
+# Cookie consent
+- id: cookieMessage
+  translation: This website uses cookies to ensure you get the best experience on our website.
+
+- id: cookieDismiss
+  translation: Got it!
+
+- id: cookieLearn
+  translation: Learn more
+```
+
+`config.toml`
+
+```toml
+[params.cookieconsent]
+  # https://cookieconsent.insites.com/download/
+  # used in layouts/partials/head.cookieconsent.html
+  enable           = true
+  popupBackground  = "#efefef"
+  popupText        = "#404040"
+  buttonBackground = "#8ec760"
+  buttonText       = "#ffffff"
+  #static           = "true"
+  position         = "bottom"
+  #position         = "top"
+  #position         = "bottom-left"
+  #position         = "bottom-right"
+  #position         = "top-left"
+  #position         = "top-right"
+  theme            = "classic"
+  #theme            = "edgeless"
+  #theme            = ""
+  href             = "https://cookiesandyou.com"
+```
+
 
 
 ### RSS
