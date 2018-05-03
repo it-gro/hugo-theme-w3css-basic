@@ -112,14 +112,14 @@
   translation: "Show comments powered by [disqus.com](https://disqus.com). Agree to the [Terms](https://help.disqus.com/terms-and-policies/terms-of-service) first. Our terms: tbd "
 
 - id: "disqusBtnAgree"
-  translation: "Yes, I Agree"
+  translation: "Yes, I agree"
 
 # Cookie consent
 - id: cookieMessage
   translation: This website uses cookies to ensure you get the best experience on our website.
 
 - id: cookieDismiss
-  translation: Got it!
+  translation: Yes, I agree
 
 - id: cookieLearn
   translation: Learn more
