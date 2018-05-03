@@ -2147,8 +2147,10 @@ They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-
   https://github.com/liwenyip/hugo-easy-gallery/        
   http://photoswipe.com                                 
   https://pixabay.com                                   
+  https://cookieconsent.insites.com                     
   for all their work
-  
+
+
 ## More Screenshots
 
 * 1500x1000
