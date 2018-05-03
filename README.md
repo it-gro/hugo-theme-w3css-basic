@@ -47,8 +47,14 @@ See [These Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/page
   ![screenshot res-attach](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_504.jpg)
   * readfile
   ![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)
+  
   * Added color theme preview via color theme selector (not on small displays)
   ![screenshot color theme selector](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_500.jpg)
+
+```toml
+  # This may help you to to select a w3cssColorTheme
+  themeColorSelectorEnable = true
+```
 
 ---
 
