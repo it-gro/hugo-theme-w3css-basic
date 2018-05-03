@@ -2109,6 +2109,8 @@ They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-
 
 ![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.5.png)
 
+![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.6.png)
+
 
 * Complete
 
