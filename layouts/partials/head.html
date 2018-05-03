@@ -10,6 +10,9 @@
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- back in partials/head.html  -->` | safeHTML }}
   {{- end}}
+
+  {{ partial "head.cookieconsent.html" . }}
+
   <title>
     {{- block `title` . -}}
     {{ .Site.Title }}

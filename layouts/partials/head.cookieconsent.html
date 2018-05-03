@@ -1,0 +1,38 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/head.cookieconsent.html -->` | safeHTML }}
+{{- end}}
+
+{{- if $.Site.Params.cookieconsent }}
+  {{- /*
+  https://cookieconsent.insites.com/download/
+  */}}
+
+  <link rel="stylesheet" href="{{ `/vendor/insites/cookieconsent/cookieconsent.3.0.6.min.css` | relURL }}">
+  <script src="{{                 `/vendor/insites/cookieconsent/cookieconsent.3.0.6.min.js`  | relURL }}"></script>
+
+  <script>
+    window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+           "popup": {
+             "background": "#efefef",
+             "text":       "#404040"
+           },
+           "button": {
+             "background": "#8ec760",
+             "text":       "#ffffff"
+           }
+         },
+        "position": "bottom",
+        "theme": "classic",
+        "content": {
+          "message": {{ i18n "cookieMessage" | default "This website uses cookies to ensure you get the best experience on our website." }},
+          "dismiss": {{ i18n "cookieDismiss" | default "Got it!" }},
+          "link"   : {{ i18n "cookieLearn"   | default "Learn more" }},
+          "href"   : "https://cookiesandyou.com"
+        }
+      }) /* initialise( */
+    }) /* addEventListener( */
+    ;
+  </script>
+{{- end }}

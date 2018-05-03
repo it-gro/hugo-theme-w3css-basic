@@ -486,6 +486,10 @@ consectetuer adipiscing
   teaserTruncateSummary  = 200
 
 
+  # cookieconsent
+  # ##############################
+  cookieconsent = true
+
 
   # contact form
   # ##############################
