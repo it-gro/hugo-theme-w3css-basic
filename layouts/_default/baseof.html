@@ -8,7 +8,7 @@
   {{ `<!-- back in _default/baseof.html  -->` | safeHTML }}
   {{- end}}
 
-  <body>
+  <body onload='onload()' >
     <div id="all" class="w3-theme">
       <header>
         {{ partial `header.marquee.html` . -}}
@@ -24,8 +24,12 @@
         {{ `<!-- block headline _default/baseof.html  -->` | safeHTML }}
         {{- end}}
           <h1 class='w3-panel {{ default `w3-theme-l2` ($.Site.Param `colorBaseofPanel`)}} '>
-          {{ if $.Params.icon }}<i class='{{ $.Params.icon }} fa-1x'></i>{{ end }}
-          {{ .Title | markdownify | emojify }} </h1>
+          {{- if $.Params.icon }}<i class='{{ $.Params.icon }} fa-1x'></i>{{ end }}
+            {{ .Title | markdownify | emojify }}
+            <button id="btnfrwd" class="taxonomy-button w3-btn" style="visibility:hidden;float:right;" onclick="javascript:history.forward()"><i class="fas fa-step-forward "></i></button>
+            <button id="btnback" class="taxonomy-button w3-btn" style="visibility:hidden;float:right;" onclick="javascript:history.back()"   ><i class="fas fa-step-backward"></i></button>
+          </h1>
+
         {{- end}}
 
         {{- block `main` . }}
@@ -96,6 +100,14 @@
     {{ `<!-- all -->` | safeHTML }}
     {{- end}}
     {{ partial `scripts.bottom.html`  . }}
+
+    <script>
+      function onload(){
+         document.getElementById("btnfrwd").style.visibility="visible";
+         document.getElementById("btnback").style.visibility="visible";
+      }
+    </script>
+
   </body>
   {{ partial `debug.html` . -}}
 </html>
