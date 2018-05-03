@@ -1912,7 +1912,7 @@ The images is processed using hugo's build in image commands (resize to a reason
 ## Include Files
 
 * Inspired by https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/readfile.html
-* Reads a file (or directory) and optionally renders ist using markdownify or highlight
+* Reads a file (or directory) and optionally renders it using markdownify or highlight
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#readfile
 
 ```
