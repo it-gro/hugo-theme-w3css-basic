@@ -12,6 +12,10 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 ## Latest News
 
 * Added [cookieconsent](https://cookieconsent.insites.com/)
+![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_510.jpg)
+
+![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_512.jpg)
+
 * Teaser images are now resource images
 * New Front Matter (replacing ```teaserPic```):
 
@@ -37,6 +41,7 @@ See [These Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/page
 ```toml
   disqusSkipAgree = true
 ```
+![screenshot DiscusAgree](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_514.jpg)
 
 
 
@@ -599,6 +604,15 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
   # fires an async request to disqus.com/count.js
   disqusButtonShowCount = false
 ```
+
+* User has to agree to Disqus. You may skip this via
+
+`config.toml`
+```toml
+  disqusSkipAgree = true
+```
+
+![screenshot DiscusAgree](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_514.jpg)
 
 
 * No JavaScript fallback
@@ -1633,6 +1647,9 @@ static/vendor/insites/
   href             = "https://cookiesandyou.com"
 ```
 
+![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_510.jpg)
+
+![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_512.jpg)
 
 
 ### RSS
