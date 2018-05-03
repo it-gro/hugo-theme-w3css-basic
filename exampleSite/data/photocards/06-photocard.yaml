@@ -1,7 +1,7 @@
 weight:      6
 title:       "Consetetur sadipscing"
 animated:    "rollIn"
-image:       "images/photocards/pixabay.com/06-photocard.jpg"
+resImg:      "photocards/pixabay.com/06-photocard.jpg"
 url:         pages/front/photocards/06
 description: |
   * dolores duo

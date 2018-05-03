@@ -1,12 +1,12 @@
 ---
-title:       "Hugo - dolor"
-date:        2017-11-10T00:00:00+01:00
+title:         "Hugo - dolor"
+date:          2017-11-10T00:00:00+01:00
+resImgTeaser:  teaserpics/gohugo.io/hugo-dolor.png
 tags:
   - web
   - hugo
 categories:
   - tools
-teaserpic:   /images/teaserpics/gohugo.io/hugo-dolor.png
 ---
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

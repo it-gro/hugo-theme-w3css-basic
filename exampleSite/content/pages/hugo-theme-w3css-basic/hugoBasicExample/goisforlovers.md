@@ -14,7 +14,7 @@ categories = [
     "Development",
     "golang",
 ]
-teaserpic =  "/images/teaserpics/gohugo.io/hugo-ipsum.png"
+resImgTeaser = "teaserpics/gohugo.io/hugo-ipsum.png"
 +++
 
 Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for

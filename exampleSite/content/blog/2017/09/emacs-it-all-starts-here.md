@@ -6,7 +6,7 @@ tags:
  - emacs
 categories:
   - tools
-teaserpic:      /images/teaserpics/wikipedia.org/emacs-it-all-starts-here.svg
+resImgTeaser: teaserpics/wikipedia.org/emacs-it-all-starts-here.png
 ---
 
 

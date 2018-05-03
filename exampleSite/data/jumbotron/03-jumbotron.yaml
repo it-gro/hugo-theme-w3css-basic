@@ -1,7 +1,7 @@
 weight:      3
 title:       Responsive design
+resImg:
 icon:
-image:
 description: |
   * Mobile first
   * 3 (medium, lage) or 1 (small) column layout

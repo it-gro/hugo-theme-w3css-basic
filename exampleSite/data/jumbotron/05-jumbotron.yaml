@@ -1,7 +1,7 @@
 weight:      5
 title:       Optional Google Features
+resImg:
 icon:
-image:
 description: |
     * Fonts - either via api or via local files
     * Translate Widget

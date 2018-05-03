@@ -2,12 +2,12 @@
 weight:      150
 title:       "jumbotrons (pixabay.com)"
 date:        2017-12-08T08:57:49+01:00
+resImgTeaser: teaserpics/pixabay.com/pencil-1067670_640.jpg
 tags:
   - pictures
   - license
 categories:
   - legal
-teaserpic:   /images/teaserpics/pixabay.com/pencil-1067670_640.jpg
 description: "License: Creative Commons CC0"
 ---
 

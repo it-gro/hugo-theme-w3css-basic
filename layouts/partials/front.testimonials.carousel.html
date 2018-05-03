@@ -20,7 +20,7 @@
       {{- end}}
       {{- range $index, $element := sort .Site.Data.testimonials `weight` }}
       <div class='w3-card {{ default `w3-theme-l5` ($.Site.Param `colorFrontTestimonialsCarouselCard`)}} '>
-        {{ template `front-testimonials-entry` $element }}
+        {{ template `front-testimonials-entry` (dict `page` $.Page `element` $element) }}
       </div>       <!-- w3-card -->
       {{- end }} {{/* range */}}
     </div> <!-- testimonials-owl -->
@@ -33,7 +33,7 @@
         {{- range $index, $element := first 3 (sort .Site.Data.testimonials `weight`) }}
           <div class="w3-cell w3-cell-bottom w3-mobile">
             <div class='w3-card w3-margin {{ default `w3-theme-l5` ($.Site.Param `colorFrontTestimonialsCarouselCard`)}} '>
-                {{ template `front-testimonials-entry` $element }}
+                {{ template `front-testimonials-entry` (dict `page` $.Page `element` $element) }}
             </div>
           </div>
         {{- end }} {{/* range */}}
@@ -50,17 +50,29 @@
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- front-testimonials-entry -->` | safeHTML }}
   {{- end}}
-  <div class="w3-container w3-opacity">
-    <p>{{- .text | markdownify }}<p>
+
+{{- $ourPage      :=  index . `page`    }}
+{{- $ourElement   :=  index . `element` }}
+
+<div class="w3-container w3-opacity">
+    <p>{{- $ourElement.text | markdownify }}<p>
   </div>
-  {{- if .name }}
+  {{- if $ourElement.name }}
   <div class="w3-container">
     <div class="w3-cell"><i class="fas fa-quote-left w3-jumbo w3-text-theme"></i></div>
-    <div class="w3-cell">
-      <img class="w3-circle w3-right" alt="" src='{{ .avatar | absURL }}'  style="width:40%">
+      <div class="w3-cell">
+
+    {{- $myImgClass  := `w3-circle w3-right`}}
+    {{- $myImgStyle  := `width:40%`}}
+
+    {{- $myImg       := $ourElement.resImg                       }} {{/* case sensitive ! */}}
+    {{- $myImgCmd    := $ourElement.resImgCmd | default `Resize` }}
+    {{- $myImgOpt    := $ourElement.resImgOpt | default `200x`   }}
+    {{ partial `resource.image.html` (dict `page` $ourPage `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
+
       <div class="w3-right">
-        <div class="w3-large"> {{ .name }}</div>
-        <div class="w3-small"> {{ .position }}</div>
+        <div class="w3-large"> {{ $ourElement.name }}</div>
+        <div class="w3-small"> {{ $ourElement.position }}</div>
       </div> <!-- w3-right -->
     </div>   <!-- w3-cell -->
   </div>     <!-- w3-container -->

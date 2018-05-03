@@ -2,12 +2,12 @@
 weight:      110
 title:       "photocards (pixabay.com)"
 date:        2017-12-08T08:57:25+01:00
+resImgTeaser:   teaserpics/pixabay.com/paint-2985569_640.jpg
 tags:
   - pictures
   - license
 categories:
   - legal
-teaserpic:   /images/teaserpics/pixabay.com/paint-2985569_640.jpg
 description: "License: Creative Commons CC0"
 ---
 

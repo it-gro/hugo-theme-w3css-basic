@@ -1,14 +1,16 @@
 ---
-title:       "{{ replace .TranslationBaseName "-" " " | title }}"
-date:        {{ .Date }}
-toc:         false
+title:         "{{ replace .TranslationBaseName "-" " " | title }}"
+date:          {{ .Date }}
+resImgTeaser:
+#resImgCmd:
+#resImgOpt:
 icon:
-teaserpic:
-description:
+toc:           false
 tags:
-             -
+               -
 categories:
-             -
+               -
+description:
 ---
 
 

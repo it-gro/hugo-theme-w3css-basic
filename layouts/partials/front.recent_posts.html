@@ -22,15 +22,14 @@
       <div class="w3-third">
         <div class='w3-card-4 w3-margin w3-round w3-hover-shadow w3-opacity-min w3-hover-opacity-off {{ default `w3-theme-l4` ($.Site.Param `colorFrontRecentPostsCard`)}} '>
           <a class="no-decoration" href='{{ $element.RelPermalink }}'>
-            <img
-              alt='{{.Params.teaserpic}}'
-              src='{{- if .Params.teaserpic }}
-                   {{- if eq (substr .Params.teaserpic 0 1) `.` }}{{.Params.teaserpic}}{{else}}{{.Params.teaserpic | relURL}}{{end}}
-                   {{- else }}
-                   {{/*- $.Site.Params.teaserpicDefault | relURL */}} {{/* ToDo */}}
-                   {{- end -}}
-                  '
-              class="w3-image w3-left w3-round w3-hover-opacity " style="max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;">
+
+          {{- $myImgClass  := `w3-image w3-left w3-round w3-hover-opacity` }}
+          {{- $myImgStyle  := `max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;` }}
+          {{- $myImg       := $element.Param `resImgTeaser`                       }} {{/* case insensitive */}}
+          {{- $myImgCmd    := $element.Param `resImgTeaserCmd` | default `Resize` }}
+          {{- $myImgOpt    := $element.Param `resImgTeaserOpt` | default `150x`   }}
+          {{ partial `resource.image.html` (dict `page` $element `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
+
           <h3>{{- $element.Title  | markdownify | emojify }}</h3>
           <div class="">
             {{- or .Description .Summary | markdownify | truncate ( or $.Site.Params.teaserTruncateSummary 160)  | replaceRE `<.?p>` `` | safeHTML }}

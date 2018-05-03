@@ -1,9 +1,9 @@
 ---
-weight:      20
-title:       "This Theme Shortcodes"
-date:        "2017-11-22T07:41:52+01:00"
-toc:         true
-teaserpic:   /images/teaserpics/pixabay.com/blue-2863550_640.png
+weight:             20
+title:              "This Theme Shortcodes"
+date:               "2017-11-22T07:41:52+01:00"
+toc:                true
+resImgTeaser:  img/pixabay.com/penguin-2104173_1920.jpg
 tags:
   - shortcodes
   - Showcase

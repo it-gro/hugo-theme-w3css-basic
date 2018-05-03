@@ -1,7 +1,7 @@
 weight:      10
 title:       If privacy matters
+resImg:
 icon:
-image:
 description: |
   * Works with disabled javascript (using fallbacks)
   * Local fonts

@@ -1,4 +1,4 @@
-weight: 5
-name:   "customer-5"
-image:  "images/clients/pixabay.com/company-logo-5.png"
-url:    "http://www.example.com"
+weight:  5
+name:    "customer-5"
+resImg:  "clients/pixabay.com/company-logo-5.png"
+url:     "http://www.example.com"

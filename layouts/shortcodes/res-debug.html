@@ -1,0 +1,18 @@
+{{/*-
+  https://gohugo.io/content-management/organization/#page-bundles
+  https://gohugo.io/content-management/page-resources/
+  https://github.com/gobwas/glob/blob/master/readme.md
+*/}}
+
+{{.Page.Title}}
+
+{{- range $myResource := union ( .Page.Resources.Match "*" ) ( .Page.Resources.Match "**/*" ) }}
+  {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-debug)\b` $.Site.Params.traceFlags) }}
+    <br/>
+    .Name               : {{ $myResource.Name               }} <br/>
+    .Title              : {{ $myResource.Title              }} <br/>
+    .ResourceType       : {{ $myResource.ResourceType       }} <br/>
+    .Permalink          : {{ $myResource.Permalink          }} <br/>
+    .RelPermalink       : {{ $myResource.RelPermalink       }} <br/>
+  {{- end }}
+{{- end }} {{/* range */}}

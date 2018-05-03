@@ -1,0 +1,71 @@
+{{- $thePage      :=  index . `page`    }}
+{{- $theImgClass  := (index . `class`) | default ""       }}
+{{- $theImgStyle  := (index . `style`) | default ""       }}
+{{- $theResImg    := (index . `img`)   | default ``       }}
+{{- $theResImgCmd := (index . `cmd`)   | default `Resize` }}
+{{- $theResImgOpt := (index . `opt`)   | default `300x`   }}
+
+{{- $thePage.Scratch.Set `myResImg` ``}}
+{{- $thePage.Scratch.Set `myImage`  ``}}
+
+{{- if or $thePage.Site.Params.debug (findRE `\bhtml-comment\b` ($thePage.Site.Param `traceFlags`) ) }}
+  {{ `<!-- partials/resource.image.html  -->` | safeHTML }}
+{{- end}}
+
+{{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
+<br/>
+thePage        : {{- $thePage        }} <br/>
+theImgClass    : {{- $theImgClass    }} <br/>
+theImgStyle    : {{- $theImgStyle    }} <br/>
+theResImg      : {{- $theResImg      }} <br/>
+theResImgCmd   : {{- $theResImgCmd   }} <br/>
+theResImgOpt   : {{- $theResImgOpt   }} <br/>
+{{- end }}
+
+{{- $myGlobalResourcePage := $thePage.Site.GetPage "page" "resources/images" }}
+{{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
+  <br/>
+  myGlobalResources: {{- $myGlobalResourcePage.File.Path }} <br/>
+{{- end }}
+{{- if $myGlobalResourcePage }}
+  {{- if len ($myGlobalResourcePage.Resources.ByType `image`) }}
+    {{- if ($theResImg)  }}
+      {{ $thePage.Scratch.Set `myResImg` ( ($myGlobalResourcePage.Resources.ByType `image`).GetMatch ($theResImg) ) }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+
+{{- if $thePage.Param `resImgRelPath`}}
+  {{- $myResourcePage := $thePage.Site.GetPage "page" ($thePage.Dir) ($thePage.Param `resImgRelPath`) "index.md" }}
+  {{- if $myResourcePage }}
+    {{ $thePage.Scratch.Set `myResImg` ( ( ($myResourcePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
+  {{- end }} {{/* if $myResourcePage */}}
+{{- end }} {{/* if resImgRelPath */}}
+
+
+{{- if $thePage.Resources.ByType `image` }}
+  {{- if ($theResImg)  }}
+    {{ $thePage.Scratch.Set `myResImg` ( ( ($thePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
+  {{- end }}
+{{- end }}
+
+{{- $myResource := $thePage.Scratch.Get `myResImg` }}
+{{- if and $myResource (ne $myResource ``) }}
+  {{- if      eq $theResImgCmd `Fill`   }}{{$thePage.Scratch.Set `myImage` ($myResource.Fill   $theResImgOpt)}}
+  {{- else if eq $theResImgCmd `Fit`    }}{{$thePage.Scratch.Set `myImage` ($myResource.Fit    $theResImgOpt)}}
+  {{- else if eq $theResImgCmd `Resize` }}{{$thePage.Scratch.Set `myImage` ($myResource.Resize $theResImgOpt)}}
+  {{- else }}
+    {{- errorf "Invalid image processing command: '%s' for '%s'. Must be one of Fill, Fit or Resize."  $myResource $theResImgCmd}}
+  {{- end }}
+{{- end }}
+{{- $myImage := $thePage.Scratch.Get `myImage` }}
+
+{{- if $myImage }}
+<img
+  class="{{ $theImgClass }}"
+  style="{{ $theImgStyle  | safeCSS }}"
+  src='{{ $myImage.Permalink    }}'
+  alt='{{ $myImage.RelPermalink }}'
+  >
+{{- end }}

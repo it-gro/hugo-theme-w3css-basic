@@ -2,7 +2,7 @@
 
 W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
 Inspiration was taken from [Universal](https://themes.gohugo.io/hugo-universal-theme/).
-It is highly [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml)
+It is highly [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml).
 Change all colors in the blink of an eye,  choose Google fonts or use Google Global Site Tags.
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
@@ -10,6 +10,34 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 
 ---
 ## Latest News
+
+* Teaser images are now resource images
+* New Front Matter (replacing ```teaserPic```):
+
+```yaml
+resImgTeaser:          teaserpics/pixabay.com/adventure-2528477.jpg
+```
+
+Default is to resize with reasonale dimensions. You may overwrite the defaults:
+
+```yaml
+resImgTeaser:          teaserpics/pixabay.com/adventure-2528477.jpg
+resImgTeaserCmd:       Fill
+resImgTeaserOpt:       400x400
+resImgTeaserInCardCmd: Fill
+resImgTeaserInCardOpt: "150x50 Bottom"
+```
+
+See [These Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages) for a demo.
+
+* User has now to agree to Disqus. You may skip this via
+
+`config.toml`
+```toml
+  disqusSkipAgree = true
+```
+
+
 
 * Added shortcodes:
 
@@ -21,15 +49,6 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
   ![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)
   * Added color theme preview via color theme selector (not on small displays)
   ![screenshot color theme selector](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_500.jpg)
-
-* Front-matter teaserpic param now supports images from page bundle. Start the path with / to deliver from static
-
-```yaml
----
-title:       "This Theme Readme (github)"
-teaserpic:   myImg/coffee-2608864.jpg
----
-```
 
 ---
 
@@ -97,6 +116,7 @@ It includes resources from:
 * [Front Matter](#front-matter)
 * [Shortcodes](#shortcodes)
 * [Page Resources](#page-resources)
+  * [Headless Images](#headless-images)
   * [Images](#images)
   * [Attachments](#attachments)
 * [Include Files](#include-files)
@@ -505,13 +525,13 @@ content/blog/
 
 ```
 ---
-title:       "Hugo - **highlight** :art:"
-date:        2017-11-24T08:44:12+01:00
+title:         "Hugo - **highlight** :art:"
+date:          2017-11-24T08:44:12+01:00
+resImgTeaser:  teaserpics/bitbucket.org/pygments-main-logo.png
 tags:
   - Hugo
 categories:
   - Web
-teaserpic:   /images/teaserpics/bitbucket.org/pygments-main-logo.png
 ---
 
 Hugo comes with reallly fast syntax highlighting from Chroma.
@@ -646,10 +666,10 @@ content/pages/
 `content/pages/folder20/folder21/_index.md`
 ```
 ---
-weight:         21
-title:          "Cum sociis natoque (this is level /folder20/folder21)"
-date:           "2017-06-08T01:06:13+02:00"
-teaserpic:      /images/teaserpics/gohugo.io/hugo-dolor.png
+weight:        21
+title:         "Cum sociis natoque (this is level /folder20/folder21)"
+date:          "2017-06-08T01:06:13+02:00"
+resImgTeaser:  teaserpics/gohugo.io/hugo-dolor.png
 ---
 ```
 
@@ -659,7 +679,6 @@ teaserpic:      /images/teaserpics/gohugo.io/hugo-dolor.png
 weight:      18
 title:       "Frontpage Eye-Catcher (this is level /front)"
 date:        2017-11-13T15:37:04+01:00
-teaserpic:
 icon:        "fas fa-globe"
 ---
 ```
@@ -1642,11 +1661,13 @@ pages.md
 
 ```
 ---
-title:       "{{ replace .TranslationBaseName "-" " " | title }}"
-date:        {{ .Date }}
-toc:         false
-icon:        "fab fa-font-awesome"
-teaserpic:   "teaser.png"
+title:         "{{ replace .TranslationBaseName "-" " " | title }}"
+date:          {{ .Date }}
+toc:           false
+icon:          "fab fa-font-awesome"
+resImgTeaser:  "teaser.png"
+#resImgCmd:
+#resImgOpt:
 description: >
   I'm an **example** description.
   I'll show in teaser instead of (calculated) summary.
@@ -1671,11 +1692,11 @@ weight:      42
 
 ```
 ---
-weight:      24
-title:       "My **Stuff** :house:"
-date:        2017-11-13T15:37:04+01:00
-teaserpic:   "/images/teaserpics/teaser.png"
-icon:        "fas fa-list"
+weight:        24
+title:         "My **Stuff** :house:"
+date:          2017-11-13T15:37:04+01:00
+resImgTeaser:  teaserpics/gohugo.io/golang-a-closer-look.png
+icon:          "fas fa-list"
 ---
 ```
 
@@ -1730,6 +1751,69 @@ layouts/shortcodes/
 ## Page Resources
 
 * https://gohugo.io/content-management/page-resources/
+
+### Headless Images
+
+* images may be stored as resource for a headless page:
+
+`content/resources/images/index.md`
+
+```yaml
+---
+title:       "headless-images"
+headless:    true
+---
+```
+
+```
+content/resources/images/
+├── clients
+│   └── pixabay.com
+├── favicons
+├── jumbotrons
+│   └── pixabay.com
+├── photocards
+│   └── pixabay.com
+├── teaserpics
+│   ├── bitbucket.org
+│   ├── gohugo.io
+│   ├── pixabay.com
+│   └── wikipedia.org
+└── testimonials
+    └── pixabay.com
+```
+
+
+`layouts/partials/resource.image.html`
+
+```
+{{- $ourResources := $ourPage.Site.GetPage "page" "resources/images" }}
+  {{ $ourPage.Scratch.Set `myResImg` ( ($ourResources.Resources.ByType `image`).GetMatch ($ourResImg) ) }}
+{{- end }}
+```
+
+A new headless page with the resources may be given in front matter via `resImgRelPath`:
+
+```
+{{- $myResourcePage := $thePage.Site.GetPage "page" ($thePage.Dir) ($thePage.Param `resImgRelPath`) "index.md" }}
+{{ $thePage.Scratch.Set `myResImg` ( ( ($myResourcePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
+```
+
+And of course the page itself may have the image resources:
+
+```
+{{ $thePage.Scratch.Set `myResImg` ( ( ($thePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
+```
+
+
+Given a front matter
+
+```
+resImgTeaser:  teaserpics/pixabay.com/paint-2985569_640.jpg
+```
+
+The images is processed using hugo's build in image commands (resize to a reasonable size).
+
 
 ### Images
 
@@ -1790,11 +1874,11 @@ drwxrwxr-x 2018-04-13            pages
 
 ```
 ---
-title:       "Gallery pixabay.com"
-date:        2018-01-05T20:30:54+01:00
-teaserpic:   
-icon:        "fas fa-images"
-description: "Pictures from pixabay.com"
+title:         "Gallery pixabay.com"
+date:          2018-01-05T20:30:54+01:00
+resImgTeaser:  teaserpics/pixabay.com/paint-2985569_640.jpg
+icon:          "fas fa-images"
+description:   "Pictures from pixabay.com"
 tags:
   - Showcase
 categories:

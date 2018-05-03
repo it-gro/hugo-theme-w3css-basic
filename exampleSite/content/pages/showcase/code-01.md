@@ -1,7 +1,7 @@
 ---
 title:       "Code highlighting"
 date:        2018-01-08T10:34:50+01:00
-teaserpic:   /images/teaserpics/bitbucket.org/pygments-main-logo.png
+resImgTeaser:  teaserpics/bitbucket.org/pygments-main-logo.png
 teaserpicNotOnPage:
 icon:        "far fa-file-code"
 description: "Show syntax highlighting with chroma"

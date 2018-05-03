@@ -2,7 +2,7 @@
 weight:      20
 title:       "Features"
 date:        2017-11-22T13:53:53+01:00
-teaserpic:   images/teaserpics/pixabay.com/seeberg-2825904_640.jpg
+resImgTeaser: teaserpics/pixabay.com/seeberg-2825904_640.jpg
 tags:
   - front
   - Lorem

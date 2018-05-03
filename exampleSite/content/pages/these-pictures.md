@@ -1,8 +1,8 @@
 ---
-weight:      10
-title:       "These Pictures"
-date:        2017-11-13T15:33:35+01:00
-teaserpic:   /images/teaserpics/pixabay.com/paint-2985569_640.jpg
+weight:             10
+title:              "These Pictures"
+date:               2017-11-13T15:33:35+01:00
+resImgTeaser:  teaserpics/pixabay.com/paint-2985569_640.jpg
 description: >
   Pixabay is a vibrant community of creatives, sharing copyright free
   images and videos. All contents are released under Creative Commons

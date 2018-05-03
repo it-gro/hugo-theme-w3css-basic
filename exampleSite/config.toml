@@ -295,14 +295,14 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-buttercup.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-fiesta.css"
-  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-green-flash.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-green-flash.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lilac-grey.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-limpet-shell.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lush-medow.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-peach-echo.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-potters-clay.css"
-  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-riverside.css"
+  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-riverside.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-rose-quarts.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-serenity.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-sharkskin.css"
@@ -485,9 +485,6 @@ consectetuer adipiscing
   #         layouts/partials/main.teaser_in_card.html
   teaserTruncateSummary  = 200
 
-  # used in layouts/partials/main.teaserpic.single.html
-  #         layouts/partials/front.recent_posts.html
-  #teaserpicDefault = "/images/teaserpics/placeholder.png"
 
 
   # contact form
@@ -503,7 +500,7 @@ consectetuer adipiscing
 
   # used in partials/blog.disqus-button.html
   # set to false if you dont want to have a button "show comments", but show the comments right away
-  disqusButtonShow      = false
+  disqusButtonShow     = false
   # set to true, if you want to show the count of comments within the "show comments" button
   # fires an async request to disqus.com/count.js
   disqusButtonShowCount = false
@@ -526,8 +523,9 @@ consectetuer adipiscing
   #   debug-shortcodes      enable all shortcodes debugging output
   #   debug-shortcode-liti  enable all shortcode liti debugging output
   #traceFlags       = "html-comment:debug-shortcodes"
-  #traceFlags       = "html-comment:debug-shortcode-res-figure"
+  #traceFlags       = "html-comment:debug-shortcode-res-debug:debug-partial-resource.image"
   traceFlags         = "html-comment"
+
 
   # custom css and custom js
   # this theme comes with the following "empty" files
@@ -572,7 +570,7 @@ consectetuer adipiscing
 
 
 [params.marquee]
-  # enable or disable marquee
+  # enable or disable marquee on frontpage
   enable   = true
  #enable   = false
   marquee  = '''
@@ -619,8 +617,8 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # see some examples in 'exampleSite/data/photocards'
   enable   = true
   #enable  = false
-  #limitTo  = 3
-  limitTo  = 6
+  limitTo  = 3
+  #limitTo  = 6
   animate  = true
 
 [params.features]
