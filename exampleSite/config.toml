@@ -233,11 +233,11 @@ Nam vestibulum accumsan nisl.
               '''
 
   address   = '''
-**nobis eleifend**
-**Soluta nobis eleifend**
-illum dolore eu feugiat
-3612 Steffisburg
-consectetuer adipiscing
+**nobis eleifend**           
+**Soluta nobis eleifend**    
+illum dolore eu feugiat      
+3612 Steffisburg             
+consectetuer adipiscing      
 
 **Switzerland**
               '''
@@ -486,7 +486,6 @@ consectetuer adipiscing
   teaserTruncateSummary  = 200
 
 
-
   # contact form
   # ##############################
 
@@ -557,6 +556,27 @@ consectetuer adipiscing
 # theme sections
 # more theme defined params
 
+[params.cookieconsent]
+  # https://cookieconsent.insites.com/download/
+  # used in layouts/partials/head.cookieconsent.html
+  enable           = true
+  popupBackground  = "#efefef"
+  popupText        = "#404040"
+  buttonBackground = "#8ec760"
+  buttonText       = "#ffffff"
+  #static           = "true"
+  position         = "bottom"
+  #position         = "top"
+  #position         = "bottom-left"
+  #position         = "bottom-right"
+  #position         = "top-left"
+  #position         = "top-right"
+  #theme            = ""
+  theme            = "classic"
+  #theme            = "edgeless"
+  href             = "https://cookiesandyou.com"
+
+
 [params.favicon]
   # you may want to use https://realfavicongenerator.net to generate your files
   # used in layouts/partials/head.favicon.html
@@ -600,8 +620,8 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   #         layouts/partials/header.nav.theme_color_selector.html
   #         layouts/partials/head.stylesheets.html
   #         layouts/partials/scripts.bottom.html
-  # This may help you to to define w3cssColorTheme
-  themeColorSelectorEnable = true
+  # This may help you to to select a w3cssColorTheme
+  themeColorSelectorEnable = false
 
 
 [params.jumbotrons]
@@ -724,9 +744,11 @@ ultricies eget, tempor sit amet, ante
   # serif, sans-serif or even cursive
   #sans-serif = "Poppins"
   sans-serif = "Ubuntu"
+
 [params.googleApiFonts.family.time]
   # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
   cursive    = "Creepster"
+
 [params.googleApiFonts.family.h1]
   # serif, sans-serif or even cursive
   sans-serif = "Days One"

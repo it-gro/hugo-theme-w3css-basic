@@ -113,3 +113,13 @@
 
 - id: "disqusBtnAgree"
   translation: "Yes, I agree"
+
+# Cookie consent
+- id: cookieMessage
+  translation: This website uses cookies to ensure you get the best experience on our website.
+
+- id: cookieDismiss
+  translation: Yes, I agree
+
+- id: cookieLearn
+  translation: Learn more

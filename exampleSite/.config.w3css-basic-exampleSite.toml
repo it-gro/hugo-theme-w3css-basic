@@ -242,11 +242,11 @@ Nam vestibulum accumsan nisl.
               '''
 
   address   = '''
-**nobis eleifend**
-**Soluta nobis eleifend**
-illum dolore eu feugiat
-3612 Steffisburg
-consectetuer adipiscing
+**nobis eleifend**          
+**Soluta nobis eleifend**   
+illum dolore eu feugiat     
+3612 Steffisburg            
+consectetuer adipiscing     
 
 **Switzerland**
               '''
@@ -493,6 +493,7 @@ consectetuer adipiscing
   #         layouts/partials/main.teaser_in_card.html
   teaserTruncateSummary  = 200
 
+
   # contact form
   # ##############################
 
@@ -561,6 +562,27 @@ consectetuer adipiscing
 # theme sections
 # more theme defined params
 
+[params.cookieconsent]
+  # https://cookieconsent.insites.com/download/
+  # used in layouts/partials/head.cookieconsent.html
+  enable           = true
+  popupBackground  = "#ff3333"
+  popupText        = "#ffffff"
+  buttonBackground = "#8ec760"
+  buttonText       = "#ffffff"
+  #static           = "true"
+  #position         = "bottom"
+  #position         = "top"
+  #position         = "bottom-left"
+  position         = "bottom-right"
+  #position         = "top-left"
+  #position         = "top-right"
+  #theme            = ""
+  theme            = "classic"
+  #theme            = "edgeless"
+  href             = "https://cookiesandyou.com"
+
+
 [params.favicon]
   # you may want to use https://realfavicongenerator.net to generate your files
   # used in layouts/partials/head.favicon.html
@@ -604,7 +626,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   #         layouts/partials/header.nav.theme_color_selector.html
   #         layouts/partials/head.stylesheets.html
   #         layouts/partials/scripts.bottom.html
-  # This may help you to to define w3cssColorTheme
+  # This may help you to to select a w3cssColorTheme
   themeColorSelectorEnable = true
 
 
@@ -725,13 +747,17 @@ ultricies eget, tempor sit amet, ante
 [params.googleApiFonts.family.html]
   # serif, sans-serif or even cursive
   #sans-serif = "Oswald"
-  sans-serif = "Capriola"
+  #sans-serif = "Capriola"
+  sans-serif = "Open Sans"
+
 [params.googleApiFonts.family.time]
   # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
     cursive    = "Creepster"
+
 [params.googleApiFonts.family.h1]
   # serif, sans-serif or even cursive
-  # sans-serif = "Creepster"
+  serif = "Kurale"
+
 [params.googleApiFonts.family.pre]
   # monospace or sans-serif
   monospace  = "Oxygen Mono"
