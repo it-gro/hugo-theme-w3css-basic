@@ -32,9 +32,9 @@
     if ((localStorage.getItem("agreed_to_disqus_thread") != "YES") ) {
       document.getElementById('disqus-show-comments').style.display = "none";
       document.getElementById('disqus_thread').innerHTML =
-        '{{ (default `Show comments powered by [disqus.com](https://disqus.com)` (i18n `disqusTxtAgree`) ) | markdownify }} '
+        '{{ (default "Show comments for this page powered by [disqus.com](https://disqus.com). But first agree to the [Terms](https://help.disqus.com/terms-and-policies/terms-of-service)" (i18n "disqusTxtAgree") ) | markdownify }} '
         +'<button id="agree-to-disqus" type="button" onclick="disqusAgree()" class="w3-button {{ default `w3-theme-l3` ($.Site.Param `colorDisqusButton`) }}" > '
-        +'    {{ default `Show me` (i18n `disqusBtnAgree`) }} '
+        +'    {{ default `Yes, I agree` (i18n `disqusBtnAgree`) }} '
         +'</button> '
       return;
     }
