@@ -108,6 +108,7 @@
 - id: Attachments
   translation: "Attachments"
 
+# Disqus consent
 - id: "disqusTxtAgree"
   translation: "Show comments for this page powered by [disqus.com](https://disqus.com). But first agree to the [Terms](https://help.disqus.com/terms-and-policies/terms-of-service)"
 
