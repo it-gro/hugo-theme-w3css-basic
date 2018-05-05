@@ -108,10 +108,11 @@
 - id: Attachments
   translation: "Attachments"
 
-- id: "disqusTxtAgree"
-  translation: "Show comments powered by [disqus.com](https://disqus.com). Agree to the [Terms](https://help.disqus.com/terms-and-policies/terms-of-service) first. Our terms: tbd "
+# Disqus consent
+- id: "disqusTxtAgree2"
+  translation: "Show comments powered by [disqus.com](https://disqus.com). But first agree to the [Terms](https://help.disqus.com/terms-and-policies/terms-of-service)"
 
-- id: "disqusBtnAgree"
+- id: "disqusBtnAgree2"
   translation: "Yes, I agree"
 
 # Cookie consent
