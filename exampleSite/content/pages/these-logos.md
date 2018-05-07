@@ -8,14 +8,16 @@ resImgTeaser:  teaserpics/pixabay.com/adventure-2528477_640.jpg
 #resImgTeaserOpt: 400x400
 resImgTeaserInCardCmd: Fill
 resImgTeaserInCardOpt: "150x50 Bottom"
-description: >
-  Where did the logos came from?
+description: |
+  (Example for `resImgTeaserInCard*`. Compare the teaser here with the one on the page...)  
+  Where did the logos came from?  
 tags:
   - license
   - logos
 categories:
   - legal
 ---
+
 
 ## Where did the logos came from?
 

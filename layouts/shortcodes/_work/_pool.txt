@@ -1,0 +1,21 @@
+{{ range .Resources }}
+<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+{{ end }}
+
+{{ with .Resources.ByType "image" }}
+<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+{{ end }}
+
+{{/*
+{{ $logo := .Resources.GetByPrefix "logo" }}
+{{ with $logo }}
+{{ end }}
+*/}}
+
+{{ with .Resources.ByType "page" }}
+  {{ range . }}
+    foo
+    <h3>{{ .Title }}</h3>
+    {{ .Content }}
+  {{ end }}
+{{ end }}

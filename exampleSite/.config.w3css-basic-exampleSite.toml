@@ -568,10 +568,14 @@ consectetuer adipiscing
   # https://cookieconsent.insites.com/download/
   # used in layouts/partials/head.cookieconsent.html
   enable           = true
-  popupBackground  = "#ff3333"
-  popupText        = "#ffffff"
-  buttonBackground = "#8ec760"
-  buttonText       = "#ffffff"
+  popupBackground  = "#f33"
+  popupText        = "#fff"
+  buttonBackground = "#3f3"
+  buttonText       = "#000"
+  #popupBackground  = "#fff"
+  #popupText        = "#444"
+  #buttonBackground = "#666"
+  #buttonText       = "#fff"
   #static           = "true"
   #position         = "bottom"
   #position         = "top"
@@ -812,6 +816,10 @@ ultricies eget, tempor sit amet, ante
 	defaultImageCommand	= "Resize"
 	defaultImageOptions	=	"300x"
 	defaultImageCaption	= "%%N"
+
+
+[params.options]
+  jsHistoryNav = true
 
 
 [blackfriday]

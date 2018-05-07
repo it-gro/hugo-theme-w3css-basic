@@ -26,8 +26,7 @@
           <h1 class='w3-panel {{ default `w3-theme-l2` ($.Site.Param `colorBaseofPanel`)}} '>
           {{- if $.Params.icon }}<i class='{{ $.Params.icon }} fa-1x'></i>{{ end }}
             {{ .Title | markdownify | emojify }}
-            <button id="btnfrwd" class="taxonomy-button w3-btn" style="visibility:hidden;float:right;" onclick="javascript:history.forward()"><i class="fas fa-step-forward "></i></button>
-            <button id="btnback" class="taxonomy-button w3-btn" style="visibility:hidden;float:right;" onclick="javascript:history.back()"   ><i class="fas fa-step-backward"></i></button>
+              {{ partial `main.headline.back-forward.html` (dict `siteParams` $.Site.Params )}}
           </h1>
 
         {{- end}}

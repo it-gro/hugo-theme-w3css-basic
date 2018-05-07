@@ -17,7 +17,7 @@ Grid Layout Styles
     position: relative;
     /* Default: 1 tile wide */
     width: 100%;
-    padding-bottom: 100%; 
+    padding-bottom: 100%;
 }
 @media only screen and (min-width : 365px) {
     /* Tablet view: 2 tiles */
@@ -45,7 +45,7 @@ Grid Layout Styles
 Transition styles
 */
 .gallery.hover-transition figure,
-.gallery.hover-effect-zoom .img, 
+.gallery.hover-effect-zoom .img,
 .gallery:not(.caption-effect-appear) figcaption,
 .fancy-figure:not(.caption-effect-appear) figcaption {
     -webkit-transition: all 0.3s ease-in-out;
@@ -56,7 +56,7 @@ Transition styles
 /*
 figure styles
 */
-figure {
+.box figure {
     position:relative; /* purely to allow absolution positioning of figcaption */
     overflow: hidden;
 }
@@ -100,7 +100,7 @@ img / a styles
 .gallery img {
     display: none; /* only show the img if not inside a gallery */
 }
-figure a {
+.box figure a {
     position: absolute;
     left: 0;
     right: 0;

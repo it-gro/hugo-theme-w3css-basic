@@ -24,21 +24,21 @@ using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" */>}}
 {{< res-gallery match="teaserpics/gohugo.io/*" >}} 
 
 ### thumbOpt="200x200"
-using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Resize" thumbOpt="200x200"  */>}} 
+using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="**Resize**" thumbOpt="200x200"  */>}} 
 {{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Resize" thumbOpt="200x200" >}} 
 
-using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fill" thumbOpt="200x200"  */>}} 
+using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="**Fill**" thumbOpt="**200x200**"  */>}} 
 {{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fill" thumbOpt="200x200" >}} 
 
-using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit" thumbOpt="200x200"  */>}} 
+using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="**Fit**" thumbOpt="**200x200**"  */>}} 
 {{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit" thumbOpt="200x200" >}} 
 
 ### thumbOpt="200x100"
-using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Resize" thumbOpt="200x100"  */>}} 
+using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="**Resize**" thumbOpt="**200x100**"  */>}} 
 {{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Resize" thumbOpt="200x100" >}} 
 
-using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fill" thumbOpt="200x100"  */>}} 
+using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="**Fill**" thumbOpt="**200x100**"  */>}} 
 {{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fill" thumbOpt="200x100" >}} 
 
-using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit" thumbOpt="200x100"  */>}} 
+using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="**Fit**" thumbOpt="**200x100**"  */>}} 
 {{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit" thumbOpt="200x100" >}} 

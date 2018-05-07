@@ -1,0 +1,64 @@
+{{- $myDefaultCommand	:= $.Site.Params.resources.defaultCommand | default `Resize` }}
+{{- $myDefaultOptions	:= $.Site.Params.resources.defaultOptions | default `800x`	 }}
+{{- if .IsNamedParams }}
+  {{- $.Scratch.Set `theMatch`       (.Get `match`)  }}
+	{{- $.Scratch.Set `theCommand`		 (.Get `cmd`	)  }}
+	{{- $.Scratch.Set `theOptions`		 (.Get `opt`	)  }}
+{{- else }}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theMatch`    (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theCommand`  (.Get $myPos) }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theOptions`  (.Get $myPos) }} {{end}}
+{{- end }}
+
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-liti)\b` $.Site.Params.traceFlags) }}
+<br/>
+"theMatch"    : {{- $.Scratch.Get `theMatch`    }} <br/>
+"theCommand"  : {{- $.Scratch.Get `theCommand`  }} <br/>
+"theOptions"  : {{- $.Scratch.Get `theOptions`  }} <br/>
+{{- end }}
+
+{{- range $myResource := (.Page.Resources.Match (printf "%s*" ($.Scratch.Get `theMatch`))) }}
+  {{- $myCommand  := ( ($.Scratch.Get `theCommand` ) | default $myResource.Params.imgcmd | default $myDefaultCommand ) }}
+	{{- $myOptions	:= ( ($.Scratch.Get `theOptions` ) | default $myResource.Params.imgopt | default $myDefaultOptions ) }}
+
+  {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-liti)\b` $.Site.Params.traceFlags) }}
+    <br/>
+    "$myCommand"                  : {{ $myCommand                   }} <br/>
+    "$myOptions"                  : {{ $myOptions                   }} <br/>
+    "$myResource.Name"            : {{ $myResource.Name             }} <br/>
+    "$myResource.Title"           : {{ $myResource.Title            }} <br/>
+    "$myResource.Params.origin"   : {{ $myResource.Params.origin    }} <br/>
+    "$myResource.Params.license"  : {{ $myResource.Params.license	  }} <br/>
+    "$myResource.Params.attrby"   : {{ $myResource.Params.attrby    }} <br/>
+    "$myResource.Params.attrhref" : {{ $myResource.Params.attrhref  }} <br/>
+    "$myResource.Params.imgcmd"   : {{ $myResource.Params.imgcmd		}} <br/>
+    "$myResource.Params.imgopt"   : {{ $myResource.Params.imgopt		}} <br/>
+  {{- end }}
+
+  {{- if eq $myCommand `Fill`}}
+    {{- $.Scratch.Set `myImageConverted` ($myResource.Fill $myOptions) }}
+  {{- else if eq $myCommand `Fit`}}
+    {{- $.Scratch.Set `myImageConverted` ($myResource.Fit $myOptions) }}
+  {{- else if eq $myCommand `Resize`}}
+    {{- $.Scratch.Set `myImageConverted` ($myResource.Resize $myOptions) }}
+  {{- else }}
+    {{- errorf "Invalid image processing command: '%s' for '%s'. Must be one of Fill, Fit or Resize."  $myCommand $myResource.Name}}
+  {{- end }}
+  {{- $myImage := $.Scratch.Get `myImageConverted` }}
+
+{{/*  <figure style="width: {{ add $myImage.Width 3 }}px;"> */}}
+  <span class='w3-card-4' style="">
+    <img src="{{ $myImage.RelPermalink }}" width="{{ $myImage.Width }} px" height="{{ $myImage.Height }} px">
+    <span class=''>
+    <small>
+    {{ with $.Inner }}
+      {{ . }}
+    {{ else }}
+      {{ $myCommand }} "{{ $myOptions }}"
+    {{ end }}
+    </small>
+    </span>
+  </span>
+
+{{ end }}
+<br>

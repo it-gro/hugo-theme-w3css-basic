@@ -1,0 +1,13 @@
+{{ with .Page.Resources.ByType "page" }}
+  {{ range . }}
+    <a href="{{ .RelPermalink }}">{{ .Title | title }}</a> <br/>
+    <h3>{{ .Title }}</h3>
+{{ .ResourceType}} .ResourceType <br/>
+{{ .Name        }} .Name         <br/>
+{{ .Title       }} .Title        <br/>
+{{ .Permalink   }} .Permalink    <br/>
+{{ .RelPermalink}} .RelPermalink <br/>
+
+    {{ .Content }}
+  {{ end }}
+{{ end }}

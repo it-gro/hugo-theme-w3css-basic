@@ -1,0 +1,15 @@
+# EditorConfig is awesome: http://EditorConfig.org
+# http://editorconfig.org/#download
+# http://editorconfig.org/#supported-properties
+
+root = true
+
+[*]
+end_of_line = lf
+
+[*.{go,html]
+charset      = utf-8
+indent_style = space
+indent_size  = 4
+
+trim_trailing_whitespace = true

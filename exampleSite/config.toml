@@ -302,12 +302,12 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lush-medow.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-peach-echo.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-potters-clay.css"
-  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-riverside.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-riverside.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-rose-quarts.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-serenity.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-sharkskin.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-snorkel-blue.css"
-  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css"
+  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css"
 
   # used in layouts/partials/*.html
@@ -560,14 +560,18 @@ consectetuer adipiscing
   # https://cookieconsent.insites.com/download/
   # used in layouts/partials/head.cookieconsent.html
   enable           = true
-  popupBackground  = "#efefef"
-  popupText        = "#404040"
-  buttonBackground = "#8ec760"
-  buttonText       = "#ffffff"
+  #popupBackground  = "#f33"
+  #popupText        = "#fff"
+  #buttonBackground = "#3f3"
+  #buttonText       = "#000"
+  popupBackground  = "#fff"
+  popupText        = "#444"
+  buttonBackground = "#666"
+  buttonText       = "#fff"
   #static           = "true"
-  position         = "bottom"
+  #position         = "bottom"
   #position         = "top"
-  #position         = "bottom-left"
+  position         = "bottom-left"
   #position         = "bottom-right"
   #position         = "top-left"
   #position         = "top-right"
@@ -601,7 +605,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
   # if set => change menu entry on small displays to lowercase maxChars
-  smallDispMenuMaxChars = 3
+  smallDispMenuMaxChars = 4
   #smallDispMenuMaxChars = 2
 
 [params.menuTopBar]
@@ -806,6 +810,10 @@ ultricies eget, tempor sit amet, ante
 	defaultImageCommand	= "Resize"
 	defaultImageOptions	=	"300x"
 	defaultImageCaption	= "%%N"
+
+
+[params.options]
+  jsHistoryNav = true
 
 
 # ##################################################

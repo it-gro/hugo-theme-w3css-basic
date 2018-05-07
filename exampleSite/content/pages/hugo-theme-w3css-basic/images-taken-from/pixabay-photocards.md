@@ -11,8 +11,6 @@ categories:
 description: "License: Creative Commons CC0"
 ---
 
-{{- $.Scratch.Set `theThumbCmd`     ( (.Get `thumbCmd`         ) | default $myDefaulThumbCmd      ) }}
-{{- $.Scratch.Set `theThumbCmdOpt`  ( (.Get `thumbOpt`         ) | default $myDefaultThumbCmdOpt  ) }}
 
 ## License
 * https://pixabay.com/en/service/terms/
