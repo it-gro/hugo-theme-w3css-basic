@@ -604,8 +604,100 @@ static/css/syntax/syntax.bw.css
 {{< res-attach >}}
 
 
+### res-gallery
+
+* inspired by [Hugo Easy Gallery](https://www.liwen.id.au/heg/)
+* but uses page resources and image processing
+
+{{< highlight nolan >}}
+{{</* res-gallery-load-photoswipe >}}
+{{< res-gallery match="teaserpics/gohugo.io/*" */>}} 
+{{< /highlight >}}
+
+renders as
+
+{{< res-gallery-load-photoswipe >}}
+{{< res-gallery match="teaserpics/gohugo.io/*" >}} 
+
+#### Shortcode parameters
+
+* only named parameters
+
+Argument          | Default           | What                   | Remark
+------------------|-------------------|------------------------|-------
+path              | resources/images  | path to resource page  | use . for current 
+match             | \*\*/*            | for .Match             | 
+imgCmd            | Resize            |                        | 
+imgOpt            | 800x              |                        | 
+thumbCmd          | Fit               | create thumb           | 
+thumbOpt          | 120x120           | thumb size             | 
+capLng            | `%%F`             | image caption          | 
+capSrt            | `%%N`             | thumb caption          | 
+caption-position  | center            |                        | none top center bottom  (none => hide for thumbs)
+caption-effect    | appear            |                        | none fade appear slide  (none => always visible)
+hover-effect      | zoom              |                        | none grow shrink slidedown slideup zoom 
+hover-transition  |                   |                        | (empty or) none  (none => hard transition)
+
+
+
+#### Page Resources Metadata
+
+Front Matter Param  | What              | Remark
+--------------------|-------------------|---------
+Title               |                   |
+attrBy              | attribution names | 
+attrLink            | attribution link  | 
+caption             | see below         | 
+captionLong         | same as caption   | caption for image 
+captionShort        |                   | caption for thumb
+imgCmd              |                   | 
+imgOpt              |                   | 
+license             |                   | 
+licenseAbrv         |                   | 
+licenseLink         |                   | 
+licenseLink         |                   | 
+origin              |                   | 
+originLink          |                   | 
+thumbCmd            |                   | 
+thumbOpt            |                   | 
+
+```yaml
+  - src:           "**/pixabay.com/*"
+    params:          
+      origin:       pixabay.com
+      license:      Creative Commons CC0
+      licenseAbrv:  CC0 1.0
+      licenseLink:  https://pixabay.com/en/service/terms/
+      caption:      "%%N%%n%%A%%n%%L%%n%%O"
+      captionShort: "%%O%%n%%l"
+```
+
+
+#### Caption format
+Code | What
+-----|-------------
+%%n  | newline
+%%f  | .Name
+%%F  | Filename
+%%B  | Basename
+%%T  | .Title
+%%N  | .Title or Basename
+%%l  | license (using licenseabrv)
+%%L  | license
+%%O  | origin
+%%A  | attr
+%%I  | image info
+
+
+#### Style
+
+* See `static/css/res-gallery.css`
+
+
+
 ## heg-gallery
 
+* kind of obsoleted by [res-gallery](#res-gallery)
 * taken from  
   https://github.com/liwenyip/hugo-easy-gallery/  
   https://www.liwen.id.au/heg/  
@@ -695,6 +787,7 @@ Defined in:
 
 ## heg-figure
 
+* kind of obsoleted by [res-figure](#res-figure)
 * See for original doc: https://www.liwen.id.au/heg/
 * heg-figure improves the usage of `caption="" title="" attr="" attrlink=""`
 * for this demo I set caption-effect=**"none"** 

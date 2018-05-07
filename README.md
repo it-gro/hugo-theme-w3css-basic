@@ -11,6 +11,9 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 ---
 ## Latest News
 
+* Added shortcode:
+  * res-gallery
+
 * Added [cookieconsent](https://cookieconsent.insites.com/)
 [![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_510.jpg)](#cookieconsent)
 
@@ -1943,6 +1946,13 @@ drwxrwxr-x 2018-04-13            pages
 
 ## Gallery
 
+### Gallery with image processing
+
+* uses page resources and image processing
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#res-gallery for documentation and examples
+
+
+### hugo-easy-gallery
 * https://github.com/liwenyip/hugo-easy-gallery/
 
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
@@ -1983,6 +1993,13 @@ categories:
 
 
 ## Figure
+
+### Figure with image processing
+
+* uses page resources and image processing
+* See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#res-figure for documentation an examples
+
+### hugo-easy-gallery
 
 ```
 {{< heg-load-photoswipe >}}
