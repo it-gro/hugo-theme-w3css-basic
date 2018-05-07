@@ -208,11 +208,13 @@ anchor = "smart"
   url      = "/search"
   pre      = "fas fa-search"
 
-[privacy]
-[privacy.youtube]
-noCookie = true
-[privacy.disqus]
-#skipAgree = true
+# development tree 
+# [privacy]
+# [privacy.youtube]
+# noCookie = true
+# [privacy.disqus]
+# #skipAgree = true
+
 
 # ##################################################
 # theme-defined params
