@@ -16,7 +16,5 @@ description: "License: Creative Commons Attribution-ShareAlike 3.0"
 * https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License
 
 ## Images
-{{< heg-load-photoswipe >}}
-{{< heg-gallery dir="/images/teaserpics/wikipedia.org" caption-effect="none" hover-effect="grow" />}} 
-
-
+{{< res-gallery-load-photoswipe >}}
+{{< res-gallery match="teaserpics/wikipedia.org/*" >}} 

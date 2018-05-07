@@ -18,5 +18,6 @@ description: "License: Creative Commons CC0"
   * https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 ## Images
-{{< heg-load-photoswipe >}}
-{{< heg-gallery dir="/images/testimonials/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
+{{< res-gallery-load-photoswipe >}}
+using shortcode: {{</* res-gallery match="photocards/pixabay.com/*" imgOpt="600x" thumbCmd="Resize" thumbOpt="200x" */>}} 
+{{< res-gallery match="testimonials/pixabay.com/*" imgOpt="600x" thumbCmd="Resize" thumbOpt="200x" >}} 

@@ -111,6 +111,13 @@
 - id: Attachments
   translation: "Beilagen"
 
+# Disqus consent
+- id: disqusTxtAgree
+  translation: Zeige Kommentare via [disqus.com](https://disqus.com). Aber erst müssen Sie den [AGBs](https://help.disqus.com/terms-and-policies/terms-of-service) zustimmen
+
+- id: disqusBtnAgree
+  translation: Ja, ich bin einverstanden
+
 # Cookie consent
 - id: cookieMessage
   translation: Wir verwenden Cookies, um unsere Webseite für Sie möglichst benutzerfreundlich zu gestalten.

@@ -31,5 +31,5 @@ met:
 
 
 ## Images
-{{< heg-load-photoswipe >}}
-{{< heg-gallery dir="/images/teaserpics/bitbucket.org" caption-effect="none" hover-effect="grow" />}} 
+{{< res-gallery-load-photoswipe >}}
+{{< res-gallery match="teaserpics/bitbucket.org/*" >}} 
