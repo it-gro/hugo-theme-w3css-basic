@@ -1,0 +1,4 @@
+baseURL       = "http://example.com"
+theme         = "hugo-theme-w3css-basic"
+[taxonomies]
+  tag      = "tags"

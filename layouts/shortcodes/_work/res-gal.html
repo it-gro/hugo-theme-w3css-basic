@@ -1,0 +1,19 @@
+{{/* https://discourse.gohugo.io/t/solved-get-image-size-from-page-resource/10666 */}}
+
+ {{ $galleryimages := .Page.Resources.Match "gallery-*" }}
+
+ {{ range $galleryimages }}
+ {{ $thumbnail := .Resize "320x" }}
+
+ 		<figure itemscope itemtype="http://schema.org/ImageObject" class="image">
+ 		  <a href="{{ .Permalink }}" itemprop="contentUrl" data-size="{{ .Width }}x{{ .Height }}" >
+ 		      <img src="{{ $thumbnail.Permalink }}" itemprop="thumbnail" alt="--caption--" />
+ 		  </a>
+
+ 		  <figcaption itemprop="caption description">
+ 		    --caption--
+ 		    <span itemprop="copyrightHolder">--copyrightHolder--</span>
+ 		  </figcaption>
+ 		</figure>
+
+ {{ end }}
