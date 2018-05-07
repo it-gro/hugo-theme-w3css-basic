@@ -1815,7 +1815,10 @@ layouts/shortcodes/
 ├── litx.html
 ├── readfile.html
 ├── res-attach.html
+├── res-debug.html
 ├── res-figure.html
+├── res-gallery.html
+├── res-gallery-load-photoswipe.html
 ├── w3-alert-icon.html
 ├── w3-badge.html
 ├── w3-button-icon.html
