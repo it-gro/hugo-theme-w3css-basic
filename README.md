@@ -12,7 +12,7 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 ## Latest News
 
 * Added shortcode:
-  * res-gallery
+  * [res-gallery](#gallery-with-image-processing)
 [![screenshot res-gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_516.jpg)](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/gallery-01/)
 
   
@@ -142,7 +142,11 @@ It includes resources from:
   * [Attachments](#attachments)
 * [Include Files](#include-files)
 * [Gallery](#gallery)
+  * [res-gallery](#gallery-with-image-processing)
+  * [heg-gallery](#hugo-easy-gallery)
 * [Figure](#figure)
+  * [res-figure](#figure-with-image-processing)
+  * [heg-figure](#hugo-easy-gallery-figure)
 * [Showcase](#showcase)
 * [Usage](#usage)
   * [Minifier](#minifier)
@@ -1957,8 +1961,11 @@ drwxrwxr-x 2018-04-13            pages
 * uses page resources and image processing
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#res-gallery for documentation and examples
 
+[![screenshot res-gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_518.jpg)](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/images-taken-from/gohugoio-teaserpics/)
 
-### hugo-easy-gallery
+
+
+### Hugo Easy Gallery
 * https://github.com/liwenyip/hugo-easy-gallery/
 
 ![screenshot Gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_340.jpg)
@@ -2005,7 +2012,7 @@ categories:
 * uses page resources and image processing
 * See https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#res-figure for documentation an examples
 
-### hugo-easy-gallery
+### Hugo Easy Gallery Figure
 
 ```
 {{< heg-load-photoswipe >}}
