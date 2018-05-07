@@ -20,7 +20,7 @@ using shortcode:
 
 {{< res-gallery match="**/pixabay.com/*" caption-position="bottom" caption-effect="fade" hover-effect="slideup" >}} 
 
-* More examples: [Images taken from ...](/pages/hugo-theme-w3css-basic/images-taken-from/)
+* More examples: [Images taken from ...](../../hugo-theme-w3css-basic/images-taken-from/)
 
 * See [Gallery with image processing (shortcode res-gallery)]({{< relref "pages/hugo-theme-w3css-basic/page-shortcodes/index.md#res-gallery" >}})  
   and [Figure with processing (Demo shortcode res-figure)]({{< relref "image-processing-with-hugo" >}}) as well
