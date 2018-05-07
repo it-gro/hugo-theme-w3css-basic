@@ -8,7 +8,7 @@
 {{- end}}
   <div class='w3-card-4 w3-center w3-round-xxlarge {{ default `w3-theme-d1` ($.Site.Param `colorBlogListCard`)}}'>
     <h2>{{if $.Site.Params.blog.icon }}<i class='{{ $.Site.Params.blog.icon }} '></i>{{ end }} {{.Site.Params.blog.title}}
-      {{ partial `main.headline.back-forward.html` (dict `siteParams` $.Site.Params `styleForward` `margin-top:16px;margin-right:16px;` `styleBackward` `margin-top:16px;` ) }}
+      {{ partial `main.headline.back-forward.html` (dict `siteParams` $.Site.Params `styleForward` `margin-top:2px;margin-right:16px;` `styleBackward` `margin-top:2px;` ) }}
     </h2>
       {{- if $.Site.Params.blog.subtitle }}
       {{ $.Site.Params.blog.subtitle | markdownify }}
