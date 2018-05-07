@@ -8,6 +8,7 @@ Documentation and licence at https://github.com/liwenyip/hugo-easy-gallery/
 {{- if not ($.Page.Scratch.Get `photoswipeloaded`) }}
 {{- $.Page.Scratch.Set `photoswipeloaded` 1 }}
 {{- /*
+<link rel="stylesheet" href='{{ relURL `vendor/liwenyip/hugo-easy-gallery/css/hugo-easy-gallery.min.css` }}' />
 <!--
 *** jQuery must be loaded before load-photoswipe.js ***
 -->
