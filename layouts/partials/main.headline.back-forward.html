@@ -1,0 +1,6 @@
+{{- if isset .siteParams (lower `options` ) }}
+{{- if .siteParams.options.jshistorynav }}
+<button id="btnfrwd" class="taxonomy-button w3-btn" style="visibility:hidden;float:right;{{ with .styleForward  }}{{.|safeCSS}}̣{{end}};" onclick="javascript:history.forward()"><i class="fas fa-step-forward "></i></button>
+<button id="btnback" class="taxonomy-button w3-btn" style="visibility:hidden;float:right;{{ with .styleBackward }}{{.|safeCSS}}̣{{end}};" onclick="javascript:history.back()"   ><i class="fas fa-step-backward"></i></button>
+{{- end}}
+{{- end}}

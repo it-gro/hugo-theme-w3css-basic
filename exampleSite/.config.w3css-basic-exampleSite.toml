@@ -814,6 +814,10 @@ ultricies eget, tempor sit amet, ante
 	defaultImageCaption	= "%%N"
 
 
+[params.options]
+  jsHistoryNav = true
+
+
 [blackfriday]
   # extensions = ["noEmptyLineBeforeBlock"]
   # extensions = ["hardLineBreak"]
