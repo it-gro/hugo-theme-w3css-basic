@@ -11,6 +11,8 @@ categories:
 description: "License: Creative Commons CC0"
 ---
 
+{{- $.Scratch.Set `theThumbCmd`     ( (.Get `thumbCmd`         ) | default $myDefaulThumbCmd      ) }}
+{{- $.Scratch.Set `theThumbCmdOpt`  ( (.Get `thumbOpt`         ) | default $myDefaultThumbCmdOpt  ) }}
 
 ## License
 * https://pixabay.com/en/service/terms/
@@ -18,6 +20,6 @@ description: "License: Creative Commons CC0"
   * https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 ## Images
-{{< heg-load-photoswipe >}}
-{{< heg-gallery dir="/images/photocards/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
-
+{{< res-gallery-load-photoswipe >}}
+using shortcode: {{</* res-gallery match="photocards/pixabay.com/*" caption-position="bottom" caption-effect="fade" hover-effect="slideup" */>}} 
+{{< res-gallery match="photocards/pixabay.com/*" caption-position="bottom" caption-effect="fade" hover-effect="slideup" >}} 

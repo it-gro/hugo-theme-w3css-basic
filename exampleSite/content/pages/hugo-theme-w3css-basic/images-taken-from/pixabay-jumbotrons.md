@@ -18,5 +18,5 @@ description: "License: Creative Commons CC0"
   * https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 ## Images
-{{< heg-load-photoswipe >}}
-{{< heg-gallery dir="/images/jumbotrons/pixabay.com" caption-effect="none" hover-effect="grow" />}} 
+{{< res-gallery-load-photoswipe >}}
+{{< res-gallery match="jumbotrons/pixabay.com/*" >}} 
