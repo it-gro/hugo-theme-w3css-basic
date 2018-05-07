@@ -13,6 +13,9 @@ See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/
 
 * Added shortcode:
   * res-gallery
+[![screenshot res-gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_516.jpg)](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/gallery-01/)
+
+  
 
 * Added [cookieconsent](https://cookieconsent.insites.com/)
 [![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_510.jpg)](#cookieconsent)
