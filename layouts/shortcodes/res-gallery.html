@@ -154,9 +154,12 @@ $myResPage.Dir  : {{ $myResPage.Dir  }} <br/>
 
     {{- $myThumCmdOptDimentions    := split $myThumbCmdOpt "x" }}
     {{- $myThumCmdOptDimentionsMax := cond (gt (index $myThumCmdOptDimentions 0) (index $myThumCmdOptDimentions 1) ) (index $myThumCmdOptDimentions 0) (index $myThumCmdOptDimentions 1) }}
+    {{- $myThumCmdOptDimentionsW := index $myThumCmdOptDimentions 0 }}
+    {{- $myThumCmdOptDimentionsH := index $myThumCmdOptDimentions 1 }}
 
   <div class='res-gallery-box '
-       style="width:{{$myThumCmdOptDimentionsMax}}px; height:{{$myThumCmdOptDimentionsMax}}px;"
+       {{/* style="width:{{$myThumCmdOptDimentionsMax}}px; height:{{$myThumCmdOptDimentionsMax}}px;" */}}
+       style="width:{{$myThumCmdOptDimentionsW}}px; height:{{$myThumCmdOptDimentionsH}}px;"
        itemscope itemtype="http://schema.org/ImageGallery" >
     <figure class="img"
             data-size='{{$myRegGalleryImage.Width}}x{{$myRegGalleryImage.Height}}'
