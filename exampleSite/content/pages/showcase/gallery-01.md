@@ -4,6 +4,7 @@ date:                2018-04-06T19:10:03+02:00
 resImgTeaser:        teaserpics/pixabay.com/paint-2985569_640.jpg
 teaserpicNotOnPage:
 icon:               "fas fa-images"
+toc:                true
 description:        "Pictures from pixabay.com"
 tags:
   - Showcase
@@ -12,6 +13,7 @@ categories:
 ---
 
 
+# Demo with images from pixabay.com
 {{< res-gallery-load-photoswipe >}}
 using shortcode: 
 {{< highlight nolang >}}
@@ -20,9 +22,9 @@ using shortcode:
 
 {{< res-gallery match="**/pixabay.com/*" caption-position="bottom" caption-effect="fade" hover-effect="slideup" >}} 
 
+# See more here
 * More examples:  
    [Images taken from ...](../../hugo-theme-w3css-basic/images-taken-from/)   
-   don't miss: [Using thumbCmd and thumbOpt](../../hugo-theme-w3css-basic/images-taken-from/gohugoio-teaserpics/)
 
 * See [Gallery with image processing (shortcode res-gallery)]({{< relref "pages/hugo-theme-w3css-basic/page-shortcodes/index.md#res-gallery" >}})  
   and [Figure with processing (Demo shortcode res-figure)]({{< relref "image-processing-with-hugo" >}}) as well
@@ -30,3 +32,45 @@ using shortcode:
 * Compare with [shortcode heg-gallery]({{< relref "pages/hugo-theme-w3css-basic/page-shortcodes/index.md#heg-gallery" >}})  
   and [shortcode heg-figure]( {{< relref "pages/hugo-theme-w3css-basic/page-shortcodes/index.md#heg-figure" >}})   
   as well
+
+
+# Demo (gohugo.io) using thumbCmd and thumbOpt
+
+* more then one gallery on same page :smile:
+
+using shortcode: 
+{{< highlight nolang >}}
+using shortcode: {{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fill" thumbOpt="200x200" */>}} 
+{{< /highlight  >}}
+
+{{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fill" thumbOpt="200x200" >}} 
+
+using shortcode: 
+{{< highlight nolang >}}
+{{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit"  thumbOpt="200x200" */>}} 
+{{< /highlight  >}}
+
+{{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit"  thumbOpt="200x200" >}} 
+
+using shortcode: 
+{{< highlight nolang >}}
+{{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fill" thumbOpt="200x100" */>}} 
+{{< /highlight  >}}
+
+{{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fill" thumbOpt="200x100" >}} 
+
+using shortcode: 
+{{< highlight nolang >}}
+{{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit"  thumbOpt="200x100" */>}} 
+{{< /highlight  >}}
+
+{{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit"  thumbOpt="200x100" >}} 
+
+
+using shortcode: 
+{{< highlight nolang >}}
+{{</* res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit"  thumbOpt="100x200" */>}} 
+{{< /highlight  >}}
+
+{{< res-gallery match="teaserpics/gohugo.io/*" thumbCmd="Fit"  thumbOpt="100x200" >}} 
+

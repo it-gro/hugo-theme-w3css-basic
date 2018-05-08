@@ -804,6 +804,22 @@ ultricies eget, tempor sit amet, ante
   # showFileExtension = true
   # humanizeCaption   = false
 
+[params.resGallery]
+	# used in layouts/shortcodes/res-gallery.html
+	defaultResPagePath	=	"resources/images" 
+	defaultMatch				=	"**/*"		 
+	defaulImgCmd				=	"Resize"	 
+	defaulImgCmdOpt			=	"800x"		 
+	defaulThumbCmd			=	"Fit"			 
+	defaultThumbCmdOpt	=	"120x120"	 
+	defaultCaptionLong	=	"%%F"			 
+	defaultCaptionShort =	"%%N"			 
+
+	#defaulThumbCmd			=	"Resize"			 
+	#defaultThumbCmdOpt	=	"100x100"	 
+	#defaulThumbCmd			=	"Fill"			 
+	#defaultThumbCmdOpt	=	"120x120"	 
+
 
 [params.resources]
 	# used in layouts/shortcodes/res-figure.html
