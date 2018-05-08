@@ -8,10 +8,12 @@ toc:                true
 description:        "with pictures from pixabay.com"
 tags:
   - Showcase
+  - shortcodes
+  - resources
+  - images
 categories:
   - This Theme
 ---
-
 
 # Demo with images from pixabay.com
 {{< res-gallery-load-photoswipe >}}
