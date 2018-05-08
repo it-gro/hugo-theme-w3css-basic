@@ -1,11 +1,11 @@
 ---
-title:               "Gallery pixabay.com"
-date:                2018-04-06T19:10:03+02:00
+title:               "Gallery with image processing"
+date:                2018-05-08T22:25:44+02:00
 resImgTeaser:        teaserpics/pixabay.com/paint-2985569_640.jpg
 teaserpicNotOnPage:
 icon:               "fas fa-images"
 toc:                true
-description:        "Pictures from pixabay.com"
+description:        "with pictures from pixabay.com"
 tags:
   - Showcase
 categories:
