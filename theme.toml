@@ -4,7 +4,7 @@
 name           = "W3.CSS Basic"
 license        = "MIT"
 licenselink    = "https://github.com/it-gro/hugo-theme-w3css-basic/blob/master/LICENSE.md"
-description    = "This theme is built with W3.CSS and is highly configurable. More than 50 monochromatic color themes and 25 shortcodes. It has support for Cookie consent, image processing, page bundles and resources (attachments)."
+description    = "This theme is built with W3.CSS and is highly configurable. More than 50 monochromatic color themes and 25 shortcodes. It has support for Cookie consent, image processing, image galleries, page bundles and resources (attachments)."
 homepage       = "https://it-gro.github.io/hugo-theme-w3css-basic.github.io"
 tags           = [
                    "blog"

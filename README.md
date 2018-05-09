@@ -1,72 +1,14 @@
 # W3.CSS Basic Theme for Hugo
 
 W3.CSS Basic is a website template built with [W3.CSS](https://www.w3schools.com/w3css/).  
-Inspiration was taken from [Universal](https://themes.gohugo.io/hugo-universal-theme/).
-It is highly [configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml).
-Change all colors in the blink of an eye,  choose Google fonts or use Google Global Site Tags.
+Inspiration was taken from
+[Universal](https://themes.gohugo.io/hugo-universal-theme/).  It is highly
+[configurable](//github.com/it-gro/hugo-theme-w3css-basic/tree/master/exampleSite/config.toml).
+Change all colors in the blink of an eye, change default settings or disable
+Frontpage elements.
 
 See the [exampleSite](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/) for a demo.
 
-
----
-## Latest News
-
-* Added shortcode:
-  * [res-gallery](#gallery-with-image-processing)
-[![screenshot res-gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_516.jpg)](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/gallery-01/)
-
-  
-
-* Added [cookieconsent](https://cookieconsent.insites.com/)
-[![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_510.jpg)](#cookieconsent)
-
-[![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_512.jpg)](#cookieconsent)
-
-* Teaser images are now resource images
-* New Front Matter (replacing ```teaserPic```):
-
-```yaml
-resImgTeaser:          teaserpics/pixabay.com/adventure-2528477.jpg
-```
-
-Default is to resize with reasonale dimensions. You may overwrite the defaults:
-
-```yaml
-resImgTeaser:          teaserpics/pixabay.com/adventure-2528477.jpg
-resImgTeaserCmd:       Fill
-resImgTeaserOpt:       400x400
-resImgTeaserInCardCmd: Fill
-resImgTeaserInCardOpt: "150x50 Bottom"
-```
-
-See [These Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages) for a demo.
-
-* User has now to agree to Disqus. You may skip this via
-
-`config.toml`
-```toml
-  disqusSkipAgree = true
-```
-[![screenshot DiscusAgree](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_514.jpg)](#disqus)
-
-
-
-* Added shortcodes:
-
-  * res-figure
-  [![screenshot res-figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_502.jpg)](#images)
-  * res-attach
-  [![screenshot res-attach](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_504.jpg)](#attachments)
-  * readfile
-  [![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)](#include-files)
-  
-  * Added color theme preview via color theme selector (not on small displays)
-  [![screenshot color theme selector](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_500.jpg)](#color-theme)
-
-```toml
-  # This may help you to to select a w3cssColorTheme
-  themeColorSelectorEnable = true
-```
 
 ---
 
@@ -78,26 +20,14 @@ This theme is for:
 * People who like [monochromatic colors](https://www.w3schools.com/colors/colors_monochromatic.asp)
 
 
-It includes resources from:
-
-* https://www.w3schools.com/w3css/
-* https://fontawesome.com/icons/
-* https://owlcarousel2.github.io/OwlCarousel2/
-* https://daneden.me/animate
-* https://github.com/liwenyip/hugo-easy-gallery/
-* http://photoswipe.com
-* https://fonts.google.com/
-* https://translate.google.com
-* https://cse.google.com
-* https://developers.google.com/gtagjs/devguide/snippet
-* https://cookieconsent.insites.com
-
-
-
 ## Table of Contents
 
+* [Latest News](#latest-news)
 * [Goals](#goals)
 * [Features](#features)
+  * [Includes Resources](#included-resources)
+  * [Features Tags](#features-tags)
+  * [Features List](#features-list)
 * [Installation](#installation)
 * [Configuration](#configuration)
   * [Language](#language)
@@ -161,6 +91,65 @@ It includes resources from:
 * [More Screenshots](#more-screenshots)
 
 
+## Latest News
+
+* Added shortcode:
+  * [res-gallery](#gallery-with-image-processing)
+[![screenshot res-gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_516.jpg)](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/gallery-01/)
+
+  
+* Added [cookieconsent](https://cookieconsent.insites.com/)
+[![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_510.jpg)](#cookieconsent)
+
+[![screenshot cookieconsent](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_512.jpg)](#cookieconsent)
+
+* Teaser images are now resource images
+* New Front Matter (`resImgTeaser` is replacing ```teaserPic```):
+
+```yaml
+resImgTeaser:          teaserpics/pixabay.com/adventure-2528477.jpg
+```
+
+Default is to resize with reasonale dimensions. You may overwrite the defaults:
+
+```yaml
+resImgTeaser:          teaserpics/pixabay.com/adventure-2528477.jpg
+resImgTeaserCmd:       Fill
+resImgTeaserOpt:       400x400
+resImgTeaserInCardCmd: Fill
+resImgTeaserInCardOpt: "150x50 Bottom"
+```
+
+See the teaser image here: [These
+Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages) and compare to the one on the page.
+
+* User has now to agree to Disqus. You may skip this via
+
+`config.toml`
+```toml
+  disqusSkipAgree = true
+```
+[![screenshot DiscusAgree](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_514.jpg)](#disqus)
+
+
+* Added shortcodes:
+
+  * [res-figure](/pages/hugo-theme-w3css-basic/page-shortcodes/#res-figure)
+  [![screenshot res-figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_502.jpg)](#images)
+  * [res-attach](/pages/hugo-theme-w3css-basic/page-shortcodes/#res-attach)
+  [![screenshot res-attach](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_504.jpg)](#attachments)
+  * [readfile](/pages/hugo-theme-w3css-basic/page-shortcodes/#readfile)
+  [![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)](#include-files)
+
+
+* Added color theme preview via color theme selector (not on small displays)
+  [![screenshot color theme selector](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_500.jpg)](#color-theme)
+
+```toml
+  # This may help you to to select a w3cssColorTheme
+  themeColorSelectorEnable = true
+```
+
 ## Goals
 
 My goals for this theme are:
@@ -177,6 +166,37 @@ My goals for this theme are:
 
 ## Features
 
+### Included Resources
+This theme includes resources from:
+
+* https://www.w3schools.com/w3css/
+* https://fontawesome.com/icons/
+* https://owlcarousel2.github.io/OwlCarousel2/
+* https://daneden.me/animate
+* https://github.com/liwenyip/hugo-easy-gallery/
+* http://photoswipe.com
+* https://fonts.google.com/
+* https://translate.google.com
+* https://cse.google.com
+* https://developers.google.com/gtagjs/devguide/snippet
+* https://cookieconsent.insites.com
+
+
+### Features Tags:
+
+animate, attachments, blog, branch-bundle, carousel, clients, color-themes,
+configuration, contact-form, cookie-consent, custom-themes, data, debug, disqus,
+emoji, features, figure, font-awesome, formspree.io, gallery, google-analytics,
+google-custom-search, google-fonts, google-map, google-translate,
+headless-bundle, hugo-easy-gallery, i18n, image-processing, jumbotron,
+landing-page, leaf-bundle, marquee, menu, menutopbar, mobile,
+monochromatic-colors, navigation, page-bundles, page-resources, pages,
+pagination, photocards, privacy, responsive, search, see-more, submenu,
+taxonomy-bar, taxonomy-list, teaser-pictures, teasers, term-list, testimonials,
+tracing
+
+
+### Features List
 * [Monochromatic Color](https://www.w3schools.com/colors/colors_monochromatic.asp) Schemes
 * Works with disabled javascript (using fallbacks)
 * [Responsive design](https://search.google.com/test/mobile-friendly?url=https://it-gro.github.io/hugo-theme-w3css-basic.github.io)
