@@ -613,7 +613,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
   # if set => change menu entry on small displays to lowercase maxChars
-  smallDispMenuMaxChars = 3
+  smallDispMenuMaxChars = 4
   #smallDispMenuMaxChars = 2
 
 [params.menuTopBar]
