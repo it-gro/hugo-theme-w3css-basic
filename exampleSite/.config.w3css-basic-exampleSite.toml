@@ -91,6 +91,7 @@ quality = 75
 # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 anchor = "smart"
 
+
 # ##################################################
 # Theme-defined configuration
 
@@ -142,8 +143,8 @@ anchor = "smart"
 [[menu.main]]
   weight = 1
   name   = "About"
-  url    = "/categories/this-theme/"
-  #url    = "/pages/hugo-theme-w3css-basic/"
+  #url    = "/categories/this-theme/"
+  url    = "/pages/hugo-theme-w3css-basic/"
   pre    = "fas fa-info fa-fw"
   parent = "theme"
 
@@ -449,6 +450,7 @@ consectetuer adipiscing
   # w3-white
   # w3-yellow
 
+
   # google stuff
   # ##############################
 
@@ -529,7 +531,7 @@ consectetuer adipiscing
   # flags used for tracing and html comment output
   # currently used:
   #   html-comment          enable partials html comment output
-  #   debug-shortcodes      enable all shortcodes debugging outpt
+  #   debug-shortcodes      enable all shortcodes debugging output
   #   debug-shortcode-liti  enable all shortcode liti debugging output
   #traceFlags       = "html-comment:debug-shortcodes"
   #traceFlags       = "html-comment:debug-shortcode-res-figure"
@@ -553,6 +555,7 @@ consectetuer adipiscing
   custom_css        = [ ]
   custom_js_top     = [ ]
   custom_js_bottom  = [ ]
+
 
   # developer stuff
   debug              = false
@@ -602,7 +605,7 @@ consectetuer adipiscing
 
 
 [params.marquee]
-  # enable or disable marquee
+  # enable or disable marquee on frontpage
   enable   = true
  #enable   = false
   marquee  = '''
@@ -743,7 +746,7 @@ ultricies eget, tempor sit amet, ante
   # tagsText        = [ "html", "body" ]
   tagsText        = [ "html", "body", "abbr", "address", "blockquote", "cite", "dfn", "em", "ins", "mark", "s", "time" ]
   tagsHeading     = [ "h1", "h2", "h3", "h4", "h5", "h6" ]
-  tagsMono        = [ "pre", "code", "kbd", "samp" ]
+  tagsMono        = [ "pre", "code", "kbd", "samp", "data" ]
 
   # these parameter sections must exist, the others are optional
   fallbackText    = "html"
@@ -754,19 +757,24 @@ ultricies eget, tempor sit amet, ante
   # serif, sans-serif or even cursive
   #sans-serif = "Oswald"
   #sans-serif = "Capriola"
+  #sans-serif = "Poppins"
+  #sans-serif = "Ubuntu"
   sans-serif = "Open Sans"
 
 [params.googleApiFonts.family.time]
   # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
-    cursive    = "Creepster"
+  cursive    = "Creepster"
 
 [params.googleApiFonts.family.h1]
   # serif, sans-serif or even cursive
+  #sans-serif = "Days One"
   serif = "Kurale"
 
 [params.googleApiFonts.family.pre]
   # monospace or sans-serif
   monospace  = "Oxygen Mono"
+  #monospace  = "Cousine"
+  #monospace  = "Ubuntu Mono"
 
   # a random list of google api fonts:
   # sans-serif = "Capriola"
@@ -787,6 +795,7 @@ ultricies eget, tempor sit amet, ante
   # serif      = "Roboto Slab"
   #
   # monospace  = "Cousine"
+  # monospace  = "Nova Mono"
   # monospace  = "Oxygen Mono"
   # monospace  = "Roboto Mono"
   # monospace  = "Space Mono"     # problem with />
@@ -796,14 +805,13 @@ ultricies eget, tempor sit amet, ante
   # cursive    = "Carter One"
   # cursive    = "Courgette"
   # cursive    = "Creepster"
+  # cursive    = "Nova Slim"
   # cursive    = "Parisienne"
   # cursive    = "Patrick Hand"
   # cursive    = "Rammetto One"
   # cursive    = "Rochester"
   # cursive    = "Romanesco"
 
-# ##################################################
-# other sections
 
 [params.gallery]
   # used in layouts/shortcodes/heg-gallery.html
@@ -812,31 +820,34 @@ ultricies eget, tempor sit amet, ante
 
 
 [params.resources]
-	# used in layouts/shortcodes/res-figure.html
-	defaultImageCommand	= "Resize"
-	defaultImageOptions	=	"300x"
-	defaultImageCaption	= "%%N"
-
+  # used in layouts/shortcodes/res-figure.html
+  defaultImageCommand = "Resize"
+  defaultImageOptions = "300x"
+  defaultImageCaption = "%%N"
 
 [params.resGallery]
-	# used in layouts/shortcodes/res-gallery.html
-	defaultResPagePath	=	"resources/images" 
-	defaultMatch				=	"**/*"		 
-	defaulImgCmd				=	"Resize"	 
-	defaulImgCmdOpt			=	"800x"		 
-	defaulThumbCmd			=	"Fit"			 
-	defaultThumbCmdOpt	=	"120x120"	 
-	defaultCaptionLong	=	"%%F"			 
-	defaultCaptionShort =	"%%N"			 
+  # used in layouts/shortcodes/res-gallery.html
+  defaultResPagePath  = "resources/images" 
+  defaultMatch        = "**/*"     
+  defaulImgCmd        = "Resize"   
+  defaulImgCmdOpt     = "800x"     
+  defaulThumbCmd      = "Fit"      
+  defaultThumbCmdOpt  = "120x120"  
+  defaultCaptionLong  = "%%F"      
+  defaultCaptionShort = "%%N"      
 
-	#defaulThumbCmd			=	"Resize"			 
-	#defaultThumbCmdOpt	=	"100x100"	 
-	#defaulThumbCmd			=	"Fill"			 
-	#defaultThumbCmdOpt	=	"120x120"	 
+  #defaulThumbCmd     = "Resize"       
+  #defaultThumbCmdOpt = "100x100"  
+  #defaulThumbCmd     = "Fill"       
+  #defaultThumbCmdOpt = "120x120"  
 
 
 [params.options]
   jsHistoryNav = true
+
+
+# ##################################################
+# other sections
 
 
 [blackfriday]
