@@ -21,7 +21,7 @@
 {{- end}}
   {{- /* <h3> {{ default `Contact` (i18n `contactForm`   ) }}</h3> */}} {{/* toc on contact page */}}
   <p><label>{{ default `Name`    (i18n `contactName`   ) }} </label> <input class="w3-input w3-border" name="name"  type="text" required placeholder="Name" ></p>
-  {{- if $.Site.Params.contact_incl_email }}
+  {{- if $.Site.Params.contactFormInclEmail }}
   <p><label>{{ default `Mail`    (i18n `contactMail`   ) }} </label> <input class="w3-input w3-border" name="email" type="text" required placeholder="Mail" ></p>
   {{- end }}
   <p><label>{{ default `Message` (i18n `contactMessage`) }} </label> <textarea class="w3-input w3-border" name="message" required placeholder="Message" ></textarea></p>

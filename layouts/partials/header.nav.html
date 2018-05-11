@@ -110,7 +110,8 @@
   {{- end }}
   {{- end }}
 
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="showMenu()">&#9776;</a>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="showMenu()"><i class="{{default `fas fa-bars` $.Site.Params.menuConfig.smallDispMenuCollapseIcon }}"></i></a>
+  {{/* &#9776; */}}
 
   <div id="nav-small-js-bar-block" class="w3-bar-block w3-small w3-hide w3-hide-large w3-hide-medium">
   {{- template `header-nav-entry` . }}
@@ -122,7 +123,7 @@
 {{- else }}
 
 {{- /* ************************************************** small no collapsing */}}
-<div id='nav-small-no-js' class='w3-bar w3-small w3-hide-medium w3-hide-large {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
+<div id='nav-small-no-js' class='w3-bar w3-hide-medium w3-hide-large {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- w3-hide-large w3-hide-medium ************************************************** -->` | safeHTML }}
   {{- end}}

@@ -46,10 +46,10 @@ Inspired by https://github.com/liwenyip/hugo-easy-gallery
 {{- $myHovEff   := printf "hover-effect-%s"     ($.Scratch.Get `theHovEff`)}}
 {{- $myHovTra   := cond (ne ($.Scratch.Get `theHovTra`) `none`)  (`hover-transition`) (``) }}
 
-{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-heg-res-gallery)\b` $.Site.Params.traceFlags) -}}
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-gallery)\b` $.Site.Params.traceFlags) -}}
 <br/>
 $myResPagePath  : {{ $myResPagePath  }} <br/>
-$myResMatch"    : {{ $myResPagePath  }} <br/>
+$myResMatch"    : {{ $myResMatch     }} <br/>
 $myResPage      : {{ $myResPage      }} <br/>
 $myResMatch     : {{ $myResMatch     }} <br/>
 $myImgCmd       : {{ $myImgCmd       }} <br/>
@@ -103,7 +103,7 @@ $myResPage.Dir  : {{ $myResPage.Dir  }} <br/>
     {{- $myCapLong  := $.Scratch.Get `tmpCapLong`  }}
     {{- $myCapShort := $.Scratch.Get `tmpCapShort` }}
 
-    {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-heg-res-gallery)\b` $.Site.Params.traceFlags) }}
+    {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-gallery)\b` $.Site.Params.traceFlags) }}
       <br/>
       "$myImgCmd"                       : {{ $myImgCmd                       }} <br/>
       "$myImgCmdOpt"                    : {{ $myImgCmdOpt                    }} <br/>

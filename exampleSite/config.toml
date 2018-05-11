@@ -495,6 +495,7 @@ consectetuer adipiscing
   # Enable the contact form by entering your Formspree.io email
   formspree = "formspree.io"
   email     = "info@example.com"
+  contactFormInclEmail = true
 
   # disqus (theme)
   # ##############################
@@ -610,6 +611,11 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   smallDispMenuMaxChars = 4
   #smallDispMenuMaxChars = 2
   smallDispMenuCollapse = true
+  #smallDispMenuCollapseIcon = "fas fa-bars"
+  smallDispMenuCollapseIcon = "fas fa-caret-square-down"
+  #smallDispMenuCollapseIcon = "far fa-caret-square-down"
+  #smallDispMenuCollapseIcon = "fab fa-elementor"
+  #smallDispMenuCollapseIcon = "fas fa-align-justify"
 
 [params.menuTopBar]
   # used in layouts/partials/header.nav.html
