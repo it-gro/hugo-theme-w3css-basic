@@ -3,22 +3,14 @@ http://photoswipe.com/documentation/seo.html
 Inspired by https://github.com/liwenyip/hugo-easy-gallery
 */}}
 
-{{- $myDefaultResPagePath  :=  `resources/images` }}
-{{- $myDefaultMatch        :=  `**/*`     }}
-{{- $myDefaulImgCmd        :=  `Resize`   }}
-{{- $myDefaulImgCmdOpt     :=  `800x`     }}
-{{- $myDefaulThumbCmd      :=  `Fit`      }}
-{{- $myDefaultThumbCmdOpt  :=  `120x120`  }}
-{{- $myDefaultCaptionLong  :=  `%%F`      }}
-{{- $myDefaultCaptionShort :=  `%%N`      }}
-
-{{/* I thing Fit is the best for thumbs - but you may change ... /*}}
-{{/*
-{{- $myDefaulThumbCmd      :=  `Resize`   }}
-{{- $myDefaultThumbCmdOpt  :=  `100x`     }}
-{{- $myDefaulThumbCmd      :=  `Fill`     }}
-{{- $myDefaultThumbCmdOpt  :=  `120x100`  }}
-*/}}
+{{- $myDefaultResPagePath  :=  $.Site.Params.resGallery.DefaultResPagePath  | default `resources/images` }}
+{{- $myDefaultMatch        :=  $.Site.Params.resGallery.DefaultMatch        | default `**/*`             }}
+{{- $myDefaulImgCmd        :=  $.Site.Params.resGallery.DefaultmgCmd        | default `Resize`           }}
+{{- $myDefaulImgCmdOpt     :=  $.Site.Params.resGallery.DefaultmgCmdOpt     | default `800x`             }}
+{{- $myDefaulThumbCmd      :=  $.Site.Params.resGallery.DefaulthumbCmd      | default `Fit`              }}
+{{- $myDefaultThumbCmdOpt  :=  $.Site.Params.resGallery.DefaultThumbCmdOpt  | default `120x120`          }}
+{{- $myDefaultCaptionLong  :=  $.Site.Params.resGallery.DefaultCaptionLong  | default `%%F`              }}
+{{- $myDefaultCaptionShort :=  $.Site.Params.resGallery.DefaultCaptionShort | default `%%N`              }}
 
 {{- $.Scratch.Set `theResPagePath`  ( (.Get `path`             ) | default $myDefaultResPagePath  ) }}
 {{- $.Scratch.Set `theMatch`        ( (.Get `match`            ) | default $myDefaultMatch        ) }}
@@ -32,7 +24,6 @@ Inspired by https://github.com/liwenyip/hugo-easy-gallery
 {{- $.Scratch.Set `theCapEff`       ( (.Get `caption-effect`   ) | default `appear`               ) }} {{/* none fade appear slide */}}
 {{- $.Scratch.Set `theHovEff`       ( (.Get `hover-effect`     ) | default `zoom`                 ) }} {{/* none grow shrink slidedown slideup zoom */}}
 {{- $.Scratch.Set `theHovTra`       ( (.Get `hover-transition` ) | default ``                     ) }} {{/* empty none */}}
-
 
 {{- $myResPagePath := $.Scratch.Get `theResPagePath` }}
 {{- if eq $myResPagePath `.`}}
