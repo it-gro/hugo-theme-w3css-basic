@@ -506,6 +506,7 @@ consectetuer adipiscing
   # Enable the contact form by entering your Formspree.io email
   formspree = "formspree.io"
   email     = "info@example.com"
+  contactFormInclEmail = true
 
   # disqus (theme)
   # ##############################
