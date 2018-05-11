@@ -6,7 +6,7 @@
   {{- if eq .Data.Singular `category` }}<i class="w3-margin-right fas fa-folder-open" aria-hidden="true"></i>{{ default `Category` (i18n `categoryTitle`) }}: {{ end }}
   {{- if eq .Data.Singular `tag`      }}<i class="w3-margin-right fas fa-tag"         aria-hidden="true"></i>{{ default `Tag` (i18n `tagTitle`) }}: {{ end }}
     {{- .Title  | markdownify | emojify }}
-    {{ partial `main.headline.back-forward.html` . }}
+      {{ partial `main.headline.back-forward.html` (dict `siteParams` $.Site.Params ) }}
   </h1>
 {{- end }}
 
