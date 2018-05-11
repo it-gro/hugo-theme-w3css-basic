@@ -607,6 +607,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # if set => change menu entry on small displays to lowercase maxChars
   smallDispMenuMaxChars = 4
   #smallDispMenuMaxChars = 2
+  smallDispMenuCollapse = true
 
 [params.menuTopBar]
   # used in layouts/partials/header.nav.html
@@ -614,6 +615,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   socialEnable              = true
   numOfItemsIfSmallDisplay  = 1
   numOfItemsIfMediumDisplay = 3
+  numOfItemsIfSmallDisplayCollapsed = 6
 
   # used in layouts/partials/header.nav.html
   #         layouts/partials/header.nav.google.translate.html
