@@ -70,13 +70,13 @@ $myResPage.Dir  : {{ $myResPage.Dir  }} <br/>
 {{- range $myResImgage := ( ($myResPage.Resources.ByType `image`).Match (printf "%s*" $myResMatch)) }}
   {{- if not (findRE `\.(svg)$` (lower $myResImgage.Name)) }}
 
-    {{- $myImgCmd      := ( $myResImgage.Params.imgcmd       | default $myImgCmd       ) }}
-    {{- $myImgCmdOpt   := ( $myResImgage.Params.imgopt       | default $myImgCmdOpt    ) }}
-    {{- $myThumbCmd    := ( $myResImgage.Params.thumbcmd     | default $myThumbCmd     ) }}
-    {{- $myThumbCmdOpt := ( $myResImgage.Params.thumbopt     | default $myThumbCmdOpt  ) }}
-    {{- $myCapLong     := ( $myResImgage.Params.caption      | default $myCaptionLong  ) }}
-    {{- $myCapLong     := ( $myResImgage.Params.captionlong  | default $myCapLong      ) }}
-    {{- $myCapShort    := ( $myResImgage.Params.captionshort | default $myCaptionShort ) }}
+    {{- $myImgCmd      := ( $myImgCmd        | default $myResImgage.Params.imgcmd        ) }}
+    {{- $myImgCmdOpt   := ( $myImgCmdOpt     | default $myResImgage.Params.imgopt        ) }}
+    {{- $myThumbCmd    := ( $myThumbCmd      | default $myResImgage.Params.thumbcmd      ) }}
+    {{- $myThumbCmdOpt := ( $myThumbCmdOpt   | default $myResImgage.Params.thumbopt      ) }}
+    {{- $myCapLong     := ( $myCaptionLong   | default $myResImgage.Params.caption       ) }}
+    {{- $myCapLong     := ( $myCapLong       | default $myResImgage.Params.captionlong   ) }}
+    {{- $myCapShort    := ( $myCaptionShort  | default $myResImgage.Params.captionshort  ) }}
 
     {{- $myCapFileName     := replaceRE `.*/`      (``) ($myResImgage.Name) }}
     {{- $myCapFileBase     := replaceRE `\.[^.]+$` (``) ($myCapFileName)   }}
