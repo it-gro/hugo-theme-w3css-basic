@@ -3,34 +3,56 @@
   inspired by layouts/shortcodes/imgproc.html
 */}}
 
-{{- $myDefaultCommand := $.Site.Params.resources.defaultImageCommand | default `Resize` }}
-{{- $myDefaultOptions := $.Site.Params.resources.defaultImageOptions | default `300x`   }}
-{{- $myDefaultCaption := $.Site.Params.resources.defaultImageCaption | default `%%N`   }}
+{{/*-
+{{- $myDefaultResPagePath  := $.Site.Params.resources.defaultResPagePath  | default `resources/images` }}
+*/}}
+{{- $myDefaultResPagePath := $.Site.Params.resources.defaultResPagePath  | default `.`                }}
+{{- $myDefaultMatch       := $.Site.Params.resources.defaultMatch        | default `**/*`             }}
+{{- $myDefaulImgCmd       := $.Site.Params.resources.defaultImgCmd       | default `Resize`           }}
+{{- $myDefaulImgCmdOpt    := $.Site.Params.resources.defaultImgCmdOpt    | default `300x`             }}
+{{- $myDefaultCaption     := $.Site.Params.resources.defaultImgCaption   | default `%%T`              }}
 
 {{- if .IsNamedParams }}
-  {{- $.Scratch.Set `theMatch`       (.Get `match`)  }}
-  {{- $.Scratch.Set `theCommand`     (.Get `cmd`  )  }}
-  {{- $.Scratch.Set `theOptions`     (.Get `opt`  )  }}
-  {{- $.Scratch.Set `theCaption`     (.Get `cap`  )  }}
+  {{- $.Scratch.Set `theResPagePath`  (.Get `path`  )  }}
+  {{- $.Scratch.Set `theMatch`        (.Get `match` )  }}
+  {{- $.Scratch.Set `theCommand`      (.Get `cmd`   )  }}
+  {{- $.Scratch.Set `theOptions`      (.Get `opt`   )  }}
+  {{- $.Scratch.Set `theCaption`      (.Get `cap`   )  }}
 {{- else }}
-  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theMatch`    (.Get $myPos) }} {{end}}
-  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theCommand`  (.Get $myPos) }} {{end}}
-  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theOptions`  (.Get $myPos) }} {{end}}
-  {{- $myPos := 3}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theCaption`  (.Get $myPos) }} {{end}}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theResPagePath` (.Get $myPos) }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theMatch`       (.Get $myPos) }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theCommand`     (.Get $myPos) }} {{end}}
+  {{- $myPos := 3}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theOptions`     (.Get $myPos) }} {{end}}
+  {{- $myPos := 4}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theCaption`     (.Get $myPos) }} {{end}}
 {{- end }}
+
+{{- $.Scratch.Set `theResPagePath` ( ($.Scratch.Get `theResPagePath` ) | default $myDefaultResPagePath ) }}
+{{- $.Scratch.Set `theMatch`       ( ($.Scratch.Get `theMatch`       ) | default $myDefaultMatch       ) }}
+{{- $.Scratch.Set `theCommand`     ( ($.Scratch.Get `theCommand`     ) | default $myDefaulImgCmd       ) }}
+{{- $.Scratch.Set `theOptions`     ( ($.Scratch.Get `theOptions`     ) | default $myDefaulImgCmdOpt    ) }}
+{{- $.Scratch.Set `theCaption`     ( ($.Scratch.Get `theCaption`     ) | default $myDefaultCaption     ) }}
 
 {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-figure)\b` $.Site.Params.traceFlags) }}
 <br/>
-"theMatch"    : {{- $.Scratch.Get `theMatch`    }} <br/>
-"theCommand"  : {{- $.Scratch.Get `theCommand`  }} <br/>
-"theOptions"  : {{- $.Scratch.Get `theOptions`  }} <br/>
-"theCaption"  : {{- $.Scratch.Get `theCaption`  }} <br/>
+"theResPagePath" : {{- $.Scratch.Get `theResPagePath` }} <br/>
+"theMatch"       : {{- $.Scratch.Get `theMatch`       }} <br/>
+"theCommand"     : {{- $.Scratch.Get `theCommand`     }} <br/>
+"theOptions"     : {{- $.Scratch.Get `theOptions`     }} <br/>
+"theCaption"     : {{- $.Scratch.Get `theCaption`     }} <br/>
 {{- end }}
 
-{{- range $myResource := ( (.Page.Resources.ByType `image`).Match (printf "%s*" ($.Scratch.Get `theMatch`))) }}
-  {{- $myCommand  := ( ($.Scratch.Get `theCommand` ) | default $myResource.Params.imgcmd  | default $myDefaultCommand ) }}
-  {{- $myOptions  := ( ($.Scratch.Get `theOptions` ) | default $myResource.Params.imgopt  | default $myDefaultOptions ) }}
-  {{- $myCaption  := ( ($.Scratch.Get `theCaption` ) | default $myResource.Params.caption | default $myDefaultCaption ) }}
+{{- $myResPagePath := $.Scratch.Get `theResPagePath` }}
+{{- if eq $myResPagePath `.`}}
+  {{- $.Scratch.Set `theResPage` .Page }}
+{{- else }}
+  {{- $.Scratch.Set `theResPage` (.Site.GetPage "page" $myResPagePath ) }}
+{{- end }}
+{{- $myResPage      := $.Scratch.Get `theResPage`      }}
+
+{{- range $myResource := ( ($myResPage.Resources.ByType `image`).Match (printf "%s*" ($.Scratch.Get `theMatch`))) }}
+  {{- $myCommand  := ( $myResource.Params.imgcmd  | default ($.Scratch.Get `theCommand` ) ) }}
+  {{- $myOptions  := ( $myResource.Params.imgopt  | default ($.Scratch.Get `theOptions` ) ) }}
+  {{- $myCaption  := ( $myResource.Params.caption | default ($.Scratch.Get `theCaption` ) ) }}
 
   {{- $myCapFileName     := replaceRE `.*/`      (``) ($myResource.Name) }}
   {{- $myCapFileBase     := replaceRE `\.[^.]+$` (``) ($myCapFileName)   }}

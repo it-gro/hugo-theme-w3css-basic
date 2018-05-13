@@ -20,6 +20,11 @@
 <script src='{{ `/js/front.min.js`                         | relURL }}'></script> <!-- patches owl.carousel  -->
 {{- end }}
 
+{{- if isset $.Site.Params (lower `options` ) }}
+{{- if $.Site.Params.options.jsHistoryNav }}
+{{- end}}
+{{- end}}
+
 <script src='{{ `/js/custom.bottom.js`                     | relURL }}'></script>
 {{- range .Site.Params.custom_js_bottom }}
 <script src='{{ .                                          | absURL }}'></script>

@@ -102,8 +102,14 @@
 
     <script>
       function onload(){
-         document.getElementById("btnfrwd").style.visibility="visible";
+      {{- if isset $.Site.Params (lower `options` ) }}
+      {{- if $.Site.Params.options.jsHistoryNav }}
          document.getElementById("btnback").style.visibility="visible";
+         {{- if $.Site.Params.options.jsHistoryNavForward }}
+         document.getElementById("btnfrwd").style.visibility="visible";
+         {{- end}}
+      {{- end}}
+      {{- end}}
       }
     </script>
 
