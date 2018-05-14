@@ -1,9 +1,10 @@
 {{/* no positional arguments by intention */}}
-{{- $myQuoteSource    := .Get `source`       | default ``}}
-{{- $myLayoutType     := .Get `layout`       | default `default`}}
-{{- $myClassesOuter   := .Get `classesOuter` | default `w3-panel w3-leftbar w3-theme-l3 `}}
-{{- $myClassesInner   := .Get `classesInner` | default ``}}
-{{- $myIcon           := .Get `icon`         | default `fas fa-quote-right`}}
+{{- $myQuoteSource    := .Get `source`          | default ``}}
+{{- $myLayoutType     := .Get `layout`          | default `default`}}
+{{- $myClassesOuter   := .Get `classesOuter`    | default `w3-panel w3-leftbar w3-theme-l3 `}}
+{{- $myClassesInner   := .Get `classesInner`    | default ``}}
+{{- $myClassesInner   := .Get `classesQuoteSrc` | default ``}}
+{{- $myIcon           := .Get `icon`            | default `fas fa-quote-right`}}
 {{- $myClassesOuter   :=  printf `%s %s ` `shortcode-quote` $myClassesOuter }}
 
 {{- if eq $myLayoutType `default` }}
