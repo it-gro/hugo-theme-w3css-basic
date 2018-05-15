@@ -462,6 +462,11 @@ code.chroma {
   border-color:#4CAF50!important
 }
 
+.shortcode-quote-source {
+  font-style: italic;
+  font-weight: bold;
+}
+
 /* -------------------------------------------------- */
 /* shortcodes w3-code w3-codespan */
 pre.w3-code, span.w3-codespan{
