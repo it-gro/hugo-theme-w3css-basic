@@ -42,7 +42,7 @@
 {{- end }}
 
 {{- $myResPagePath := $.Scratch.Get `theResPagePath` }}
-{{- if eq $myResPagePath `.`}}
+{{- if and (eq $myResPagePath `.`) (.Page.Resources) }}
   {{- $.Scratch.Set `theResPage` .Page }}
 {{- else }}
   {{- $.Scratch.Set `theResPage` (.Site.GetPage "page" $myResPagePath ) }}

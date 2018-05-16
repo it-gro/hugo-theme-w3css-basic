@@ -584,14 +584,14 @@ static/css/syntax/syntax.bw.css
 * See [Hugo image processing (res-figure)]({{< relref "image-processing-with-hugo" >}}) for more information
 
 {{< w3-code >}}
-{{</* res-figure "img/pixabay.com/penguin-21*" />}} 
-{{< res-figure "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay.com/penguin-21*" "Fill" "200x200" / */>}} 
+{{</* res-figure "." "img/pixabay.com/penguin-21*" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" / */>}} 
 {{< /w3-code >}}
 
-{{< res-figure "img/pixabay.com/penguin-21*" />}} 
-{{< res-figure "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay.com/penguin-21*" "Fill" "200x200" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" />}} 
 
 ### res-attach
 * See https://gohugo.io/content-management/page-resources/
