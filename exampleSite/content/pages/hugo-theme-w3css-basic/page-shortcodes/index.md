@@ -104,6 +104,9 @@ Defined in:
 .shortcode-info  {
   border-color:#2196F3!important
 }
+.shortcode-exclamation  {
+  border-color:#2196F3!important
+}
 .shortcode-success{
   border-color:#4CAF50!important
 }
@@ -111,6 +114,11 @@ Defined in:
 /* for shortcode w3-quote */
 .shortcode-quote {
   border-color:#4CAF50!important
+}
+
+.shortcode-quote-source {
+  font-style: italic;
+  font-weight: bold;
 }
 
 pre.w3-code, span.w3-codespan{
@@ -184,6 +192,21 @@ renders as
 
 {{% w3-notice-icon type="info" heading="Show Info" %}}
 No need for type="info", since this is the default   
+{{% /w3-notice-icon %}}
+
+
+### Exclamation
+
+{{< highlight nolang >}}
+{{%/* w3-notice-icon type="exclamation" heading="Show Info" %}}
+Type="exclamation" - check it out
+{{% /w3-notice-icon */%}}
+{{< /highlight >}}
+
+renders as
+
+{{% w3-notice-icon type="exclamation" heading="Show Info" %}}
+Type="exclamation" - check it out
 {{% /w3-notice-icon %}}
 
 

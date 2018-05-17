@@ -28,9 +28,9 @@
 
 {{- $.Scratch.Set `theResPagePath` ( ($.Scratch.Get `theResPagePath` ) | default $myDefaultResPagePath ) }}
 {{- $.Scratch.Set `theMatch`       ( ($.Scratch.Get `theMatch`       ) | default $myDefaultMatch       ) }}
-{{- $.Scratch.Set `theCommand`     ( ($.Scratch.Get `theCommand`     ) | default $myDefaulImgCmd       ) }}
-{{- $.Scratch.Set `theOptions`     ( ($.Scratch.Get `theOptions`     ) | default $myDefaulImgCmdOpt    ) }}
-{{- $.Scratch.Set `theCaption`     ( ($.Scratch.Get `theCaption`     ) | default $myDefaultCaption     ) }}
+{{- $.Scratch.Set `theCommand`     ( ($.Scratch.Get `theCommand`     )    ) }}
+{{- $.Scratch.Set `theOptions`     ( ($.Scratch.Get `theOptions`     )    ) }}
+{{- $.Scratch.Set `theCaption`     ( ($.Scratch.Get `theCaption`     )    ) }}
 
 {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-figure)\b` $.Site.Params.traceFlags) }}
 <br/>
@@ -50,9 +50,9 @@
 {{- $myResPage      := $.Scratch.Get `theResPage`      }}
 
 {{- range $myResource := ( ($myResPage.Resources.ByType `image`).Match (printf "%s*" ($.Scratch.Get `theMatch`))) }}
-  {{- $myCommand  := ( $myResource.Params.imgcmd  | default ($.Scratch.Get `theCommand` ) ) }}
-  {{- $myOptions  := ( $myResource.Params.imgopt  | default ($.Scratch.Get `theOptions` ) ) }}
-  {{- $myCaption  := ( $myResource.Params.caption | default ($.Scratch.Get `theCaption` ) ) }}
+  {{- $myCommand  := ( ($.Scratch.Get `theCommand` ) | default $myResource.Params.imgcmd  | default $myDefaulImgCmd    ) }}
+  {{- $myOptions  := ( ($.Scratch.Get `theOptions` ) | default $myResource.Params.imgopt  | default $myDefaulImgCmdOpt ) }}
+  {{- $myCaption  := ( ($.Scratch.Get `theCaption` ) | default $myResource.Params.caption | default $myDefaultCaption  ) }}
 
   {{- $myCapFileName     := replaceRE `.*/`      (``) ($myResource.Name) }}
   {{- $myCapFileBase     := replaceRE `\.[^.]+$` (``) ($myCapFileName)   }}

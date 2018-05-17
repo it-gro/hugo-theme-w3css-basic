@@ -160,15 +160,15 @@ See https://gohugo.io/content-management/image-processing/
 {{</* res-figure "." "img/pixabay/penguin-21*" />}} 
 {{< res-figure "." "img/pixabay/penguin-21*" "Fit"  "200x200" />}} 
 {{< res-figure "." "img/pixabay/penguin-21*" "Fill" "200x200" "%%I%%n%%O%%n%%A" />}} 
-{{< res-figure match="img/pixabay/penguin-21*" opt="100x" cap="%%I%%n%%F" />}} 
-{{< res-figure match="**_/penguin-21" cmd="Fill" opt="150x200" / */>}} 
+{{< res-figure path="." match="img/pixabay/penguin-21*" opt="100x" cap="%%I%%n%%F" />}} 
+{{< res-figure path="." match="**_/penguin-21" cmd="Fill" opt="150x200" / */>}} 
 {{< /w3-code >}}
 
 {{< res-figure "." "img/pixabay/penguin-21*" />}} 
 {{< res-figure "." "img/pixabay/penguin-21*" "Fit"  "200x200" />}} 
 {{< res-figure "." "img/pixabay/penguin-21*" "Fill" "200x200" "%%I%%n%%O%%n%%A" />}} 
-{{< res-figure match="img/pixabay/penguin-21*" opt="100x" cap="%%I%%n%%F" />}} 
-{{< res-figure match="**/penguin-21" cmd="Fill" opt="150x200" />}} 
+{{< res-figure path="." match="img/pixabay/penguin-21*" opt="100x" cap="%%I%%n%%F" />}} 
+{{< res-figure path="." match="**/penguin-21" cmd="Fill" opt="150x200" />}} 
 
 ## Demo /penguin-11*
 {{< w3-code >}}
