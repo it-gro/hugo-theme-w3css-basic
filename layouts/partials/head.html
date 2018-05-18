@@ -4,6 +4,8 @@
 <head>
   {{ `<!-- hi there - what do you expect to see? ...  -->` | safeHTML }}
   {{ partial `head.meta.html` . }}
+  {{ partial `head.meta.og.html` . }}
+  {{ partial `head.meta.twitter.html` . }}
   {{- if and $.Site.Params.enableGoogleGtag $.Site.GoogleAnalytics }}
     {{ partial `head.google.gtags.html` . }}
   {{- end}}

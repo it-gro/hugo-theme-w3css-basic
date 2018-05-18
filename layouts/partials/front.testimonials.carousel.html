@@ -71,8 +71,8 @@
     {{ partial `resource.image.html` (dict `page` $ourPage `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
 
       <div class="w3-right">
-        <div class="w3-large"> {{ $ourElement.name }}</div>
-        <div class="w3-small"> {{ $ourElement.position }}</div>
+        <div class="w3-large"> {{ $ourElement.name     | markdownify | safeHTML }}</div>
+        <div class="w3-small"> {{ $ourElement.position | markdownify | safeHTML }}</div>
       </div> <!-- w3-right -->
     </div>   <!-- w3-cell -->
   </div>     <!-- w3-container -->

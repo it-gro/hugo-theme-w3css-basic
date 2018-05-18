@@ -504,8 +504,8 @@ consectetuer adipiscing
 
   # used in partials/contact.form.html
   # Enable the contact form by entering your Formspree.io email
-  formspree = "formspree.io"
-  email     = "info@example.com"
+  formspree            = "formspree.io"
+  email                = "info@example.com"
   contactFormInclEmail = true
 
   # disqus (theme)
@@ -630,9 +630,9 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuTopBar]
   # used in layouts/partials/header.nav.html
   # enable or disable menu.topbar with social icons (right aligned)
-  socialEnable              = true
-  numOfItemsIfSmallDisplay  = 1
-  numOfItemsIfMediumDisplay = 3
+  socialEnable                      = true
+  numOfItemsIfSmallDisplay          = 1
+  numOfItemsIfMediumDisplay         = 3
   numOfItemsIfSmallDisplayCollapsed = 6
 
   # used in layouts/partials/header.nav.html
@@ -830,9 +830,12 @@ ultricies eget, tempor sit amet, ante
 
 [params.resources]
   # used in layouts/shortcodes/res-figure.html
-  defaultImageCommand = "Resize"
-  defaultImageOptions = "300x"
-  defaultImageCaption = "%%N"
+  defaultResPagePath  = "."			 
+	defaultMatch			  = "**/*"	 
+	defaultImgCmd	      = "Resize"
+	defaultImgCmdOpt	  = "300x"
+	defaultImgCaption	  = "%%T"
+
 
 [params.resGallery]
   # used in layouts/shortcodes/res-gallery.html
@@ -852,7 +855,8 @@ ultricies eget, tempor sit amet, ante
 
 
 [params.options]
-  jsHistoryNav = true
+  jsHistoryNav        = true
+  jsHistoryNavForward = false
 
 
 # ##################################################
@@ -860,6 +864,7 @@ ultricies eget, tempor sit amet, ante
 
 
 [blackfriday]
+  hrefTargetBlank = true
   # extensions = ["noEmptyLineBeforeBlock"]
   # extensions = ["hardLineBreak"]
   # https://gohugo.io/getting-started/configuration/#blackfriday-options

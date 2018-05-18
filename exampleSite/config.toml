@@ -493,8 +493,8 @@ consectetuer adipiscing
 
   # used in partials/contact.form.html
   # Enable the contact form by entering your Formspree.io email
-  formspree = "formspree.io"
-  email     = "info@example.com"
+  formspree            = "formspree.io"
+  email                = "info@example.com"
   contactFormInclEmail = true
 
   # disqus (theme)
@@ -608,9 +608,9 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
   # if set => change menu entry on small displays to lowercase maxChars
-  smallDispMenuMaxChars = 4
-  #smallDispMenuMaxChars = 2
-  smallDispMenuCollapse = true
+  smallDispMenuMaxChars     = 4
+  #smallDispMenuMaxChars     = 2
+  smallDispMenuCollapse     = true
   #smallDispMenuCollapseIcon = "fas fa-bars"
   smallDispMenuCollapseIcon = "fas fa-caret-square-down"
   #smallDispMenuCollapseIcon = "far fa-caret-square-down"
@@ -817,9 +817,12 @@ ultricies eget, tempor sit amet, ante
 
 [params.resources]
   # used in layouts/shortcodes/res-figure.html
-  defaultImageCommand = "Resize"
-  defaultImageOptions = "300x"
-  defaultImageCaption = "%%N"
+  defaultResPagePath  = "."			 
+	defaultMatch			  = "**/*"	 
+	defaultImgCmd	      = "Resize"
+	defaultImgCmdOpt	  = "300x"
+	defaultImgCaption	  = "%%T"
+
 
 [params.resGallery]
   # used in layouts/shortcodes/res-gallery.html
@@ -839,7 +842,8 @@ ultricies eget, tempor sit amet, ante
 
 
 [params.options]
-  jsHistoryNav = true
+  jsHistoryNav        = true
+  jsHistoryNavForward = false
 
 
 # ##################################################
@@ -847,6 +851,7 @@ ultricies eget, tempor sit amet, ante
 
 
 [blackfriday]
+  hrefTargetBlank = true
   # extensions = ["noEmptyLineBeforeBlock"]
   # extensions = ["hardLineBreak"]
   # https://gohugo.io/getting-started/configuration/#blackfriday-options

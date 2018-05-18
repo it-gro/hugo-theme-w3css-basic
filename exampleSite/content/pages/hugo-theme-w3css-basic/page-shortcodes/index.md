@@ -104,25 +104,11 @@ Defined in:
 .shortcode-info  {
   border-color:#2196F3!important
 }
+.shortcode-exclamation  {
+  border-color:#2a8!important
+}
 .shortcode-success{
   border-color:#4CAF50!important
-}
-
-/* for shortcode w3-quote */
-.shortcode-quote {
-  border-color:#4CAF50!important
-}
-
-pre.w3-code, span.w3-codespan{
-  font-family:monospace,monospace; !important;
-  font-size:1em
-}
-
-pre.w3-code, pre.chroma {
-    border-radius:4px;  
-    padding: 0 3px 0 3px;
-    border: 1px solid;
-    overflow: auto;
 }
 
 {{< /highlight >}}
@@ -184,6 +170,21 @@ renders as
 
 {{% w3-notice-icon type="info" heading="Show Info" %}}
 No need for type="info", since this is the default   
+{{% /w3-notice-icon %}}
+
+
+### Exclamation
+
+{{< highlight nolang >}}
+{{%/* w3-notice-icon type="exclamation" heading="Show Info" %}}
+Type="exclamation" - check it out
+{{% /w3-notice-icon */%}}
+{{< /highlight >}}
+
+renders as
+
+{{% w3-notice-icon type="exclamation" heading="Show Info" %}}
+Type="exclamation" - check it out
 {{% /w3-notice-icon %}}
 
 
@@ -361,6 +362,23 @@ using blockquote:
 
 {{% w3-quote source="Albert Einstein" layout="icon-blockquote"    %}}*Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.*{{% /w3-quote %}}
 
+### Style
+
+    static/css/w3css-basic.css
+
+{{< highlight css >}}
+/* for shortcode w3-quote */
+.shortcode-quote {
+  border-color:#4CAF50!important
+}
+
+.shortcode-quote-source {
+  font-style: italic;
+  font-weight: bold;
+}
+
+{{< /highlight >}}
+
 
 ## w3-codespan
 
@@ -375,6 +393,31 @@ using blockquote:
 
 This is a cool command: {{% w3-codespan %}}startup *all*{{% /w3-codespan %}} just try it...
 This is a cool command: {{< w3-codespan >}}startup *all*{{< /w3-codespan >}} just try it...
+
+
+### Style
+
+* these colors are separate from the ones in w3cssColorTheme
+
+Defined in:
+
+    static/css/w3css-basic.css
+
+{{< highlight css >}}
+
+pre.w3-code, span.w3-codespan{
+  font-family:monospace,monospace; !important;
+  font-size:1em
+}
+
+pre.w3-code, pre.chroma {
+    border-radius:4px;  
+    padding: 0 3px 0 3px;
+    border: 1px solid;
+    overflow: auto;
+}
+
+{{< /highlight >}}
 
 
 ## w3-code
@@ -584,14 +627,59 @@ static/css/syntax/syntax.bw.css
 * See [Hugo image processing (res-figure)]({{< relref "image-processing-with-hugo" >}}) for more information
 
 {{< w3-code >}}
-{{</* res-figure "img/pixabay.com/penguin-21*" />}} 
-{{< res-figure "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay.com/penguin-21*" "Fill" "200x200" / */>}} 
+{{</* res-figure "." "img/pixabay.com/penguin-21*" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" / */>}} 
 {{< /w3-code >}}
 
-{{< res-figure "img/pixabay.com/penguin-21*" />}} 
-{{< res-figure "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay.com/penguin-21*" "Fill" "200x200" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" />}} 
+
+```yaml
+resources:
+  - src:           img/pixabay/*.jpg
+    params:
+      origin:      pixabay.com
+      license:     Creative Commons CC0 
+      licenselink: https://pixabay.com/en/service/terms/#usage
+      caption:     "%%I%%n%%B%%n%%O"
+  - src:           img/pixabay/penguin-2104173_1920.jpg
+    params:
+      originlink:  https://pixabay.com/en/penguin-rockhopper-penguin-zoo-2104173/
+      attrby:      Michael Frankenstein
+      attrlink:    https://pixabay.com/en/users/frankenstein-2135887/
+      imgcmd:      Resize
+      imgopt:      400x
+      
+```
+
+#### Parameters
+
+Argument | Position -1 | Default | What                  | Remark
+---------|-------------|---------|-----------------------|-------
+path     | 0           | "."     | path to resource page | use . for current page
+match    | 1           | *       | images                | in page resource
+cmd      | 2           | Resize  | command               | Fill, Fit or Resize
+opt      | 3           | 300x    | options               | command options
+cap      | 4           | %%N     | caption format        | see below
+
+
+
+#### Caption format
+Code | What
+-----|-------------
+%%n  | newline
+%%f  | .Name
+%%F  | Filename
+%%B  | Basename
+%%T  | .Title
+%%N  | .Title or Basename
+%%L  | license
+%%O  | origin
+%%A  | attr
+%%I  | image info
+
 
 ### res-attach
 * See https://gohugo.io/content-management/page-resources/
@@ -602,6 +690,14 @@ static/css/syntax/syntax.bw.css
 {{< /w3-code >}}
 
 {{< res-attach >}}
+
+#### Parameters
+
+Argument | Position -1 | Default           | What           | Remark
+---------|-------------|-------------------|----------------|-------
+match    | 0           | **                | glob           | only resources of type application
+label    | 1           | Attachments       | label          | piped into i18n
+icon     | 2           | fas fa-paperclip  | label icon     | 
 
 
 ### res-gallery
@@ -619,7 +715,7 @@ renders as
 {{< res-gallery-load-photoswipe >}}
 {{< res-gallery match="teaserpics/gohugo.io/*" >}} 
 
-#### Shortcode parameters
+#### Parameters
 
 * only named parameters
 

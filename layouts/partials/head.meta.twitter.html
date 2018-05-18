@@ -1,0 +1,8 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/head.meta.twitter.html -->` | safeHTML }}
+{{- end}}
+  {{ with .Title        }}<meta property="twitter:title"          content="{{ . | safeHTML }}" /> {{end}}
+  {{ with .Description  }}<meta property="twitter:description"    content="{{ . | safeHTML }}" /> {{end}}
+  {{- $myFaviconPath  := default `/images/favicons` $.Site.Params.favicon.path    }}
+  {{- $myOgImage      := "apple-touch-icon.png" }}
+  {{ with $myOgImage    }}<meta property="twitter:image"          content='{{(printf `./%s/%s` $myFaviconPath .  ) | absURL }}' /> {{end}}

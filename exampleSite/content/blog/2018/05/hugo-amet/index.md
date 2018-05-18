@@ -27,9 +27,9 @@ orci, porta a, aliquet quis, semper a, massa. Phasellus purus. Pellentesque
 tristique imperdiet tortor. Nam euismod tellus id erat.
 
 {{< w3-code >}}
-{{</* res-figure "hugo-lorem.png" "Resize" "150x" /*/>}}
+{{</* res-figure "." "hugo-lorem.png" "Resize" "150x" /*/>}}
 {{< /w3-code >}}
-{{< res-figure "hugo-lorem.png" "Resize" "150x" />}}
+{{< res-figure "." "hugo-lorem.png" "Resize" "150x" />}}
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
 eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient

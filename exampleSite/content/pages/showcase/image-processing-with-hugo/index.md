@@ -79,10 +79,10 @@ This theme provides a shortcode `res-figure`  for page resource image processing
 
 # Demo /* Resize 150x 
 {{< w3-code >}}
-{{</* res-figure "img/pixabay/pixabay/*" "Resize" "150x" "%%I%%n%%F" >}}{{< /res-figure / */>}}
+{{</* res-figure "." "img/pixabay/pixabay/*" "Resize" "150x" "%%I%%n%%F" >}}{{< /res-figure / */>}}
 {{< /w3-code >}}
 
-{{< res-figure "**/pixabay/*" "Resize" "150x" "%%I%%n%%F" />}} 
+{{< res-figure "."  "**/pixabay/*" "Resize" "150x" "%%I%%n%%F" />}} 
 
 # Configuration
 ## Front Matter Resources
@@ -107,12 +107,13 @@ resources:
 
 ## res-figure Parameters
 
-Argument | Position -1 | Default | What             | Remark
----------|-------------|---------|------------------|-------
-match    | 0           | *       | images           | in page resource
-cmd      | 1           | Resize  | command          | Fill, Fit or Resize
-opt      | 2           | 300x    | options          | command options
-cap      | 3           | %%N     | caption format   | see below
+Argument | Position -1 | Default | What                  | Remark
+---------|-------------|---------|-----------------------|-------
+path     | 0           | "."     | path to resource page | 
+match    | 1           | *       | images                | in page resource
+cmd      | 2           | Resize  | command               | Fill, Fit or Resize
+opt      | 3           | 300x    | options               | command options
+cap      | 4           | %%N     | caption format        | see below
 
 
 
@@ -156,81 +157,81 @@ See https://gohugo.io/content-management/image-processing/
 # Showcase
 ## Demo /penguin-21*
 {{< w3-code >}}
-{{</* res-figure "img/pixabay/penguin-21*" />}} 
-{{< res-figure "img/pixabay/penguin-21*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-21*" "Fill" "200x200" "%%I%%n%%O%%n%%A" />}} 
-{{< res-figure match="img/pixabay/penguin-21*" opt="100x" cap="%%I%%n%%F" />}} 
-{{< res-figure match="**_/penguin-21" cmd="Fill" opt="150x200" / */>}} 
+{{</* res-figure "." "img/pixabay/penguin-21*" />}} 
+{{< res-figure "." "img/pixabay/penguin-21*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-21*" "Fill" "200x200" "%%I%%n%%O%%n%%A" />}} 
+{{< res-figure path="." match="img/pixabay/penguin-21*" opt="100x" cap="%%I%%n%%F" />}} 
+{{< res-figure path="." match="**_/penguin-21" cmd="Fill" opt="150x200" / */>}} 
 {{< /w3-code >}}
 
-{{< res-figure "img/pixabay/penguin-21*" />}} 
-{{< res-figure "img/pixabay/penguin-21*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-21*" "Fill" "200x200" "%%I%%n%%O%%n%%A" />}} 
-{{< res-figure match="img/pixabay/penguin-21*" opt="100x" cap="%%I%%n%%F" />}} 
-{{< res-figure match="**/penguin-21" cmd="Fill" opt="150x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-21*" />}} 
+{{< res-figure "." "img/pixabay/penguin-21*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-21*" "Fill" "200x200" "%%I%%n%%O%%n%%A" />}} 
+{{< res-figure path="." match="img/pixabay/penguin-21*" opt="100x" cap="%%I%%n%%F" />}} 
+{{< res-figure path="." match="**/penguin-21" cmd="Fill" opt="150x200" />}} 
 
 ## Demo /penguin-11*
 {{< w3-code >}}
-{{</* res-figure "img/pixabay/penguin-11*" />}} 
-{{< res-figure "img/pixabay/penguin-11*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-11*" "Fill" "200x200" / */>}} 
+{{</* res-figure "." "img/pixabay/penguin-11*" />}} 
+{{< res-figure "." "img/pixabay/penguin-11*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-11*" "Fill" "200x200" / */>}} 
 {{< /w3-code >}}
 
-{{< res-figure "img/pixabay/penguin-11*" />}} 
-{{< res-figure "img/pixabay/penguin-11*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-11*" "Fill" "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-11*" />}} 
+{{< res-figure "." "img/pixabay/penguin-11*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-11*" "Fill" "200x200" />}} 
 
 ## Demo /penguin-27*
 {{< w3-code >}}
-{{</* res-figure "img/pixabay/penguin-27*" />}} 
-{{< res-figure "img/pixabay/penguin-27*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-27*" "Fill" "200x200" / */>}} 
+{{</* res-figure "." "img/pixabay/penguin-27*" />}} 
+{{< res-figure "." "img/pixabay/penguin-27*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-27*" "Fill" "200x200" / */>}} 
 {{< /w3-code >}}
 
-{{< res-figure "img/pixabay/penguin-27*" />}} 
-{{< res-figure "img/pixabay/penguin-27*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-27*" "Fill" "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-27*" />}} 
+{{< res-figure "." "img/pixabay/penguin-27*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-27*" "Fill" "200x200" />}} 
 
 ## Demo /penguin-96*
 {{< w3-code >}}
-{{</* res-figure "img/pixabay/penguin-96*" />}} 
-{{< res-figure "img/pixabay/penguin-96*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-96*" "Fill" "200x200" / */>}} 
+{{</* res-figure "." "img/pixabay/penguin-96*" />}} 
+{{< res-figure "." "img/pixabay/penguin-96*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-96*" "Fill" "200x200" / */>}} 
 {{< /w3-code >}}
 
-{{< res-figure "img/pixabay/penguin-96*" />}} 
-{{< res-figure "img/pixabay/penguin-96*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-96*" "Fill" "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-96*" />}} 
+{{< res-figure "." "img/pixabay/penguin-96*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-96*" "Fill" "200x200" />}} 
 
 ## Demo /penguin-25*
 {{< w3-code >}}
-{{</* res-figure "img/pixabay/penguin-25*" />}} 
-{{< res-figure "img/pixabay/penguin-25*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-25*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
-{{< res-figure "img/pixabay/penguin-25*" "Fill" "200x200 left" / */>}} 
+{{</* res-figure "." "img/pixabay/penguin-25*" />}} 
+{{< res-figure "." "img/pixabay/penguin-25*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-25*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
+{{< res-figure "." "img/pixabay/penguin-25*" "Fill" "200x200 left" / */>}} 
 {{< /w3-code >}}
 
-{{< res-figure "img/pixabay/penguin-25*" />}} 
-{{< res-figure "img/pixabay/penguin-25*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-25*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
-{{< res-figure "img/pixabay/penguin-25*" "Fill" "200x200 left" />}} 
+{{< res-figure "." "img/pixabay/penguin-25*" />}} 
+{{< res-figure "." "img/pixabay/penguin-25*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-25*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
+{{< res-figure "." "img/pixabay/penguin-25*" "Fill" "200x200 left" />}} 
 
 ## Demo /penguin-93*
 {{< w3-code >}}
-{{</* res-figure "img/pixabay/penguin-93*" />}} 
-{{< res-figure "img/pixabay/penguin-93*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-93*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
-{{< res-figure "img/pixabay/penguin-93*" "Fill" "200x200 right" / */>}} 
+{{</* res-figure "." "img/pixabay/penguin-93*" />}} 
+{{< res-figure "." "img/pixabay/penguin-93*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-93*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
+{{< res-figure "." "img/pixabay/penguin-93*" "Fill" "200x200 right" / */>}} 
 {{< /w3-code >}}
 
-{{< res-figure "img/pixabay/penguin-93*" />}} 
-{{< res-figure "img/pixabay/penguin-93*" "Fit"  "200x200" />}} 
-{{< res-figure "img/pixabay/penguin-93*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
-{{< res-figure "img/pixabay/penguin-93*" "Fill" "200x200 right" />}} 
+{{< res-figure "." "img/pixabay/penguin-93*" />}} 
+{{< res-figure "." "img/pixabay/penguin-93*" "Fit"  "200x200" />}} 
+{{< res-figure "." "img/pixabay/penguin-93*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
+{{< res-figure "." "img/pixabay/penguin-93*" "Fill" "200x200 right" />}} 
 
 ## Demo with Text
 
-Nullam eu ante vel est convallis dignissim. {{< res-figure
+Nullam eu ante vel est convallis dignissim. {{< res-figure "."
 "img/pixabay/penguin-1196947" />}} Fusce suscipit, wisi nec facilisis facilisis,
 est dui fermentum leo, quis tempor ligula erat quis odio. Nunc porta vulputate
 tellus. Nunc rutrum turpis sed pede. Sed bibendum. Aliquam posuere. Nunc
@@ -246,7 +247,7 @@ non luctus diam neque sit amet urna.
 Curabitur vulputate vestibulum lorem. Fusce sagittis, libero non molestie
 mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros. Sed
 id ligula quis est convallis tempor. Curabitur lacinia pulvinar nibh. Nam a
-sapien. {{< res-figure "img/pixabay/penguin-2528615" />}} Pellentesque
+sapien. {{< res-figure "." "img/pixabay/penguin-2528615" />}} Pellentesque
 condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus
 diam neque sit amet urna. Curabitur vulputate vestibulum lorem. Fusce
 sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate
@@ -255,23 +256,23 @@ neque nulla lacinia eros.
 
 Pellentesque dapibus suscipit ligula. Donec posuere augue in quam. Etiam vel
 tortor sodales tellus ultricies commodo.
-{{< res-figure "img/pixabay/penguin-2104173" />}} 
+{{< res-figure "." "img/pixabay/penguin-2104173" />}} 
 
 Suspendisse potenti. Aenean in sem ac leo mollis blandit. Donec neque quam,
 dignissim in, mollis nec, sagittis eu, wisi. Phasellus lacus. Etiam laoreet
 quam sed arcu. Phasellus at dui in ligula mollis ultricies. Integer placerat
 tristique nisl.
 
-* Nunc porta vulputate tellus {{< res-figure "img/pixabay/penguin-2104173" />}} 
-* Magna orci ultrices dolor {{< res-figure "img/pixabay/penguin-1196947" />}} 
+* Nunc porta vulputate tellus {{< res-figure "." "img/pixabay/penguin-2104173" />}} 
+* Magna orci ultrices dolor {{< res-figure "." "img/pixabay/penguin-1196947" />}} 
 
 Curabitur vulputate vestibulum lorem. Fusce sagittis, libero non molestie
 mollis.
 
 * Ibero non molestie mollis    
-{{< res-figure "img/pixabay/penguin-2528615" />}} 
+{{< res-figure "." "img/pixabay/penguin-2528615" />}} 
 * Vulputate vestibulum lorem    
-{{< res-figure "img/pixabay/humboldt-penguin-3064468" />}} 
+{{< res-figure "." "img/pixabay/humboldt-penguin-3064468" />}} 
 
 
 ## Demo with inner
@@ -280,7 +281,7 @@ Pellentesque dapibus suscipit ligula. Donec posuere augue in quam. Etiam vel
 tortor sodales tellus ultricies commodo. Suspendisse potenti. Aenean in sem ac
 leo mollis blandit.
 
-{{< res-figure "img/pixabay/penguin-1196947" >}} Aenean in sem ac leo mollis
+{{< res-figure "." "img/pixabay/penguin-1196947" >}} Aenean in sem ac leo mollis
 blandit. Donec neque quam, dignissim in, mollis nec, sagittis eu, wisi {{<
 /res-figure >}}
 
