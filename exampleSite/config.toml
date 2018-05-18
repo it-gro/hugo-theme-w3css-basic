@@ -615,6 +615,7 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   smallDispMenuCollapseIcon = "fas fa-caret-square-down"
   #smallDispMenuCollapseIcon = "far fa-caret-square-down"
   #smallDispMenuCollapseIcon = "fab fa-elementor"
+  #smallDispMenuCollapseIcon = "fas fa-align-justify"
 
 [params.menuTopBar]
   # used in layouts/partials/header.nav.html
