@@ -22,7 +22,7 @@
       {{- end}}
       {{/*- range $index, $element := sort .Site.Data.clients `weight` */}}
       {{- range $index, $element := .Site.Data.clients }} {{/* use filename for sort order */}}
-        <div>{{ template `front-clients-entry` (dict `page` $.Page `element` $element) }}</div>
+        <div>{{ template `front-clients-entry` (dict `site` $.Site `page` $.Page `element` $element) }}</div>
       {{- end }}
     </div> <!-- clients-owl -->
 
@@ -33,7 +33,7 @@
         {{- end}}
         {{/*- range $index, $element := first 3 (sort .Site.Data.clients `weight`) */}}
         {{- range $index, $element := first 3 (sort .Site.Data.clients) }}
-          <div class="w3-cell w3-mobile">{{ template `front-clients-entry` (dict `page` $.Page `element` $element) }}</div>
+          <div class="w3-cell w3-mobile">{{ template `front-clients-entry` (dict `site` $.Site `page` $.Page `element` $element) }}</div>
         {{- end }} {{/* range */}}
       </div> <!-- w3-cell -->
     </noscript>
@@ -45,16 +45,18 @@
 {{- end }} {{/* if isset    */}}
 
 {{- define `front-clients-entry` }}
+  {{- $ourSite      :=  index . `site`    }}
   {{- $ourPage      :=  index . `page`    }}
   {{- $ourElement   :=  index . `element` }}
 
   {{- if $ourElement.name }} <div class="w3-large w3-center"> {{ $ourElement.name }} </div> {{ end }}
 
   {{- $myImgClass  := `w3-image`}}
-  {{- $myImgStyle  := `margin:0 auto; max-width:100px; max-height:100px;`}}
+  {{- $myImgStyle  := printf "margin:0 auto; max-width:%s; max-height:%s;" (default (index $ourSite.Params.clients (lower `imgMaxWidth`  ) ) | default `100px`) (default (index $ourSite.Params.clients (lower `imgMaxHeight` ) ) | default `100px`) }}
   {{- $myImg       := $ourElement.resImg                       }} {{/* case sensitive ! */}}
-  {{- $myImgCmd    := $ourElement.resImgCmd | default `Resize` }}
-  {{- $myImgOpt    := $ourElement.resImgOpt | default `100x`   }}
+  {{- $myImgCmd    := $ourElement.resImgCmd | default (index $ourSite.Params.clients (lower `resImgCmd`   ) ) | default `Resize` }}
+  {{- $myImgOpt    := $ourElement.resImgOpt | default (index $ourSite.Params.clients (lower `resImgCmdOpt`) ) | default `100x`   }}
+
 
   {{- if and (    $ourElement.url) ($ourElement.resImg) }}  <a href='{{ $ourElement.url }}' target="_blank">
     {{ partial `resource.image.html` (dict `page` $ourPage `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}

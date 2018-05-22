@@ -649,11 +649,13 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # used in layouts/partials/front.photocards.html
   # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
-  enable   = true
-  #enable  = false
-  limitTo  = 3
-  #limitTo  = 6
-  animate  = true
+  enable        = true
+  #enable        = false
+  limitTo       = 3
+  #limitTo       = 6
+  animate       = true
+  resImgCmd     = "Resize"
+  resImgCmdOpt  = "300x"
 
 [params.features]
   # used in layouts/partials/front.features.html
@@ -707,10 +709,14 @@ labore et dolore magna aliquyam erat, sed diam voluptua.
   # used in layouts/partials/front.clients.carousel.html
   # enable or disable clients on frontpage
   # see some examples in 'exampleSite/data/clients'
-  enable = true
-  #enable = false
-  title = "Our Clients"
-  subtitle = '''
+  enable        = true
+  #enable        = false
+  resImgCmd     = "Resize"
+  resImgCmdOpt  = "100x"
+  imgMaxWidth   = "100px"
+  imgMaxHeight  = "100px"
+  title         = "Our Clients"
+  subtitle      = '''
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore.
              '''
