@@ -2127,7 +2127,7 @@ See https://discourse.gohugo.io/t/shortcodes-and-p-tags-2/9987
 Beeing able to analyse the visitors behavior via the log files on the visited site is one thing.
 But giving those informations to any third-party is not what the visitors expect by default.
 
-* Why should a third-party (disqus.com) know which blog articles I'v read (even without commenting) ?
+* Why should a third-party (disqus.com) know which blog articles I've read (even without commenting) ?
 * Why should a third-party (formspree.io) beeing able to read the visitors messages (contact form) ?
 
 If the visitors implicitly agree by clicking on a button ("see
