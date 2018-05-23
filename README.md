@@ -2149,7 +2149,7 @@ into the theme (`static/vendor/`*).
 * do not show a comment counter on the Disqus Button
 * review result e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
 
-All of the above ist done in `config.toml`
+All of the above is done in `config.toml`
 
 ```toml
 googleAnalytics = ""
