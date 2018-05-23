@@ -14,12 +14,12 @@ Inspired by https://github.com/liwenyip/hugo-easy-gallery
 
 {{- $.Scratch.Set `theResPagePath`  ( (.Get `path`             ) | default $myDefaultResPagePath  ) }}
 {{- $.Scratch.Set `theMatch`        ( (.Get `match`            ) | default $myDefaultMatch        ) }}
-{{- $.Scratch.Set `theImgCmd`       ( (.Get `imgCmd`           ) | default $myDefaulImgCmd        ) }}
-{{- $.Scratch.Set `theImgCmdOpt`    ( (.Get `imgOpt`           ) | default $myDefaulImgCmdOpt     ) }}
-{{- $.Scratch.Set `theThumbCmd`     ( (.Get `thumbCmd`         ) | default $myDefaulThumbCmd      ) }}
-{{- $.Scratch.Set `theThumbCmdOpt`  ( (.Get `thumbOpt`         ) | default $myDefaultThumbCmdOpt  ) }}
-{{- $.Scratch.Set `theCaptionLong`  ( (.Get `capLng`           ) | default $myDefaultCaptionLong  ) }}
-{{- $.Scratch.Set `theCaptionShort` ( (.Get `capSrt`           ) | default $myDefaultCaptionShort ) }}
+{{- $.Scratch.Set `theImgCmd`       ( (.Get `imgCmd`           ) ) }}
+{{- $.Scratch.Set `theImgCmdOpt`    ( (.Get `imgOpt`           ) ) }}
+{{- $.Scratch.Set `theThumbCmd`     ( (.Get `thumbCmd`         ) ) }}
+{{- $.Scratch.Set `theThumbCmdOpt`  ( (.Get `thumbOpt`         ) ) }}
+{{- $.Scratch.Set `theCaptionLong`  ( (.Get `capLng`           ) ) }}
+{{- $.Scratch.Set `theCaptionShort` ( (.Get `capSrt`           ) ) }}
 {{- $.Scratch.Set `theCapPos`       ( (.Get `caption-position` ) | default `center`               ) }} {{/* none top center bottom  */}}
 {{- $.Scratch.Set `theCapEff`       ( (.Get `caption-effect`   ) | default `appear`               ) }} {{/* none fade appear slide */}}
 {{- $.Scratch.Set `theHovEff`       ( (.Get `hover-effect`     ) | default `zoom`                 ) }} {{/* none grow shrink slidedown slideup zoom */}}
@@ -70,13 +70,13 @@ $myResPage.Dir  : {{ $myResPage.Dir  }} <br/>
 {{- range $myResImgage := ( ($myResPage.Resources.ByType `image`).Match (printf "%s*" $myResMatch)) }}
   {{- if not (findRE `\.(svg)$` (lower $myResImgage.Name)) }}
 
-    {{- $myImgCmd      := ( $myImgCmd        | default $myResImgage.Params.imgcmd        ) }}
-    {{- $myImgCmdOpt   := ( $myImgCmdOpt     | default $myResImgage.Params.imgopt        ) }}
-    {{- $myThumbCmd    := ( $myThumbCmd      | default $myResImgage.Params.thumbcmd      ) }}
-    {{- $myThumbCmdOpt := ( $myThumbCmdOpt   | default $myResImgage.Params.thumbopt      ) }}
-    {{- $myCapLong     := ( $myCaptionLong   | default $myResImgage.Params.caption       ) }}
-    {{- $myCapLong     := ( $myCapLong       | default $myResImgage.Params.captionlong   ) }}
-    {{- $myCapShort    := ( $myCaptionShort  | default $myResImgage.Params.captionshort  ) }}
+    {{- $myImgCmd      := ( $myImgCmd        | default $myResImgage.Params.imgcmd        | default $myDefaulImgCmd        ) }}
+    {{- $myImgCmdOpt   := ( $myImgCmdOpt     | default $myResImgage.Params.imgopt        | default $myDefaulImgCmdOpt     ) }}
+    {{- $myThumbCmd    := ( $myThumbCmd      | default $myResImgage.Params.thumbcmd      | default $myDefaulThumbCmd      ) }}
+    {{- $myThumbCmdOpt := ( $myThumbCmdOpt   | default $myResImgage.Params.thumbopt      | default $myDefaultThumbCmdOpt  ) }}
+    {{- $myCapLong     := ( $myCaptionLong   | default $myResImgage.Params.caption       | default $myDefaultCaptionLong  ) }}
+    {{- $myCapLong     := ( $myCapLong       | default $myResImgage.Params.captionlong   | default $myDefaultCaptionLong  ) }}
+    {{- $myCapShort    := ( $myCaptionShort  | default $myResImgage.Params.captionshort  | default $myDefaultCaptionShort ) }}
 
     {{- $myCapFileName     := replaceRE `.*/`      (``) ($myResImgage.Name) }}
     {{- $myCapFileBase     := replaceRE `\.[^.]+$` (``) ($myCapFileName)   }}
