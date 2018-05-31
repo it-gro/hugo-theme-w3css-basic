@@ -45,6 +45,7 @@ This theme is for:
     * [Date format](#date-format)
     * [Disqus](#disqus)
   * [Related Content](#related-content)
+  * [Anchors](#anchors)
   * [Pages](#pages)
     * [Pages Navigation](#pages-navigation)
   * [Color Theme](#color-theme)
@@ -93,6 +94,8 @@ This theme is for:
 
 
 ## Latest News
+
+* Added [Anchors](#anchors)
 
 * Added shortcode:
   * [res-gallery](#gallery-with-image-processing)
@@ -678,6 +681,19 @@ Hook:
 ```
 
 => review `layouts/partials/blog.disqus-button.html`
+
+### Anchors
+
+`config.toml`
+
+```toml
+[params.anchor]
+  # layouts/_default/baseof.html
+  enable = true
+  #icon   = "fas fa-anchor"
+  icon = "fas fa-link"
+```
+
 
 ### Related Content
 
