@@ -309,8 +309,8 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-serenity.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-sharkskin.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-snorkel-blue.css"
-  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css"
-  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css"
+  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css"
 
   # used in layouts/partials/*.html
   # used in layouts/blog/*.html
@@ -402,6 +402,9 @@ consectetuer adipiscing
   #
   # layouts/404.html
   color404Container                     = "w3-theme-l3"
+  #
+  # layouts/partials/main.related.html
+  colorRelatedBar                       = "w3-theme-l3"
 
 
   # used in layouts/shortcodes/alert.html
@@ -558,6 +561,13 @@ consectetuer adipiscing
 # ##################################################
 # theme sections
 # more theme defined params
+
+[params.related]
+  # https://gohugo.io/content-management/related/
+  # layouts/partials/main.related.html
+  enable        = true
+  limitTo       = 5
+
 
 [params.cookieconsent]
   # https://cookieconsent.insites.com/download/

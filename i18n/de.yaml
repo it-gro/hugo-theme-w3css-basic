@@ -127,3 +127,7 @@
 
 - id: cookieLearn
   translation: Weitere Informationen
+
+# Related Content
+- id: "seeAlso"
+  translation: Ähnliche Seiten
