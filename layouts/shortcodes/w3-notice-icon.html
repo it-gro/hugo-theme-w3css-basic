@@ -7,10 +7,11 @@
   {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theType`    (.Get $myPos) }} {{end}}
   {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theHeading` (.Get $myPos) }} {{end}}
 {{- end}}
-{{- if eq ($.Scratch.Get `theType`) `success` }}{{$.Scratch.Set `theIcon` `fas fa-check`                   }}{{end}}
-{{- if eq ($.Scratch.Get `theType`) `info`    }}{{$.Scratch.Set `theIcon` `fas fa-info`                    }}{{end}}
-{{- if eq ($.Scratch.Get `theType`) `warning` }}{{$.Scratch.Set `theIcon` `fas fas fa-exclamation-triangle`}}{{end}}
-{{- if eq ($.Scratch.Get `theType`) `danger`  }}{{$.Scratch.Set `theIcon` `fas fa-bomb`                    }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `success`     }}{{$.Scratch.Set `theIcon` `fas fa-check`                   }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `info`        }}{{$.Scratch.Set `theIcon` `fas fa-info`                    }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `exclamation` }}{{$.Scratch.Set `theIcon` `fas fa-exclamation`             }}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `warning`     }}{{$.Scratch.Set `theIcon` `fas fas fa-exclamation-triangle`}}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `danger`      }}{{$.Scratch.Set `theIcon` `fas fa-bomb`                    }}{{end}}
 <div class='w3-panel w3-leftbar shortcode-{{ $.Scratch.Get `theType` }}'>
 {{- if eq ($.Scratch.Get `theHeading`) `` }}
       <i class='w3-margin-right {{$.Scratch.Get `theIcon`}} fa-2x'></i>

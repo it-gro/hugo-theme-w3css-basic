@@ -53,11 +53,12 @@
     {{- end }}
   {{- end }}
 
+  {{- end }} {{/* topbar */}}
+
   {{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
     {{ partial `header.nav.large.theme_color_selector.html` . -}}
   {{- end }}
 
-  {{- end }} {{/* topbar */}}
 
 </div> <!-- w3-bar w3-hide-small w3-hide-medium  -->
 
@@ -81,11 +82,12 @@
   {{- end }} {{/* numOfItemsIfMediumDisplay */}}
   {{- end }}{{/* socialEnable */}}
 
+  {{- end }} {{/* topbar */}}
+
   {{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
     {{ partial `header.nav.medium.theme_color_selector.html` . -}}
   {{- end }}
 
-  {{- end }} {{/* topbar */}}
 
 </div> <!-- w3-bar w3-hide-small w3-hide-large -->
 

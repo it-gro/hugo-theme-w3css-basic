@@ -52,12 +52,17 @@
     {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
       {{ `<!-- Site.Params.address  -->` | safeHTML }}
     {{- end}}
+
     {{- if isset $.Site.Params (lower `address` ) }}
     <div id="address" class="w3-col w3-third">
       <h4>{{ default `Contact` (i18n `contactTitle`) }}</h4>
       <div class="notranslate">{{- $.Site.Params.address | markdownify -}}</div><br/>
-      <a href='{{ `/contact` | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}' class='w3-button {{ default `w3-theme-l4` ($.Site.Param `colorFooterButton`)}} '>{{ default `contact` (i18n `contactGoTo`) }}</a>
-    </div> <!-- w3-col -->
+      {{ if $.Site.Param `footerContactButton` }}
+      {{ with ($.Site.GetPage `page` ($.Site.Param `footerContactButton`)) }}
+      <a href='{{ .Permalink | relURL }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}' class='w3-button {{ default `w3-theme-l4` ($.Site.Param `colorFooterButton`)}} '>{{ default `contact` (i18n `contactGoTo`) }}</a></div> <!-- w3-col -->
+      {{end}}
+      {{end}}
+    </div>
     {{- end }}
 
   </div>  <!-- w3-row -->

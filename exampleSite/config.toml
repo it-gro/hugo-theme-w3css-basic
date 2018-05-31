@@ -493,8 +493,8 @@ consectetuer adipiscing
 
   # used in partials/contact.form.html
   # Enable the contact form by entering your Formspree.io email
-  formspree = "formspree.io"
-  email     = "info@example.com"
+  formspree            = "formspree.io"
+  email                = "info@example.com"
   contactFormInclEmail = true
 
   # disqus (theme)
@@ -608,9 +608,9 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
   # if set => change menu entry on small displays to lowercase maxChars
-  smallDispMenuMaxChars = 4
-  #smallDispMenuMaxChars = 2
-  smallDispMenuCollapse = true
+  smallDispMenuMaxChars     = 4
+  #smallDispMenuMaxChars     = 2
+  smallDispMenuCollapse     = true
   #smallDispMenuCollapseIcon = "fas fa-bars"
   smallDispMenuCollapseIcon = "fas fa-caret-square-down"
   #smallDispMenuCollapseIcon = "far fa-caret-square-down"
@@ -649,11 +649,13 @@ et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
   # used in layouts/partials/front.photocards.html
   # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
-  enable   = true
-  #enable  = false
-  limitTo  = 3
-  #limitTo  = 6
-  animate  = true
+  enable        = true
+  #enable        = false
+  limitTo       = 3
+  #limitTo       = 6
+  animate       = true
+  resImgCmd     = "Resize"
+  resImgCmdOpt  = "300x"
 
 [params.features]
   # used in layouts/partials/front.features.html
@@ -707,10 +709,14 @@ labore et dolore magna aliquyam erat, sed diam voluptua.
   # used in layouts/partials/front.clients.carousel.html
   # enable or disable clients on frontpage
   # see some examples in 'exampleSite/data/clients'
-  enable = true
-  #enable = false
-  title = "Our Clients"
-  subtitle = '''
+  enable        = true
+  #enable        = false
+  resImgCmd     = "Resize"
+  resImgCmdOpt  = "100x"
+  imgMaxWidth   = "100px"
+  imgMaxHeight  = "100px"
+  title         = "Our Clients"
+  subtitle      = '''
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore.
              '''
@@ -817,9 +823,12 @@ ultricies eget, tempor sit amet, ante
 
 [params.resources]
   # used in layouts/shortcodes/res-figure.html
-  defaultImageCommand = "Resize"
-  defaultImageOptions = "300x"
-  defaultImageCaption = "%%N"
+  defaultResPagePath  = "."			 
+	defaultMatch			  = "**/*"	 
+	defaultImgCmd	      = "Resize"
+	defaultImgCmdOpt	  = "300x"
+	defaultImgCaption	  = "%%T"
+
 
 [params.resGallery]
   # used in layouts/shortcodes/res-gallery.html
@@ -839,7 +848,8 @@ ultricies eget, tempor sit amet, ante
 
 
 [params.options]
-  jsHistoryNav = true
+  jsHistoryNav        = true
+  jsHistoryNavForward = false
 
 
 # ##################################################
@@ -847,6 +857,7 @@ ultricies eget, tempor sit amet, ante
 
 
 [blackfriday]
+  hrefTargetBlank = true
   # extensions = ["noEmptyLineBeforeBlock"]
   # extensions = ["hardLineBreak"]
   # https://gohugo.io/getting-started/configuration/#blackfriday-options
