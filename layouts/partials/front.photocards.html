@@ -36,10 +36,10 @@
 
           {{- $myImgClass  := $.Scratch.Get `myImgClass` }}
           {{- $myImgStyle  := $.Scratch.Get `myImgStyle` }}
-
           {{- $myImg       := index $element `resImg`                       }} {{/* case sensitive ! */}}
           {{- $myImgCmd    := index $element `resImgCmd` | default (index $.Site.Params.photocards (lower `resImgCmd`   ) )  | default `Resize` }}
           {{- $myImgOpt    := index $element `resImgOpt` | default (index $.Site.Params.photocards (lower `resImgCmdOpt`) )  | default `300x`   }}
+            
           {{ partial `resource.image.html` (dict `page` $.Page `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
 
           {{- if $element.url  }}
