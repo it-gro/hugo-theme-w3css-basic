@@ -563,6 +563,13 @@ consectetuer adipiscing
 # theme sections
 # more theme defined params
 
+[params.anchor]
+  # layouts/_default/baseof.html
+  enable = true
+  icon   = "fas fa-anchor"
+  #icon = "fas fa-link"
+
+
 [params.related]
   # https://gohugo.io/content-management/related/
   # layouts/partials/main.related.html
