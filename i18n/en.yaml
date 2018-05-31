@@ -124,3 +124,7 @@
 
 - id: cookieLearn
   translation: Learn more
+
+# Related Content
+- id: "seeAlso"
+  translation: See Also
