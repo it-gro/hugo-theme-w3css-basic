@@ -48,6 +48,7 @@
         {{- end}}
         {{/* .Content */}}
         {{ .Content | replaceRE `(?s:</div>\s?</p>)` `</div>` | replaceRE `(?s:</pre>\s?</p>)` `</pre>` | replaceRE `(?s:</figure>\s*</p>)` `</figure>` | safeHTML }}
+        {{- partial `main.related.html`  . -}}
         {{- end }}
 
         {{- if eq .Type `blog` }}

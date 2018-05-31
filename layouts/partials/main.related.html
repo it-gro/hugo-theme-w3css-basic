@@ -1,0 +1,23 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/main.related.html -->` | safeHTML }}
+{{- end}}
+
+{{- if isset $.Site.Params (lower `related` ) }}
+{{- if $.Site.Params.related.enable  }}
+
+{{ $related := .Site.RegularPages.Related . | first ( default 5 $.Site.Params.related.limitTo ) }}
+{{ with $related }}
+  <div class='w3-card-4 w3-round-large w3-margin-top w3-margin-bottom {{ default `w3-theme-l3` ($.Site.Param `colorRelatedBar`)}} '>
+    <div class="w3-container w3-padding-small ">
+      <h3>{{default "See Also" (i18n "seeAlso")}}</h3>
+      <ul>
+        {{- range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- end }}
+      </ul>
+    </div>
+  </div>
+{{- end }} {{/* with $related */}}
+
+{{- end }} {{/* $.Site.Params.related.enable */}}
+{{- end }} {{/* if isset */}}

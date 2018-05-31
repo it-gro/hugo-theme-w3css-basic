@@ -44,6 +44,7 @@ This theme is for:
     * [Blog List](#blog-list)
     * [Date format](#date-format)
     * [Disqus](#disqus)
+  * [Related Content](#related-content)
   * [Pages](#pages)
     * [Pages Navigation](#pages-navigation)
   * [Color Theme](#color-theme)
@@ -678,6 +679,23 @@ Hook:
 
 => review `layouts/partials/blog.disqus-button.html`
 
+### Related Content
+
+* See more https://gohugo.io/content-management/related/#list-related-content
+* implemented in `layouts/partials/main.related.html`
+
+`config.toml`
+
+```toml
+[params.related]
+  # https://gohugo.io/content-management/related/
+  # layouts/partials/main.related.html
+  enable        = true
+  limitTo       = 5
+```
+
+
+
 
 ### Pages
 
@@ -925,6 +943,9 @@ You can configure all colors within the selected monochromatic color theme:
   #
   # layouts/404.html
   color404Container                     = "w3-theme-l3"
+  #
+  # layouts/partials/main.related.html
+  colorRelatedBar                       = "w3-theme-l3"
 
   # used in layouts/shortcodes/alert.html
   colorAlertPrimary                     = "w3-purple"
