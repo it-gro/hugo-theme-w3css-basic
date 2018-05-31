@@ -97,6 +97,8 @@ This theme is for:
 
 * Added [Anchors](#anchors)
 
+* Added [Related Content](#related-content)
+
 * Added shortcode:
   * [res-gallery](#gallery-with-image-processing)
 [![screenshot res-gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_516.jpg)](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/gallery-01/)
@@ -2199,7 +2201,7 @@ into the theme (`static/vendor/`*).
 * do not show a comment counter on the Disqus Button
 * review result e.g. with [Firefox Lightbeam by Mozilla](https://addons.mozilla.org/en-GB/firefox/addon/lightbeam/)
 
-All of the above ist done in `config.toml`
+All of the above is done in `config.toml`
 
 ```toml
 googleAnalytics = ""
