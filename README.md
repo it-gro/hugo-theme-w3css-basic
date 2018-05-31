@@ -94,6 +94,8 @@ This theme is for:
 
 ## Latest News
 
+* Added [Related Content](#related-content)
+
 * Added shortcode:
   * [res-gallery](#gallery-with-image-processing)
 [![screenshot res-gallery](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_516.jpg)](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/gallery-01/)
@@ -2274,6 +2276,8 @@ They ported from [Bootstrapious](https://bootstrapious.com/p/universal-business-
 ![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.5.png)
 
 ![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.6.png)
+
+![screenshot thumbnail 900x600](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/tn.7.png)
 
 
 * Complete
