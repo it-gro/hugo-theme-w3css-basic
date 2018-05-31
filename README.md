@@ -331,8 +331,10 @@ description: |
   # used in layouts/partials/front.photocards.html
   # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
-  enable   = true
-  animate  = true
+  enable        = true
+  animate       = true
+  resImgCmd     = "Resize"
+  resImgCmdOpt  = "300x"
 ```
 
 * Front photocards
@@ -498,9 +500,13 @@ text:        |
   # used in layouts/partials/front.clients.carousel.html
   # enable or disable clients on frontpage
   # see some examples in 'exampleSite/data/clients'
-  enable = true
-  title = "Our Clients"
-  subtitle = '''
+  enable        = true
+  resImgCmd     = "Resize"
+  resImgCmdOpt  = "100x"
+  imgMaxWidth   = "100px"
+  imgMaxHeight  = "100px"
+  title         = "Our Clients"
+  subtitle      = '''
 Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore.
              '''
@@ -1181,18 +1187,25 @@ pygmentsUseClasses            = true
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
   # if set => change menu entry on small displays to lowercase maxChars 
-  smallDispMenuMaxChars = 2
+  smallDispMenuMaxChars     = 2
+  smallDispMenuCollapse     = false
+  smallDispMenuCollapseIcon = "fas fa-caret-square-down"
 
 [params.menuTopBar]
   # used in layouts/partials/header.nav.html
   # enable or disable menu.topbar with social icons (right aligned)
-  socialEnable             = true
-  numOfItemsIfSmallDisplay = 0
+  socialEnable                      = true
+  numOfItemsIfSmallDisplay          = 0
+  numOfItemsIfMediumDisplay         = 3
+  numOfItemsIfSmallDisplayCollapsed = 6
 
   # used in layouts/partials/header.nav.html
   #         layouts/partials/header.nav.google.translate.html
   googleTranslateEnable    = true
   googleTranslateShowOnHome= false
+  
+  themeColorSelectorEnable = false
+  
 ```
 
 

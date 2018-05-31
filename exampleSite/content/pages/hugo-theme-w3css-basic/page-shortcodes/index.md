@@ -1,6 +1,7 @@
 ---
 weight:             20
 title:              "This Theme Shortcodes"
+icon:               "fas fa-code"
 date:               "2017-11-22T07:41:52+01:00"
 toc:                true
 resImgTeaser:  img/pixabay.com/penguin-2104173_1920.jpg
@@ -620,16 +621,35 @@ static/css/syntax/syntax.bw.css
 
 ## Page Resources
 
+### res-attach
+* See https://gohugo.io/content-management/page-resources/
+* See [Attachments via Hugo Page Resources]({{< relref "attach-page-resources" >}}) for more information
+
+{{< w3-code >}}
+{{</* res-attach */>}}
+{{< /w3-code >}}
+
+{{< res-attach >}}
+
+#### Parameters
+
+Argument | Position -1 | Default           | What           | Remark
+---------|-------------|-------------------|----------------|-------
+match    | 0           | **                | glob           | only resources of type application
+label    | 1           | Attachments       | label          | piped into i18n
+icon     | 2           | fas fa-paperclip  | label icon     | 
+
+
 ### res-figure
 
-* See https://gohugo.io/content-management/image-processing/
-* inspired by layouts/shortcodes/imgproc.html
+* See https://gohugo.io/content-management/image-processing/   
+  inspired by layouts/shortcodes/imgproc.html
 * See [Hugo image processing (res-figure)]({{< relref "image-processing-with-hugo" >}}) for more information
 
 {{< w3-code >}}
 {{</* res-figure "." "img/pixabay.com/penguin-21*" />}} 
 {{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
-{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" / */>}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" /*/>}} 
 {{< /w3-code >}}
 
 {{< res-figure "." "img/pixabay.com/penguin-21*" />}} 
@@ -681,29 +701,10 @@ Code | What
 %%I  | image info
 
 
-### res-attach
-* See https://gohugo.io/content-management/page-resources/
-* See [Attachments via Hugo Page Resources]({{< relref "attach-page-resources" >}}) for more information
-
-{{< w3-code >}}
-{{</* res-attach */>}}
-{{< /w3-code >}}
-
-{{< res-attach >}}
-
-#### Parameters
-
-Argument | Position -1 | Default           | What           | Remark
----------|-------------|-------------------|----------------|-------
-match    | 0           | **                | glob           | only resources of type application
-label    | 1           | Attachments       | label          | piped into i18n
-icon     | 2           | fas fa-paperclip  | label icon     | 
-
-
 ### res-gallery
 
 * inspired by [Hugo Easy Gallery](https://www.liwen.id.au/heg/)
-* but uses page resources and image processing
+* uses page resources and image processing
 
 {{< highlight nolan >}}
 {{</* res-gallery-load-photoswipe >}}
@@ -800,7 +801,7 @@ Code | What
 
 {{< highlight nolan >}}
 {{</* heg-load-photoswipe */>}}
-{{</* heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" / */>}} 
+{{</* heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" /*/>}} 
 {{< /highlight >}}
 
 renders as

@@ -771,7 +771,9 @@ ultricies eget, tempor sit amet, ante
 
 [params.googleApiFonts.family.h1]
   # serif, sans-serif or even cursive
-  sans-serif = "Days One"
+  sans-serif = "Signika"
+  #sans-serif = "Ubuntu"
+  #sans-serif = "Days One"
 
 [params.googleApiFonts.family.pre]
   # monospace or sans-serif

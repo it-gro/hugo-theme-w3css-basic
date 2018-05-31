@@ -79,7 +79,7 @@ This theme provides a shortcode `res-figure`  for page resource image processing
 
 # Demo /* Resize 150x 
 {{< w3-code >}}
-{{</* res-figure "." "img/pixabay/pixabay/*" "Resize" "150x" "%%I%%n%%F" >}}{{< /res-figure / */>}}
+{{</* res-figure "." "img/pixabay/pixabay/*" "Resize" "150x" "%%I%%n%%F" >}}{{< /res-figure /*/>}}
 {{< /w3-code >}}
 
 {{< res-figure "."  "**/pixabay/*" "Resize" "150x" "%%I%%n%%F" />}} 
@@ -161,7 +161,7 @@ See https://gohugo.io/content-management/image-processing/
 {{< res-figure "." "img/pixabay/penguin-21*" "Fit"  "200x200" />}} 
 {{< res-figure "." "img/pixabay/penguin-21*" "Fill" "200x200" "%%I%%n%%O%%n%%A" />}} 
 {{< res-figure path="." match="img/pixabay/penguin-21*" opt="100x" cap="%%I%%n%%F" />}} 
-{{< res-figure path="." match="**_/penguin-21" cmd="Fill" opt="150x200" / */>}} 
+{{< res-figure path="." match="**_/penguin-21" cmd="Fill" opt="150x200" /*/>}} 
 {{< /w3-code >}}
 
 {{< res-figure "." "img/pixabay/penguin-21*" />}} 
@@ -174,7 +174,7 @@ See https://gohugo.io/content-management/image-processing/
 {{< w3-code >}}
 {{</* res-figure "." "img/pixabay/penguin-11*" />}} 
 {{< res-figure "." "img/pixabay/penguin-11*" "Fit"  "200x200" />}} 
-{{< res-figure "." "img/pixabay/penguin-11*" "Fill" "200x200" / */>}} 
+{{< res-figure "." "img/pixabay/penguin-11*" "Fill" "200x200" /*/>}} 
 {{< /w3-code >}}
 
 {{< res-figure "." "img/pixabay/penguin-11*" />}} 
@@ -185,7 +185,7 @@ See https://gohugo.io/content-management/image-processing/
 {{< w3-code >}}
 {{</* res-figure "." "img/pixabay/penguin-27*" />}} 
 {{< res-figure "." "img/pixabay/penguin-27*" "Fit"  "200x200" />}} 
-{{< res-figure "." "img/pixabay/penguin-27*" "Fill" "200x200" / */>}} 
+{{< res-figure "." "img/pixabay/penguin-27*" "Fill" "200x200" /*/>}} 
 {{< /w3-code >}}
 
 {{< res-figure "." "img/pixabay/penguin-27*" />}} 
@@ -196,7 +196,7 @@ See https://gohugo.io/content-management/image-processing/
 {{< w3-code >}}
 {{</* res-figure "." "img/pixabay/penguin-96*" />}} 
 {{< res-figure "." "img/pixabay/penguin-96*" "Fit"  "200x200" />}} 
-{{< res-figure "." "img/pixabay/penguin-96*" "Fill" "200x200" / */>}} 
+{{< res-figure "." "img/pixabay/penguin-96*" "Fill" "200x200" /*/>}} 
 {{< /w3-code >}}
 
 {{< res-figure "." "img/pixabay/penguin-96*" />}} 
@@ -208,7 +208,7 @@ See https://gohugo.io/content-management/image-processing/
 {{</* res-figure "." "img/pixabay/penguin-25*" />}} 
 {{< res-figure "." "img/pixabay/penguin-25*" "Fit"  "200x200" />}} 
 {{< res-figure "." "img/pixabay/penguin-25*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
-{{< res-figure "." "img/pixabay/penguin-25*" "Fill" "200x200 left" / */>}} 
+{{< res-figure "." "img/pixabay/penguin-25*" "Fill" "200x200 left" /*/>}} 
 {{< /w3-code >}}
 
 {{< res-figure "." "img/pixabay/penguin-25*" />}} 
@@ -221,7 +221,7 @@ See https://gohugo.io/content-management/image-processing/
 {{</* res-figure "." "img/pixabay/penguin-93*" />}} 
 {{< res-figure "." "img/pixabay/penguin-93*" "Fit"  "200x200" />}} 
 {{< res-figure "." "img/pixabay/penguin-93*" "Fill" "200x200" "%%I%%n(smartcrop fails)" />}} 
-{{< res-figure "." "img/pixabay/penguin-93*" "Fill" "200x200 right" / */>}} 
+{{< res-figure "." "img/pixabay/penguin-93*" "Fill" "200x200 right" /*/>}} 
 {{< /w3-code >}}
 
 {{< res-figure "." "img/pixabay/penguin-93*" />}} 
