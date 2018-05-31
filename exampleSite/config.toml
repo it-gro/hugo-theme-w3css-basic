@@ -243,6 +243,7 @@ consectetuer adipiscing
 
 **Switzerland**
               '''
+  footerContactButton = "contact/index.md"
 
   # used in layouts/partials/footer.bottom.html
   bottomLeft  = "Copyright (c) 2018, *lobortis nisl* ut aliquip ex ea commodo consequat"
