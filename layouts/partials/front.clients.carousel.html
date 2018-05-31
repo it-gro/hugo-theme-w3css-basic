@@ -51,10 +51,10 @@
   {{- if $ourElement.name }} <div class="w3-large w3-center"> {{ $ourElement.name }} </div> {{ end }}
 
   {{- $myImgClass  := `w3-image`}}
-  {{- $myImgStyle  := `margin:0 auto; max-width:100px; max-height:100px;`}}
+  {{- $myImgStyle  := `margin:0 auto; max-width:200px; max-height:200px;`}}
   {{- $myImg       := $ourElement.resImg                       }} {{/* case sensitive ! */}}
   {{- $myImgCmd    := $ourElement.resImgCmd | default `Resize` }}
-  {{- $myImgOpt    := $ourElement.resImgOpt | default `100x`   }}
+  {{- $myImgOpt    := $ourElement.resImgOpt | default `200x`   }}
 
   {{- if and (    $ourElement.url) ($ourElement.resImg) }}  <a href='{{ $ourElement.url }}' target="_blank">
     {{ partial `resource.image.html` (dict `page` $ourPage `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}

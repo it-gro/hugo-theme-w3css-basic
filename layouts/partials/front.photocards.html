@@ -39,7 +39,7 @@
 
           {{- $myImg       := index $element `resImg`                       }} {{/* case sensitive ! */}}
           {{- $myImgCmd    := index $element `resImgCmd` | default `Resize` }}
-          {{- $myImgOpt    := index $element `resImgOpt` | default `300x`   }}
+          {{- $myImgOpt    := index $element `resImgOpt` | default `400x`   }}
           {{ partial `resource.image.html` (dict `page` $.Page `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
 
           {{- if $element.url  }}
