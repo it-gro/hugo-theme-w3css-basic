@@ -1,0 +1,5 @@
+# www.robotstxt.org/
+# http://code.google.com/web/controlcrawlindex/
+
+User-agent: *
+Disallow: {{ if (findRE `\b(gitlab.io|github.io)\b` $.Site.BaseURL) }}/{{ end }}
