@@ -462,7 +462,9 @@ code.chroma {
 /* -------------------------------------------------- */
 /* shortcodes w3-quote */
 .shortcode-quote {
-  border-color:#4CAF50!important
+  border-color:#4CAF50!important;
+  /* clear: both; */
+  display: table;
 }
 
 .shortcode-quote-source {

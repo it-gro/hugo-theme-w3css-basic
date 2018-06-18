@@ -65,9 +65,10 @@
     {{- $myCaption := replaceRE `%%B`  ($myCapFileBase)    $myCaption }}
     {{- $myCaption := replaceRE `%%T`  ($myResource.Title) $myCaption }}
     {{- $myCaption := replaceRE `%%N`  (cond (eq $myResource.Name $myResource.Title) (humanize $myCapFileBase) (humanize $myResource.Title) ) $myCaption }}
-    {{- $myCaption := replaceRE `%%L`  (cond (not (isset $myResource.Params "licenselink") ) ($myResource.Params.license) (printf "<a href='%s' target='_blank'>%s</a>" $myResource.Params.licenselink $myResource.Params.license) ) $myCaption }}
-    {{- $myCaption := replaceRE `%%O`  (cond (not (isset $myResource.Params "originlink" ) ) ($myResource.Params.origin)  (printf "<a href='%s' target='_blank'>%s</a>" $myResource.Params.originlink  $myResource.Params.origin)  ) $myCaption }}
-    {{- $myCaption := replaceRE `%%A`  (cond (not (isset $myResource.Params "attrlink"   ) ) ($myResource.Params.attrby)  (printf "<a href='%s' target='_blank'>%s</a>" $myResource.Params.attrlink    $myResource.Params.attrby)  ) $myCaption }}
+    {{- $myCaption := replaceRE `%%L`  (cond (not (isset $myResource.Params "licenselink") ) ($myResource.Params.license)     (printf "<a href='%s' target='_blank'>%s</a>" $myResource.Params.licenselink $myResource.Params.license) ) $myCaption }}
+    {{- $myCaption := replaceRE `%%l`  (cond (not (isset $myResource.Params "licenselink") ) ($myResource.Params.licenseabrv) (printf "<a href='%s' target='_blank'>%s</a>" ($myResource.Params.licenselink | default "") ($myResource.Params.licenseabrv | default "") ) ) $myCaption }}
+    {{- $myCaption := replaceRE `%%O`  (cond (not (isset $myResource.Params "originlink" ) ) ($myResource.Params.origin)      (printf "<a href='%s' target='_blank'>%s</a>" $myResource.Params.originlink  $myResource.Params.origin)  ) $myCaption }}
+    {{- $myCaption := replaceRE `%%A`  (cond (not (isset $myResource.Params "attrlink"   ) ) ($myResource.Params.attrby)      (printf "<a href='%s' target='_blank'>%s</a>" $myResource.Params.attrlink    $myResource.Params.attrby)  ) $myCaption }}
     {{- $myCaption := replaceRE `%%I`  (printf "%s '%s'" $myCommand $myOptions) $myCaption }}
 
     {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-figure)\b` $.Site.Params.traceFlags) }}
