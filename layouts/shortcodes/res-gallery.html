@@ -74,8 +74,7 @@ $myResPage.Dir  : {{ $myResPage.Dir  }} <br/>
     {{- $myImgCmdOpt   := ( $myImgCmdOpt     | default $myResImgage.Params.imgopt        | default $myDefaulImgCmdOpt     ) }}
     {{- $myThumbCmd    := ( $myThumbCmd      | default $myResImgage.Params.thumbcmd      | default $myDefaulThumbCmd      ) }}
     {{- $myThumbCmdOpt := ( $myThumbCmdOpt   | default $myResImgage.Params.thumbopt      | default $myDefaultThumbCmdOpt  ) }}
-    {{- $myCapLong     := ( $myCaptionLong   | default $myResImgage.Params.caption       | default $myDefaultCaptionLong  ) }}
-    {{- $myCapLong     := ( $myCapLong       | default $myResImgage.Params.captionlong   | default $myDefaultCaptionLong  ) }}
+    {{- $myCapLong     := ( $myCaptionLong   | default $myResImgage.Params.caption       | default $myResImgage.Params.captionlong | default $myDefaultCaptionLong  ) }}
     {{- $myCapShort    := ( $myCaptionShort  | default $myResImgage.Params.captionshort  | default $myDefaultCaptionShort ) }}
 
     {{- $myCapFileName     := replaceRE `.*/`      (``) ($myResImgage.Name) }}
