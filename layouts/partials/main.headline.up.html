@@ -1,9 +1,0 @@
-{{- if isset $.Site.Params (lower `options` ) }}
-{{- if $.Site.Params.options.showNavUp }}
-{{- if ne .Type `blog` }}
-<span style="float:right;">
-<a class="taxonomy-button w3-btn" href="../"><i class="fas fa-arrow-up"></i></a>
-</span>
-{{- end}}
-{{- end}}
-{{- end}}

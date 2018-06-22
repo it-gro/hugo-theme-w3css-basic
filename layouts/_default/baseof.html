@@ -26,8 +26,9 @@
           <h1 class='w3-panel {{ default `w3-theme-l2` ($.Site.Param `colorBaseofPanel`)}} '>
           {{- if $.Params.icon }}<i class='{{ $.Params.icon }} fa-1x'></i>{{ end }}
             {{ .Title | markdownify | emojify }}
-            {{ partial `main.headline.up.html` . }}
-            {{ partial `main.headline.back-forward.html` . }}
+            <span style="float:right;">
+            {{- partial `main.headline.nav-right.html` . -}}
+            </span>
           </h1>
 
         {{- end}}

@@ -1,0 +1,16 @@
+{{- if isset $.Site.Params (lower `options` ) -}}
+{{- if $.Site.Params.options.jsHistoryNav -}}
+<button id="btnback" class="headline-button w3-btn" style="visibility:hidden;" onclick="javascript:history.back()"   ><i class="fas fa-step-backward"></i></button>
+{{- if $.Site.Params.options.jsHistoryNavForward -}}
+{{- "" -}}
+<button id="btnfrwd" class="headline-button w3-btn" style="visibility:hidden;" onclick="javascript:history.forward()"><i class="fas fa-step-forward "></i></button>
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- if isset $.Site.Params (lower `options` ) -}}
+{{- if $.Site.Params.options.showNavUp -}}
+{{- if ne .Type `blog` -}}
+<a class="headline-button w3-btn" href="../"><i class="fas fa-arrow-up"></i></a>
+{{- end -}}
+{{- end -}}
+{{- end -}}
