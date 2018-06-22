@@ -53,10 +53,10 @@
   translation: "Neue Beiträge"
 
 - id: newer
-  translation: "Links"
+  translation: "vor"
 
 - id: older
-  translation: "Rechts"
+  translation: "zurück"
 
 - id: categoryTitle
   translation: "Kategorie"
