@@ -881,6 +881,7 @@ ultricies eget, tempor sit amet, ante
 [params.options]
   jsHistoryNav        = true
   jsHistoryNavForward = false
+  showNavUp           = true
 
 
 # ##################################################
