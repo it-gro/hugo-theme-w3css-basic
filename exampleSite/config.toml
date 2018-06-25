@@ -867,10 +867,17 @@ ultricies eget, tempor sit amet, ante
   #defaultThumbCmdOpt = "120x120"  
 
 
+
 [params.options]
+	# used in layouts/partials/main.headline.nav-right.html
   jsHistoryNav        = true
   jsHistoryNavForward = false
+  showNavUp           = true
 
+[params.taxonomies]
+	# used in layouts/partials/main.taxonomy.full.bar.html
+	# fullBarMinItemsTag			= 3
+	# fullBarMinItemsCategory = 3
 
 # ##################################################
 # other sections

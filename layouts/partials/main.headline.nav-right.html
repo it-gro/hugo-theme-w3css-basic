@@ -9,7 +9,7 @@
 {{- end -}}
 {{- if isset $.Site.Params (lower `options` ) -}}
 {{- if $.Site.Params.options.showNavUp -}}
-{{- if ne .Type `blog` -}}
+{{- if and (ne .Type `blog`) (.IsPage) -}}
 <a class="headline-button w3-btn" href="../"><i class="fas fa-arrow-up"></i></a>
 {{- end -}}
 {{- end -}}
