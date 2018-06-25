@@ -181,27 +181,33 @@ anchor = "smart"
   url      = "https://github.com/it-gro/hugo-theme-w3css-basic"
   pre      = "fab fa-github"
 
+[[menu.topbar]]
+  weight   = 2
+  name     = "GitLab"
+  url      = "https://gitlab.com/it-gro"
+  pre      = "fab fa-gitlab"
+
 #[[menu.topbar]]
-#  weight   = 2
+#  weight   = 3
 #  name     = "Facebook"
 #  url      = "http://facebook.com"
 #  pre      = "fab fa-facebook"
 
 #[[menu.topbar]]
-#  weight   = 3
+#  weight   = 4
 #  name     = "Twitter"
 #  url      = "http://twitter.com"
 #  pre      = "fab fa-twitter"
 
 [[menu.topbar]]
-  weight   = 4
+  weight   = 5
   name     = "Email"
   url      = "#address"
 # url      = "mailto:info@example.com"
   pre      = "fas fa-envelope"
 
 [[menu.topbar]]
-  weight   = 5
+  weight   = 6
   name     = "Search"
   url      = "/search"
   pre      = "fas fa-search"
