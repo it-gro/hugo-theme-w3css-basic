@@ -846,33 +846,35 @@ ultricies eget, tempor sit amet, ante
   # showFileExtension = true
   # humanizeCaption   = false
 
-
 [params.resources]
-  # used in layouts/shortcodes/res-figure.html
-  defaultResPagePath  = "."			 
-	defaultMatch			  = "**/*"	 
-	defaultImgCmd	      = "Resize"
-	defaultImgCmdOpt	  = "300x"
-	defaultImgCaption	  = "%%T"
+	# used in layouts/partials/resource.image.html
+	# used in layouts/shortcodes/res-figure.html
+	# used in layouts/shortcodes/res-gallery.html
+	defaultResPagePath	= "resources/images"
 
-
+[params.resFigure]
+	# used in layouts/shortcodes/res-figure.html
+	defaultResPagePath	= "."			 
+	defaultMatch				= "**/*"	 
+	defaultImgCmd				= "Resize"
+	defaultImgCmdOpt		= "300x"
+	defaultImgCaption		= "%%T"
+ 
 [params.resGallery]
-  # used in layouts/shortcodes/res-gallery.html
-  defaultResPagePath  = "resources/images" 
-  defaultMatch        = "**/*"     
-  defaulImgCmd        = "Resize"   
-  defaulImgCmdOpt     = "800x"     
-  defaulThumbCmd      = "Fit"      
-  defaultThumbCmdOpt  = "120x120"  
-  defaultCaptionLong  = "%%F"      
-  defaultCaptionShort = "%%N"      
+	# used in layouts/shortcodes/res-gallery.html
+	defaultResPagePath	= "resources/images" 
+	defaultMatch				= "**/*"		 
+	defaulImgCmd				= "Resize"	 
+	defaulImgCmdOpt			= "800x"		 
+	defaulThumbCmd			= "Fit"			 
+	defaultThumbCmdOpt	= "120x120"	 
+	defaultCaptionLong	= "%%F"			 
+	defaultCaptionShort = "%%N"			 
 
   #defaulThumbCmd     = "Resize"       
   #defaultThumbCmdOpt = "100x100"  
   #defaulThumbCmd     = "Fill"       
   #defaultThumbCmdOpt = "120x120"  
-
-
 
 [params.options]
 	# used in layouts/partials/main.headline.nav-right.html

@@ -22,10 +22,14 @@ theResImgCmd   : {{- $theResImgCmd   }} <br/>
 theResImgOpt   : {{- $theResImgOpt   }} <br/>
 {{- end }}
 
-{{- $myGlobalResourcePage := $thePage.Site.GetPage "page" "resources/images" }}
+{{- $myGlobalResourcePagePath := default "resources/images" ($thePage.Site.Params.resources.defaultrespagepath) }}
+{{- $myGlobalResourcePage := $thePage.Site.GetPage "page" $myGlobalResourcePagePath }}
 {{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
   <br/>
+  $myGlobalResourcePagePath: {{- $myGlobalResourcePagePath }} <br/>
+  {{- if $myGlobalResourcePage }}
   myGlobalResources: {{- $myGlobalResourcePage.File.Path }} <br/>
+  {{- end }}
 {{- end }}
 {{- if $myGlobalResourcePage }}
   {{- if len ($myGlobalResourcePage.Resources.ByType `image`) }}
