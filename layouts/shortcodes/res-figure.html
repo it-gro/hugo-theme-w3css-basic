@@ -4,13 +4,13 @@
 */}}
 
 {{/*-
-{{- $myDefaultResPagePath := $.Site.Params.resources.defaultResPagePath  | default `.`                }}
+{{- $myDefaultResPagePath := $.Site.Params.resFigure.defaultResPagePath  | default `.`                }}
 */}}
-{{- $myDefaultResPagePath := $.Site.Params.resources.defaultResPagePath  | default `resources/images` }}
-{{- $myDefaultMatch       := $.Site.Params.resources.defaultMatch        | default `**/*`             }}
-{{- $myDefaulImgCmd       := $.Site.Params.resources.defaultImgCmd       | default `Resize`           }}
-{{- $myDefaulImgCmdOpt    := $.Site.Params.resources.defaultImgCmdOpt    | default `300x`             }}
-{{- $myDefaultCaption     := $.Site.Params.resources.defaultImgCaption   | default `%%T`              }}
+{{- $myDefaultResPagePath := $.Site.Params.resFigure.defaultResPagePath  | default $.Site.Params.resources.defaultResPagePath | default `resources/images` }}
+{{- $myDefaultMatch       := $.Site.Params.resFigure.defaultMatch        | default `**/*`             }}
+{{- $myDefaulImgCmd       := $.Site.Params.resFigure.defaultImgCmd       | default `Resize`           }}
+{{- $myDefaulImgCmdOpt    := $.Site.Params.resFigure.defaultImgCmdOpt    | default `300x`             }}
+{{- $myDefaultCaption     := $.Site.Params.resFigure.defaultImgCaption   | default `%%T`              }}
 
 {{- if .IsNamedParams }}
   {{- $.Scratch.Set `theResPagePath`  (.Get `path`  )  }}
