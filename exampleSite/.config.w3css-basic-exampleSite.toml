@@ -626,13 +626,12 @@ consectetuer adipiscing
 
 
 [params.marquee]
+  # used in layouts/partials/header.marquee.html
   # enable or disable marquee on frontpage
-  enable   = true
- #enable   = false
-  marquee  = '''
-At [info@example.com](mailto:info@example.com) vero eos et **accusam**
-et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
-             '''
+  enable      = true
+  # marquee text is placed in directory as .marquee.md
+  # marquee  = '''
+  #            '''
 
 [params.menuConfig]
   # used in layouts/partials/header.nav.html

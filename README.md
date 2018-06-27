@@ -95,6 +95,21 @@ This theme is for:
 
 ## Latest News
 
+* Improved configuration for
+  * [Marquee](#marquee)
+  * [Headless Images](#headless-images) (Page Resources)
+  * [Taxonomy](#taxonomy) Bar
+  * additional navigation elements:
+
+```toml
+[params.options]
+	# used in layouts/partials/main.headline.nav-right.html
+  jsHistoryNav        = true
+  jsHistoryNavForward = false
+  showNavUp           = true
+
+```
+
 * Added [Anchors](#anchors)
 
 * Added [Related Content](#related-content)
@@ -275,15 +290,13 @@ defaultContentLanguage = "en"
 
 ```toml
 [params.marquee]
-  # enable or disable marquee
-  enable   = true
-  marquee  = '''
-At [info@example.com](mailto:info@example.com) vero eos et **accusam**
-et justo duo dolores et ea rebum. Stet clita *kasd gubergren*, no sea
-             '''
+  # enable or disable marquee on frontpage
+  # marquee text is placed in directory as .marquee.md
+  enable      = true
 ```
 
-* Marquee text from right to left
+* create a file `.marquee.md` in each directory where a marquee should be shown
+* Marquee text scrolls from right to left
 
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
 
@@ -784,6 +797,13 @@ icon:        "fas fa-globe"
 #### Taxonomy
 
 * Taxonomy bar (shown if page has a taxonomy)
+
+```toml
+[params.taxonomies]
+	# used in layouts/partials/main.taxonomy.full.bar.html
+	fullBarMinItemsTag      = 3
+	fullBarMinItemsCategory = 3
+```
 
 ![screenshot Taxonomy Bar](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_250.jpg)
 
@@ -1918,6 +1938,14 @@ layouts/shortcodes/
 ### Headless Images
 
 * images may be stored as resource for a headless page:
+* those images may be used for
+  * teaserpics (resImgTeaser)
+  * figures (res-figure)
+  * gallery (res-gallery)
+  * pictures for jumbotron, photocards, testimonials
+* the default (global) headless page is configurable
+  * defaultResPagePath in [params.resources], [params.resFigure], [params.resGallery]
+  
 
 `content/resources/images/index.md`
 
