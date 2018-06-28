@@ -99,20 +99,28 @@ This theme is for:
   * [Marquee](#marquee)
   * [Headless Images](#headless-images) (Page Resources)
   * [Taxonomy](#taxonomy) Bar
-  * additional navigation elements:
+  * additional navigation elements in title
 
+`config.toml`
 ```toml
 [params.options]
 	# used in layouts/partials/main.headline.nav-right.html
   jsHistoryNav        = true
   jsHistoryNavForward = false
   showNavUp           = true
-
 ```
+
+![screenshot title-nav](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_519.jpg)
+
 
 * Added [Anchors](#anchors)
 
+![screenshot title-nav](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_520.jpg)
+
+
 * Added [Related Content](#related-content)
+
+![screenshot title-nav](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_521.jpg)
 
 * Added shortcode:
   * [res-gallery](#gallery-with-image-processing)
@@ -288,14 +296,16 @@ defaultContentLanguage = "en"
 
 #### Marquee
 
+`config.toml`
 ```toml
 [params.marquee]
   # enable or disable marquee on frontpage
-  # marquee text is placed in directory as .marquee.md
   enable      = true
+  # marquee text is placed in directory as:
+  file        = ".marquee.md"
 ```
 
-* create a file `.marquee.md` in each directory where a marquee should be shown
+* Create a file `.marquee.md` in each directory where a marquee should be shown
 * Marquee text scrolls from right to left
 
 ![screenshot Marquee & Navbar long](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_100.jpg)
@@ -699,6 +709,8 @@ Hook:
 
 ### Anchors
 
+![screenshot title-nav](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_520.jpg)
+
 `config.toml`
 
 ```toml
@@ -711,6 +723,8 @@ Hook:
 
 
 ### Related Content
+
+![screenshot title-nav](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_521.jpg)
 
 * See more https://gohugo.io/content-management/related/#list-related-content
 * implemented in `layouts/partials/main.related.html`
@@ -796,13 +810,13 @@ icon:        "fas fa-globe"
 
 #### Taxonomy
 
-* Taxonomy bar (shown if page has a taxonomy)
+* Taxonomy bar (only shown if page has a taxonomy)
 
 ```toml
 [params.taxonomies]
-	# used in layouts/partials/main.taxonomy.full.bar.html
-	fullBarMinItemsTag      = 3
-	fullBarMinItemsCategory = 3
+  # used in layouts/partials/main.taxonomy.full.bar.html
+  fullBarMinItemsTag			 = 1
+  fullBarMinItemsCategory = 1
 ```
 
 ![screenshot Taxonomy Bar](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_250.jpg)
@@ -1943,8 +1957,19 @@ layouts/shortcodes/
   * figures (res-figure)
   * gallery (res-gallery)
   * pictures for jumbotron, photocards, testimonials
-* the default (global) headless page is configurable
-  * defaultResPagePath in [params.resources], [params.resFigure], [params.resGallery]
+* the path for the default (global) headless page is configurable 
+
+`config.toml`
+```toml
+[params.resources]
+	defaultResPagePath	= "resources/images"
+
+[params.resFigure]
+	defaultResPagePath	= "."			 
+ 
+[params.resGallery]
+	defaultResPagePath	= "resources/images" 
+```
   
 
 `content/resources/images/index.md`
@@ -1975,26 +2000,19 @@ content/resources/images/
 ```
 
 
-`layouts/partials/resource.image.html`
+* A new headless page with the resources may be given in front matter via
+  `resImgRelPath`
 
-```
-{{- $ourResources := $ourPage.Site.GetPage "page" "resources/images" }}
-  {{ $ourPage.Scratch.Set `myResImg` ( ($ourResources.Resources.ByType `image`).GetMatch ($ourResImg) ) }}
-{{- end }}
-```
-
-A new headless page with the resources may be given in front matter via `resImgRelPath`:
-
-```
-{{- $myResourcePage := $thePage.Site.GetPage "page" ($thePage.Dir) ($thePage.Param `resImgRelPath`) "index.md" }}
-{{ $thePage.Scratch.Set `myResImg` ( ( ($myResourcePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
+```yaml
+---
+resImgRelPath:  "../img/"
+resImgTeaser:   "dwh-1.jpg"
+---
 ```
 
-And of course the page itself may have the image resources:
+* And of course the page itself may have the image resources (which overrides an
+  image with the same name on the default (global) headless page)
 
-```
-{{ $thePage.Scratch.Set `myResImg` ( ( ($thePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
-```
 
 
 Given a front matter
@@ -2004,6 +2022,15 @@ resImgTeaser:  teaserpics/pixabay.com/paint-2985569_640.jpg
 ```
 
 The images is processed using hugo's build in image commands (resize to a reasonable size).
+
+`layouts/partials/main.teaserpic.single.html`
+
+```
+{{- $myImgStyle	 := "max-width:400px; max-height:200px; width: auto; height: auto; margin: 8px 0px	8px 8px; " }}
+{{- $myImg			 := .Param `resImgTeaser`												}}
+{{- $myImgCmd		 := .Param `resImgTeaserCmd` | default `Resize` }}
+{{- $myImgOpt		 := .Param `resImgTeaserOpt` | default `300x`		}}
+```
 
 
 ### Images
