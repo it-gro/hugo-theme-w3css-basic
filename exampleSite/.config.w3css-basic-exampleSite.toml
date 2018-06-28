@@ -629,9 +629,13 @@ consectetuer adipiscing
   # used in layouts/partials/header.marquee.html
   # enable or disable marquee on frontpage
   enable      = true
-  # marquee text is placed in directory as .marquee.md
+  # marquee text is placed in directory as:
+  file        = ".marquee.md"
+
+  # no longer valid:
   # marquee  = '''
   #            '''
+
 
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
