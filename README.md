@@ -25,7 +25,7 @@ This theme is for:
 * [Latest News](#latest-news)
 * [Goals](#goals)
 * [Features](#features)
-  * [Includes Resources](#included-resources)
+  * [Included Resources](#included-resources)
   * [Features Tags](#features-tags)
   * [Features List](#features-list)
 * [Installation](#installation)
