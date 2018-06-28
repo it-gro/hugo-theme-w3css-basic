@@ -631,6 +631,7 @@ consectetuer adipiscing
   # marquee  = '''
   #            '''
 
+
 [params.menuConfig]
   # used in layouts/partials/header.nav.html
   # if set => change menu entry on small displays to lowercase maxChars
