@@ -3,17 +3,17 @@
 {{- end}}
 {{- if $.Site.Params.marquee.enable }}
   {{- $myPath := replaceRE (printf "^%s" .Site.BaseURL) "" .Permalink }}
-  {{- $myMarquee := printf "%s/.marquee.md" $myPath }}
+  {{- $myMarquee := printf "%s/%s" $myPath $.Site.Params.marquee.file }}
   {{- if fileExists $myMarquee }}
 <div id="marquee" class="w3-theme">
   <div class='w3-container w3-small {{ default `w3-theme-l1` ($.Site.Param `colorHeaderMarquee`)}} '>
     <div class="top-marquee">
       {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-        {{- /* `<!-- $.Site.Params.marquee.marquee -->` | safeHTML */}}
+        {{- /* OBSOLETE: `<!-- $.Site.Params.marquee.marquee -->` | safeHTML */}}
         {{ `<!-- $myMarquee -->` | safeHTML }}
       {{- end}}
       <div><span>
-          {{- /* $.Site.Params.marquee.marquee */}}
+          {{- /* OBSOLETE: $.Site.Params.marquee.marquee */}}
           {{- readFile $myMarquee | markdownify }}
       </span></div>
     </div>
