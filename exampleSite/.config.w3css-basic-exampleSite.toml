@@ -226,9 +226,10 @@ anchor = "smart"
   # ##############################
 
   # used in layouts/partials/head.meta.html
-  authorName         = "anonymous"
-  defaultKeywords    = ["foo", "bar"]
-  defaultDescription = "example site created with hugo using theme hugo-theme-w3css-basic"
+  authorName                        = "anonymous"
+  defaultKeywords                   = ["foo", "bar"]
+  defaultDescription                = "example site created with hugo using theme hugo-theme-w3css-basic"
+  truncateSummaryForMetaDescription = 120
 
   # multiple lines in toml
   # https://github.com/toml-lang/toml#user-content-string

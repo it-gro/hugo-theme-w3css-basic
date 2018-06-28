@@ -8,7 +8,7 @@
   <meta name="googlebot"             content="index,follow,snippet,archive" />
   <meta name="author"                content='{{ $.Site.Params.authorName }}' />
 
-  {{- if or .Keywords .Params.tags .Params.categories -}}
+  {{- if or .Keywords .Params.tags .Params.categories }}
   <meta name="keywords"              content='{{ if .Keywords          }} {{ chomp (delimit .Keywords `, `          ) }},{{ end -}}
                                               {{ if .Params.tags       }} {{ chomp (delimit .Params.tags `, `       ) }},{{ end -}}
                                               {{ if .Params.categories }} {{ chomp (delimit .Params.categories `, ` ) }} {{ end -}}' />
@@ -18,6 +18,8 @@
 
   {{- if .Description }}
   <meta name="description"           content='{{- chomp .Description -}}' />
+  {{- else if .Summary }}
+  <meta name="description"           content='{{- chomp (.Summary | truncate (or $.Site.Params.truncateSummaryForMetaDescription 160) ) -}}' />
   {{- else if $.Site.Params.DefaultDescription }}
   <meta name="description"           content='{{- chomp $.Site.Params.defaultDescription -}}' />
   {{- end -}}
