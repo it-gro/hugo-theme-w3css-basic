@@ -503,6 +503,24 @@ pre.w3-code, pre.chroma {
   overflow: auto;
 }
 
+/* -------------------------------------------------- */
+/* shortcodes term-in, term-out */
+pre.terminal-in {
+  border-radius:    6px;
+  border:           1px solid;
+  padding:          10px 6px 10px 6px;
+  overflow:         auto;
+	line-height:      1.2;
+}
+
+pre.terminal-out {
+  border-radius:    6px;
+  padding:          10px 6px 10px 6px;
+  border:           1px solid;
+  overflow:         auto;
+	line-height:      1.2;
+}
+
 /* ------------------------------------------------------------------------------ */
 /* -- Local variables:      */
 /* -- tab-width:         2  */
