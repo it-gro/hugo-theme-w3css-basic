@@ -35,9 +35,9 @@ img {
 }
 
 .breadcrump-button {
-  padding-top:    2px !important;
+  padding-top:    4px !important;
+  padding-bottom: 4px !important;
   padding-right:  8px !important;
-  padding-bottom: 2px !important;
   padding-left:   8px !important;
 }
 
