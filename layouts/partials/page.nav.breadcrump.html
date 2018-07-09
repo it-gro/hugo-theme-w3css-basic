@@ -20,11 +20,8 @@
 {{- end }}
 {{- if not .p1.IsHome }}
   <div class="w3-bar-item w3-button breadcrump-button w3-small">
-    {{- if .mySite.Params.options.navbreadcrumptitle -}}
-      <a href="{{ .p1.Permalink }}">{{.p1.Title | markdownify | emojify | safeHTML }}/</a>
-    {{- else }}
-      <a href="{{ .p1.Permalink }}">{{replaceRE ".*/" "" ( (urls.Parse .p1.Permalink).Path | relURL | strings.TrimSuffix "/")  | humanize }}/</a>
-    {{- end }}
+  {{- if .mySite.Params.options.navbreadcrumptitle -}}
+    <a href="{{ .p1.Permalink }}">{{.p1.Title | markdownify | emojify | safeHTML }}/</a>
   {{- else }}
     <a href="{{ .p1.Permalink }}">{{replaceRE ".*/" "" ( (urls.Parse .p1.Permalink).Path | relURL | strings.TrimSuffix "/")  | humanize }}/</a>
   {{- end }}
