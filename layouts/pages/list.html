@@ -4,6 +4,11 @@
 {{- end}}
   {{- if $.Site.Params.debug }}pages/list.html{{ end }}
 
+  {{ partial `page.nav.breadcrump.html` . }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- back in pages/list.html (main) -->` | safeHTML }}
+  {{- end}}
+
   {{ partial `page.nav.cards.html` . }}
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!-- back in pages/list.html (main) -->` | safeHTML }}

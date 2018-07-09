@@ -34,6 +34,13 @@ img {
   padding-left:   0px !important;
 }
 
+.breadcrump-button {
+  padding-top:    2px !important;
+  padding-right:  8px !important;
+  padding-bottom: 2px !important;
+  padding-left:   8px !important;
+}
+
 .taxonomy-button {
   padding-top:    2px !important;
   padding-right:  6px !important;

@@ -363,6 +363,9 @@ consectetuer adipiscing
   colorPageNavCardsLink                 = "w3-theme-l3"
   colorPageNavCardsContainer            = "w3-theme-l3"
   #
+  # layouts/partials/page.nav.breadcrump.html
+  colorPageNavBreadcrumpBar             = "w3-theme-d3"
+  #
   # layouts/pages/list.html:
   colorPagesListCard                    = "w3-theme-l3"
   colorPagesListCell                    = "w3-theme-l4"
@@ -885,6 +888,10 @@ ultricies eget, tempor sit amet, ante
   jsHistoryNav        = true
   jsHistoryNavForward = false
   showNavUp           = true
+	# used in layouts/partials/page.nav.breadcrump.html
+  showNavBreadcrump   = true
+  navBreadcrumpTitle  = true
+  navBreadcrumpHome   = false
 
 [params.taxonomies]
 	# used in layouts/partials/main.taxonomy.full.bar.html
