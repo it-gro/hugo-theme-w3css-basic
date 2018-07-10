@@ -95,6 +95,27 @@ This theme is for:
 
 ## Latest News
 
+* Added shortcodes:
+  * term-in
+	* term-out
+	* See more [Terminal](/pages/hugo-theme-w3css-basic/page-shortcodes/#terminal)
+
+[screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_522.jpg)
+
+
+* Added breadcrump
+  [screenshot breadcrump](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_523.jpg)
+
+`config.toml`
+```toml
+[params.options]
+	# used in layouts/partials/page.nav.breadcrump.html
+  showNavBreadcrump   = true
+  navBreadcrumpTitle  = true
+  navBreadcrumpHome   = false
+```
+
+
 * Improved configuration for
   * [Marquee](#marquee)
   * [Headless Images](#headless-images) (Page Resources)

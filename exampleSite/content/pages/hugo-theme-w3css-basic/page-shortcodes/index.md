@@ -619,6 +619,74 @@ static/css/syntax/syntax.borland.css
 static/css/syntax/syntax.bw.css
 {{< /cscb >}}
 
+
+## Terminal
+
+### term-in
+
+* show text to type in terminal (no syntax coloring)
+
+{{< highlight nolan >}}
+{{</* term-in >}}
+date -d @1435225258
+date +%Y%m%d_%H%M%S
+{{< /term-in */>}}
+{{< /highlight >}}
+
+renders as
+
+{{< term-in >}}
+date -d @1435225258
+date +%Y%m%d_%H%M%S
+{{< /term-in >}}
+
+### term-out
+
+* show output in terminal (no syntax coloring)
+
+{{< highlight nolan >}}
+{{</* term-out >}}
+Don Jun 25 11:40:58 CEST 2015
+20180710_172103
+{{< /term-out */>}}
+{{< /highlight >}}
+
+renders as
+
+{{< term-out>}}
+Don Jun 25 11:40:58 CEST 2015
+20180710_172103
+{{< /term-out >}}
+
+### Style
+
+* Color themes are defined in the shortcuts:
+{{< w3-code >}}
+<pre class="terminal-in  w3-theme-d4 notranslate">{{ .Inner }}</pre>
+<pre class="terminal-out w3-theme-l3 notranslate">{{ .Inner }}</pre>
+{{< /w3-code >}}
+
+* Relevant CSS is in `static/css/w3css-basic.css`
+{{< highlight css >}}
+pre.terminal-in {
+  border-radius:    6px;
+  border:           1px solid;
+  padding:          10px 6px 10px 6px;
+  overflow:         auto;
+  line-height:      1.2;
+}
+
+pre.terminal-out {
+  border-radius:    6px;
+  padding:          10px 6px 10px 6px;
+  border:           1px solid;
+  overflow:         auto;
+  line-height:      1.2;
+}
+{{< /highlight >}}
+
+
+
 ## Page Resources
 
 ### res-attach
