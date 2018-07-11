@@ -97,8 +97,8 @@ This theme is for:
 
 * Added shortcodes:
   * term-in
-	* term-out
-	* See more [Terminal](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#terminal)   
+  * term-out
+  * See more [Terminal](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#terminal)   
 ![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_524.jpg)
 ![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_525.jpg)
 
@@ -109,7 +109,7 @@ This theme is for:
 `config.toml`
 ```toml
 [params.options]
-	# used in layouts/partials/page.nav.breadcrump.html
+  # used in layouts/partials/page.nav.breadcrump.html
   showNavBreadcrump   = true
   navBreadcrumpTitle  = true
   navBreadcrumpHome   = false
@@ -125,7 +125,7 @@ This theme is for:
 `config.toml`
 ```toml
 [params.options]
-	# used in layouts/partials/main.headline.nav-right.html
+  # used in layouts/partials/main.headline.nav-right.html
   jsHistoryNav        = true
   jsHistoryNavForward = false
   showNavUp           = true
@@ -836,7 +836,7 @@ icon:        "fas fa-globe"
 ```toml
 [params.taxonomies]
   # used in layouts/partials/main.taxonomy.full.bar.html
-  fullBarMinItemsTag			 = 1
+  fullBarMinItemsTag       = 1
   fullBarMinItemsCategory = 1
 ```
 
@@ -1983,13 +1983,13 @@ layouts/shortcodes/
 `config.toml`
 ```toml
 [params.resources]
-	defaultResPagePath	= "resources/images"
+  defaultResPagePath  = "resources/images"
 
 [params.resFigure]
-	defaultResPagePath	= "."			 
+  defaultResPagePath  = "."      
  
 [params.resGallery]
-	defaultResPagePath	= "resources/images" 
+  defaultResPagePath  = "resources/images" 
 ```
   
 
@@ -2047,10 +2047,10 @@ The images is processed using hugo's build in image commands (resize to a reason
 `layouts/partials/main.teaserpic.single.html`
 
 ```
-{{- $myImgStyle	 := "max-width:400px; max-height:200px; width: auto; height: auto; margin: 8px 0px	8px 8px; " }}
-{{- $myImg			 := .Param `resImgTeaser`												}}
-{{- $myImgCmd		 := .Param `resImgTeaserCmd` | default `Resize` }}
-{{- $myImgOpt		 := .Param `resImgTeaserOpt` | default `300x`		}}
+{{- $myImgStyle  := "max-width:400px; max-height:200px; width: auto; height: auto; margin: 8px 0px  8px 8px; " }}
+{{- $myImg       := .Param `resImgTeaser`                       }}
+{{- $myImgCmd    := .Param `resImgTeaserCmd` | default `Resize` }}
+{{- $myImgOpt    := .Param `resImgTeaserOpt` | default `300x`   }}
 ```
 
 
