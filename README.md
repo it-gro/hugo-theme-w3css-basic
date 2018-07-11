@@ -105,7 +105,7 @@ This theme is for:
 
 
 * Added breadcrump
-  [screenshot breadcrump](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_522.jpg)
+  [screenshot breadcrump](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_523.jpg)
 
 `config.toml`
 ```toml
