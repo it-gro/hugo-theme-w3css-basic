@@ -98,7 +98,7 @@ This theme is for:
 * Added shortcodes:
   * term-in
 	* term-out
-	* See more [Terminal](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/hugo-theme-w3css-basic/page-shortcodes/#terminal)   
+	* See more [Terminal](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#terminal)   
 ![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_524.jpg)
 ![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_525.jpg)
 
@@ -186,9 +186,9 @@ Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages) and comp
 
   * [res-figure](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#res-figure)
   [![screenshot res-figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_502.jpg)](#images)
-  * [res-attach](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/hugo-theme-w3css-basic/page-shortcodes/#res-attach)
+  * [res-attach](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#res-attach)
   [![screenshot res-attach](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_504.jpg)](#attachments)
-  * [readfile](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/hugo-theme-w3css-basic/page-shortcodes/#readfile)
+  * [readfile](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#readfile)
   [![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)](#include-files)
 
 
