@@ -98,7 +98,7 @@ This theme is for:
 * Added shortcodes:
   * term-in
 	* term-out
-	* See more [Terminal](/pages/hugo-theme-w3css-basic/page-shortcodes/#terminal)
+	* See more [Terminal](/pages/hugo-theme-w3css-basic/page-shortcodes/#terminal)   
 ![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_524.jpg)
 ![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_525.jpg)
 
