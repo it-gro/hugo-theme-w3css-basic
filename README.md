@@ -99,12 +99,11 @@ This theme is for:
   * term-in
 	* term-out
 	* See more [Terminal](/pages/hugo-theme-w3css-basic/page-shortcodes/#terminal)
-
 ![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_524.jpg)
 ![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_525.jpg)
 
 
-* Added breadcrump
+* Added breadcrump   
   ![screenshot breadcrump](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_523.jpg)
 
 `config.toml`
