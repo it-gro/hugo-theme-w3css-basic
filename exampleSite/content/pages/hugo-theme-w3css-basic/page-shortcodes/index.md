@@ -662,7 +662,7 @@ Don Jun 25 11:40:58 CEST 2015
 
 * Color themes are defined in the shortcuts:
 {{< w3-code >}}
-<pre class="terminal-in  w3-theme-d4 notranslate">{{ .Inner }}</pre>
+<pre class="terminal-in  w3-theme-d5 notranslate">{{ .Inner }}</pre>
 <pre class="terminal-out w3-theme-l3 notranslate">{{ .Inner }}</pre>
 {{< /w3-code >}}
 

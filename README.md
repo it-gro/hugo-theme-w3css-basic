@@ -97,19 +97,19 @@ This theme is for:
 
 * Added shortcodes:
   * term-in
-	* term-out
-	* See more [Terminal](/pages/hugo-theme-w3css-basic/page-shortcodes/#terminal)
+  * term-out
+  * See more [Terminal](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#terminal)   
+![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_524.jpg)
+![screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_525.jpg)
 
-[screenshot Terminal](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_522.jpg)
 
-
-* Added breadcrump
-  [screenshot breadcrump](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_523.jpg)
+* Added breadcrump   
+  ![screenshot breadcrump](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_523.jpg)
 
 `config.toml`
 ```toml
 [params.options]
-	# used in layouts/partials/page.nav.breadcrump.html
+  # used in layouts/partials/page.nav.breadcrump.html
   showNavBreadcrump   = true
   navBreadcrumpTitle  = true
   navBreadcrumpHome   = false
@@ -125,7 +125,7 @@ This theme is for:
 `config.toml`
 ```toml
 [params.options]
-	# used in layouts/partials/main.headline.nav-right.html
+  # used in layouts/partials/main.headline.nav-right.html
   jsHistoryNav        = true
   jsHistoryNavForward = false
   showNavUp           = true
@@ -141,7 +141,7 @@ This theme is for:
 
 * Added [Related Content](#related-content)
 
-![screenshot title-nav](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_521.jpg)
+![screenshot related](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_521.jpg)
 
 * Added shortcode:
   * [res-gallery](#gallery-with-image-processing)
@@ -184,11 +184,11 @@ Logos](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages) and comp
 
 * Added shortcodes:
 
-  * [res-figure](/pages/hugo-theme-w3css-basic/page-shortcodes/#res-figure)
+  * [res-figure](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#res-figure)
   [![screenshot res-figure](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_502.jpg)](#images)
-  * [res-attach](/pages/hugo-theme-w3css-basic/page-shortcodes/#res-attach)
+  * [res-attach](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#res-attach)
   [![screenshot res-attach](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_504.jpg)](#attachments)
-  * [readfile](/pages/hugo-theme-w3css-basic/page-shortcodes/#readfile)
+  * [readfile](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/hugo-theme-w3css-basic/page-shortcodes/#readfile)
   [![screenshot readfile](https://raw.githubusercontent.com/it-gro/hugo-theme-w3css-basic/master/images/snap_506.jpg)](#include-files)
 
 
@@ -836,7 +836,7 @@ icon:        "fas fa-globe"
 ```toml
 [params.taxonomies]
   # used in layouts/partials/main.taxonomy.full.bar.html
-  fullBarMinItemsTag			 = 1
+  fullBarMinItemsTag       = 1
   fullBarMinItemsCategory = 1
 ```
 
@@ -1983,13 +1983,13 @@ layouts/shortcodes/
 `config.toml`
 ```toml
 [params.resources]
-	defaultResPagePath	= "resources/images"
+  defaultResPagePath  = "resources/images"
 
 [params.resFigure]
-	defaultResPagePath	= "."			 
+  defaultResPagePath  = "."      
  
 [params.resGallery]
-	defaultResPagePath	= "resources/images" 
+  defaultResPagePath  = "resources/images" 
 ```
   
 
@@ -2047,10 +2047,10 @@ The images is processed using hugo's build in image commands (resize to a reason
 `layouts/partials/main.teaserpic.single.html`
 
 ```
-{{- $myImgStyle	 := "max-width:400px; max-height:200px; width: auto; height: auto; margin: 8px 0px	8px 8px; " }}
-{{- $myImg			 := .Param `resImgTeaser`												}}
-{{- $myImgCmd		 := .Param `resImgTeaserCmd` | default `Resize` }}
-{{- $myImgOpt		 := .Param `resImgTeaserOpt` | default `300x`		}}
+{{- $myImgStyle  := "max-width:400px; max-height:200px; width: auto; height: auto; margin: 8px 0px  8px 8px; " }}
+{{- $myImg       := .Param `resImgTeaser`                       }}
+{{- $myImgCmd    := .Param `resImgTeaserCmd` | default `Resize` }}
+{{- $myImgOpt    := .Param `resImgTeaserOpt` | default `300x`   }}
 ```
 
 
