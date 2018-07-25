@@ -32,7 +32,7 @@
 {{/*- range $myResource := ( .Page.Resources.Match (printf "%s*" ($.Scratch.Get `theMatch`))) */}}
 {{- range $myResource := ( (.Page.Resources.ByType `application`).Match (printf "%s*" ($.Scratch.Get `theMatch`))) }}
   {{- $myExt := replaceRE `.*\.` (``) ($myResource.Name) }}
-  {{-      if eq $myExt "pdf" }}  {{$.Scratch.Set `icon` `far file-pdf`     }}
+  {{-      if eq $myExt "pdf" }}  {{$.Scratch.Set `icon` `far fa-file-pdf`  }}
   {{- else if eq $myExt "docx" }} {{$.Scratch.Set `icon` `far fa-file-word` }}
   {{- else if eq $myExt "xlsx" }} {{$.Scratch.Set `icon` `far fa-file-excel`}}
   {{- else }}                     {{$.Scratch.Set `icon` `far fa-file`      }}

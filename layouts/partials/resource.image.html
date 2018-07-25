@@ -41,7 +41,8 @@ theResImgOpt   : {{- $theResImgOpt   }} <br/>
 
 
 {{- if $thePage.Param `resImgRelPath`}}
-  {{- $myResourcePage := $thePage.Site.GetPage "page" ($thePage.Dir) ($thePage.Param `resImgRelPath`) "index.md" }}
+{{/*  {{- $myResourcePage := $thePage.Site.GetPage "page" ($thePage.Dir) ($thePage.Param `resImgRelPath`) "index.md" }} */}}
+  {{- $myResourcePage := $thePage.Site.GetPage (printf "%s/%s/index.md" ($thePage.Dir) ($thePage.Param `resImgRelPath`) ) }}
   {{- if $myResourcePage }}
     {{ $thePage.Scratch.Set `myResImg` ( ( ($myResourcePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
   {{- end }} {{/* if $myResourcePage */}}

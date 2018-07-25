@@ -9,7 +9,7 @@
 {{- end}}
 {{- if eq ($.Scratch.Get `theType`) `success` }}{{$.Scratch.Set `theIcon` `fas fa-check`                   }}{{end}}
 {{- if eq ($.Scratch.Get `theType`) `info`    }}{{$.Scratch.Set `theIcon` `fas fa-info`                    }}{{end}}
-{{- if eq ($.Scratch.Get `theType`) `warning` }}{{$.Scratch.Set `theIcon` `fas fas fa-exclamation-triangle`}}{{end}}
+{{- if eq ($.Scratch.Get `theType`) `warning` }}{{$.Scratch.Set `theIcon` `fas fa-exclamation-triangle`    }}{{end}}
 {{- if eq ($.Scratch.Get `theType`) `danger`  }}{{$.Scratch.Set `theIcon` `fas fa-bomb`                    }}{{end}}
 <div class='w3-panel w3-topbar w3-bottombar w3-leftbar w3-rightbar w3-round-xxlarge shortcode-{{ $.Scratch.Get `theType` }}'>
 {{- if eq ($.Scratch.Get `theHeading`) `` }}
