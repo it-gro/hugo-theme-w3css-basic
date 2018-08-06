@@ -5,7 +5,7 @@
 {{- if $.Site.Params.favicon.enable  }}
 {{- /*  <!-- Favicon and apple touch icons-->         */}}
 {{- /*  <!-- use https://realfavicongenerator.net to generate you files --> */}}
-{{- $myFaviconVersion := default `a_random_value`   $.Site.Params.favicon.version }}
+{{- $myFaviconVersion := default (string now.Unix) $.Site.Params.favicon.version }}
 {{- $myFaviconPath    := default `/images/favicons` $.Site.Params.favicon.path    }}
   <link rel="apple-touch-icon"      sizes="180x180" href='{{(printf `%s/%s?v=%s`   $myFaviconPath `apple-touch-icon.png`       $myFaviconVersion ) | relURL }}' />
   <link rel="icon" type="image/png" sizes="16x16"   href='{{(printf `%s/%s?v=%s`   $myFaviconPath `favicon-16x16.png`          $myFaviconVersion ) | relURL }}' />

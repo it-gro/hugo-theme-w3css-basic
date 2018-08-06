@@ -3,7 +3,8 @@
 {{- end}}
 {{- if .IsHome }}
 {{- end }}
-<script src='{{ `js/custom.top.js`                         | relURL }}'></script>
+{{- $assetBusting := not .Site.Params.disableJSAssetsBusting }}
+<script src='{{ `js/custom.top.js`                         | relURL }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}'></script>
 {{- range .Site.Params.custom_js_top }}
-<script src='{{ .                                          | relURL }}'></script>
+<script src='{{ .                                          | relURL }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}'></script>
 {{- end }}
