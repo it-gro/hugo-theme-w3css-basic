@@ -19,7 +19,8 @@
 `theOutFormat` : {{- $.Scratch.Get `theOutFormat`   }} <br/>
 {{- end }}
 
-{{- with $.Site.GetPage `taxonomy` ($.Scratch.Get `theTaxonomy`) (lower ($.Scratch.Get `theTaxTerm`)) }}
+{{/*- with $.Site.GetPage `taxonomy` ($.Scratch.Get `theTaxonomy`) (lower ($.Scratch.Get `theTaxTerm`)) */}}
+{{- with $.Site.GetPage  ($.Scratch.Get `theTaxonomy`) (lower ($.Scratch.Get `theTaxTerm`)) }}
   <a href='{{.URL}}'>
     {{- if findRE `.Kind`         ($.Scratch.Get `theOutFormat`)}}{{.Kind -}}:&nbsp;{{end}}
     {{- if findRE `.RelPermalink` ($.Scratch.Get `theOutFormat`)}}{{.RelPermalink}}{{end}}
