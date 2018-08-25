@@ -70,7 +70,7 @@ theResImgOpt   : {{- $theResImgOpt   }} <br/>
 <img
   class="{{ $theImgClass }}"
   style="{{ $theImgStyle  | safeCSS }}"
-  src='{{ $myImage.Permalink    }}'
+  src='{{$thePage.Site.BaseURL}}/{{ $myImage.RelPermalink }}'
   alt='{{ $myImage.RelPermalink }}'
   >
 {{- end }}

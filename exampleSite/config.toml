@@ -541,6 +541,7 @@ consectetuer adipiscing
   #traceFlags       = "html-comment:debug-shortcodes"
   #traceFlags       = "html-comment:debug-shortcode-res-figure"
   #traceFlags         = "html-comment:debug-shortcode-res-debug"
+  #traceFlags         = "html-comment:debug-partial-resource-image"
   traceFlags         = "html-comment"
 
   # custom css and custom js
