@@ -69,7 +69,7 @@ theResImgOpt   : {{- $theResImgOpt   }} <br/>
 {{- if $myImage }}
 {{- $myBaseUrlSubDirs := replaceRE `^(http(s)?)?://(.*?)/` `` $thePage.Site.BaseURL }}
   {{- if not (findRE (printf "^/%s" $myBaseUrlSubDirs) $myImage.RelPermalink) }}
-   {{- $thePage.Scratch.Set `myImagePermalinkWorkaround` (printf "/%s/%s" $myBaseUrlSubDirs $myImage.RelPermalink ) }}
+   {{- $thePage.Scratch.Set `myImagePermalinkWorkaround` (printf "%s/%s" $myBaseUrlSubDirs $myImage.RelPermalink ) }}
   {{- end }}
   {{- $myImagePermalinkWorkaround := ($thePage.Scratch.Get `myImagePermalinkWorkaround`) | default $myImage.RelPermalink }}
 <img
