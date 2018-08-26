@@ -69,18 +69,18 @@ theResImgOpt   : {{- $theResImgOpt   }} <br/>
 {{- if $myImage }}
 {{- $myBaseUrlSubDirs := replaceRE `^(http(s)?)?://(.*?)/` `` $thePage.Site.BaseURL }}
   {{- if not (findRE (printf "^/%s" $myBaseUrlSubDirs) $myImage.RelPermalink) }}
-   {{- $thePage.Scratch.Set `myImageRelPermalink` (printf "%s/%s" $myBaseUrlSubDirs $myImage.RelPermalink ) }}
+   {{- $thePage.Scratch.Set `myImagePermalinkWorkaround` (printf "/%s/%s" $myBaseUrlSubDirs $myImage.RelPermalink ) }}
   {{- end }}
-  {{- $myImageRelPermalink := ($thePage.Scratch.Get `myImageRelPermalink`) | default $myImage.RelPermalink }}
+  {{- $myImagePermalinkWorkaround := ($thePage.Scratch.Get `myImagePermalinkWorkaround`) | default $myImage.RelPermalink }}
 <img
   class="{{ $theImgClass }}"
   style="{{ $theImgStyle  | safeCSS }}"
-  src='{{ $myImageRelPermalink | absURL }}'
+  src='{{ $myImagePermalinkWorkaround }}'
   alt='{{ $myImage.RelPermalink }}'
                        data-dbg-Site.BaseURL='{{$thePage.Site.BaseURL               }}'
                    data-dbg-myBaseUrlSubDirs='{{$myBaseUrlSubDirs                   }}'
-                data-dbg-myImageRelPermalink='{{$myImageRelPermalink                }}'
-         data-dbg-myImageRelPermalink-absURL='{{$myImageRelPermalink    | absURL    }}'
+                data-dbg-myImagePermalinkWorkaround='{{$myImagePermalinkWorkaround  }}'
+         data-dbg-myImagePermalinkWorkaround-absURL='{{$myImagePermalinkWorkaround  | absURL    }}'
                data-dbg-myResource-Permalink='{{$myResource.Permalink               }}'
                   data-dbg-myImage-Permalink='{{$myImage.Permalink                  }}'
            data-dbg-myImage-Permalink-absURL='{{$myImage.Permalink     | absURL     }}'
