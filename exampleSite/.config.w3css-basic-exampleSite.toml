@@ -62,7 +62,7 @@ pygmentsUseClasses            = true
 
 
 # Enable Google Analytics by entering your tracking code
-googleAnalytics = "UA-113314068-1"
+#googleAnalytics = "UA-113314068-1"
 
 
 # RSS Feed
@@ -473,7 +473,8 @@ consectetuer adipiscing
   # used in layouts/partials/head.google.gtags.html
   # you need to enter the Tracking-ID above
   # googleAnalytics = ""
-  enableGoogleGtag=true
+  #enableGoogleGtag=true
+  enableGoogleGtag=false
 
   # Google Maps API key
   # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
