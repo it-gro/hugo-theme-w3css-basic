@@ -20,10 +20,10 @@ Inspired by https://github.com/liwenyip/hugo-easy-gallery
 {{- $.Scratch.Set `theThumbCmdOpt`  ( (.Get `thumbOpt`         ) ) }}
 {{- $.Scratch.Set `theCaptionLong`  ( (.Get `capLng`           ) ) }}
 {{- $.Scratch.Set `theCaptionShort` ( (.Get `capSrt`           ) ) }}
-{{- $.Scratch.Set `theCapPos`       ( (.Get `caption-position` ) | default `center`               ) }} {{/* none top center bottom  */}}
-{{- $.Scratch.Set `theCapEff`       ( (.Get `caption-effect`   ) | default `appear`               ) }} {{/* none fade appear slide */}}
-{{- $.Scratch.Set `theHovEff`       ( (.Get `hover-effect`     ) | default `zoom`                 ) }} {{/* none grow shrink slidedown slideup zoom */}}
-{{- $.Scratch.Set `theHovTra`       ( (.Get `hover-transition` ) | default ``                     ) }} {{/* empty none */}}
+{{- $.Scratch.Set `theCapPos`       ( (.Get `caption-position` ) | default $.Site.Params.resGallery.defaultCaptionPosition | default `center` ) }} {{/* none top center bottom  */}}
+{{- $.Scratch.Set `theCapEff`       ( (.Get `caption-effect`   ) | default $.Site.Params.resGallery.defaultCaptionEffect   | default `appear` ) }} {{/* none fade appear slide */}}
+{{- $.Scratch.Set `theHovEff`       ( (.Get `hover-effect`     ) | default $.Site.Params.resGallery.defaultHoverEffect     | default `zoom`   ) }} {{/* none grow shrink slidedown slideup zoom */}}
+{{- $.Scratch.Set `theHovTra`       ( (.Get `hover-transition` ) | default $.Site.Params.resGallery.defaultHoverTransition | default ``       ) }} {{/* empty none */}}
 
 {{- $myResPagePath := $.Scratch.Get `theResPagePath` }}
 {{- if eq $myResPagePath `.`}}

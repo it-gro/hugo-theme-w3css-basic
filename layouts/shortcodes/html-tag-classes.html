@@ -13,5 +13,5 @@
 {{- end }}
 {{- end }}
 {{- printf `'>` | safeHTML }}
-{{- $.Inner }}
+{{- markdownify $.Inner }}
 {{- printf `</%s>` ($.Get 0 ) | safeHTML }}
