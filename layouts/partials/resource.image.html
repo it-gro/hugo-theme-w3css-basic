@@ -76,7 +76,8 @@ theResImgOpt   : {{- $theResImgOpt   }} <br/>
   class="{{ $theImgClass }}"
   style="{{ $theImgStyle  | safeCSS }}"
   src='{{ $myImagePermalinkWorkaround | absURL }}'
-  alt='{{ $myImage.RelPermalink }}'
+  alt='{{ $myImage.RelPermalink -}}'
+{{/*
                           data-dbg-Site.BaseURL='{{$thePage.Site.BaseURL                 }}'
                       data-dbg-myBaseUrlSubDirs='{{$myBaseUrlSubDirs                     }}'
             data-dbg-myImagePermalinkWorkaround='{{$myImagePermalinkWorkaround           }}'
@@ -84,5 +85,5 @@ theResImgOpt   : {{- $theResImgOpt   }} <br/>
                   data-dbg-myImage-RelPermalink='{{$myImage.RelPermalink                 }}'
            data-dbg-myImage-RelPermalink-absURL='{{$myImage.RelPermalink  | absURL       }}'
                      data-dbg-myImage-Permalink='{{$myImage.Permalink                    }}'
-  >
+*/}}>
 {{- end }}
