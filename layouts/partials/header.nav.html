@@ -218,7 +218,7 @@
         {{ `<!-- range .Children -->` | safeHTML }}
       {{- end}}
       {{- range .Children }}
-        {{- $myChildrenURL :=  .Permalink }}
+        {{- $myChildrenURL :=  .URL }}
         {{- if and (and  (not (in $myChildrenURL `.html`)) (eq (substr $myChildrenURL 0 1) `/`)) $.Site.Params.uglyURLs }}
           {{- $.Scratch.Set `myUglyPostfix` $.Site.Params.uglyUrl }}
         {{- else }}
