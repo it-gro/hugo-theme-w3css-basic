@@ -35,17 +35,18 @@
 {{- if $.Scratch.Get `theHtmlList` }}<ul>{{end}}
 {{- if eq `regular` ($.Scratch.Get `theType`) }}
   {{- range $.Site.RegularPages }}
+    {{ $myPageURL := .Permalink }}
     {{- if ($.Scratch.Get `theOperator`) | eq `eq` }}
       {{- if or (eq .Title ($.Scratch.Get `theSearch`  )) (and (eq `i` ($.Scratch.Get `theModifiers`))   (eq (lower .Title) (lower ($.Scratch.Get `theSearch`)) ) )   }}
       {{- if $.Scratch.Get `theHtmlList` }}<li>{{end}}
-        <a href='{{.URL}}'>{{.Title | markdownify | emojify }}</a>&nbsp;
+        <a href='{{$myPageURL}}'>{{.Title | markdownify | emojify }}</a>&nbsp;
       {{- if $.Scratch.Get `theHtmlList` }}</li>{{end}}
       {{- end }}
     {{- end }}
     {{- if ($.Scratch.Get `theOperator`) | eq `in` }}
       {{- if or (in .Title ($.Scratch.Get `theSearch`  )) (and (eq `i` ($.Scratch.Get `theModifiers`))   (in (lower .Title) (lower ($.Scratch.Get `theSearch`)) ) )   }}
       {{- if $.Scratch.Get `theHtmlList` }}<li>{{end}}
-        <a href='{{.URL}}'>{{.Title | markdownify | emojify }}</a>&nbsp;
+        <a href='{{$myPageURL}}'>{{.Title | markdownify | emojify }}</a>&nbsp;
       {{- if $.Scratch.Get `theHtmlList` }}</li>{{end}}
       {{- end }}
     {{- end }}
@@ -54,10 +55,11 @@
 
 {{- if eq `all` ($.Scratch.Get `theType`) }}
   {{- range $.Site.Pages }}
+    {{ $myPageURL := .Permalink }}
     {{- if ($.Scratch.Get `theOperator`) | eq `eq` }}
       {{- if or (eq .Title ($.Scratch.Get `theSearch`  )) (and (findRE `i` ($.Scratch.Get `theModifiers`))   (eq (lower .Title) (lower ($.Scratch.Get `theSearch`)) ) )   }}
       {{- if $.Scratch.Get `theHtmlList` }}<li>{{end}}
-        <a href='{{.URL}}'>
+        <a href='{{$myPageURL}}'>
           {{- if findRE `.Kind`         ($.Scratch.Get `theOutFormat`)}}{{.Kind -}}:&nbsp;{{end}}
           {{- if findRE `.RelPermalink` ($.Scratch.Get `theOutFormat`)}}{{.RelPermalink}}{{end}}
           {{- if findRE `.Title`        ($.Scratch.Get `theOutFormat`)}}{{.Title | markdownify | emojify }} {{end}}
@@ -68,7 +70,7 @@
     {{- if ($.Scratch.Get `theOperator`) | eq `in` }}
       {{- if or (in .Title ($.Scratch.Get `theSearch`  )) (and (findRE `i` ($.Scratch.Get `theModifiers`))   (in (lower .Title) (lower ($.Scratch.Get `theSearch`)) ) )   }}
       {{- if $.Scratch.Get `theHtmlList` }}<li>{{end}}
-        <a href='{{.URL}}'>
+        <a href='{{$myPageURL}}'>
           {{- if findRE `.Kind`         ($.Scratch.Get `theOutFormat`)}}{{.Kind -}}:&nbsp;{{end}}
           {{- if findRE `.RelPermalink` ($.Scratch.Get `theOutFormat`)}}{{.RelPermalink}}{{end}}
           {{- if findRE `.Title`        ($.Scratch.Get `theOutFormat`)}}{{.Title | markdownify | emojify }} {{end}}

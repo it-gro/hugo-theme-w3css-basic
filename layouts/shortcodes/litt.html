@@ -21,7 +21,7 @@
 
 {{/*- with $.Site.GetPage `taxonomy` ($.Scratch.Get `theTaxonomy`) (lower ($.Scratch.Get `theTaxTerm`)) */}}
 {{- with $.Site.GetPage  ($.Scratch.Get `theTaxonomy`) (lower ($.Scratch.Get `theTaxTerm`)) }}
-  <a href='{{.URL}}'>
+  <a href='{{.Permalink}}'>
     {{- if findRE `.Kind`         ($.Scratch.Get `theOutFormat`)}}{{.Kind -}}:&nbsp;{{end}}
     {{- if findRE `.RelPermalink` ($.Scratch.Get `theOutFormat`)}}{{.RelPermalink}}{{end}}
     {{- if findRE `.Title`        ($.Scratch.Get `theOutFormat`)}}{{.Title | markdownify | emojify }} {{end}}

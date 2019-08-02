@@ -1,0 +1,9 @@
+{{/* https://github.com/gohugoio/hugo/issues/3606 */}}
+{{- $inlnk := .Get 0 }}
+{{- $pgfl  := printf "%s.md" $inlnk }}
+{{- $pgtt  := .Site.GetPage "page" $pgfl }}
+{{- if $pgtt }}
+  <a href="{{ $pgtt.Permalink }}">{{ $pgtt.Title }}</a>
+{{- else }}
+  <a href="{{ .Site.BaseURL }}{{ $inlnk }}">{{ $pgfl }} Not Found! </a>
+{{- end }}

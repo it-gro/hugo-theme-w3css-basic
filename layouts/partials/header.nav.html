@@ -218,12 +218,13 @@
         {{ `<!-- range .Children -->` | safeHTML }}
       {{- end}}
       {{- range .Children }}
-        {{- if and (and  (not (in .URL `.html`)) (eq (substr .URL 0 1) `/`)) $.Site.Params.uglyURLs }}
+        {{- $myChildrenURL :=  .Permalink }}
+        {{- if and (and  (not (in $myChildrenURL `.html`)) (eq (substr $myChildrenURL 0 1) `/`)) $.Site.Params.uglyURLs }}
           {{- $.Scratch.Set `myUglyPostfix` $.Site.Params.uglyUrl }}
         {{- else }}
           {{- $.Scratch.Set `myUglyPostfix` `` }}
         {{- end }}
-    <a href='{{ .URL }}{{$.Scratch.Get `myUglyPostfix`}}' class="w3-bar-item w3-button"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</a>
+    <a href='{{ $myChildrenURL }}{{$.Scratch.Get `myUglyPostfix`}}' class="w3-bar-item w3-button"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</a>
       {{- end }}  {{- /* range .Children        */}}
   </div> <!-- w3-dropdown-content -->
 </div>   <!-- w3-dropdown-hover   -->
@@ -233,11 +234,11 @@
         {{ `<!-- not .HasChildren -->` | safeHTML }}
       {{- end}}
 
-{{- if and (and  (not (in .URL `.html`)) (eq (substr .URL 0 1) `/`)) $.Site.Params.uglyURLs }}
-  {{- $.Scratch.Set `myUglyPostfix` $.Site.Params.uglyUrl }}
-{{- else }}
-  {{- $.Scratch.Set `myUglyPostfix` `` }}
-{{- end }}
+      {{- if and (and  (not (in .URL `.html`)) (eq (substr .URL 0 1) `/`)) $.Site.Params.uglyURLs }}
+        {{- $.Scratch.Set `myUglyPostfix` $.Site.Params.uglyUrl }}
+      {{- else }}
+        {{- $.Scratch.Set `myUglyPostfix` `` }}
+      {{- end }}
 
 <a href='{{ .URL }}{{$.Scratch.Get `myUglyPostfix`}}' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</a>
 <a href='{{ .URL }}{{$.Scratch.Get `myUglyPostfix`}}' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</a>

@@ -18,7 +18,7 @@
         {{ `<!-- $.Site.Params.bottomRight  -->` | safeHTML }}
       {{- end}}
       {{ if $.Site.Params.bottomRight }}
-        {{- replaceRE `\[Hugo\]` (printf `[Hugo %s]` .Hugo.Version) $.Site.Params.bottomRight | markdownify }}
+        {{- replaceRE `\[Hugo\]` (printf `[Hugo %s]` hugo.Version) $.Site.Params.bottomRight | markdownify }}
       {{- end }}
     </div> <!-- w3-right -->
   </div>   <!-- w3-cell  -->
