@@ -1,0 +1,25 @@
+/* https://www.w3schools.com/w3css/w3css_color_generator.asp */
+/* 2018 Valiant Poppy                  #BD3D3A */
+
+.w3-theme-l5 {color:#000 !important; background-color:#fbf3f3 !important}
+.w3-theme-l4 {color:#000 !important; background-color:#f3d7d6 !important}
+.w3-theme-l3 {color:#000 !important; background-color:#e6afae !important}
+.w3-theme-l2 {color:#fff !important; background-color:#da8785 !important}
+.w3-theme-l1 {color:#fff !important; background-color:#cd5f5d !important}
+.w3-theme-d1 {color:#fff !important; background-color:#a93634 !important}
+.w3-theme-d2 {color:#fff !important; background-color:#96302e !important}
+.w3-theme-d3 {color:#fff !important; background-color:#832a28 !important}
+.w3-theme-d4 {color:#fff !important; background-color:#702423 !important}
+.w3-theme-d5 {color:#fff !important; background-color:#5e1e1d !important}
+
+.w3-theme-light {color:#000 !important; background-color:#fbf3f3 !important}
+.w3-theme-dark {color:#fff !important; background-color:#5e1e1d !important}
+.w3-theme-action {color:#fff !important; background-color:#5e1e1d !important}
+
+.w3-theme {color:#fff !important; background-color:#bd3d3a !important}
+.w3-text-theme {color:#bd3d3a !important}
+.w3-border-theme {border-color:#bd3d3a !important}
+
+.w3-hover-theme:hover {color:#fff !important; background-color:#bd3d3a !important}
+.w3-hover-text-theme:hover {color:#bd3d3a !important}
+.w3-hover-border-theme:hover {border-color:#bd3d3a !important}
