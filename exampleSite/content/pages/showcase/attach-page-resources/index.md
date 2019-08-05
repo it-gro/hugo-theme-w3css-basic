@@ -18,7 +18,7 @@ resources:
 ---
 
 
-Add page resources of type *application* as attachments to a page via the
+Add page resources as attachments to a page via the
 `res-attach` shortcode.
 <!--more-->
 
@@ -41,9 +41,10 @@ lacus. Sed diam.
 
 Argument | Position -1 | Default           | What           | Remark
 ---------|-------------|-------------------|----------------|-------
-match    | 0           | **                | glob           | only resources of type application
-label    | 1           | Attachments       | label          | piped into i18n
-icon     | 2           | fas fa-paperclip  | label icon     | 
+path     | 0           | .                 | path to resource page | 
+match    | 1           | **                | glob           | 
+label    | 2           | Attachments       | label          | piped into i18n
+icon     | 3           | fas fa-paperclip  | label icon     | 
 
 
 # Demo 2
@@ -52,11 +53,11 @@ tristique imperdiet. Donec at pede. Etiam vel neque nec dui dignissim
 bibendum. Vivamus id enim. 
 
 ## Attachments
-{{< res-attach "**/*.pdf" "" "" >}}
+{{< res-attach "." "**/*.pdf" "" "" >}}
 
 *shortcode above*
 {{< w3-code >}}
-{{</* res-attach "** /*.pdf" "" "" */>}}
+{{</* res-attach "." "** /*.pdf" "" "" */>}}
 {{< /w3-code >}}
 
 # Demo 3
@@ -65,9 +66,9 @@ Aliquam erat volutpat. Nunc eleifend leo vitae magna. In id erat non orci
 commodo lobortis. Proin neque massa, cursus ut, gravida ut, lobortis eget,
 lacus. Sed diam. Praesent fermentum tempor tellus.
 
-{{< res-attach "**/*.{doc,xls}*" "See more here" "fas fa-eye" >}}
+{{< res-attach "." "**/*.{doc,xls}*" "See more here" "fas fa-eye" >}}
 
 *shortcode above*
 {{< w3-code >}}
-{{</* res-attach "** /*.{doc,xls}*" "See more here" "fas fa-eye" */>}}
+{{</* res-attach "." "** /*.{doc,xls}*" "See more here" "fas fa-eye" */>}}
 {{< /w3-code >}}

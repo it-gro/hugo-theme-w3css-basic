@@ -703,9 +703,10 @@ pre.terminal-out {
 
 Argument | Position -1 | Default           | What           | Remark
 ---------|-------------|-------------------|----------------|-------
-match    | 0           | **                | glob           | only resources of type application
-label    | 1           | Attachments       | label          | piped into i18n
-icon     | 2           | fas fa-paperclip  | label icon     | 
+path     | 0           | "."               | path to resource page | 
+match    | 1           | **                | glob           | 
+label    | 2           | Attachments       | label          | piped into i18n
+icon     | 3           | fas fa-paperclip  | label icon     | 
 
 
 ### res-figure
