@@ -20,7 +20,8 @@
   <div id='PagesListContainer' class=' {{ default `w3-theme-l4` ($.Site.Param `colorPagesListContainer`)}} '>
 
   {{/*- range $index, $element := sort .Data.Pages `.weight` */}}
-  {{- range $index, $element := .Data.Pages.ByWeight }}
+  {{/*- range $index, $element := .Data.Pages.ByWeight */}}
+  {{- range $index, $element := .RegularPages.ByWeight }}
     {{- if eq (mod $index 3) 0 }}
     {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
       {{ `<!-- modulo 0 -->` | safeHTML }}
