@@ -95,6 +95,8 @@ This theme is for:
 
 ## Latest News
 
+* Hugo 0.58 ready
+
 * Added shortcodes:
   * term-in
   * term-out
