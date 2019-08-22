@@ -523,6 +523,14 @@ pre.terminal-out {
 	line-height:      1.2;
 }
 
+
+/* -------------------------------------------------- */
+/* spaced cells in list of cards (blog, pages, taxonomy) */
+.display-table-spaced-cells {
+  border-collapse: separate ;
+  border-spacing: 3px 0px  ;
+}
+
 /* ------------------------------------------------------------------------------ */
 /* -- Local variables:      */
 /* -- tab-width:         2  */
