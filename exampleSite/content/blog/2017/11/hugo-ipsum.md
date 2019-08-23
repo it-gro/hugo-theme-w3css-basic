@@ -7,10 +7,13 @@ tags:
 categories:
   - tools
 resImgTeaser:  teaserpics/gohugo.io/hugo-ipsum.png
+teaserTruncateSummary: 300
 ---
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-commodo ligula eget dolor. Aenean massa.
+Lorem ipsum dolor sit amet
+### Pellen Tesque Conse Ctetuer
+
+Consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
 
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
 ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,

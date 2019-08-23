@@ -10,13 +10,12 @@ categories:
 draft:       false
 ---
 
-Hugo comes with reallly fast syntax highlighting from Chroma.
+Hugo comes with reallly **fast syntax highlighting** from Chroma.
 From Hugo 0.28, the default syntax hightlighter in Hugo is Chroma; it
 is built in Go and is really, really fast – and for the most important
 parts compatible with Pygments.
 See https://gohugo.io/content-management/syntax-highlighting for more.
 
-<!--more-->
 
 In this theme we set
 
