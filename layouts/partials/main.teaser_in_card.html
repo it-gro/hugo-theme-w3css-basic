@@ -23,7 +23,16 @@
     {{- if eq .Type `blog` }}
     <div class="w3-right"><i class="far fa-calendar" aria-hidden="true"></i>&nbsp;<i>{{- partial `main.i18n.date.short.html` . -}}</i></div>
     {{- end }}
-    {{- or .Description .Summary | markdownify | truncate ( or $.Site.Params.teaserTruncateSummary 160)  | replaceRE `<.?p>` `` | safeHTML }}
+    {{- /* or .Description .Summary | markdownify | truncate ( or $.Site.Params.teaserTruncateSummary 160)  | replaceRE `<.?p>` `` | safeHTML */}}
+    {{- $myTruncateLength :=  or (.Param "teaserTruncateSummary") 160 }}
+    {{- or .Description .Summary | markdownify | replaceRE `<.?p>` `` | safeHTML | truncate $myTruncateLength }}
+{{- /*
+<br>
+len .Description : {{ len .Description}}   <br>
+len .Summary     : {{ len .Summary}}       <br>
+$myTruncateLength: {{ $myTruncateLength }} <br>
+*/}}
+
   </div>
 </a>
 
