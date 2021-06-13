@@ -18,7 +18,8 @@
       {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- range .Site.Data.testimonials -->` | safeHTML }}
       {{- end}}
-      {{- range $index, $element := sort .Site.Data.testimonials `weight` }}
+      {{/* {{- range $index, $element := sort .Site.Data.testimonials `weight` }} */}}
+      {{- range $index, $element := sort .Site.Data.testimonials }}
       <div class='w3-card {{ default `w3-theme-l5` ($.Site.Param `colorFrontTestimonialsCarouselCard`)}} '>
         {{ template `front-testimonials-entry` (dict `page` $.Page `element` $element) }}
       </div>       <!-- w3-card -->
@@ -59,15 +60,15 @@
   </div>
   {{- if $ourElement.name }}
   <div class="w3-container">
-    <div class="w3-cell"><i class="fas fa-quote-left w3-jumbo w3-text-theme"></i></div>
+    <div class="w3-cell"><i class="fas fa-quote-left w3-xxxlarge w3-text-theme"></i></div>
       <div class="w3-cell">
 
     {{- $myImgClass  := `w3-circle w3-right`}}
-    {{- $myImgStyle  := `width:40%`}}
+    {{- $myImgStyle  := `width:20%`}}
 
     {{- $myImg       := $ourElement.resImg                       }} {{/* case sensitive ! */}}
-    {{- $myImgCmd    := $ourElement.resImgCmd | default `Resize` }}
-    {{- $myImgOpt    := $ourElement.resImgOpt | default `200x`   }}
+    {{- $myImgCmd    := $ourElement.resImgCmd | default `Fill` }}
+    {{- $myImgOpt    := $ourElement.resImgOpt | default `150x150 Top`   }}
     {{ partial `resource.image.html` (dict `page` $ourPage `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
 
       <div class="w3-right">
