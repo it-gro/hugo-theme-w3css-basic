@@ -1340,7 +1340,7 @@ See more here: {{< litt "tags" "Go" >}}
 See more here: {{</* litt "categories" "Golang" ".RelPermalink" */>}}
 {{< /cscb >}}
 
-See more here: {{< litt "categories" "Golang" ".RelPermalink" >}}
+ToDo: See more here: {{</* litt "categories" "Golang" ".RelPermalink" */>}}
 
 
 
