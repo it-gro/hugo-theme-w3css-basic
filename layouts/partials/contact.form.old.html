@@ -11,14 +11,11 @@
 {{- .Scratch.Set `myMailToEnctype` `text/plain`                            }}
 {{- if isset $.Site.Params (lower `formspree` ) }}
 {{ `<!-- $.Site.Params.formspree ok  -->` | safeHTML }}
-  {{- .Scratch.Set `myFormspreeAction`  (printf `https://%s/%s` $.Site.Params.formspreeAction $.Site.Params.formspreForm) }}
+  {{- .Scratch.Set `myFormspreeAction`  (printf `https://%s/%s` $.Site.Params.formspree $.Site.Params.email) }}
   {{- .Scratch.Set `myFormspreeVia`     (printf `https://%s`    $.Site.Params.formspree                   ) }}
   {{- .Scratch.Set `myFormspreeEnctype` `application/x-www-form-urlencoded`                                }}
 {{- end }} <!-- if isset -->
-<form class='w3-panel w3-card-4 {{ default `w3-theme-d3` ($.Site.Param `colorContactFormPanel`)}} '
-      method="post"
-      action='{{.Scratch.Get `myFormspreeAction`}}'
-      >
+<form class='w3-panel w3-card-4 {{ default `w3-theme-d3` ($.Site.Param `colorContactFormPanel`)}} ' method="post" >
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- i18n "contactForm" "contactName" "contactMail" "contactMessage"  "contactSend"  "contactVia" -->` | safeHTML }}
 {{- end}}
@@ -30,10 +27,7 @@
   <p><label>{{ default `Message` (i18n `contactMessage`) }} </label> <textarea class="w3-input w3-border" name="message" required placeholder="Message" ></textarea></p>
   <p><button class="w3-button" type="submit" formaction='{{.Scratch.Get `myMailToAction`}}' formenctype='{{.Scratch.Get `myMailToEnctype`}}' ><i class="fas fa-at"></i> {{ i18n `contactSend` }} <span class="w3-small">({{ default `via` (i18n `contactVia`) }}  {{.Scratch.Get `myMailToVia`}})</span></button>
   {{- if .Scratch.Get `myFormspreeAction` }}
-  <button class="w3-button" type="submit">
-    <i class="far fa-envelope"></i> {{ i18n `contactSend` }}
-    <span class="w3-small">({{ default `via` (i18n `contactVia`) }}  {{.Scratch.Get `myFormspreeVia`}})</span>
-  </button>
+  <button class="w3-button" type="submit" formaction='{{.Scratch.Get `myFormspreeAction`}}' formenctype='{{.Scratch.Get `myFormspreeEnctype`}}' ><i class="far fa-envelope"></i> {{ i18n `contactSend` }} <span class="w3-small">({{ default `via` (i18n `contactVia`) }}  {{.Scratch.Get `myFormspreeVia`}})</span></button>
   {{- end }}
 </form>
 
