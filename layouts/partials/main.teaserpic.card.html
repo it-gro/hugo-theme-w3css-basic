@@ -10,3 +10,12 @@
 {{- $myImgCmd    := .Param `resImgTeaserInCardCmd` | default $myImgCmd }}
 {{- $myImgOpt    := .Param `resImgTeaserInCardOpt` | default $myImgOpt }}
 {{ partial `resource.image.html` (dict `page` . `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
+
+{{- if .Param `youtubeThumbnail` }}
+{{- $myYoutubeThumbnail := .Param `youtubeThumbnail`}}
+<img
+  class="w3-image w3-left w3-round w3-hover-opacity"
+  style="max-width:150px; max-height:150px; width: auto; height: auto; margin: 0px 8px 16px 0px;"
+  src='https://img.youtube.com/vi/{{$myYoutubeThumbnail}}/0.jpg'
+>
+{{- end }}

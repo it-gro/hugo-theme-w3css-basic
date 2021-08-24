@@ -1,0 +1,37 @@
+<!--
+Highlights file and provides download link.
+File should be located either in the same directory or full path should be specified.
+-->
+
+{{- $src := (.Get "file") -}}
+{{- $lang := .Get "language" | default ("python") }}
+{{- $opt := .Get "opt" | default ("linenos=table") }}
+
+{{- if in $src "/" -}}
+  {{ $filelink := (strings.TrimPrefix "/static" $src ) }}
+  {{ $justTheSplit := split $filelink "/" }}
+  {{ $lastPartOnly := index (last 1 $justTheSplit) 0}}
+
+  {{/* <a class="linktofile" href="{{ .Site.BaseURL }}/{{ $filelink }}"/> */}}
+  {{/* <a class="linktofile" href="{{ $filelink | absURL }}"/> */}}
+  <a class="linktofile" href="{{ cond (eq (len .Site.BaseURL) 0) ($filelink | absURL) (printf `%s/%s` .Site.BaseURL $filelink)}}"/>
+      {{  $lastPartOnly }}
+  </a>
+
+  {{$file := $src | readFile}}
+  {{/* {{ highlight (print $file) $lang $opt}} */}}
+  {{/* highlight ($file | replaceRE `\r` ``) $lang $opt */}}
+  {{ highlight ( trim (readFile $src | replaceRE "\r\n" "\n") "\n") $lang $opt }}
+
+{{- else -}}
+  {{ $file := (printf "%s%s" $.Page.File.Dir $src) }}
+
+  {{/* <a class="linktofile" href="{{ .Site.BaseURL }}/{{ $file }}"/> */}}
+  {{/* <a class="linktofile" href="{{ $file | absURL }}"/> */}}
+  <a class="linktofile" href="{{ cond (eq (len .Site.BaseURL) 0) ($file | absURL) (printf `%s/%s` .Site.BaseURL $file)}}"/>
+      {{  $src }}
+  </a>
+
+  {{ highlight (trim (readFile (printf "content/%s" $file)) "\n") $lang $opt}}
+
+{{- end -}}

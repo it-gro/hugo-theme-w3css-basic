@@ -1,0 +1,3 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{- `<!-- _default/list.html  (empty but here to avoid error message) -->` | safeHTML }}
+{{- end}}

@@ -50,16 +50,16 @@
         {{- end}}
 
         {{- /* .Content */}}
-        {{/*- $.Scratch.Set `myContent` (.Content   | replaceRE `(?s:</div>\s?</p>)` `</div>` | replaceRE `(?s:</pre>\s?</p>)` `</pre>` | replaceRE `(?s:</figure>\s*</p>)` `</figure>` ) */}}
-        {{- $myContent := (.Content   | replaceRE `(?s:</div>\s?</p>)` `</div>` | replaceRE `(?s:</pre>\s?</p>)` `</pre>` | replaceRE `(?s:</figure>\s*</p>)` `</figure>` ) }}
+        {{- $.Scratch.Set `myContent` (.Content   | replaceRE `(?s:</div>\s?</p>)` `</div>` | replaceRE `(?s:</pre>\s?</p>)` `</pre>` | replaceRE `(?s:</figure>\s*</p>)` `</figure>` ) }}
+        {{/*-           $myContent := (.Content   | replaceRE `(?s:</div>\s?</p>)` `</div>` | replaceRE `(?s:</pre>\s?</p>)` `</pre>` | replaceRE `(?s:</figure>\s*</p>)` `</figure>` ) */}}
         {{- if isset $.Site.Params (lower `anchor` ) }}
           {{- if $.Site.Params.anchor.enable }}
-            {{/*- $.Scratch.Set `myContent` ( ($.Scratch.Get `myContent`) | replaceRE `(<h[1-9] id="([^"]+)".+)(</h[1-9]+>)` (printf `${1}&nbsp;<a class="anchor w3-small " href="#${2}"><i class="%s"></i></a> ${3}` (default "fas fa-link" $.Site.Params.anchor.icon) ) ) */}}
-            {{- $myContent := ( ($.Scratch.Get `myContent`) | replaceRE `(<h[1-9] id="([^"]+)".+)(</h[1-9]+>)` (printf `${1}&nbsp;<a class="anchor w3-small " href="#${2}"><i class="%s"></i></a> ${3}` (default "fas fa-link" $.Site.Params.anchor.icon) ) ) }}
+            {{- $.Scratch.Set `myContent` ( ($.Scratch.Get `myContent`) | replaceRE `(<h[1-9] id="([^"]+)".+)(</h[1-9]+>)` (printf `${1}&nbsp;<a class="anchor w3-small " href="#${2}"><i class="%s"></i></a> ${3}` (default "fas fa-link" $.Site.Params.anchor.icon) ) ) }}
+            {{/*- $myContent :=           ( ($.Scratch.Get `myContent`) | replaceRE `(<h[1-9] id="([^"]+)".+)(</h[1-9]+>)` (printf `${1}&nbsp;<a class="anchor w3-small " href="#${2}"><i class="%s"></i></a> ${3}` (default "fas fa-link" $.Site.Params.anchor.icon) ) ) */}}
           {{- end }}
         {{- end }}
-        {{/*- ($.Scratch.Get `myContent`) | safeHTML */}}
-        {{- $myContent | safeHTML }}
+        {{- ($.Scratch.Get `myContent`) | safeHTML }}
+        {{/*- $myContent | safeHTML */}}
 
         {{- partial `main.related.html`  . -}}
         {{- end }}
