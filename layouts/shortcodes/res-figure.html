@@ -101,14 +101,14 @@
 
     <figure class='res-figure no-photoswipe'  style="width: {{ $myImage.Width }}px;">
       <img src="{{ $myImage.RelPermalink }}"
-           alt="{{ $myCapFileName }}"
-           width="{{ $myImage.Width }}" height="{{ $myImage.Height }}"
+        alt="{{ $myCapFileName }}"
+        width="{{ $myImage.Width }}" height="{{ $myImage.Height }}"
       >
       <figcaption class='res-figcaption'>
         {{- with $.Inner }}
-          {{- . }}
-        {{- else }}
-          {{ $myCaption | safeHTML }}
+          {{- . | markdownify }}
+        {{- else -}}
+          {{-  $myCaption | safeHTML -}}
         {{- end }}
       </figcaption>
     </figure>

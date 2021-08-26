@@ -4,8 +4,10 @@ Inspired by https://github.com/liwenyip/hugo-easy-gallery/
 -->
 <!-- prevent this shortcode from being loaded more than once per page -->
 */}}
+
 {{- if not ($.Page.Scratch.Get `photoswipeloaded`) }}
 {{- $.Page.Scratch.Set `photoswipeloaded` 1 }}
+
 {{- /*
 <!--
 *** jQuery must be loaded before load-photoswipe.js ***
@@ -18,6 +20,8 @@ Inspired by https://github.com/liwenyip/hugo-easy-gallery/
 <link rel="stylesheet" href='{{ relURL `/vendor/photoswipe/default-skin/default-skin.css`    }}' />
 <script src='{{ .Site.BaseURL }}/vendor/photoswipe/photoswipe.min.js'>      </script>
 <script src='{{ .Site.BaseURL }}/vendor/photoswipe/photoswipe-ui-theme.js'> </script>
+
+<link rel="stylesheet" href='{{ relURL `/css/res-gallery.css`                   }}' />
 
 {{- /*<!-- Root element of PhotoSwipe. Must have class pswp. -->*/}}
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -72,4 +76,5 @@ Inspired by https://github.com/liwenyip/hugo-easy-gallery/
     </div>
     </div>
 </div>
-{{ end }}
+
+{{- end }} {{/* not */}}

@@ -83,6 +83,10 @@ figcaption styles
   cursor: pointer;
 }
 
+.res-gallery-figcaption a {
+  color: #FFF;
+}
+
 .res-gallery.caption-position-none figcaption {
   visibility: hidden;
   bottom: 0;
