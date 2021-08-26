@@ -1,5 +1,5 @@
  /*
-    hugo-theme-w3css-basic styles
+  hugo-theme-w3css-basic styles
 */
 
 /* -------------------------------------------------- */
@@ -15,7 +15,7 @@ https://www.w3schools.com/cssref/pr_class_clear.asp
 */
 
 .clearfix{
-    clear:both
+  clear:both
 }
 
 a.no-decoration {
@@ -23,8 +23,8 @@ a.no-decoration {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .headline-button {
@@ -133,60 +133,60 @@ th:first-child,td:first-child{padding-left:8px}
 
 /* https://www.w3schools.com/cssref/css3_pr_animation-duration.asp */
 .photocards-animated {
-          animation-iteration-count: 1;
+      animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
 
-          animation-duration: 0.8s;
+      animation-duration: 0.8s;
   -webkit-animation-duration: 0.8s;
 }
 
 .photocards-animated0 {
-          animation-delay:    0s;
+      animation-delay:    0s;
   -webkit-animation-delay:    0s;
 }
 
 .photocards-animated1 {
-          animation-delay:    0.5s;
+      animation-delay:    0.5s;
   -webkit-animation-delay:    0.5s;
 }
 
 .photocards-animated2 {
-          animation-delay:    1s;
+      animation-delay:    1s;
   -webkit-animation-delay:    1s;
 }
 
 .photocards-animated3 {
-          animation-delay:    1.5s;
+      animation-delay:    1.5s;
   -webkit-animation-delay:    1.5s;
 }
 
 .photocards-animated4 {
-          animation-delay:    2s;
+      animation-delay:    2s;
   -webkit-animation-delay:    2s;
 }
 
 .photocards-animated5 {
-          animation-delay:    2.5s;
+      animation-delay:    2.5s;
   -webkit-animation-delay:    2.5s;
 }
 
 .photocards-animated6 {
-          animation-delay:    3s;
+      animation-delay:    3s;
   -webkit-animation-delay:    3s;
 }
 
 .photocards-animated7 {
-          animation-delay:    3.5s;
+      animation-delay:    3.5s;
   -webkit-animation-delay:    3.5s;
 }
 
 .photocards-animated8 {
-          animation-delay:    4s;
+      animation-delay:    4s;
   -webkit-animation-delay:    4s;
 }
 
 .photocards-animated9 {
-          animation-delay:   4.5s;
+      animation-delay:   4.5s;
   -webkit-animation-delay:   4.5s;
 }
 
@@ -196,60 +196,60 @@ th:first-child,td:first-child{padding-left:8px}
 
 /* https://www.w3schools.com/cssref/css3_pr_animation-duration.asp */
 .features-animated {
-          animation-iteration-count: 1;
+      animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;
 
-          animation-duration: 0.8s;
+      animation-duration: 0.8s;
   -webkit-animation-duration: 0.8s;
 }
 
 .features-animated0 {
-          animation-delay:    0s;
+      animation-delay:    0s;
   -webkit-animation-delay:    0s;
 }
 
 .features-animated1 {
-          animation-delay:    0.5s;
+      animation-delay:    0.5s;
   -webkit-animation-delay:    0.5s;
 }
 
 .features-animated2 {
-          animation-delay:    1s;
+      animation-delay:    1s;
   -webkit-animation-delay:    1s;
 }
 
 .features-animated3 {
-          animation-delay:    1.5s;
+      animation-delay:    1.5s;
   -webkit-animation-delay:    1.5s;
 }
 
 .features-animated4 {
-          animation-delay:    2s;
+      animation-delay:    2s;
   -webkit-animation-delay:    2s;
 }
 
 .features-animated5 {
-          animation-delay:    2.5s;
+      animation-delay:    2.5s;
   -webkit-animation-delay:    2.5s;
 }
 
 .features-animated6 {
-          animation-delay:    3s;
+      animation-delay:    3s;
   -webkit-animation-delay:    3s;
 }
 
 .features-animated7 {
-          animation-delay:    3.5s;
+      animation-delay:    3.5s;
   -webkit-animation-delay:    3.5s;
 }
 
 .features-animated8 {
-          animation-delay:    4s;
+      animation-delay:    4s;
   -webkit-animation-delay:    4s;
 }
 
 .features-animated9 {
-          animation-delay:   4.5s;
+      animation-delay:   4.5s;
   -webkit-animation-delay:   4.5s;
 }
 
@@ -333,7 +333,7 @@ th:first-child,td:first-child{padding-left:8px}
 /* -------------------------------------------------- */
 /* hugo-easy-gallery */
 figure img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .fancy-figure.caption-position-bottom figcaption {
@@ -379,36 +379,36 @@ figure figcaption a {
 
 @media only screen and (min-width : 365px) {
   .gallery .box {
-    width: 50%;
-    padding-bottom: 50%;
+  width: 50%;
+  padding-bottom: 50%;
   }
 }
 
 @media only screen and (min-width : 480px) {
   .gallery .box {
-    width: 33.3%;
-    padding-bottom: 33.3%; /*  */
+  width: 33.3%;
+  padding-bottom: 33.3%; /*  */
   }
 }
 
 @media only screen and (min-width : 760px) {
   .gallery .box {
-    width: 25%;
-    padding-bottom: 25%;
+  width: 25%;
+  padding-bottom: 25%;
   }
 }
 
 @media only screen and (min-width : 1024px) {
   .gallery .box {
-    width: 20%;
-    padding-bottom: 20%;
+  width: 20%;
+  padding-bottom: 20%;
   }
 }
 
 @media only screen and (min-width : 1280px) {
   .gallery .box {
-    width: 16%;
-    padding-bottom: 16%;
+  width: 16%;
+  padding-bottom: 16%;
   }
 }
 
@@ -426,14 +426,14 @@ figure figcaption a {
 
 .res-figcaption {
 /*
-    color: #FFF;
-    background: rgba(0, 0, 0, 0.2);
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.2);
 */
-    text-align: center;
-    font-size: 75%;
-    /* padding: 0px; */
-    padding-top: 6px;
-    line-height: 1;
+  text-align: center;
+  font-size: 75%;
+  /* padding: 0px; */
+  padding-top: 6px;
+  line-height: 1;
 }
 
 .res-figcaption a {
@@ -493,7 +493,7 @@ pre.w3-code, span.w3-codespan{
   /* font-family:monospace,monospace; */
   /* font-family: initial !important;*/
   font-size:        1em;
-	line-height:      1.2;
+  line-height:      1.2;
 }
 
 /* for w3-code and chroma styles */
@@ -502,7 +502,7 @@ pre.w3-code, pre.chroma {
   border:           1px solid;
   padding:          10px 6px 10px 6px;
   overflow:         auto;
-	line-height:      1.2;
+  line-height:      1.2;
 }
 
 /* -------------------------------------------------- */
@@ -512,7 +512,7 @@ pre.terminal-in {
   border:           1px solid;
   padding:          10px 6px 10px 6px;
   overflow:         auto;
-	line-height:      1.2;
+  line-height:      1.2;
 }
 
 pre.terminal-out {
@@ -520,7 +520,7 @@ pre.terminal-out {
   padding:          10px 6px 10px 6px;
   border:           1px solid;
   overflow:         auto;
-	line-height:      1.2;
+  line-height:      1.2;
 }
 
 
@@ -530,6 +530,49 @@ pre.terminal-out {
   border-collapse: separate ;
   border-spacing: 3px 0px  ;
 }
+
+/* -------------------------------------------------- */
+/* WIP */
+
+/* ---------- */
+a {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  background-color: rgba(0, 0, 0, 0.3);
+  text-decoration: underline
+}
+
+a.no-decoration, a.no-decoration:hover, a.no-decoration:focus {
+  background-color: unset;
+}
+
+/* ---------- */
+table.lntable td {
+  width: auto;
+}
+
+.highlight pre code {
+  white-space: pre;
+}
+
+/* for w3-code and chroma styles */
+pre.w3-code, pre.chroma {
+  border:           none;
+}
+
+/* top right bottom left */
+td:nth-child(1) > pre.chroma { margin: 5px 5px 5px 5px; color: #aaa; border-radius: 0; border: none; border-right: solid 1px; word-wrap: normal;}
+td:nth-child(2) > pre.chroma { margin: 5px 0px 5px 0px; border-radius: 0; border: 0; word-wrap: normal;}
+.lntd { width: 100%; border: none; background-color: #F5F5F5;  table-layout: auto;}
+
+
+.chroma .lnt {
+  display: contents;
+}
+
 
 /* ------------------------------------------------------------------------------ */
 /* -- Local variables:      */

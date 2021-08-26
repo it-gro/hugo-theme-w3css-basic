@@ -1,0 +1,121 @@
+# ##################################################
+# theme-defined params
+
+  # meta data
+  # ##############################
+
+  # used in layouts/partials/head.meta.html
+  authorName                        = "anonymous"
+  defaultKeywords                   = ["foo", "bar"]
+  defaultDescription                = "example site created with hugo using theme hugo-theme-w3css-basic"
+
+  # multiple lines in toml
+  # https://github.com/toml-lang/toml#user-content-string
+
+  # used in layouts/partials/footer.html
+  # uses markdownify
+  aboutUs   = '''
+Vel illum **dolore** eu
+
+  * feugiat nulla
+  * facilisis at vero.
+
+Nam vestibulum accumsan nisl.
+
+              '''
+
+  address   = '''
+**nobis eleifend**
+**Soluta nobis eleifend**
+illum dolore eu feugiat
+3612 Steffisburg
+consectetuer adipiscing
+
+**Switzerland**
+              '''
+
+  # used in layouts/partials/footer.bottom.html
+  bottomLeft  = "Copyright (c) 2019, *lobortis nisl* ut aliquip ex ea commodo consequat"
+  bottomRight = 'created with [Hugo](https://gohugo.io) '
+
+
+[jumbotrons]
+  enable   = true
+
+[photocards]
+  enable        = true
+
+[features]
+  enable   = true
+
+[recentPosts]
+  footerNumOfPosts = 5
+  enableFront    = true
+  enableFooter   = true
+  title    = "From our Blog"
+  subtitle = '''
+Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac.
+             '''
+
+[seeMore]
+  enable    = true
+  linkText  = "consectetuer adipiscing"
+  subtitle  = '''
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              '''
+
+[testimonials]
+  enable   = true
+  title    = "Testimonials"
+  subtitle = '''
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+labore et dolore magna aliquyam erat, sed diam voluptua.
+             '''
+
+[clients]
+  enable        = true
+  title         = "Our Clients"
+  subtitle      = '''
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+**molestie consequat**, vel illum dolore.
+             '''
+
+[blog]
+  title    = "Blog"
+  icon     = "fas fa-rss"
+  subtitle = '''
+ultricies eget, tempor sit amet, ante
+             '''
+
+[googleApiFonts.family]
+  tagsText        = [ "html", "body", "time" ]
+  tagsHeading     = [ "h1", "h2", "h3", "h4", "h5", "h6" ]
+  tagsMono        = [ "pre", "code", "kbd", "samp", "data" ]
+
+  # these parameter sections must exist, the others are optional
+  fallbackText    = "html"
+  fallbackHeading = "h1"
+  fallbackMono    = "pre"
+
+[googleApiFonts.family.html]
+  sans-serif = "Ubuntu"
+
+[googleApiFonts.family.time]
+  cursive    = "Creepster"
+
+[googleApiFonts.family.h1]
+  sans-serif = "Signika"
+
+[googleApiFonts.family.pre]
+  monospace  = "Ubuntu Mono"
+
+
+[options]
+  jsHistoryNav        = true
+  jsHistoryNavForward = false
+  showNavUp           = true
+  showNavBreadcrump   = true
+  navBreadcrumpTitle  = true
+  navBreadcrumpHome   = false

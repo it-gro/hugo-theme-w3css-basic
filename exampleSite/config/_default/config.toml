@@ -1,0 +1,99 @@
+# ##################################################
+baseURL       = "http://example.com"
+theme         = "hugo-theme-w3css-basic"
+
+
+# ##################################################
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+
+
+# ##################################################
+[menu]
+
+# provide translations in i18n/*.yaml
+[[menu.main]]
+  weight = 1
+  name   = "Home"
+  url    = "/index.html"
+  pre    = "fas fa-home"
+
+[[menu.main]]
+  weight = 2
+  name   = "Contact"
+  url    = "/contact"
+  pre    = "far fa-address-card"
+
+[[menu.main]]
+  weight = 3
+  name   = "Pages"
+  url    = "/pages"
+  pre    = "fas fa-list"
+
+# demo submenu
+[[menu.main]]
+  weight = 4
+  name   = "Theme"
+  pre    = "fas fa-info-circle"
+  identifier = "theme"
+
+[[menu.main]]
+  weight = 1
+  name   = "About"
+  url    = "/pages/hugo-theme-w3css-basic/"
+  pre    = "fas fa-info fa-fw"
+  parent = "theme"
+
+[[menu.main]]
+  weight = 2
+  name   = "Images"
+  url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
+  pre    = "far fa-images fa-fw"
+  parent = "theme"
+
+[[menu.main]]
+  weight = 3
+  name   = "Showcase"
+  url    = "/pages/showcase/"
+  pre    = "fas fa-eye fa-fw"
+  parent = "theme"
+
+# end submenu
+
+[[menu.main]]
+  weight = 5
+  name   = "Blog"
+  url    = "/blog"
+  pre    = "fas fa-rss"
+
+[[menu.main]]
+  weight = 6
+  name   = "FAQ"
+  url    = "/faq"
+  pre    = "far fa-question-circle"
+
+[[menu.topbar]]
+  weight   = 1
+  name     = "GitHub"
+  url      = "https://github.com/it-gro/hugo-theme-w3css-basic"
+  pre      = "fab fa-github"
+
+[[menu.topbar]]
+  weight   = 2
+  name     = "GitLab"
+  url      = "https://gitlab.com/it-gro"
+  pre      = "fab fa-gitlab"
+
+[[menu.topbar]]
+  weight   = 5
+  name     = "Email"
+  url      = "#address"
+# url      = "mailto:info@example.com"
+  pre      = "fas fa-envelope"
+
+[[menu.topbar]]
+  weight   = 6
+  name     = "Search"
+  url      = "/search"
+  pre      = "fas fa-search"

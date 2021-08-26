@@ -15,7 +15,7 @@ resources:
     params:
       origin:      pixabay.com
       originlink:  https://pixabay.com
-      license:     Creative Commons CC0 
+      license:     Creative Commons CC0
       licenselink: "https://pixabay.com/en/service/terms/#usage"
       caption:     "%%I%%n%%B%%n%%O%%n%%L"
 ---
@@ -39,22 +39,21 @@ and list templates and basic content files.
 
 * Inspired by http://getbootstrap.com/docs/4.0/components/alerts/ and https://www.w3schools.com/w3css/w3css_panels.asp
 
-Configuration is in `config.toml`:
+Configuration is in `params.toml`:
 
 ```toml
-[params]
-  colorAlertPrimary                     = "w3-purple"
-  colorAlertSecondary                   = "w3-aqua"
-  colorAlertSuccess                     = "w3-light-green"
-  colorAlertInfo                        = "w3-light-blue"
-  colorAlertWarning                     = "w3-yellow"
-  colorAlertDanger                      = "w3-red"
-  colorAlertDark                        = "w3-dark-grey"
-  colorAlertLight                       = "w3-grey"
+colorAlertPrimary                     = "w3-purple"
+colorAlertSecondary                   = "w3-aqua"
+colorAlertSuccess                     = "w3-light-green"
+colorAlertInfo                        = "w3-light-blue"
+colorAlertWarning                     = "w3-yellow"
+colorAlertDanger                      = "w3-red"
+colorAlertDark                        = "w3-dark-grey"
+colorAlertLight                       = "w3-grey"
 ```
 
 {{< highlight nolang >}}
-{{</* alert type="primary" intro="Primary Alert"   >}}This is a primary alert—check it out! {{< /alert >}}
+{{</* alert type="primary"   intro="Primary Alert"   >}}This is a primary alert—check it out!   {{< /alert >}}
 {{< alert type="secondary" intro="Secondary Alert" >}}This is a secondary alert—check it out! {{< /alert >}}
 {{< alert type="success"   intro="Success Alert"   >}}This is a success alert—check it out!   {{< /alert >}}
 {{< alert type="info"      intro="Info Alert"      >}}This is a info alert—check it out!      {{< /alert >}}
@@ -170,7 +169,7 @@ No need for type="info", since this is the default
 renders as
 
 {{% w3-notice-icon type="info" heading="Show Info" %}}
-No need for type="info", since this is the default   
+No need for type="info", since this is the default
 {{% /w3-notice-icon %}}
 
 
@@ -217,7 +216,7 @@ renders as
 
 {{< highlight nolang >}}
 {{%/* w3-notice-icon type="danger" heading="Careful" %}}
-Watch out 
+Watch out
 {{% /w3-notice-icon */%}}
 {{< /highlight >}}
 
@@ -412,7 +411,7 @@ pre.w3-code, span.w3-codespan{
 }
 
 pre.w3-code, pre.chroma {
-    border-radius:4px;  
+    border-radius:4px;
     padding: 0 3px 0 3px;
     border: 1px solid;
     overflow: auto;
@@ -463,7 +462,7 @@ pre.w3-code, span.w3-codespan{
 }
 
 pre.w3-code, pre.chroma {
-    border-radius:4px;  
+    border-radius:4px;
     padding: 0 3px 0 3px;
     border: 1px solid;
     overflow: auto;
@@ -515,7 +514,7 @@ You may give a class name {{</* csc k >}}cool code{{< /csc */>}}.
 
 renders as
 
-You may give a class name {{< csc k >}}cool code{{< /csc >}}. 
+You may give a class name {{< csc k >}}cool code{{< /csc >}}.
 
 
 Background style for csc is in `static/css/w3css-basic.css`:
@@ -703,34 +702,34 @@ pre.terminal-out {
 
 Argument | Position -1 | Default           | What           | Remark
 ---------|-------------|-------------------|----------------|-------
-path     | 0           | "."               | path to resource page | 
-match    | 1           | **                | glob           | 
+path     | 0           | "."               | path to resource page |
+match    | 1           | **                | glob           |
 label    | 2           | Attachments       | label          | piped into i18n
-icon     | 3           | fas fa-paperclip  | label icon     | 
+icon     | 3           | fas fa-paperclip  | label icon     |
 
 
 ### res-figure
 
-* See https://gohugo.io/content-management/image-processing/   
+* See https://gohugo.io/content-management/image-processing/
   inspired by layouts/shortcodes/imgproc.html
 * See [Hugo image processing (res-figure)]({{< relref "image-processing-with-hugo" >}}) for more information
 
 {{< w3-code >}}
-{{</* res-figure "." "img/pixabay.com/penguin-21*" />}} 
-{{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
-{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" /*/>}} 
+{{</* res-figure "." "img/pixabay.com/penguin-21*" />}}
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}}
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" /*/>}}
 {{< /w3-code >}}
 
-{{< res-figure "." "img/pixabay.com/penguin-21*" />}} 
-{{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}} 
-{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" />}} 
+{{< res-figure "." "img/pixabay.com/penguin-21*" />}}
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}}
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" />}}
 
 ```yaml
 resources:
   - src:           img/pixabay/*.jpg
     params:
       origin:      pixabay.com
-      license:     Creative Commons CC0 
+      license:     Creative Commons CC0
       licenselink: https://pixabay.com/en/service/terms/#usage
       caption:     "%%I%%n%%B%%n%%O"
   - src:           img/pixabay/penguin-2104173_1920.jpg
@@ -740,7 +739,7 @@ resources:
       attrlink:    https://pixabay.com/en/users/frankenstein-2135887/
       imgcmd:      Resize
       imgopt:      400x
-      
+
 ```
 
 #### Parameters
@@ -777,13 +776,13 @@ Code | What
 
 {{< highlight nolan >}}
 {{</* res-gallery-load-photoswipe >}}
-{{< res-gallery match="teaserpics/gohugo.io/*" */>}} 
+{{< res-gallery match="teaserpics/gohugo.io/*" */>}}
 {{< /highlight >}}
 
 renders as
 
 {{< res-gallery-load-photoswipe >}}
-{{< res-gallery match="teaserpics/gohugo.io/*" >}} 
+{{< res-gallery match="teaserpics/gohugo.io/*" >}}
 
 #### Parameters
 
@@ -791,17 +790,17 @@ renders as
 
 Argument          | Default           | What                   | Remark
 ------------------|-------------------|------------------------|-------
-path              | resources/images  | path to resource page  | use . for current 
-match             | \*\*/*            | for .Match             | 
-imgCmd            | Resize            |                        | 
-imgOpt            | 800x              |                        | 
-thumbCmd          | Fit               | create thumb           | 
-thumbOpt          | 120x120           | thumb size             | 
-capLng            | `%%F`             | image caption          | 
-capSrt            | `%%N`             | thumb caption          | 
+path              | resources/images  | path to resource page  | use . for current
+match             | \*\*/*            | for .Match             |
+imgCmd            | Resize            |                        |
+imgOpt            | 800x              |                        |
+thumbCmd          | Fit               | create thumb           |
+thumbOpt          | 120x120           | thumb size             |
+capLng            | `%%F`             | image caption          |
+capSrt            | `%%N`             | thumb caption          |
 caption-position  | center            |                        | none top center bottom  (none => hide for thumbs)
 caption-effect    | appear            |                        | none fade appear slide  (none => always visible)
-hover-effect      | zoom              |                        | none grow shrink slidedown slideup zoom 
+hover-effect      | zoom              |                        | none grow shrink slidedown slideup zoom
 hover-transition  |                   |                        | (empty or) none  (none => hard transition)
 
 
@@ -811,25 +810,25 @@ hover-transition  |                   |                        | (empty or) none
 Front Matter Param  | What              | Remark
 --------------------|-------------------|---------
 Title               |                   |
-attrBy              | attribution names | 
-attrLink            | attribution link  | 
-caption             | see below         | 
-captionLong         | same as caption   | caption for image 
+attrBy              | attribution names |
+attrLink            | attribution link  |
+caption             | see below         |
+captionLong         | same as caption   | caption for image
 captionShort        |                   | caption for thumb
-imgCmd              |                   | 
-imgOpt              |                   | 
-license             |                   | 
-licenseAbrv         |                   | 
-licenseLink         |                   | 
-licenseLink         |                   | 
-origin              |                   | 
-originLink          |                   | 
-thumbCmd            |                   | 
-thumbOpt            |                   | 
+imgCmd              |                   |
+imgOpt              |                   |
+license             |                   |
+licenseAbrv         |                   |
+licenseLink         |                   |
+licenseLink         |                   |
+origin              |                   |
+originLink          |                   |
+thumbCmd            |                   |
+thumbOpt            |                   |
 
 ```yaml
   - src:           "**/pixabay.com/*"
-    params:          
+    params:
       origin:       pixabay.com
       license:      Creative Commons CC0
       licenseAbrv:  CC0 1.0
@@ -864,20 +863,20 @@ Code | What
 ## heg-gallery
 
 * kind of obsoleted by [res-gallery](#res-gallery)
-* taken from  
-  https://github.com/liwenyip/hugo-easy-gallery/  
-  https://www.liwen.id.au/heg/  
+* taken from
+  https://github.com/liwenyip/hugo-easy-gallery/
+  https://www.liwen.id.au/heg/
 
 {{< highlight nolan >}}
 {{</* heg-load-photoswipe */>}}
-{{</* heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" /*/>}} 
+{{</* heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" /*/>}}
 {{< /highlight >}}
 
 renders as
 
 {{< heg-load-photoswipe >}}
 
-{{< heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" />}} 
+{{< heg-gallery dir="/images/teaserpics/gohugo.io"   caption-effect="none" hover-effect="grow" />}}
 
 
 ### Style
@@ -888,11 +887,11 @@ Defined in:
 {{< highlight css >}}
 /* -------------------------------------------------- */
 /* hugo-easy-gallery */
-.gallery figcaption, 
+.gallery figcaption,
 .fancy-figure figcaption {
   background: #000;
   color: #FFF;
-  font-size: 85%; 
+  font-size: 85%;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0.9;
 }
@@ -911,7 +910,7 @@ Defined in:
   float: left;
   position: relative;
   width: 100%;
-  padding-bottom: 100%; 
+  padding-bottom: 100%;
 }
 
 @media only screen and (min-width : 365px) {
@@ -924,7 +923,7 @@ Defined in:
 @media only screen and (min-width : 480px) {
   .gallery .box {
     width: 33.3%;
-    padding-bottom: 33.3%; 
+    padding-bottom: 33.3%;
   }
 }
 
@@ -956,7 +955,7 @@ Defined in:
 * kind of obsoleted by [res-figure](#res-figure)
 * See for original doc: https://www.liwen.id.au/heg/
 * heg-figure improves the usage of `caption="" title="" attr="" attrlink=""`
-* for this demo I set caption-effect=**"none"** 
+* for this demo I set caption-effect=**"none"**
 * Inspired by https://stackoverflow.com/questions/21483356/how-to-mark-the-copyright-of-an-image-in-html
 
 ### with Thumbs
@@ -1135,13 +1134,13 @@ foo | bar
 
 {{< highlight nolang >}}
 {{</* classify "w3-green" "span" >}}
-**foo** bar   
+**foo** bar
 24 42
 {{< /classify */>}}
 {{< /highlight >}}
 
 {{< classify "w3-green" "span" >}}
-**foo** bar   
+**foo** bar
 24 42
 {{< /classify >}}
 
@@ -1172,6 +1171,23 @@ kbd {
 {{< /highlight >}}
 
 
+## highlightfile
+
+
+| Argument | Default       | What                                          | Remark                                                                                          |
+|----------|:--------------|:----------------------------------------------|:------------------------------------------------------------------------------------------------|
+| file     |               | the file                                      | starting in /static                                                                             |
+| language | python        | optional: language                            | see [list-of-chroma-highlighting-languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) |
+| opt      | linenos=table | optional: options for hugo highlight shortcut | see [highlighting-in-code-fences)](https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences)       |
+
+
+{{< highlight nolan >}}
+{{</* highlightfile file="/static/src/demo-hugo-server.sh" */>}}
+{{< /highlight >}}
+
+renders as
+
+{{< highlightfile file="/static/src/demo-hugo-server.sh">}}
 
 ## readfile
 
@@ -1179,9 +1195,9 @@ kbd {
 * reads a file (or directory) and optionally renders ist using markdownify or highlight
 
 Argument | Position -1 | Default | What             | Remark
----------|-------------|---------|------------------|-------
+---------|-------------|---------|:-----------------|:------
 file     | 0           | .       | a file (or dir)  | . or ending in /. => directory
-md       | 1           |         | markdownify      | if "true" => process using markdownify 
+md       | 1           |         | markdownify      | if "true" => process using markdownify
 hll      | 2           | md      | highlight lang   | see [list-of-chroma-highlighting-languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages)
 
 {{< w3-code >}}
@@ -1318,8 +1334,8 @@ See more here: {{< liti "Vestibulum" "in" "" "ul" >}}
 
 Argument | Position -1 | Default | What             | Remark
 ---------|-------------|---------|------------------|-------
-tax      | 0           | tags    | taxonomy         | 
-term     | 1           | *       | taxonomyterm     | 
+tax      | 0           | tags    | taxonomy         |
+term     | 1           | *       | taxonomyterm     |
 ofm      | 2           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
 
 
@@ -1354,7 +1370,7 @@ ToDo: See more here: {{</* litt "categories" "Golang" ".RelPermalink" */>}}
 Argument | Position -1 | Default | What             | Remark
 ---------|-------------|---------|------------------|-------
 tax      | 0           | tags    | string to search | in the taxonomy
-term     | 1           | *       | string to search | in the taxonomy term 
+term     | 1           | *       | string to search | in the taxonomy term
 title    | 2           | *       | string to search | in the title
 op       | 3           | eq      | en|in            | (Operator) *eq* or *in* search
 om       | 4           | t       | t,p              | (OutputMode) *t*axonomyterm *p*age
@@ -1422,7 +1438,7 @@ as well
 {{< /cscb >}}
 
 {{< hc >}}
-this is 
+this is
 a comment
 {{< /hc >}}
 
@@ -1438,4 +1454,3 @@ more 2
 line 1
 line 2
 {{< /hc >}}
-

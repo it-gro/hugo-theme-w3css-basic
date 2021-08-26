@@ -17,6 +17,7 @@
       {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
         {{ `<!-- range first 3 .Site.RegularPages "Section" "blog" -->` | safeHTML }}
       {{- end}}
+      {{/*- range $index, $element := first (default 3 ($.Site.Params.recentPosts.recentNumOfPosts)) (where .Site.RegularPages `Section` `blog`) */}}
       {{- range $index, $element := first 3 (where .Site.RegularPages `Section` `blog`) }}
 
       <div class="w3-third">

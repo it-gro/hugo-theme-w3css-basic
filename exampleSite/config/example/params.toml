@@ -1,221 +1,5 @@
-# https://gohugo.io/getting-started/configuration/#toml-configuration
-
-# ##################################################
-# Hugo-defined variables
-baseURL       = "https://example.com"
-
-title         = "hugo-theme-w3css-basic exampleSite"
-theme         = "hugo-theme-w3css-basic"
-languageCode  = "en-us"
-#languageCode  = "de-ch"
-
-# Site language. Available translations in the theme's `/i18n` directory.
-defaultContentLanguage = "en"
-
-#disableFastRender=true
-
-# Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
-enableEmoji   = true
-
-# the length of text to show in a .Summary
-summaryLength = 70
-
-# Pagination (3,6,9,12, ...)
-paginate =  6
-
-# Enable comments by entering your Disqus shortname
-disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
-
-# https://gohugo.io/content-management/syntax-highlighting/
-pygmentsUseClassic            = false
-pygmentsCodeFences            = true
-pygmentsCodeFencesGuessSyntax = true
-# https://help.farbox.com/pygments.html
-# https://github.com/alecthomas/chroma
-# hugo gen chromastyles --style=autumn        >  syntax.autumn.css
-# ...
-pygmentsUseClasses            = true
-# => static/css/syntax/syntax/syntax.*.css
-# copy one of them to
-# static/css/syntax/syntax.css
-# alternative (if shortcodes/csc*.html are not used):
-# set pygmentsUseClassic to false on choose one of the following:
-#pygmentsStyle = "autumn"
-#pygmentsStyle = "borland"
-#pygmentsStyle = "bw"
-#pygmentsStyle = "colorful"
-#pygmentsStyle = "default"
-#pygmentsStyle = "emacs"
-#pygmentsStyle = "friendly"
-#pygmentsStyle = "fruity"
-#pygmentsStyle = "manni"
-#pygmentsStyle = "monokai"
-#pygmentsStyle = "murphy"
-#pygmentsStyle = "native"
-#pygmentsStyle = "pastie"
-#pygmentsStyle = "perldoc"
-#pygmentsStyle = "rrt"
-#pygmentsStyle = "tango"
-#pygmentsStyle = "trac"
-#pygmentsStyle = "vim"
-#pygmentsStyle = "vs"
-
-
-# Enable Google Analytics by entering your tracking code
-#googleAnalytics = "UA-113314068-2"
-
-
-# RSS Feed
-# Do not build RSS files
-disableRSS = false
-# maximum number of items in the RSS feed
-rssLimit   = 10
-
-[outputs]
-home = [ "HTML", "RSS" ]
-section = [ "HTML", "RSS"]
-
-[imaging]
-# https://gohugo.io/content-management/image-processing/
-# Default resample filter used for resizing. Default is Box,
-# a simple and fast averaging filter appropriate for downscaling.
-# See https://github.com/disintegration/imaging
-resampleFilter = "box"
-
-# Defatult JPEG quality setting. Default is 75.
-quality = 75
-
-# Anchor used when cropping pictures.
-# Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
-# Smart Cropping is content aware and tries to find the best crop for each image.
-# Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
-anchor = "smart"
-
-
-# ##################################################
-# Theme-defined configuration
-
-# ##################################################
-# hugo sections
-
-[taxonomies]
-  tag      = "tags"
-  category = "categories"
-
-[Permalinks]
-  blog = "/blog/:year/:month/:day/:filename/"
-  # blog = "/blog/:year/:month/:title/"
-
-
-# ##################################################
-# Main menu
-[menu]
-
-# provide translations in i18n/*.yaml
-[[menu.main]]
-  weight = 1
-  name   = "Home"
-  url    = "/index.html"
-  pre    = "fas fa-home"
-
-[[menu.main]]
-  weight = 2
-  name   = "Contact"
-  url    = "/contact"
-  pre    = "far fa-address-card"
-
-[[menu.main]]
-  weight = 3
-  name   = "Pages"
-  url    = "/pages"
-  pre    = "fas fa-list"
-
-# demo submenu
-[[menu.main]]
-  weight = 4
-  name   = "Theme"
-  pre    = "fas fa-info-circle"
-  identifier = "theme"
-
-[[menu.main]]
-  weight = 1
-  name   = "About"
-  #url    = "/categories/this-theme/"
-  url    = "/pages/hugo-theme-w3css-basic/"
-  pre    = "fas fa-info fa-fw"
-  parent = "theme"
-
-[[menu.main]]
-  weight = 2
-  name   = "Images"
-  url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
-  pre    = "far fa-images fa-fw"
-  parent = "theme"
-
-[[menu.main]]
-  weight = 3
-  name   = "Showcase"
-  url    = "/pages/showcase/"
-  pre    = "fas fa-eye fa-fw"
-  parent = "theme"
-
-# end submenu
-
-[[menu.main]]
-  weight = 5
-  name   = "Blog"
-  url    = "/blog"
-  pre    = "fas fa-rss"
-
-[[menu.main]]
-  weight = 6
-  name   = "FAQ"
-  url    = "/faq"
-  pre    = "far fa-question-circle"
-
-
-# right aligned
-[[menu.topbar]]
-  weight   = 1
-  name     = "GitHub"
-  url      = "https://github.com/it-gro/hugo-theme-w3css-basic"
-  pre      = "fab fa-github"
-
-[[menu.topbar]]
-  weight   = 2
-  name     = "GitLab"
-  url      = "https://gitlab.com/it-gro"
-  pre      = "fab fa-gitlab"
-
-#[[menu.topbar]]
-#  weight   = 3
-#  name     = "Facebook"
-#  url      = "http://facebook.com"
-#  pre      = "fab fa-facebook"
-
-#[[menu.topbar]]
-#  weight   = 4
-#  name     = "Twitter"
-#  url      = "http://twitter.com"
-#  pre      = "fab fa-twitter"
-
-[[menu.topbar]]
-  weight   = 5
-  name     = "Email"
-  url      = "#address"
-# url      = "mailto:info@example.com"
-  pre      = "fas fa-envelope"
-
-[[menu.topbar]]
-  weight   = 6
-  name     = "Search"
-  url      = "/search"
-  pre      = "fas fa-search"
-
-
 # ##################################################
 # theme-defined params
-[params]
 
   # meta data
   # ##############################
@@ -242,11 +26,11 @@ Nam vestibulum accumsan nisl.
               '''
 
   address   = '''
-**nobis eleifend**          
-**Soluta nobis eleifend**   
-illum dolore eu feugiat     
-3612 Steffisburg            
-consectetuer adipiscing     
+**nobis eleifend**
+**Soluta nobis eleifend**
+illum dolore eu feugiat
+3612 Steffisburg
+consectetuer adipiscing
 
 **Switzerland**
               '''
@@ -281,7 +65,7 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-khaki.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
-  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
+  w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
   #w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
@@ -343,7 +127,7 @@ consectetuer adipiscing
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2018-almost-mauve.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2018-arcadia.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2018-blooming-dahlia.css"
-  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2018-ceylon-yellow.css"
+  # w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2018-ceylon-yellow.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2018-cherry-tomato.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2018-chili-oil.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2018-coconut-milk.css"
@@ -510,7 +294,7 @@ consectetuer adipiscing
 
   # used in layouts/partials/head.html
   # use true for https://themes.gohugo.io/hugo-theme-w3css-basic
-  # if fontsUseGoogleApis=true then choose your fonts in [params.googleApiFonts.family.*]  (see below)
+  # if fontsUseGoogleApis=true then choose your fonts in [googleApiFonts.family.*]  (see below)
   fontsUseGoogleApis=true
 
   # Global Site Tag
@@ -540,7 +324,7 @@ consectetuer adipiscing
   # used in layouts/partials/search.google.gcse.html
   googleCustomSearchCX = '002931815551392744433:tnypjyusk2e'
 
-  # for google translate check params.menuTopBar.googleTranslate*
+  # for google translate check menuTopBar.googleTranslate*
 
 
   # teasers
@@ -626,21 +410,21 @@ consectetuer adipiscing
 # theme sections
 # more theme defined params
 
-[params.anchor]
+[anchor]
   # layouts/_default/baseof.html
   enable = true
   icon   = "fas fa-anchor"
   #icon = "fas fa-link"
 
 
-[params.related]
+[related]
   # https://gohugo.io/content-management/related/
   # layouts/partials/main.related.html
   enable        = true
   limitTo       = 5
 
 
-[params.cookieconsent]
+[cookieconsent]
   # https://cookieconsent.insites.com/download/
   # used in layouts/partials/head.cookieconsent.html
   enable           = true
@@ -665,7 +449,7 @@ consectetuer adipiscing
   href             = "https://cookiesandyou.com"
 
 
-[params.favicon]
+[favicon]
   # you may want to use https://realfavicongenerator.net to generate your files
   # used in layouts/partials/head.favicon.html
   # relURL is applied to path
@@ -677,7 +461,7 @@ consectetuer adipiscing
   themeColor             = "#ffffff"
 
 
-[params.marquee]
+[marquee]
   # used in layouts/partials/header.marquee.html
   # enable or disable marquee on frontpage
   enable      = true
@@ -689,7 +473,7 @@ consectetuer adipiscing
   #            '''
 
 
-[params.menuConfig]
+[menuConfig]
   # used in layouts/partials/header.nav.html
   # if set => change menu entry on small displays to lowercase maxChars
   smallDispMenuMaxChars     = 4
@@ -701,7 +485,7 @@ consectetuer adipiscing
   #smallDispMenuCollapseIcon = "fab fa-elementor"
   #smallDispMenuCollapseIcon = "fas fa-align-justify"
 
-[params.menuTopBar]
+[menuTopBar]
   # used in layouts/partials/header.nav.html
   # enable or disable menu.topbar with social icons (right aligned)
   socialEnable              = true
@@ -722,14 +506,14 @@ consectetuer adipiscing
   themeColorSelectorEnable = true
 
 
-[params.jumbotrons]
+[jumbotrons]
   # used in layouts/partials/front.jumbotrons.carousel.html
   # enable or disable jumbotrons on frontpage
   # see some examples in 'exampleSite/data/jumbotron'
   enable   = true
   #enable   = false
 
-[params.photocards]
+[photocards]
   # used in layouts/partials/front.photocards.html
   # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
@@ -741,7 +525,7 @@ consectetuer adipiscing
   resImgCmd     = "Resize"
   resImgCmdOpt  = "300x"
 
-[params.features]
+[features]
   # used in layouts/partials/front.features.html
   # enable or disable features on frontpage
   # see some examples in 'exampleSite/data/features'
@@ -751,7 +535,7 @@ consectetuer adipiscing
   limitTo  = 6
   animate  = false
 
-[params.recentPosts]
+[recentPosts]
   # used in layouts/partials/footer.html
   footerNumOfPosts = 5
   enableFooter   = true
@@ -763,7 +547,7 @@ Pellentesque habitant morbi tristique senectus et netus et malesuada
 fames ac.
              '''
 
-[params.seeMore]
+[seeMore]
   # used in layouts/partials/front.see_more.html
   # enable or disable see_more on frontpage
   enable    = true
@@ -777,7 +561,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
 suscipit lobortis nisl ut aliquip ex ea commodo consequat.
               '''
 
-[params.testimonials]
+[testimonials]
   # used in layouts/partials/front.testimonials.carousel.html
   # enable or disable testimonials on frontpage
   # see some examples in 'exampleSite/data/testimonials'
@@ -789,7 +573,7 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
 labore et dolore magna aliquyam erat, sed diam voluptua.
              '''
 
-[params.clients]
+[clients]
   # used in layouts/partials/front.clients.carousel.html
   # enable or disable clients on frontpage
   # see some examples in 'exampleSite/data/clients'
@@ -805,7 +589,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 **molestie consequat**, vel illum dolore.
              '''
 
-[params.blog]
+[blog]
   # used in layouts/blog/list.html
   title    = "Blog"
   icon     = "fas fa-rss"
@@ -813,7 +597,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
 ultricies eget, tempor sit amet, ante
              '''
 
-[params.googleApiFonts.family]
+[googleApiFonts.family]
   # this section is only relevant if fontsUseGoogleApis=true
 
   # https://www.w3.org/Style/Examples/007/fonts.en.html
@@ -844,22 +628,22 @@ ultricies eget, tempor sit amet, ante
   fallbackHeading = "h1"
   fallbackMono    = "pre"
 
-[params.googleApiFonts.family.html]
+[googleApiFonts.family.html]
   # serif, sans-serif or even cursive
   #sans-serif = "Poppins"
   sans-serif = "Ubuntu"
 
-[params.googleApiFonts.family.time]
+[googleApiFonts.family.time]
   # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
   cursive    = "Creepster"
 
-[params.googleApiFonts.family.h1]
+[googleApiFonts.family.h1]
   # serif, sans-serif or even cursive
   sans-serif = "Signika"
   #sans-serif = "Ubuntu"
   #sans-serif = "Days One"
 
-[params.googleApiFonts.family.pre]
+[googleApiFonts.family.pre]
   # monospace or sans-serif
   #monospace  = "Cousine"
   monospace  = "Ubuntu Mono"
@@ -901,42 +685,42 @@ ultricies eget, tempor sit amet, ante
   # cursive    = "Romanesco"
 
 
-[params.gallery]
+[gallery]
   # used in layouts/shortcodes/heg-gallery.html
   # showFileExtension = true
   # humanizeCaption   = false
 
-[params.resources]
+[resources]
 	# used in layouts/partials/resource.image.html
 	# used in layouts/shortcodes/res-figure.html
 	# used in layouts/shortcodes/res-gallery.html
 	defaultResPagePath	= "resources/images"
 
-[params.resFigure]
+[resFigure]
 	# used in layouts/shortcodes/res-figure.html
-	defaultResPagePath	= "."			 
-	defaultMatch				= "**/*"	 
+	defaultResPagePath	= "."
+	defaultMatch				= "**/*"
 	defaultImgCmd				= "Resize"
 	defaultImgCmdOpt		= "300x"
 	defaultImgCaption		= "%%T"
- 
-[params.resGallery]
+
+[resGallery]
 	# used in layouts/shortcodes/res-gallery.html
-	defaultResPagePath	= "resources/images" 
-	defaultMatch				= "**/*"		 
-	defaulImgCmd				= "Resize"	 
-	defaulImgCmdOpt			= "800x"		 
-	defaulThumbCmd			= "Fit"			 
-	defaultThumbCmdOpt	= "120x120"	 
-	defaultCaptionLong	= "%%F"			 
-	defaultCaptionShort = "%%N"			 
+	defaultResPagePath	= "resources/images"
+	defaultMatch				= "**/*"
+	defaulImgCmd				= "Resize"
+	defaulImgCmdOpt			= "800x"
+	defaulThumbCmd			= "Fit"
+	defaultThumbCmdOpt	= "120x120"
+	defaultCaptionLong	= "%%F"
+	defaultCaptionShort = "%%N"
 
-  #defaulThumbCmd     = "Resize"       
-  #defaultThumbCmdOpt = "100x100"  
-  #defaulThumbCmd     = "Fill"       
-  #defaultThumbCmdOpt = "120x120"  
+  #defaulThumbCmd     = "Resize"
+  #defaultThumbCmdOpt = "100x100"
+  #defaulThumbCmd     = "Fill"
+  #defaultThumbCmdOpt = "120x120"
 
-[params.options]
+[options]
 	# used in layouts/partials/main.headline.nav-right.html
   jsHistoryNav        = true
   jsHistoryNavForward = false
@@ -946,21 +730,10 @@ ultricies eget, tempor sit amet, ante
   navBreadcrumpTitle  = true
   navBreadcrumpHome   = false
 
-[params.taxonomies]
+[taxonomies]
 	# used in layouts/partials/main.taxonomy.full.bar.html
 	# fullBarMinItemsTag			= 3
 	# fullBarMinItemsCategory = 3
 
 # ##################################################
 # other sections
-
-
-[blackfriday]
-  hrefTargetBlank = true
-  # extensions = ["noEmptyLineBeforeBlock"]
-  # extensions = ["hardLineBreak"]
-  # https://gohugo.io/getting-started/configuration/#blackfriday-options
-  # https://gohugo.io/getting-started/configuration/#blackfriday-extensions
-  # https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-  # http://commonmark.org/
-  # http://spec.commonmark.org/0.28/

@@ -1,0 +1,49 @@
+defaultMarkdownHandler = "goldmark"
+#defaultMarkdownHandler = "blackfriday"
+
+[blackFriday]
+  angledQuotes = false
+  footnoteAnchorPrefix = ""
+  footnoteReturnLinkContents = ""
+  fractions = true
+  hrefTargetBlank = true
+  latexDashes = true
+  nofollowLinks = false
+  noreferrerLinks = false
+  plainIDAnchors = true
+  skipHTML = false
+  smartDashes = true
+  smartypants = true
+  smartypantsQuotesNBSP = false
+  taskLists = true
+
+[goldmark]
+  [goldmark.extensions]
+    definitionList = true
+    footnote = false
+    linkify = true
+    strikethrough = true
+    table = true
+    taskList = true
+    typographer = false
+  [goldmark.parser]
+    attribute = true
+    autoHeadingID = true
+  [goldmark.renderer]
+    hardWraps = false
+    unsafe = true
+    xHTML = false
+
+[highlight]
+  codeFences = true
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = false
+  lineNumbersInTable = true
+  noClasses = true
+  style = "monokai"
+  tabWidth = 4
+
+[tableOfContents]
+  endLevel = 6
+  startLevel = 1

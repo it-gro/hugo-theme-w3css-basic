@@ -1,0 +1,220 @@
+# https://gohugo.io/getting-started/configuration/#toml-configuration
+
+# ##################################################
+# Hugo-defined variables
+baseURL       = "https://example.com"
+
+title         = "hugo-theme-w3css-basic exampleSite"
+theme         = "hugo-theme-w3css-basic"
+languageCode  = "en-us"
+#languageCode  = "de-ch"
+
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "en"
+
+#disableFastRender=true
+
+# Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
+enableEmoji   = true
+
+# the length of text to show in a .Summary
+summaryLength = 70
+
+# Pagination (3,6,9,12, ...)
+paginate =  6
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
+
+# https://gohugo.io/content-management/syntax-highlighting/
+pygmentsUseClassic            = false
+pygmentsCodeFences            = true
+pygmentsCodeFencesGuessSyntax = true
+# https://help.farbox.com/pygments.html
+# https://github.com/alecthomas/chroma
+# hugo gen chromastyles --style=autumn        >  syntax.autumn.css
+# ...
+pygmentsUseClasses            = true
+# => static/css/syntax/syntax/syntax.*.css
+# copy one of them to
+# static/css/syntax/syntax.css
+# alternative (if shortcodes/csc*.html are not used):
+# set pygmentsUseClassic to false on choose one of the following:
+#pygmentsStyle = "autumn"
+#pygmentsStyle = "borland"
+#pygmentsStyle = "bw"
+#pygmentsStyle = "colorful"
+#pygmentsStyle = "default"
+#pygmentsStyle = "emacs"
+#pygmentsStyle = "friendly"
+#pygmentsStyle = "fruity"
+#pygmentsStyle = "manni"
+#pygmentsStyle = "monokai"
+#pygmentsStyle = "murphy"
+#pygmentsStyle = "native"
+#pygmentsStyle = "pastie"
+#pygmentsStyle = "perldoc"
+#pygmentsStyle = "rrt"
+#pygmentsStyle = "tango"
+#pygmentsStyle = "trac"
+#pygmentsStyle = "vim"
+#pygmentsStyle = "vs"
+
+
+# Enable Google Analytics by entering your tracking code
+#googleAnalytics = "UA-113314068-2"
+
+
+# RSS Feed
+# Do not build RSS files
+disableRSS = false
+# maximum number of items in the RSS feed
+rssLimit   = 10
+
+[outputs]
+home = [ "HTML", "RSS" ]
+section = [ "HTML", "RSS"]
+
+[imaging]
+# https://gohugo.io/content-management/image-processing/
+# Default resample filter used for resizing. Default is Box,
+# a simple and fast averaging filter appropriate for downscaling.
+# See https://github.com/disintegration/imaging
+resampleFilter = "box"
+
+# Defatult JPEG quality setting. Default is 75.
+quality = 75
+
+# Anchor used when cropping pictures.
+# Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+# Smart Cropping is content aware and tries to find the best crop for each image.
+# Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+anchor = "smart"
+
+
+# ##################################################
+# Theme-defined configuration
+
+# ##################################################
+# hugo sections
+
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+
+[Permalinks]
+  blog = "/blog/:year/:month/:day/:filename/"
+  # blog = "/blog/:year/:month/:title/"
+
+
+# ##################################################
+# Main menu
+[menu]
+
+# provide translations in i18n/*.yaml
+[[menu.main]]
+  weight = 1
+  name   = "Home"
+  url    = "/index.html"
+  pre    = "fas fa-home"
+
+[[menu.main]]
+  weight = 2
+  name   = "Contact"
+  url    = "/contact"
+  pre    = "far fa-address-card"
+
+[[menu.main]]
+  weight = 3
+  name   = "Pages"
+  url    = "/pages"
+  pre    = "fas fa-list"
+
+# demo submenu
+[[menu.main]]
+  weight = 4
+  name   = "Theme"
+  pre    = "fas fa-info-circle"
+  identifier = "theme"
+
+[[menu.main]]
+  weight = 1
+  name   = "About"
+  #url    = "/categories/this-theme/"
+  url    = "/pages/hugo-theme-w3css-basic/"
+  pre    = "fas fa-info fa-fw"
+  parent = "theme"
+
+[[menu.main]]
+  weight = 2
+  name   = "Images"
+  url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
+  pre    = "far fa-images fa-fw"
+  parent = "theme"
+
+[[menu.main]]
+  weight = 3
+  name   = "Showcase"
+  url    = "/pages/showcase/"
+  pre    = "fas fa-eye fa-fw"
+  parent = "theme"
+
+[[menu.main]]
+  weight = 4
+  name   = "Shortcodes"
+  url    = "/pages/hugo-theme-w3css-basic/page-shortcodes/"
+  pre    = "fas fa-eye fa-fw"
+  parent = "theme"
+
+# end submenu
+
+[[menu.main]]
+  weight = 5
+  name   = "Blog"
+  url    = "/blog"
+  pre    = "fas fa-rss"
+
+[[menu.main]]
+  weight = 6
+  name   = "FAQ"
+  url    = "/faq"
+  pre    = "far fa-question-circle"
+
+
+# right aligned
+[[menu.topbar]]
+  weight   = 1
+  name     = "GitHub"
+  url      = "https://github.com/it-gro/hugo-theme-w3css-basic"
+  pre      = "fab fa-github"
+
+[[menu.topbar]]
+  weight   = 2
+  name     = "GitLab"
+  url      = "https://gitlab.com/it-gro"
+  pre      = "fab fa-gitlab"
+
+#[[menu.topbar]]
+#  weight   = 3
+#  name     = "Facebook"
+#  url      = "http://facebook.com"
+#  pre      = "fab fa-facebook"
+
+#[[menu.topbar]]
+#  weight   = 4
+#  name     = "Twitter"
+#  url      = "http://twitter.com"
+#  pre      = "fab fa-twitter"
+
+[[menu.topbar]]
+  weight   = 5
+  name     = "Email"
+  url      = "#address"
+# url      = "mailto:info@example.com"
+  pre      = "fas fa-envelope"
+
+[[menu.topbar]]
+  weight   = 6
+  name     = "Search"
+  url      = "/search"
+  pre      = "fas fa-search"
