@@ -1,8 +1,12 @@
 <!-- https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/asciicast.html  -->
 {{- $id := .Get 0 }}
-<script type="text/javascript" src='https://asciinema.org/a/{{ $id }}.js' id='asciicast-{{ $id }}' data-rows="10" async></script>
+{{/*-
+<script type="text/javascript" src='https://asciinema.org/a/{{ $id }}.js' id='asciicast-{{ $id }}' data-rows="10"
+  async></script> */}}
+<script type="text/javascript" src='https://asciinema.org/a/{{ $id }}.js' id='asciicast-{{ $id }}' async></script>
 <noscript>
-  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }} {{end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }} {{ `
+  <!-- i18n "JsNeeded"  -->` | safeHTML }} {{end}}
   <p>{{ default `no JavaScript` (i18n `JsNeeded`) }} (asciinema)</p>
   <a href='https://asciinema.org/a/{{ $id }}'>https://asciinema.org/a/{{ $id }}</a>
 </noscript>

@@ -527,74 +527,74 @@ code.chroma {
 
 
 {{< highlight text >}}
-   Class | Type
----------|------
-err      | Error
-lntd     | LineTableTD
-lntable  | LineTable
-hl       | LineHighlight
-lnt      | LineNumbersTable
-ln       | LineNumbers
-k        | Keyword
-kc       | KeywordConstant
-kd       | KeywordDeclaration
-kn       | KeywordNamespace
-kp       | KeywordPseudo
-kr       | KeywordReserved
-kt       | KeywordType
-na       | NameAttribute
-nb       | NameBuiltin
-nc       | NameClass
-no       | NameConstant
-nd       | NameDecorator
-ni       | NameEntity
-ne       | NameException
-nf       | NameFunction
-nl       | NameLabel
-nn       | NameNamespace
-nt       | NameTag
-nv       | NameVariable
-s        | LiteralString
-sa       | LiteralStringAffix
-sb       | LiteralStringBacktick
-sc       | LiteralStringChar
-dl       | LiteralStringDelimiter
-sd       | LiteralStringDoc
-s2       | LiteralStringDouble
-se       | LiteralStringEscape
-sh       | LiteralStringHeredoc
-si       | LiteralStringInterpol
-sx       | LiteralStringOther
-sr       | LiteralStringRegex
-s1       | LiteralStringSingle
-ss       | LiteralStringSymbol
-m        | LiteralNumber
-mb       | LiteralNumberBin
-mf       | LiteralNumberFloat
-mh       | LiteralNumberHex
-mi       | LiteralNumberInteger
-il       | LiteralNumberIntegerLong
-mo       | LiteralNumberOct
-o        | Operator
-ow       | OperatorWord
-c        | Comment
-ch       | CommentHashbang
-cm       | CommentMultiline
-c1       | CommentSingle
-cs       | CommentSpecial
-cp       | CommentPreproc
-cpf      | CommentPreprocFile
-gd       | GenericDeleted
-ge       | GenericEmph
-gr       | GenericError
-gh       | GenericHeading
-gi       | GenericInserted
-go       | GenericOutput
-gp       | GenericPrompt
-gs       | GenericStrong
-gu       | GenericSubheading
-gt       | GenericTraceback
-w        | TextWhitespace
+   | Class   | Type                     |
+   | ------- | ------------------------ |
+   | err     | Error                    |
+   | lntd    | LineTableTD              |
+   | lntable | LineTable                |
+   | hl      | LineHighlight            |
+   | lnt     | LineNumbersTable         |
+   | ln      | LineNumbers              |
+   | k       | Keyword                  |
+   | kc      | KeywordConstant          |
+   | kd      | KeywordDeclaration       |
+   | kn      | KeywordNamespace         |
+   | kp      | KeywordPseudo            |
+   | kr      | KeywordReserved          |
+   | kt      | KeywordType              |
+   | na      | NameAttribute            |
+   | nb      | NameBuiltin              |
+   | nc      | NameClass                |
+   | no      | NameConstant             |
+   | nd      | NameDecorator            |
+   | ni      | NameEntity               |
+   | ne      | NameException            |
+   | nf      | NameFunction             |
+   | nl      | NameLabel                |
+   | nn      | NameNamespace            |
+   | nt      | NameTag                  |
+   | nv      | NameVariable             |
+   | s       | LiteralString            |
+   | sa      | LiteralStringAffix       |
+   | sb      | LiteralStringBacktick    |
+   | sc      | LiteralStringChar        |
+   | dl      | LiteralStringDelimiter   |
+   | sd      | LiteralStringDoc         |
+   | s2      | LiteralStringDouble      |
+   | se      | LiteralStringEscape      |
+   | sh      | LiteralStringHeredoc     |
+   | si      | LiteralStringInterpol    |
+   | sx      | LiteralStringOther       |
+   | sr      | LiteralStringRegex       |
+   | s1      | LiteralStringSingle      |
+   | ss      | LiteralStringSymbol      |
+   | m       | LiteralNumber            |
+   | mb      | LiteralNumberBin         |
+   | mf      | LiteralNumberFloat       |
+   | mh      | LiteralNumberHex         |
+   | mi      | LiteralNumberInteger     |
+   | il      | LiteralNumberIntegerLong |
+   | mo      | LiteralNumberOct         |
+   | o       | Operator                 |
+   | ow      | OperatorWord             |
+   | c       | Comment                  |
+   | ch      | CommentHashbang          |
+   | cm      | CommentMultiline         |
+   | c1      | CommentSingle            |
+   | cs      | CommentSpecial           |
+   | cp      | CommentPreproc           |
+   | cpf     | CommentPreprocFile       |
+   | gd      | GenericDeleted           |
+   | ge      | GenericEmph              |
+   | gr      | GenericError             |
+   | gh      | GenericHeading           |
+   | gi      | GenericInserted          |
+   | go      | GenericOutput            |
+   | gp      | GenericPrompt            |
+   | gs      | GenericStrong            |
+   | gu      | GenericSubheading        |
+   | gt      | GenericTraceback         |
+   | w       | TextWhitespace           |
 {{< /highlight >}}
 
 
@@ -700,12 +700,12 @@ pre.terminal-out {
 
 #### Parameters
 
-Argument | Position -1 | Default           | What           | Remark
----------|-------------|-------------------|----------------|-------
-path     | 0           | "."               | path to resource page |
-match    | 1           | **                | glob           |
-label    | 2           | Attachments       | label          | piped into i18n
-icon     | 3           | fas fa-paperclip  | label icon     |
+| Argument | Position -1 | Default          | What                  | Remark          |
+| -------- | ----------- | ---------------- | --------------------- | --------------- |
+| path     | 0           | "."              | path to resource page |
+| match    | 1           | **               | glob                  |
+| label    | 2           | Attachments      | label                 | piped into i18n |
+| icon     | 3           | fas fa-paperclip | label icon            |
 
 
 ### res-figure
@@ -744,29 +744,29 @@ resources:
 
 #### Parameters
 
-Argument | Position -1 | Default | What                  | Remark
----------|-------------|---------|-----------------------|-------
-path     | 0           | "."     | path to resource page | use . for current page
-match    | 1           | *       | images                | in page resource
-cmd      | 2           | Resize  | command               | Fill, Fit or Resize
-opt      | 3           | 300x    | options               | command options
-cap      | 4           | %%N     | caption format        | see below
+| Argument | Position -1 | Default | What                  | Remark                 |
+| -------- | ----------- | ------- | --------------------- | ---------------------- |
+| path     | 0           | "."     | path to resource page | use . for current page |
+| match    | 1           | *       | images                | in page resource       |
+| cmd      | 2           | Resize  | command               | Fill, Fit or Resize    |
+| opt      | 3           | 300x    | options               | command options        |
+| cap      | 4           | %%N     | caption format        | see below              |
 
 
 
 #### Caption format
-Code | What
------|-------------
-%%n  | newline
-%%f  | .Name
-%%F  | Filename
-%%B  | Basename
-%%T  | .Title
-%%N  | .Title or Basename
-%%L  | license
-%%O  | origin
-%%A  | attr
-%%I  | image info
+| Code | What               |
+| ---- | ------------------ |
+| %%n  | newline            |
+| %%f  | .Name              |
+| %%F  | Filename           |
+| %%B  | Basename           |
+| %%T  | .Title             |
+| %%N  | .Title or Basename |
+| %%L  | license            |
+| %%O  | origin             |
+| %%A  | attr               |
+| %%I  | image info         |
 
 
 ### res-gallery
@@ -788,43 +788,43 @@ renders as
 
 * only named parameters
 
-Argument          | Default           | What                   | Remark
-------------------|-------------------|------------------------|-------
-path              | resources/images  | path to resource page  | use . for current
-match             | \*\*/*            | for .Match             |
-imgCmd            | Resize            |                        |
-imgOpt            | 800x              |                        |
-thumbCmd          | Fit               | create thumb           |
-thumbOpt          | 120x120           | thumb size             |
-capLng            | `%%F`             | image caption          |
-capSrt            | `%%N`             | thumb caption          |
-caption-position  | center            |                        | none top center bottom  (none => hide for thumbs)
-caption-effect    | appear            |                        | none fade appear slide  (none => always visible)
-hover-effect      | zoom              |                        | none grow shrink slidedown slideup zoom
-hover-transition  |                   |                        | (empty or) none  (none => hard transition)
+| Argument         | Default          | What                  | Remark                                            |
+| ---------------- | ---------------- | --------------------- | ------------------------------------------------- |
+| path             | resources/images | path to resource page | use . for current                                 |
+| match            | \*\*/*           | for .Match            |
+| imgCmd           | Resize           |                       |
+| imgOpt           | 800x             |                       |
+| thumbCmd         | Fit              | create thumb          |
+| thumbOpt         | 120x120          | thumb size            |
+| capLng           | `%%F`            | image caption         |
+| capSrt           | `%%N`            | thumb caption         |
+| caption-position | center           |                       | none top center bottom  (none => hide for thumbs) |
+| caption-effect   | appear           |                       | none fade appear slide  (none => always visible)  |
+| hover-effect     | zoom             |                       | none grow shrink slidedown slideup zoom           |
+| hover-transition |                  |                       | (empty or) none  (none => hard transition)        |
 
 
 
 #### Page Resources Metadata
 
-Front Matter Param  | What              | Remark
---------------------|-------------------|---------
-Title               |                   |
-attrBy              | attribution names |
-attrLink            | attribution link  |
-caption             | see below         |
-captionLong         | same as caption   | caption for image
-captionShort        |                   | caption for thumb
-imgCmd              |                   |
-imgOpt              |                   |
-license             |                   |
-licenseAbrv         |                   |
-licenseLink         |                   |
-licenseLink         |                   |
-origin              |                   |
-originLink          |                   |
-thumbCmd            |                   |
-thumbOpt            |                   |
+| Front Matter Param | What              | Remark            |
+| ------------------ | ----------------- | ----------------- |
+| Title              |                   |
+| attrBy             | attribution names |
+| attrLink           | attribution link  |
+| caption            | see below         |
+| captionLong        | same as caption   | caption for image |
+| captionShort       |                   | caption for thumb |
+| imgCmd             |                   |
+| imgOpt             |                   |
+| license            |                   |
+| licenseAbrv        |                   |
+| licenseLink        |                   |
+| licenseLink        |                   |
+| origin             |                   |
+| originLink         |                   |
+| thumbCmd           |                   |
+| thumbOpt           |                   |
 
 ```yaml
   - src:           "**/pixabay.com/*"
@@ -839,19 +839,19 @@ thumbOpt            |                   |
 
 
 #### Caption format
-Code | What
------|-------------
-%%n  | newline
-%%f  | .Name
-%%F  | Filename
-%%B  | Basename
-%%T  | .Title
-%%N  | .Title or Basename
-%%l  | license (using licenseabrv)
-%%L  | license
-%%O  | origin
-%%A  | attr
-%%I  | image info
+| Code | What                        |
+| ---- | --------------------------- |
+| %%n  | newline                     |
+| %%f  | .Name                       |
+| %%F  | Filename                    |
+| %%B  | Basename                    |
+| %%T  | .Title                      |
+| %%N  | .Title or Basename          |
+| %%l  | license (using licenseabrv) |
+| %%L  | license                     |
+| %%O  | origin                      |
+| %%A  | attr                        |
+| %%I  | image info                  |
 
 
 #### Style
@@ -1059,8 +1059,7 @@ in {{< w3-codespan >}}i18n/en.yaml{{< /w3-codespan >}}
 * taken from https://github.com/gohugoio/hugo/tree/master/docs/layouts/shortcodes
 * added no javascript fallback
 
-{{< asciicast WJM2LEZQs8VRhNeuZ5NiGPp9I >}}
-
+{{< asciicast qP965GRB1iB0tFxg6YN7VavIm >}}
 
 ## html-tag
 
@@ -1119,16 +1118,16 @@ World
 ## classify
 {{< highlight nolang >}}
 {{</* classify "w3-blue" >}}
-foo | bar
-----|----
- 24 | 42
+| foo | bar |
+| --- | --- |
+| 24  | 42  |
 {{< /classify */>}}
 {{< /highlight >}}
 
 {{< classify "w3-blue" >}}
-foo | bar
-----|----
- 24 | 42
+| foo | bar |
+| --- | --- |
+| 24  | 42  |
 {{< /classify >}}
 
 
@@ -1174,11 +1173,11 @@ kbd {
 ## highlightfile
 
 
-| Argument | Default       | What                                          | Remark                                                                                          |
-|----------|:--------------|:----------------------------------------------|:------------------------------------------------------------------------------------------------|
-| file     |               | the file                                      | starting in /static                                                                             |
+| Argument | Default       | What                                          | Remark                                                                                                                                       |
+| -------- | :------------ | :-------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| file     |               | the file                                      | starting in /static                                                                                                                          |
 | language | python        | optional: language                            | see [list-of-chroma-highlighting-languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) |
-| opt      | linenos=table | optional: options for hugo highlight shortcut | see [highlighting-in-code-fences)](https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences)       |
+| opt      | linenos=table | optional: options for hugo highlight shortcut | see [highlighting-in-code-fences)](https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences)                    |
 
 
 {{< highlight nolan >}}
@@ -1194,11 +1193,11 @@ renders as
 * inspired by https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/readfile.html
 * reads a file (or directory) and optionally renders ist using markdownify or highlight
 
-Argument | Position -1 | Default | What             | Remark
----------|-------------|---------|:-----------------|:------
-file     | 0           | .       | a file (or dir)  | . or ending in /. => directory
-md       | 1           |         | markdownify      | if "true" => process using markdownify
-hll      | 2           | md      | highlight lang   | see [list-of-chroma-highlighting-languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages)
+| Argument | Position -1 | Default | What            | Remark                                                                                                                                       |
+| -------- | ----------- | ------- | :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| file     | 0           | .       | a file (or dir) | . or ending in /. => directory                                                                                                               |
+| md       | 1           |         | markdownify     | if "true" => process using markdownify                                                                                                       |
+| hll      | 2           | md      | highlight lang  | see [list-of-chroma-highlighting-languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages) |
 
 {{< w3-code >}}
 {{</* readfile "content/." */>}}
@@ -1251,14 +1250,14 @@ renders as:
 
 
 {{< highlight text >}}
-Argument | Position -1 | Default | What             | Remark
----------|-------------|---------|------------------|-------
-search   | 0           |         | string to search |
-op       | 1           | eq      | eq|in            | (Operator)
-mod      | 2           |         | i                | (Modifier) i:ignore case
-ul       | 3           |         |                  | if not empty: create unordered list
-type     | 4           | regular | regular|all      | regular:$.Site.RegularPages  all:$.Site.Pages)
-ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
+| Argument | Position -1 | Default | What             | Remark                                    |
+| -------- | ----------- | ------- | ---------------- | ----------------------------------------- |
+| search   | 0           |         | string to search |
+| op       | 1           | eq      | eq               | in                                        | (Operator)                                     |
+| mod      | 2           |         | i                | (Modifier) i:ignore case                  |
+| ul       | 3           |         |                  | if not empty: create unordered list       |
+| type     | 4           | regular | regular          | all                                       | regular:$.Site.RegularPages  all:$.Site.Pages) |
+| ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title |
 {{< /highlight >}}
 
 
@@ -1281,27 +1280,27 @@ See more here: {{< liti "highlight" "in" >}}
 
 Here are more examples using **eq** operator
 
-Shortcode                                                                  | Result
----------------------------------------------------------------------------|--------------------------------
-{{</* liti search="Vestibulum"                                       */>}} | {{< liti search="Vestibulum"                                       >}}
-{{</* liti search="Vestibulum" type="regular" op="eq"                */>}} | {{< liti search="Vestibulum" type="regular" op="eq"                >}}
-{{</* liti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" */>}} | {{< liti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" >}}
-{{</* liti search="VeSTIBULUM"                        mod="i" ul="1" */>}} | {{< liti search="VeSTIBULUM"                        mod="i" ul="1" >}}
-{{</* liti search="Phasellus"  type="all"                     ul="1" */>}} | {{< liti search="Phasellus"  type="all"                     ul="1" >}}
-{{</* liti search="Phasellus"  type="all" ofm=".Title"        ul="1" */>}} | {{< liti search="Phasellus"  type="all" ofm=".Title"        ul="1" >}}
-{{</* liti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" */>}} | {{< liti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" >}}
-{{</* liti search="Phasellus"  type="all" ofm=".RelPermalink"        */>}} | {{< liti search="Phasellus"  type="all" ofm=".RelPermalink"        >}}
+| Shortcode                                                                  | Result                                                                 |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| {{</* liti search="Vestibulum"                                       */>}} | {{< liti search="Vestibulum"                                       >}} |
+| {{</* liti search="Vestibulum" type="regular" op="eq"                */>}} | {{< liti search="Vestibulum" type="regular" op="eq"                >}} |
+| {{</* liti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" */>}} | {{< liti search="VeSTIBULUM" type="regular" op="eq" mod="i" ul="1" >}} |
+| {{</* liti search="VeSTIBULUM"                        mod="i" ul="1" */>}} | {{< liti search="VeSTIBULUM"                        mod="i" ul="1" >}} |
+| {{</* liti search="Phasellus"  type="all"                     ul="1" */>}} | {{< liti search="Phasellus"  type="all"                     ul="1" >}} |
+| {{</* liti search="Phasellus"  type="all" ofm=".Title"        ul="1" */>}} | {{< liti search="Phasellus"  type="all" ofm=".Title"        ul="1" >}} |
+| {{</* liti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" */>}} | {{< liti search="Phasellus"  type="all" ofm=".Kind .Title"  ul="1" >}} |
+| {{</* liti search="Phasellus"  type="all" ofm=".RelPermalink"        */>}} | {{< liti search="Phasellus"  type="all" ofm=".RelPermalink"        >}} |
 
 
 Here are some examples using **in** operator
 
-Shortcode                                                                               | Result
-----------------------------------------------------------------------------------------|--------------------------------
-{{</* liti op="in" search="theme"                                                 */>}} | {{< liti op="in" search="theme"                                                         >}}
-{{</* liti op="in" search="theme"                                  mod="i" ul="1" */>}} | {{< liti op="in" search="theme"                                  mod="i" ul="1"         >}}
-{{</* liti op="in" search="theme"  type="all"                      mod="i" ul="1" */>}} | {{< liti op="in" search="theme"  type="all"                      mod="i" ul="1"         >}}
-{{</* liti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1" */>}} | {{< liti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1"         >}}
-{{</* liti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1" */>}} | {{< liti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1"         >}}
+| Shortcode                                                                               | Result                                                                                      |
+| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| {{</* liti op="in" search="theme"                                                 */>}} | {{< liti op="in" search="theme"                                                         >}} |
+| {{</* liti op="in" search="theme"                                  mod="i" ul="1" */>}} | {{< liti op="in" search="theme"                                  mod="i" ul="1"         >}} |
+| {{</* liti op="in" search="theme"  type="all"                      mod="i" ul="1" */>}} | {{< liti op="in" search="theme"  type="all"                      mod="i" ul="1"         >}} |
+| {{</* liti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1" */>}} | {{< liti op="in" search="theme"  type="all" ofm=".Kind .Title"   mod="i" ul="1"         >}} |
+| {{</* liti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1" */>}} | {{< liti op="in" search="theme"  type="all" ofm=".RelPermalink"  mod="i" ul="1"         >}} |
 
 
 With positional parameters:
@@ -1332,11 +1331,11 @@ See more here: {{< liti "Vestibulum" "in" "" "ul" >}}
 
 * this will return just one link, the taxonomy/taxonomyterm link with a configurable text
 
-Argument | Position -1 | Default | What             | Remark
----------|-------------|---------|------------------|-------
-tax      | 0           | tags    | taxonomy         |
-term     | 1           | *       | taxonomyterm     |
-ofm      | 2           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
+| Argument | Position -1 | Default | What         | Remark                                    |
+| -------- | ----------- | ------- | ------------ | ----------------------------------------- |
+| tax      | 0           | tags    | taxonomy     |
+| term     | 1           | *       | taxonomyterm |
+| ofm      | 2           | .Title  |              | (OutputFormat) .Kind .RelPermalink .Title |
 
 
 {{< cscb c >}}
@@ -1367,36 +1366,36 @@ ToDo: See more here: {{</* litt "categories" "Golang" ".RelPermalink" */>}}
 * case is ignored (no mod switch as [liti](#liti) has)
 
 
-Argument | Position -1 | Default | What             | Remark
----------|-------------|---------|------------------|-------
-tax      | 0           | tags    | string to search | in the taxonomy
-term     | 1           | *       | string to search | in the taxonomy term
-title    | 2           | *       | string to search | in the title
-op       | 3           | eq      | en|in            | (Operator) *eq* or *in* search
-om       | 4           | t       | t,p              | (OutputMode) *t*axonomyterm *p*age
-ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title
+| Argument | Position -1 | Default | What             | Remark                                    |
+| -------- | ----------- | ------- | ---------------- | ----------------------------------------- |
+| tax      | 0           | tags    | string to search | in the taxonomy                           |
+| term     | 1           | *       | string to search | in the taxonomy term                      |
+| title    | 2           | *       | string to search | in the title                              |
+| op       | 3           | eq      | en               | in                                        | (Operator) *eq* or *in* search |
+| om       | 4           | t       | t,p              | (OutputMode) *t*axonomyterm *p*age        |
+| ofm      | 5           | .Title  |                  | (OutputFormat) .Kind .RelPermalink .Title |
 
 
 Using positional parameters:
 
-Shortcode                                 | Result
-------------------------------------------|-----------------------------
-{{</* litx "*" "Nullam"             */>}} | {{< litx "*" "Nullam"             >}}
-{{</* litx "*" "*" "Null" "in" "p"  */>}} | {{< litx "*" "*" "Null" "in" "p"  >}}
+| Shortcode                                 | Result                                |
+| ----------------------------------------- | ------------------------------------- |
+| {{</* litx "*" "Nullam"             */>}} | {{< litx "*" "Nullam"             >}} |
+| {{</* litx "*" "*" "Null" "in" "p"  */>}} | {{< litx "*" "*" "Null" "in" "p"  >}} |
 
 
 Using named parameters:
 
-Shortcode                                                                 | Result
---------------------------------------------------------------------------|---------------------------
-{{</* litx tax="tags"        term="go" op="in"                      */>}} | {{< litx tax="tags"        term="go" op="in"                     >}}
-{{</* litx                   term="Nullam"                          */>}} | {{< litx                   term="Nullam"                         >}}
-{{</* litx                   term="Nullam" om="p"                   */>}} | {{< litx                   term="Nullam" om="p"                  >}}
-{{</* litx                   term="Nullam" om="tp"                  */>}} | {{< litx                   term="Nullam" om="tp"                 >}}
-{{</* litx                   term="web"                             */>}} | {{< litx                   term="web"                            >}}
-{{</* litx tax="categories"  term="web"                             */>}} | {{< litx tax="categories"  term="web"                            >}}
-{{</* litx tax="*"           term="web" om="p"                      */>}} | {{< litx tax="*"           term="web" om="p"                     >}}
-{{</* litx tax="*"           term="web" om="pt" ofm=".RelPermalink" */>}} | {{< litx tax="*"           term="web" om="pt" ofm=".RelPermalink" >}}
+| Shortcode                                                                 | Result                                                                |
+| ------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| {{</* litx tax="tags"        term="go" op="in"                      */>}} | {{< litx tax="tags"        term="go" op="in"                     >}}  |
+| {{</* litx                   term="Nullam"                          */>}} | {{< litx                   term="Nullam"                         >}}  |
+| {{</* litx                   term="Nullam" om="p"                   */>}} | {{< litx                   term="Nullam" om="p"                  >}}  |
+| {{</* litx                   term="Nullam" om="tp"                  */>}} | {{< litx                   term="Nullam" om="tp"                 >}}  |
+| {{</* litx                   term="web"                             */>}} | {{< litx                   term="web"                            >}}  |
+| {{</* litx tax="categories"  term="web"                             */>}} | {{< litx tax="categories"  term="web"                            >}}  |
+| {{</* litx tax="*"           term="web" om="p"                      */>}} | {{< litx tax="*"           term="web" om="p"                     >}}  |
+| {{</* litx tax="*"           term="web" om="pt" ofm=".RelPermalink" */>}} | {{< litx tax="*"           term="web" om="pt" ofm=".RelPermalink" >}} |
 
 
 ## hc
