@@ -717,12 +717,14 @@ pre.terminal-out {
 {{< w3-code >}}
 {{</* res-figure "." "img/pixabay.com/penguin-21*" />}}
 {{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}}
-{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" /*/>}}
+{{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" />}}
+{{< res-figure path="." match="img/pixabay.com/penguin-21*" href="https://google.com" /*/>}}
 {{< /w3-code >}}
 
 {{< res-figure "." "img/pixabay.com/penguin-21*" />}}
 {{< res-figure "." "img/pixabay.com/penguin-21*" "Fit"  "200x200" />}}
 {{< res-figure "." "img/pixabay.com/penguin-21*" "Fill" "200x200" />}}
+{{< res-figure path="." match="img/pixabay.com/penguin-21*" href="https://google.com"/>}}
 
 ```yaml
 resources:
@@ -751,6 +753,7 @@ resources:
 | cmd      | 2           | Resize  | command               | Fill, Fit or Resize    |
 | opt      | 3           | 300x    | options               | command options        |
 | cap      | 4           | %%N     | caption format        | see below              |
+| href     | 5           |         | url when clicked      |                        |
 
 
 

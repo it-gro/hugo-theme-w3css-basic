@@ -18,7 +18,8 @@
   {{- $.Scratch.Set `theCommand`      (.Get `cmd`   )  }}
   {{- $.Scratch.Set `theOptions`      (.Get `opt`   )  }}
   {{- $.Scratch.Set `theCaption`      (.Get `cap`   )  }}
-{{- else }}
+  {{- $.Scratch.Set `theHref`         (.Get `href`  )  }}
+  {{- else }}
   {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theResPagePath` (.Get $myPos) }} {{end}}
   {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theMatch`       (.Get $myPos) }} {{end}}
   {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set `theCommand`     (.Get $myPos) }} {{end}}
@@ -100,10 +101,16 @@
     {{- $myImage := $.Scratch.Get `myImageConverted` }}
 
     <figure class='res-figure no-photoswipe'  style="width: {{ $myImage.Width }}px;">
+      {{- if ($.Scratch.Get `theHref`) }}
+        <a class="no-decoration" target="blank" href="{{$.Scratch.Get `theHref`}}">
+      {{- end }}
       <img src="{{ $myImage.RelPermalink }}"
         alt="{{ $myCapFileName }}"
         width="{{ $myImage.Width }}" height="{{ $myImage.Height }}"
       >
+      {{- if ($.Scratch.Get `theHref`) }}
+        </a>
+      {{- end }}
       <figcaption class='res-figcaption'>
         {{- with $.Inner }}
           {{- . | markdownify }}
