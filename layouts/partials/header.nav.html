@@ -38,20 +38,20 @@
   {{- template `header-nav-entry` . }}
 
   {{- if .Site.Menus.topbar }}
-  {{- if $.Site.Params.menutopbar.socialEnable }}
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-      {{ `<!-- range .Site.Menus.topbar.ByWeight -->` | safeHTML }}
-    {{- end}}
-    {{- range .Site.Menus.topbar.ByWeight }}
-  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right" ><i class='{{ .Pre }}'></i></a>
-    {{- end }}
-  {{- end }}
+    {{- if $.Site.Params.menutopbar.socialEnable }}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- range .Site.Menus.topbar.ByWeight -->` | safeHTML }}
+      {{- end}}
+      {{- range .Site.Menus.topbar.ByWeight }}
+    <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right" ><i class='{{ .Pre }}'></i></a>
+      {{- end }}
+    {{- end }} {{/* socialEnable */}}
 
-  {{- if $.Site.Params.menutopbar.googleTranslateEnable }}
-    {{- if or (not .IsHome) $.Site.Params.menutopbar.googleTranslateShowOnHome }}
-      {{ partial `header.nav.google.translate.html` . -}}
+    {{- if $.Site.Params.menutopbar.googleTranslateEnable }}
+      {{- if or (not .IsHome) $.Site.Params.menutopbar.googleTranslateShowOnHome }}
+        {{ partial `header.nav.google.translate.html` . -}}
+      {{- end }}
     {{- end }}
-  {{- end }}
 
   {{- end }} {{/* topbar */}}
 
@@ -71,16 +71,17 @@
   {{- template `header-nav-entry` . }}
 
   {{- if .Site.Menus.topbar }}
-  {{- if $.Site.Params.menutopbar.socialEnable }}
-  {{- if $.Site.Params.menutopbar.numOfItemsIfMediumDisplay }}
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-      {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfMediumDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
-    {{- end}}
-    {{- range first $.Site.Params.menutopbar.numOfItemsIfMediumDisplay .Site.Menus.topbar.ByWeight }}
-  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-medium" ><i class='{{ .Pre }}'></i></a>
-    {{- end }} {{/* range */}}
-  {{- end }} {{/* numOfItemsIfMediumDisplay */}}
-  {{- end }}{{/* socialEnable */}}
+    {{- if $.Site.Params.menutopbar.socialEnable }}
+      {{- if $.Site.Params.menutopbar.numOfItemsIfMediumDisplay }}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfMediumDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
+        {{- end}}
+        {{- range first $.Site.Params.menutopbar.numOfItemsIfMediumDisplay .Site.Menus.topbar.ByWeight }}
+      <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-medium" ><i class='{{ .Pre }}'></i></a>
+        {{- end }} {{/* range */}}
+      {{- end }} {{/* numOfItemsIfMediumDisplay */}}
+    {{- end }}{{/* socialEnable */}}
+
 
   {{- end }} {{/* topbar */}}
 
@@ -100,17 +101,17 @@
   {{- end}}
 
   {{- if $.Site.Params.menutopbar.socialEnable }}
-  {{- if .Site.Menus.topbar }}
-  {{- if $.Site.Params.menutopbar.numOfItemsIfSmallDisplayCollapsed }}
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-      {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
-    {{- end}}
-    {{- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplayCollapsed .Site.Menus.topbar.ByWeight }}
-  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-small" ><i class='{{ .Pre }}'></i></a>
-    {{- end }}
-  {{- end }}
-  {{- end }}
-  {{- end }}
+    {{- if .Site.Menus.topbar }}
+      {{- if $.Site.Params.menutopbar.numOfItemsIfSmallDisplayCollapsed }}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
+        {{- end}}
+        {{- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplayCollapsed .Site.Menus.topbar.ByWeight }}
+      <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-small" ><i class='{{ .Pre }}'></i></a>
+        {{- end }}
+      {{- end }} {{/* numOfItemsIfSmallDisplayCollapsed */}}
+    {{- end }}{{/* topbar */}}
+  {{- end }}{{/* socialEnable */}}
 
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="showMenu()"><i class="{{default `fas fa-bars` $.Site.Params.menuConfig.smallDispMenuCollapseIcon }}"></i></a>
   {{/* &#9776; */}}
@@ -132,17 +133,18 @@
   {{- template `header-nav-entry` . }}
 
   {{- if $.Site.Params.menutopbar.socialEnable }}
-  {{- if .Site.Menus.topbar }}
-  {{- if $.Site.Params.menutopbar.numOfItemsIfSmallDisplay }}
-    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
-      {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
-    {{- end}}
-    {{- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight }}
-  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-small" ><i class='{{ .Pre }}'></i></a>
-    {{- end }}
-  {{- end }}
-  {{- end }}
-  {{- end }}
+    {{- if .Site.Menus.topbar }}
+      {{- if $.Site.Params.menutopbar.numOfItemsIfSmallDisplay }}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
+        {{- end}}
+        {{- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight }}
+      <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-small" ><i class='{{ .Pre }}'></i></a>
+        {{- end }}
+      {{- end }} {{/* numOfItemsIfSmallDisplayCollapsed */}}
+    {{- end }}{{/* topbar */}}
+  {{- end }}{{/* socialEnable */}}
+
 </div> <!-- w3-bar -->
 {{- end }}
 
