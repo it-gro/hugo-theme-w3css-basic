@@ -77,9 +77,13 @@ kbd {
 /* -------------------------------------------------- */
 /* TableOfContents */
 
-/* #TableOfContents>ul{padding:0} */
-#TableOfContents>ul>li{list-style-type:none}
-#TableOfContents>ul>li>ul>li{list-style-type:disc}
+#TableOfContents * {padding-left: 5px;}
+#TableOfContents>ul>li{list-style-type: none;}
+#TableOfContents>ul>li>ul>li{list-style-type: square;}
+#TableOfContents>ul>li>ul>li>ul>li{list-style-type: disc;}
+#TableOfContents>ul>li>ul>li>ul>li>ul>li{list-style-type: circle;}
+#TableOfContents>ul * li{padding-left: 10px;}
+
 
 /* -------------------------------------------------- */
 /* Tables */

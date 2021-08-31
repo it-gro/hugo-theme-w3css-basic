@@ -19,8 +19,13 @@
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!--  .Paginate .Data.Pages -->` | safeHTML }}
   {{- end}}
+
+  {{- $pages := .Data.Pages }}
+  {{- $sorted := $pages.ByParam "Title" }}
+  {{- $paginator := .Paginate $sorted }}
   {{/* $paginator := .Paginate (where .Data.Pages `Type` `blog`) */}}
-  {{- $paginator := .Paginate .Data.Pages }}
+  {{/*- $paginator := .Paginate .Data.Pages */}}
+
   {{ partial `main.paginator.bar.html` . }}
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
     {{ `<!--  back in _default/taxonomy.html  -->` | safeHTML }}

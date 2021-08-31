@@ -4,6 +4,8 @@ File should be located either in the same directory or full path should be speci
 -->
 
 {{- $src := (.Get "file") -}}
+{{/* {{- $lang := .Get "language" | default ("python") }} */}}
+
 {{- $lang := .Get "language" | default ("python") }}
 {{- $opt := .Get "opt" | default ("linenos=table") }}
 

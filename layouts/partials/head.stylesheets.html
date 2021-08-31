@@ -21,7 +21,7 @@
 <!-- <link rel="stylesheet" href='{{ relURL `css/syntax.min.css`   }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' /> -->
 <link href="{{ .Site.BaseURL }}{{- with .Site.Params.syntaxStyle}}/css/syntax/syntax.{{.}}.css{{else}}/css/syntax.css{{end}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet"> {{/* Highlight */}}
 <link rel="stylesheet" href='{{ relURL `css/w3css-basic.css`    }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
-<link rel="stylesheet" href='{{ relURL `css/res-gallery.min.css`  }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+<link rel="stylesheet" href='{{ relURL `css/res-gallery.css  `  }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 
 <link rel="stylesheet" href='{{ relURL `css/custom.css`           }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 {{- range .Site.Params.custom_css }}
