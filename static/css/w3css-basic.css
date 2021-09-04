@@ -578,6 +578,38 @@ td:nth-child(2) > pre.chroma { margin: 5px 0px 5px 0px; border-radius: 0; border
 }
 
 
+/* readfiles markdonw form jupyter */
+
+.dataframe {
+  /* color:            var(--gray-dark); */
+  font-family:      monospace;
+  font-size:        0.8rem;
+}
+
+/* header */
+.dataframe thead th {
+  font-weight:      bold;
+  color:            #000;
+  background-color: #999;
+  text-align:       left !important;
+}
+
+/* first col */
+.dataframe tbody tr th {
+  font-weight:      bold;
+  font-style:       italic;
+  color:            #000;
+  background-color: #bbb;
+  text-align:       left !important;
+}
+
+/* body */
+.dataframe tbody tr {
+  color:            #000;
+  background-color: #ddd;
+  text-align:       left !important;
+}
+
 /* ------------------------------------------------------------------------------ */
 /* -- Local variables:      */
 /* -- tab-width:         2  */
