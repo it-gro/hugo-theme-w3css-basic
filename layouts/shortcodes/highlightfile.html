@@ -3,11 +3,18 @@ Highlights file and provides download link.
 File should be located either in the same directory or full path should be specified.
 -->
 
-{{- $src := (.Get "file") -}}
-{{/* {{- $lang := .Get "language" | default ("python") }} */}}
+{{- $src   := .Get "file"                                 }}
+{{- $lang  := .Get "language" | default ("python")        }}
+{{- $opt   := .Get "opt"      | default ("linenos=table") }}
+{{- $theme := .Get "theme"    | default ("")              }}
 
-{{- $lang := .Get "language" | default ("python") }}
-{{- $opt := .Get "opt" | default ("linenos=table") }}
+{{- if eq $theme "default" -}}
+  {{ $theme = (default "w3-theme-l3" ($.Site.Param `colorShortcodeHighlightfile`) ) }}
+{{- end -}}
+
+{{- if in $theme "w3-theme" -}}
+ <div class="w3-container {{ $theme }}" >
+{{- end -}}
 
 {{- if in $src "/" -}}
   {{ $filelink := (strings.TrimPrefix "/static" $src ) }}
@@ -36,4 +43,8 @@ File should be located either in the same directory or full path should be speci
 
   {{ highlight (trim (readFile (printf "content/%s" $file)) "\n") $lang $opt}}
 
+{{- end -}}
+
+{{- if in $theme "w3-theme" -}}
+ </div>
 {{- end -}}
