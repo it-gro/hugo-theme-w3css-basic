@@ -1,11 +1,11 @@
 /* Background */ .chroma { background-color: #f8f8f8 }
 /* Other */ .chroma .x { color: #000000 }
 /* Error */ .chroma .err { color: #a40000 }
-/* LineTableTD */ .chroma .lntd { ; vertical-align: top; padding: 0; margin: 0; border: 0; }
-/* LineTable */ .chroma .lntable { ; border-spacing: 0; padding: 0; margin: 0; border: 0; width: 100%; overflow: auto; display: block; }
-/* LineHighlight */ .chroma .hl { background-color: #ffffcc; display: block; width: 100% }
-/* LineNumbersTable */ .chroma .lnt { ; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; display: block; }
-/* LineNumbers */ .chroma .ln { ; margin-right: 0.4em; padding: 0 0.4em 0 0.4em; }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
+/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #ffffcc }
+/* LineNumbersTable */ .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+/* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
 /* Keyword */ .chroma .k { color: #204a87; font-weight: bold }
 /* KeywordConstant */ .chroma .kc { color: #204a87; font-weight: bold }
 /* KeywordDeclaration */ .chroma .kd { color: #204a87; font-weight: bold }
@@ -78,4 +78,5 @@
 /* GenericStrong */ .chroma .gs { color: #000000; font-weight: bold }
 /* GenericSubheading */ .chroma .gu { color: #800080; font-weight: bold }
 /* GenericTraceback */ .chroma .gt { color: #a40000; font-weight: bold }
-/* TextWhitespace */ .chroma .w { color: #f8f8f8 }
+/* GenericUnderline */ .chroma .gl { color: #000000; text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #f8f8f8; text-decoration: underline }

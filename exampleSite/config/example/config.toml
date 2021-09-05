@@ -30,36 +30,50 @@ disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
 pygmentsUseClassic            = false
 pygmentsCodeFences            = true
 pygmentsCodeFencesGuessSyntax = true
-# https://help.farbox.com/pygments.html
-# https://github.com/alecthomas/chroma
-# hugo gen chromastyles --style=autumn        >  syntax.autumn.css
-# ...
 pygmentsUseClasses            = true
 # => static/css/syntax/syntax/syntax.*.css
 # copy one of them to
 # static/css/syntax/syntax.css
 # alternative (if shortcodes/csc*.html are not used):
 # set pygmentsUseClassic to false on choose one of the following:
+#pygmentsStyle = "abap"
+#pygmentsStyle = "algol"
+#pygmentsStyle = "algol_nu"
+#pygmentsStyle = "api"
+#pygmentsStyle = "arduino"
 #pygmentsStyle = "autumn"
 #pygmentsStyle = "borland"
 #pygmentsStyle = "bw"
 #pygmentsStyle = "colorful"
 #pygmentsStyle = "default"
+#pygmentsStyle = "dracula"
 #pygmentsStyle = "emacs"
 #pygmentsStyle = "friendly"
 #pygmentsStyle = "fruity"
+#pygmentsStyle = "github"
+#pygmentsStyle = "igor"
+#pygmentsStyle = "lovelace"
 #pygmentsStyle = "manni"
 #pygmentsStyle = "monokai"
+#pygmentsStyle = "monokailight"
 #pygmentsStyle = "murphy"
 #pygmentsStyle = "native"
+#pygmentsStyle = "paraiso-dark"
+#pygmentsStyle = "paraiso-light"
 #pygmentsStyle = "pastie"
 #pygmentsStyle = "perldoc"
+#pygmentsStyle = "pygments"
+#pygmentsStyle = "rainbow_dash"
 #pygmentsStyle = "rrt"
+#pygmentsStyle = "solarized-dark256"
+#pygmentsStyle = "solarized-dark"
+#pygmentsStyle = "solarized-light"
+#pygmentsStyle = "swapoff"
 #pygmentsStyle = "tango"
 #pygmentsStyle = "trac"
 #pygmentsStyle = "vim"
 #pygmentsStyle = "vs"
-
+#pygmentsStyle = "xcode"
 
 # Enable Google Analytics by entering your tracking code
 #googleAnalytics = "UA-113314068-2"

@@ -506,7 +506,8 @@ pre.w3-code, pre.chroma {
   border:           1px solid;
   padding:          10px 6px 10px 6px;
   overflow:         auto;
-  line-height:      1.2;
+  font-size:        medium;
+  line-height:      1;
 }
 
 /* -------------------------------------------------- */

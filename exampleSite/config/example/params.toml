@@ -250,7 +250,12 @@ consectetuer adipiscing
   #
   # layouts/partials/main.related.html
   colorRelatedBar                       = "w3-theme-l3"
-
+  #
+  # layouts/shortcodes/readfile.html
+  colorShortcodeReadfile                = "w3-theme-l3"
+  #
+  # layouts/shortcodes/highlightfile.html
+  colorShortcodeHighlightfile           = "w3-theme-l3"
 
   # used in layouts/shortcodes/alert.html
   colorAlertPrimary                     = "w3-purple"
