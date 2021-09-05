@@ -490,6 +490,13 @@ code.chroma {
   font-weight: bold;
 }
 
+
+/* -------------------------------------------------- */
+/* */
+pre {
+  line-height:      1;
+}
+
 /* -------------------------------------------------- */
 /* shortcodes w3-code w3-codespan */
 pre.w3-code, span.w3-codespan{
