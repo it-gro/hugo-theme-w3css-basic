@@ -8,10 +8,10 @@
 {{- $myTheme         := ``   }}
 
 {{- if .IsNamedParams -}}
-  {{- $myFile          = default ($myFile          ) (.Get `file`  ) }}
-  {{- $myMarkdownify   = default ($myMarkdownify   ) (.Get `md`    ) }}
-  {{- $myHighlightLang = default ($myHighlightLang ) (.Get `hll`   ) }}
-  {{- $myTheme         = default ($myTheme         ) (.Get `theme` ) }}
+  {{- $myFile          = default $myFile          (.Get `file`  ) }}
+  {{- $myMarkdownify   = default $myMarkdownify   (.Get `md`    ) }}
+  {{- $myHighlightLang = default $myHighlightLang (.Get `hll`   ) }}
+  {{- $myTheme         = default $myTheme         (.Get `theme` ) }}
 {{- else -}}
   {{- $myPos := 0}} {{- if gt (len .Params) $myPos }} {{- $myFile          = .Get $myPos }} {{- end -}}
   {{- $myPos := 1}} {{- if gt (len .Params) $myPos }} {{- $myMarkdownify   = .Get $myPos }} {{- end -}}

@@ -3,10 +3,10 @@ Highlights file and provides download link.
 File should be located either in the same directory or full path should be specified.
 -->
 
-{{- $src   := .Get "file"                                 }}
-{{- $lang  := .Get "language" | default ("python")        }}
-{{- $opt   := .Get "opt"      | default ("linenos=table") }}
-{{- $theme := .Get "theme"    | default ("")              }}
+{{- $src   := .Get "file"                               }}
+{{- $lang  := .Get "language" | default "python"        }}
+{{- $opt   := .Get "opt"      | default "linenos=table" }}
+{{- $theme := .Get "theme"    | default ""              }}
 
 {{- if eq $theme "default" -}}
   {{ $theme = (default "w3-theme-l3" ($.Site.Param `colorShortcodeHighlightfile`) ) }}
