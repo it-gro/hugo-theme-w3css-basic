@@ -10,7 +10,7 @@
   {{- range $name, $items := .Site.Taxonomies.categories }}
     {{- if gt (len $items) (default 0 $.Site.Params.taxonomies.fullBarMinItemsCategory ) }}
       {{ if $name }}<a href='{{ `categories/` | relURL }}{{ $name | urlize }}{{ if $.Site.Params.uglyURLs }}{{$.Site.Params.uglyUrl}}{{ end }}' class="taxonomy-button w3-button">{{ $name }} ({{ len $items }})</a>{{ end }}
-g    {{- end }}
+    {{- end }}
   {{- end }}
 {{- end }}
 {{- end }}
