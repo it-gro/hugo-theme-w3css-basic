@@ -29,6 +29,7 @@
 
       {{- if  $.Scratch.Get `family` }}
         {{- $myHref := (printf `href='%s%s'` `https://fonts.googleapis.com/css?family=` ($.Scratch.Get `family`) )  }}
+  {{ `<!-- DO NOT USE THIS IF THE SITE IS HOSTED IN GERMANY (https://www.gesetze-bayern.de/Content/Document/Y-300-Z-BECKRS-B-2022-N-612) -->` | safeHTML }}
   <link rel="stylesheet" {{$myHref | safeHTMLAttr}} />
       {{- else }}
         {{/* no font names found ... */}}
