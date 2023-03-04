@@ -561,7 +561,7 @@ fames ac.
  #enable    = false
   icon      = "far fa-file-code"
   title     = "Do You want to see More?"
-  linkUrl   = "/pages"
+  linkUrl   = "pages"
   linkText  = "consectetuer adipiscing"
   subtitle  = '''
 Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
