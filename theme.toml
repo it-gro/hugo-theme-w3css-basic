@@ -88,7 +88,7 @@ features       = [
                  , "w3css"
                  ]
 
-min_version    = "0.111.1"  # now in config.toml
+min_version    = "0.101"  # now in config.toml
 
 [author]
   name         = "it-gro"
