@@ -86,7 +86,7 @@ features       = [
                  , "tracing"
                  , "w3css"
                  ]
-min_version    = "0.57.1"
+min_version    = "0.111.1"
 
 [author]
   name         = "it-gro"
