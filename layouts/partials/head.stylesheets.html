@@ -8,7 +8,7 @@
 <link rel="stylesheet" href='{{ relURL `vendor/OwlCarousel2/assets/owl.carousel.min.css`                 }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 <link rel="stylesheet" href='{{ relURL `vendor/OwlCarousel2/assets/owl.theme.default.min.css`            }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 
-<link rel="stylesheet" href='{{ relURL `vendor/w3css/4/4.13/w3.css`                                      }}' />
+<link rel="stylesheet" href='{{ relURL `vendor/w3css/4/4.15/w3.css`                                      }}' />
 {{- /* if and (isset $.Site.Params (lower `w3css_color_theme` )) $.Site.Params.w3css_color_theme */}}
 {{- if $.Site.Params.w3cssColorTheme }}
 <link rel="stylesheet" id="theme-colors" href='{{ relURL $.Site.Params.w3cssColorTheme }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
