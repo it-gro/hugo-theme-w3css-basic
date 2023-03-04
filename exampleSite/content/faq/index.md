@@ -88,9 +88,9 @@ tristique imperdiet tortor. Nam euismod tellus id erat.
 
 
 {{< heg-load-photoswipe >}}
-{{< heg-figure thumb="-thumb" link="/images/teaserpics/pixabay.com/coffee-2306471_640.jpg"       width="200px" caption-position="bottom" caption-effect="appear" title="Hej" caption="Coffee" >}}
-{{< heg-figure thumb="-thumb" link="/images/teaserpics/pixabay.com/coffee-2714970_640.jpg"       width="200px" caption-position="bottom" caption-effect="appear" caption="Coffee" attr="(c) pixabay.com (CC0)" >}}
-{{< heg-figure thumb="-thumb" link="/images/teaserpics/pixabay.com/coffee-beans-2258839_640.jpg" width="200px" caption-position="bottom" caption-effect="appear" caption="Coffee" attr="(c) pixabay.com (CC0)" attrlink="https://pixabay.com"  >}}
+{{< heg-figure thumb="-thumb" link="images/teaserpics/pixabay.com/coffee-2306471_640.jpg"       width="200px" caption-position="bottom" caption-effect="appear" title="Hej" caption="Coffee" >}}
+{{< heg-figure thumb="-thumb" link="images/teaserpics/pixabay.com/coffee-2714970_640.jpg"       width="200px" caption-position="bottom" caption-effect="appear" caption="Coffee" attr="(c) pixabay.com (CC0)" >}}
+{{< heg-figure thumb="-thumb" link="images/teaserpics/pixabay.com/coffee-beans-2258839_640.jpg" width="200px" caption-position="bottom" caption-effect="appear" caption="Coffee" attr="(c) pixabay.com (CC0)" attrlink="https://pixabay.com"  >}}
 
 
 ## 5. Nulla posuere?
