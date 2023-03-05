@@ -24,6 +24,8 @@
             style.setAttribute('href', themeColorsHref);
             document.getElementById('large_theme_color_selector').value = themeColorsCssName;
             document.getElementById('medium_theme_color_selector').value = themeColorsCssName;
+          } else {
+            style.setAttribute('href', '{{ relURL $.Site.Params.w3cssColorTheme }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}');
           }
         }
       );
