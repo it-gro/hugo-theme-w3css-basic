@@ -21,7 +21,7 @@
           let themeColorsCssName = localStorage.getItem('theme-colors-css-name');
           let themeColorsHref = localStorage.getItem('theme-colors-css-href');
           if (themeColorsHref !== null) {
-            style.setAttribute('href', themeColorsHref);
+            style.setAttribute('href', themeColorsHref + '{{ if $assetBusting }}?{{ now.Unix }}{{ end }}');
             document.getElementById('large_theme_color_selector').value = themeColorsCssName;
             document.getElementById('medium_theme_color_selector').value = themeColorsCssName;
           } else {
