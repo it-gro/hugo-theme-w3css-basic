@@ -10,18 +10,36 @@
 
 <link rel="stylesheet" href='{{ relURL `vendor/w3css/4/4.15/w3.css`                                      }}' />
 {{- /* if and (isset $.Site.Params (lower `w3css_color_theme` )) $.Site.Params.w3css_color_theme */}}
+
 {{- if $.Site.Params.w3cssColorTheme }}
-<link rel="stylesheet" id="theme-colors" href='{{ relURL $.Site.Params.w3cssColorTheme }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+  {{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
+    <link rel="stylesheet" id="theme-colors" />
+    <script type="text/javascript">
+      window.addEventListener('DOMContentLoaded',
+        function() {
+          let style = document.getElementById('theme-colors');
+          let themeColorsCssName = localStorage.getItem('theme-colors-css-name');
+          let themeColorsHref = localStorage.getItem('theme-colors-css-href');
+          if (themeColorsHref !== null) {
+            style.setAttribute('href', themeColorsHref);
+            document.getElementById('large_theme_color_selector').value = themeColorsCssName;
+            document.getElementById('medium_theme_color_selector').value = themeColorsCssName;
+          }
+        }
+      );
+    </script>
+  {{- else }}
+    <link rel="stylesheet" id="theme-colors" href='{{ relURL $.Site.Params.w3cssColorTheme }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+  {{- end }}
 {{- else }}
   <link rel="stylesheet" id="theme-colors" href='{{ relURL `vendor/w3css/4/w3-theme-red.css` }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 {{- end }}
-
 
 <!-- <link rel="stylesheet" href='{{ relURL `css/syntax.css`       }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' /> -->
 <!-- <link rel="stylesheet" href='{{ relURL `css/syntax.min.css`   }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' /> -->
 <link href="{{ .Site.BaseURL }}{{- with .Site.Params.syntaxStyle}}/css/syntax/syntax.{{.}}.css{{else}}/css/syntax.css{{end}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet"> {{/* Highlight */}}
 <link rel="stylesheet" href='{{ relURL `css/w3css-basic.css`    }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
-<link rel="stylesheet" href='{{ relURL `css/res-gallery.css  `  }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+<link rel="stylesheet" href='{{ relURL `css/res-gallery.css`    }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 
 <link rel="stylesheet" href='{{ relURL `css/custom.css`           }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 {{- range .Site.Params.custom_css }}

@@ -13,7 +13,10 @@
       var cssPrefix  = '{{ `vendor/w3css/4/` | absURL }}'; {{/* do NOT start with a / */}}
       var href       = cssPrefix.concat(cssName);
       stylesheet.setAttribute('href', href);
+      localStorage.setItem('theme-colors-css-name', cssName)
+      localStorage.setItem('theme-colors-css-href', href)
     }
+
   </script>
 {{- end }}
 
@@ -23,8 +26,8 @@
 {{- end }}
 
 {{- if isset $.Site.Params (lower `options` ) }}
-{{- if $.Site.Params.options.jsHistoryNav }}
-{{- end}}
+  {{- if $.Site.Params.options.jsHistoryNav }}
+  {{- end}}
 {{- end}}
 
 <script src='{{ `js/custom.bottom.js`                     | relURL }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}'></script>
