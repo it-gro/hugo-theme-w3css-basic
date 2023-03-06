@@ -76,6 +76,7 @@ pygmentsUseClasses            = true
 #pygmentsStyle = "xcode"
 
 # Enable Google Analytics by entering your tracking code
+# TODO: move to params
 #googleAnalytics = "UA-113314068-2"
 
 

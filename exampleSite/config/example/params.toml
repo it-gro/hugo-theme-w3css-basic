@@ -305,8 +305,7 @@ consectetuer adipiscing
   # Global Site Tag
   # https://developers.google.com/gtagjs/
   # used in layouts/partials/head.google.gtags.html
-  # you need to enter the Tracking-ID above
-  # googleAnalytics = ""
+  # you need to enter the Tracking-ID in config.toml
   #enableGoogleGtag=true
   enableGoogleGtag=false
 
