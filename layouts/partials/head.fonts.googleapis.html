@@ -28,9 +28,19 @@
       {{- end }}
 
       {{- if  $.Scratch.Get `family` }}
-        {{- $myHref := (printf `href='%s%s'` `https://fonts.googleapis.com/css?family=` ($.Scratch.Get `family`) )  }}
-  {{ `<!-- DO NOT USE THIS IF THE SITE IS HOSTED IN GERMANY (https://www.gesetze-bayern.de/Content/Document/Y-300-Z-BECKRS-B-2022-N-612) -->` | safeHTML }}
-  <link rel="stylesheet" {{$myHref | safeHTMLAttr}} />
+        {{ `<!-- DO NOT USE THIS IF THE SITE IS HOSTED IN GERMANY (https://www.gesetze-bayern.de/Content/Document/Y-300-Z-BECKRS-B-2022-N-612) -->` | safeHTML }}
+        <link id='fonts_googleapis_com' rel="stylesheet" href="" />
+        <script type="text/javascript">
+          window.addEventListener('DOMContentLoaded',
+            function() {
+              if ("dismiss" == getCookie("cookieconsent_status")) {
+                let style = document.getElementById('fonts_googleapis_com')
+                style.setAttribute('href', '{{ printf "%s%s" "https://fonts.googleapis.com/css?family=" ($.Scratch.Get `family`) | safeHTMLAttr}} ');
+              } else {
+              }
+            }
+          );
+        </script>
       {{- else }}
         {{/* no font names found ... */}}
       {{- end }}

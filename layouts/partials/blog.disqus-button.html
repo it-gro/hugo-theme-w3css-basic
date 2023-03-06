@@ -16,7 +16,7 @@
         {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
           {{ `<!-- i18n "JsNeeded"  -->` | safeHTML }}
         {{- end}}
-       <br/>{{ default `no JavaScript` (i18n `JsNeeded`) }}
+      <br/>{{ default `no JavaScript` (i18n `JsNeeded`) }}
       </noscript>
   </button>
   <div id="disqus_thread"></div>

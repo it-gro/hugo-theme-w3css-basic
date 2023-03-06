@@ -17,15 +17,15 @@
     window.addEventListener("load", function(){
       window.cookieconsent.initialise({
         "palette": {
-           "popup": {
-             "background": {{$.Site.Params.cookieconsent.popupBackground | default "#efefef" }},
-             "text":       {{$.Site.Params.cookieconsent.popupText       | default "#404040" }},
-           },
-           "button": {
-             "background": {{$.Site.Params.cookieconsent.buttonBackground | default "#8ec760" }},
-             "text":       {{$.Site.Params.cookieconsent.buttonText       | default "#ffffff" }}
-           }
-         },
+          "popup": {
+            "background": {{$.Site.Params.cookieconsent.popupBackground | default "#efefef" }},
+            "text":       {{$.Site.Params.cookieconsent.popupText       | default "#404040" }},
+          },
+          "button": {
+            "background": {{$.Site.Params.cookieconsent.buttonBackground | default "#8ec760" }},
+            "text":       {{$.Site.Params.cookieconsent.buttonText       | default "#ffffff" }}
+          }
+        },
         "position": {{$.Site.Params.cookieconsent.position | default "bottom" }},
         {{- if ($.Site.Params.cookieconsent.theme)          }}"theme" : "{{$.Site.Params.cookieconsent.theme}}",{{end}}
         {{- if (isset $.Site.Params.cookieconsent `static`) }}"static": true,{{end}}

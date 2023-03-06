@@ -3,11 +3,29 @@
 {{- end}}
 {{- if and $.Site.Params.enableGoogleGtag $.Site.GoogleAnalytics }}
   {{- /* <!-- Global site tag (gtag.js) - Google Analytics --> */}}
-  <script async src='https://www.googletagmanager.com/gtag/js?id={{$.Site.GoogleAnalytics}}'></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{$.Site.GoogleAnalytics}}');
+  <script type="text/javascript">
+    window.addEventListener('load',
+      function() {
+        if ("dismiss" == getCookie("cookieconsent_status")) {
+          let scriptGtag = document.createElement("script");
+          scriptGtag.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id={{$.Site.GoogleAnalytics}}");
+          scriptGtag.setAttribute("type", "text/javascript");
+          // scriptGtag.setAttribute("async", "async");
+          document.body.appendChild(scriptGtag);
+        } else {
+        }
+      }
+  );
   </script>
+
+  <script>
+    if ("dismiss" == getCookie("cookieconsent_status")) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{$.Site.GoogleAnalytics}}');
+    } else {
+    }
+  </script>
+
 {{- end -}}
