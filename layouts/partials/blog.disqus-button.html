@@ -2,7 +2,8 @@
   {{ `<!-- partials/blog.disqus-button.html -->` | safeHTML }}
 {{- end}}
 {{- /* https://blog.kulman.sk/delaying-disqus-comments-to-save-requests/ */}}
-{{- if .Site.DisqusShortname }}
+{{ `<!-- partials/blog.disqus-button.html ERROR deprecated: .Site.DisqusShortname was deprecated in Hugo v0.120.0 and will be removed in Hugo 0.135.0. Use .Site.Config.Services.Disqus.Shortname instead.  -->` | safeHTML }}
+{{- if .Site.Config.Services.Disqus.Shortname }}
 <div class="disqus-comments">
   <button id="disqus-show-comments" class='w3-button {{ default `w3-theme-l3` ($.Site.Param `colorDisqusButton`)}}'  type="button" onclick="disqusShowComments()">
     {{- default `Show` (i18n `Show`) }}&nbsp;
@@ -23,7 +24,7 @@
 </div>
 
 {{- if $.Site.Param `disqusButtonShowCount` }}
-<script id="dsq-count-scr" src='//{{.Site.DisqusShortname}}.disqus.com/count.js' async></script>
+<script id="dsq-count-scr" src='//{{.Site.Config.Services.Disqus.Shortname}}.disqus.com/count.js' async></script>
 {{- end }} {{/* disqusButtonShowCount */}}
 
 <script type="text/javascript">
@@ -52,7 +53,7 @@
   };
 
   function disqusShowComments () {
-    var disqus_shortname = '{{.Site.DisqusShortname}}';
+    var disqus_shortname = '{{.Site.Config.Services.Disqus.Shortname}}';
     var disqus_config    = function () {
       this.page.url = '{{ trim .Permalink `/` }}';
     };

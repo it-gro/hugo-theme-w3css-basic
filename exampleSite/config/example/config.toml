@@ -20,9 +20,6 @@ enableEmoji   = true
 # the length of text to show in a .Summary
 summaryLength = 70
 
-# Pagination (3,6,9,12, ...)
-paginate =  6
-
 # Enable comments by entering your Disqus shortname
 disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
 
@@ -106,6 +103,10 @@ quality = 75
 # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 anchor = "smart"
 
+[pagination]
+# Pagination (3,6,9,12, ...)
+#paginate =  6
+pagerSize = 6
 
 # ##################################################
 # Theme-defined configuration

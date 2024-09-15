@@ -29,7 +29,7 @@ using shortcode:
    [Images taken from ...](../../hugo-theme-w3css-basic/images-taken-from/)   
 
 * See [Gallery with image processing (shortcode res-gallery)]({{< relref "/pages/hugo-theme-w3css-basic/page-shortcodes/index.md#res-gallery" >}})  
-  and [Figure with processing (Demo shortcode res-figure)]({{< relref "/image-processing-with-hugo" >}}) as well
+  and [Figure with processing (Demo shortcode res-figure)]({{< relref "./image-processing-with-hugo" >}}) as well
 
 * Compare with [shortcode heg-gallery]({{< relref "/pages/hugo-theme-w3css-basic/page-shortcodes/index.md#heg-gallery" >}})  
   and [shortcode heg-figure]( {{< relref "/pages/hugo-theme-w3css-basic/page-shortcodes/index.md#heg-figure" >}})   
