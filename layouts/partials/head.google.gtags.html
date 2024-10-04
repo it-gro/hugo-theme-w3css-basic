@@ -1,14 +1,14 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- partials/head.google.gtags.html -->` | safeHTML }}
 {{- end}}
-{{- if and $.Site.Params.enableGoogleGtag $.Site.GoogleAnalytics }}
+{{- if and $.Site.Params.enableGoogleGtag $.Site.Config.Services.GoogleAnalytics.ID }}
   {{- /* <!-- Global site tag (gtag.js) - Google Analytics --> */}}
   <script type="text/javascript">
     window.addEventListener('load',
       function() {
         if ("dismiss" == getCookie("cookieconsent_status")) {
           let scriptGtag = document.createElement("script");
-          scriptGtag.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id={{$.Site.GoogleAnalytics}}");
+          scriptGtag.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id={{$.Site.Config.Services.GoogleAnalytics.ID}}");
           scriptGtag.setAttribute("type", "text/javascript");
           // scriptGtag.setAttribute("async", "async");
           document.body.appendChild(scriptGtag);
@@ -23,7 +23,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '{{$.Site.GoogleAnalytics}}');
+      gtag('config', '{{$.Site.Config.Services.GoogleAnalytics.ID}}');
     } else {
     }
   </script>

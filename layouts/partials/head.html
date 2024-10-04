@@ -27,7 +27,7 @@
   {{- else }}
   {{ partial `head.fonts.local.html`      . -}}
   {{- end }}
-  {{- if and $.Site.Params.enableGoogleGtag $.Site.GoogleAnalytics }}
+  {{- if and $.Site.Params.enableGoogleGtag $.Site.Config.Services.GoogleAnalytics.ID }}
     {{ partial `head.google.gtags.html` . }}
   {{- end}}
   {{ partial `head.rss.html`              . -}}
