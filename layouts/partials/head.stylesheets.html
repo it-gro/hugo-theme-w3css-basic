@@ -3,12 +3,12 @@
 {{- end}}
 
 {{- $assetBusting := not .Site.Params.disableCSSAssetsBusting }}
-<link rel="stylesheet" href='{{ relURL `vendor/fontawesome/6.6.0/css/all.css`                            }}' />
+<link rel="stylesheet" href='{{ relURL `vendor/fontawesome/6.6.0/css/all.css`                            }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 <link rel="stylesheet" href='{{ relURL `vendor/daneden.github.io/animate.css/4.1.1/animate.min.css`      }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 <link rel="stylesheet" href='{{ relURL `vendor/OwlCarousel2/assets/owl.carousel.min.css`                 }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 <link rel="stylesheet" href='{{ relURL `vendor/OwlCarousel2/assets/owl.theme.default.min.css`            }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 
-<link rel="stylesheet" href='{{ relURL `vendor/w3css/4/4.15/w3.css`                                      }}' />
+<link rel="stylesheet" href='{{ relURL `vendor/w3css/4/4.15/w3.css`                                      }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 {{- /* if and (isset $.Site.Params (lower `w3css_color_theme` )) $.Site.Params.w3css_color_theme */}}
 
 {{- if $.Site.Params.w3cssColorTheme }}
