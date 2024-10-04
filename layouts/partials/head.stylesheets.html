@@ -3,7 +3,7 @@
 {{- end}}
 
 {{- $assetBusting := not .Site.Params.disableCSSAssetsBusting }}
-<link rel="stylesheet" href='{{ relURL `vendor/fontawesome/5.9.0/css/all.css`                            }}' />
+<link rel="stylesheet" href='{{ relURL `vendor/fontawesome/6.6.0/css/all.css`                            }}' />
 <link rel="stylesheet" href='{{ relURL `vendor/daneden.github.io/animate.css/animate.min.css`            }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 <link rel="stylesheet" href='{{ relURL `vendor/OwlCarousel2/assets/owl.carousel.min.css`                 }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
 <link rel="stylesheet" href='{{ relURL `vendor/OwlCarousel2/assets/owl.theme.default.min.css`            }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
