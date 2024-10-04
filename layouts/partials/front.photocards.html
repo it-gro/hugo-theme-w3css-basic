@@ -21,7 +21,7 @@
       {{- end }}
 
         <div class="w3-col m4 " >
-          <div class='w3-card-4 {{ default `w3-theme-l1` ($.Site.Param `colorFrontPhotocardsCard`)}} {{ if and $element.animated $.Site.Params.photocards.animate }} {{ printf `%s %s %s%d %s` `animated` `photocards-animated` `photocards-animated` $index $element.animated }} {{ end }} ' >
+          <div class='w3-card-4 {{ default `w3-theme-l1` ($.Site.Param `colorFrontPhotocardsCard`)}} {{ if and $element.animated $.Site.Params.photocards.animate }} {{ printf `animate__%s %s %s%d animate__%s` `animation` `photocards-animated` `photocards-animated` $index $element.animated }} {{ end }} ' >
 
           {{- if $element.url  }}
             {{- $.Scratch.Set `myImgClass` `w3-hover-opacity` }}
@@ -39,7 +39,7 @@
           {{- $myImg       := index $element `resImg`                       }} {{/* case sensitive ! */}}
           {{- $myImgCmd    := index $element `resImgCmd` | default (index $.Site.Params.photocards (lower `resImgCmd`   ) )  | default `Resize` }}
           {{- $myImgOpt    := index $element `resImgOpt` | default (index $.Site.Params.photocards (lower `resImgCmdOpt`) )  | default `300x`   }}
-            
+
           {{ partial `resource.image.html` (dict `page` $.Page `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
 
           {{- if $element.url  }}
