@@ -1,17 +1,6 @@
 {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
 {{ `<!-- partials/head.rss.html -->` | safeHTML }}
 {{- end}}
-{{ `<!-- TODO: ERROR deprecated: .Site.RSSLink was deprecated in Hugo v0.114.0 and will be removed in Hugo 0.135.0. Use the Output Format's Permalink method instead, e.g. .OutputFormats.Get "RSS".Permalink  -->` | safeHTML }}
-{{/*
-{{- if .Site.RSSLink }}
-<link href='{{ .Site.RSSLink }}' rel="alternate" type="application/rss+xml" title='{{ .Site.Title }} (rss+xml alternate)' />
-{{- end -}}
-*/}}
-{{/*
-{{- range .AlternativeOutputFormats }}
-<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
-{{- end -}}
-*/}}
 {{ with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{- end -}}

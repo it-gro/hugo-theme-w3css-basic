@@ -10,14 +10,14 @@
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
   {{ `<!-- back in partials/head.html  -->` | safeHTML }}
   {{- end}}
+  {{  hugo.Generator }}
 
   <title>
     {{- block `title` . -}}
-    {{ .Site.Title }}
+    {{ .Title }} -- {{ .Site.Title }}
     {{- end -}}
   </title>
 
-  {{  hugo.Generator }}
 
   {{ partial `scripts.top.html`           . -}}
   {{ partial "head.cookieconsent.html" . }}
@@ -30,7 +30,6 @@
   {{- if and $.Site.Params.enableGoogleGtag $.Site.GoogleAnalytics }}
     {{ partial `head.google.gtags.html` . }}
   {{- end}}
-  {{ partial `head.ie.html`               . -}}
   {{ partial `head.rss.html`              . -}}
 
   {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
