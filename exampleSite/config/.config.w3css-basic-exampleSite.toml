@@ -210,7 +210,7 @@ anchor = "smart"
   url      = "/search"
   pre      = "fas fa-search"
 
-# development tree 
+# development tree
 # [privacy]
 # [privacy.youtube]
 # noCookie = true
@@ -247,11 +247,11 @@ Nam vestibulum accumsan nisl.
               '''
 
   address   = '''
-**nobis eleifend**          
-**Soluta nobis eleifend**   
-illum dolore eu feugiat     
-3612 Steffisburg            
-consectetuer adipiscing     
+**nobis eleifend**
+**Soluta nobis eleifend**
+illum dolore eu feugiat
+3612 Steffisburg
+consectetuer adipiscing
 
 **Switzerland**
               '''
@@ -918,27 +918,27 @@ ultricies eget, tempor sit amet, ante
 
 [params.resFigure]
 	# used in layouts/shortcodes/res-figure.html
-	defaultResPagePath	= "."			 
-	defaultMatch				= "**/*"	 
+	defaultResPagePath	= "."
+	defaultMatch				= "**/*"
 	defaultImgCmd				= "Resize"
 	defaultImgCmdOpt		= "300x"
 	defaultImgCaption		= "%%T"
- 
+
 [params.resGallery]
 	# used in layouts/shortcodes/res-gallery.html
-	defaultResPagePath	= "resources/images" 
-	defaultMatch				= "**/*"		 
-	defaulImgCmd				= "Resize"	 
-	defaulImgCmdOpt			= "800x"		 
-	defaulThumbCmd			= "Fit"			 
-	defaultThumbCmdOpt	= "120x120"	 
-	defaultCaptionLong	= "%%F"			 
-	defaultCaptionShort = "%%N"			 
+	defaultResPagePath	= "resources/images"
+	defaultMatch				= "**/*"
+	defaulImgCmd				= "Resize"
+	defaulImgCmdOpt			= "800x"
+	defaulThumbCmd			= "Fit"
+	defaultThumbCmdOpt	= "120x120"
+	defaultCaptionLong	= "%%F"
+	defaultCaptionShort = "%%N"
 
-  #defaulThumbCmd     = "Resize"       
-  #defaultThumbCmdOpt = "100x100"  
-  #defaulThumbCmd     = "Fill"       
-  #defaultThumbCmdOpt = "120x120"  
+  #defaulThumbCmd     = "Resize"
+  #defaultThumbCmdOpt = "100x100"
+  #defaulThumbCmd     = "Fill"
+  #defaultThumbCmdOpt = "120x120"
 
 [params.options]
 	# used in layouts/partials/main.headline.nav-right.html
