@@ -14,7 +14,7 @@
 
   <title>
     {{- block `title` . -}}
-    {{ .Title }} -- {{ .Site.Title }}
+    {{ .Title | safeHTML }} -- {{ .Site.Title | safeHTML }}
     {{- end -}}
   </title>
 
